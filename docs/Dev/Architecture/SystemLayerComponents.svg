@@ -1,0 +1,22 @@
+<svg width="295" height="367" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <rect stroke-dasharray="2,2" fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="15.36367" y="284.30289" width="264.49999" height="65.00005" id="svg_32" fill-opacity="0"/>
+  <rect stroke-dasharray="2,2" fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="14.36367" y="164.30289" width="244.5" height="65.00005" id="svg_28" fill-opacity="0"/>
+  <rect stroke-dasharray="2,2" fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="14.36367" y="44.30289" width="136.49999" height="65.00005" id="svg_147" fill-opacity="0"/>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="26.7273" y="58.6667" width="109.31818" height="37.18183" id="svg_1" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="30.95466" y="85.00008" id="svg_2" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">Netzhaut</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="16.95466" y="34.00008" id="svg_148" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">API Layer</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="25.04586" y="179.98524" width="117.5" height="37.00001" id="svg_6" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="28.63684" y="207.68226" id="svg_7" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhLoader</text>
+  <rect stroke-dasharray="2,2" fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="157.36368" y="177.30306" width="88.5" height="40.00001" id="svg_14" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="160.95466" y="207.00008" id="svg_10" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">Engine</text>
+  <rect stroke-dasharray="5,5" fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="26.36368" y="296.30306" width="126.5" height="39.00001" id="svg_12" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="29.95466" y="325.00008" id="svg_13" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhInstaller</text>
+  <rect stroke-dasharray="2,2" fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="168.36368" y="297.30306" width="99.5" height="40.00001" id="svg_15" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="17.95466" y="154.00008" id="svg_31" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">Application Layer</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="17.95466" y="274.00008" id="svg_37" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">Support Layer</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="171.95466" y="327.00008" id="svg_11" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">External</text>
+ </g>
+
+</svg>

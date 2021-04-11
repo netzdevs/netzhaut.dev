@@ -1,0 +1,113 @@
+<svg width="689" height="601" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <rect fill-opacity="0" id="svg_1" height="48.18183" width="116.31818" y="205.6667" x="28.7273" opacity="undefined" stroke="#2b7e83" fill="#2b7e83"/>
+  <rect fill-opacity="0" id="svg_3" height="47.00001" width="120.5" y="352.30306" x="27.36368" opacity="undefined" stroke="#2b7e83" fill="#2b7e83"/>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_4" y="385.00008" x="34.95466" opacity="undefined" stroke-opacity="null" stroke-dasharray="null" stroke-width="0" stroke="#2b7e83" fill="#2b7e83">NhLoader</text>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_2" y="238.00008" x="37.95466" opacity="undefined" stroke-opacity="null" stroke-dasharray="null" stroke-width="0" stroke="#2b7e83" fill="#2b7e83">Netzhaut</text>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_8" y="387.00008" x="346.95466" opacity="undefined" stroke-opacity="null" stroke-dasharray="null" stroke-width="0" stroke="#2b7e83" fill="#2b7e83">Engine</text>
+  <path id="svg_51" d="m91.85101,48.73537c0,0 3.18166,-12.21537 0,-16.35328c-3.1854,-4.13791 -4.45582,-6.8942 -11.45996,-8.86745s-4.45207,-1.57999 -9.54497,-1.37814c-5.0929,0.19837 -9.33885,2.75629 -9.33885,4.13443c0,0 -3.18166,0.19837 -4.45207,1.38162c-1.27416,1.18326 -3.39526,6.69583 -3.39526,8.07746s1.06055,10.64234 2.1211,12.61211l-1.26292,0.39326c-1.06055,11.42537 4.24221,12.807 4.24221,12.807c1.90749,10.64234 3.81874,6.11116 3.81874,8.86745s-1.91124,1.77488 -1.91124,1.77488s-1.69388,4.3328 -5.93609,5.90932c-4.24221,1.57303 -27.7917,10.04375 -29.70669,11.81863c-1.91499,1.77836 -1.69763,10.05071 -1.69763,10.05071l100.98477,0c0,0 0.2211,-8.27235 -1.69388,-10.05071c-1.91874,-1.77836 -25.46823,-10.2456 -29.71044,-11.81863c-4.24221,-1.57651 -5.93609,-5.90932 -5.93609,-5.90932s-1.91124,0.98141 -1.91124,-1.77488s1.91124,1.77488 3.82248,-8.86745c0,0 5.29901,-1.38162 4.24221,-12.807l-1.27416,0l-0.00002,-0.00001z" opacity="undefined" fill-opacity="0" stroke-dasharray="null" stroke="#2b7e83" fill="#ffffff"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_6" y2="302.34161" x2="122.06204" y1="302.34161" x1="72.83084" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 97.4464, 302.342)"/>
+  <g id="svg_15" transform="rotate(-90.507, 96.845, 269.209)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="88.3446" y1="257.70947" x2="105.3446" y2="269.70947" id="svg_12" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="105.3446" y1="268.70947" x2="88.3446" y2="280.70947" id="svg_13" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_36" y="532.00008" x="338.95466" opacity="undefined" stroke-opacity="null" stroke-dasharray="null" stroke-width="0" stroke="#2b7e83" fill="#2b7e83">External</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_44" y2="302.34037" x2="86.04736" y1="302.34037" x1="38.81128" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 62.4293, 302.34)"/>
+  <g id="svg_49" transform="rotate(90.2184, 62.551, 332.213)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="54.05106" y1="320.71275" x2="71.05106" y2="332.71275" id="svg_45" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="71.05106" y1="331.71275" x2="54.05106" y2="343.71275" id="svg_46" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="23.5" y="307" id="svg_50" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">call</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="112.5" y="305" id="svg_52" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">feedback</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_63" y2="272.84588" x2="455.56195" y1="272.84588" x1="343.3369" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 399.449, 272.846)"/>
+  <g id="svg_66" transform="rotate(179.792, 165.845, 217.209)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="157.3446" y1="205.70947" x2="174.3446" y2="217.70947" id="svg_64" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="174.3446" y1="216.70947" x2="157.3446" y2="228.70947" id="svg_65" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_67" y2="288.34099" x2="408.04552" y1="288.34099" x1="328.81557" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 368.431, 288.341)"/>
+  <g id="svg_70" transform="rotate(90.2184, 368.551, 338.213)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="360.05106" y1="326.71275" x2="377.05106" y2="338.71275" id="svg_68" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="377.05106" y1="337.71275" x2="360.05106" y2="349.71275" id="svg_69" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="256.5" y="240" id="svg_71" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">call</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_73" y2="248.79255" x2="367.74648" y1="248.79255" x1="174.499" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(179.852, 271.123, 248.793)"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="240.5" y="208" id="svg_74" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">feedback</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_75" y2="216.76772" x2="399.73527" y1="216.76772" x1="175.49797" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(179.892, 287.617, 216.768)"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_82" y2="395.72156" x2="292.7504" y1="395.72156" x1="174.51043" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(179.852, 233.63, 395.722)"/>
+  <g id="svg_85" transform="rotate(0.147607, 165.365, 395.935)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="156.86527" y1="395.98786" x2="173.86527" y2="407.98786" id="svg_83" stroke-linejoin="null" stroke-linecap="null" transform="rotate(176.192, 165.365, 401.988)"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="173.13473" y1="385.01214" x2="156.13473" y2="397.01214" id="svg_84" stroke-linejoin="null" stroke-linecap="null" transform="rotate(176.192, 164.635, 391.012)"/>
+  </g>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_86" y2="358.73308" x2="291.74779" y1="358.73308" x1="176.51298" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(179.852, 234.13, 358.733)"/>
+  <g id="svg_89">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="290.5" y1="347" x2="307.5" y2="359" id="svg_87" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="307.5" y1="358" x2="290.5" y2="370" id="svg_88" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="217.5" y="388" id="svg_90" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">call</text>
+  <text style="cursor: move;" fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="198.5" y="351" id="svg_91" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">feedback</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_102" y2="453.34423" x2="426.06473" y1="453.34423" x1="376.82742" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 401.446, 453.344)"/>
+  <g id="svg_105" transform="rotate(-90.507, 400.845, 420.209)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="392.3446" y1="408.70947" x2="409.3446" y2="420.70947" id="svg_103" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="409.3446" y1="419.70947" x2="392.3446" y2="431.70947" id="svg_104" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_106" y2="452.83854" x2="390.54981" y1="452.83854" x1="342.31005" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 366.43, 452.839)"/>
+  <g id="svg_109" transform="rotate(90.2184, 366.551, 483.213)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="358.05106" y1="471.71275" x2="375.05106" y2="483.71275" id="svg_107" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="375.05106" y1="482.71275" x2="358.05106" y2="494.71275" id="svg_108" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="323.5" y="455" id="svg_110" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">call</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="416.5" y="456" id="svg_111" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">feedback</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_112" y2="153.34464" x2="120.0652" y1="153.34464" x1="70.82789" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 95.4466, 153.345)"/>
+  <g id="svg_115" transform="rotate(-90.507, 94.845, 120.209)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="86.3446" y1="108.70947" x2="103.3446" y2="120.70947" id="svg_113" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="103.3446" y1="119.70947" x2="86.3446" y2="131.70947" id="svg_114" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_116" y2="153.34102" x2="84.04677" y1="153.34102" x1="36.81191" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 60.4293, 153.341)"/>
+  <g id="svg_119" transform="rotate(90.2184, 60.551, 183.213)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="52.05106" y1="171.71275" x2="69.05106" y2="183.71275" id="svg_117" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="69.05106" y1="182.71275" x2="52.05106" y2="194.71275" id="svg_118" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="21.5" y="158" id="svg_120" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">call</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="110.5" y="156" id="svg_121" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">feedback</text>
+  <rect fill-opacity="0" id="svg_122" height="47.00001" width="131.5" y="501.30306" x="25.36368" opacity="undefined" stroke="#2b7e83" fill="#2b7e83" stroke-dasharray="5,5"/>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_123" y="534.00008" x="32.95466" opacity="undefined" stroke-opacity="null" stroke-dasharray="null" stroke-width="0" stroke="#2b7e83" fill="#2b7e83">NhInstaller</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_124" y2="451.34288" x2="126.06328" y1="451.34288" x1="76.82963" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 101.446, 451.343)"/>
+  <g id="svg_127" transform="rotate(-90.507, 100.845, 418.209)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="92.3446" y1="406.70947" x2="109.3446" y2="418.70947" id="svg_125" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="109.3446" y1="417.70947" x2="92.3446" y2="429.70947" id="svg_126" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_128" y2="450.83981" x2="90.54859" y1="450.83981" x1="42.31129" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none" transform="rotate(270.07, 66.4299, 450.84)"/>
+  <g id="svg_131" transform="rotate(90.2184, 66.551, 481.213)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="58.05106" y1="469.71275" x2="75.05106" y2="481.71275" id="svg_129" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="75.05106" y1="480.71275" x2="58.05106" y2="492.71275" id="svg_130" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="27.5" y="456" id="svg_132" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">call</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="116.5" y="454" id="svg_133" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">feedback</text>
+  <rect fill-opacity="0" id="svg_134" height="47.00001" width="131.5" y="354.30306" x="320.36368" opacity="undefined" stroke="#2b7e83" fill="#2b7e83" stroke-dasharray="2,2"/>
+  <rect fill-opacity="0" id="svg_135" height="47.00001" width="131.5" y="500.30306" x="317.36368" opacity="undefined" stroke="#2b7e83" fill="#2b7e83" stroke-dasharray="2,2"/>
+  <line transform="rotate(270.07, 527.449, 233.846)" stroke-linecap="null" stroke-linejoin="null" id="svg_9" y2="233.84588" x2="583.56195" y1="233.84588" x1="471.3369" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <line transform="rotate(179.892, 516.614, 177.578)" stroke-linecap="null" stroke-linejoin="null" id="svg_10" y2="177.57794" x2="527.73587" y1="177.57794" x1="505.49252" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <line transform="rotate(179.892, 515.614, 289.578)" stroke-linecap="null" stroke-linejoin="null" id="svg_11" y2="289.57794" x2="526.73587" y1="289.57794" x1="504.49252" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="537.5" y="237" id="svg_16" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">API Layer</text>
+  <line transform="rotate(270.07, 528.449, 376.846)" stroke-linecap="null" stroke-linejoin="null" id="svg_17" y2="376.84588" x2="584.56195" y1="376.84588" x1="472.3369" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <line transform="rotate(179.892, 517.614, 320.578)" stroke-linecap="null" stroke-linejoin="null" id="svg_18" y2="320.57794" x2="528.73587" y1="320.57794" x1="506.49252" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <line transform="rotate(179.892, 516.614, 432.578)" stroke-linecap="null" stroke-linejoin="null" id="svg_19" y2="432.57794" x2="527.73587" y1="432.57794" x1="505.49252" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="537.5" y="378" id="svg_20" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">Application Layer</text>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_22" y2="320.57794" x2="528.73587" y1="320.57794" x1="506.49252" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="undefined" x="539.5" y="526" id="svg_27" font-size="17" font-family="sans-serif" text-anchor="start" xml:space="preserve">Support Layer</text>
+  <line transform="rotate(270.07, 528.449, 520.846)" stroke-linecap="null" stroke-linejoin="null" id="svg_34" y2="520.84588" x2="584.56195" y1="520.84588" x1="472.3369" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <line transform="rotate(179.892, 517.614, 464.578)" stroke-linecap="null" stroke-linejoin="null" id="svg_35" y2="464.57794" x2="528.73587" y1="464.57794" x1="506.49252" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <line transform="rotate(179.892, 516.614, 576.578)" stroke-linecap="null" stroke-linejoin="null" id="svg_37" y2="576.57794" x2="527.73587" y1="576.57794" x1="505.49252" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <line stroke-linecap="null" stroke-linejoin="null" id="svg_38" y2="464.57794" x2="528.73587" y1="464.57794" x1="506.49252" opacity="undefined" fill-opacity="null" stroke-dasharray="null" stroke-width="null" stroke="#2b7e83" fill="none"/>
+  <g id="svg_14">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="291.5" y1="384" x2="308.5" y2="396" id="svg_5" stroke-linejoin="null" stroke-linecap="null"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="308.5" y1="395" x2="291.5" y2="407" id="svg_7" stroke-linejoin="null" stroke-linecap="null"/>
+  </g>
+  <g id="svg_24" transform="rotate(0.147607, 165.365, 359.935)">
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="156.86527" y1="359.98786" x2="173.86527" y2="371.98786" id="svg_21" stroke-linejoin="null" stroke-linecap="null" transform="rotate(176.192, 165.365, 365.988)"/>
+   <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="0" opacity="undefined" x1="173.13473" y1="349.01214" x2="156.13473" y2="361.01214" id="svg_23" stroke-linejoin="null" stroke-linecap="null" transform="rotate(176.192, 164.635, 355.012)"/>
+  </g>
+ </g>
+
+</svg>

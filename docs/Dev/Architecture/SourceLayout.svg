@@ -1,0 +1,17 @@
+<svg width="250" height="140" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <path fill="none" stroke="#000" stroke-width="null" stroke-dasharray="null" stroke-opacity="null" fill-opacity="null" opacity="NaN" d="m48.01928,206.45193" id="svg_89"/>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="17.36367" y="47.30306" width="36.5" height="40.00001" id="svg_3" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="19.95466" y="78.00008" id="svg_4" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">src</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="172.81822" y="15.12124" width="38.59094" height="38.18183" id="svg_13" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="174.50011" y="43.00008" id="svg_14" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">bin</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="173.63641" y="80.6667" width="31.40912" height="40.9091" id="svg_15" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="175.31829" y="112.00008" id="svg_16" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">lib</text>
+  <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" fill-opacity="null" opacity="undefined" x1="78.39144" y1="66.79089" x2="144.90121" y2="66.79089" id="svg_24" stroke-linejoin="null" stroke-linecap="null" transform="rotate(-90.1113, 111.646, 66.7909)"/>
+  <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" fill-opacity="null" opacity="undefined" x1="112.24075" y1="98.85216" x2="172.11448" y2="98.85216" id="svg_30" stroke-linejoin="null" stroke-linecap="null" transform="rotate(179.852, 142.178, 98.8521)"/>
+  <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" fill-opacity="null" opacity="undefined" x1="111.33135" y1="33.40305" x2="172.00774" y2="33.40305" id="svg_31" stroke-linejoin="null" stroke-linecap="null" transform="rotate(179.852, 141.67, 33.403)"/>
+  <line fill="none" stroke="#2b7e83" stroke-width="null" stroke-dasharray="null" fill-opacity="null" opacity="undefined" x1="54.06223" y1="67.72847" x2="111.10347" y2="67.72847" id="svg_40" stroke-linejoin="null" stroke-linecap="null" transform="rotate(179.852, 82.583, 67.728)"/>
+ </g>
+
+</svg>

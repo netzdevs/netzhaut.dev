@@ -1,0 +1,28 @@
+var Unicode_8c =
+[
+    [ "Nh_appendToUnicodeString", "group__NhCoreFunctions.html#gab8ca477aaf5abc94bb0362ff11187caa", null ],
+    [ "Nh_freeUnicodeString", "group__NhCoreFunctions.html#ga3def2dc5057f383f4374993194061996", null ],
+    [ "Nh_getUnicodeCodepointDescription", "group__NhCoreFunctions.html#ga15620db2f726c9adcf3ad6c4959a7bd8", null ],
+    [ "Nh_incrementUnicodeString", "group__NhCoreFunctions.html#ga22a8359c8e20c3731d8d31021185f172", null ],
+    [ "Nh_initUnicodeString", "group__NhCoreFunctions.html#gaf0ccad64b9513584cf1bba38035391bd", null ],
+    [ "Nh_isASCIIAlpha", "group__NhCoreFunctions.html#gab9dec0ad9ca1b450087287eaa4be7722", null ],
+    [ "Nh_isASCIIAlphaNumeric", "group__NhCoreFunctions.html#ga99f84a5eba89a255e6d380198f225ec8", null ],
+    [ "Nh_isASCIICaseInsensitiveMatch", "group__NhCoreFunctions.html#gab22381d2e8bc12c6122e77f9b4b90771", null ],
+    [ "Nh_isASCIICodepoint", "group__NhCoreFunctions.html#gab127f886fb4f40adf1c43acd67369028", null ],
+    [ "Nh_isASCIIDigit", "group__NhCoreFunctions.html#ga9b22662e7ccb01bee8322ce2f80c8e34", null ],
+    [ "Nh_isASCIIHexDigit", "group__NhCoreFunctions.html#ga7a433e6e7134a3aa66a1aa2acfb3754f", null ],
+    [ "Nh_isASCIILowerAlpha", "group__NhCoreFunctions.html#ga2d529304969ef37e34deec1656ee479d", null ],
+    [ "Nh_isASCIIUpperAlpha", "group__NhCoreFunctions.html#ga25dcd048d139aefac2de626475dd5295", null ],
+    [ "Nh_isASCIIWhitespace", "group__NhCoreFunctions.html#gacc7bf8ba0d14ebec3b75449cedc45974", null ],
+    [ "Nh_isC0Control", "group__NhCoreFunctions.html#gaaadf5b3e78cce2a162b1f2973965e077", null ],
+    [ "Nh_isControl", "group__NhCoreFunctions.html#ga26876346014c1a81b573f227fa96dabe", null ],
+    [ "Nh_isNonCharacter", "group__NhCoreFunctions.html#ga5f4e6cafea6812d2fb4b4f9cc3027355", null ],
+    [ "Nh_isScalarValue", "group__NhCoreFunctions.html#ga12530c3da6d63b036fd49feec4f61faf", null ],
+    [ "Nh_isSurrogate", "group__NhCoreFunctions.html#gafb72f1e0d5af37d3307631f7df915121", null ],
+    [ "Nh_logUnicodeCodepoints", "group__NhCoreFunctions.html#ga1c3df1f3931143fb9f58b61e4e095db0", null ],
+    [ "Nh_removeTailFromUnicodeString", "group__NhCoreFunctions.html#ga58b7729aa847e42446f674d5f3968332", null ],
+    [ "Nh_replaceNonCharacters", "group__NhCoreFunctions.html#ga8d5a4606256f1be6e4f8eaf0969f20ca", null ],
+    [ "Nh_replaceNonCharactersExpressively", "group__NhCoreFunctions.html#ga3a435b277eb5a600b62329b961f44ef9", null ],
+    [ "Nh_unicodeCodepointID_CONTINUE", "group__NhCoreFunctions.html#ga72a1bcc4b505a940a79bdf493023d6ba", null ],
+    [ "Nh_unicodeCodepointID_START", "group__NhCoreFunctions.html#gaf04766326dd1c667ebcc9f8319c68ef7", null ]
+];

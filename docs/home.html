@@ -1,0 +1,731 @@
+<!-- HTML header for doxygen 1.8.15-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+  <meta name="generator" content="Doxygen 1.8.20"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Netzhaut Home</title>
+  <link href="API/HTML/tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="API/HTML/jquery.js"></script>
+  <script type="text/javascript" src="API/HTML/dynsections.js"></script>
+  <link href="API/HTML/navtree.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="API/HTML/resize.js"></script>
+  <script type="text/javascript" src="API/HTML/navtreedata.js"></script>
+  <script type="text/javascript" src="API/HTML/navtree.js"></script>
+  <link href="API/HTML/search/search.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="API/HTML/search/searchdata.js"></script>
+  <script type="text/javascript" src="API/HTML/search/search.js"></script>
+  <link href="API/HTML/doxygen.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" href="Logo/LogoFavicon.png">
+  <link href="DoxygenTheme/Custom.css" rel="stylesheet" type="text/css"/>
+  <style>
+    .roaddetailbox {
+      padding-left: 15px;
+    }
+    .roaddetailboxinner {
+      border-style: solid;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    input, ul.roaddetail1, ul.roaddetail2, ul.roaddetail3 {
+      display: none;
+    }
+    .roadlabel {
+      position: relative;
+      display: block;
+      cursor: pointer;
+    }
+    input:checked~ul.roaddetail1 {
+      display: block;
+    }
+    input:checked~ul.roaddetail2 {
+      display: block;
+    }
+    input:checked~ul.roaddetail3 {
+      display: block;
+    }
+    .reqbox {
+      border-style: solid;
+      padding-left: 10px;
+    }
+    .infoboxcontainer {
+      margin-left:750px; 
+      margin-right: 50px; 
+    }
+    .infobox {
+      min-width:100px;
+      max-width:300px;
+      margin-bottom: 30px;
+    }
+    .infobox2 {
+      border-style:solid;
+      min-width:400px;
+      max-width:1000px;
+      margin-bottom: 30px;
+    }
+    .innerinfobox {
+      padding-top: 5px;
+      width:100%; 
+    }
+  </style>
+  <script>
+      function scrollfunc() { 
+        var doc = document.getElementById('doc-content');
+        var anchors = document.getElementsByClassName('doc-content-anchor');
+        var anchorNavs = document.getElementsByClassName('doc-content-anchor-nav');
+        var last = 0;
+        for (var i = 0; i < anchors.length; ++i) {
+            var anchor = anchors[i];  
+            if (doc.scrollTop > anchor.offsetTop - 200) {
+              anchorNavs[i].classList.add("selected");
+              last = i;
+            }
+        }
+        for (var i = last - 1; i >= 0; --i) {
+            anchorNavs[i].classList.remove("selected");
+        }
+        for (var i = last + 1; i < anchors.length; ++i) {
+            anchorNavs[i].classList.remove("selected");
+        }
+      };
+  </script>
+</head>
+
+<body>
+  <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+    <div id="titlearea">
+     <div style="height: 56px;">
+      <div id="projectlogo" style="padding-top:2px;"><img alt="Logo" src="API/HTML/LogoSmall.png"/></div>
+     </div>
+    </div>
+  </div><!-- top -->
+  <div id="side-nav" class="ui-resizable side-nav-resizable">
+    <div id="nav-tree">
+      <div id="nav-tree-contents">
+        <div id="nav-sync" class="sync"></div>
+         <ul style="display:block;">
+           <li>
+             <div class="item"><span class="arrow" style="padding-left: 0px;">▼</span><span class="label"><a class="index.html" href="home.html">Netzhaut Home Page</a></span>
+             </div>
+             <ul class="children_ul" style="display: block;">
+               <li>
+                 <div class="doc-content-anchor-nav selected"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#pageheader">Introduction</a></span></div>
+               </li>
+               <li>
+                 <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#road">Roadmap</a></span></div>
+               </li>
+               <li>
+                 <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#reqs">Build Requirements</a></span></div>
+               </li>
+               <li>
+                 <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#build">Building</a></span></div>
+               </li>
+               <li>
+                 <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#license">License</a></span></div>
+               </li>
+             </ul>
+           </li>
+        </ul>
+      </div>
+    </div>
+    <div id="splitbar" style="-moz-user-select:none;" 
+         class="ui-resizable-handle">
+    </div>
+  </div>
+  <script type="text/javascript">
+  /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+  /* @license-end */
+  </script>
+  <div id="doc-content" onscroll="scrollfunc()">
+    <div class="PageDoc" id="pageheader"><div class="header">
+      <div class="headertitle">
+        <div class="title">Netzhaut | Web Browser Engine</div>
+      </div>
+    </div><!--header-->
+    <div class="contents">
+      <div class="textblock" style="float:left; width:700px;">
+        <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
+        </h1>
+        <div> 
+          <p>Netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the roadmap for more details. </p>
+          <p>The engine is currently being developed for Linux, a Microsoft Windows port is planned once it matures enough.</p>
+        </div>
+        <h1 class="doc-content-anchor"><a id="road"></a>Roadmap
+        </h1>
+        <p>The roadmap documents previous, current and future development stages. Early development is divided into <b>initial development</b>, <b>pre-alpha-1</b> and <b>pre-alpha-2</b>. 
+        <h2>initial development <b style="color:green;">&#x2713</b></h2>
+        <div class="roaddetailbox">
+          <div class="roaddetailboxinner">
+            <pre>[Q2 2020 - Q1 2021]</pre>
+            <p>This stage focused on design, architecture and implementing a stable foundation for later development. As a result, every core component of the engine has a functioning initial implementation that is able to interconnect with related components. Also, a degree of project stability has been achieved that allows for iterative development to take place at faster pace.</p>
+            <input id="roadcheck1" type="checkbox" name="menu"/>
+            <h4><label class="roadlabel" for="roadcheck1">Show Details</label></h4>
+            <ul class="roaddetail1">
+              <li>Component Design</li>
+              <p>The implementation is divided into multiple libraries, managed by a loader-library which handles loading requests/dependencies at runtime. The architecture is designed to be able to handle installing/updating/reloading of libraries at runtime. 
+              <li>Object Oriented Design</li>
+              <p>WebIDL interfaces are parsed at runtime in order to provide OOP-like routines and facilitate ECMAScript bindings. In the implementation, objects such as Document, HTMLElement, etc. are represented as linked structs. Each struct has an associated interface which is used to generate an attribute list. Object attributes are placed into this list according to the position in the interface allowing for easy bindings in combination with a universially applied type system. Operation bindings are essentially created by calling functions in a standardized, interface based way using function pointers. Inheritance is imitated by creating structs for each inherited interface and linking them together. All in all, this system is easy to work with since it's based on a lot of automatic mechanisms.
+              <li>First iteration of specification conforming parsers</li>
+              <p>This includes implementation of the ECMAScript parser, CSS/Selectors parser, HTML parser and WebIDL parser. The parsers are hand-written and while far from finished, a good chunk of implementation work has been completed.
+              <li>Threading Design</li>
+              <p>The threading architecture is based on workloads. Each workload is assigned to a thread and executed once every thread cycle. Netzhaut can be configured to use 0 to unlimited threads. When using 0 threads, the host program needs to call the workload execution routine manually since Netzhaut relies purely on the host program thread in that case.
+              <li>Rendering</li>
+              <p>Basic rendering routines have been written, establishing the foundation of the rendering engine developed during pre-alpha-1.
+              <li>Initial API</li>
+              <p>API principles have been established and core routines such as creating windows, creating viewports and creating document-contexts are operational enough to provide a good foundation.
+              <li>Logging Interface</li>
+              <p>During initial/pre-alpha development, logging is mostly done by using a build-in TTY interface which will be expanded later on but is already functional during this stage. Logging messages are stored in a tree structure which makes managing huge amounts of traffic possible by using qualified node identifiers.
+              <li>First Installer iteration</li>
+              <p>A custom installer has been written to facilitate development/building/installing in the most simplistic way possible. Later on, it could also be used to execute test routines etc.
+              <li>Other</li>
+              <p>Standard utilities for handling data using Arrays, Lists, etc. have been written. Unicode and the UTF-8 encoding are handled adequately. Work on Networking and URL libraries has started. Work on the ECMAScript engine has begun.
+              <li>Initial Documentation</li>
+              <p>Finally, basic documentation structures/methods have been designed and a road-map has been established.
+            </ul>
+          </div>
+        </div>
+        <h2>pre-alpha-1</h2>
+        <div class="roaddetailbox">
+          <div class="roaddetailboxinner">
+            <pre>[Q1 2021 - ???]</pre>
+            <p>This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering.</p> 
+            <input id="roadcheck2" type="checkbox" name="menu"/>
+            <h4><label class="roadlabel" for="roadcheck2">Show Details</label></h4>
+            <ul class="roaddetail2">
+              <li>TODO implement basic layout engine</li>
+              <p>implement CSS Display module, CSS Inline Layout module, ...</p>
+            </ul>
+          </div>
+        </div>
+        <h2>pre-alpha-2</h2>
+        <div class="roaddetailbox">
+          <div class="roaddetailboxinner">
+            <pre>[??? - ???]</pre>
+            <p>This stage focuses on implementing scripting and browser-context related routines.</p>
+            <input id="roadcheck3" type="checkbox" name="menu"/>
+            <h4><label class="roadlabel" for="roadcheck3">Show Details</label></h4>
+            <ul class="roaddetail3">
+              <li>TODO HTML event loop</li>
+              <p>Implement the HTML event loop and browser-context associated routines</p>
+              <li>TODO ECMAScript Bindings</li>
+              <p>Implement automatic binding generation using the WebIDL layer</p>
+              <li>TODO ECMAScript Engine</li>
+              <p>Expand the interpreter implementation</p>
+            </ul>
+          </div>
+        </div>
+        <br><h1 class="doc-content-anchor"><a id="reqs"></a>Build Requirements
+        </h1>
+        <div>
+          <p>For rendering, Netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</p>
+          <p>
+          <h2>Linux:</h2>
+          <div class="reqbox">
+            <p>
+              <table>
+                <tr>
+                  <td>Compiler</td>
+                  <td>: <a href="https://gcc.gnu.org/">GCC</a></td>
+                </tr>
+                <tr>
+                  <td>Display Server</td>
+                  <td>: <a href="https://www.x.org/wiki/">X11</a></td>
+                </tr>
+                <tr>
+                  <td>SSL</td>
+                  <td>: <a href="https://www.openssl.org/">OpenSSL</a></td>
+                </tr>
+                <tr>
+                  <td>Font Engine</td>
+                  <td>: <a href="https://www.freetype.org/">FreeType</a></td>
+                </tr>
+              </table>
+            </p>
+          </div>
+          <h2>Microsoft Windows:<h2> 
+          <div class="reqbox">
+            <p>
+              <table>
+                <tr>
+                  <td>Compiler</td>
+                  <td>: TODO</td>
+                </tr>
+                <tr>
+                  <td>SSL</td>
+                  <td>: <a href="https://www.openssl.org/">OpenSSL</a></td>
+                </tr>
+                <tr>
+                  <td>Font Engine</td>
+                  <td>: <a href="https://www.freetype.org/">FreeType</a></td>
+                </tr>
+              </table>
+            </p>
+          </div>
+        </div>
+        <br><h1 class="doc-content-anchor"><a id="build"></a>Building
+        </h1>
+        <div>
+          <p>TODO
+        </div>
+        <br><h1 class="doc-content-anchor"><a id="license"></a>License
+        </h1>
+        <div>
+          <p>TODO
+        </div>
+        <br>
+        <br>
+      </div>
+      <div class="infoboxcontainer">
+        <div style="padding-top:10px;">
+        </div>
+        <h2>Minimal Example</h2>
+        <div class="infobox2">
+          <div class="innerinfobox" style="overflow-x:auto;">
+<pre>
+#include "Netzhaut/Netzhaut.h"
+#include &lt;string.h&gt;
+
+int main(int argc, char **argv_pp) 
+{
+    Nh_initialize(NH_LOADER_SCOPE_SYSTEM, NULL, NH_FALSE);
+
+    Nh_PixelSize Size = {.width = 1000, .height = 1000};
+    Nh_WSI_Window *Window_p = Nh_WSI_createWindow("Window Title", Size);
+    Nh_Gfx_Surface *Surface_p = Nh_Gfx_createSurface(Window_p, NH_GFX_API_VULKAN);
+
+    Nh_PixelPosition Position = {.x = 0, .y = 0};
+    Nh_Gfx_Viewport *Viewport_p = Nh_Gfx_createViewport(Surface_p, Position, Size);
+
+    Nh_HTML_DocumentContext *DocumentContext_p = 
+      Nh_HTML_createDocumentContext(NH_FALSE, &Viewport_p, 1);
+
+    char *p = "A quirky hello to you!";
+    Nh_HTML_loadBytes(DocumentContext_p, p, strlen(p));
+
+    while (Nh_run()) {}
+
+    Nh_terminate();
+}
+</pre>
+          </div>
+        </div>
+        <h2>Changelogs</h2>
+        <div class="infobox">
+          <div class="innerinfobox">
+<!-- NH_INSTALLER_INSERT_CHANGELOGS_BEGIN -->
+2021-2-23 <a href="Dev/HTML/group__NetzhautChangelog.html">Netzhaut v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhLoaderChangelog.html">NhLoader v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhCoreChangelog.html">NhCore v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhWSIChangelog.html">NhWSI v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhTTYChangelog.html">NhTTY v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhNetworkChangelog.html">NhNetwork v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhECMAScriptChangelog.html">NhECMAScript v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhHTMLChangelog.html">NhHTML v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhWebIDLChangelog.html">NhWebIDL v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhEncodingChangelog.html">NhEncoding v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhDOMChangelog.html">NhDOM v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__NhGfxChangelog.html">NhGfx v0.0.0</a><br>
+2021-4-10 <a href="Dev/HTML/group__NhCSSChangelog.html">NhCSS v0.0.1</a><br>
+<!-- NH_INSTALLER_INSERT_CHANGELOGS_END -->
+          </div>
+        </div>
+        <h2>Links</h2>
+        <div class="infobox">
+          <div class="innerinfobox">
+            <a href="https://github.com/DajoFrey/Netzhaut">Repository</a><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- contents -->
+  </div><!-- doc-content -->
+  <!-- HTML footer for doxygen 1.8.15-->
+  <!-- start footer part -->
+  <div id="nav-path" class="navpath">
+    <!--  -->
+    <!-- <li class="footer">Generated by -->
+    <!-- <a href="http://www.doxygen.org/index.html"> -->
+    <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.20 </li> -->
+    <div id="foot"> 
+      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="Dev/HTML/Main.html"><b>Open Dev Docs</b></a></b>
+      <div style="color:#2b7e83;text-align:center;font-size:16px;">
+        <b>
+<!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
+v0.0.0-0.0.1 pre-alpha-1
+<!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
+        </b>
+      </div>
+      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="API/HTML/index.html"><b>Open API Docs</b></a></b>
+    </div>
+  </div>
+</body>
+
+<style>
+  #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+</style>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

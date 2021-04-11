@@ -1,0 +1,44 @@
+<svg width="493" height="508" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>Layer 1</title>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="16.72724" y="43.66668" width="457.3182" height="53.18184" id="svg_11" fill-opacity="0" stroke-dasharray="2,2"/>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="16.72724" y="152.66668" width="421.31821" height="112.18184" id="svg_7" fill-opacity="0" stroke-dasharray="2,2"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="19.95466" y="33.00008" id="svg_8" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">Engine</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="366.7273" y="445.6667" width="95.31818" height="38.18183" id="svg_52" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="369.95466" y="473.00008" id="svg_53" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhCore</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="23.7273" y="215.6667" width="88.31818" height="38.18183" id="svg_54" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="26.95466" y="244.00008" id="svg_55" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhCSS</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="24.7273" y="160.6667" width="94.31817" height="38.18183" id="svg_56" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="27.95466" y="188.00008" id="svg_57" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhDOM</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="379.7273" y="51.6667" width="86.31818" height="38.18183" id="svg_58" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="383.95466" y="80.00008" id="svg_59" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhTTY</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="174.7273" y="331.6667" width="89.31818" height="38.18183" id="svg_60" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="177.95466" y="359.00008" id="svg_61" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhURL</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="137.7273" y="161.6667" width="168.31817" height="39.18183" id="svg_62" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="140.95466" y="189.00008" id="svg_63" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhECMAScript</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="22.7273" y="330.6667" width="137.31819" height="38.18183" id="svg_64" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="25.95466" y="359.00008" id="svg_65" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhEncoding</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="20.7273" y="444.6667" width="77.31817" height="37.18183" id="svg_66" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="23.95466" y="471.00008" id="svg_67" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhGfx</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="136.7273" y="216.6667" width="124.31818" height="38.18183" id="svg_68" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="139.95466" y="244.00008" id="svg_69" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhWebIDL</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="325.7273" y="163.6667" width="103.31818" height="37.18183" id="svg_70" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="327.95466" y="190.00008" id="svg_71" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhHTML</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="219.7273" y="444.6667" width="130.31818" height="38.18183" id="svg_72" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="222.95466" y="473.00008" id="svg_73" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhNetwork</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="116.7273" y="444.6667" width="85.31818" height="38.18183" id="svg_74" fill-opacity="0"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="119.95466" y="472.00008" id="svg_75" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">NhWSI</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="16.95466" y="426.00008" id="svg_79" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">Platform</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="19.95466" y="142.00008" id="svg_83" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">WebCore</text>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="26.95466" y="80.00008" id="svg_85" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">WebCore</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="265.72724" y="51.6667" width="97.31818" height="36.18184" id="svg_3" fill-opacity="0" stroke-dasharray="2,2"/>
+  <text fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="270.95466" y="77.00008" id="svg_86" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">Platform</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="24.72724" y="53.6667" width="106.31818" height="34.18184" id="svg_1" fill-opacity="0" stroke-dasharray="2,2"/>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="142.72724" y="53.6667" width="106.31818" height="34.18184" id="svg_5" fill-opacity="0" stroke-dasharray="2,2"/>
+  <text style="cursor: move;" fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="147.95466" y="78.00008" id="svg_2" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">WebUtils</text>
+  <text style="cursor: move;" fill="#2b7e83" stroke="#2b7e83" stroke-width="0" stroke-dasharray="null" stroke-opacity="null" opacity="undefined" x="16.95466" y="311.00008" id="svg_6" font-size="24" font-family="sans-serif" text-anchor="start" xml:space="preserve">WebUtils</text>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="14.72724" y="321.66669" width="257.3182" height="55.18185" id="svg_9" fill-opacity="0" stroke-dasharray="2,2"/>
+  <rect fill="#2b7e83" stroke="#2b7e83" opacity="undefined" x="13.72724" y="436.66669" width="455.31821" height="55.18185" id="svg_10" fill-opacity="0" stroke-dasharray="2,2"/>
+ </g>
+
+</svg>
