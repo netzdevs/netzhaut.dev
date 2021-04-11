@@ -814,18 +814,18 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = "Mainpage.md" "Architecture/ProjectLayout.md" "Architecture/SystemArchitecture.md" "Architecture/EngineArchitecture.md" "Design/CodeStyle.md" \
-"../../src/lib/NhCore/Common" "../../src/lib/NhCore/" \
-"../../src/lib/NhTTY/Common" "../../src/lib/NhTTY/" \
-"../../src/lib/NhLoader/Common" "../../src/lib/NhLoader/" \
-"../../src/lib/NhECMAScript/Common" "../../src/lib/NhECMAScript/Engine" "../../src/lib/NhECMAScript/StaticSemantics" \
-"../../src/lib/NhCSS/Common" "../../src/lib/NhCSS/Renderer" "../../src/lib/NhCSS/Layout" "../src/lib/NhCSS/Parser" "../src/lib/NhCSS/Properties" "../src/lib/NhCSS/Vulkan" \
-"../../src/lib/NhGfx/Common" "../../src/lib/NhGfx/Vulkan" "../../src/lib/NhGfx/Base" \
-"../../src/lib/NhDOM/Common" \
-"../../src/lib/NhEncoding/Common" \
-"../../src/lib/NhWebIDL/Common" \
-"../../src/lib/NhWSI/Common" \
-"../../src/lib/NhNetwork/Common" \
-"../../src/lib/NhHTML/Common"  "../src/lib/NhHTML/Parser" 
+"../../../../../src/lib/NhCore/Common" "../../../../../src/lib/NhCore/" \
+"../../../../../src/lib/NhTTY/Common" "../../../../../src/lib/NhTTY/" \
+"../../../../../src/lib/NhLoader/Common" "../../../../../src/lib/NhLoader/" \
+"../../../../../src/lib/NhECMAScript/Common" "../../../../../src/lib/NhECMAScript/Engine" "../../src/lib/NhECMAScript/StaticSemantics" \
+"../../../../../src/lib/NhCSS/Common" "../../../../../src/lib/NhCSS/Renderer" "../../../../../src/lib/NhCSS/Layout" "../../../../../src/lib/NhCSS/Parser" "../../../../../src/lib/NhCSS/Properties" "../src/lib/NhCSS/Vulkan" \
+"../../../../../src/lib/NhGfx/Common" "../../../../../src/lib/NhGfx/Vulkan" "../../../../../src/lib/NhGfx/Base" \
+"../../../../../src/lib/NhDOM/Common" \
+"../../../../../src/lib/NhEncoding/Common" \
+"../../../../../src/lib/NhWebIDL/Common" \
+"../../../../../src/lib/NhWSI/Common" \
+"../../../../../src/lib/NhNetwork/Common" \
+"../../../../../src/lib/NhHTML/Common"  "../../../../../src/lib/NhHTML/Parser" 
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
