@@ -1,4 +1,4 @@
 var BoxTriangulation_8h =
 [
-    [ "Nh_CSS_triangulateBox", "group__NhCSSFunctions.html#ga39247deb5864be37b3bb081745ab3aec", null ]
+    [ "nh_css_triangulateBox", "group__nhcssFunctions.html#ga3f975d458e59acbff04ef32a0161549a", null ]
 ];

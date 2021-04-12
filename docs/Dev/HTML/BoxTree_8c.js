@@ -12,11 +12,11 @@ var BoxTree_8c =
       [ "NH_CSS_OUTER_DISPLAY_BLOCK", "BoxTree_8c.html#a46274a41bd4a36508a0cc34d8a6f1e3aadf2450a270f0da903723093a89010ddc", null ],
       [ "NH_CSS_OUTER_DISPLAY_INLINE", "BoxTree_8c.html#a46274a41bd4a36508a0cc34d8a6f1e3aab8c675ed6f6c1d169ea96a06feaf0e9d", null ]
     ] ],
-    [ "Nh_CSS_arrangeBoxTree", "group__NhCSSFunctions.html#gae8bfa3d417c7b3c5a7fbbf3d25e0ae09", null ],
-    [ "Nh_CSS_createBoxTree", "group__NhCSSFunctions.html#ga820ac12913a123d9fe775a7c396c4530", null ],
-    [ "Nh_CSS_getBoxName", "group__NhCSSFunctions.html#gaabf8e4d329c1fb0855ea2a68a0fa6856", null ],
-    [ "Nh_CSS_getFormattingContext", "group__NhCSSFunctions.html#ga31f3bee6bccf7b43833980aacfbc25db", null ],
-    [ "Nh_CSS_getFormattingContextName", "group__NhCSSFunctions.html#ga37e3c12d11b79ff98ccff15853a1925e", null ],
-    [ "Nh_CSS_initBoxFragment", "BoxTree_8c.html#ada51939f3304e44371d5b3481e23fd92", null ],
-    [ "Nh_CSS_initTextFragment", "BoxTree_8c.html#a8823d3095d74fee2705e50e22d35ba7a", null ]
+    [ "nh_css_arrangeBoxTree", "group__nhcssFunctions.html#gaf692541ceefcbf7fa1b81ec7415fa66d", null ],
+    [ "nh_css_createBoxTree", "group__nhcssFunctions.html#gab676f1372d5e0d9415d417ed62df8247", null ],
+    [ "nh_css_getBoxName", "group__nhcssFunctions.html#ga42752d48cad9a929218a7bbd6e619ec6", null ],
+    [ "nh_css_getFormattingContext", "group__nhcssFunctions.html#gac42b3dbeb8ba39ae1e247f940c629530", null ],
+    [ "nh_css_getFormattingContextName", "group__nhcssFunctions.html#ga4bdeff0800d03e1ff6361df96f90458f", null ],
+    [ "nh_css_initBoxFragment", "BoxTree_8c.html#a1d7bdd9177ac9763b7a57598fab8b1b2", null ],
+    [ "nh_css_initTextFragment", "BoxTree_8c.html#a8a48a209ec3df9a2d3fb07a27e5b631d", null ]
 ];

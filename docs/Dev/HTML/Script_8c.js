@@ -1,5 +1,5 @@
 var Script_8c =
 [
-    [ "Nh_ECMAScript_evaluateScript", "group__NhECMAScriptFunctions.html#ga436539605fb00c017df98472d3c4c1b2", null ],
-    [ "Nh_ECMAScript_parseScript", "group__NhECMAScriptFunctions.html#gaa2689ec6793420297bec0b3b131fe446", null ]
+    [ "nh_ecmascript_evaluateScript", "group__nhecmascriptFunctions.html#gae810ff06d71121becac61f975f516855", null ],
+    [ "nh_ecmascript_parseScript", "group__nhecmascriptFunctions.html#ga08e0deebc461ac2facaaa6fac7a1fcd8", null ]
 ];

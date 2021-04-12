@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Netzhaut Dev Docs: /home/dajo/Netzhaut/src/lib/NhTTY/Row.h Source File</title>
+<title>netzhaut DEV DOCS: /home/dajo/Netzhaut/src/lib/nhtty/Row.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="LogoSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Netzhaut Dev Docs
+   <div id="projectname">netzhaut DEV DOCS
    </div>
   </td>
 <td style="padding-left: 10px;"/>
@@ -105,8 +105,8 @@ $(document).ready(function(){initNavTree('Row_8h_source.html',''); initResizable
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">//#ifndef DOXYGEN_SHOULD_SKIP_THIS</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span><span class="comment">// * Netzhaut - Web Browser Engine</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// * Copyright (C) 2020 The Netzhaut Authors</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span><span class="comment">// * netzhaut - Web Browser Engine</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// * Copyright (C) 2020 The netzhaut Authors</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">// * Published under LGPLv3</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">// */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//</span></div>
@@ -121,43 +121,43 @@ $(document).ready(function(){initNavTree('Row_8h_source.html',''); initResizable
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"></span><span class="comment">// *  @{</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//    typedef struct Nh_TTY_Row {</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//    typedef struct nh_tty_Row {</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//        int size;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//        char *chars_p;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//        NH_BOOL *render_p;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//        int flags;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//    } Nh_TTY_Row;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//    } nh_tty_Row;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span><span class="comment">// *  @{</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// */</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//    int Nh_TTY_rowCxToRx(</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//        Nh_TTY_Row *Row_p, int cx</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//    int nh_tty_rowCxToRx(</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//        nh_tty_Row *Row_p, int cx</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//    ); </span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//    </span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//    NH_TTY_RESULT Nh_TTY_addRow(</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//        Nh_TTY_Output *Output_p</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//    NH_TTY_RESULT nh_tty_addRow(</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//        nh_tty_Output *Output_p</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//    ); </span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//    void Nh_TTY_addToRow(</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//        Nh_TTY_Output *Output_p, char *bytes_p, int count, NH_BOOL render</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//    void nh_tty_addToRow(</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//        nh_tty_Output *Output_p, char *bytes_p, int count, NH_BOOL render</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//    );</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//    NH_TTY_RESULT Nh_TTY_removeFromRow(</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//        Nh_TTY_Output *Output_p, int count</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//    NH_TTY_RESULT nh_tty_removeFromRow(</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//        nh_tty_Output *Output_p, int count</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//    );</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//    void Nh_TTY_destroyAllRows(</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//        Nh_TTY_Output *Output_p</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//    void nh_tty_destroyAllRows(</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//        nh_tty_Output *Output_p</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//    );</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//    void Nh_TTY_destroyRows(</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//        Nh_TTY_Output *Output_p, int count</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//    void nh_tty_destroyRows(</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//        nh_tty_Output *Output_p, int count</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//    );</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//    void Nh_TTY_getRenderSizes(</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//        Nh_TTY_Row *Row_p, int maxCols, int offset, int *rcols_p, int *rsize_p</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//    void nh_tty_getRenderSizes(</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//        nh_tty_Row *Row_p, int maxCols, int offset, int *rcols_p, int *rsize_p</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//    );</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span><span class="comment">//</span></div>
@@ -167,24 +167,24 @@ $(document).ready(function(){initNavTree('Row_8h_source.html',''); initResizable
     <!-- HTML footer for doxygen 1.8.15-->
     <!-- start footer part -->
       <div id="nav-path" class="navpath">
-        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_6e8a7e472c0570c19a9684d82ff44a1c.html">NhTTY</a></li><li class="navelem"><a class="el" href="Row_8h.html">Row.h</a></li> -->
+        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_c1a586a47f1f5df71033f45de07133a1.html">nhtty</a></li><li class="navelem"><a class="el" href="Row_8h.html">Row.h</a></li> -->
         <!-- <li class="footer">Generated by -->
         <!-- <a href="http://www.doxygen.org/index.html"> -->
         <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li> -->
         <div id="foot"> 
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../API/HTML/index.html"><b>Open API Docs</b></a></b>
-          <div style="color:#2b7e83;text-align:center;font-size:16px;">
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../API/HTML/index.html"><b>API DOCS</b></a></b>
+          <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
 v0.0.0-0.0.1 pre-alpha-1
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
             </b>
           </div>
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../index.html"><b>Open Home</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>HOME</b></a></b>
         </div>
       </div>
   </body>
   <style>
-    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #151515; border-top: 3px solid #24bbc4; justify-content: space-between;}
   </style>
 </html>

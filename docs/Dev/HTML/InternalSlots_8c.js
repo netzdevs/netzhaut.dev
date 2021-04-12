@@ -1,6 +1,6 @@
 var InternalSlots_8c =
 [
-    [ "Nh_ECMAScript_getInternalSlot", "group__NhECMAScriptFunctions.html#gaab24d4c1d8afeeff1c297b2ff7e42cfa", null ],
-    [ "Nh_ECMAScript_initInternalSlots", "group__NhECMAScriptFunctions.html#ga14ea0405fafb8b1716a3deabe503cf4f", null ],
-    [ "Nh_ECMAScript_setInternalSlot", "group__NhECMAScriptFunctions.html#gaa03ae1e79a1dec6fdf1e77509da99bd9", null ]
+    [ "nh_ecmascript_getInternalSlot", "group__nhecmascriptFunctions.html#ga783c25cf1d253d4680ffdb76a1bbe4b5", null ],
+    [ "nh_ecmascript_initInternalSlots", "group__nhecmascriptFunctions.html#gabd83133a3ad3ba1927336b4cfedbd533", null ],
+    [ "nh_ecmascript_setInternalSlot", "group__nhecmascriptFunctions.html#ga0d493129a83d55decfac5efd8cb81676", null ]
 ];

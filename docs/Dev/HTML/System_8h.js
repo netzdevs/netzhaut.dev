@@ -1,8 +1,8 @@
 var System_8h =
 [
-    [ "NH_HOSTNAME_LENGTH", "group__NhCoreMacros.html#gaf30b37079d663cb59a104bd7e8a8e951", null ],
-    [ "Nh_freeSystem", "group__NhCoreFunctions.html#gafc46207b91993c22aaea4225b3384a4d", null ],
-    [ "Nh_initSystem", "group__NhCoreFunctions.html#ga5b60561ee349b0ab2f37248d6d7ec538", null ],
-    [ "Nh_runSystemUpdater", "group__NhCoreFunctions.html#ga389695f7909a830569a98edec5fa4883", null ],
-    [ "NH_SYSTEM", "group__NhCoreVars.html#gafdb380a0da2d59731651fd2912795162", null ]
+    [ "NH_HOSTNAME_LENGTH", "group__nhcoreMacros.html#gaf30b37079d663cb59a104bd7e8a8e951", null ],
+    [ "nh_freeSystem", "group__nhcoreFunctions.html#gabe3d8a127fde7719dc4600edc7cd7249", null ],
+    [ "nh_initSystem", "group__nhcoreFunctions.html#gad7aceccb62d7910f4ad450cc984d0b3b", null ],
+    [ "nh_runSystemUpdater", "group__nhcoreFunctions.html#ga77f56db62d3232c315e1436c28774832", null ],
+    [ "NH_SYSTEM", "group__nhcoreVars.html#gaaa55332e15cc21d9749e76c11e059071", null ]
 ];

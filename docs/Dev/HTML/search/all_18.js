@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['x_5300',['x',['../structNh__PixelPosition.html#aeb6240b3f2636ff96093edc5b975d26d',1,'Nh_PixelPosition::x()'],['../structNh__ClipPosition.html#adbc8bbf1357b86618a672eb327ad04e0',1,'Nh_ClipPosition::x()'],['../structNh__Vector2D.html#acee5e80e7136f48c6b6c397b810f9338',1,'Nh_Vector2D::x()'],['../structNh__Vector3D.html#a58bec1939691393233e21fd073df7a34',1,'Nh_Vector3D::x()'],['../structNh__Vertex.html#a63b526f507206e50d95b3afd8f51f3ba',1,'Nh_Vertex::x()'],['../structNh__PixelVertex.html#a6f79c90ca470e47e0c6a7dbfccef87de',1,'Nh_PixelVertex::x()']]],
-  ['xadvance_5301',['xAdvance',['../structNh__Gfx__Glyph.html#a03ddf14803755a0d824e915082733ef5',1,'Nh_Gfx_Glyph']]],
-  ['xoffset_5302',['xOffset',['../structNh__Gfx__Glyph.html#a96cbf82c78b9587aa71bf720a0b2b614',1,'Nh_Gfx_Glyph']]]
+  ['x_5299',['x',['../structnh__PixelPosition.html#afde55e3d8fc7eb86ac98fd2342ce42a4',1,'nh_PixelPosition::x()'],['../structnh__ClipPosition.html#ab89784d38a786b9f42577d120b564734',1,'nh_ClipPosition::x()'],['../structnh__Vector2D.html#a462e6d65659a4c9e6646499356e44367',1,'nh_Vector2D::x()'],['../structnh__Vector3D.html#ab0ce05d7e1688df051884af3f0794b11',1,'nh_Vector3D::x()'],['../structnh__Vertex.html#af452947a1d591ca127d8d88f8c2f30c5',1,'nh_Vertex::x()'],['../structnh__PixelVertex.html#a459d4b5c756ab034b492a6a7ab31e987',1,'nh_PixelVertex::x()']]],
+  ['xadvance_5300',['xAdvance',['../structnh__gfx__Glyph.html#a05d20f04dd303622aecf82a5be0f5132',1,'nh_gfx_Glyph']]],
+  ['xoffset_5301',['xOffset',['../structnh__gfx__Glyph.html#ac863cebc4b4e4d56ceed5d18c9d4e009',1,'nh_gfx_Glyph']]]
 ];

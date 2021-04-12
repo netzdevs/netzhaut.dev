@@ -1,9 +1,9 @@
 var ArrayList_8c =
 [
-    [ "_Nh_freeArrayList", "group__NhCoreFunctions.html#gafa1492f9c19a9cdcc8a365300d549c8c", null ],
-    [ "_Nh_incrementArrayList", "group__NhCoreFunctions.html#gae26fd9be53edf267adf84620b79338d9", null ],
-    [ "_Nh_initArrayList", "group__NhCoreFunctions.html#gac4c9e67585ccb0dab3bb328056669794", null ],
-    [ "Nh_freeArrayList", "group__NhCoreFunctions.html#ga7c47c83c5de4cbeb454d2a9cd905c6b7", null ],
-    [ "Nh_incrementArrayList", "group__NhCoreFunctions.html#gae22425ff373fee0e21f169dc73edfee9", null ],
-    [ "Nh_initArrayList", "group__NhCoreFunctions.html#ga6451d069c15bef7247a145e020e740bb", null ]
+    [ "_nh_freeArrayList", "group__nhcoreFunctions.html#ga9c64986a0d2c9589f5ae132f5e3c4238", null ],
+    [ "_nh_incrementArrayList", "group__nhcoreFunctions.html#gaf0367de1687ab04015b9dcdcd5a6b5bc", null ],
+    [ "_nh_initArrayList", "group__nhcoreFunctions.html#ga1c1f03610b1043f344cf6f22a6483d5e", null ],
+    [ "nh_freeArrayList", "group__nhcoreFunctions.html#ga395d77cb2d1cda8682684976faa3f666", null ],
+    [ "nh_incrementArrayList", "group__nhcoreFunctions.html#gad42ad2d464989d69daccd309df6564b8", null ],
+    [ "nh_initArrayList", "group__nhcoreFunctions.html#ga45eedec0f5a10f08cbfc73e5a9f13b4f", null ]
 ];

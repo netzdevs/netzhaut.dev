@@ -1,8 +1,8 @@
 var Stack_8h =
 [
-    [ "Nh_Stack", "group__NhCoreTypedefs.html#ga8c6b82373b146aa9001299ec0af86ee8", null ],
-    [ "Nh_initStack", "group__NhCoreFunctions.html#gaa82f46f8549c3019c7ac66b35e912326", null ],
-    [ "Nh_peekStack", "group__NhCoreFunctions.html#gaaba7095b2ecf499ebc4ebabbd07ee063", null ],
-    [ "Nh_popStack", "group__NhCoreFunctions.html#gaa7017d040f8d28acbb99f380f0f97c20", null ],
-    [ "Nh_pushStack", "group__NhCoreFunctions.html#gac290477b140de345129f37b7cba11dad", null ]
+    [ "nh_Stack", "group__nhcoreTypedefs.html#gaa5d61f179576bcb3d24431c632beb0a7", null ],
+    [ "nh_initStack", "group__nhcoreFunctions.html#gad3e5242f4fa08c01e062d7068ed90d68", null ],
+    [ "nh_peekStack", "group__nhcoreFunctions.html#ga282214028d327c31111e100f427ba69d", null ],
+    [ "nh_popStack", "group__nhcoreFunctions.html#ga284954eaae2ef665e66d1268a01702e4", null ],
+    [ "nh_pushStack", "group__nhcoreFunctions.html#ga27521ef34b3534146eb8b59a8d561dc7", null ]
 ];

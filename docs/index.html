@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9"/>
   <meta name="generator" content="Doxygen 1.8.20"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Netzhaut Home</title>
+  <title>netzhaut | Web Browser Engine</title>
   <link href="API/HTML/tabs.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="API/HTML/jquery.js"></script>
   <script type="text/javascript" src="API/HTML/dynsections.js"></script>
@@ -92,13 +92,16 @@
         }
       };
   </script>
+  <link rel="stylesheet" href="highlight/styles/dark.css">
+  <script type="text/javascript" src="highlight/highlight.pack.js"></script>
+  <script>hljs.highlightAll();</script>
 </head>
 
 <body>
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
     <div id="titlearea">
      <div style="height: 56px;">
-      <div id="projectlogo" style="padding-top:2px;"><img alt="Logo" src="API/HTML/LogoSmall.png"/></div>
+      <div id="projectlogo"><img alt="Logo" src="Logo/LogoSmall.png"/></div>
      </div>
     </div>
   </div><!-- top -->
@@ -108,7 +111,7 @@
         <div id="nav-sync" class="sync"></div>
          <ul style="display:block;">
            <li>
-             <div class="item"><span class="arrow" style="padding-left: 0px;">▼</span><span class="label"><a class="index.html" href="home.html">Netzhaut Home Page</a></span>
+             <div class="item"><span class="arrow" style="padding-left: 0px;">▼</span><span class="label"><a class="index.html" href="index.html">Home Page</a></span>
              </div>
              <ul class="children_ul" style="display: block;">
                <li>
@@ -143,7 +146,7 @@
   <div id="doc-content" onscroll="scrollfunc()">
     <div class="PageDoc" id="pageheader"><div class="header">
       <div class="headertitle">
-        <div class="title">Netzhaut | Web Browser Engine</div>
+        <div class="title">netzhaut | Web Browser Engine</div>
       </div>
     </div><!--header-->
     <div class="contents">
@@ -151,7 +154,7 @@
         <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
         </h1>
         <div> 
-          <p>Netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the roadmap for more details. </p>
+          <p>netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the roadmap for more details. </p>
           <p>The engine is currently being developed for Linux, a Microsoft Windows port is planned once it matures enough.</p>
         </div>
         <h1 class="doc-content-anchor"><a id="road"></a>Roadmap
@@ -172,7 +175,7 @@
               <li>First iteration of specification conforming parsers</li>
               <p>This includes implementation of the ECMAScript parser, CSS/Selectors parser, HTML parser and WebIDL parser. The parsers are hand-written and while far from finished, a good chunk of implementation work has been completed.
               <li>Threading Design</li>
-              <p>The threading architecture is based on workloads. Each workload is assigned to a thread and executed once every thread cycle. Netzhaut can be configured to use 0 to unlimited threads. When using 0 threads, the host program needs to call the workload execution routine manually since Netzhaut relies purely on the host program thread in that case.
+              <p>The threading architecture is based on workloads. Each workload is assigned to a thread and executed once every thread cycle. netzhaut can be configured to use 0 to unlimited threads. When using 0 threads, the host program needs to call the workload execution routine manually since netzhaut relies purely on the host program thread in that case.
               <li>Rendering</li>
               <p>Basic rendering routines have been written, establishing the foundation of the rendering engine developed during pre-alpha-1.
               <li>Initial API</li>
@@ -221,7 +224,7 @@
         <br><h1 class="doc-content-anchor"><a id="reqs"></a>Build Requirements
         </h1>
         <div>
-          <p>For rendering, Netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</p>
+          <p>For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</p>
           <p>
           <h2>Linux:</h2>
           <div class="reqbox">
@@ -285,67 +288,66 @@
         <h2>Minimal Example</h2>
         <div class="infobox2">
           <div class="innerinfobox" style="overflow-x:auto;">
-<pre>
-#include "Netzhaut/Netzhaut.h"
+<pre><code class="c" style="background-color:#151515; color:#24bbc4;">#include "netzhaut/netzhaut.h"
 #include &lt;string.h&gt;
 
 int main(int argc, char **argv_pp) 
 {
-    Nh_initialize(NH_LOADER_SCOPE_SYSTEM, NULL, NH_FALSE);
+    nh_initialize(NH_LOADER_SCOPE_SYSTEM, NULL, NH_FALSE);
 
-    Nh_PixelSize Size = {.width = 1000, .height = 1000};
-    Nh_WSI_Window *Window_p = Nh_WSI_createWindow("Window Title", Size);
-    Nh_Gfx_Surface *Surface_p = Nh_Gfx_createSurface(Window_p, NH_GFX_API_VULKAN);
+    nh_PixelSize Size = {.width = 1000, .height = 1000};
+    nh_wsi_Window *Window_p = nh_wsi_createWindow("Window Title", Size);
+    nh_gfx_Surface *Surface_p = nh_gfx_createSurface(Window_p, NH_GFX_API_VULKAN);
 
-    Nh_PixelPosition Position = {.x = 0, .y = 0};
-    Nh_Gfx_Viewport *Viewport_p = Nh_Gfx_createViewport(Surface_p, Position, Size);
+    nh_PixelPosition Position = {.x = 0, .y = 0};
+    nh_gfx_Viewport *Viewport_p = nh_gfx_createViewport(Surface_p, Position, Size);
 
-    Nh_HTML_DocumentContext *DocumentContext_p = 
-      Nh_HTML_createDocumentContext(NH_FALSE, &Viewport_p, 1);
+    nh_html_DocumentContext *DocumentContext_p = 
+      nh_html_createDocumentContext(NH_FALSE, &Viewport_p, 1);
 
     char *p = "A quirky hello to you!";
-    Nh_HTML_loadBytes(DocumentContext_p, p, strlen(p));
+    nh_html_loadBytes(DocumentContext_p, p, strlen(p));
 
-    while (Nh_run()) {}
+    while (nh_run()) {}
 
-    Nh_terminate();
+    nh_terminate();
 }
-</pre>
+</code></pre>
           </div>
         </div>
         <h2>Changelogs</h2>
         <div class="infobox">
           <div class="innerinfobox">
 <!-- NH_INSTALLER_INSERT_CHANGELOGS_BEGIN -->
-2021-2-23 <a href="Dev/HTML/group__NetzhautChangelog.html">Netzhaut v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhLoaderChangelog.html">NhLoader v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhCoreChangelog.html">NhCore v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhWSIChangelog.html">NhWSI v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhTTYChangelog.html">NhTTY v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhNetworkChangelog.html">NhNetwork v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhECMAScriptChangelog.html">NhECMAScript v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhHTMLChangelog.html">NhHTML v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhWebIDLChangelog.html">NhWebIDL v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhEncodingChangelog.html">NhEncoding v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhDOMChangelog.html">NhDOM v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__NhGfxChangelog.html">NhGfx v0.0.0</a><br>
-2021-4-10 <a href="Dev/HTML/group__NhCSSChangelog.html">NhCSS v0.0.1</a><br>
+2021-2-23 <a href="Dev/HTML/group__netzhautChangelog.html">netzhaut v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhloaderChangelog.html">nhloader v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhcoreChangelog.html">nhcore v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhwsiChangelog.html">nhwsi v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhttyChangelog.html">nhtty v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhnetworkChangelog.html">nhnetwork v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhecmascriptChangelog.html">nhecmascript v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhhtmlChangelog.html">nhhtml v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhwebidlChangelog.html">nhwebidl v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhencodingChangelog.html">nhencoding v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhdomChangelog.html">nhdom v0.0.0</a><br>
+2021-2-23 <a href="Dev/HTML/group__nhgfxChangelog.html">nhgfx v0.0.0</a><br>
+2021-4-10 <a href="Dev/HTML/group__nhcssChangelog.html">nhcss v0.0.1</a><br>
 <!-- NH_INSTALLER_INSERT_CHANGELOGS_END -->
           </div>
         </div>
         <h2>Repositories</h2>
         <div class="infobox">
           <div class="innerinfobox">
-            <a href="https://github.com/NetzhautDevs/Netzhaut">Code Repository</a><br>
-            <a href="https://github.com/NetzhautDevs/docs">Docs Repository</a><br>
+            <a href="https://github.com/netzhautproject/netzhaut">Code Repository</a><br>
+            <a href="https://github.com/netzhautproject/docs">Docs Repository</a><br>
           </div>
         </div>
         <h2>Contact</h2>
         <div class="infobox">
           <div class="innerinfobox">
-            code issue: <a href="https://github.com/NetzhautDevs/Netzhaut/issues/new">create new</a><br>
-            docs issue: <a href="https://github.com/NetzhautDevs/docs/issues/new">create new</a><br>
-            email: <a href="mailto:contact@netzhautdevs.org">contact@netzhautdevs.org</a><br>
+            code issue: <a href="https://github.com/netzhautproject/netzhaut/issues/new">create new</a><br>
+            docs issue: <a href="https://github.com/netzhautproject/docs/issues/new">create new</a><br>
+            email: <a href="mailto:contact@netzhautproject.org">contact@netzhautproject.org</a><br>
           </div>
         </div>
       </div>
@@ -360,24 +362,39 @@ int main(int argc, char **argv_pp)
     <!-- <a href="http://www.doxygen.org/index.html"> -->
     <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.20 </li> -->
     <div id="foot"> 
-      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="Dev/HTML/Main.html"><b>Open Dev Docs</b></a></b>
-      <div style="color:#2b7e83;text-align:center;font-size:16px;">
+      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="Dev/HTML/Main.html"><b>DEV DOCS</b></a></b>
+      <div style="color:#24bbc4;text-align:center;font-size:16px;">
         <b>
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
 v0.0.0-0.0.1 pre-alpha-1
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
         </b>
       </div>
-      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="API/HTML/index.html"><b>Open API Docs</b></a></b>
+      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="API/HTML/index.html"><b>API DOCS</b></a></b>
     </div>
   </div>
 </body>
 
 <style>
-  #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+  #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #151515; border-top: 3px solid #24bbc4; justify-content: space-between;}
 </style>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

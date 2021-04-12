@@ -1,4 +1,4 @@
 var WebIDLBinding_8h =
 [
-    [ "Nh_ECMAScript_createRealm", "group__NhECMAScriptFunctions.html#gaaf3f5dd15d68ef97aab467ff62a12076", null ]
+    [ "nh_ecmascript_createRealm", "group__nhecmascriptFunctions.html#gab984e57eca9d657421748761b7e3ad2b", null ]
 ];

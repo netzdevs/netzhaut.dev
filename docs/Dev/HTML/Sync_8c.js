@@ -1,11 +1,11 @@
 var Sync_8c =
 [
-    [ "Nh_syncRecordCommandBufferBegin", "group__NhCoreFunctions.html#gae2272765ec92ce6fda962f617ab678d0", null ],
-    [ "Nh_syncRecordCommandBufferEnd", "group__NhCoreFunctions.html#ga80bf68b868329d9ed607a7e9a3c92b64", null ],
-    [ "Nh_syncRenderBegin", "group__NhCoreFunctions.html#ga2a73004fbf3b880b7b72154dfbb01dae", null ],
-    [ "Nh_syncRenderEnd", "group__NhCoreFunctions.html#gae41b2f2c8d3652736861fce772c3734f", null ],
-    [ "Nh_syncResizeBegin", "group__NhCoreFunctions.html#gad13d257ae46448772528b41e5763b04e", null ],
-    [ "Nh_syncResizeEnd", "group__NhCoreFunctions.html#gab98f265d641d04e0d2149f5ab0ccbeae", null ],
-    [ "Nh_syncUseCommandBuffer", "group__NhCoreFunctions.html#ga70cccff98a6b226ab7063c93e75d3b16", null ],
-    [ "Nh_syncWaitForWindow", "group__NhCoreFunctions.html#gad86fa729f20bda2ac4081979285074e1", null ]
+    [ "nh_syncRecordCommandBufferBegin", "group__nhcoreFunctions.html#ga00a1de9e8b6dd91e2b9b4ac3d2a11e1f", null ],
+    [ "nh_syncRecordCommandBufferEnd", "group__nhcoreFunctions.html#gaa9ad3ae52836d85c80d50167aebfb88c", null ],
+    [ "nh_syncRenderBegin", "group__nhcoreFunctions.html#gae1cf7c4a843a5084d4d9206084bbced6", null ],
+    [ "nh_syncRenderEnd", "group__nhcoreFunctions.html#gac89fc9804b9fd49dd1800c6c41e127b2", null ],
+    [ "nh_syncResizeBegin", "group__nhcoreFunctions.html#ga796ddce6770562a79c6543d548472013", null ],
+    [ "nh_syncResizeEnd", "group__nhcoreFunctions.html#gabdad65166e545e4c293df902bbb3a4e6", null ],
+    [ "nh_syncUseCommandBuffer", "group__nhcoreFunctions.html#gad3d2d0f11b7a942827865f0d0936397b", null ],
+    [ "nh_syncWaitForWindow", "group__nhcoreFunctions.html#ga481ad446d2a6ae1c6d7a52ca5c607c03", null ]
 ];

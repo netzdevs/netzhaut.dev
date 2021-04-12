@@ -1,9 +1,9 @@
 var TreeListing_8h =
 [
-    [ "Nh_TTY_drawTreeListingRow", "group__NhTTYFunctions.html#gaf4b4837a83ca0e015e8b79fc05e64481", null ],
-    [ "Nh_TTY_handleTreeListingInput", "group__NhTTYFunctions.html#ga9d2e2b86edfa35364381b47c0a212d88", null ],
-    [ "Nh_TTY_initTreeListing", "group__NhTTYFunctions.html#ga7ec792143ce8bd84e7749fa8820ccd18", null ],
-    [ "Nh_TTY_insertNewFile", "group__NhTTYFunctions.html#gad74757b8e4978009b2f96aee8b00f535", null ],
-    [ "Nh_TTY_setTreeListingCursor", "group__NhTTYFunctions.html#ga4a517ce6099ecc6854d4f2582d198038", null ],
-    [ "Nh_TTY_updateTreeListing", "group__NhTTYFunctions.html#ga2e0ca281ffea6e2e1884cf5d0405b8aa", null ]
+    [ "nh_tty_drawTreeListingRow", "group__nhttyFunctions.html#gaacd516b2f43535ae1a4850398e437600", null ],
+    [ "nh_tty_handleTreeListingInput", "group__nhttyFunctions.html#ga5e2c59ae86e23afc984a12c726e02cb9", null ],
+    [ "nh_tty_initTreeListing", "group__nhttyFunctions.html#gae649409dc2f0f002eabef14027e23627", null ],
+    [ "nh_tty_insertNewFile", "group__nhttyFunctions.html#gae78dc4546fe9f5b3ee7c1424e3b4018c", null ],
+    [ "nh_tty_setTreeListingCursor", "group__nhttyFunctions.html#ga0dab7a7c137b9d1a3af752f581265b5e", null ],
+    [ "nh_tty_updateTreeListing", "group__nhttyFunctions.html#gaf505499b5be08eaf293d77379d726fe4", null ]
 ];

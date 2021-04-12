@@ -1,5 +1,5 @@
 var Compute_8h =
 [
-    [ "Nh_CSS_computeSpecifiedValues", "group__NhCSSFunctions.html#ga94dfde932c60aaa06aedcdf91595211f", null ],
-    [ "Nh_CSS_freeComputedValues", "group__NhCSSFunctions.html#ga497ea518ef092539b70d8f4b1d3cd3c1", null ]
+    [ "nh_css_computeSpecifiedValues", "group__nhcssFunctions.html#ga7f20e1315b3e443c2bc64944dbcfdba4", null ],
+    [ "nh_css_freeComputedValues", "group__nhcssFunctions.html#gab6a35d86e470301b748e1c1de5d97a92", null ]
 ];

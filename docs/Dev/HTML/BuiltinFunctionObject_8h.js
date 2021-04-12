@@ -1,4 +1,4 @@
 var BuiltinFunctionObject_8h =
 [
-    [ "Nh_ECMAScript_createBuiltinFunctionObject", "group__NhECMAScriptFunctions.html#ga5c1e54d47f6881cf284c5e3a05879c5e", null ]
+    [ "nh_ecmascript_createBuiltinFunctionObject", "group__nhecmascriptFunctions.html#ga7b83ae52271974f2e55a48615dffd1b2", null ]
 ];

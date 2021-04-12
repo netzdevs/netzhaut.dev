@@ -1,13 +1,13 @@
 var Type_8c =
 [
-    [ "Nh_ECMAScript_allocateNumber", "group__NhECMAScriptFunctions.html#ga5fc8d2111c0a9d2a63b9bfe6fdb484e9", null ],
-    [ "Nh_ECMAScript_allocateString", "group__NhECMAScriptFunctions.html#ga119bd000fc36e0bae81d7db6a25d7c13", null ],
-    [ "Nh_ECMAScript_appendFormatToString", "group__NhECMAScriptFunctions.html#gaa9fd9f5ff2dd635474f0ac001f893d12", null ],
-    [ "Nh_ECMAScript_initAny", "group__NhECMAScriptFunctions.html#ga0fabd0d0f7f8895eabf6e6bb7f4bb18c", null ],
-    [ "Nh_ECMAScript_wrapBoolean", "group__NhECMAScriptFunctions.html#gac8b85ff38f747146ba1f93f387149a4f", null ],
-    [ "Nh_ECMAScript_wrapNull", "group__NhECMAScriptFunctions.html#ga99ac8502981d6a5f5b7d2ee9f4929cbf", null ],
-    [ "Nh_ECMAScript_wrapNumber", "Type_8c.html#a34520fe6ee2eeb7a48d1440eae97f939", null ],
-    [ "Nh_ECMAScript_wrapObject", "group__NhECMAScriptFunctions.html#ga3643de941e079fa8f822b7125597d5eb", null ],
-    [ "Nh_ECMAScript_wrapString", "group__NhECMAScriptFunctions.html#gad8bed9905d3edfa76e98686cb6738903", null ],
-    [ "Nh_ECMAScript_wrapUndefined", "group__NhECMAScriptFunctions.html#gadd711c67f33862336f4b1bca125cb43f", null ]
+    [ "nh_ecmascript_allocateNumber", "group__nhecmascriptFunctions.html#gaf7424299d3c38ab4b2858fb4615a8e6c", null ],
+    [ "nh_ecmascript_allocateString", "group__nhecmascriptFunctions.html#gad7ff7f66bb26268544646a0e5af225f7", null ],
+    [ "nh_ecmascript_appendFormatToString", "group__nhecmascriptFunctions.html#ga5f41bc44061e819d8c2721a8834c5d1d", null ],
+    [ "nh_ecmascript_initAny", "group__nhecmascriptFunctions.html#ga6022e991b8cd758d75aadd02a0528fc4", null ],
+    [ "nh_ecmascript_wrapBoolean", "group__nhecmascriptFunctions.html#gacc4b62348355a88c104266cd2d15de25", null ],
+    [ "nh_ecmascript_wrapNull", "group__nhecmascriptFunctions.html#gacd6c30cd096e12f4ed7de8f55b39765d", null ],
+    [ "nh_ecmascript_wrapNumber", "Type_8c.html#abb0e1a836241914d96bec1ce026885ed", null ],
+    [ "nh_ecmascript_wrapObject", "group__nhecmascriptFunctions.html#gadab98933288f3ac2f221148699659197", null ],
+    [ "nh_ecmascript_wrapString", "group__nhecmascriptFunctions.html#ga25524a807b08f903fc8519231053164c", null ],
+    [ "nh_ecmascript_wrapUndefined", "group__nhecmascriptFunctions.html#gaa673458cbdde28763da196c94e5644f4", null ]
 ];

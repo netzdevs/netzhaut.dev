@@ -1,7 +1,7 @@
 var Time_8c =
 [
-    [ "Nh_getLocalTime", "group__NhCoreFunctions.html#ga5078a80abdf91bb30631157c90985900", null ],
-    [ "Nh_getSystemTime", "group__NhCoreFunctions.html#ga2e54066fd9bb067d8e844b479920505e", null ],
-    [ "Nh_getSystemTimeDiffInSeconds", "group__NhCoreFunctions.html#ga13a7197c5aaba6306e185c8944b8fff7", null ],
-    [ "Nh_humanizeSeconds", "group__NhCoreFunctions.html#ga97d6456e7959b5e4cbb6da25275eb63b", null ]
+    [ "nh_getLocalTime", "group__nhcoreFunctions.html#gaa98117386c344c8c6f3b94bb397e50a8", null ],
+    [ "nh_getSystemTime", "group__nhcoreFunctions.html#ga4b56379f03157ffd0eb485ada8ea5409", null ],
+    [ "nh_getSystemTimeDiffInSeconds", "group__nhcoreFunctions.html#gaa0f828a8ed0f965091bcff79d5503609", null ],
+    [ "nh_humanizeSeconds", "group__nhcoreFunctions.html#ga33a8d46bd10cc0490487bbd74b38b3f9", null ]
 ];

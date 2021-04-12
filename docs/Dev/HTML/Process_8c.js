@@ -1,15 +1,15 @@
 var Process_8c =
 [
-    [ "_Nh_writeToProcess", "group__NhCoreFunctions.html#gacf68196f8891103bcc32c234855c8d71", null ],
-    [ "Nh_activeForks", "group__NhCoreFunctions.html#ga6add48523cfab4760cd441cc8bef479d", null ],
-    [ "Nh_checkForks", "group__NhCoreFunctions.html#ga583e8bbf3467be48e24b04153e08c5b2", null ],
-    [ "Nh_fork", "group__NhCoreFunctions.html#ga535c26fe4698c1695c381ca8a3d92668", null ],
-    [ "Nh_getFork", "group__NhCoreFunctions.html#ga56e12a4f36c18ef478d4ddc0fc63a037", null ],
-    [ "Nh_handleIPCReceive", "group__NhCoreFunctions.html#gae1ca3096ba47cf5cf7051a11aec279be", null ],
-    [ "Nh_initProcessPool", "group__NhCoreFunctions.html#ga18394e71cff7e8512b22c69a58a57e05", null ],
-    [ "Nh_killFork", "Process_8c.html#a3ce2e114c2d56f6877ccee5653ab8eae", null ],
-    [ "Nh_killForks", "group__NhCoreFunctions.html#ga23f12ee0fcf9feddc12dd606a9e89938", null ],
-    [ "Nh_runIPCHandler", "group__NhCoreFunctions.html#ga03a2ed7dfaf47a95a1a8455b3db3be0a", null ],
-    [ "Nh_writeToProcess", "group__NhCoreFunctions.html#ga71c7244c6b10954d696ffc87dc273fc6", null ],
-    [ "NH_PROCESS_POOL", "group__NhCoreVars.html#ga6908a621731e2e465a8bcdcae9f77d00", null ]
+    [ "_nh_writeToProcess", "group__nhcoreFunctions.html#ga3c191e304517b6dbcafca6391741d4e3", null ],
+    [ "nh_activeForks", "group__nhcoreFunctions.html#ga095a112f4fac2b7b679ae30401044fa9", null ],
+    [ "nh_checkForks", "group__nhcoreFunctions.html#gad3898c749a4f063e473f335977e134c1", null ],
+    [ "nh_fork", "group__nhcoreFunctions.html#gac89838c1e690e60b974c183672bddbc8", null ],
+    [ "nh_getFork", "group__nhcoreFunctions.html#gacd8e92bb68ccebed475fde3433b33ada", null ],
+    [ "nh_handleIPCReceive", "group__nhcoreFunctions.html#ga7b63402fe88534fa93e72cdc6c90b205", null ],
+    [ "nh_initProcessPool", "group__nhcoreFunctions.html#ga19558713e42a4222b1a67721d99dffa9", null ],
+    [ "nh_killFork", "Process_8c.html#a50080a885634e67b568aad6018396083", null ],
+    [ "nh_killForks", "group__nhcoreFunctions.html#ga03a3534d2844a17f6d60600e488e7f75", null ],
+    [ "nh_runIPCHandler", "group__nhcoreFunctions.html#ga28e895900a021a01c1e068dcecba5921", null ],
+    [ "nh_writeToProcess", "group__nhcoreFunctions.html#ga5d27fd80b49ec184001ad24f6eb723b2", null ],
+    [ "NH_PROCESS_POOL", "group__nhcoreVars.html#ga6131c73aa7f2df700a9782c4d5c0aec3", null ]
 ];

@@ -1,8 +1,8 @@
 var RingBuffer_8c =
 [
-    [ "Nh_advanceRingBuffer", "group__NhCoreFunctions.html#ga348b043e091418f95414ed721dad5f63", null ],
-    [ "Nh_freeRingBuffer", "group__NhCoreFunctions.html#ga116554ee9b0966e29937df545df337a0", null ],
-    [ "Nh_incrementRingBufferMarker", "group__NhCoreFunctions.html#gac62a464c9463ab05e9f9b1b73ba01b12", null ],
-    [ "Nh_initRingBuffer", "group__NhCoreFunctions.html#ga7526c779c49489cc4f9e1e6ddab6e950", null ],
-    [ "Nh_initRingBufferMarker", "group__NhCoreFunctions.html#gab4c03071ec94396b4fc70a576b7d9c2c", null ]
+    [ "nh_advanceRingBuffer", "group__nhcoreFunctions.html#gac8ce12e97970b27e7d2640de49e7fdba", null ],
+    [ "nh_freeRingBuffer", "group__nhcoreFunctions.html#ga6b2a29fd601ea979e3989e796e7f4300", null ],
+    [ "nh_incrementRingBufferMarker", "group__nhcoreFunctions.html#ga12f1fef72ab39c42eb89398f143aae48", null ],
+    [ "nh_initRingBuffer", "group__nhcoreFunctions.html#ga14760aa89ff61465e78b3e27fb73dd87", null ],
+    [ "nh_initRingBufferMarker", "group__nhcoreFunctions.html#ga82885bba3e219565225dd2466b73bec8", null ]
 ];

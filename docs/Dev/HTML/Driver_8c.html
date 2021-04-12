@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Netzhaut Dev Docs: /home/dajo/Netzhaut/src/lib/NhGfx/Vulkan/Driver.c File Reference</title>
+<title>netzhaut DEV DOCS: /home/dajo/Netzhaut/src/lib/nhgfx/Vulkan/Driver.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="LogoSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Netzhaut Dev Docs
+   <div id="projectname">netzhaut DEV DOCS
    </div>
   </td>
 <td style="padding-left: 10px;"/>
@@ -107,9 +107,9 @@ $(document).ready(function(){initNavTree('Driver_8c.html',''); initResizable(); 
 <code>#include &quot;<a class="el" href="GPU_8h_source.html">GPU.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Host_8h_source.html">Host.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Vulkan_8h_source.html">Vulkan.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhGfx_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Thread_8h_source.html">../../NhCore/Thread.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhCore_2Memory_8h_source.html">../../NhCore/Memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhgfx_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Thread_8h_source.html">../../nhcore/Thread.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../../nhcore/Memory.h</a>&quot;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -125,10 +125,10 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gacdc9bfd5e1891c13aa7558984c91374f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhGfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhGfxFunctions.html#gacdc9bfd5e1891c13aa7558984c91374f">Nh_Vk_createDriver</a> (<a class="el" href="structNh__Vk__Host.html">Nh_Vk_Host</a> *Host_p, <a class="el" href="structNh__Vk__Driver.html">Nh_Vk_Driver</a> *Driver_p, <a class="el" href="group__NhCoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *name_p)</td></tr>
-<tr class="separator:gacdc9bfd5e1891c13aa7558984c91374f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab97d17c987fa5cb3ec5e0805380d5cde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhGfxFunctions.html#gab97d17c987fa5cb3ec5e0805380d5cde">Nh_Vk_destroyDriver</a> (<a class="el" href="structNh__Vk__Driver.html">Nh_Vk_Driver</a> *Driver_p)</td></tr>
-<tr class="separator:gab97d17c987fa5cb3ec5e0805380d5cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab512982575a4aa8c0b4404904d727363"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxFunctions.html#gab512982575a4aa8c0b4404904d727363">nh_Vk_createDriver</a> (<a class="el" href="structnh__Vk__Host.html">nh_Vk_Host</a> *Host_p, <a class="el" href="structnh__Vk__Driver.html">nh_Vk_Driver</a> *Driver_p, <a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *name_p)</td></tr>
+<tr class="separator:gab512982575a4aa8c0b4404904d727363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabda95ceb9d1423d3662a3d675a8d2902"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxFunctions.html#gabda95ceb9d1423d3662a3d675a8d2902">nh_Vk_destroyDriver</a> (<a class="el" href="structnh__Vk__Driver.html">nh_Vk_Driver</a> *Driver_p)</td></tr>
+<tr class="separator:gabda95ceb9d1423d3662a3d675a8d2902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="add1922c3577beb657e54eb077d86b358"></a>
@@ -164,24 +164,24 @@ Functions</h2></td></tr>
     <!-- HTML footer for doxygen 1.8.15-->
     <!-- start footer part -->
       <div id="nav-path" class="navpath">
-        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_76e9d6f894811f62bee5b7fbf2631968.html">NhGfx</a></li><li class="navelem"><a class="el" href="dir_12a00505f80b5fe1a5ae3d530ec1e3f2.html">Vulkan</a></li><li class="navelem"><a class="el" href="Driver_8c.html">Driver.c</a></li> -->
+        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_38863406a4bbed26e8c165db2e3f5c8a.html">nhgfx</a></li><li class="navelem"><a class="el" href="dir_cd9c2cafb86cd1a3c1fd85a35144c1be.html">Vulkan</a></li><li class="navelem"><a class="el" href="Driver_8c.html">Driver.c</a></li> -->
         <!-- <li class="footer">Generated by -->
         <!-- <a href="http://www.doxygen.org/index.html"> -->
         <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li> -->
         <div id="foot"> 
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../API/HTML/index.html"><b>Open API Docs</b></a></b>
-          <div style="color:#2b7e83;text-align:center;font-size:16px;">
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../API/HTML/index.html"><b>API DOCS</b></a></b>
+          <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
 v0.0.0-0.0.1 pre-alpha-1
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
             </b>
           </div>
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../index.html"><b>Open Home</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>HOME</b></a></b>
         </div>
       </div>
   </body>
   <style>
-    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #151515; border-top: 3px solid #24bbc4; justify-content: space-between;}
   </style>
 </html>

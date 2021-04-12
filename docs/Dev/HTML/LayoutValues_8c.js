@@ -1,5 +1,5 @@
 var LayoutValues_8c =
 [
-    [ "Nh_CSS_computeBoxValues", "group__NhCSSFunctions.html#gac6fe857016bad68d0c43d9caa3d22316", null ],
-    [ "Nh_CSS_computeTextValues", "group__NhCSSFunctions.html#gaa845e88961f861326749f2aae92e21fd", null ]
+    [ "nh_css_computeBoxValues", "group__nhcssFunctions.html#gac7399ce619c86750bb1fd86352dd505e", null ],
+    [ "nh_css_computeTextValues", "group__nhcssFunctions.html#gaecc3bd72251f19428efc6ca73fe91ec6", null ]
 ];

@@ -1,4 +1,4 @@
 var TreeConstruction_8h =
 [
-    [ "Nh_HTML_dispatchTreeConstruction", "group__NhHTMLFunctions.html#gac7eb868971608fc01f419e014a3a38f3", null ]
+    [ "nh_html_dispatchTreeConstruction", "group__nhhtmlFunctions.html#gac83783a2d513637e8408cf2ec11c6899", null ]
 ];

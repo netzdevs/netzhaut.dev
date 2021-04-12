@@ -1,5 +1,5 @@
 var Driver_8h =
 [
-    [ "Nh_Vk_createDriver", "group__NhGfxFunctions.html#gacdc9bfd5e1891c13aa7558984c91374f", null ],
-    [ "Nh_Vk_destroyDriver", "group__NhGfxFunctions.html#gab97d17c987fa5cb3ec5e0805380d5cde", null ]
+    [ "nh_Vk_createDriver", "group__nhgfxFunctions.html#gab512982575a4aa8c0b4404904d727363", null ],
+    [ "nh_Vk_destroyDriver", "group__nhgfxFunctions.html#gabda95ceb9d1423d3662a3d675a8d2902", null ]
 ];

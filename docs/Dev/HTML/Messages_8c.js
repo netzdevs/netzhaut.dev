@@ -1,6 +1,6 @@
 var Messages_8c =
 [
-    [ "Nh_TTY_getMessage", "group__NhTTYFunctions.html#ga1e43c0c3080ed5ff39b8cbf493401a66", null ],
+    [ "nh_tty_getMessage", "group__nhttyFunctions.html#ga6dc223976562837500d047bba920c116", null ],
     [ "NH_TTY_MESSAGE_EN_BINARY_QUERY_DELETE_INTERRUPTED_P", "Messages_8c.html#a8951b17851dc8c3f66055ac7a1fa2453", null ],
     [ "NH_TTY_MESSAGE_EN_BINARY_QUERY_DELETE_P", "Messages_8c.html#a6c9cb92448fd93b57f4b039e470d66d2", null ],
     [ "NH_TTY_MESSAGE_EN_BINARY_QUERY_YES_NO_P", "Messages_8c.html#a00b9bd45397ded66cd95301ddf907d20", null ],

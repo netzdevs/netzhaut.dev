@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Netzhaut Dev Docs: /home/dajo/Netzhaut/src/lib/NhECMAScript/Engine/ExecutionContext.c File Reference</title>
+<title>netzhaut DEV DOCS: /home/dajo/Netzhaut/src/lib/nhecmascript/Engine/ExecutionContext.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="LogoSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Netzhaut Dev Docs
+   <div id="projectname">netzhaut DEV DOCS
    </div>
   </td>
 <td style="padding-left: 10px;"/>
@@ -104,49 +104,49 @@ $(document).ready(function(){initNavTree('ExecutionContext_8c.html',''); initRes
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="ExecutionContext_8h_source.html">ExecutionContext.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Agent_8h_source.html">Agent.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhECMAScript_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhCore_2Memory_8h_source.html">../../NhCore/Memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhecmascript_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../../nhcore/Memory.h</a>&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaff5cac4f44b3e3e89d93a22cdffe53f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNh__ECMAScript__ExecutionContext.html">Nh_ECMAScript_ExecutionContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhECMAScriptFunctions.html#gaff5cac4f44b3e3e89d93a22cdffe53f4">Nh_ECMAScript_allocateExecutionContext</a> ()</td></tr>
-<tr class="memdesc:gaff5cac4f44b3e3e89d93a22cdffe53f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Netzhaut - Web Browser Engine Copyright (C) 2020 The Netzhaut Authors Published under LGPLv3.  <a href="group__NhECMAScriptFunctions.html#gaff5cac4f44b3e3e89d93a22cdffe53f4">More...</a><br /></td></tr>
-<tr class="separator:gaff5cac4f44b3e3e89d93a22cdffe53f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga961fac74b9fbe7e03d431dcd51925e0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNh__ECMAScript__ExecutionContext.html">Nh_ECMAScript_ExecutionContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhECMAScriptFunctions.html#ga961fac74b9fbe7e03d431dcd51925e0a">Nh_ECMAScript_getRunningExecutionContext</a> ()</td></tr>
-<tr class="separator:ga961fac74b9fbe7e03d431dcd51925e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6da4e51dc8f1ff9850df5fe0c99e1ab6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNh__ECMAScript__ScriptOrModule.html">Nh_ECMAScript_ScriptOrModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhECMAScriptFunctions.html#ga6da4e51dc8f1ff9850df5fe0c99e1ab6">Nh_ECMAScript_getActiveScriptOrModule</a> ()</td></tr>
-<tr class="separator:ga6da4e51dc8f1ff9850df5fe0c99e1ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24567b24bcff6ab5a304c73bf3a8c1bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNh__ECMAScript__Realm.html">Nh_ECMAScript_Realm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhECMAScriptFunctions.html#ga24567b24bcff6ab5a304c73bf3a8c1bc">Nh_ECMAScript_getCurrentRealm</a> ()</td></tr>
-<tr class="separator:ga24567b24bcff6ab5a304c73bf3a8c1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b98542c7abd3793891771ad1e4a0517"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNh__ECMAScript__Object.html">Nh_ECMAScript_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhECMAScriptFunctions.html#ga2b98542c7abd3793891771ad1e4a0517">Nh_ECMAScript_getGlobalObject</a> ()</td></tr>
-<tr class="separator:ga2b98542c7abd3793891771ad1e4a0517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga03a7f4f859f2d4d98088ce295ff2a70c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNh__ECMAScript__Reference.html">Nh_ECMAScript_Reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhECMAScriptFunctions.html#ga03a7f4f859f2d4d98088ce295ff2a70c">Nh_ECMAScript_resolveBinding</a> (<a class="el" href="group__NhEncodingTypedefs.html#gac88215e77afe012f93b8e8fa3e741ef8">Nh_Encoding_UTF8String</a> *Name_p, <a class="el" href="structNh__ECMAScript__Environment.html">Nh_ECMAScript_Environment</a> *Environment_p)</td></tr>
-<tr class="separator:ga03a7f4f859f2d4d98088ce295ff2a70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65b51aeb86bbf7f096e4de801ac3e60f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__ecmascript__ExecutionContext.html">nh_ecmascript_ExecutionContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#ga65b51aeb86bbf7f096e4de801ac3e60f">nh_ecmascript_allocateExecutionContext</a> ()</td></tr>
+<tr class="memdesc:ga65b51aeb86bbf7f096e4de801ac3e60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under LGPLv3  <a href="group__nhecmascriptFunctions.html#ga65b51aeb86bbf7f096e4de801ac3e60f">More...</a><br /></td></tr>
+<tr class="separator:ga65b51aeb86bbf7f096e4de801ac3e60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12b022ebfbe32ac68bf3ce11681f9138"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__ecmascript__ExecutionContext.html">nh_ecmascript_ExecutionContext</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#ga12b022ebfbe32ac68bf3ce11681f9138">nh_ecmascript_getRunningExecutionContext</a> ()</td></tr>
+<tr class="separator:ga12b022ebfbe32ac68bf3ce11681f9138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66cffc489cb83ad973875b88360080a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__ecmascript__ScriptOrModule.html">nh_ecmascript_ScriptOrModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#ga66cffc489cb83ad973875b88360080a3">nh_ecmascript_getActiveScriptOrModule</a> ()</td></tr>
+<tr class="separator:ga66cffc489cb83ad973875b88360080a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga693dae51af24f38168457a2256f609b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__ecmascript__Realm.html">nh_ecmascript_Realm</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#ga693dae51af24f38168457a2256f609b5">nh_ecmascript_getCurrentRealm</a> ()</td></tr>
+<tr class="separator:ga693dae51af24f38168457a2256f609b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2b9f7e121640b5084af501c51612e8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__ecmascript__Object.html">nh_ecmascript_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#gaa2b9f7e121640b5084af501c51612e8d">nh_ecmascript_getGlobalObject</a> ()</td></tr>
+<tr class="separator:gaa2b9f7e121640b5084af501c51612e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad30067a3274e59b03cf908ef57428575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__ecmascript__Reference.html">nh_ecmascript_Reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#gad30067a3274e59b03cf908ef57428575">nh_ecmascript_resolveBinding</a> (<a class="el" href="group__nhencodingTypedefs.html#ga60ab005de8805d673cb85c9c17979cc6">nh_encoding_UTF8String</a> *Name_p, <a class="el" href="structnh__ecmascript__Environment.html">nh_ecmascript_Environment</a> *Environment_p)</td></tr>
+<tr class="separator:gad30067a3274e59b03cf908ef57428575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
     <!-- start footer part -->
       <div id="nav-path" class="navpath">
-        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_1872a3595659d8d282e138e080b14d69.html">NhECMAScript</a></li><li class="navelem"><a class="el" href="dir_3360edd636d5ddd9ced9253f77391777.html">Engine</a></li><li class="navelem"><a class="el" href="ExecutionContext_8c.html">ExecutionContext.c</a></li> -->
+        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_6b09dd3d3a08bd16b8c137d921a24a3a.html">nhecmascript</a></li><li class="navelem"><a class="el" href="dir_716442c2d01730f89191518b1aa7c9c1.html">Engine</a></li><li class="navelem"><a class="el" href="ExecutionContext_8c.html">ExecutionContext.c</a></li> -->
         <!-- <li class="footer">Generated by -->
         <!-- <a href="http://www.doxygen.org/index.html"> -->
         <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li> -->
         <div id="foot"> 
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../API/HTML/index.html"><b>Open API Docs</b></a></b>
-          <div style="color:#2b7e83;text-align:center;font-size:16px;">
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../API/HTML/index.html"><b>API DOCS</b></a></b>
+          <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
 v0.0.0-0.0.1 pre-alpha-1
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
             </b>
           </div>
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../index.html"><b>Open Home</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>HOME</b></a></b>
         </div>
       </div>
   </body>
   <style>
-    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #151515; border-top: 3px solid #24bbc4; justify-content: space-between;}
   </style>
 </html>

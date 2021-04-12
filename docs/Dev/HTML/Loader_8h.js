@@ -1,10 +1,10 @@
 var Loader_8h =
 [
-    [ "NH_LOADER_MAX_MODULES", "group__NhLoaderMacros.html#ga4e57ce4451fc78e64ce784b71d863a89", null ],
-    [ "Nh_Loader_initLoader_f", "group__NhLoaderTypedefs.html#ga595a0fd3cd911a8b9a2e1ae3ed7d5366", null ],
-    [ "Nh_Loader_load_f", "group__NhLoaderTypedefs.html#ga98341c5e30184949b1a21ae6b34fe036", null ],
-    [ "Nh_Loader_loadFunction_f", "group__NhLoaderTypedefs.html#ga208c668b6e749f3a4552d781b9e8b0d4", null ],
-    [ "Nh_Loader_unload_f", "group__NhLoaderTypedefs.html#gaf0d77ae84b394a6713b73088717ed144", null ],
-    [ "Nh_Loader_initLoader", "group__NhLoaderFunctions.html#gada357408e3fe87d7a648625d69cd236f", null ],
-    [ "NH_LOADER", "group__NhLoaderVars.html#ga9dcdbe0ddee1bf92bcd596c357a73bd5", null ]
+    [ "NH_LOADER_MAX_MODULES", "group__nhloaderMacros.html#ga4e57ce4451fc78e64ce784b71d863a89", null ],
+    [ "nh_loader_initLoader_f", "group__nhloaderTypedefs.html#ga1dd611b1e021b9faddd1743114649f01", null ],
+    [ "nh_loader_load_f", "group__nhloaderTypedefs.html#gad12634e6a9051532abfa622f2bf6e81b", null ],
+    [ "nh_loader_loadFunction_f", "group__nhloaderTypedefs.html#ga8355ede1c26147574cf129706fbe45ba", null ],
+    [ "nh_loader_unload_f", "group__nhloaderTypedefs.html#ga052ddc0075db2a98d271d3c28cbc2341", null ],
+    [ "nh_loader_initLoader", "group__nhloaderFunctions.html#ga58c16c668502b01485d499244c884be8", null ],
+    [ "NH_LOADER", "group__nhloaderVars.html#ga502025b787de0bb05e819b5739ec8a13", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Netzhaut Dev Docs: /home/dajo/Netzhaut/src/lib/NhTTY/Editor.c File Reference</title>
+<title>netzhaut DEV DOCS: /home/dajo/Netzhaut/src/lib/nhtty/Editor.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="LogoSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Netzhaut Dev Docs
+   <div id="projectname">netzhaut DEV DOCS
    </div>
   </td>
 <td style="padding-left: 10px;"/>
@@ -108,9 +108,9 @@ $(document).ready(function(){initNavTree('Editor_8c.html',''); initResizable(); 
 <code>#include &quot;<a class="el" href="Program_8h_source.html">Program.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Terminal_8h_source.html">Terminal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Shell_8h_source.html">Shell.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhTTY_2Common_2Macro_8h_source.html">Common/Macro.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhCore_2Logger_8h_source.html">../NhCore/Logger.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhCore_2Memory_8h_source.html">../NhCore/Memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhtty_2Common_2Macro_8h_source.html">Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Logger_8h_source.html">../nhcore/Logger.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../nhcore/Memory.h</a>&quot;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -122,43 +122,43 @@ $(document).ready(function(){initNavTree('Editor_8c.html',''); initResizable(); 
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga6fc49d78c299341359ebef78e0b295da"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#ga6fc49d78c299341359ebef78e0b295da">Nh_TTY_initEditor</a> ()</td></tr>
-<tr class="memdesc:ga6fc49d78c299341359ebef78e0b295da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Netzhaut - Web Browser Engine Copyright (C) 2020 The Netzhaut Authors Published under LGPLv3.  <a href="group__NhTTYFunctions.html#ga6fc49d78c299341359ebef78e0b295da">More...</a><br /></td></tr>
-<tr class="separator:ga6fc49d78c299341359ebef78e0b295da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga05efd7cac8fc7003c7d3b244916d30de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhTTYEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#ga05efd7cac8fc7003c7d3b244916d30de">Nh_TTY_updateEditor</a> (<a class="el" href="structNh__TTY__Program.html">Nh_TTY_Program</a> *Program_p)</td></tr>
-<tr class="separator:ga05efd7cac8fc7003c7d3b244916d30de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf8de0d3ebd18cab60aeca0d2b13986ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhTTYEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#gaf8de0d3ebd18cab60aeca0d2b13986ce">Nh_TTY_handleEditorInput</a> (<a class="el" href="structNh__TTY__Program.html">Nh_TTY_Program</a> *Program_p, <a class="el" href="group__NhCoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> c)</td></tr>
-<tr class="separator:gaf8de0d3ebd18cab60aeca0d2b13986ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c0379a7b3169a2b2fd201d1c1edd004"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhTTYEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#ga7c0379a7b3169a2b2fd201d1c1edd004">Nh_TTY_drawEditorRow</a> (<a class="el" href="structNh__TTY__Program.html">Nh_TTY_Program</a> *Program_p, <a class="el" href="group__NhEncodingTypedefs.html#gac88215e77afe012f93b8e8fa3e741ef8">Nh_Encoding_UTF8String</a> *Row_p, int width, int height, int row)</td></tr>
-<tr class="separator:ga7c0379a7b3169a2b2fd201d1c1edd004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf3ad286f3b4bb220235e879c79ead514"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhTTYEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#gaf3ad286f3b4bb220235e879c79ead514">Nh_TTY_getEditorCursor</a> (<a class="el" href="structNh__TTY__Program.html">Nh_TTY_Program</a> *Program_p, int *x_p, int *y_p)</td></tr>
-<tr class="separator:gaf3ad286f3b4bb220235e879c79ead514"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5b23aa05461280948b92609ce21dbfcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhTTYEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#ga5b23aa05461280948b92609ce21dbfcf">Nh_TTY_executeEditorCommand</a> (<a class="el" href="structNh__TTY__Program.html">Nh_TTY_Program</a> *Program_p, <a class="el" href="group__NhCoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> codepoint)</td></tr>
-<tr class="separator:ga5b23aa05461280948b92609ce21dbfcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6214978fa85ebc264a577dbe77bfa8d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gac6214978fa85ebc264a577dbe77bfa8d">nh_tty_initEditor</a> ()</td></tr>
+<tr class="memdesc:gac6214978fa85ebc264a577dbe77bfa8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under LGPLv3  <a href="group__nhttyFunctions.html#gac6214978fa85ebc264a577dbe77bfa8d">More...</a><br /></td></tr>
+<tr class="separator:gac6214978fa85ebc264a577dbe77bfa8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcf220fed8a6e7e1dfecb6fad77fc0ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gabcf220fed8a6e7e1dfecb6fad77fc0ff">nh_tty_updateEditor</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p)</td></tr>
+<tr class="separator:gabcf220fed8a6e7e1dfecb6fad77fc0ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1364febe5eed8ea2b8c5799c6e75df83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#ga1364febe5eed8ea2b8c5799c6e75df83">nh_tty_handleEditorInput</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p, <a class="el" href="group__nhcoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> c)</td></tr>
+<tr class="separator:ga1364febe5eed8ea2b8c5799c6e75df83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf2ac9d5060c20bdd673957807f5acdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gabf2ac9d5060c20bdd673957807f5acdd">nh_tty_drawEditorRow</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p, <a class="el" href="group__nhencodingTypedefs.html#ga60ab005de8805d673cb85c9c17979cc6">nh_encoding_UTF8String</a> *Row_p, int width, int height, int row)</td></tr>
+<tr class="separator:gabf2ac9d5060c20bdd673957807f5acdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef6b7e0fc8ab2c9eea9d664fb4bfa331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gaef6b7e0fc8ab2c9eea9d664fb4bfa331">nh_tty_getEditorCursor</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p, int *x_p, int *y_p)</td></tr>
+<tr class="separator:gaef6b7e0fc8ab2c9eea9d664fb4bfa331"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga153e24f6b70d70b5ea942d3b4925846d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#ga153e24f6b70d70b5ea942d3b4925846d">nh_tty_executeEditorCommand</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p, <a class="el" href="group__nhcoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> codepoint)</td></tr>
+<tr class="separator:ga153e24f6b70d70b5ea942d3b4925846d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
     <!-- start footer part -->
       <div id="nav-path" class="navpath">
-        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_6e8a7e472c0570c19a9684d82ff44a1c.html">NhTTY</a></li><li class="navelem"><a class="el" href="Editor_8c.html">Editor.c</a></li> -->
+        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_c1a586a47f1f5df71033f45de07133a1.html">nhtty</a></li><li class="navelem"><a class="el" href="Editor_8c.html">Editor.c</a></li> -->
         <!-- <li class="footer">Generated by -->
         <!-- <a href="http://www.doxygen.org/index.html"> -->
         <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li> -->
         <div id="foot"> 
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../API/HTML/index.html"><b>Open API Docs</b></a></b>
-          <div style="color:#2b7e83;text-align:center;font-size:16px;">
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../API/HTML/index.html"><b>API DOCS</b></a></b>
+          <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
 v0.0.0-0.0.1 pre-alpha-1
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
             </b>
           </div>
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../index.html"><b>Open Home</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>HOME</b></a></b>
         </div>
       </div>
   </body>
   <style>
-    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #151515; border-top: 3px solid #24bbc4; justify-content: space-between;}
   </style>
 </html>

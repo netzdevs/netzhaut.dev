@@ -1,5 +1,5 @@
 var Inline_8c =
 [
-    [ "Nh_CSS_LineBox", "structNh__CSS__LineBox.html", "structNh__CSS__LineBox" ],
-    [ "Nh_CSS_arrangeInlineFormattingContext", "group__NhCSSFunctions.html#ga3d577dee91302e87e75308d147a33c26", null ]
+    [ "nh_css_LineBox", "structnh__css__LineBox.html", "structnh__css__LineBox" ],
+    [ "nh_css_arrangeInlineFormattingContext", "group__nhcssFunctions.html#ga4fd8da2e85ade2d52d4c68b1499c91b3", null ]
 ];

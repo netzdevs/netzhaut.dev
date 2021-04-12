@@ -1,15 +1,15 @@
 var Math_8c =
 [
-    [ "Nh_degreesToRadians", "group__NhCoreFunctions.html#ga306049442dadb9b972387062a4cd823e", null ],
-    [ "Nh_dotProduct2D", "group__NhCoreFunctions.html#gaa7d6226eec5e6d9e487cf6e1b5e1439d", null ],
-    [ "Nh_getInversedPointOnCircle", "group__NhCoreFunctions.html#gad77f1ad33382e606790c4b473401d9de", null ],
-    [ "Nh_getPointOnCircle", "group__NhCoreFunctions.html#gaebe0e3014076853d28cdbe6d0af0460b", null ],
-    [ "Nh_innerAngle2D", "group__NhCoreFunctions.html#ga5de756dc04d6cada99268f1a5ff8813e", null ],
-    [ "Nh_lineLineIntersection", "group__NhCoreFunctions.html#ga26e26e492265e438c10b8705ec23d3d2", null ],
-    [ "Nh_norm2D", "group__NhCoreFunctions.html#ga0d0f1cfed9cf79f0a6e9da50d670dbf9", null ],
-    [ "Nh_pointInBox", "group__NhCoreFunctions.html#ga8acd24211a1dd01b4501817d3fe31fee", null ],
-    [ "Nh_radiansToDegrees", "group__NhCoreFunctions.html#gaebfdf35ba2114a7051d9e49ecec89dc8", null ],
-    [ "Nh_subtract2D", "group__NhCoreFunctions.html#gaca62551345dab87e833b358f53a6a73d", null ],
-    [ "Nh_trianglesToArray", "group__NhCoreFunctions.html#gaab399233f73d9c4f9e641616f674d307", null ],
-    [ "Nh_verticesToArray", "group__NhCoreFunctions.html#ga46e28edf3a2ee4a1917980345487fab2", null ]
+    [ "nh_degreesToRadians", "group__nhcoreFunctions.html#gad2ebb0401ac52882c8fe0ef50e7aa863", null ],
+    [ "nh_dotProduct2D", "group__nhcoreFunctions.html#ga63805e3ba7439564b4b05609b5bccf7a", null ],
+    [ "nh_getInversedPointOnCircle", "group__nhcoreFunctions.html#ga06984823bbc7134c2ac58daa17d9ac68", null ],
+    [ "nh_getPointOnCircle", "group__nhcoreFunctions.html#ga195b5408ceb07a03e34a776e0489cc3f", null ],
+    [ "nh_innerAngle2D", "group__nhcoreFunctions.html#gad4fc59ac0cc9cab02cc8a51b6aa6a421", null ],
+    [ "nh_lineLineIntersection", "group__nhcoreFunctions.html#ga5bc3ad9289885f4765eada4413e6f629", null ],
+    [ "nh_norm2D", "group__nhcoreFunctions.html#ga02c679d7dcb77d021a50218e5fad2298", null ],
+    [ "nh_pointInBox", "group__nhcoreFunctions.html#ga8c1041015f7057693ba31acc5fcfa1b7", null ],
+    [ "nh_radiansToDegrees", "group__nhcoreFunctions.html#gaa26d7a96e6bec403a06ce2831bbff1bc", null ],
+    [ "nh_subtract2D", "group__nhcoreFunctions.html#ga145640a945f07d15d3a7ea0cf5f73146", null ],
+    [ "nh_trianglesToArray", "group__nhcoreFunctions.html#ga63b60bbaa7bbeefde7b136f3a8a2b385", null ],
+    [ "nh_verticesToArray", "group__nhcoreFunctions.html#gaf7f1808d2be5e28f54c66039701a8471", null ]
 ];

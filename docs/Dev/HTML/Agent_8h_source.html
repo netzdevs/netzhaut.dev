@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Netzhaut Dev Docs: /home/dajo/Netzhaut/src/lib/NhECMAScript/Engine/Agent.h Source File</title>
+<title>netzhaut DEV DOCS: /home/dajo/Netzhaut/src/lib/nhecmascript/Engine/Agent.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="LogoSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Netzhaut Dev Docs
+   <div id="projectname">netzhaut DEV DOCS
    </div>
   </td>
 <td style="padding-left: 10px;"/>
@@ -105,87 +105,87 @@ $(document).ready(function(){initNavTree('Agent_8h_source.html',''); initResizab
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../../NhCore/Stack.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../NhCore/Array.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../../nhcore/Stack.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../nhcore/Array.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//    typedef struct Nh_ECMAScript_AgentArgs {</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//    typedef struct nh_ecmascript_AgentArgs {</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//        NH_UNICODE_ENCODING encoding;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">//        NH_BYTE *bytes_p;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//    } Nh_ECMAScript_AgentArgs;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//    } nh_ecmascript_AgentArgs;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">// https://tc39.es/ecma262/#sec-agents</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html">   27</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structNh__ECMAScript__Agent.html">Nh_ECMAScript_Agent</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html#a325a2039791c18a52e76083ca1c12c77">   28</a></span>&#160;        <a class="code" href="structNh__List.html">Nh_Stack</a> <a class="code" href="structNh__ECMAScript__Agent.html#a325a2039791c18a52e76083ca1c12c77">ExecutionContextStack</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html#ac37c300d7f0b9a5d9f04f38e657805dd">   29</a></span>&#160;        <a class="code" href="group__NhCoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structNh__ECMAScript__Agent.html#ac37c300d7f0b9a5d9f04f38e657805dd">littleEndian</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html#a90c5ffef8631d0cb34afd3e33e9efe3e">   30</a></span>&#160;        <a class="code" href="group__NhCoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structNh__ECMAScript__Agent.html#a90c5ffef8631d0cb34afd3e33e9efe3e">canBlock</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html#a1e487ee98fecdd50228fb9fe9e8b3bf5">   31</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structNh__ECMAScript__Agent.html#a1e487ee98fecdd50228fb9fe9e8b3bf5">signifier</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html#a2bc1c16d919305355fd4c2d19ff0ddab">   32</a></span>&#160;        <a class="code" href="group__NhCoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structNh__ECMAScript__Agent.html#a2bc1c16d919305355fd4c2d19ff0ddab">isLockFree1</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html#a2b153ec3657b5aff894cb2aadee2baac">   33</a></span>&#160;        <a class="code" href="group__NhCoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structNh__ECMAScript__Agent.html#a2b153ec3657b5aff894cb2aadee2baac">isLockFree2</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html#ae740714d6b9dfe0a8d7f169636718e16">   34</a></span>&#160;        <a class="code" href="group__NhCoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structNh__ECMAScript__Agent.html#ae740714d6b9dfe0a8d7f169636718e16">isLockFree8</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//        Nh_ECMAScript_CandidateExecution CandidateExecution;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structNh__ECMAScript__Agent.html#a3b702db42b6013067cad3b40b1c2537f">   36</a></span>&#160;        <a class="code" href="structNh__List.html">Nh_List</a> <a class="code" href="structNh__ECMAScript__Agent.html#a3b702db42b6013067cad3b40b1c2537f">KeptAlive</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } <a class="code" href="structNh__ECMAScript__Agent.html">Nh_ECMAScript_Agent</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html">   27</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structnh__ecmascript__Agent.html">nh_ecmascript_Agent</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html#a06e79d6b9aeeaf2e2fd122773a01d626">   28</a></span>&#160;        <a class="code" href="structnh__List.html">nh_Stack</a> <a class="code" href="structnh__ecmascript__Agent.html#a06e79d6b9aeeaf2e2fd122773a01d626">ExecutionContextStack</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html#a83e9a7307a35a8f37e464095aeb2644c">   29</a></span>&#160;        <a class="code" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structnh__ecmascript__Agent.html#a83e9a7307a35a8f37e464095aeb2644c">littleEndian</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html#a1dee0b2943e9f454bdfb88aa5eadb181">   30</a></span>&#160;        <a class="code" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structnh__ecmascript__Agent.html#a1dee0b2943e9f454bdfb88aa5eadb181">canBlock</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html#ae341e7bec6bc5b4fcbb67b12170bb3a3">   31</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="structnh__ecmascript__Agent.html#ae341e7bec6bc5b4fcbb67b12170bb3a3">signifier</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html#a5676c49c9e8dc8170ad5d255720f79c9">   32</a></span>&#160;        <a class="code" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structnh__ecmascript__Agent.html#a5676c49c9e8dc8170ad5d255720f79c9">isLockFree1</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html#aa326eba6175ee0cb35cae2214372862e">   33</a></span>&#160;        <a class="code" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structnh__ecmascript__Agent.html#aa326eba6175ee0cb35cae2214372862e">isLockFree2</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html#a9fb4075976461ba423f4c8e25836b803">   34</a></span>&#160;        <a class="code" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> <a class="code" href="structnh__ecmascript__Agent.html#a9fb4075976461ba423f4c8e25836b803">isLockFree8</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//        nh_ecmascript_CandidateExecution CandidateExecution;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structnh__ecmascript__Agent.html#a305f43ff5d75eb8b86ad64271e5287c2">   36</a></span>&#160;        <a class="code" href="structnh__List.html">nh_List</a> <a class="code" href="structnh__ecmascript__Agent.html#a305f43ff5d75eb8b86ad64271e5287c2">KeptAlive</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } <a class="code" href="structnh__ecmascript__Agent.html">nh_ecmascript_Agent</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group__NhECMAScriptTypedefs.html#gaf8bf7c17760266b18d49fbaa13396d3b">   45</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">void</span> *(*Nh_ECMAScript_initAgent_f)(</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group__nhecmascriptTypedefs.html#ga2b7f278da2f632395217030d3fdd917b">   45</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">void</span> *(*nh_ecmascript_initAgent_f)(</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">void</span> *args_p</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    );</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__NhECMAScriptTypedefs.html#ga6e69a3b6367b1445e669f9d97121b4bd">   48</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="group__NhCoreEnums.html#ga28e42e4741d8cc397fa6540cd142da9b">NH_SIGNAL</a> (*<a class="code" href="group__NhECMAScriptTypedefs.html#ga6e69a3b6367b1445e669f9d97121b4bd">Nh_ECMAScript_runAgent_f</a>)(</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__nhecmascriptTypedefs.html#ga9828a961cc11470368f86442d257ec6c">   48</a></span>&#160;    <span class="keyword">typedef</span> <a class="code" href="group__nhcoreEnums.html#ga28e42e4741d8cc397fa6540cd142da9b">NH_SIGNAL</a> (*<a class="code" href="group__nhecmascriptTypedefs.html#ga9828a961cc11470368f86442d257ec6c">nh_ecmascript_runAgent_f</a>)(</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> *args_p</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    );</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="group__NhECMAScriptFunctions.html#ga6e7d64f69cd2109424e9dfc576588ab3">Nh_ECMAScript_initAgent</a>(</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="group__nhecmascriptFunctions.html#gaa07d96647fa52611b4e068dea154209f">nh_ecmascript_initAgent</a>(</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> *args_p</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    );</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="group__NhCoreEnums.html#ga28e42e4741d8cc397fa6540cd142da9b">NH_SIGNAL</a> <a class="code" href="group__NhECMAScriptFunctions.html#ga877da5a82997f7f6ddaef927b248b50d">Nh_ECMAScript_runAgent</a>(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="group__nhcoreEnums.html#ga28e42e4741d8cc397fa6540cd142da9b">NH_SIGNAL</a> <a class="code" href="group__nhecmascriptFunctions.html#gab592037376fa489ed1cfdb740128522e">nh_ecmascript_runAgent</a>(</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordtype">void</span> *args_p</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    );</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="structNh__ECMAScript__Agent.html">Nh_ECMAScript_Agent</a> *<a class="code" href="group__NhECMAScriptFunctions.html#ga764e653827d219e99d36dc07e572bbff">Nh_ECMAScript_getCurrentAgent</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="structnh__ecmascript__Agent.html">nh_ecmascript_Agent</a> *<a class="code" href="group__nhecmascriptFunctions.html#gaf90ca4bab7b90b4a59f6e697565c254d">nh_ecmascript_getCurrentAgent</a>(</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    );</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agroup__NhCoreEnums_html_ga28e42e4741d8cc397fa6540cd142da9b"><div class="ttname"><a href="group__NhCoreEnums.html#ga28e42e4741d8cc397fa6540cd142da9b">NH_SIGNAL</a></div><div class="ttdeci">NH_SIGNAL</div><div class="ttdef"><b>Definition:</b> API.h:71</div></div>
-<div class="ttc" id="agroup__NhCoreEnums_html_gaa5bc4d468ba7fc657a127fa6ffca469c"><div class="ttname"><a href="group__NhCoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a></div><div class="ttdeci">NH_BOOL</div><div class="ttdoc">Boolean values.</div><div class="ttdef"><b>Definition:</b> API.h:58</div></div>
-<div class="ttc" id="agroup__NhECMAScriptFunctions_html_ga6e7d64f69cd2109424e9dfc576588ab3"><div class="ttname"><a href="group__NhECMAScriptFunctions.html#ga6e7d64f69cd2109424e9dfc576588ab3">Nh_ECMAScript_initAgent</a></div><div class="ttdeci">void * Nh_ECMAScript_initAgent(void *args_p)</div><div class="ttdoc">Netzhaut - Web Browser Engine Copyright (C) 2020 The Netzhaut Authors Published under LGPLv3.</div><div class="ttdef"><b>Definition:</b> Agent.c:31</div></div>
-<div class="ttc" id="agroup__NhECMAScriptFunctions_html_ga764e653827d219e99d36dc07e572bbff"><div class="ttname"><a href="group__NhECMAScriptFunctions.html#ga764e653827d219e99d36dc07e572bbff">Nh_ECMAScript_getCurrentAgent</a></div><div class="ttdeci">Nh_ECMAScript_Agent * Nh_ECMAScript_getCurrentAgent()</div><div class="ttdef"><b>Definition:</b> Agent.c:71</div></div>
-<div class="ttc" id="agroup__NhECMAScriptFunctions_html_ga877da5a82997f7f6ddaef927b248b50d"><div class="ttname"><a href="group__NhECMAScriptFunctions.html#ga877da5a82997f7f6ddaef927b248b50d">Nh_ECMAScript_runAgent</a></div><div class="ttdeci">NH_SIGNAL Nh_ECMAScript_runAgent(void *args_p)</div><div class="ttdef"><b>Definition:</b> Agent.c:53</div></div>
-<div class="ttc" id="agroup__NhECMAScriptTypedefs_html_ga6e69a3b6367b1445e669f9d97121b4bd"><div class="ttname"><a href="group__NhECMAScriptTypedefs.html#ga6e69a3b6367b1445e669f9d97121b4bd">Nh_ECMAScript_runAgent_f</a></div><div class="ttdeci">NH_SIGNAL(* Nh_ECMAScript_runAgent_f)(void *args_p)</div><div class="ttdef"><b>Definition:</b> Agent.h:48</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html"><div class="ttname"><a href="structNh__ECMAScript__Agent.html">Nh_ECMAScript_Agent</a></div><div class="ttdef"><b>Definition:</b> Agent.h:27</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html_a1e487ee98fecdd50228fb9fe9e8b3bf5"><div class="ttname"><a href="structNh__ECMAScript__Agent.html#a1e487ee98fecdd50228fb9fe9e8b3bf5">Nh_ECMAScript_Agent::signifier</a></div><div class="ttdeci">int signifier</div><div class="ttdef"><b>Definition:</b> Agent.h:31</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html_a2b153ec3657b5aff894cb2aadee2baac"><div class="ttname"><a href="structNh__ECMAScript__Agent.html#a2b153ec3657b5aff894cb2aadee2baac">Nh_ECMAScript_Agent::isLockFree2</a></div><div class="ttdeci">NH_BOOL isLockFree2</div><div class="ttdef"><b>Definition:</b> Agent.h:33</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html_a2bc1c16d919305355fd4c2d19ff0ddab"><div class="ttname"><a href="structNh__ECMAScript__Agent.html#a2bc1c16d919305355fd4c2d19ff0ddab">Nh_ECMAScript_Agent::isLockFree1</a></div><div class="ttdeci">NH_BOOL isLockFree1</div><div class="ttdef"><b>Definition:</b> Agent.h:32</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html_a325a2039791c18a52e76083ca1c12c77"><div class="ttname"><a href="structNh__ECMAScript__Agent.html#a325a2039791c18a52e76083ca1c12c77">Nh_ECMAScript_Agent::ExecutionContextStack</a></div><div class="ttdeci">Nh_Stack ExecutionContextStack</div><div class="ttdef"><b>Definition:</b> Agent.h:28</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html_a3b702db42b6013067cad3b40b1c2537f"><div class="ttname"><a href="structNh__ECMAScript__Agent.html#a3b702db42b6013067cad3b40b1c2537f">Nh_ECMAScript_Agent::KeptAlive</a></div><div class="ttdeci">Nh_List KeptAlive</div><div class="ttdef"><b>Definition:</b> Agent.h:36</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html_a90c5ffef8631d0cb34afd3e33e9efe3e"><div class="ttname"><a href="structNh__ECMAScript__Agent.html#a90c5ffef8631d0cb34afd3e33e9efe3e">Nh_ECMAScript_Agent::canBlock</a></div><div class="ttdeci">NH_BOOL canBlock</div><div class="ttdef"><b>Definition:</b> Agent.h:30</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html_ac37c300d7f0b9a5d9f04f38e657805dd"><div class="ttname"><a href="structNh__ECMAScript__Agent.html#ac37c300d7f0b9a5d9f04f38e657805dd">Nh_ECMAScript_Agent::littleEndian</a></div><div class="ttdeci">NH_BOOL littleEndian</div><div class="ttdef"><b>Definition:</b> Agent.h:29</div></div>
-<div class="ttc" id="astructNh__ECMAScript__Agent_html_ae740714d6b9dfe0a8d7f169636718e16"><div class="ttname"><a href="structNh__ECMAScript__Agent.html#ae740714d6b9dfe0a8d7f169636718e16">Nh_ECMAScript_Agent::isLockFree8</a></div><div class="ttdeci">NH_BOOL isLockFree8</div><div class="ttdef"><b>Definition:</b> Agent.h:34</div></div>
-<div class="ttc" id="astructNh__List_html"><div class="ttname"><a href="structNh__List.html">Nh_List</a></div><div class="ttdoc">Dynamic list implementation using a two dimensional array.</div><div class="ttdef"><b>Definition:</b> API.h:107</div></div>
+<div class="ttc" id="agroup__nhcoreEnums_html_ga28e42e4741d8cc397fa6540cd142da9b"><div class="ttname"><a href="group__nhcoreEnums.html#ga28e42e4741d8cc397fa6540cd142da9b">NH_SIGNAL</a></div><div class="ttdeci">NH_SIGNAL</div><div class="ttdef"><b>Definition:</b> API.h:71</div></div>
+<div class="ttc" id="agroup__nhcoreEnums_html_gaa5bc4d468ba7fc657a127fa6ffca469c"><div class="ttname"><a href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a></div><div class="ttdeci">NH_BOOL</div><div class="ttdoc">Boolean values.</div><div class="ttdef"><b>Definition:</b> API.h:58</div></div>
+<div class="ttc" id="agroup__nhecmascriptFunctions_html_gaa07d96647fa52611b4e068dea154209f"><div class="ttname"><a href="group__nhecmascriptFunctions.html#gaa07d96647fa52611b4e068dea154209f">nh_ecmascript_initAgent</a></div><div class="ttdeci">void * nh_ecmascript_initAgent(void *args_p)</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under LGPLv3</div><div class="ttdef"><b>Definition:</b> Agent.c:31</div></div>
+<div class="ttc" id="agroup__nhecmascriptFunctions_html_gab592037376fa489ed1cfdb740128522e"><div class="ttname"><a href="group__nhecmascriptFunctions.html#gab592037376fa489ed1cfdb740128522e">nh_ecmascript_runAgent</a></div><div class="ttdeci">NH_SIGNAL nh_ecmascript_runAgent(void *args_p)</div><div class="ttdef"><b>Definition:</b> Agent.c:53</div></div>
+<div class="ttc" id="agroup__nhecmascriptFunctions_html_gaf90ca4bab7b90b4a59f6e697565c254d"><div class="ttname"><a href="group__nhecmascriptFunctions.html#gaf90ca4bab7b90b4a59f6e697565c254d">nh_ecmascript_getCurrentAgent</a></div><div class="ttdeci">nh_ecmascript_Agent * nh_ecmascript_getCurrentAgent()</div><div class="ttdef"><b>Definition:</b> Agent.c:71</div></div>
+<div class="ttc" id="agroup__nhecmascriptTypedefs_html_ga9828a961cc11470368f86442d257ec6c"><div class="ttname"><a href="group__nhecmascriptTypedefs.html#ga9828a961cc11470368f86442d257ec6c">nh_ecmascript_runAgent_f</a></div><div class="ttdeci">NH_SIGNAL(* nh_ecmascript_runAgent_f)(void *args_p)</div><div class="ttdef"><b>Definition:</b> Agent.h:48</div></div>
+<div class="ttc" id="astructnh__List_html"><div class="ttname"><a href="structnh__List.html">nh_List</a></div><div class="ttdoc">Dynamic list implementation using a two dimensional array.</div><div class="ttdef"><b>Definition:</b> API.h:107</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html"><div class="ttname"><a href="structnh__ecmascript__Agent.html">nh_ecmascript_Agent</a></div><div class="ttdef"><b>Definition:</b> Agent.h:27</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html_a06e79d6b9aeeaf2e2fd122773a01d626"><div class="ttname"><a href="structnh__ecmascript__Agent.html#a06e79d6b9aeeaf2e2fd122773a01d626">nh_ecmascript_Agent::ExecutionContextStack</a></div><div class="ttdeci">nh_Stack ExecutionContextStack</div><div class="ttdef"><b>Definition:</b> Agent.h:28</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html_a1dee0b2943e9f454bdfb88aa5eadb181"><div class="ttname"><a href="structnh__ecmascript__Agent.html#a1dee0b2943e9f454bdfb88aa5eadb181">nh_ecmascript_Agent::canBlock</a></div><div class="ttdeci">NH_BOOL canBlock</div><div class="ttdef"><b>Definition:</b> Agent.h:30</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html_a305f43ff5d75eb8b86ad64271e5287c2"><div class="ttname"><a href="structnh__ecmascript__Agent.html#a305f43ff5d75eb8b86ad64271e5287c2">nh_ecmascript_Agent::KeptAlive</a></div><div class="ttdeci">nh_List KeptAlive</div><div class="ttdef"><b>Definition:</b> Agent.h:36</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html_a5676c49c9e8dc8170ad5d255720f79c9"><div class="ttname"><a href="structnh__ecmascript__Agent.html#a5676c49c9e8dc8170ad5d255720f79c9">nh_ecmascript_Agent::isLockFree1</a></div><div class="ttdeci">NH_BOOL isLockFree1</div><div class="ttdef"><b>Definition:</b> Agent.h:32</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html_a83e9a7307a35a8f37e464095aeb2644c"><div class="ttname"><a href="structnh__ecmascript__Agent.html#a83e9a7307a35a8f37e464095aeb2644c">nh_ecmascript_Agent::littleEndian</a></div><div class="ttdeci">NH_BOOL littleEndian</div><div class="ttdef"><b>Definition:</b> Agent.h:29</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html_a9fb4075976461ba423f4c8e25836b803"><div class="ttname"><a href="structnh__ecmascript__Agent.html#a9fb4075976461ba423f4c8e25836b803">nh_ecmascript_Agent::isLockFree8</a></div><div class="ttdeci">NH_BOOL isLockFree8</div><div class="ttdef"><b>Definition:</b> Agent.h:34</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html_aa326eba6175ee0cb35cae2214372862e"><div class="ttname"><a href="structnh__ecmascript__Agent.html#aa326eba6175ee0cb35cae2214372862e">nh_ecmascript_Agent::isLockFree2</a></div><div class="ttdeci">NH_BOOL isLockFree2</div><div class="ttdef"><b>Definition:</b> Agent.h:33</div></div>
+<div class="ttc" id="astructnh__ecmascript__Agent_html_ae341e7bec6bc5b4fcbb67b12170bb3a3"><div class="ttname"><a href="structnh__ecmascript__Agent.html#ae341e7bec6bc5b4fcbb67b12170bb3a3">nh_ecmascript_Agent::signifier</a></div><div class="ttdeci">int signifier</div><div class="ttdef"><b>Definition:</b> Agent.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
     <!-- start footer part -->
       <div id="nav-path" class="navpath">
-        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_1872a3595659d8d282e138e080b14d69.html">NhECMAScript</a></li><li class="navelem"><a class="el" href="dir_3360edd636d5ddd9ced9253f77391777.html">Engine</a></li><li class="navelem"><a class="el" href="Agent_8h.html">Agent.h</a></li> -->
+        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_6b09dd3d3a08bd16b8c137d921a24a3a.html">nhecmascript</a></li><li class="navelem"><a class="el" href="dir_716442c2d01730f89191518b1aa7c9c1.html">Engine</a></li><li class="navelem"><a class="el" href="Agent_8h.html">Agent.h</a></li> -->
         <!-- <li class="footer">Generated by -->
         <!-- <a href="http://www.doxygen.org/index.html"> -->
         <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li> -->
         <div id="foot"> 
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../API/HTML/index.html"><b>Open API Docs</b></a></b>
-          <div style="color:#2b7e83;text-align:center;font-size:16px;">
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../API/HTML/index.html"><b>API DOCS</b></a></b>
+          <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
 v0.0.0-0.0.1 pre-alpha-1
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
             </b>
           </div>
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../index.html"><b>Open Home</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>HOME</b></a></b>
         </div>
       </div>
   </body>
   <style>
-    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #151515; border-top: 3px solid #24bbc4; justify-content: space-between;}
   </style>
 </html>

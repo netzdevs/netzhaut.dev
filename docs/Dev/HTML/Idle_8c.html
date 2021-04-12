@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Netzhaut Dev Docs: /home/dajo/Netzhaut/src/lib/NhTTY/Idle.c File Reference</title>
+<title>netzhaut DEV DOCS: /home/dajo/Netzhaut/src/lib/nhtty/Idle.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="LogoSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Netzhaut Dev Docs
+   <div id="projectname">netzhaut DEV DOCS
    </div>
   </td>
 <td style="padding-left: 10px;"/>
@@ -108,9 +108,9 @@ $(document).ready(function(){initNavTree('Idle_8c.html',''); initResizable(); })
 <code>#include &quot;<a class="el" href="Row_8h_source.html">Row.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Terminal_8h_source.html">Terminal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Shell_8h_source.html">Shell.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhCore_2Memory_8h_source.html">../NhCore/Memory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhCore_2Common_2Macro_8h_source.html">../NhCore/Common/Macro.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhTTY_2Common_2Macro_8h_source.html">Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../nhcore/Memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Common_2Macro_8h_source.html">../nhcore/Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhtty_2Common_2Macro_8h_source.html">Common/Macro.h</a>&quot;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -122,39 +122,39 @@ $(document).ready(function(){initNavTree('Idle_8c.html',''); initResizable(); })
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga8dd5b8903d7ff8d804ce0d009386f50b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#ga8dd5b8903d7ff8d804ce0d009386f50b">Nh_TTY_initIdle</a> ()</td></tr>
-<tr class="memdesc:ga8dd5b8903d7ff8d804ce0d009386f50b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Netzhaut - Web Browser Engine Copyright (C) 2020 The Netzhaut Authors Published under LGPLv3.  <a href="group__NhTTYFunctions.html#ga8dd5b8903d7ff8d804ce0d009386f50b">More...</a><br /></td></tr>
-<tr class="separator:ga8dd5b8903d7ff8d804ce0d009386f50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae74c5dc04f72eaf51e6344b7918373de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhTTYEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#gae74c5dc04f72eaf51e6344b7918373de">Nh_TTY_handleIdleInput</a> (<a class="el" href="structNh__TTY__Program.html">Nh_TTY_Program</a> *Program_p, <a class="el" href="group__NhCoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> c)</td></tr>
-<tr class="separator:gae74c5dc04f72eaf51e6344b7918373de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga692e41a8450727fcd0a834afcb98556f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhTTYEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#ga692e41a8450727fcd0a834afcb98556f">Nh_TTY_updateIdle</a> (<a class="el" href="structNh__TTY__Program.html">Nh_TTY_Program</a> *Program_p)</td></tr>
-<tr class="separator:ga692e41a8450727fcd0a834afcb98556f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae943d0ae14d83cc43bc0642027902bfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhTTYEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhTTYFunctions.html#gae943d0ae14d83cc43bc0642027902bfe">Nh_TTY_drawIdleRow</a> (<a class="el" href="structNh__TTY__Program.html">Nh_TTY_Program</a> *Program_p, <a class="el" href="group__NhEncodingTypedefs.html#gac88215e77afe012f93b8e8fa3e741ef8">Nh_Encoding_UTF8String</a> *Row_p, int width, int height, int row)</td></tr>
-<tr class="separator:gae943d0ae14d83cc43bc0642027902bfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39677430d5a9ef4ce9e434f642a00dc3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#ga39677430d5a9ef4ce9e434f642a00dc3">nh_tty_initIdle</a> ()</td></tr>
+<tr class="memdesc:ga39677430d5a9ef4ce9e434f642a00dc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under LGPLv3  <a href="group__nhttyFunctions.html#ga39677430d5a9ef4ce9e434f642a00dc3">More...</a><br /></td></tr>
+<tr class="separator:ga39677430d5a9ef4ce9e434f642a00dc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga89383abc64bc6a19d58b313b0090be3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#ga89383abc64bc6a19d58b313b0090be3b">nh_tty_handleIdleInput</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p, <a class="el" href="group__nhcoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> c)</td></tr>
+<tr class="separator:ga89383abc64bc6a19d58b313b0090be3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae219241c8a88999ebbb145be2c377ef5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gae219241c8a88999ebbb145be2c377ef5">nh_tty_updateIdle</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p)</td></tr>
+<tr class="separator:gae219241c8a88999ebbb145be2c377ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf1dcff13d98143c8148f989a332ac09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gabf1dcff13d98143c8148f989a332ac09">nh_tty_drawIdleRow</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p, <a class="el" href="group__nhencodingTypedefs.html#ga60ab005de8805d673cb85c9c17979cc6">nh_encoding_UTF8String</a> *Row_p, int width, int height, int row)</td></tr>
+<tr class="separator:gabf1dcff13d98143c8148f989a332ac09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
     <!-- start footer part -->
       <div id="nav-path" class="navpath">
-        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_6e8a7e472c0570c19a9684d82ff44a1c.html">NhTTY</a></li><li class="navelem"><a class="el" href="Idle_8c.html">Idle.c</a></li> -->
+        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_c1a586a47f1f5df71033f45de07133a1.html">nhtty</a></li><li class="navelem"><a class="el" href="Idle_8c.html">Idle.c</a></li> -->
         <!-- <li class="footer">Generated by -->
         <!-- <a href="http://www.doxygen.org/index.html"> -->
         <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li> -->
         <div id="foot"> 
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../API/HTML/index.html"><b>Open API Docs</b></a></b>
-          <div style="color:#2b7e83;text-align:center;font-size:16px;">
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../API/HTML/index.html"><b>API DOCS</b></a></b>
+          <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
 v0.0.0-0.0.1 pre-alpha-1
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
             </b>
           </div>
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../index.html"><b>Open Home</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>HOME</b></a></b>
         </div>
       </div>
   </body>
   <style>
-    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #151515; border-top: 3px solid #24bbc4; justify-content: space-between;}
   </style>
 </html>

@@ -1,17 +1,17 @@
 var URI_8c =
 [
-    [ "Nh_InternalURN", "structNh__InternalURN.html", "structNh__InternalURN" ],
-    [ "Nh_InternalURL", "structNh__InternalURL.html", "structNh__InternalURL" ],
-    [ "Nh_FileURL", "structNh__FileURL.html", "structNh__FileURL" ],
-    [ "Nh_addInternalURNSyntax", "group__NhCoreFunctions.html#gacba6771db41465c66cf5857a1868c19f", null ],
-    [ "Nh_copyURI", "group__NhCoreFunctions.html#gaaceb9c15d7f6683eba5047f228007560", null ],
-    [ "Nh_correspondingURI", "group__NhCoreFunctions.html#ga1b667c13b46191592eed2e0004265b8a", null ],
-    [ "Nh_createInternalURNSyntax", "group__NhCoreFunctions.html#ga502e0135c5aed345d835893203d66bb5", null ],
-    [ "Nh_createURI", "group__NhCoreFunctions.html#gadbf8c04d468b3a713f0209a3c52e5c42", null ],
-    [ "Nh_equivalentURI", "group__NhCoreFunctions.html#ga584555edd99b61854b3477637e74c466", null ],
-    [ "Nh_freePayload", "group__NhCoreFunctions.html#ga13d461b2b288f164ab84efbe846530b0", null ],
-    [ "Nh_freeURI", "group__NhCoreFunctions.html#gab3cc024ce4125c64f405d6a0e5a770c0", null ],
-    [ "Nh_getMediaType", "group__NhCoreFunctions.html#gaeca6099f133f7f4fd6c1eac2a22b830b", null ],
-    [ "Nh_getPayload", "group__NhCoreFunctions.html#gae4c46fd596d291b90dd0eeaf8c072932", null ],
-    [ "Nh_stringifyURI", "group__NhCoreFunctions.html#ga51813864bb638e1882eecd58599e8702", null ]
+    [ "nh_InternalURN", "structnh__InternalURN.html", "structnh__InternalURN" ],
+    [ "nh_InternalURL", "structnh__InternalURL.html", "structnh__InternalURL" ],
+    [ "nh_FileURL", "structnh__FileURL.html", "structnh__FileURL" ],
+    [ "nh_addInternalURNSyntax", "group__nhcoreFunctions.html#gaccc481ab554379b3b7066d5d5d59e07d", null ],
+    [ "nh_copyURI", "group__nhcoreFunctions.html#ga433d0d3f556878004a83a3762bc74fbf", null ],
+    [ "nh_correspondingURI", "group__nhcoreFunctions.html#ga22ff8cffecdbef55e4ce6754917ee0c1", null ],
+    [ "nh_createInternalURNSyntax", "group__nhcoreFunctions.html#ga9459a29fbb7807ab0f0d62b40692b50b", null ],
+    [ "nh_createURI", "group__nhcoreFunctions.html#ga63cf3b6abf702c905ab3b599a8c81e83", null ],
+    [ "nh_equivalentURI", "group__nhcoreFunctions.html#ga7cc0f3e1ed1df754056fb197d23f54b1", null ],
+    [ "nh_freePayload", "group__nhcoreFunctions.html#ga95def7bb234f0e3e0c938ec9d86f93f9", null ],
+    [ "nh_freeURI", "group__nhcoreFunctions.html#gad9c2fc7e357ec2ebd3f0658fca29c9aa", null ],
+    [ "nh_getMediaType", "group__nhcoreFunctions.html#gad23d82433200d7b62b95494beff124b5", null ],
+    [ "nh_getPayload", "group__nhcoreFunctions.html#ga00b2b71aba54af99fe90944b9714cce4", null ],
+    [ "nh_stringifyURI", "group__nhcoreFunctions.html#gaefbc5c084ce19b5df6ef6de5fa6f4424", null ]
 ];

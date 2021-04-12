@@ -21,20 +21,20 @@ TODO
 
 The implementation is divided into following libraries (modules): 
 
-- [NhLoader](group__NhLoader.html)
-- [NhCore](group__NhCore.html)
-- [NhWSI](group__NhWSI.html)
-- [NhTTY](group__NhTTY.html)
-- [NhNetwork](group__NhNetwork.html)
-- [NhECMAScript](group__NhECMAScript.html)
-- [NhHTML](group__NhHTML.html)
-- [NhWebIDL](group__NhWebIDL.html)
-- [NhEncoding](group__NhEncoding.html)
-- [NhDOM](group__NhDOM.html)
-- [NhGfx](group__NhGfx.html)
-- [NhCSS](group__NhCSS.html)
+- [nhloader](group__nhloader.html)
+- [nhcore](group__nhcore.html)
+- [nhwsi](group__nhwsi.html)
+- [nhtty](group__nhtty.html)
+- [nhnetwork](group__nhnetwork.html)
+- [nhecmascript](group__nhecmascript.html)
+- [nhhtml](group__nhhtml.html)
+- [nhwebidl](group__nhwebidl.html)
+- [nhencoding](group__nhencoding.html)
+- [nhdom](group__nhdom.html)
+- [nhgfx](group__nhgfx.html)
+- [nhcss](group__nhcss.html)
 
-This list excludes [Netzhaut](group__Netzhaut.html) since it acts solely as an API, thus providing not much functionality other than a little bit of initialization and dispatching. It also excludes the [NhExternal](group__NhExternal.html) library which serves as a grouping library for external dependencies.
+This list excludes the netzhaut library since it acts solely as an API, thus providing not much functionality other than a little bit of initialization and dispatching. It also excludes the nhexternal library which serves as a grouping library for external dependencies.
 
 \section Specs Specifications
 

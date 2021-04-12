@@ -1,6 +1,6 @@
 var CompletionOrReference_8h =
 [
-    [ "Nh_ECMAScript_normalEmptyCompletionOrReference", "group__NhECMAScriptFunctions.html#gaf9eabacd9af05aebd6212fada0613e72", null ],
-    [ "Nh_ECMAScript_wrapCompletion", "group__NhECMAScriptFunctions.html#ga3275a181fc10f40d2e2f8d90197a2da4", null ],
-    [ "Nh_ECMAScript_wrapReference", "group__NhECMAScriptFunctions.html#ga8ca9ee1f618c18554d728c432d9d8ab3", null ]
+    [ "nh_ecmascript_normalEmptyCompletionOrReference", "group__nhecmascriptFunctions.html#ga6d18f807d3e8e67b22c96fad88461fd3", null ],
+    [ "nh_ecmascript_wrapCompletion", "group__nhecmascriptFunctions.html#ga56308427de1e312aae1662e47ed636a9", null ],
+    [ "nh_ecmascript_wrapReference", "group__nhecmascriptFunctions.html#ga70b07878400db8354db297bcdd9f076e", null ]
 ];

@@ -1,5 +1,5 @@
 var TestAndCompare_8h =
 [
-    [ "Nh_ECMAScript_isCallable", "group__NhECMAScriptFunctions.html#ga38c0cd13d7354ac829c50b19a2927766", null ],
-    [ "Nh_ECMAScript_isExtensible", "group__NhECMAScriptFunctions.html#ga538fc9e4c12c8f71c9ee998977257c71", null ]
+    [ "nh_ecmascript_isCallable", "group__nhecmascriptFunctions.html#ga4213e80a2ffabb075daf7733553c92da", null ],
+    [ "nh_ecmascript_isExtensible", "group__nhecmascriptFunctions.html#ga81c69a5f08f82eabbc93c59ce941d113", null ]
 ];

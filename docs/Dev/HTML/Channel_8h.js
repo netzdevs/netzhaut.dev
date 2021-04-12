@@ -1,9 +1,9 @@
 var Channel_8h =
 [
-    [ "Nh_closeChannelReadAccess", "group__NhCoreFunctions.html#gaf10e2c09ad65cbd52f55c91db7155450", null ],
-    [ "Nh_closeChannelWriteAccess", "group__NhCoreFunctions.html#ga982c0f84808b67f3b90718825511684f", null ],
-    [ "Nh_initChannel", "group__NhCoreFunctions.html#ga38aebac2f1831944e4ff2e9b216aca57", null ],
-    [ "Nh_openChannel", "group__NhCoreFunctions.html#gac6472d12ccd08b6bbe4ff5271a605939", null ],
-    [ "Nh_readFromChannel", "group__NhCoreFunctions.html#ga56dd36788f8cee9a87ed373e3634d89f", null ],
-    [ "Nh_writeToChannel", "group__NhCoreFunctions.html#ga83d47229666581d54a3a223af8124252", null ]
+    [ "nh_closeChannelReadAccess", "group__nhcoreFunctions.html#ga05c83547bdaa3d11c202852c307d5811", null ],
+    [ "nh_closeChannelWriteAccess", "group__nhcoreFunctions.html#gaf25f530f2a492e3fcf9866241df1889e", null ],
+    [ "nh_initChannel", "group__nhcoreFunctions.html#ga9f24a3f18438602bafd29fcc7291acb5", null ],
+    [ "nh_openChannel", "group__nhcoreFunctions.html#gaebf168adf37357a121135c40e04422e5", null ],
+    [ "nh_readFromChannel", "group__nhcoreFunctions.html#ga609b02263ce045309af74dc04c64aaa2", null ],
+    [ "nh_writeToChannel", "group__nhcoreFunctions.html#gaba3ae147b505dc0e14b074e6fe504497", null ]
 ];

@@ -1,9 +1,9 @@
 var ExecutionContext_8h =
 [
-    [ "Nh_ECMAScript_allocateExecutionContext", "group__NhECMAScriptFunctions.html#gaff5cac4f44b3e3e89d93a22cdffe53f4", null ],
-    [ "Nh_ECMAScript_getActiveScriptOrModule", "group__NhECMAScriptFunctions.html#ga6da4e51dc8f1ff9850df5fe0c99e1ab6", null ],
-    [ "Nh_ECMAScript_getCurrentRealm", "group__NhECMAScriptFunctions.html#ga24567b24bcff6ab5a304c73bf3a8c1bc", null ],
-    [ "Nh_ECMAScript_getGlobalObject", "group__NhECMAScriptFunctions.html#ga2b98542c7abd3793891771ad1e4a0517", null ],
-    [ "Nh_ECMAScript_getRunningExecutionContext", "group__NhECMAScriptFunctions.html#ga961fac74b9fbe7e03d431dcd51925e0a", null ],
-    [ "Nh_ECMAScript_resolveBinding", "group__NhECMAScriptFunctions.html#ga03a7f4f859f2d4d98088ce295ff2a70c", null ]
+    [ "nh_ecmascript_allocateExecutionContext", "group__nhecmascriptFunctions.html#ga65b51aeb86bbf7f096e4de801ac3e60f", null ],
+    [ "nh_ecmascript_getActiveScriptOrModule", "group__nhecmascriptFunctions.html#ga66cffc489cb83ad973875b88360080a3", null ],
+    [ "nh_ecmascript_getCurrentRealm", "group__nhecmascriptFunctions.html#ga693dae51af24f38168457a2256f609b5", null ],
+    [ "nh_ecmascript_getGlobalObject", "group__nhecmascriptFunctions.html#gaa2b9f7e121640b5084af501c51612e8d", null ],
+    [ "nh_ecmascript_getRunningExecutionContext", "group__nhecmascriptFunctions.html#ga12b022ebfbe32ac68bf3ce11681f9138", null ],
+    [ "nh_ecmascript_resolveBinding", "group__nhecmascriptFunctions.html#gad30067a3274e59b03cf908ef57428575", null ]
 ];

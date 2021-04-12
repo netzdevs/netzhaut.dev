@@ -1,6 +1,6 @@
 var Base_2Surface_8h =
 [
-    [ "Nh_Gfx_createSurface_f", "group__NhGfxTypedefs.html#gad1a789e1ffdcd2d83194c509ce4eef14", null ],
-    [ "Nh_Gfx_createSurface", "group__NhGfxFunctions.html#ga8b1176755be70a00b63893601d74a371", null ],
-    [ "Nh_Gfx_requestRender", "group__NhGfxFunctions.html#gad1dc920a5e8e12f62493c714e3223cba", null ]
+    [ "nh_gfx_createSurface_f", "group__nhgfxTypedefs.html#ga8bcdcd2aa09cb09ff02d96b7a64ce051", null ],
+    [ "nh_gfx_createSurface", "group__nhgfxFunctions.html#gaa070a65ef7802264c6f8dcd5c2635b68", null ],
+    [ "nh_gfx_requestRender", "group__nhgfxFunctions.html#ga6116bf40fbbbd47e6fa41bcf909cb736", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Netzhaut Dev Docs: /home/dajo/Netzhaut/src/lib/NhCore/Array.c File Reference</title>
+<title>netzhaut DEV DOCS: /home/dajo/Netzhaut/src/lib/nhcore/Array.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -34,7 +34,7 @@
  <tr style="height: 56px;">
   <td id="projectlogo"><img alt="Logo" src="LogoSmall.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Netzhaut Dev Docs
+   <div id="projectname">netzhaut DEV DOCS
    </div>
   </td>
 <td style="padding-left: 10px;"/>
@@ -103,8 +103,8 @@ $(document).ready(function(){initNavTree('Array_8c.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Array_8h_source.html">Array.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhCore_2Memory_8h_source.html">Memory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="NhCore_2Common_2Macro_8h_source.html">Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">Memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Common_2Macro_8h_source.html">Common/Macro.h</a>&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
@@ -112,55 +112,55 @@ $(document).ready(function(){initNavTree('Array_8c.html',''); initResizable(); }
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga2cdb2bdfb54c71365f1d6d1b9e5dd67a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNh__Array.html">Nh_Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga2cdb2bdfb54c71365f1d6d1b9e5dd67a">_Nh_initArray</a> (int elementSize, int allocatedLengthPerChunk)</td></tr>
-<tr class="memdesc:ga2cdb2bdfb54c71365f1d6d1b9e5dd67a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Netzhaut - Web Browser Engine Copyright (C) 2020 The Netzhaut Authors Published under LGPLv3.  <a href="group__NhCoreFunctions.html#ga2cdb2bdfb54c71365f1d6d1b9e5dd67a">More...</a><br /></td></tr>
-<tr class="separator:ga2cdb2bdfb54c71365f1d6d1b9e5dd67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga79cac110fddabed2fdb4789532111aa2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structNh__Array.html">Nh_Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga79cac110fddabed2fdb4789532111aa2">Nh_initArray</a> (int elementSize, int allocatedLengthPerChunk)</td></tr>
-<tr class="separator:ga79cac110fddabed2fdb4789532111aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8c4d839bbb8240db4d4f2cbea69ba38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhCoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">NH_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#gad8c4d839bbb8240db4d4f2cbea69ba38">Nh_appendToArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p, void *bytes_p, unsigned long count)</td></tr>
-<tr class="separator:gad8c4d839bbb8240db4d4f2cbea69ba38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b46c9086e2ddb1015ef730139241626"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga2b46c9086e2ddb1015ef730139241626">_Nh_getFromArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p, unsigned long index)</td></tr>
-<tr class="separator:ga2b46c9086e2ddb1015ef730139241626"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2d8e14520fd303409698da48f32adfcd"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga2d8e14520fd303409698da48f32adfcd">Nh_getFromArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p, unsigned long index)</td></tr>
-<tr class="separator:ga2d8e14520fd303409698da48f32adfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1715d1ffecb1c67fa67a79fd919cd9f7"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga1715d1ffecb1c67fa67a79fd919cd9f7">_Nh_incrementArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p)</td></tr>
-<tr class="separator:ga1715d1ffecb1c67fa67a79fd919cd9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga18495da858def988a7dfbe2a644a6d97"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga18495da858def988a7dfbe2a644a6d97">Nh_incrementArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p)</td></tr>
-<tr class="separator:ga18495da858def988a7dfbe2a644a6d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1a3cb56bba1589d1bc79d581349a1c02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhCoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">NH_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga1a3cb56bba1589d1bc79d581349a1c02">Nh_removeTailFromArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p, unsigned int count)</td></tr>
-<tr class="separator:ga1a3cb56bba1589d1bc79d581349a1c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga460e086ecc746a73942c9909d4f10f9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhCoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">NH_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga460e086ecc746a73942c9909d4f10f9d">Nh_removeFromArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p, int index, unsigned int count)</td></tr>
-<tr class="separator:ga460e086ecc746a73942c9909d4f10f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaca6a7229e1ea79670e02213f7d09f048"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__NhCoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">NH_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#gaca6a7229e1ea79670e02213f7d09f048">Nh_insertIntoArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p, int index, void *elements_p, int length)</td></tr>
-<tr class="separator:gaca6a7229e1ea79670e02213f7d09f048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9151dab515f643fb03b32c0e230c09f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga9151dab515f643fb03b32c0e230c09f0">_Nh_freeArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p)</td></tr>
-<tr class="separator:ga9151dab515f643fb03b32c0e230c09f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2426a017d1c670eb338020eaefe352ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NhCoreFunctions.html#ga2426a017d1c670eb338020eaefe352ff">Nh_freeArray</a> (<a class="el" href="structNh__Array.html">Nh_Array</a> *Array_p)</td></tr>
-<tr class="separator:ga2426a017d1c670eb338020eaefe352ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8b482f9ebb63d9905c9664bab0be1d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__Array.html">nh_Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#gae8b482f9ebb63d9905c9664bab0be1d2">_nh_initArray</a> (int elementSize, int allocatedLengthPerChunk)</td></tr>
+<tr class="memdesc:gae8b482f9ebb63d9905c9664bab0be1d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under LGPLv3  <a href="group__nhcoreFunctions.html#gae8b482f9ebb63d9905c9664bab0be1d2">More...</a><br /></td></tr>
+<tr class="separator:gae8b482f9ebb63d9905c9664bab0be1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35c2c4df71b311e196031fc809fb4125"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__Array.html">nh_Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#ga35c2c4df71b311e196031fc809fb4125">nh_initArray</a> (int elementSize, int allocatedLengthPerChunk)</td></tr>
+<tr class="separator:ga35c2c4df71b311e196031fc809fb4125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab495726199f988a45b1c2350b2b2108b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">NH_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#gab495726199f988a45b1c2350b2b2108b">nh_appendToArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p, void *bytes_p, unsigned long count)</td></tr>
+<tr class="separator:gab495726199f988a45b1c2350b2b2108b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbdd863c9bbea5fd6c6a661453d00528"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#gadbdd863c9bbea5fd6c6a661453d00528">_nh_getFromArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p, unsigned long index)</td></tr>
+<tr class="separator:gadbdd863c9bbea5fd6c6a661453d00528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c503cd90e509c9a8c8aa6a255dbfa5b"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#ga6c503cd90e509c9a8c8aa6a255dbfa5b">nh_getFromArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p, unsigned long index)</td></tr>
+<tr class="separator:ga6c503cd90e509c9a8c8aa6a255dbfa5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87ce39930368769480ac5959ba8511db"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#ga87ce39930368769480ac5959ba8511db">_nh_incrementArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p)</td></tr>
+<tr class="separator:ga87ce39930368769480ac5959ba8511db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8db82e9ebdfbaba8e3a78b94f986307c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#ga8db82e9ebdfbaba8e3a78b94f986307c">nh_incrementArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p)</td></tr>
+<tr class="separator:ga8db82e9ebdfbaba8e3a78b94f986307c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0437744874b902aaa6d60accfd29545c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">NH_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#ga0437744874b902aaa6d60accfd29545c">nh_removeTailFromArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p, unsigned int count)</td></tr>
+<tr class="separator:ga0437744874b902aaa6d60accfd29545c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c9d16e9f3c848e8558f7f30be786510"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">NH_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#ga2c9d16e9f3c848e8558f7f30be786510">nh_removeFromArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p, int index, unsigned int count)</td></tr>
+<tr class="separator:ga2c9d16e9f3c848e8558f7f30be786510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad083c3698436ba20326a8aef83f587c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">NH_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#gad083c3698436ba20326a8aef83f587c6">nh_insertIntoArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p, int index, void *elements_p, int length)</td></tr>
+<tr class="separator:gad083c3698436ba20326a8aef83f587c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2842ba7aecc77643696cc8a54eee05fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#ga2842ba7aecc77643696cc8a54eee05fa">_nh_freeArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p)</td></tr>
+<tr class="separator:ga2842ba7aecc77643696cc8a54eee05fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac177a3ce712a6c6a128fdf731052c4a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreFunctions.html#gac177a3ce712a6c6a128fdf731052c4a7">nh_freeArray</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Array_p)</td></tr>
+<tr class="separator:gac177a3ce712a6c6a128fdf731052c4a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
     <!-- start footer part -->
       <div id="nav-path" class="navpath">
-        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_38b14b75dd6ca945e858881fb3331ce4.html">NhCore</a></li><li class="navelem"><a class="el" href="Array_8c.html">Array.c</a></li> -->
+        <!-- <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c85d3e3c5052e9ad9ce18c6863244a25.html">lib</a></li><li class="navelem"><a class="el" href="dir_96176b55e3f6fc5e8aefb10936a359bb.html">nhcore</a></li><li class="navelem"><a class="el" href="Array_8c.html">Array.c</a></li> -->
         <!-- <li class="footer">Generated by -->
         <!-- <a href="http://www.doxygen.org/index.html"> -->
         <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li> -->
         <div id="foot"> 
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../API/HTML/index.html"><b>Open API Docs</b></a></b>
-          <div style="color:#2b7e83;text-align:center;font-size:16px;">
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../API/HTML/index.html"><b>API DOCS</b></a></b>
+          <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
 v0.0.0-0.0.1 pre-alpha-1
 <!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
             </b>
           </div>
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#2b7e83;" href="../../index.html"><b>Open Home</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>HOME</b></a></b>
         </div>
       </div>
   </body>
   <style>
-    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #202020; border-top: 3px solid #2b7e83; justify-content: space-between;}
+    #foot {display: flex; padding-top:13px; padding-bottom:14px; background: #151515; border-top: 3px solid #24bbc4; justify-content: space-between;}
   </style>
 </html>

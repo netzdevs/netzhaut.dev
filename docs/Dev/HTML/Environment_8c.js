@@ -1,18 +1,18 @@
 var Environment_8c =
 [
-    [ "Nh_ECMAScript_canDeclareGlobalFunction", "group__NhECMAScriptFunctions.html#ga05d781d4e3df116a5f5caa7afef1b3ee", null ],
-    [ "Nh_ECMAScript_canDeclareGlobalVar", "group__NhECMAScriptFunctions.html#ga7d5db1741a6f3892e05c00083f678985", null ],
-    [ "Nh_ECMAScript_createGlobalFunctionBinding", "group__NhECMAScriptFunctions.html#gac85a26fadbc61f7e44a386f4f99f919d", null ],
-    [ "Nh_ECMAScript_createGlobalVarBinding", "group__NhECMAScriptFunctions.html#ga0b8d5aa92b5139b10a09e2b1096e7483", null ],
-    [ "Nh_ECMAScript_createImmutableBinding", "group__NhECMAScriptFunctions.html#ga18c9715d7d06d52c10f8834abb9d8c17", null ],
-    [ "Nh_ECMAScript_createMutableBinding", "group__NhECMAScriptFunctions.html#ga75812e5628f600db5728439b31b665f5", null ],
-    [ "Nh_ECMAScript_hasBinding", "group__NhECMAScriptFunctions.html#ga0ce2d4cdd919da0f60f6afcbb24c6021", null ],
-    [ "Nh_ECMAScript_hasLexicalDeclaration", "group__NhECMAScriptFunctions.html#gad8079abd5840e0695e30a13d805c6ff5", null ],
-    [ "Nh_ECMAScript_hasRestrictedGlobalProperty", "group__NhECMAScriptFunctions.html#gad0629265a2604a6262f992e5dd93abd8", null ],
-    [ "Nh_ECMAScript_hasVarDeclaration", "group__NhECMAScriptFunctions.html#gacede99b881a2d5549fb681fb65a1bb9e", null ],
-    [ "Nh_ECMAScript_initializeBinding", "group__NhECMAScriptFunctions.html#ga9a6905dcce78e46f7d8181da3070fedd", null ],
-    [ "Nh_ECMAScript_newDeclarativeEnvironment", "group__NhECMAScriptFunctions.html#gae2707d2e2a70b4bbd7e8dbbeb0737f50", null ],
-    [ "Nh_ECMAScript_newGlobalEnvironment", "group__NhECMAScriptFunctions.html#ga0745268adff9abc3ccfcca0adc28bfb3", null ],
-    [ "Nh_ECMAScript_newObjectEnvironment", "group__NhECMAScriptFunctions.html#gaa902c64c72d21bc73db68c701fbe2650", null ],
-    [ "Nh_ECMAScript_setMutableBinding", "group__NhECMAScriptFunctions.html#ga8b7c8f2510a0725b25b52dbe2a50fc4e", null ]
+    [ "nh_ecmascript_canDeclareGlobalFunction", "group__nhecmascriptFunctions.html#gac930d825fb9ccd7473abd1267fa750f7", null ],
+    [ "nh_ecmascript_canDeclareGlobalVar", "group__nhecmascriptFunctions.html#ga06bf33f3c8efa6556d355fad43d89fa1", null ],
+    [ "nh_ecmascript_createGlobalFunctionBinding", "group__nhecmascriptFunctions.html#ga573bb226b7fc4798c97577de006cc071", null ],
+    [ "nh_ecmascript_createGlobalVarBinding", "group__nhecmascriptFunctions.html#ga436d73f5b762c780916c51171e653f04", null ],
+    [ "nh_ecmascript_createImmutableBinding", "group__nhecmascriptFunctions.html#ga6053611f8b072203de29660a8cba063e", null ],
+    [ "nh_ecmascript_createMutableBinding", "group__nhecmascriptFunctions.html#gaa1f07bde87089a3b8c7979fcf09b0742", null ],
+    [ "nh_ecmascript_hasBinding", "group__nhecmascriptFunctions.html#ga13f3f68d729e78182026aa495f9c996f", null ],
+    [ "nh_ecmascript_hasLexicalDeclaration", "group__nhecmascriptFunctions.html#gaeec9322608b19604b88c314e73e297e8", null ],
+    [ "nh_ecmascript_hasRestrictedGlobalProperty", "group__nhecmascriptFunctions.html#gabd5942450281b4a399ac6fa4f93ad082", null ],
+    [ "nh_ecmascript_hasVarDeclaration", "group__nhecmascriptFunctions.html#ga80462d2236d5240546e7969f35b6ecb1", null ],
+    [ "nh_ecmascript_initializeBinding", "group__nhecmascriptFunctions.html#gad1d45d07ee6e30926d2ab7b8ac66634b", null ],
+    [ "nh_ecmascript_newDeclarativeEnvironment", "group__nhecmascriptFunctions.html#gac1f68125a0d7e88c2a2ac9fb4703a028", null ],
+    [ "nh_ecmascript_newGlobalEnvironment", "group__nhecmascriptFunctions.html#ga7ba003006afb11f26b431a626d9240db", null ],
+    [ "nh_ecmascript_newObjectEnvironment", "group__nhecmascriptFunctions.html#ga5816bfecb8d7b57da9b7d198600e0e86", null ],
+    [ "nh_ecmascript_setMutableBinding", "group__nhecmascriptFunctions.html#gab0a27d554c7e33cfeb306e465422ffec", null ]
 ];

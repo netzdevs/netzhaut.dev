@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['waitdelay_5287',['waitDelay',['../structNh__Workload.html#a075503b70eca3fbc6f87fd9146dd3094',1,'Nh_Workload']]],
-  ['webidlbinding_2ec_5288',['WebIDLBinding.c',['../WebIDLBinding_8c.html',1,'']]],
-  ['webidlbinding_2eh_5289',['WebIDLBinding.h',['../WebIDLBinding_8h.html',1,'']]],
-  ['weekday_5290',['weekday',['../structNh__LocalTime.html#a91fbb87153bec9897cd3cd98e74a88f6',1,'Nh_LocalTime']]],
-  ['weeks_5291',['weeks',['../structNh__LocalTime.html#a4976c9081eb78b8e98c59a4045fb4559',1,'Nh_LocalTime::weeks()'],['../structNh__GeneralTime.html#a70f3dfc9707052916e31df4847b0fd32',1,'Nh_GeneralTime::weeks()']]],
-  ['width_5292',['width',['../structNh__PixelSize.html#a5baca623d81307d888dc0ed3924bd203',1,'Nh_PixelSize::width()'],['../structNh__Gfx__Atlas.html#ae9b40eb94ab2673c4c0f69a2fa2084c8',1,'Nh_Gfx_Atlas::width()'],['../structNh__Gfx__Glyph.html#a78feedbc046603c5e28ef45c3ca9f0b8',1,'Nh_Gfx_Glyph::width()'],['../structNh__Vk__Texture.html#afc200a5f412f9f1c723a899f5d22c029',1,'Nh_Vk_Texture::width()'],['../structNh__Vk__TextureInfo.html#a1bf2712114304740148769876ed3fb6f',1,'Nh_Vk_TextureInfo::width()'],['../structNh__TTY__TreeListing.html#a71c64e0892c8e54ee393021609bcf779',1,'Nh_TTY_TreeListing::width()'],['../structNh__TTY__TextFile.html#ae3be63c94cec29d98693a08b9fdbed65',1,'Nh_TTY_TextFile::width()'],['../structNh__TTY__FileEditor.html#ad0283c495d8545b5e6c45a29325cfa1d',1,'Nh_TTY_FileEditor::width()'],['../structNh__ClipSize.html#a9b36e03f9cf79a28eab52044a0e3fb07',1,'Nh_ClipSize::width()'],['../structNh__Texture.html#a88cf2f8f88c4104120e55d732d7b37e7',1,'Nh_Texture::width()']]],
-  ['window_5293',['window',['../structNh__Config_1_1Flags_1_1Log.html#a7fbd06cb40e295415d4f3a8b939f61f9',1,'Nh_Config::Flags::Log']]],
-  ['window_2ec_5294',['Window.c',['../Window_8c.html',1,'']]],
-  ['window_2eh_5295',['Window.h',['../Window_8h.html',1,'']]],
-  ['window_5fp_5296',['Window_p',['../structNh__Tab.html#a55a27ce52c79aa5560d9caebe497ab04',1,'Nh_Tab::Window_p()'],['../structNh__Gfx__SurfaceArgs.html#ab21778ccc90c1d04256e608c98b80f14',1,'Nh_Gfx_SurfaceArgs::Window_p()'],['../structNh__Gfx__Surface.html#a0a17387ce8d26146463cadbc177491c4',1,'Nh_Gfx_Surface::Window_p()']]],
-  ['withenvironment_5297',['withEnvironment',['../structNh__ECMAScript__ObjectEnvironment.html#ab2835fca2b1e2475f2cd761e3119b91e',1,'Nh_ECMAScript_ObjectEnvironment']]],
-  ['workloads_5fp_5298',['Workloads_p',['../structNh__ThreadPool.html#a83f691e7660d51aa03bba5560bff2d96',1,'Nh_ThreadPool']]],
-  ['writable_5299',['writable',['../structNh__ECMAScript__DataProperty.html#a0b4bffd97c1db4f2c3a017c4c03cfabf',1,'Nh_ECMAScript_DataProperty::writable()'],['../structNh__ECMAScript__DataPropertyDescriptor.html#abcc0e6ba47acc5a34f68aaab1adfebd2',1,'Nh_ECMAScript_DataPropertyDescriptor::writable()']]]
+  ['waitdelay_5286',['waitDelay',['../structnh__Workload.html#af8ebcc2fae3ba3063ccbf3a015f4fb58',1,'nh_Workload']]],
+  ['webidlbinding_2ec_5287',['WebIDLBinding.c',['../WebIDLBinding_8c.html',1,'']]],
+  ['webidlbinding_2eh_5288',['WebIDLBinding.h',['../WebIDLBinding_8h.html',1,'']]],
+  ['weekday_5289',['weekday',['../structnh__LocalTime.html#a24e8c840f453c073e173f6b4070cb087',1,'nh_LocalTime']]],
+  ['weeks_5290',['weeks',['../structnh__LocalTime.html#a68d33efb9255cfeef65c34f689796e6f',1,'nh_LocalTime::weeks()'],['../structnh__GeneralTime.html#a79a8d6cdb2752c31b1c91ae8b98df5e5',1,'nh_GeneralTime::weeks()']]],
+  ['width_5291',['width',['../structnh__PixelSize.html#a52e97bf7cacdbd09e69d206e1aada0ea',1,'nh_PixelSize::width()'],['../structnh__gfx__Atlas.html#a9d2d7775e10cbf818ece715c4ca87a5b',1,'nh_gfx_Atlas::width()'],['../structnh__gfx__Glyph.html#aedf4bb54fc8ba20e9451c5ff09c7ae61',1,'nh_gfx_Glyph::width()'],['../structnh__Vk__Texture.html#ae625f5693b7b4b1ce2a3ac592add0566',1,'nh_Vk_Texture::width()'],['../structnh__Vk__TextureInfo.html#ac81e297382dc73f72006fa85aefe2caa',1,'nh_Vk_TextureInfo::width()'],['../structnh__tty__TreeListing.html#aef76ba65d3cf90a0fce3afe0861a6a5a',1,'nh_tty_TreeListing::width()'],['../structnh__tty__TextFile.html#aa1433e2517d3e5d013775ebc6cf460c8',1,'nh_tty_TextFile::width()'],['../structnh__tty__FileEditor.html#adefba35f4b18146f8363780176ca8190',1,'nh_tty_FileEditor::width()'],['../structnh__ClipSize.html#ae76d94f197eda545ce05b102851e79b5',1,'nh_ClipSize::width()'],['../structnh__Texture.html#a4a7bb69dd7581b1e27da1a28a6c020db',1,'nh_Texture::width()']]],
+  ['window_5292',['window',['../structnh__Config_1_1Flags_1_1Log.html#a0cef593d033b1fcbb8fdd3b066bd52e5',1,'nh_Config::Flags::Log']]],
+  ['window_2ec_5293',['Window.c',['../Window_8c.html',1,'']]],
+  ['window_2eh_5294',['Window.h',['../Window_8h.html',1,'']]],
+  ['window_5fp_5295',['Window_p',['../structnh__Tab.html#a1b7348791ba6e7338f637a4e34517462',1,'nh_Tab::Window_p()'],['../structnh__gfx__SurfaceArgs.html#a49f6b53b7059793247a8e00e102b9913',1,'nh_gfx_SurfaceArgs::Window_p()'],['../structnh__gfx__Surface.html#aef176c545101f87c2774aad3b5413b82',1,'nh_gfx_Surface::Window_p()']]],
+  ['withenvironment_5296',['withEnvironment',['../structnh__ecmascript__ObjectEnvironment.html#ad4f4b778aa21f9f9511525e3a460a1d9',1,'nh_ecmascript_ObjectEnvironment']]],
+  ['workloads_5fp_5297',['Workloads_p',['../structnh__ThreadPool.html#a7f79b201e359a7ecc4879fa3a4a71605',1,'nh_ThreadPool']]],
+  ['writable_5298',['writable',['../structnh__ecmascript__DataProperty.html#aa9cb940cf8365893041527db90cfc67e',1,'nh_ecmascript_DataProperty::writable()'],['../structnh__ecmascript__DataPropertyDescriptor.html#acb7b51b051da1570f976b52c975de5b4',1,'nh_ecmascript_DataPropertyDescriptor::writable()']]]
 ];

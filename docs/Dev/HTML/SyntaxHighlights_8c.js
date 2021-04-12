@@ -1,4 +1,4 @@
 var SyntaxHighlights_8c =
 [
-    [ "Nh_TTY_getTextType", "group__NhTTYFunctions.html#ga1adbd43684a6cf9ad1591e4805c6f191", null ]
+    [ "nh_tty_getTextType", "group__nhttyFunctions.html#ga8581d4a0529749e9acde8d47aaaf42eb", null ]
 ];

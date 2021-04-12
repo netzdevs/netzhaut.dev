@@ -1,5 +1,5 @@
 var SourceTree_8c =
 [
-    [ "Nh_CSS_createSourceTree", "group__NhCSSFunctions.html#gad979da8f800732b777b2c65e772329b7", null ],
-    [ "Nh_CSS_freeSource", "group__NhCSSFunctions.html#ga174495bf288dbcbd1f1473acc2ec0403", null ]
+    [ "nh_css_createSourceTree", "group__nhcssFunctions.html#ga25dbd1ed60bb1ff50be5273dd5fb16ec", null ],
+    [ "nh_css_freeSource", "group__nhcssFunctions.html#ga2bf0d5aec7ca97adb73fe8d86d91a09c", null ]
 ];

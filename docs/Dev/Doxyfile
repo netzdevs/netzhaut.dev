@@ -32,7 +32,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "Netzhaut Dev Docs" 
+PROJECT_NAME           = "netzhaut DEV DOCS" 
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -814,18 +814,18 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = "Mainpage.md" "Architecture/ProjectLayout.md" "Architecture/SystemArchitecture.md" "Architecture/EngineArchitecture.md" "Design/CodeStyle.md" \
-"../../../../../src/lib/NhCore/Common" "../../../../../src/lib/NhCore/" \
-"../../../../../src/lib/NhTTY/Common" "../../../../../src/lib/NhTTY/" \
-"../../../../../src/lib/NhLoader/Common" "../../../../../src/lib/NhLoader/" \
-"../../../../../src/lib/NhECMAScript/Common" "../../../../../src/lib/NhECMAScript/Engine" "../../src/lib/NhECMAScript/StaticSemantics" \
-"../../../../../src/lib/NhCSS/Common" "../../../../../src/lib/NhCSS/Renderer" "../../../../../src/lib/NhCSS/Layout" "../../../../../src/lib/NhCSS/Parser" "../../../../../src/lib/NhCSS/Properties" "../src/lib/NhCSS/Vulkan" \
-"../../../../../src/lib/NhGfx/Common" "../../../../../src/lib/NhGfx/Vulkan" "../../../../../src/lib/NhGfx/Base" \
-"../../../../../src/lib/NhDOM/Common" \
-"../../../../../src/lib/NhEncoding/Common" \
-"../../../../../src/lib/NhWebIDL/Common" \
-"../../../../../src/lib/NhWSI/Common" \
-"../../../../../src/lib/NhNetwork/Common" \
-"../../../../../src/lib/NhHTML/Common"  "../../../../../src/lib/NhHTML/Parser" 
+"../../../../../src/lib/nhcore/Common" "../../../../../src/lib/nhcore/" \
+"../../../../../src/lib/nhtty/Common" "../../../../../src/lib/nhtty/" \
+"../../../../../src/lib/nhloader/Common" "../../../../../src/lib/nhloader/" \
+"../../../../../src/lib/nhecmascript/Common" "../../../../../src/lib/nhecmascript/Engine" "../../src/lib/nhecmascript/StaticSemantics" \
+"../../../../../src/lib/nhcss/Common" "../../../../../src/lib/nhcss/Renderer" "../../../../../src/lib/nhcss/Layout" "../../../../../src/lib/nhcss/Parser" "../../../../../src/lib/nhcss/Properties" "../src/lib/nhcss/Vulkan" \
+"../../../../../src/lib/nhgfx/Common" "../../../../../src/lib/nhgfx/Vulkan" "../../../../../src/lib/nhgfx/Base" \
+"../../../../../src/lib/nhdom/Common" \
+"../../../../../src/lib/nhencoding/Common" \
+"../../../../../src/lib/nhwebidl/Common" \
+"../../../../../src/lib/nhwsi/Common" \
+"../../../../../src/lib/nhnetwork/Common" \
+"../../../../../src/lib/nhhtml/Common"  "../../../../../src/lib/nhhtml/Parser" 
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

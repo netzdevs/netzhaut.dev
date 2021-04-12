@@ -1,5 +1,5 @@
 var Draw_8h =
 [
-    [ "Nh_TTY_refreshCursor", "group__NhTTYFunctions.html#ga764ab695ff8dd09179d9eee1d60ecc7d", null ],
-    [ "Nh_TTY_refreshScreen", "group__NhTTYFunctions.html#gacedd6f846ec59719253785a84b67f594", null ]
+    [ "nh_tty_refreshCursor", "group__nhttyFunctions.html#ga027642ee3457a1f2048080cbcbef4a8e", null ],
+    [ "nh_tty_refreshScreen", "group__nhttyFunctions.html#ga2473916b48bf6da8cb5592042dd1769c", null ]
 ];

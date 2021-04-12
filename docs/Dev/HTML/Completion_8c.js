@@ -1,7 +1,7 @@
 var Completion_8c =
 [
-    [ "Nh_ECMAScript_normalCompletion", "group__NhECMAScriptFunctions.html#ga7570eb2a14babfb58a82a24857e8bf9d", null ],
-    [ "Nh_ECMAScript_normalEmptyCompletion", "group__NhECMAScriptFunctions.html#ga1308030821c19caa08ce33cf02e0f772", null ],
-    [ "Nh_ECMAScript_throwReferenceError", "group__NhECMAScriptFunctions.html#gaa3428225ede9866dcf42299c840eeb16", null ],
-    [ "Nh_ECMAScript_throwTypeError", "group__NhECMAScriptFunctions.html#ga2bc477251007bdf7d861689cde7e3323", null ]
+    [ "nh_ecmascript_normalCompletion", "group__nhecmascriptFunctions.html#ga0720540f06a3b820267bc4e500eaad72", null ],
+    [ "nh_ecmascript_normalEmptyCompletion", "group__nhecmascriptFunctions.html#gae15285f8f024d6dec8779a171fd61f97", null ],
+    [ "nh_ecmascript_throwReferenceError", "group__nhecmascriptFunctions.html#gaead8d2c1ebc4d3c0bbe143e014ce5ed9", null ],
+    [ "nh_ecmascript_throwTypeError", "group__nhecmascriptFunctions.html#ga6901b40a17b37eeba62702b7921449ee", null ]
 ];

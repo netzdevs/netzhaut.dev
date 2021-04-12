@@ -1,16 +1,15 @@
 var modules =
 [
-    [ "NhCore", "group__NhCore.html", "group__NhCore" ],
-    [ "NhTTY", "group__NhTTY.html", "group__NhTTY" ],
-    [ "NhLoader", "group__NhLoader.html", "group__NhLoader" ],
-    [ "NhECMAScript", "group__NhECMAScript.html", "group__NhECMAScript" ],
-    [ "NhCSS", "group__NhCSS.html", "group__NhCSS" ],
-    [ "NhGfx", "group__NhGfx.html", "group__NhGfx" ],
-    [ "NhDOM", "group__NhDOM.html", "group__NhDOM" ],
-    [ "NhEncoding", "group__NhEncoding.html", "group__NhEncoding" ],
-    [ "NhWebIDL", "group__NhWebIDL.html", "group__NhWebIDL" ],
-    [ "NhWSI", "group__NhWSI.html", "group__NhWSI" ],
-    [ "NhNetwork", "group__NhNetwork.html", "group__NhNetwork" ],
-    [ "NhHTML", "group__NhHTML.html", "group__NhHTML" ],
-    [ "NhCSSValues", "group__NhCSSValues.html", "group__NhCSSValues" ]
+    [ "nhcore", "group__nhcore.html", "group__nhcore" ],
+    [ "nhtty", "group__nhtty.html", "group__nhtty" ],
+    [ "nhloader", "group__nhloader.html", "group__nhloader" ],
+    [ "nhecmascript", "group__nhecmascript.html", "group__nhecmascript" ],
+    [ "nhcss", "group__nhcss.html", "group__nhcss" ],
+    [ "nhgfx", "group__nhgfx.html", "group__nhgfx" ],
+    [ "nhdom", "group__nhdom.html", "group__nhdom" ],
+    [ "nhencoding", "group__nhencoding.html", "group__nhencoding" ],
+    [ "nhwebidl", "group__nhwebidl.html", "group__nhwebidl" ],
+    [ "nhwsi", "group__nhwsi.html", "group__nhwsi" ],
+    [ "nhnetwork", "group__nhnetwork.html", "group__nhnetwork" ],
+    [ "nhhtml", "group__nhhtml.html", "group__nhhtml" ]
 ];

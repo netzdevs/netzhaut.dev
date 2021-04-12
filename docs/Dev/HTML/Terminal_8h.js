@@ -1,7 +1,7 @@
 var Terminal_8h =
 [
-    [ "Nh_TTY_openTerminal_f", "group__NhTTYTypedefs.html#ga9ff4945f06764a3d0c4a5be0c779aca6", null ],
-    [ "Nh_TTY_getTerminal", "group__NhTTYFunctions.html#ga29643f7ce6536a5cba36af7333c48a4b", null ],
-    [ "Nh_TTY_openTerminal", "group__NhTTYFunctions.html#ga932b0fa31a7a83b6dfe90094e67e1ffe", null ],
-    [ "Nh_TTY_write", "group__NhTTYFunctions.html#gae3a9c2687cd16ca32a0a08d539bbfd28", null ]
+    [ "nh_tty_openTerminal_f", "group__nhttyTypedefs.html#gac37ef6e1ef0da44fa11f995ae6e32a4d", null ],
+    [ "nh_tty_getTerminal", "group__nhttyFunctions.html#gae4ce0d418f18a9cd7f1457ef499151a7", null ],
+    [ "nh_tty_openTerminal", "group__nhttyFunctions.html#ga69792a7c4337dfd379642a127940423e", null ],
+    [ "nh_tty_write", "group__nhttyFunctions.html#ga63d3de54bafc441ec6452c8a28d3ded9", null ]
 ];

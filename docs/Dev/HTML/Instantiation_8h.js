@@ -1,6 +1,6 @@
 var Instantiation_8h =
 [
-    [ "Nh_ECMAScript_globalDeclarationInstantiation", "group__NhECMAScriptFunctions.html#ga9d2e04e9b166496779061ee823d07730", null ],
-    [ "Nh_ECMAScript_instantiateFunctionObject", "group__NhECMAScriptFunctions.html#ga964fac1dd54009c6d146d625c1b44e42", null ],
-    [ "Nh_ECMAScript_instantiateOrdinaryFunctionObject", "group__NhECMAScriptFunctions.html#gad68974cb605f920ab5436b6fba55db1c", null ]
+    [ "nh_ecmascript_globalDeclarationInstantiation", "group__nhecmascriptFunctions.html#ga77d1d32c222917918a727e103967e33a", null ],
+    [ "nh_ecmascript_instantiateFunctionObject", "group__nhecmascriptFunctions.html#gae471b98a06770372c25bb4a20bf13992", null ],
+    [ "nh_ecmascript_instantiateOrdinaryFunctionObject", "group__nhecmascriptFunctions.html#ga8041bbfa9bf83092d73c325031700257", null ]
 ];

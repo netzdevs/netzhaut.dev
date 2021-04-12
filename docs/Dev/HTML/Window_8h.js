@@ -1,7 +1,7 @@
 var Window_8h =
 [
-    [ "Nh_closeWindow", "group__NhCoreFunctions.html#gaaeda670f96ebd882b2a218c9d74d23ee", null ],
-    [ "Nh_openWindow", "group__NhCoreFunctions.html#gaa83e9eb56b361bc812fe29a368d7ec1d", null ],
-    [ "Nh_setWindowBackgroundColor", "group__NhCoreFunctions.html#ga50f1d0b49cbb41158c2eb6efdd642bd4", null ],
-    [ "Nh_setWindowTitle", "group__NhCoreFunctions.html#ga197d9f831ac50ffb251dfee5f612d898", null ]
+    [ "nh_closeWindow", "group__nhcoreFunctions.html#ga8ced110a15d441901ceadad6d94d2349", null ],
+    [ "nh_openWindow", "group__nhcoreFunctions.html#ga3cd989f62c51078fd1cfd0020e7378a8", null ],
+    [ "nh_setWindowBackgroundColor", "group__nhcoreFunctions.html#gae738834cb91f60d4ba29e7eecb44c4e1", null ],
+    [ "nh_setWindowTitle", "group__nhcoreFunctions.html#ga5efb3a12f783fd769bb3e24f78cd27fd", null ]
 ];
