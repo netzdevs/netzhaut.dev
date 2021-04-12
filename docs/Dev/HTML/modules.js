@@ -11,5 +11,6 @@ var modules =
     [ "NhWebIDL", "group__NhWebIDL.html", "group__NhWebIDL" ],
     [ "NhWSI", "group__NhWSI.html", "group__NhWSI" ],
     [ "NhNetwork", "group__NhNetwork.html", "group__NhNetwork" ],
-    [ "NhHTML", "group__NhHTML.html", "group__NhHTML" ]
+    [ "NhHTML", "group__NhHTML.html", "group__NhHTML" ],
+    [ "NhCSSValues", "group__NhCSSValues.html", "group__NhCSSValues" ]
 ];

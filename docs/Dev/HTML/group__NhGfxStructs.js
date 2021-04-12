@@ -22,12 +22,12 @@ var group__NhGfxStructs =
       [ "renderPassCount", "structNh__Vk__Driver.html#a81e30a53e5d5091b116f660191399fb0", null ]
     ] ],
     [ "Nh_Vk_GPU", "structNh__Vk__GPU.html", [
-      [ "CSS", "structNh__Vk__GPU.html#a44abd544011dcfc50f4639a40295c611", null ],
+      [ "CSS", "structNh__Vk__GPU.html#a6bf7ce359820d22814df2bcfc1d4f571", null ],
       [ "Driver", "structNh__Vk__GPU.html#a68c761830a428e4ae916353133a1585e", null ],
       [ "name_p", "structNh__Vk__GPU.html#a2132c553bba8f37646badf07f588ee99", null ],
       [ "Pipelines_p", "structNh__Vk__GPU.html#ac041b9e4b963817702f02e42bfa9aa91", null ],
       [ "Textures", "structNh__Vk__GPU.html#a04ff98f44a43c8fee099db0942b915ad", null ],
-      [ "TTY", "structNh__Vk__GPU.html#a3934bbcf7a413d4808dd09bc631b8719", null ]
+      [ "TTY", "structNh__Vk__GPU.html#ae51f126c13aaab6bb08daa80040aa1f6", null ]
     ] ],
     [ "Nh_Vk_BufferInfo", "structNh__Vk__BufferInfo.html", [
       [ "createInfo", "structNh__Vk__BufferInfo.html#a63f50b2fc44769f652fe20887fab56cb", null ],
@@ -99,7 +99,7 @@ var group__NhGfxStructs =
     [ "Nh_Vk_Surface", "structNh__Vk__Surface.html", [
       [ "CommandBuffers_p", "structNh__Vk__Surface.html#ae5c66a97a43ed77813eee543f1273d0b", null ],
       [ "currentImage", "structNh__Vk__Surface.html#a3f81b93a96cf2603d19ad08dab358902", null ],
-      [ "DepthStencil", "structNh__Vk__Surface.html#a6279c2bbb1de313f15baa1325229267c", null ],
+      [ "DepthStencil", "structNh__Vk__Surface.html#ae45789438bde1a1a1579f54a93a08465", null ],
       [ "Extent2D", "structNh__Vk__Surface.html#ad647751d454ff5b7ff054313198d44c9", null ],
       [ "Fence", "structNh__Vk__Surface.html#a1af4c109ed5b7cda190b8968943be21c", null ],
       [ "Framebuffer_p", "structNh__Vk__Surface.html#a43a5bbc699cc16384424dc7fa27dda74", null ],
@@ -112,9 +112,9 @@ var group__NhGfxStructs =
       [ "Memory", "structNh__Vk__Surface.html#a658042049ba842f32a129e8c01274928", null ],
       [ "Semaphore_p", "structNh__Vk__Surface.html#a012ab840790aabeeae0a4148972daecf", null ],
       [ "SurfaceKHR_p", "structNh__Vk__Surface.html#a1d6908df72b9df0ea299c86a1fd66578", null ],
-      [ "Swapchain", "structNh__Vk__Surface.html#a91d5f5eee94bc3acd7593a6c45b7ca80", null ],
+      [ "Swapchain", "structNh__Vk__Surface.html#ace749ddbfb6da53f4efd6d3fa8686325", null ],
       [ "SwapchainKHR", "structNh__Vk__Surface.html#aff7161889c4ce3ebbf9b11b6f0ae8ad5", null ],
-      [ "Sync", "structNh__Vk__Surface.html#a8ec9dbbe623065e1a25fced5492ff476", null ]
+      [ "Sync", "structNh__Vk__Surface.html#ad4609b18a6f5305cbb451b5aaf8742a2", null ]
     ] ],
     [ "Nh_Vk_TextureInfo", "structNh__Vk__TextureInfo.html", [
       [ "data_p", "structNh__Vk__TextureInfo.html#ae67918d670ccf1304cc0bb1afbbdc106", null ],
@@ -183,15 +183,15 @@ var group__NhGfxStructs =
       [ "BackgroundColor", "structNh__Gfx__Surface.html#af19e75e8a0eeff53788aec557cfbfb9d", null ],
       [ "getNextImage", "structNh__Gfx__Surface.html#a071498c23c17a0430a8d5d36640b9410", null ],
       [ "halt", "structNh__Gfx__Surface.html#add47644b6d5cb4214a3b2bb3afbaa484", null ],
-      [ "Internal", "structNh__Gfx__Surface.html#a96fdd8cd7458017fa6122cbb64a4e11c", null ],
+      [ "Internal", "structNh__Gfx__Surface.html#a7f5036d384f9cc6a1c41bb856ff91c6f", null ],
       [ "ready", "structNh__Gfx__Surface.html#a0e861eca0a4cfe9ba2dfdfc8f765f877", null ],
       [ "rendering", "structNh__Gfx__Surface.html#a1edc0c0df63e728737a8f5a8c09cbc56", null ],
       [ "renderRequests", "structNh__Gfx__Surface.html#a0829ec35059b6a29a25bac405e7dcc20", null ],
       [ "resize", "structNh__Gfx__Surface.html#a090aa5a9521e99d42c2dca55c0507c5c", null ],
-      [ "Settings", "structNh__Gfx__Surface.html#aa90d631b1c36a0298138af271ef27c32", null ],
+      [ "Settings", "structNh__Gfx__Surface.html#ad9f69c7cc44bd4e8179bf9f96d23327b", null ],
       [ "signal", "structNh__Gfx__Surface.html#a056033ba946fc1dd097e0c1f4dbc5113", null ],
       [ "skipRender", "structNh__Gfx__Surface.html#a825d136e7754d00b811afa3381dfb359", null ],
-      [ "Sync", "structNh__Gfx__Surface.html#a2c1bf69b517e0ea79343c4bc101621b6", null ],
+      [ "Sync", "structNh__Gfx__Surface.html#a0900ac272f07c0a4bd8d167cb88bd4ba", null ],
       [ "undoHalt", "structNh__Gfx__Surface.html#a2c1f3e8d411e22aaa342e2184ad2fa27", null ],
       [ "Viewports", "structNh__Gfx__Surface.html#a3bab381ee4ec4eebc343e080bdd881a4", null ],
       [ "Vulkan", "structNh__Gfx__Surface.html#a6290893fdf4c636252d37a5e801348dc", null ],
@@ -213,11 +213,11 @@ var group__NhGfxStructs =
       [ "Position", "structNh__Gfx__Viewport.html#aef5824ce63d3963dc156c5e62d26695f", null ],
       [ "priority", "structNh__Gfx__Viewport.html#a0f385681565a74965e8e6953a8acfa77", null ],
       [ "render", "structNh__Gfx__Viewport.html#a38337c7701eb2d0e244cd504d767a424", null ],
-      [ "Settings", "structNh__Gfx__Viewport.html#a2aaa884ac3b8533fc712adbe06c7a61d", null ],
+      [ "Settings", "structNh__Gfx__Viewport.html#ad7cfb2a930dc7fdf35fd15297d11571c", null ],
       [ "Size", "structNh__Gfx__Viewport.html#a32a7005edd1898615f156d47c328255a", null ],
       [ "submittedBuffers_p", "structNh__Gfx__Viewport.html#a093ef0b0a4a133361d75d6531dd9acb9", null ],
       [ "Surface_p", "structNh__Gfx__Viewport.html#a944a729a1a1bc256fdaba2742e74b74a", null ],
-      [ "Sync", "structNh__Gfx__Viewport.html#a33e39d20b14da6535a8a3d4c715ff58f", null ],
-      [ "Vulkan", "structNh__Gfx__Viewport.html#a3643328e51239a3044a901c1dcc461e1", null ]
+      [ "Sync", "structNh__Gfx__Viewport.html#abc37c7ce0c6825b83c3e301a84b3a900", null ],
+      [ "Vulkan", "structNh__Gfx__Viewport.html#a8b8f0e02144e947906fcc2f6cdf72b02", null ]
     ] ]
 ];

@@ -8,7 +8,7 @@ var structNh__CSS__CornerData =
     [ "leftCount", "structNh__CSS__CornerData.html#af325c12c3725350011f052723d19f7c3", null ],
     [ "radii_p", "structNh__CSS__CornerData.html#ad8ac47a2b49193af3537e17b5f0e2856", null ],
     [ "rightCount", "structNh__CSS__CornerData.html#a718811b04c46df510f28c964669a83ec", null ],
-    [ "Rounded", "structNh__CSS__CornerData.html#a6beab3fc30f9b181707b5027517c3fa0", null ],
+    [ "Rounded", "structNh__CSS__CornerData.html#a34e13ecacb9b661d341327baa406ec4d", null ],
     [ "topCount", "structNh__CSS__CornerData.html#a57db547c6d835b06a421ad707daf92ae", null ],
     [ "topLeft", "structNh__CSS__CornerData.html#a219606388e7e761350998f3544775830", null ],
     [ "TopLeft", "structNh__CSS__CornerData.html#a00eb8ffc712cad056cd0d4e5bfd5a528", null ],

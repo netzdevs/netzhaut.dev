@@ -245,14 +245,14 @@ var group__NhCoreStructs =
       [ "runDelay", "structNh__Workload.html#aff230bbec87c8553b631ba63cbcd0148", null ],
       [ "signal", "structNh__Workload.html#a18fcb2240ef0ee05adbc7c483f6408e2", null ],
       [ "Thread_p", "structNh__Workload.html#a4a155bc8e3e9ccfde09ab381c88cb410", null ],
-      [ "Timing", "structNh__Workload.html#a82b9cb11e27db8525f64c298b31cf25e", null ],
+      [ "Timing", "structNh__Workload.html#afc74b57b10dc068e5be2ca09b729dc87", null ],
       [ "turnAround", "structNh__Workload.html#a67d09f6b091c3ebaa1e0994ec4186476", null ],
       [ "waitDelay", "structNh__Workload.html#a075503b70eca3fbc6f87fd9146dd3094", null ]
     ] ],
     [ "Nh_Thread", "structNh__Thread.html", [
       [ "CurrentWorkload_p", "structNh__Thread.html#a8d752f0bcb891ac84a59ed4b1b2786c0", null ],
       [ "depth", "structNh__Thread.html#a735af1c3c342c9692cb35033544945a6", null ],
-      [ "IPC", "structNh__Thread.html#a27594ac719f5ba2beebef774aa99e025", null ]
+      [ "IPC", "structNh__Thread.html#a6f25a09e2c9caf7abe675cbab82d155b", null ]
     ] ],
     [ "Nh_ThreadPool", "structNh__ThreadPool.html", [
       [ "Main", "structNh__ThreadPool.html#af849b808f33e2bbfcceaccd8e9acdf47", null ],
@@ -297,20 +297,20 @@ var group__NhCoreStructs =
       [ "BackgroundColor", "structNh__Window.html#a73f2047e7d85ac67b2749a72f3d82bb2", null ],
       [ "deduceBackground", "structNh__Window.html#ac237b7961758a0fd898eab81c657d890", null ],
       [ "deduceTitle", "structNh__Window.html#a6e8f6c4d29d78487f4eb29aab7bb2fc8", null ],
-      [ "Flags", "structNh__Window.html#ae10a2401e7cb2edd7ac6663339f8aea8", null ],
+      [ "Flags", "structNh__Window.html#a0e59ad2b2c43c5ff7ef950d0e92a909f", null ],
       [ "getNextImage", "structNh__Window.html#a8e3045501e3bcb1f18118e1790806c35", null ],
       [ "halt", "structNh__Window.html#a0efda9d4a1f6ff342b6a0fc08964e1ea", null ],
-      [ "Internal", "structNh__Window.html#a703c65ff31d2cb6733c96b54f2ef8d7d", null ],
+      [ "Internal", "structNh__Window.html#af936b38304ce680f0275db7bbccf643a", null ],
       [ "IO", "structNh__Window.html#a68f5a2155cc0e9a02631f1462d17edfd", null ],
       [ "Position", "structNh__Window.html#a0ee3d6e3a1903fb901b3213b07ebdf6d", null ],
       [ "ready", "structNh__Window.html#a6feb4ce4dbf14c7e4dd4b6a04e63826f", null ],
       [ "rendering", "structNh__Window.html#a7ee3302cb2ac17973550253a1a5a1ad0", null ],
       [ "resize", "structNh__Window.html#a9e7f0c2b43a14611be175109b7058689", null ],
-      [ "Settings", "structNh__Window.html#a51831493cccf2577ab6df7c7e8330997", null ],
+      [ "Settings", "structNh__Window.html#a726ece25f47e75708030861c2cb41bc9", null ],
       [ "signal", "structNh__Window.html#a9091ef443a87832e48442c5725abdd98", null ],
       [ "Size", "structNh__Window.html#a712e4ce9e792a28f29b72af44d92afc3", null ],
       [ "skipRender", "structNh__Window.html#a17b037266d80888d88c467fd5e644826", null ],
-      [ "Sync", "structNh__Window.html#a16a316ab5499e237ea00dbf54928a4e7", null ],
+      [ "Sync", "structNh__Window.html#af1e9b0a141d82bf734cdaf40db3a5a1e", null ],
       [ "Tabs", "structNh__Window.html#ad89f3ab64f843daf63539899acec433b", null ],
       [ "title_p", "structNh__Window.html#af3e7635e8c5cc067985129a8cd9f9ae2", null ],
       [ "undoHalt", "structNh__Window.html#a74a044991cac8ff6c76a0887737a6500", null ]

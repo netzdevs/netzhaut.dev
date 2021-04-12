@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['y_6091',['y',['../structNh__PixelPosition.html#add6a5fbeea262ecfb6ae2b92f8f51af1',1,'Nh_PixelPosition::y()'],['../structNh__ClipPosition.html#a61ca9825e3c70083148cf0dbc250b6fe',1,'Nh_ClipPosition::y()'],['../structNh__Vector2D.html#a48f3ee8db73c963a7733cbd87ee65a55',1,'Nh_Vector2D::y()'],['../structNh__Vector3D.html#abff0a226d22bec12d8bcb00e2d796886',1,'Nh_Vector3D::y()'],['../structNh__Vertex.html#ae753a1a365d2f9d275e8ffddd1b158d9',1,'Nh_Vertex::y()'],['../structNh__PixelVertex.html#ab4ad57187de57d46cff3bf0db7b31b1d',1,'Nh_PixelVertex::y()']]],
-  ['yadvance_6092',['yAdvance',['../structNh__Gfx__Glyph.html#a0a2f3765be7da0d246ee1b0d877e0b2d',1,'Nh_Gfx_Glyph']]],
-  ['years_6093',['years',['../structNh__LocalTime.html#ad78806fd8423e3b6255fcc2a9d7cae0b',1,'Nh_LocalTime']]],
-  ['yoffset_6094',['yOffset',['../structNh__Gfx__Glyph.html#a4d1d6c5e7f8fd99014d3351426a42432',1,'Nh_Gfx_Glyph']]]
+  ['x_7133',['x',['../structNh__PixelPosition.html#aeb6240b3f2636ff96093edc5b975d26d',1,'Nh_PixelPosition::x()'],['../structNh__ClipPosition.html#adbc8bbf1357b86618a672eb327ad04e0',1,'Nh_ClipPosition::x()'],['../structNh__Vector2D.html#acee5e80e7136f48c6b6c397b810f9338',1,'Nh_Vector2D::x()'],['../structNh__Vector3D.html#a58bec1939691393233e21fd073df7a34',1,'Nh_Vector3D::x()'],['../structNh__Vertex.html#a63b526f507206e50d95b3afd8f51f3ba',1,'Nh_Vertex::x()'],['../structNh__PixelVertex.html#a6f79c90ca470e47e0c6a7dbfccef87de',1,'Nh_PixelVertex::x()']]],
+  ['xadvance_7134',['xAdvance',['../structNh__Gfx__Glyph.html#a03ddf14803755a0d824e915082733ef5',1,'Nh_Gfx_Glyph']]],
+  ['xoffset_7135',['xOffset',['../structNh__Gfx__Glyph.html#a96cbf82c78b9587aa71bf720a0b2b614',1,'Nh_Gfx_Glyph']]]
 ];

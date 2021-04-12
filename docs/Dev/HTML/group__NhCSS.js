@@ -5,6 +5,6 @@ var group__NhCSS =
     [ "Enumerations", "group__NhCSSEnums.html", "group__NhCSSEnums" ],
     [ "Data Structures", "group__NhCSSStructs.html", "group__NhCSSStructs" ],
     [ "Functions", "group__NhCSSFunctions.html", "group__NhCSSFunctions" ],
-    [ "Typedefs", "group__NhCSSTypedefs.html", null ],
+    [ "Typedefs", "group__NhCSSTypedefs.html", "group__NhCSSTypedefs" ],
     [ "Variables", "group__NhCSSVars.html", "group__NhCSSVars" ]
 ];
