@@ -453,6 +453,10 @@ code a:visited {
         color: #24bbc4;
 }
 
+#selected .arrow {
+        color: #282923;
+}
+
 #projectname {
 }
 

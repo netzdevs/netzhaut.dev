@@ -22,6 +22,9 @@
   <link rel="icon" href="Logo/LogoFavicon.png">
   <link href="DoxygenTheme/Custom.css" rel="stylesheet" type="text/css"/>
   <style>
+    .selected .arrow {
+      color: #232425;
+    }
     .roaddetailbox {
       padding-left: 15px;
     }
@@ -48,21 +51,18 @@
       display: block;
     }
     .reqbox {
-      border-style: solid;
-      padding-left: 10px;
+      padding-left: 20px;
     }
     .infoboxcontainer {
-      margin-left:750px; 
-      margin-right: 50px; 
     }
     .infobox {
-      min-width:100px;
+      min-width:230px;
       max-width:300px;
       margin-bottom: 30px;
     }
     .infobox2 {
       border-style:solid;
-      min-width:400px;
+      min-width:300px;
       max-width:1000px;
       margin-bottom: 30px;
     }
@@ -118,16 +118,10 @@
                  <div class="doc-content-anchor-nav selected"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#pageheader">Introduction</a></span></div>
                </li>
                <li>
-                 <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#road">Roadmap</a></span></div>
-               </li>
-               <li>
                  <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#reqs">Build Requirements</a></span></div>
                </li>
                <li>
                  <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#build">Building</a></span></div>
-               </li>
-               <li>
-                 <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#license">License</a></span></div>
                </li>
              </ul>
            </li>
@@ -149,77 +143,12 @@
         <div class="title">netzhaut | Web Browser Engine</div>
       </div>
     </div><!--header-->
-    <div class="contents">
-      <div class="textblock" style="float:left; width:700px;">
+    <div class="contents" style="display:flex;">
+      <div class="textblock" style="minimal-width:400px;width:700px;margin-right:50px;">
         <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
         </h1>
         <div> 
-          <p>netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the roadmap for more details. </p>
-          <p>The engine is currently being developed for Linux, a Microsoft Windows port is planned once it matures enough.</p>
-        </div>
-        <h1 class="doc-content-anchor"><a id="road"></a>Roadmap
-        </h1>
-        <p>The roadmap documents previous, current and future development stages. Early development is divided into <b>initial development</b>, <b>pre-alpha-1</b> and <b>pre-alpha-2</b>. 
-        <h2>initial development <b style="color:green;">&#x2713</b></h2>
-        <div class="roaddetailbox">
-          <div class="roaddetailboxinner">
-            <pre>[Q2 2020 - Q1 2021]</pre>
-            <p>This stage focused on design, architecture and implementing a stable foundation for later development. As a result, every core component of the engine has a functioning initial implementation that is able to interconnect with related components. Also, a degree of project stability has been achieved that allows for iterative development to take place at faster pace.</p>
-            <input id="roadcheck1" type="checkbox" name="menu"/>
-            <h4><label class="roadlabel" for="roadcheck1">Show Details</label></h4>
-            <ul class="roaddetail1">
-              <li>Component Design</li>
-              <p>The implementation is divided into multiple libraries, managed by a loader-library which handles loading requests/dependencies at runtime. The architecture is designed to be able to handle installing/updating/reloading of libraries at runtime. 
-              <li>Object Oriented Design</li>
-              <p>WebIDL interfaces are parsed at runtime in order to provide OOP-like routines and facilitate ECMAScript bindings. In the implementation, objects such as Document, HTMLElement, etc. are represented as linked structs. Each struct has an associated interface which is used to generate an attribute list. Object attributes are placed into this list according to the position in the interface allowing for easy bindings in combination with a universially applied type system. Operation bindings are essentially created by calling functions in a standardized, interface based way using function pointers. Inheritance is imitated by creating structs for each inherited interface and linking them together. All in all, this system is easy to work with since it's based on a lot of automatic mechanisms.
-              <li>First iteration of specification conforming parsers</li>
-              <p>This includes implementation of the ECMAScript parser, CSS/Selectors parser, HTML parser and WebIDL parser. The parsers are hand-written and while far from finished, a good chunk of implementation work has been completed.
-              <li>Threading Design</li>
-              <p>The threading architecture is based on workloads. Each workload is assigned to a thread and executed once every thread cycle. netzhaut can be configured to use 0 to unlimited threads. When using 0 threads, the host program needs to call the workload execution routine manually since netzhaut relies purely on the host program thread in that case.
-              <li>Rendering</li>
-              <p>Basic rendering routines have been written, establishing the foundation of the rendering engine developed during pre-alpha-1.
-              <li>Initial API</li>
-              <p>API principles have been established and core routines such as creating windows, creating viewports and creating document-contexts are operational enough to provide a good foundation.
-              <li>Logging Interface</li>
-              <p>During initial/pre-alpha development, logging is mostly done by using a build-in TTY interface which will be expanded later on but is already functional during this stage. Logging messages are stored in a tree structure which makes managing huge amounts of traffic possible by using qualified node identifiers.
-              <li>First Installer iteration</li>
-              <p>A custom installer has been written to facilitate development/building/installing in the most simplistic way possible. Later on, it could also be used to execute test routines etc.
-              <li>Other</li>
-              <p>Standard utilities for handling data using Arrays, Lists, etc. have been written. Unicode and the UTF-8 encoding are handled adequately. Work on Networking and URL libraries has started. Work on the ECMAScript engine has begun.
-              <li>Initial Documentation</li>
-              <p>Finally, basic documentation structures/methods have been designed and a road-map has been established.
-            </ul>
-          </div>
-        </div>
-        <h2>pre-alpha-1</h2>
-        <div class="roaddetailbox">
-          <div class="roaddetailboxinner">
-            <pre>[Q1 2021 - ???]</pre>
-            <p>This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering.</p> 
-            <input id="roadcheck2" type="checkbox" name="menu"/>
-            <h4><label class="roadlabel" for="roadcheck2">Show Details</label></h4>
-            <ul class="roaddetail2">
-              <li>TODO implement basic layout engine</li>
-              <p>implement CSS Display module, CSS Inline Layout module, ...</p>
-            </ul>
-          </div>
-        </div>
-        <h2>pre-alpha-2</h2>
-        <div class="roaddetailbox">
-          <div class="roaddetailboxinner">
-            <pre>[??? - ???]</pre>
-            <p>This stage focuses on implementing scripting and browser-context related routines.</p>
-            <input id="roadcheck3" type="checkbox" name="menu"/>
-            <h4><label class="roadlabel" for="roadcheck3">Show Details</label></h4>
-            <ul class="roaddetail3">
-              <li>TODO HTML event loop</li>
-              <p>Implement the HTML event loop and browser-context associated routines</p>
-              <li>TODO ECMAScript Bindings</li>
-              <p>Implement automatic binding generation using the WebIDL layer</p>
-              <li>TODO ECMAScript Engine</li>
-              <p>Expand the interpreter implementation</p>
-            </ul>
-          </div>
+          <p>netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the <a href="Dev/HTML/Roadmap.html">roadmap</a> for more details. The engine is currently being developed for Linux, a Microsoft Windows port is planned once it matures enough.</p>
         </div>
         <br><h1 class="doc-content-anchor"><a id="reqs"></a>Build Requirements
         </h1>
@@ -274,50 +203,12 @@
         <div>
           <p>TODO
         </div>
-        <br><h1 class="doc-content-anchor"><a id="license"></a>License
-        </h1>
-        <div>
-          <p>TODO
-        </div>
-        <br>
         <br>
       </div>
-      <div class="infoboxcontainer">
-        <div style="padding-top:10px;">
-        </div>
-        <h2>Minimal Example</h2>
-        <div class="infobox2">
-          <div class="innerinfobox" style="overflow-x:auto;">
-<pre><code class="c" style="background-color:#151515; color:#24bbc4;">#include "netzhaut/netzhaut.h"
-#include &lt;string.h&gt;
-
-int main(int argc, char **argv_pp) 
-{
-    nh_initialize(NH_LOADER_SCOPE_SYSTEM, NULL, NH_FALSE);
-
-    nh_PixelSize Size = {.width = 1000, .height = 1000};
-    nh_wsi_Window *Window_p = nh_wsi_createWindow("Window Title", Size);
-    nh_gfx_Surface *Surface_p = nh_gfx_createSurface(Window_p, NH_GFX_API_VULKAN);
-
-    nh_PixelPosition Position = {.x = 0, .y = 0};
-    nh_gfx_Viewport *Viewport_p = nh_gfx_createViewport(Surface_p, Position, Size);
-
-    nh_html_DocumentContext *DocumentContext_p = 
-      nh_html_createDocumentContext(NH_FALSE, &Viewport_p, 1);
-
-    char *p = "A quirky hello to you!";
-    nh_html_loadBytes(DocumentContext_p, p, strlen(p));
-
-    while (nh_run()) {}
-
-    nh_terminate();
-}
-</code></pre>
-          </div>
-        </div>
-        <h2>Changelogs</h2>
-        <div class="infobox">
-          <div class="innerinfobox">
+      <div style="display:inline-block;">
+          <h1>Changelogs</h1>
+          <div class="infobox">
+            <div class="innerinfobox">
 <!-- NH_INSTALLER_INSERT_CHANGELOGS_BEGIN -->
 2021-2-23 <a href="Dev/HTML/group__netzhautChangelog.html">netzhaut v0.0.0</a><br>
 2021-2-23 <a href="Dev/HTML/group__nhloaderChangelog.html">nhloader v0.0.0</a><br>
@@ -333,21 +224,27 @@ int main(int argc, char **argv_pp)
 2021-2-23 <a href="Dev/HTML/group__nhgfxChangelog.html">nhgfx v0.0.0</a><br>
 2021-4-10 <a href="Dev/HTML/group__nhcssChangelog.html">nhcss v0.0.1</a><br>
 <!-- NH_INSTALLER_INSERT_CHANGELOGS_END -->
+            </div>
           </div>
-        </div>
-        <h2>Repositories</h2>
-        <div class="infobox">
-          <div class="innerinfobox">
-            <a href="https://github.com/netzhautproject/netzhaut">Code Repository</a><br>
-            <a href="https://github.com/netzhautproject/docs">Docs Repository</a><br>
+          <h1>Repositories</h1>
+          <div class="infobox">
+            <div class="innerinfobox">
+              <a href="https://github.com/netzhautproject/netzhaut">Code Repository</a><br>
+              <a href="https://github.com/netzhautproject/docs">Docs Repository</a><br>
+            </div>
           </div>
-        </div>
-        <h2>Contact</h2>
-        <div class="infobox">
-          <div class="innerinfobox">
-            code issue: <a href="https://github.com/netzhautproject/netzhaut/issues/new">create new</a><br>
-            docs issue: <a href="https://github.com/netzhautproject/docs/issues/new">create new</a><br>
-            email: <a href="mailto:contact@netzhautproject.org">contact@netzhautproject.org</a><br>
+          <h1>License</h1>
+          <div>
+            <p>Library Source Code (src/lib) is licensed under LGPLv3.<br>Binary Source Code (src/bin) is licensed under MIT.</p>
+            <p></p>
+          </div>
+          <h1>Contact</h1>
+          <div class="infobox">
+            <div class="innerinfobox">
+              code issue: <a href="https://github.com/netzhautproject/netzhaut/issues/new">create new</a><br>
+              docs issue: <a href="https://github.com/netzhautproject/docs/issues/new">create new</a><br>
+              email: <a href="mailto:contact@netzhautproject.org">contact@netzhautproject.org</a><br>
+            </div>
           </div>
         </div>
       </div>
@@ -380,6 +277,32 @@ v0.0.0-0.0.1 pre-alpha-1
 </style>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
