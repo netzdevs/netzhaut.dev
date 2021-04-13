@@ -99,15 +99,15 @@ function initResizable()
 
   function collapseExpand()
   {
-    if (sidenav.width()>0) {
-      restoreWidth(0);
-      collapsed=true;
-    }
-    else {
-      var width = readCookie('width');
-      if (width>200 && width<$(window).width()) { restoreWidth(width); } else { restoreWidth(200); }
-      collapsed=false;
-    }
+//    if (sidenav.width()>0) {
+//      restoreWidth(0);
+//      collapsed=true;
+//    }
+//    else {
+//      var width = readCookie('width');
+//      if (width>200 && width<$(window).width()) { restoreWidth(width); } else { restoreWidth(200); }
+//      collapsed=false;
+//    }
   }
 
   header  = $("#top");

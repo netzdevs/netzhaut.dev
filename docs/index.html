@@ -12,7 +12,7 @@
   <script type="text/javascript" src="API/HTML/jquery.js"></script>
   <script type="text/javascript" src="API/HTML/dynsections.js"></script>
   <link href="API/HTML/navtree.css" rel="stylesheet" type="text/css"/>
-  <script type="text/javascript" src="API/HTML/resize.js"></script>
+  <script type="text/javascript" src="resize.js"></script>
   <script type="text/javascript" src="API/HTML/navtreedata.js"></script>
   <script type="text/javascript" src="API/HTML/navtree.js"></script>
   <link href="API/HTML/search/search.css" rel="stylesheet" type="text/css"/>
@@ -105,27 +105,20 @@
      </div>
     </div>
   </div><!-- top -->
-  <div id="side-nav" class="ui-resizable side-nav-resizable">
-    <div id="nav-tree">
-      <div id="nav-tree-contents">
-        <div id="nav-sync" class="sync"></div>
-         <ul style="display:block;">
-           <li>
-             <div class="item"><span class="arrow" style="padding-left: 0px;">▼</span><span class="label"><a class="index.html" href="index.html">Home Page</a></span>
-             </div>
-             <ul class="children_ul" style="display: block;">
-               <li>
-                 <div class="doc-content-anchor-nav selected"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#pageheader">Introduction</a></span></div>
-               </li>
-               <li>
-                 <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#reqs">Build Requirements</a></span></div>
-               </li>
-               <li>
-                 <div class="doc-content-anchor-nav"><span class="arrow" style="padding-left: 16px;">►</span><span class="label"><a href="#build">Building</a></span></div>
-               </li>
-             </ul>
-           </li>
-        </ul>
+  <div id="side-nav" class="ui-resizable side-nav-resizable" style="min-width:75px;">
+      <div style="position:fixed;background-color:#151515;text-align:center;width:inherit;min-width:75px;">
+        <h1><img alt="Logo" src="Logo/LogoSmall.png" style="width:20px;height:auto;"/> News</h1>
+      </div>
+    <div id="nav-tree" style="-ms-overflow-style:none;scrollbar-width:none;">
+      <div id="nav-tree-contents" style="color:#24bbc4;">
+      <div style="-ms-overflow-style:none;scrollbar-width:none;">
+        <br>
+        <br>
+        <br>
+<!-- NH_INSTALLER_INSERT_NEWS_BEGIN -->
+        <p><b>2021-04-13</b><br>hello world</p>
+<!-- NH_INSTALLER_INSERT_NEWS_END -->
+      </div>
       </div>
     </div>
     <div id="splitbar" style="-moz-user-select:none;" 
@@ -147,61 +140,36 @@
       <div class="textblock" style="minimal-width:400px;width:700px;margin-right:50px;">
         <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
         </h1>
-        <div> 
-          <p>netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the <a href="Dev/HTML/Roadmap.html">roadmap</a> for more details. The engine is currently being developed for Linux, a Microsoft Windows port is planned once it matures enough.</p>
+        <div style="border-width:1px;border-style:solid;">
+          <div style="padding-left: 10px;">
+            <p>netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the <a href="Dev/HTML/Roadmap.html">roadmap</a> for more details. The engine is currently being developed for Linux, a Microsoft Windows port is planned once it matures enough.</p>
+          </div>
         </div>
         <br><h1 class="doc-content-anchor"><a id="reqs"></a>Build Requirements
         </h1>
-        <div>
-          <p>For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</p>
-          <p>
-          <h2>Linux:</h2>
-          <div class="reqbox">
-            <p>
-              <table>
-                <tr>
-                  <td>Compiler</td>
-                  <td>: <a href="https://gcc.gnu.org/">GCC</a></td>
-                </tr>
-                <tr>
-                  <td>Display Server</td>
-                  <td>: <a href="https://www.x.org/wiki/">X11</a></td>
-                </tr>
-                <tr>
-                  <td>SSL</td>
-                  <td>: <a href="https://www.openssl.org/">OpenSSL</a></td>
-                </tr>
-                <tr>
-                  <td>Font Engine</td>
-                  <td>: <a href="https://www.freetype.org/">FreeType</a></td>
-                </tr>
-              </table>
-            </p>
-          </div>
-          <h2>Microsoft Windows:<h2> 
-          <div class="reqbox">
-            <p>
-              <table>
-                <tr>
-                  <td>Compiler</td>
-                  <td>: TODO</td>
-                </tr>
-                <tr>
-                  <td>SSL</td>
-                  <td>: <a href="https://www.openssl.org/">OpenSSL</a></td>
-                </tr>
-                <tr>
-                  <td>Font Engine</td>
-                  <td>: <a href="https://www.freetype.org/">FreeType</a></td>
-                </tr>
-              </table>
-            </p>
+        <div style="border-width:1px;border-style:solid;">
+          <div style="padding-left: 10px;">
+            <p>For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</p>
+            <h3>Linux:</h3>
+            <ul>
+              <li><a href="https://gcc.gnu.org/">GCC</a></li>
+              <li><a href="https://www.x.org/wiki/">X11</a></li>
+              <li><a href="https://www.openssl.org/">OpenSSL</a></li>
+              <li><a href="https://www.freetype.org/">FreeType</a></li>
+            </ul>
+            <h3>Microsoft Windows:</h3> 
+            <ul>
+              <li><a href="https://www.openssl.org/">OpenSSL</a></li>
+              <li><a href="https://www.freetype.org/">FreeType</a></li>
+            </ul>
           </div>
         </div>
         <br><h1 class="doc-content-anchor"><a id="build"></a>Building
         </h1>
-        <div>
-          <p>TODO
+        <div style="border-width:1px;border-style:solid;">
+          <div style="padding-left: 10px;">
+            <p>TODO
+          </div>
         </div>
         <br>
       </div>
