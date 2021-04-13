@@ -1,5 +1,7 @@
 var NAVTREEINDEX40 =
 {
+"structnh__Vk__Surface.html#a1d2c9f22f6188ce6489b875221edbd92":[5,5,3,11,0],
+"structnh__Vk__Surface.html#a1e91b6f4dcd7e337d8ff4365591d6896":[5,5,3,11,10],
 "structnh__Vk__Surface.html#a2e4b33addc0d07776027c99d535b7c99":[5,5,3,11,3],
 "structnh__Vk__Surface.html#a32a9c29e2e3d933df309ad0fc685efd9":[5,5,3,11,4],
 "structnh__Vk__Surface.html#a4c2e6cdca39099425ef81ed9e3a630b4":[5,5,3,11,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX40 =
 "structnh__css__TextValues.html#aac99a7391cd6cfc47afb5e6d3302786b":[5,4,3,16,1],
 "structnh__css__TextValues.html#aae249f9869a06100eb4a75df3acba554":[5,4,3,16,0],
 "structnh__css__TextValues.html#ac90c01da534988793cf9a266b72e4593":[5,4,3,16,3],
-"structnh__css__TextValues.html#ad920b0bde9f0127cd9a260e75516849e":[5,4,3,16,4],
-"structnh__css__Value.html":[5,4,3,42],
-"structnh__css__Value.html#a0ce9d90201140d843cd8eb88137c29d7":[5,4,3,42,2]
+"structnh__css__TextValues.html#ad920b0bde9f0127cd9a260e75516849e":[5,4,3,16,4]
 };

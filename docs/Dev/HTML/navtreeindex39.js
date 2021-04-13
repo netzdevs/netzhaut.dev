@@ -1,5 +1,7 @@
 var NAVTREEINDEX39 =
 {
+"structnh__Config_1_1Flags_1_1Log.html#ae9067114c30bb9b7d7c745289c1db2a4":[5,0,3,14,0,1,12],
+"structnh__Config_1_1Flags_1_1Log.html#afb23ee935626119c4580eb7d06a82fbb":[5,0,3,14,0,1,18],
 "structnh__Config_1_1Flags_1_1Log_1_1Flow.html":[5,0,3,14,0,1,0],
 "structnh__Config_1_1Flags_1_1Log_1_1Flow.html#a130c45809d7f87024eb3e931e5edd278":[5,0,3,14,0,1,0,0],
 "structnh__Config_1_1Flags_1_1Log_1_1Flow.html#a37f9f26ef2d426153da71907d3a8f653":[5,0,3,14,0,1,0,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX39 =
 "structnh__Vk__PipelineInfo.html#afb71424dccde18f4328ddf24106eba05":[5,5,3,7,9],
 "structnh__Vk__Surface.html":[5,5,3,11],
 "structnh__Vk__Surface.html#a00758bd8fb2bdcd0e16fec6dc0a4774e":[5,5,3,11,8],
-"structnh__Vk__Surface.html#a1853a876017729a0516017854a8a6da8":[5,5,3,11,15],
-"structnh__Vk__Surface.html#a1d2c9f22f6188ce6489b875221edbd92":[5,5,3,11,0],
-"structnh__Vk__Surface.html#a1e91b6f4dcd7e337d8ff4365591d6896":[5,5,3,11,10]
+"structnh__Vk__Surface.html#a1853a876017729a0516017854a8a6da8":[5,5,3,11,15]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX43 =
 {
+"structnh__webidl__Specification.html":[5,8,3,0],
+"structnh__webidl__Specification.html#a9a0fb827541753436b99647b4e4cd182":[5,8,3,0,1],
 "structnh__webidl__Specification.html#add7d3fe5ec41254b4c40ea6bc80fe720":[5,8,3,0,0],
 "structnh__wsi__ConfigureEvent.html":[5,9,3,0],
 "structnh__wsi__ConfigureEvent.html#a09a50698b4b821294d26788d4d4b2dc5":[5,9,3,0,0],

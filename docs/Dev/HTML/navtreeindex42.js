@@ -1,5 +1,7 @@
 var NAVTREEINDEX42 =
 {
+"structnh__gfx__Surface.html#a3e7a158ee43cf27344c1e064c837be28":[5,5,3,19,8],
+"structnh__gfx__Surface.html#a567ceb86b5e12be62114ce45013ecd71":[5,5,3,19,15],
 "structnh__gfx__Surface.html#a643094ff445359283f89e65539032e3d":[5,5,3,19,11],
 "structnh__gfx__Surface.html#a6a6b8868e1c58744bb9a0794c2349d5c":[5,5,3,19,1],
 "structnh__gfx__Surface.html#a72d9d11ad2a830f86cb37b949ab526b9":[5,5,3,19,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX42 =
 "structnh__webidl__Object.html#a6b55f919f688419d1b765a67e359618a":[5,8,3,3,3],
 "structnh__webidl__Object.html#ab5a7972bc511a9d9fa75c04a51909b7f":[5,8,3,3,1],
 "structnh__webidl__Object.html#abd6244d1672665ae677cc5a3b0820b6b":[5,8,3,3,5],
-"structnh__webidl__Object.html#adb3445309a21534880be8735ef1952f4":[5,8,3,3,2],
-"structnh__webidl__Specification.html":[5,8,3,0],
-"structnh__webidl__Specification.html#a9a0fb827541753436b99647b4e4cd182":[5,8,3,0,1]
+"structnh__webidl__Object.html#adb3445309a21534880be8735ef1952f4":[5,8,3,3,2]
 };
