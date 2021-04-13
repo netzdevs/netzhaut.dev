@@ -25,36 +25,6 @@
     .selected .arrow {
       color: #232425;
     }
-    .roaddetailbox {
-      padding-left: 15px;
-    }
-    .roaddetailboxinner {
-      border-style: solid;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    input, ul.roaddetail1, ul.roaddetail2, ul.roaddetail3 {
-      display: none;
-    }
-    .roadlabel {
-      position: relative;
-      display: block;
-      cursor: pointer;
-    }
-    input:checked~ul.roaddetail1 {
-      display: block;
-    }
-    input:checked~ul.roaddetail2 {
-      display: block;
-    }
-    input:checked~ul.roaddetail3 {
-      display: block;
-    }
-    .reqbox {
-      padding-left: 20px;
-    }
-    .infoboxcontainer {
-    }
     .infobox {
       min-width:230px;
       max-width:300px;
@@ -106,7 +76,7 @@
     </div>
   </div><!-- top -->
   <div id="side-nav" class="ui-resizable side-nav-resizable" style="min-width:75px;">
-      <div style="position:fixed;background-color:#151515;text-align:center;width:inherit;min-width:75px;">
+      <div style="position:fixed;text-align:center;width:inherit;min-width:75px;z-index:1000;">
         <h1><img alt="Logo" src="Logo/LogoSmall.png" style="width:20px;height:auto;"/> News</h1>
       </div>
     <div id="nav-tree" style="-ms-overflow-style:none;scrollbar-width:none;">
