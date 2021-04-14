@@ -18,7 +18,7 @@ var group__nhcssStructs =
       [ "textLength", "structnh__css__TextFragment.html#a160a2c83752d99850f0091b75e5ac49e", null ],
       [ "TextRun_p", "structnh__css__TextFragment.html#a35fcd402e212472c5a1ebd5ce21823a6", null ],
       [ "Values", "structnh__css__TextFragment.html#a6ae0a62d73dd823fe99e5198ab0ff9e8", null ],
-      [ "Vulkan", "structnh__css__TextFragment.html#a3e3e59456eb49f43f44dad132cd4a8d3", null ]
+      [ "Vulkan", "structnh__css__TextFragment.html#a4735bf30a2357c9395d04d067fd4e5b5", null ]
     ] ],
     [ "nh_css_Box", "structnh__css__Box.html", [
       [ "ContainingBlock_p", "structnh__css__Box.html#a1163e7a70e286b9633706ae2a22818ca", null ],
@@ -32,7 +32,7 @@ var group__nhcssStructs =
       [ "Box_p", "structnh__css__BoxFragment.html#a3b94011b968e4dee94e4baab19c56aec", null ],
       [ "Children", "structnh__css__BoxFragment.html#a8892acda5d9aec4edf9c7eaf5b632b50", null ],
       [ "Values", "structnh__css__BoxFragment.html#ad3f45586f0727290c3f96433a2ab805d", null ],
-      [ "Vulkan", "structnh__css__BoxFragment.html#a75e37f9bdad780eb769af1716057c455", null ]
+      [ "Vulkan", "structnh__css__BoxFragment.html#a0c7d9c988b370707e825851c61fcbc62", null ]
     ] ],
     [ "nh_css_BoxTreeNode", "structnh__css__BoxTreeNode.html", [
       [ "Box", "structnh__css__BoxTreeNode.html#a7f56184aab6ed4046088bcd9db9017d1", null ],

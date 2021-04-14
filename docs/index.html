@@ -41,30 +41,6 @@
       width:100%; 
     }
   </style>
-  <script>
-      function scrollfunc() { 
-        var doc = document.getElementById('doc-content');
-        var anchors = document.getElementsByClassName('doc-content-anchor');
-        var anchorNavs = document.getElementsByClassName('doc-content-anchor-nav');
-        var last = 0;
-        for (var i = 0; i < anchors.length; ++i) {
-            var anchor = anchors[i];  
-            if (doc.scrollTop > anchor.offsetTop - 200) {
-              anchorNavs[i].classList.add("selected");
-              last = i;
-            }
-        }
-        for (var i = last - 1; i >= 0; --i) {
-            anchorNavs[i].classList.remove("selected");
-        }
-        for (var i = last + 1; i < anchors.length; ++i) {
-            anchorNavs[i].classList.remove("selected");
-        }
-      };
-  </script>
-  <link rel="stylesheet" href="highlight/styles/dark.css">
-  <script type="text/javascript" src="highlight/highlight.pack.js"></script>
-  <script>hljs.highlightAll();</script>
 </head>
 
 <body>
@@ -86,7 +62,8 @@
         <br>
         <br>
 <!-- NH_INSTALLER_INSERT_NEWS_BEGIN -->
-        <p><b>2021-04-13</b><br>hello world</p>
+     
+<p><b>2021-04-13</b><br>hello world!</p>
 <!-- NH_INSTALLER_INSERT_NEWS_END -->
       </div>
       </div>
@@ -148,19 +125,19 @@
           <div class="infobox">
             <div class="innerinfobox">
 <!-- NH_INSTALLER_INSERT_CHANGELOGS_BEGIN -->
-2021-2-23 <a href="Dev/HTML/group__netzhautChangelog.html">netzhaut v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhloaderChangelog.html">nhloader v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhcoreChangelog.html">nhcore v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhwsiChangelog.html">nhwsi v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhttyChangelog.html">nhtty v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhnetworkChangelog.html">nhnetwork v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhecmascriptChangelog.html">nhecmascript v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhhtmlChangelog.html">nhhtml v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhwebidlChangelog.html">nhwebidl v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhencodingChangelog.html">nhencoding v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhdomChangelog.html">nhdom v0.0.0</a><br>
-2021-2-23 <a href="Dev/HTML/group__nhgfxChangelog.html">nhgfx v0.0.0</a><br>
-2021-4-10 <a href="Dev/HTML/group__nhcssChangelog.html">nhcss v0.0.1</a><br>
+2021-02-23 <a href="Dev/HTML/group__netzhautChangelog.html">netzhaut v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhloaderChangelog.html">nhloader v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhcoreChangelog.html">nhcore v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhwsiChangelog.html">nhwsi v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhttyChangelog.html">nhtty v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhnetworkChangelog.html">nhnetwork v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhecmascriptChangelog.html">nhecmascript v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhhtmlChangelog.html">nhhtml v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhwebidlChangelog.html">nhwebidl v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhencodingChangelog.html">nhencoding v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhdomChangelog.html">nhdom v0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhgfxChangelog.html">nhgfx v0.0.0</a><br>
+2021-04-10 <a href="Dev/HTML/group__nhcssChangelog.html">nhcss v0.0.1</a><br>
 <!-- NH_INSTALLER_INSERT_CHANGELOGS_END -->
             </div>
           </div>
@@ -215,6 +192,16 @@ v0.0.0-0.0.1 pre-alpha-1
 </style>
 
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

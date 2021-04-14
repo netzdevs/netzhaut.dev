@@ -8,16 +8,16 @@ var Helper_8h =
       [ "NH_VK_PIPELINE_GRAPHICS", "group__nhgfxEnums.html#ggadc411574c5f4046e1c74303bb2aad2b0aaa08c2be32b80aef431f0d62aebfdd54", null ],
       [ "NH_VK_PIPELINE_COMPUTE", "group__nhgfxEnums.html#ggadc411574c5f4046e1c74303bb2aad2b0a0c35c9e6a110d540e5a644add952ff84", null ]
     ] ],
-    [ "nh_Vk_bindDeviceMemory", "group__nhgfxFunctions.html#ga24d17e428f8cec3cf67200a5f9fadccd", null ],
-    [ "nh_Vk_createBuffer", "group__nhgfxFunctions.html#ga171dbad48178f7c3dcefb9165fe0dbdc", null ],
-    [ "nh_Vk_createDescriptorSet", "group__nhgfxFunctions.html#gae6a576da42b37a07d3afe8d63635b3d6", null ],
-    [ "nh_Vk_createDeviceMemory", "group__nhgfxFunctions.html#gabfe4d96ec286f11b6947cdc5fd88588a", null ],
-    [ "nh_Vk_createPipeline", "group__nhgfxFunctions.html#gaefaa93d87e065ba35fec1dba74d69442", null ],
-    [ "nh_Vk_createShaderModule", "group__nhgfxFunctions.html#ga6b32eacf0f960372e714a3176fa186d2", null ],
-    [ "nh_Vk_destroyBuffer", "group__nhgfxFunctions.html#ga3e3ff1aa71d5afd83b830f5e56f78a98", null ],
-    [ "nh_Vk_destroyDescriptorSet", "group__nhgfxFunctions.html#ga1436318fe8f7fc0dab7f8162b8617a6e", null ],
-    [ "nh_Vk_destroyPipeline", "group__nhgfxFunctions.html#gaa991652cc56d2023d6005da5a825aa24", null ],
-    [ "nh_Vk_findMemoryType", "group__nhgfxFunctions.html#ga33719439610b47442c9c1c515bc6f9f4", null ],
-    [ "nh_Vk_mapDeviceMemory", "group__nhgfxFunctions.html#ga420060dbf04e5d55aa11e7dd9de7a211", null ],
-    [ "nh_Vk_prepareDefaultPipelineInfo", "group__nhgfxFunctions.html#ga4e0c63c97dbee0e39ee095c7b6d2c442", null ]
+    [ "nh_vk_bindDeviceMemory", "group__nhgfxFunctions.html#gad17e6d9dc4509469476c52cff5b12d83", null ],
+    [ "nh_vk_createBuffer", "group__nhgfxFunctions.html#ga1a4e12cc458bb395517a4df77547738e", null ],
+    [ "nh_vk_createDescriptorSet", "group__nhgfxFunctions.html#gad300cbd0b01ce9a650141f87c1ad17a9", null ],
+    [ "nh_vk_createDeviceMemory", "group__nhgfxFunctions.html#ga26c4091d35f771858c0f489a30b5ee16", null ],
+    [ "nh_vk_createPipeline", "group__nhgfxFunctions.html#ga33a963c4510f9f50b71f39944bc114de", null ],
+    [ "nh_vk_createShaderModule", "group__nhgfxFunctions.html#ga9167c910e0d43468927f441f37793205", null ],
+    [ "nh_vk_destroyBuffer", "group__nhgfxFunctions.html#gabed436fbc51e91191a091373694b32e0", null ],
+    [ "nh_vk_destroyDescriptorSet", "group__nhgfxFunctions.html#ga6378dbdad21bef22019f2e3cf0f7650e", null ],
+    [ "nh_vk_destroyPipeline", "group__nhgfxFunctions.html#gad02621fe666a53f23cac90e14eb7ca0b", null ],
+    [ "nh_vk_findMemoryType", "group__nhgfxFunctions.html#ga58c59b51fac6e19b08ff0a33d3bd6480", null ],
+    [ "nh_vk_mapDeviceMemory", "group__nhgfxFunctions.html#gad4954d86849a8700dbc870cdedf08899", null ],
+    [ "nh_vk_prepareDefaultPipelineInfo", "group__nhgfxFunctions.html#gad363cb1731446231d458f8077a3fda0f", null ]
 ];

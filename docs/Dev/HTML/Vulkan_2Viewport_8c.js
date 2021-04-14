@@ -1,7 +1,7 @@
 var Vulkan_2Viewport_8c =
 [
-    [ "nh_Vk_beginRecording", "group__nhgfxFunctions.html#ga98c9cc756127529b30109b1bb6afd47a", null ],
-    [ "nh_Vk_createViewport", "group__nhgfxFunctions.html#ga1a30bdb9ccd6f40751a41471e5885d29", null ],
-    [ "nh_Vk_destroyViewport", "group__nhgfxFunctions.html#ga0fb346f5dce347cbb41fecc8941d8cc1", null ],
-    [ "nh_Vk_endRecording", "group__nhgfxFunctions.html#ga9f4a849e437c1ed1db0d5a6b357898a8", null ]
+    [ "nh_vk_beginRecording", "group__nhgfxFunctions.html#gab531eb5f8590188ff259b2a4f894dfee", null ],
+    [ "nh_vk_createViewport", "group__nhgfxFunctions.html#gaf422a525392ce0596e25e4f68e2af1db", null ],
+    [ "nh_vk_destroyViewport", "group__nhgfxFunctions.html#ga545f6056d922c8c3f2d956ab3215f0f9", null ],
+    [ "nh_vk_endRecording", "group__nhgfxFunctions.html#gaf42c210fafcdca15e636a545b2e355d7", null ]
 ];

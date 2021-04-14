@@ -322,7 +322,7 @@ var group__nhcoreStructs =
       [ "height", "structnh__Texture.html#ad1aa3ad07c2b8454d50f8b372b6336fa", null ],
       [ "id_p", "structnh__Texture.html#a5b766c7ff0dab63bca0277d3a179548f", null ],
       [ "pixels_p", "structnh__Texture.html#aae8855f183b73ea68ee0c9571be58e21", null ],
-      [ "Vulkan_p", "structnh__Texture.html#aefa0dd887c0ec69f12315c47d53df7ba", null ],
+      [ "Vulkan_p", "structnh__Texture.html#ad64d440574fb625cf4709925025a28fd", null ],
       [ "width", "structnh__Texture.html#a4a7bb69dd7581b1e27da1a28a6c020db", null ]
     ] ]
 ];

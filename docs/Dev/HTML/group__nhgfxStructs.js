@@ -1,144 +1,144 @@
 var group__nhgfxStructs =
 [
-    [ "nh_Vk_DriverInfo", "structnh__Vk__DriverInfo.html", [
-      [ "deviceId", "structnh__Vk__DriverInfo.html#a600ee94263721c25a88eda04f9d2d03e", null ],
-      [ "major", "structnh__Vk__DriverInfo.html#a2e7cecc949fd20a47b1d04613b683aca", null ],
-      [ "minor", "structnh__Vk__DriverInfo.html#af56b09d8a4b0968ab093c7237554e4e5", null ],
-      [ "patch", "structnh__Vk__DriverInfo.html#aaf15503589dfe62fd056fab120c2c3e3", null ],
-      [ "vendorId", "structnh__Vk__DriverInfo.html#abe70d6a1a475c4589cb87ec01cddd0a8", null ]
+    [ "nh_vk_DriverInfo", "structnh__vk__DriverInfo.html", [
+      [ "deviceId", "structnh__vk__DriverInfo.html#a40b8fcbf9d24262d29016b5e3ba6ec2e", null ],
+      [ "major", "structnh__vk__DriverInfo.html#a1a1c55775453b21f4c7aee3cb85e3f6e", null ],
+      [ "minor", "structnh__vk__DriverInfo.html#a80223a1f74a24a3ac27bc3d0bfe17f20", null ],
+      [ "patch", "structnh__vk__DriverInfo.html#a7e1f3627e73ae3d2640418c7b6131e28", null ],
+      [ "vendorId", "structnh__vk__DriverInfo.html#a5347488320cb723a61af9dc512aec4db", null ]
     ] ],
-    [ "nh_Vk_Driver", "structnh__Vk__Driver.html", [
-      [ "ComputeCommandPools_p", "structnh__Vk__Driver.html#adaf5a523c204a3139f445e7c69397823", null ],
-      [ "ComputeQueue", "structnh__Vk__Driver.html#ac42ab84936604b950948c25189da4716", null ],
-      [ "DescriptorPool_p", "structnh__Vk__Driver.html#aa3280c611a07cff793b10e6dafc42ef3", null ],
-      [ "descriptorPoolCount", "structnh__Vk__Driver.html#a82feef92191787a9b5b668b67e004b85", null ],
-      [ "Device", "structnh__Vk__Driver.html#a9d32e5ddd34e795d433ac4b93c528261", null ],
-      [ "Func", "structnh__Vk__Driver.html#ae46ce13d413b653073af5b5b326baf44", null ],
-      [ "GraphicsCommandPools_p", "structnh__Vk__Driver.html#aeb7881f404b445440c4f65298d3f551a", null ],
-      [ "GraphicsQueue", "structnh__Vk__Driver.html#a95adbb8a3af0e3211bf1949c0673de2d", null ],
-      [ "Info", "structnh__Vk__Driver.html#a98a7b10feda118376b565d85a76c210e", null ],
-      [ "PhysicalDevice", "structnh__Vk__Driver.html#acaebed91c545875fbf3f856f8c342aba", null ],
-      [ "RenderPass_p", "structnh__Vk__Driver.html#a3cfa61d27c1b1b361b40ef1b4272281c", null ],
-      [ "renderPassCount", "structnh__Vk__Driver.html#af5116910b008f628d8b53de3e51cff0f", null ]
+    [ "nh_vk_Driver", "structnh__vk__Driver.html", [
+      [ "ComputeCommandPools_p", "structnh__vk__Driver.html#aa55c446070862f402779703830e1347f", null ],
+      [ "ComputeQueue", "structnh__vk__Driver.html#aee97f15ffe02cb05a294bca68c65b097", null ],
+      [ "DescriptorPool_p", "structnh__vk__Driver.html#a38631feff4c6d52575e504d3beed97c2", null ],
+      [ "descriptorPoolCount", "structnh__vk__Driver.html#ac82438981444cc839be83ff2413bba07", null ],
+      [ "Device", "structnh__vk__Driver.html#a78444827b9ad9afff27537a156e7a993", null ],
+      [ "Func", "structnh__vk__Driver.html#af8340829f2f8cd3bd3c0edfd4e426360", null ],
+      [ "GraphicsCommandPools_p", "structnh__vk__Driver.html#a20e30ce32ad2cdba2dfbe8f592c63122", null ],
+      [ "GraphicsQueue", "structnh__vk__Driver.html#a7cb3b98c7f2e9aa7bf59686d52c6588c", null ],
+      [ "Info", "structnh__vk__Driver.html#a6d464fa34c24861ccd6b19e1e84c7f29", null ],
+      [ "PhysicalDevice", "structnh__vk__Driver.html#a13cdca1da87f7bf3e3463d42d0dff6f7", null ],
+      [ "RenderPass_p", "structnh__vk__Driver.html#a0c5a84755adbc45eafbd25c02031a68a", null ],
+      [ "renderPassCount", "structnh__vk__Driver.html#ada8c56afa037043fb62eea798fa1ec18", null ]
     ] ],
-    [ "nh_Vk_GPU", "structnh__Vk__GPU.html", [
-      [ "CSS", "structnh__Vk__GPU.html#a147595a2ad4dbf2027c19cc4915ce984", null ],
-      [ "Driver", "structnh__Vk__GPU.html#aad8a772a26f2e562d582ed8bd8de6115", null ],
-      [ "name_p", "structnh__Vk__GPU.html#a01f4dab59f413e2dd786190d34def21e", null ],
-      [ "Pipelines_p", "structnh__Vk__GPU.html#a911ad53ebb27307095e83b5fcdb190ff", null ],
-      [ "Textures", "structnh__Vk__GPU.html#a86b709c375aae4b2c62731a39298fa97", null ],
-      [ "TTY", "structnh__Vk__GPU.html#a6ec951f331ef0c0f32db590db435d805", null ]
+    [ "nh_vk_GPU", "structnh__vk__GPU.html", [
+      [ "CSS", "structnh__vk__GPU.html#ace5797b0cc5d657979012aa3fc17bbf8", null ],
+      [ "Driver", "structnh__vk__GPU.html#a26ffd2772cd9fd6bfd1f1c92650b9483", null ],
+      [ "name_p", "structnh__vk__GPU.html#a3d889b15ff3cdd9cc72d769d7f48eabb", null ],
+      [ "Pipelines_p", "structnh__vk__GPU.html#ab22a7ccab159092217a7a4e048ae1cb5", null ],
+      [ "Textures", "structnh__vk__GPU.html#a6b5ce929bee29fc74521c226e12e1e6a", null ],
+      [ "TTY", "structnh__vk__GPU.html#ac7bc0aed5806c7c413b0b84febeb2ab5", null ]
     ] ],
-    [ "nh_Vk_BufferInfo", "structnh__Vk__BufferInfo.html", [
-      [ "createInfo", "structnh__Vk__BufferInfo.html#ab06e70a4306f18ccefe595e1cfd3f175", null ],
-      [ "data_p", "structnh__Vk__BufferInfo.html#a1bbf0dc2b3c75f4c62de8227d843aa72", null ],
-      [ "Info_p", "structnh__Vk__BufferInfo.html#a544a5139449df33d1f13d8637892abea", null ],
-      [ "mapMemory", "structnh__Vk__BufferInfo.html#a4aafe526a68cec4f93e0cb0f9f1294ac", null ],
-      [ "memoryProperties", "structnh__Vk__BufferInfo.html#a83b590f5c375eb8e3edb25f164420170", null ]
+    [ "nh_vk_BufferInfo", "structnh__vk__BufferInfo.html", [
+      [ "createInfo", "structnh__vk__BufferInfo.html#a67ed3467def984e38cf141a2c56042cb", null ],
+      [ "data_p", "structnh__vk__BufferInfo.html#ace0bda06564c9a8ce813316e95520e76", null ],
+      [ "Info_p", "structnh__vk__BufferInfo.html#a1b9f709f35fcabbc8c37ed0cb0a94efe", null ],
+      [ "mapMemory", "structnh__vk__BufferInfo.html#a63f5aa9dc2275dca99e9d058907e8693", null ],
+      [ "memoryProperties", "structnh__vk__BufferInfo.html#a43fd010ecac468abc20927c4a61f5af3", null ]
     ] ],
-    [ "nh_Vk_Buffer", "structnh__Vk__Buffer.html", [
-      [ "Buffer", "structnh__Vk__Buffer.html#a015310480a21a407dff0e7123398f710", null ],
-      [ "DescriptorBufferInfo", "structnh__Vk__Buffer.html#aaa65636b588f088966f42ad10e74269d", null ],
-      [ "DeviceMemory", "structnh__Vk__Buffer.html#aaaffbbd721f898984c6c085623109348", null ],
-      [ "size", "structnh__Vk__Buffer.html#a0686094d21082fdb4eafd10cee6dc4fa", null ],
-      [ "type", "structnh__Vk__Buffer.html#ae548ba26884b036dbadb0f9063ef946b", null ]
+    [ "nh_vk_Buffer", "structnh__vk__Buffer.html", [
+      [ "Buffer", "structnh__vk__Buffer.html#a3465eb998ee867683bc4b872faf2d9d8", null ],
+      [ "DescriptorBufferInfo", "structnh__vk__Buffer.html#a0ba4a5f2f76f31dd31c3a15f62027ebc", null ],
+      [ "DeviceMemory", "structnh__vk__Buffer.html#a0d1fb53df85022af2b6bb3d42bc0d993", null ],
+      [ "size", "structnh__vk__Buffer.html#ad9ccbca6fb765da215cf58dbfe6eccf8", null ],
+      [ "type", "structnh__vk__Buffer.html#a70bba31c217e156a55a3be618f52ce04", null ]
     ] ],
-    [ "nh_Vk_DescriptorSet", "structnh__Vk__DescriptorSet.html", [
-      [ "DescriptorSet", "structnh__Vk__DescriptorSet.html#a353974067a145855dc4da1dd2dbf651d", null ],
-      [ "Layout", "structnh__Vk__DescriptorSet.html#a60d3d7788942b48bd88fe871de9579bf", null ],
-      [ "Next_p", "structnh__Vk__DescriptorSet.html#a7f1812f46750402aff3df6a03e462c43", null ],
-      [ "type", "structnh__Vk__DescriptorSet.html#ab93d58970a0d5f2c23e25db5ee4db9c8", null ]
+    [ "nh_vk_DescriptorSet", "structnh__vk__DescriptorSet.html", [
+      [ "DescriptorSet", "structnh__vk__DescriptorSet.html#ac3492c23930d015fd6ce8937d0283a3f", null ],
+      [ "Layout", "structnh__vk__DescriptorSet.html#a5a1f7396498a7d3cfd548db98b244a03", null ],
+      [ "Next_p", "structnh__vk__DescriptorSet.html#a55c352b3b9b624b2213c4bb352e1ea06", null ],
+      [ "type", "structnh__vk__DescriptorSet.html#a13ca47d8978d3e2035f415f70ffb304e", null ]
     ] ],
-    [ "nh_Vk_DeviceMemoryInfo", "structnh__Vk__DeviceMemoryInfo.html", [
-      [ "bindSource_p", "structnh__Vk__DeviceMemoryInfo.html#ab8a1d5da2c2bb76f39698bb02c57db8b", null ],
-      [ "deviceMemoryType", "structnh__Vk__DeviceMemoryInfo.html#a1770e19e98bd6d1ff05b3eda583a62c9", null ],
-      [ "memoryProperties", "structnh__Vk__DeviceMemoryInfo.html#a7d8a60ae0fa54c49733488dd72edb24a", null ]
+    [ "nh_vk_DeviceMemoryInfo", "structnh__vk__DeviceMemoryInfo.html", [
+      [ "bindSource_p", "structnh__vk__DeviceMemoryInfo.html#afedb549bea7d362d77ca28c629ca23d8", null ],
+      [ "deviceMemoryType", "structnh__vk__DeviceMemoryInfo.html#ad44116b74a1e659ffc017785d7d6fb96", null ],
+      [ "memoryProperties", "structnh__vk__DeviceMemoryInfo.html#aff5070b0c2db870d1fc3943523b36c98", null ]
     ] ],
-    [ "nh_Vk_PipelineInfo", "structnh__Vk__PipelineInfo.html", [
-      [ "ColorBlendAttachment", "structnh__Vk__PipelineInfo.html#acf1e364ee4790faf235be99e1f5a9f8c", null ],
-      [ "ColorBlendState", "structnh__Vk__PipelineInfo.html#a6f473043208c2c60473f0a20515e0f6b", null ],
-      [ "DepthStencilState", "structnh__Vk__PipelineInfo.html#aa51b90cd7be892983d070a7428701cd0", null ],
-      [ "dynamic_p", "structnh__Vk__PipelineInfo.html#ac76c04147c87533084085480a902ab2e", null ],
-      [ "DynamicState", "structnh__Vk__PipelineInfo.html#a6ba36943fc0978dce890de683752ceb9", null ],
-      [ "MultisampleState", "structnh__Vk__PipelineInfo.html#a9bcc860dfea76293889e04bcb784f666", null ],
-      [ "RasterizationState", "structnh__Vk__PipelineInfo.html#a488f50c406e2e97b65017aa4f26e5a0d", null ],
-      [ "Scissor", "structnh__Vk__PipelineInfo.html#ac1ada47f6c14c10d65ca57c6d557d128", null ],
-      [ "Viewport", "structnh__Vk__PipelineInfo.html#a8f354781461f89d8c5b4c1a54e67925f", null ],
-      [ "ViewportState", "structnh__Vk__PipelineInfo.html#afb71424dccde18f4328ddf24106eba05", null ]
+    [ "nh_vk_PipelineInfo", "structnh__vk__PipelineInfo.html", [
+      [ "ColorBlendAttachment", "structnh__vk__PipelineInfo.html#a1246ad5dfbdbd48740ed6de7aae5f33f", null ],
+      [ "ColorBlendState", "structnh__vk__PipelineInfo.html#af0eca83269fa9664f43637b7495a2ca5", null ],
+      [ "DepthStencilState", "structnh__vk__PipelineInfo.html#a7a9799192b5a17e9f5576b431631801d", null ],
+      [ "dynamic_p", "structnh__vk__PipelineInfo.html#ac6b50ada651da3939c7e3dd5d57eced4", null ],
+      [ "DynamicState", "structnh__vk__PipelineInfo.html#a8a615f4fc0a1421962d1aca77cdf756f", null ],
+      [ "MultisampleState", "structnh__vk__PipelineInfo.html#a4311cf04c1de26b88e3dbd9bb55e880c", null ],
+      [ "RasterizationState", "structnh__vk__PipelineInfo.html#a48a58b2b2e25008114ffcb37154b5a69", null ],
+      [ "Scissor", "structnh__vk__PipelineInfo.html#a81e29e72337be1b6bb32947778ca5ea2", null ],
+      [ "Viewport", "structnh__vk__PipelineInfo.html#aaa493b1534becf94161a78ee9ba7c467", null ],
+      [ "ViewportState", "structnh__vk__PipelineInfo.html#a61a677f669fc1df836876ef9e4c1d7f5", null ]
     ] ],
-    [ "nh_Vk_Pipeline", "structnh__Vk__Pipeline.html", [
-      [ "Pipeline", "structnh__Vk__Pipeline.html#ae43f48df79af1068771762c1f2f9e8ea", null ],
-      [ "PipelineLayout", "structnh__Vk__Pipeline.html#adeb5a07c19aa651ac3efc18d05dca783", null ]
+    [ "nh_vk_Pipeline", "structnh__vk__Pipeline.html", [
+      [ "Pipeline", "structnh__vk__Pipeline.html#ae0f499e4aa6c152bf11a108b82d68e79", null ],
+      [ "PipelineLayout", "structnh__vk__Pipeline.html#a9de54e9267339143be9856b47d0772e4", null ]
     ] ],
-    [ "NH_Vk_Func", "structNH__Vk__Func.html", [
-      [ "vkCreateDevice", "structNH__Vk__Func.html#a09a48881933fb72bf2c6e7779ce1bec9", null ],
-      [ "vkCreateInstance", "structNH__Vk__Func.html#ae7e95ae3f10f4e13f70184589b9f9e54", null ],
-      [ "vkDestroyInstance", "structNH__Vk__Func.html#acfd7963e7bab31b197c7c12e5360d9ce", null ],
-      [ "vkDestroySurfaceKHR", "structNH__Vk__Func.html#a1e56bff4cf26d262c686f353244abb7b", null ],
-      [ "vkEnumerateDeviceExtensionProperties", "structNH__Vk__Func.html#ab8de31b9c16f53ae7348fe4a480d91a7", null ],
-      [ "vkEnumerateInstanceExtensionProperties", "structNH__Vk__Func.html#a4cb7661484963286307c89d888b7b159", null ],
-      [ "vkEnumerateInstanceLayerProperties", "structNH__Vk__Func.html#a73460fcde42d1ab4f3f1687315ed418f", null ],
-      [ "vkEnumeratePhysicalDevices", "structNH__Vk__Func.html#a805f068fccd605af454c9fa2602eaf51", null ],
-      [ "vkGetInstanceProcAddr", "structNH__Vk__Func.html#a50d16d508d7b423440c0d0f99416f6ff", null ],
-      [ "vkGetPhysicalDeviceFeatures", "structNH__Vk__Func.html#a894ca8962a8fb91eb6b8559cf185affd", null ],
-      [ "vkGetPhysicalDeviceFormatProperties", "structNH__Vk__Func.html#a7ce84b3fadd9b734ff256c87bce95587", null ],
-      [ "vkGetPhysicalDeviceMemoryProperties", "structNH__Vk__Func.html#a26d3495697b8da8d46a4f0d273f3ad08", null ],
-      [ "vkGetPhysicalDeviceProperties", "structNH__Vk__Func.html#af103c68121e6a4849697eb7bac527de9", null ],
-      [ "vkGetPhysicalDeviceQueueFamilyProperties", "structNH__Vk__Func.html#a100065ba4c121a90c7d74a3dfc40e305", null ],
-      [ "vkGetPhysicalDeviceSurfaceCapabilitiesKHR", "structNH__Vk__Func.html#a970663a5dea2748363c71aa14d05283a", null ],
-      [ "vkGetPhysicalDeviceSurfaceFormatsKHR", "structNH__Vk__Func.html#af41cbe357073db90764bc0ae773d32d6", null ],
-      [ "vkGetPhysicalDeviceSurfacePresentModesKHR", "structNH__Vk__Func.html#a2c187a3ae5fcbb885167c85accd0cbec", null ],
-      [ "vkGetPhysicalDeviceSurfaceSupportKHR", "structNH__Vk__Func.html#ac387374caed67a946b50bb659f5c824e", null ]
+    [ "nh_vk_Func", "structnh__vk__Func.html", [
+      [ "vkCreateDevice", "structnh__vk__Func.html#a71d6845f19060df1d37a9e273feba575", null ],
+      [ "vkCreateInstance", "structnh__vk__Func.html#aef12c484869ab79acf8289d39e885b8f", null ],
+      [ "vkDestroyInstance", "structnh__vk__Func.html#a3f85ea04cb59dfa34de097caaecd55f1", null ],
+      [ "vkDestroySurfaceKHR", "structnh__vk__Func.html#a1f24d2a84c70d188c7930631fee53c74", null ],
+      [ "vkEnumerateDeviceExtensionProperties", "structnh__vk__Func.html#afef272777d4184a0994e065e767973ff", null ],
+      [ "vkEnumerateInstanceExtensionProperties", "structnh__vk__Func.html#a2106692b0bfc4b57c674d04582b2a0ec", null ],
+      [ "vkEnumerateInstanceLayerProperties", "structnh__vk__Func.html#a91271aebe53aa63b91eab378c1e9e9cf", null ],
+      [ "vkEnumeratePhysicalDevices", "structnh__vk__Func.html#a58e88994d0545060385bf4f59020b34e", null ],
+      [ "vkGetInstanceProcAddr", "structnh__vk__Func.html#ae9705656cf3a09b0781858be97a4e3f0", null ],
+      [ "vkGetPhysicalDeviceFeatures", "structnh__vk__Func.html#ae6e3d6a8c38e15d2f0e29bef8ecbd7b0", null ],
+      [ "vkGetPhysicalDeviceFormatProperties", "structnh__vk__Func.html#a492373226138b484686697dbfeab498a", null ],
+      [ "vkGetPhysicalDeviceMemoryProperties", "structnh__vk__Func.html#a44e7c70bc722c2899310db11c4bd99cb", null ],
+      [ "vkGetPhysicalDeviceProperties", "structnh__vk__Func.html#a959063680f510b8ee3f581c13996709f", null ],
+      [ "vkGetPhysicalDeviceQueueFamilyProperties", "structnh__vk__Func.html#a724ed760b4fdd77e0695851a67c10664", null ],
+      [ "vkGetPhysicalDeviceSurfaceCapabilitiesKHR", "structnh__vk__Func.html#a94b6470ff312fcdc021d618cd58825ff", null ],
+      [ "vkGetPhysicalDeviceSurfaceFormatsKHR", "structnh__vk__Func.html#a375920cc30f0286abf3bf24d0b9be327", null ],
+      [ "vkGetPhysicalDeviceSurfacePresentModesKHR", "structnh__vk__Func.html#ac96c64d05571531f947f8cd7a9eb6980", null ],
+      [ "vkGetPhysicalDeviceSurfaceSupportKHR", "structnh__vk__Func.html#adc5fdf92cc25f416efa19a7478f0eaa3", null ]
     ] ],
-    [ "nh_Vk_Host", "structnh__Vk__Host.html", [
-      [ "Func", "structnh__Vk__Host.html#a84c4713b219c57e5260bf33aa5b46f46", null ],
-      [ "Instance", "structnh__Vk__Host.html#a42c314247d844d689d4b2a3f60e51bb1", null ],
-      [ "Messenger", "structnh__Vk__Host.html#ac2db994fd3b35fed7d4111abbecd89d6", null ],
-      [ "validation", "structnh__Vk__Host.html#a061993a7551712df89139a456d3e89dc", null ]
+    [ "nh_vk_Host", "structnh__vk__Host.html", [
+      [ "Func", "structnh__vk__Host.html#a32e2702771e647e53a78c872585befc9", null ],
+      [ "Instance", "structnh__vk__Host.html#a05e384c63568a49aba9cd96e10f742f2", null ],
+      [ "Messenger", "structnh__vk__Host.html#ad81763baa52f2c4001c0a49b2ec4a9d0", null ],
+      [ "validation", "structnh__vk__Host.html#a200403d0bb499680106efa7eccbef82f", null ]
     ] ],
-    [ "nh_Vk_Surface", "structnh__Vk__Surface.html", [
-      [ "CommandBuffers_p", "structnh__Vk__Surface.html#a1d2c9f22f6188ce6489b875221edbd92", null ],
-      [ "currentImage", "structnh__Vk__Surface.html#aefd5e407bf9f4ec787c0e1a09e89b872", null ],
-      [ "DepthStencil", "structnh__Vk__Surface.html#a77ca17c953c33c4ac6d31e9239cf4e79", null ],
-      [ "Extent2D", "structnh__Vk__Surface.html#a2e4b33addc0d07776027c99d535b7c99", null ],
-      [ "Fence", "structnh__Vk__Surface.html#a32a9c29e2e3d933df309ad0fc685efd9", null ],
-      [ "Framebuffer_p", "structnh__Vk__Surface.html#aa0cbddf66795ae6409fcf76f6fd7b9ae", null ],
-      [ "GPU_p", "structnh__Vk__Surface.html#a5dbd6d2f6b543e559f60a1ec467bdc87", null ],
-      [ "Image", "structnh__Vk__Surface.html#a9b189247ab7f41d9cf6a78359e895506", null ],
-      [ "Image_p", "structnh__Vk__Surface.html#a00758bd8fb2bdcd0e16fec6dc0a4774e", null ],
-      [ "imageCount", "structnh__Vk__Surface.html#aa6018c7f7717a5d9784796cda7812e25", null ],
-      [ "ImageView", "structnh__Vk__Surface.html#a1e91b6f4dcd7e337d8ff4365591d6896", null ],
-      [ "ImageView_p", "structnh__Vk__Surface.html#a4c2e6cdca39099425ef81ed9e3a630b4", null ],
-      [ "Memory", "structnh__Vk__Surface.html#ad7150baf5c0cfebd40e94427a17b4980", null ],
-      [ "Semaphore_p", "structnh__Vk__Surface.html#a7882ef24b495b18995254694f5fd9a7f", null ],
-      [ "SurfaceKHR_p", "structnh__Vk__Surface.html#ab6fcb22ed9d16902702b223160c7b560", null ],
-      [ "Swapchain", "structnh__Vk__Surface.html#a1853a876017729a0516017854a8a6da8", null ],
-      [ "SwapchainKHR", "structnh__Vk__Surface.html#aa9242d346757d84ea9c85572f15c61c1", null ],
-      [ "Sync", "structnh__Vk__Surface.html#a8ff48c7a2c142f3724fa0b03d01c837a", null ]
+    [ "nh_vk_Surface", "structnh__vk__Surface.html", [
+      [ "CommandBuffers_p", "structnh__vk__Surface.html#abbd11624b5893f053a482f649c43e6fd", null ],
+      [ "currentImage", "structnh__vk__Surface.html#ad0567d05e0056245470a8bed184ea919", null ],
+      [ "DepthStencil", "structnh__vk__Surface.html#a1a5658dcbfdc5abcad4ea635a9edefc0", null ],
+      [ "Extent2D", "structnh__vk__Surface.html#a4ea323cc4d0b4d03e5a701a35217537e", null ],
+      [ "Fence", "structnh__vk__Surface.html#a753365cf318d320b05f179fc08f820bb", null ],
+      [ "Framebuffer_p", "structnh__vk__Surface.html#ab7e7aba3f587d64012fc9c5c80826513", null ],
+      [ "GPU_p", "structnh__vk__Surface.html#a48f572970dfa8e5bc6cddc56a92db5bb", null ],
+      [ "Image", "structnh__vk__Surface.html#ae9da8d8964ae50c60735eff8ae0102f1", null ],
+      [ "Image_p", "structnh__vk__Surface.html#a0754e69ae376b06b21d9a698ac22e6a9", null ],
+      [ "imageCount", "structnh__vk__Surface.html#a3b8cc2ebb43e4c5143944db629909ea0", null ],
+      [ "ImageView", "structnh__vk__Surface.html#a4d939efa66475b4482c1d78faa8719df", null ],
+      [ "ImageView_p", "structnh__vk__Surface.html#a26e3644001eed5f5b0b6cf685b0487a8", null ],
+      [ "Memory", "structnh__vk__Surface.html#a4f90b8fc37a7379c66ee583e63022e92", null ],
+      [ "Semaphore_p", "structnh__vk__Surface.html#aeaf6a924f6aa386353bde70825e1f270", null ],
+      [ "SurfaceKHR_p", "structnh__vk__Surface.html#a76df11fdf089ace51f3b8af8b4b8cd9e", null ],
+      [ "Swapchain", "structnh__vk__Surface.html#a33cf0883891f4a6593e164ef724ccddb", null ],
+      [ "SwapchainKHR", "structnh__vk__Surface.html#a7cfdef37e58ff2a48e0d07e3057cafc4", null ],
+      [ "Sync", "structnh__vk__Surface.html#a42139db95bdc736c31462d578576c6ce", null ]
     ] ],
-    [ "nh_Vk_TextureInfo", "structnh__Vk__TextureInfo.html", [
-      [ "data_p", "structnh__Vk__TextureInfo.html#a00cd68148b9ba09dbbfe8ae2950e560a", null ],
-      [ "format", "structnh__Vk__TextureInfo.html#a8509549152da5ed44c0772b4cddac90e", null ],
-      [ "height", "structnh__Vk__TextureInfo.html#af5c791230958f1605009f60511953df7", null ],
-      [ "imageLayout", "structnh__Vk__TextureInfo.html#a8b63ec8b9c5f3e2fd1292de914406e89", null ],
-      [ "memoryProperties", "structnh__Vk__TextureInfo.html#a34c2fbfda19619d316f40a3725887bd6", null ],
-      [ "size", "structnh__Vk__TextureInfo.html#a1e0bd8f79a73278f0738080dec075be1", null ],
-      [ "usageFlags", "structnh__Vk__TextureInfo.html#a7a148b5c233a088ca5550bff823c1451", null ],
-      [ "width", "structnh__Vk__TextureInfo.html#ac81e297382dc73f72006fa85aefe2caa", null ]
+    [ "nh_vk_TextureInfo", "structnh__vk__TextureInfo.html", [
+      [ "data_p", "structnh__vk__TextureInfo.html#a854c3715bf4a35dcc92091ec99cf1d5b", null ],
+      [ "format", "structnh__vk__TextureInfo.html#a75ca39877020b896d57fce143f881dfd", null ],
+      [ "height", "structnh__vk__TextureInfo.html#aca00ba506b8828104651337ece277dd4", null ],
+      [ "imageLayout", "structnh__vk__TextureInfo.html#a19b3a9c71c0800b12549bf50c6299391", null ],
+      [ "memoryProperties", "structnh__vk__TextureInfo.html#adbe5ced84e71e006ffc64982f7bf51ae", null ],
+      [ "size", "structnh__vk__TextureInfo.html#a265375a218e2e8b2e7b23dbf1d4b44f2", null ],
+      [ "usageFlags", "structnh__vk__TextureInfo.html#abf2661ef55c7c8855ba07f8f18ad148b", null ],
+      [ "width", "structnh__vk__TextureInfo.html#ac837c0038f964ea0e5ba6afa4ce3d3f3", null ]
     ] ],
-    [ "nh_Vk_Texture", "structnh__Vk__Texture.html", [
-      [ "DescriptorImageInfo", "structnh__Vk__Texture.html#a0194623e6be491f670a59da84e986338", null ],
-      [ "DeviceMemory", "structnh__Vk__Texture.html#a102789c78ecb1c31bf15673d180f4e63", null ],
-      [ "height", "structnh__Vk__Texture.html#a61b7956420c63780b59be46aa1d46743", null ],
-      [ "Image", "structnh__Vk__Texture.html#a4d5190abd8abee8609649cf7ef01a71d", null ],
-      [ "ImageView", "structnh__Vk__Texture.html#a7a529f17972d7c35d1346f337458ccbd", null ],
-      [ "Sampler", "structnh__Vk__Texture.html#a932dcd3a05930b6146ea01bdc55f5a56", null ],
-      [ "source_p", "structnh__Vk__Texture.html#a820eef52c63860fe6c9377b7df6fa638", null ],
-      [ "width", "structnh__Vk__Texture.html#ae625f5693b7b4b1ce2a3ac592add0566", null ]
+    [ "nh_vk_Texture", "structnh__vk__Texture.html", [
+      [ "DescriptorImageInfo", "structnh__vk__Texture.html#abe7e835bf4ca15a83db7874923614af5", null ],
+      [ "DeviceMemory", "structnh__vk__Texture.html#a5044f8e88418b5ae8d201c0d35d64a46", null ],
+      [ "height", "structnh__vk__Texture.html#a4c05dbc32312a9f51622616f6c20d72c", null ],
+      [ "Image", "structnh__vk__Texture.html#a0c8975770c148b2d59ffd3cce2f8fc5b", null ],
+      [ "ImageView", "structnh__vk__Texture.html#a0a8acd23abb52a76d261bc0126b2a191", null ],
+      [ "Sampler", "structnh__vk__Texture.html#af80ff6bc75110849b77c43129d6096b4", null ],
+      [ "source_p", "structnh__vk__Texture.html#a52183cb9add2cfb50284cb9d97c75d86", null ],
+      [ "width", "structnh__vk__Texture.html#ac9e9a984a8111b912e57cf318450bd68", null ]
     ] ],
-    [ "nh_Vk_Vulkan", "structnh__Vk__Vulkan.html", [
-      [ "GPUs", "structnh__Vk__Vulkan.html#a9137a856436867b199222a3c63ac971c", null ],
-      [ "Host", "structnh__Vk__Vulkan.html#a641dc34045c3beb05ad1c263faf02639", null ]
+    [ "nh_vk_Vulkan", "structnh__vk__Vulkan.html", [
+      [ "GPUs", "structnh__vk__Vulkan.html#ac81e5c44f0b657b4955ff564739a2d6d", null ],
+      [ "Host", "structnh__vk__Vulkan.html#ab11070a5445a04672aaf308dcc9b1878", null ]
     ] ],
     [ "nh_gfx_Glyph", "structnh__gfx__Glyph.html", [
       [ "codepoint", "structnh__gfx__Glyph.html#a94fb8284aa910d5530a0f6ed6dc60796", null ],
@@ -194,7 +194,7 @@ var group__nhgfxStructs =
       [ "Sync", "structnh__gfx__Surface.html#a567ceb86b5e12be62114ce45013ecd71", null ],
       [ "undoHalt", "structnh__gfx__Surface.html#a1edc8540b6de9ca9e4ab6f2603c7663d", null ],
       [ "Viewports", "structnh__gfx__Surface.html#a801b418b3caa2506f8ed0689af9dfc7a", null ],
-      [ "Vulkan", "structnh__gfx__Surface.html#a7e3b44f229bd81c3bfed28777c74b707", null ],
+      [ "Vulkan", "structnh__gfx__Surface.html#ae1717d5cd98690a21ca6404bfba34e4e", null ],
       [ "Window_p", "structnh__gfx__Surface.html#aef176c545101f87c2774aad3b5413b82", null ]
     ] ],
     [ "nh_gfx_ViewportOwner", "structnh__gfx__ViewportOwner.html", [

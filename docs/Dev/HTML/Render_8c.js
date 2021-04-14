@@ -1,5 +1,5 @@
 var Render_8c =
 [
-    [ "nh_Vk_prepareRendering", "group__nhgfxFunctions.html#ga5a9e4d348f41eda20e3b3a48293096bf", null ],
-    [ "nh_Vk_render", "group__nhgfxFunctions.html#gaf94ab67b1cb841b48e5fc4c20adb76e7", null ]
+    [ "nh_vk_prepareRendering", "group__nhgfxFunctions.html#ga3456425716f9f4a12bed9eecffb8241d", null ],
+    [ "nh_vk_render", "group__nhgfxFunctions.html#ga9d8120491036b94faab6635d1244c8e8", null ]
 ];
