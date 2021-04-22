@@ -47,6 +47,7 @@
   <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
     <div id="titlearea">
      <div style="height: 56px;">
+      <div style="height:56px;right:10px;top:0px;position:absolute;background-color:#151515;"><a href="https://netzwerkz.org"><img alt="netzwerkzLogo" style="height:56px;" src="Logo/netzwerkz.png"/></a></div>
       <div id="projectlogo"><img alt="Logo" src="Logo/LogoSmall.png"/></div>
      </div>
     </div>
@@ -61,10 +62,10 @@
         <br>
         <br>
         <br>
-<!-- NH_INSTALLER_INSERT_NEWS_BEGIN -->
-     
+<!-- NH_MAKE_INSERT_NEWS_BEGIN -->
+<p><b>2021-04-22</b><br>The internal build-system solution used by netzhaut has been moved to a new project, called <a href="https://selfmake.netzwerkz.org">selfmake</a>.</p>
 <p><b>2021-04-13</b><br>hello world!</p>
-<!-- NH_INSTALLER_INSERT_NEWS_END -->
+<!-- NH_MAKE_INSERT_NEWS_END -->
       </div>
       </div>
     </div>
@@ -88,14 +89,14 @@
         <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
         </h1>
         <div style="border-width:1px;border-style:solid;">
-          <div style="padding-left: 10px;">
+          <div style="padding-left: 10px;padding-right:10px;">
             <p>netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the <a href="Dev/HTML/Roadmap.html">roadmap</a> for more details. The engine is currently being developed for Linux, a Microsoft Windows port is planned once it matures enough.</p>
           </div>
         </div>
         <br><h1 class="doc-content-anchor"><a id="reqs"></a>Build Requirements
         </h1>
         <div style="border-width:1px;border-style:solid;">
-          <div style="padding-left: 10px;">
+          <div style="padding-left:10px;padding-right:10px;">
             <p>For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</p>
             <h3>Linux:</h3>
             <ul>
@@ -114,51 +115,59 @@
         <br><h1 class="doc-content-anchor"><a id="build"></a>Building
         </h1>
         <div style="border-width:1px;border-style:solid;">
-          <div style="padding-left: 10px;">
+          <div style="padding-left:10px;padding-right:10px;">
             <p>TODO
           </div>
         </div>
         <br>
       </div>
       <div style="display:inline-block;">
+          <h1>Links</h1>
+          <div>
+            <p><a href="Dev/HTML/Roadmap.html">Roadmap</a></p>
+          </div>
           <h1>Changelogs</h1>
           <div class="infobox">
             <div class="innerinfobox">
-<!-- NH_INSTALLER_INSERT_CHANGELOGS_BEGIN -->
-2021-02-23 <a href="Dev/HTML/group__netzhautChangelog.html">netzhaut v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhloaderChangelog.html">nhloader v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhcoreChangelog.html">nhcore v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhwsiChangelog.html">nhwsi v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhttyChangelog.html">nhtty v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhnetworkChangelog.html">nhnetwork v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhecmascriptChangelog.html">nhecmascript v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhhtmlChangelog.html">nhhtml v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhwebidlChangelog.html">nhwebidl v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhencodingChangelog.html">nhencoding v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhdomChangelog.html">nhdom v0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhgfxChangelog.html">nhgfx v0.0.0</a><br>
-2021-04-10 <a href="Dev/HTML/group__nhcssChangelog.html">nhcss v0.0.1</a><br>
-<!-- NH_INSTALLER_INSERT_CHANGELOGS_END -->
+<!-- NH_MAKE_INSERT_CHANGELOGS_BEGIN -->
+2021-02-23 <a href="Dev/HTML/group__netzhautChangelog.html#v0.0.0.0">netzhaut v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhloaderChangelog.html#v0.0.0.0">nhloader v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhcoreChangelog.html#v0.0.0.0">nhcore v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhwsiChangelog.html#v0.0.0.0">nhwsi v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhttyChangelog.html#v0.0.0.0">nhtty v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhnetworkChangelog.html#v0.0.0.0">nhnetwork v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhecmascriptChangelog.html#v0.0.0.0">nhecmascript v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhhtmlChangelog.html#v0.0.0.0">nhhtml v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhwebidlChangelog.html#v0.0.0.0">nhwebidl v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhencodingChangelog.html#v0.0.0.0">nhencoding v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhdomChangelog.html#v0.0.0.0">nhdom v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhgfxChangelog.html#v0.0.0.0">nhgfx v0.0.0.0</a><br>
+2021-04-10 <a href="Dev/HTML/group__nhcssChangelog.html#v0.0.0.1">nhcss v0.0.0.1</a><br>
+0-00-00 <a href="Dev/HTML/group__nhexternalChangelog.html#v0.0.0.0">nhexternal v0.0.0.0</a><br>
+2021-04-22 <a href="Dev/HTML/group__nhmakeChangelog.html#v0.1.0.0">nhmake v0.1.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhterminalChangelog.html#v0.0.0.0">nhterminal v0.0.0.0</a><br>
+2021-02-23 <a href="Dev/HTML/group__nhwebbrowserChangelog.html#v0.0.0.0">nhwebbrowser v0.0.0.0</a><br>
+<!-- NH_MAKE_INSERT_CHANGELOGS_END -->
             </div>
           </div>
           <h1>Repositories</h1>
           <div class="infobox">
             <div class="innerinfobox">
-              <a href="https://github.com/netzhautproject/netzhaut">Code Repository</a><br>
-              <a href="https://github.com/netzhautproject/docs">Docs Repository</a><br>
+              <a href="https://github.com/netzwerkz/netzhaut">Code Repository</a><br>
+              <a href="https://github.com/netzwerkz/netzhaut.netzwerkz.org">Docs Repository</a><br>
             </div>
           </div>
           <h1>License</h1>
           <div>
-            <p>Library Source Code (src/lib) is licensed under LGPLv3.<br>Binary Source Code (src/bin) is licensed under MIT.</p>
-            <p></p>
+            <p style="font-family:serif;">netzhaut Copyright (C) 2021<br>The netzhaut Authors<br>Published under LGPLv3.</p>
+            <p style="font-family:serif;">netzhaut docs Copyright (C) 2021<br>The netzhaut Authors<br>All rights reserved.</p>
           </div>
           <h1>Contact</h1>
           <div class="infobox">
             <div class="innerinfobox">
-              code issue: <a href="https://github.com/netzhautproject/netzhaut/issues/new">create new</a><br>
-              docs issue: <a href="https://github.com/netzhautproject/docs/issues/new">create new</a><br>
-              email: <a href="mailto:contact@netzhautproject.org">contact@netzhautproject.org</a><br>
+              code issue: <a href="https://github.com/netzwerkz/netzhaut/issues/new">create new</a><br>
+              docs issue: <a href="https://github.com/netzwerkz/netzhaut.netzwerkz.org/issues/new">create new</a><br>
+<!--              email: <a href="mailto:contact@netzhaut.dev">contact@netzhaut.dev</a><br> -->
             </div>
           </div>
         </div>
@@ -177,9 +186,9 @@
       <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="Dev/HTML/Main.html"><b>DEV DOCS</b></a></b>
       <div style="color:#24bbc4;text-align:center;font-size:16px;">
         <b>
-<!-- NH_INSTALLER_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0-0.0.1 pre-alpha-1
-<!-- NH_INSTALLER_INSERT_FULL_VERSION_END -->
+<!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
+v0.0.0.0-0.1.0.1 pre-alpha-1
+<!-- NH_MAKE_INSERT_FULL_VERSION_END -->
         </b>
       </div>
       <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="API/HTML/index.html"><b>API DOCS</b></a></b>
@@ -192,6 +201,34 @@ v0.0.0-0.0.1 pre-alpha-1
 </style>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
