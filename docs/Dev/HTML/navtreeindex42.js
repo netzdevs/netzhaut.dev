@@ -1,5 +1,14 @@
 var NAVTREEINDEX42 =
 {
+"structnh__html__DOCTYPEToken.html#a6527904ccef3fa8f10b62e1ab08c8e30":[7,11,3,3,3],
+"structnh__html__DOCTYPEToken.html#a7cd1a1a3ab43f6a73a1c50c91c6cd8b7":[7,11,3,3,4],
+"structnh__html__DOCTYPEToken.html#a8361ef1d71e55025fcb64915baadf9fe":[7,11,3,3,2],
+"structnh__html__IndexMap.html":[7,11,3,0],
+"structnh__html__IndexMap.html#af98c7b730a9c93ee3dc06ddfff1c1a0e":[7,11,3,0,0],
+"structnh__html__ParseError.html":[7,11,3,1],
+"structnh__html__ParseError.html#a99371527594cbbc866ca9d95ffecf413":[7,11,3,1,0],
+"structnh__html__ParseError.html#ac4ccb6967d688aad7bc7fab81016bc10":[7,11,3,1,1],
+"structnh__html__Parser.html":[7,11,3,2],
 "structnh__html__Parser.html#a05bf1904cd0ee2608ddbfa57974b4128":[7,11,3,2,4],
 "structnh__html__Parser.html#a430ebd3457000c07f34c4167ff9dcd2b":[7,11,3,2,14],
 "structnh__html__Parser.html#a543a23e4f20671266635db5254a11998":[7,11,3,2,13],
@@ -240,14 +249,5 @@ var NAVTREEINDEX42 =
 "structnh__vk__GPU.html#ac7bc0aed5806c7c413b0b84febeb2ab5":[7,5,3,2,5],
 "structnh__vk__GPU.html#ace5797b0cc5d657979012aa3fc17bbf8":[7,5,3,2,0],
 "structnh__vk__Host.html":[7,5,3,10],
-"structnh__vk__Host.html#a05e384c63568a49aba9cd96e10f742f2":[7,5,3,10,1],
-"structnh__vk__Host.html#a200403d0bb499680106efa7eccbef82f":[7,5,3,10,3],
-"structnh__vk__Host.html#a32e2702771e647e53a78c872585befc9":[7,5,3,10,0],
-"structnh__vk__Host.html#ad81763baa52f2c4001c0a49b2ec4a9d0":[7,5,3,10,2],
-"structnh__vk__Pipeline.html":[7,5,3,8],
-"structnh__vk__Pipeline.html#a9de54e9267339143be9856b47d0772e4":[7,5,3,8,1],
-"structnh__vk__Pipeline.html#ae0f499e4aa6c152bf11a108b82d68e79":[7,5,3,8,0],
-"structnh__vk__PipelineInfo.html":[7,5,3,7],
-"structnh__vk__PipelineInfo.html#a1246ad5dfbdbd48740ed6de7aae5f33f":[7,5,3,7,0],
-"structnh__vk__PipelineInfo.html#a4311cf04c1de26b88e3dbd9bb55e880c":[7,5,3,7,5]
+"structnh__vk__Host.html#a05e384c63568a49aba9cd96e10f742f2":[7,5,3,10,1]
 };

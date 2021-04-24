@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca5059be659b50d49c2cb61dd2c6926079":[7,0,2,4,309],
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca505c728247d9c36fd519e89602ec9c9a":[7,0,2,4,1694],
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca505c728247d9c36fd519e89602ec9c9a":[8,0,3,1,0,24,0,1694],
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca507cfba907a0e4e602958bd0862374e1":[7,0,2,4,1662],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca62515358bf48c034cca474acf80fcb5b":[7,0,2,4,302],
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca626252c15dc3aac5de4b491ed0627c0c":[7,0,2,4,999],
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca626252c15dc3aac5de4b491ed0627c0c":[8,0,3,1,0,24,0,999],
-"group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca627d9d099ab8f956f413461411ad4a28":[7,0,2,4,1430],
-"group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca627d9d099ab8f956f413461411ad4a28":[8,0,3,1,0,24,0,1430]
+"group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251ca627d9d099ab8f956f413461411ad4a28":[7,0,2,4,1430]
 };

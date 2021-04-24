@@ -48,11 +48,6 @@ var Values_8h =
       [ "NH_CSS_VALUE_KEYWORD_UNSET", "group__nhcssEnums.html#gga5f555bd6be968619ed2a26b795318fa4ae186970cb6e9f71851495ad076ba0cb4", null ],
       [ "NH_CSS_VALUE_KEYWORD_REVERT", "group__nhcssEnums.html#gga5f555bd6be968619ed2a26b795318fa4ae38ffafe8ee0eea11a61c95d4e3b280f", null ]
     ] ],
-    [ "NH_CSS_VALUE_ORIGIN", "group__nhcssEnums.html#ga5e4122f191cb9751194dc518dc48cc09", [
-      [ "NH_CSS_VALUE_ORIGIN_CASCADE", "group__nhcssEnums.html#gga5e4122f191cb9751194dc518dc48cc09ae1cc155eb1e006d9e20f01c22049d942", null ],
-      [ "NH_CSS_VALUE_ORIGIN_INHERIT", "group__nhcssEnums.html#gga5e4122f191cb9751194dc518dc48cc09a715b11e97832fb6a7c1381758ff83df0", null ],
-      [ "NH_CSS_VALUE_ORIGIN_INITIAL", "group__nhcssEnums.html#gga5e4122f191cb9751194dc518dc48cc09a1fac7cac821562e34e50df186a354fec", null ]
-    ] ],
     [ "NH_CSS_VALUE_SCOPE", "group__nhcssEnums.html#ga8fd3f4caa86bea3bb1bccc008122e15d", [
       [ "NH_CSS_VALUE_SCOPE_SPECIFIED", "group__nhcssEnums.html#gga8fd3f4caa86bea3bb1bccc008122e15da0ead9610bed318f0fe7b80a38bbbf05e", null ],
       [ "NH_CSS_VALUE_SCOPE_COMPUTED", "group__nhcssEnums.html#gga8fd3f4caa86bea3bb1bccc008122e15da6a5f828f61d9e53cdd240978c386bb61", null ],
@@ -61,8 +56,9 @@ var Values_8h =
     ] ],
     [ "nh_css_freeSpecifiedValues", "group__nhcssFunctions.html#ga60dc7ebaa8435bd3ecbe230cb91e752f", null ],
     [ "nh_css_initValue", "group__nhcssFunctions.html#gac06b307761930a93eb64536f73afd8e1", null ],
+    [ "nh_css_isLengthPercentageValue", "group__nhcssFunctions.html#ga78b6bdfd3d1c3cf204ad33083abcfe08", null ],
+    [ "nh_css_isLengthValue", "group__nhcssFunctions.html#gaeb08a71ee61f2cf72803fdcda8f2fd64", null ],
     [ "nh_css_isStringValue", "group__nhcssFunctions.html#gacfc2329d649e9ded640db287f395701d", null ],
     [ "nh_css_setSpecifiedValues", "group__nhcssFunctions.html#ga8f7271bf1803f3105b21643b1906f84a", null ],
-    [ "NH_CSS_ORIGIN_NAMES_PP", "group__nhcssVars.html#gaaaf4af10f4d353c2677ab4365d652fc0", null ],
     [ "NH_CSS_TYPE_NAMES_PP", "group__nhcssVars.html#gaa2b868d59d1545e7913247f761a3cd62", null ]
 ];

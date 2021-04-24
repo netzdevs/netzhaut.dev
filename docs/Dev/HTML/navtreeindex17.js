@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251caf9cef5796a1878882148e5668c3341a3":[8,0,3,1,0,24,0,201],
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251cafa07ca98fe93c4d3df4aab9e0bef84a8":[7,0,2,4,444],
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251cafa07ca98fe93c4d3df4aab9e0bef84a8":[8,0,3,1,0,24,0,444],
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251cafa2e193ea3b8148bf31ea6a79e3e464e":[7,0,2,4,1281],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "group__nhcoreFunctions.html#ga397ac7db0524f77b8f02f79b692093b1":[8,0,3,1,0,9,3],
 "group__nhcoreFunctions.html#ga397ac7db0524f77b8f02f79b692093b1":[8,0,3,1,0,10,8],
 "group__nhcoreFunctions.html#ga39fe57f96d20703e28c3e465ef52f5b6":[7,0,4,34],
-"group__nhcoreFunctions.html#ga39fe57f96d20703e28c3e465ef52f5b6":[8,0,3,1,0,19,8],
-"group__nhcoreFunctions.html#ga39fe57f96d20703e28c3e465ef52f5b6":[8,0,3,1,0,20,5]
+"group__nhcoreFunctions.html#ga39fe57f96d20703e28c3e465ef52f5b6":[8,0,3,1,0,19,8]
 };

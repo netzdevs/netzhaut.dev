@@ -1,5 +1,14 @@
 var NAVTREEINDEX43 =
 {
+"structnh__vk__Host.html#a200403d0bb499680106efa7eccbef82f":[7,5,3,10,3],
+"structnh__vk__Host.html#a32e2702771e647e53a78c872585befc9":[7,5,3,10,0],
+"structnh__vk__Host.html#ad81763baa52f2c4001c0a49b2ec4a9d0":[7,5,3,10,2],
+"structnh__vk__Pipeline.html":[7,5,3,8],
+"structnh__vk__Pipeline.html#a9de54e9267339143be9856b47d0772e4":[7,5,3,8,1],
+"structnh__vk__Pipeline.html#ae0f499e4aa6c152bf11a108b82d68e79":[7,5,3,8,0],
+"structnh__vk__PipelineInfo.html":[7,5,3,7],
+"structnh__vk__PipelineInfo.html#a1246ad5dfbdbd48740ed6de7aae5f33f":[7,5,3,7,0],
+"structnh__vk__PipelineInfo.html#a4311cf04c1de26b88e3dbd9bb55e880c":[7,5,3,7,5],
 "structnh__vk__PipelineInfo.html#a48a58b2b2e25008114ffcb37154b5a69":[7,5,3,7,6],
 "structnh__vk__PipelineInfo.html#a61a677f669fc1df836876ef9e4c1d7f5":[7,5,3,7,9],
 "structnh__vk__PipelineInfo.html#a7a9799192b5a17e9f5576b431631801d":[7,5,3,7,2],

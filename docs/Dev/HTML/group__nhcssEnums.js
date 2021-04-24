@@ -307,6 +307,7 @@ var group__nhcssEnums =
       [ "NH_CSS_PROPERTY_TEXT_ALIGN", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cae24a49dfeb45375da2e18d77a282e335", null ],
       [ "NH_CSS_PROPERTY_TEXT_DECORATION", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cac646ba0d57f77ccaf400f83502b458c6", null ],
       [ "NH_CSS_PROPERTY_TEXT_INDENT", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6caf41d1c0f253b187e0f491e3e599e16fc", null ],
+      [ "NH_CSS_PROPERTY_TEXT_ORIENTATION", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca0f88d2a4909303a383b1f6db532f6a91", null ],
       [ "NH_CSS_PROPERTY_TEXT_TRANSFORM", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cad66fbaa8aea8e903a31068a0f373d28f", null ],
       [ "NH_CSS_PROPERTY_TOP", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca7cf89921cd7e3504e38d15d1adb94460", null ],
       [ "NH_CSS_PROPERTY_UNICODE_BIDI", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca6ba4b13d2f2a6bcb3fbe850d8dadce04", null ],
@@ -318,6 +319,7 @@ var group__nhcssEnums =
       [ "NH_CSS_PROPERTY_WIDOWS", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca668eaf11e0fa36d847f79e800bfeb154", null ],
       [ "NH_CSS_PROPERTY_WIDTH", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cab144f89ecdcfa940a5318b64a210186a", null ],
       [ "NH_CSS_PROPERTY_WORD_SPACING", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cad0247fe82320e50a2984cfdde12edd3e", null ],
+      [ "NH_CSS_PROPERTY_WRITING_MODE", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca52315804b3c06c923980888f3f681a99", null ],
       [ "NH_CSS_PROPERTY_Z_INDEX", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca85d472bd33ee0fa425094c36f7ed53ba", null ],
       [ "NH_CSS_PROPERTY_COUNT", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cacfc6e6c35a77ee3a0ff9c03e7cd7e0b1", null ]
     ] ],
@@ -433,11 +435,6 @@ var group__nhcssEnums =
       [ "NH_CSS_VALUE_KEYWORD_INHERIT", "group__nhcssEnums.html#gga5f555bd6be968619ed2a26b795318fa4a79f9dcefbbdfa2077471b1ae32e3e71d", null ],
       [ "NH_CSS_VALUE_KEYWORD_UNSET", "group__nhcssEnums.html#gga5f555bd6be968619ed2a26b795318fa4ae186970cb6e9f71851495ad076ba0cb4", null ],
       [ "NH_CSS_VALUE_KEYWORD_REVERT", "group__nhcssEnums.html#gga5f555bd6be968619ed2a26b795318fa4ae38ffafe8ee0eea11a61c95d4e3b280f", null ]
-    ] ],
-    [ "NH_CSS_VALUE_ORIGIN", "group__nhcssEnums.html#ga5e4122f191cb9751194dc518dc48cc09", [
-      [ "NH_CSS_VALUE_ORIGIN_CASCADE", "group__nhcssEnums.html#gga5e4122f191cb9751194dc518dc48cc09ae1cc155eb1e006d9e20f01c22049d942", null ],
-      [ "NH_CSS_VALUE_ORIGIN_INHERIT", "group__nhcssEnums.html#gga5e4122f191cb9751194dc518dc48cc09a715b11e97832fb6a7c1381758ff83df0", null ],
-      [ "NH_CSS_VALUE_ORIGIN_INITIAL", "group__nhcssEnums.html#gga5e4122f191cb9751194dc518dc48cc09a1fac7cac821562e34e50df186a354fec", null ]
     ] ],
     [ "NH_CSS_VALUE_SCOPE", "group__nhcssEnums.html#ga8fd3f4caa86bea3bb1bccc008122e15d", [
       [ "NH_CSS_VALUE_SCOPE_SPECIFIED", "group__nhcssEnums.html#gga8fd3f4caa86bea3bb1bccc008122e15da0ead9610bed318f0fe7b80a38bbbf05e", null ],

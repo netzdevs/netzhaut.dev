@@ -114,6 +114,7 @@ var nhcss_2Properties_2Properties_8h =
       [ "NH_CSS_PROPERTY_TEXT_ALIGN", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cae24a49dfeb45375da2e18d77a282e335", null ],
       [ "NH_CSS_PROPERTY_TEXT_DECORATION", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cac646ba0d57f77ccaf400f83502b458c6", null ],
       [ "NH_CSS_PROPERTY_TEXT_INDENT", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6caf41d1c0f253b187e0f491e3e599e16fc", null ],
+      [ "NH_CSS_PROPERTY_TEXT_ORIENTATION", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca0f88d2a4909303a383b1f6db532f6a91", null ],
       [ "NH_CSS_PROPERTY_TEXT_TRANSFORM", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cad66fbaa8aea8e903a31068a0f373d28f", null ],
       [ "NH_CSS_PROPERTY_TOP", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca7cf89921cd7e3504e38d15d1adb94460", null ],
       [ "NH_CSS_PROPERTY_UNICODE_BIDI", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca6ba4b13d2f2a6bcb3fbe850d8dadce04", null ],
@@ -125,6 +126,7 @@ var nhcss_2Properties_2Properties_8h =
       [ "NH_CSS_PROPERTY_WIDOWS", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca668eaf11e0fa36d847f79e800bfeb154", null ],
       [ "NH_CSS_PROPERTY_WIDTH", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cab144f89ecdcfa940a5318b64a210186a", null ],
       [ "NH_CSS_PROPERTY_WORD_SPACING", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cad0247fe82320e50a2984cfdde12edd3e", null ],
+      [ "NH_CSS_PROPERTY_WRITING_MODE", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca52315804b3c06c923980888f3f681a99", null ],
       [ "NH_CSS_PROPERTY_Z_INDEX", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca85d472bd33ee0fa425094c36f7ed53ba", null ],
       [ "NH_CSS_PROPERTY_COUNT", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cacfc6e6c35a77ee3a0ff9c03e7cd7e0b1", null ]
     ] ],

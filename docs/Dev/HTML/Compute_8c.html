@@ -98,6 +98,7 @@ $(document).ready(function(){initNavTree('Compute_8c.html',''); initResizable();
 <div class="textblock"><code>#include &quot;<a class="el" href="Compute_8h_source.html">Compute.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Properties_2Properties_8h_source.html">Properties.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Color_8h_source.html">Color.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Cascade_8h_source.html">Cascade.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Log_8h_source.html">../Common/Log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="List_8h_source.html">../../nhcore/List.h</a>&quot;</code><br />
@@ -111,6 +112,9 @@ $(document).ready(function(){initNavTree('Compute_8c.html',''); initResizable();
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa5e5ed1fbc4a36f7396e07c75a8bfa52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__Value.html">nh_css_Value</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Compute_8c.html#aa5e5ed1fbc4a36f7396e07c75a8bfa52">nh_css_compareSpecifiedValues</a> (<a class="el" href="structnh__css__Value.html">nh_css_Value</a> *Value1_p, <a class="el" href="structnh__css__Value.html">nh_css_Value</a> *Value2_p)</td></tr>
+<tr class="memdesc:aa5e5ed1fbc4a36f7396e07c75a8bfa52"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under LGPLv3  <a href="Compute_8c.html#aa5e5ed1fbc4a36f7396e07c75a8bfa52">More...</a><br /></td></tr>
+<tr class="separator:aa5e5ed1fbc4a36f7396e07c75a8bfa52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a093aec8ad9f986779fef7e08054500a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Compute_8c.html#a093aec8ad9f986779fef7e08054500a4">nh_css_computeSpecifiedValue</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *SpecifiedValues_p, <a class="el" href="structnh__List.html">nh_List</a> *ComputedValues_p, <a class="el" href="group__nhcssEnums.html#gab34dab72261097d5941740976503da6c">NH_CSS_PROPERTY</a> property)</td></tr>
 <tr class="separator:a093aec8ad9f986779fef7e08054500a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7f20e1315b3e443c2bc64944dbcfdba4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga7f20e1315b3e443c2bc64944dbcfdba4">nh_css_computeSpecifiedValues</a> (<a class="el" href="group__nhdomTypedefs.html#ga73d9208680bb66d21d3201346efcc824">nh_dom_Node</a> *Node_p)</td></tr>
@@ -119,6 +123,36 @@ Functions</h2></td></tr>
 <tr class="separator:gab6a35d86e470301b748e1c1de5d97a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aa5e5ed1fbc4a36f7396e07c75a8bfa52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5e5ed1fbc4a36f7396e07c75a8bfa52">&#9670;&nbsp;</a></span>nh_css_compareSpecifiedValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnh__css__Value.html">nh_css_Value</a>* nh_css_compareSpecifiedValues </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnh__css__Value.html">nh_css_Value</a> *&#160;</td>
+          <td class="paramname"><em>Value1_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structnh__css__Value.html">nh_css_Value</a> *&#160;</td>
+          <td class="paramname"><em>Value2_p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under LGPLv3 </p>
+
+</div>
+</div>
 <a id="a093aec8ad9f986779fef7e08054500a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a093aec8ad9f986779fef7e08054500a4">&#9670;&nbsp;</a></span>nh_css_computeSpecifiedValue()</h2>
 
@@ -167,7 +201,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.0.1 pre-alpha-1
+v0.0.0.0-0.1.1.1 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

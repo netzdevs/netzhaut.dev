@@ -105,13 +105,19 @@ $(document).ready(function(){initNavTree('Block_8h_source.html',''); initResizab
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gac00d875bad4daeccde7874b877ffdbaa">nh_css_arrangeBlockFormattingContext</a>(</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structnh__css__Box.html">nh_css_Box</a> *Box_p, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> yOffset</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga274c245c82f5c0e863f0a7497ccbae9e">nh_css_handleMarginCollapse</a>(</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="structnh__css__BoxFragment.html">nh_css_BoxFragment</a> *Fragment_p</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    );</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gac00d875bad4daeccde7874b877ffdbaa">nh_css_arrangeBlockFormattingContext</a>(</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="structnh__css__Box.html">nh_css_Box</a> *Box_p, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> yOffset</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="agroup__nhcssEnums_html_ga5e92e4500eb7c137bfb01ca5d4d608db"><div class="ttname"><a href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a></div><div class="ttdeci">NH_CSS_RESULT</div><div class="ttdoc">Return values for functions.</div><div class="ttdef"><b>Definition:</b> Result.h:22</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_gac00d875bad4daeccde7874b877ffdbaa"><div class="ttname"><a href="group__nhcssFunctions.html#gac00d875bad4daeccde7874b877ffdbaa">nh_css_arrangeBlockFormattingContext</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_arrangeBlockFormattingContext(nh_css_Box *Box_p, unsigned int yOffset)</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under LGPLv3</div><div class="ttdef"><b>Definition:</b> Block.c:26</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga274c245c82f5c0e863f0a7497ccbae9e"><div class="ttname"><a href="group__nhcssFunctions.html#ga274c245c82f5c0e863f0a7497ccbae9e">nh_css_handleMarginCollapse</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_handleMarginCollapse(nh_css_BoxFragment *Fragment_p)</div><div class="ttdef"><b>Definition:</b> Block.c:43</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_gac00d875bad4daeccde7874b877ffdbaa"><div class="ttname"><a href="group__nhcssFunctions.html#gac00d875bad4daeccde7874b877ffdbaa">nh_css_arrangeBlockFormattingContext</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_arrangeBlockFormattingContext(nh_css_Box *Box_p, unsigned int yOffset)</div><div class="ttdef"><b>Definition:</b> Block.c:76</div></div>
+<div class="ttc" id="astructnh__css__BoxFragment_html"><div class="ttname"><a href="structnh__css__BoxFragment.html">nh_css_BoxFragment</a></div><div class="ttdef"><b>Definition:</b> BoxTree.h:77</div></div>
 <div class="ttc" id="astructnh__css__Box_html"><div class="ttname"><a href="structnh__css__Box.html">nh_css_Box</a></div><div class="ttdef"><b>Definition:</b> BoxTree.h:69</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -127,7 +133,7 @@ $(document).ready(function(){initNavTree('Block_8h_source.html',''); initResizab
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.0.1 pre-alpha-1
+v0.0.0.0-0.1.1.1 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>
