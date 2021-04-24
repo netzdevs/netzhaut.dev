@@ -1,5 +1,6 @@
 var NAVTREEINDEX42 =
 {
+"structnh__html__DOCTYPEToken.html#a4d597402da865b4f72111143e4461d7a":[7,11,3,3,0],
 "structnh__html__DOCTYPEToken.html#a6527904ccef3fa8f10b62e1ab08c8e30":[7,11,3,3,3],
 "structnh__html__DOCTYPEToken.html#a7cd1a1a3ab43f6a73a1c50c91c6cd8b7":[7,11,3,3,4],
 "structnh__html__DOCTYPEToken.html#a8361ef1d71e55025fcb64915baadf9fe":[7,11,3,3,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX42 =
 "structnh__vk__GPU.html#ab22a7ccab159092217a7a4e048ae1cb5":[7,5,3,2,3],
 "structnh__vk__GPU.html#ac7bc0aed5806c7c413b0b84febeb2ab5":[7,5,3,2,5],
 "structnh__vk__GPU.html#ace5797b0cc5d657979012aa3fc17bbf8":[7,5,3,2,0],
-"structnh__vk__Host.html":[7,5,3,10],
-"structnh__vk__Host.html#a05e384c63568a49aba9cd96e10f742f2":[7,5,3,10,1]
+"structnh__vk__Host.html":[7,5,3,10]
 };

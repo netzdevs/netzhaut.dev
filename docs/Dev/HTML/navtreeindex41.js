@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"structnh__ecmascript__Completion.html#a8554c7e239f93203d91182834764226d":[7,3,3,4,2],
 "structnh__ecmascript__CompletionOrReference.html":[7,3,3,5],
 "structnh__ecmascript__CompletionOrReference.html#a69230d701a887ab60cc99669c7086986":[7,3,3,5,1],
 "structnh__ecmascript__CompletionOrReference.html#ad2eaf12307a984da12463321cc90288a":[7,3,3,5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX41 =
 "structnh__html__CommentOrCharacterToken.html#a407c16b9764326a051f4815dfd237d83":[7,11,3,6,0],
 "structnh__html__CommentOrCharacterToken.html#a6ff9f922a06b1662c6513c2e5fe54b4f":[7,11,3,6,1],
 "structnh__html__DOCTYPEToken.html":[7,11,3,3],
-"structnh__html__DOCTYPEToken.html#a3c7711abebb1c8e0ea4d4ce6710c3d5c":[7,11,3,3,1],
-"structnh__html__DOCTYPEToken.html#a4d597402da865b4f72111143e4461d7a":[7,11,3,3,0]
+"structnh__html__DOCTYPEToken.html#a3c7711abebb1c8e0ea4d4ce6710c3d5c":[7,11,3,3,1]
 };

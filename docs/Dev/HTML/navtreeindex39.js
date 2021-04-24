@@ -1,5 +1,6 @@
 var NAVTREEINDEX39 =
 {
+"nhwsi_2Common_2Result_8h.html":[8,0,3,1,11,0,8],
 "nhwsi_2Common_2Result_8h_source.html":[8,0,3,1,11,0,8],
 "pages.html":[],
 "structnh__Array.html":[7,0,3,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX39 =
 "structnh__Window.html#a30ce090e5d2005c04805a90c4cd01fb6":[7,0,3,42,21],
 "structnh__Window.html#a3a3699955ff66036c058a157b0d82602":[7,0,3,42,7],
 "structnh__Window.html#a3f72c51dd378d681505054b79690a45c":[7,0,3,42,14],
-"structnh__Window.html#a51ef87b82d9528524148e8c3e6099994":[7,0,3,42,17],
-"structnh__Window.html#a5bdeb6a1666d4cc983b33d29f66ebb71":[7,0,3,42,8]
+"structnh__Window.html#a51ef87b82d9528524148e8c3e6099994":[7,0,3,42,17]
 };

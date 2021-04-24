@@ -109,64 +109,48 @@ General</h1>
 </div><div style="width:700px;"></div><h1><a class="anchor" id="Code"></a>
 Code</h1>
 <div style="width:700px;"><ul>
-<li>For code residing in <b>src/lib</b>, declarations are prefixed with the library prefix (<b>nh</b>), followed by an underscore (_), followed by the library suffix, followed by an underscore (_).</li>
-<li>For code residing in <b>src/bin</b>, declarations are prefixed with the binary prefix (<b>Nh</b>), followed by an underscore (_), followed by the binary suffix, followed by an underscore (_).</li>
-<li>Function suffixes use the <b>camelCase</b> notation. <pre>
-    // e.g. for 'src/lib/nhexamplelibrary':
+<li><b>Code residing in src/bin is exempt from the next rule.</b></li>
+<li>For code residing in <b>src/lib</b>, type declarations are prefixed with the library prefix (<b>nh</b>), followed by an underscore (_), followed by the library suffix, followed by an underscore (_).</li>
+<li>Functions use the <b>camelCase</b> notation. Function declarations also use specific formatting based on parameters. <pre>
+    // e.g. for 'src/lib/nhexamplelib':
 
-    void nh_examplelibrary_fooBar(
+    void nh_examplelib_fooBar(
     );
-    void nh_examplelibrary_fooBar(
+    void nh_examplelib_fooBar(
         int value1, int value2
     );
-    void nh_examplelibrary_fooBar()
+    void nh_examplelib_fooBar()
     {
         return;
     }
-    void nh_examplelibrary_fooBar(
-        int value1, int value2)
-    {
-        return;
-    }
-
-    // e.g. for 'src/bin/NhExampleBinary':
-
-    void Nh_ExampleBinary_fooBar(
-    );
-    void Nh_ExampleBinary_fooBar(
-        int value1, int value2
-    );
-    void Nh_ExampleBinary_fooBar()
-    {
-        return;
-    }
-    void Nh_ExampleBinary_fooBar(
+    void nh_examplelib_fooBar(
         int value1, int value2)
     {
         return;
     }
 </pre></li>
-<li>Struct suffixes use the <b>CamelCase</b> notation. <pre>
-    // e.g. for 'src/lib/nhexamplelibrary':
+<li>Structs use the <b>CamelCase</b> notation. <pre>
+    // e.g. for 'src/lib/nhexamplelib':
 
-    typedef struct nh_examplelibrary_FooBar {
+    typedef struct nh_examplelib_FooBar {
         int value;
-    } nh_example_Foo;
-
-    // e.g. for 'src/bin/NhExampleBinary':
-
-    typedef struct Nh_ExampleBinary_FooBar {
-        int value;
-    } Nh_Example_Foo;
+    } nh_examplelib_FooBar;
 </pre></li>
 <li>Enums are completely <b>uppercased</b>.</li>
 <li>Enum values have the enum declaration name as prefix. <pre>
-    typedef enum NH_EXAMPLE_FOO {
-        NH_EXAMPLE_FOO_BAR1,
-        NH_EXAMPLE_FOO_BAR2,
-    } NH_EXAMPLE_FOO;
+    // e.g. for 'src/lib/nhexamplelib':
+
+    typedef enum NH_EXAMPLELIB_FOO {
+        NH_EXAMPLELIB_FOO_BAR1,
+        NH_EXAMPLELIB_FOO_BAR2,
+    } NH_EXAMPLELIB_FOO;
 </pre></li>
-<li>Global variables and types are notated similarly to enum values.</li>
+<li>Global variables, types and macros are also completely <b>uppercased</b>. <pre>
+    // e.g. for 'src/lib/nhexamplelib':
+
+    typedef char NH_EXAMPLELIB_CHAR;
+    extern int NH_EXAMPLELIB_GLOBAL_VAR;
+</pre></li>
 <li>Local variables are generally written using the <b>camelCase</b> notation.</li>
 <li>Pointer variables must have a suffix consisting of an underscore (_) followed by as many p characters as the pointer is deep: <pre>
     int *p;
@@ -187,8 +171,8 @@ File Naming</h1>
     FooBarGen.inc
 </pre></li>
 </ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="LibraryHeader"></a>
-Library Header Format</h1>
+</div><div style="width:700px;"></div><h1><a class="anchor" id="HeaderFormat"></a>
+Header Format</h1>
 <div style="width:700px;"> <b>Skeleton</b> <br  />
 </div><div style="width:700px;"><pre>
     #ifndef NH_SKELETON_H
@@ -199,7 +183,7 @@ Library Header Format</h1>
     /**
      * netzhaut - Web Browser Engine
      * Copyright (C) 2020 The netzhaut Authors
-     * Published under LGPLv3
+     * Published under MIT 
      */
 
     // Includes go here
@@ -249,7 +233,7 @@ Library Header Format</h1>
     #endif
 </pre></div><div style="width:700px;"><b>Practice</b> <br  />
 </div><div style="width:700px;"><ul>
-<li>Header files must use the above skeleton.</li>
+<li>The format applies to all header-files inside <b>src/lib</b>.</li>
 <li>Blocks must be omitted If they contain no declarations. <br  />
 </li>
 <li>Includes are not indented unless they are part of defines. <br  />
@@ -257,82 +241,18 @@ Library Header Format</h1>
 <li>Declarations must be indented by 4 whitespace. <br  />
 </li>
 </ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="BinaryHeader"></a>
-Binary Header Format</h1>
+</div><div style="width:700px;"></div><h1><a class="anchor" id="SourceFormat"></a>
+Source Format</h1>
 <div style="width:700px;"> <b>Skeleton</b> <br  />
 </div><div style="width:700px;"><pre>
-    #ifndef NH_SKELETON_H
-    #define NH_SKELETON_H
-
-    #ifndef DOXYGEN_SHOULD_SKIP_THIS
+    // LICENSE NOTICE ==================================================================================
 
     /**
      * netzhaut - Web Browser Engine
-     * Copyright (C) 2020 The netzhaut Authors
+     * Copyright (C) 2021 The netzhaut Authors
      * Published under MIT 
      */
 
-    // Includes go here
-
-    #endif
-
-    /** @addtogroup NhExampleEnums
-     *  @{
-     */
-
-        // Enums go here
-
-    /** @} */
-
-    /** @addtogroup NhExampleStructs
-     *  @{
-     */
-
-        // Structs go here
-
-    /** @} */
-
-    /** @addtogroup NhExampleTypedefs
-     *  @{
-     */
-
-        // Typedefs go here
-
-    /** @} */
-
-    /** @addtogroup NhExampleVars
-     *  @{
-     */
-
-        // Global Vars go here
-
-    /** @} */
-
-    /** @addtogroup NhExampleFunctions
-     *  @{
-     */
-
-        // Function Declarations go here
-
-    /** @} */
-
-    #endif
-</pre></div><div style="width:700px;"><b>Practice</b> <br  />
-</div><div style="width:700px;"><ul>
-<li>Same practice as for the library header format.</li>
-</ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="LibrarySource"></a>
-Library Source Format</h1>
-<div style="width:700px;"> <b>Skeleton</b> <br  />
-</div><div style="width:700px;"><pre>
-    // LICENSE NOTICE ==================================================================================
-
-    /**
-     * netzhaut - Web Browser Engine
-     * Copyright (C) 2020 The netzhaut Authors
-     * Published under LGPLv3
-     */
-
     // INCLUDE =========================================================================================
 
     // Includes go here
@@ -342,31 +262,9 @@ Library Source Format</h1>
     // Functions etc. go here
 </pre></div><div style="width:700px;"><b>Practice</b> <br  />
 </div><div style="width:700px;"><ul>
+<li>The format applies to all source-files in <b>src/lib</b>.</li>
 <li>Developers are encouraged to logically group code by using segmentation comments. At a minimum, a source file must begin with code-segments similiar to the ones from the skeleton.</li>
 <li>License notice and include code-segments are mandatory.</li>
-</ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="BinarySource"></a>
-Binary Source Format</h1>
-<div style="width:700px;"> <b>Skeleton</b> <br  />
-</div><div style="width:700px;"><pre>
-    // LICENSE NOTICE ==================================================================================
-
-    /**
-     * netzhaut - Web Browser Engine
-     * Copyright (C) 2020 The netzhaut Authors
-     * Published under MIT
-     */
-
-    // INCLUDE =========================================================================================
-
-    // Includes go here
-
-    // IMPLEMENT =======================================================================================
-
-    // Functions etc. go here
-</pre></div><div style="width:700px;"><b>Practice</b> <br  />
-</div><div style="width:700px;"><ul>
-<li>Same practice as for the library source format.</li>
 </ul>
 </div><div style="width:700px;"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
@@ -383,7 +281,7 @@ Binary Source Format</h1>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.1.1 pre-alpha-1
+v0.0.0.0-0.1.2.0 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

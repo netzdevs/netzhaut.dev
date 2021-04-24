@@ -68,13 +68,11 @@ var NAVTREEINDEX0 =
 "Channel_8h.html":[8,0,3,1,0,8],
 "Channel_8h_source.html":[8,0,3,1,0,8],
 "CodeStyle.html":[6],
-"CodeStyle.html#BinaryHeader":[6,4],
-"CodeStyle.html#BinarySource":[6,6],
 "CodeStyle.html#Code":[6,1],
 "CodeStyle.html#General":[6,0],
-"CodeStyle.html#LibraryHeader":[6,3],
-"CodeStyle.html#LibrarySource":[6,5],
+"CodeStyle.html#HeaderFormat":[6,3],
 "CodeStyle.html#Naming":[6,2],
+"CodeStyle.html#SourceFormat":[6,4],
 "Color_8c.html":[8,0,3,1,1,3,2],
 "Color_8h.html":[8,0,3,1,1,3,3],
 "Color_8h_source.html":[8,0,3,1,1,3,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "Output_8h.html":[8,0,3,1,9,16],
 "Output_8h_source.html":[8,0,3,1,9,16],
 "Process_8c.html":[8,0,3,1,0,27],
-"Process_8c.html#a50080a885634e67b568aad6018396083":[8,0,3,1,0,27,7]
+"Process_8c.html#a50080a885634e67b568aad6018396083":[8,0,3,1,0,27,7],
+"Process_8h.html":[8,0,3,1,0,28],
+"Process_8h_source.html":[8,0,3,1,0,28]
 };

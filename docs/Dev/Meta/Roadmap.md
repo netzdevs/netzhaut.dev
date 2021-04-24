@@ -8,10 +8,14 @@ The roadmap documents previous, current and future development stages. Early dev
 
 <pre>Q1 2021 - Q1 2022</pre>
 
-This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering.  
+This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering. However, work on other emerging and pressing matters may require time as well.  
 <br>
 
 <div style="margin-left:50px;">
+    **Improved Build-Tool**   
+    The script language from the internal build-tool used by netzhaut is now a separate project at https://selfmake.netzwerkz.org. The language has improved a lot and the separation allows for development to target wider audiences.  
+    <br>
+
     **[TODO] Advanced Layout Engine**  
     Implement CSS Display module, CSS Inline Layout module, ...
     <br>

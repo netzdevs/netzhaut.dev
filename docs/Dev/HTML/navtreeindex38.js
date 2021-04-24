@@ -1,5 +1,6 @@
 var NAVTREEINDEX38 =
 {
+"nhcore_2Common_2Log_8h_source.html":[8,0,3,1,0,0,7],
 "nhcore_2Common_2Macro_8h.html":[8,0,3,1,0,0,8],
 "nhcore_2Common_2Macro_8h_source.html":[8,0,3,1,0,0,8],
 "nhcore_2Common_2Result_8c.html":[8,0,3,1,0,0,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX38 =
 "nhwsi_2Common_2Log_8h_source.html":[8,0,3,1,11,0,5],
 "nhwsi_2Common_2Macro_8h.html":[8,0,3,1,11,0,6],
 "nhwsi_2Common_2Macro_8h_source.html":[8,0,3,1,11,0,6],
-"nhwsi_2Common_2Result_8c.html":[8,0,3,1,11,0,7],
-"nhwsi_2Common_2Result_8h.html":[8,0,3,1,11,0,8]
+"nhwsi_2Common_2Result_8c.html":[8,0,3,1,11,0,7]
 };
