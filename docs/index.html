@@ -40,11 +40,6 @@
       padding-top: 5px;
       width:100%; 
     }
-    @media (max-width: 800px) {
-      .contents {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 
@@ -85,14 +80,14 @@
   $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   /* @license-end */
   </script>
-  <div id="doc-content" onscroll="scrollfunc()">
+  <div id="doc-content" onscroll="scrollfunc()" style="margin:0;">
     <div class="PageDoc" id="pageheader"><div class="header">
       <div class="headertitle">
         <div class="title">netzhaut | Web Browser Engine</div>
       </div>
     </div><!--header-->
-    <div class="contents" style="display:flex;flex-direction:row;">
-      <div class="textblock" style="max-width:700px;margin-right:50px;">
+    <div class="contents" style="display:flex;flex-wrap:wrap;margin:0;">
+      <div class="textblock" style="max-width:700px;min-width:300px;margin: 0 20px;">
         <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
         </h1>
         <div style="border-width:1px;border-style:solid;">
@@ -128,42 +123,49 @@
         </div>
         <br>
       </div>
-      <div>
-          <h1>Changelogs</h1>
-          <div class="infobox">
-            <div class="innerinfobox">
-<!-- NH_MAKE_INSERT_CHANGELOGS_BEGIN -->
-2021-02-23 <a href="Dev/HTML/group__netzhautChangelog.html#v0.0.0.0">netzhaut v0.0.0.0</a><br>
-2021-04-25 <a href="Dev/HTML/group__nhloaderChangelog.html#v0.0.0.1">nhloader v0.0.0.1</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhcoreChangelog.html#v0.0.0.0">nhcore v0.0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhwsiChangelog.html#v0.0.0.0">nhwsi v0.0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhttyChangelog.html#v0.0.0.0">nhtty v0.0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhnetworkChangelog.html#v0.0.0.0">nhnetwork v0.0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhecmascriptChangelog.html#v0.0.0.0">nhecmascript v0.0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhhtmlChangelog.html#v0.0.0.0">nhhtml v0.0.0.0</a><br>
-2021-04-25 <a href="Dev/HTML/group__nhwebidlChangelog.html#v0.0.0.1">nhwebidl v0.0.0.1</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhencodingChangelog.html#v0.0.0.0">nhencoding v0.0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhdomChangelog.html#v0.0.0.0">nhdom v0.0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhgfxChangelog.html#v0.0.0.0">nhgfx v0.0.0.0</a><br>
-2021-04-24 <a href="Dev/HTML/group__nhcssChangelog.html#v0.0.1.1">nhcss v0.0.1.1</a><br>
-2021-04-22 <a href="Dev/HTML/group__nhmakeChangelog.html#v0.1.1.1">nhmake v0.1.1.1</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhterminalChangelog.html#v0.0.0.0">nhterminal v0.0.0.0</a><br>
-2021-02-23 <a href="Dev/HTML/group__nhwebbrowserChangelog.html#v0.0.0.0">nhwebbrowser v0.0.0.0</a><br>
-<!-- NH_MAKE_INSERT_CHANGELOGS_END -->
-            </div>
-          </div>
-          <h1>Repositories</h1>
-          <div class="infobox">
-            <div class="innerinfobox">
-              <a href="https://github.com/netzwerkz/netzhaut">Code Repository</a><br>
-              <a href="https://github.com/netzwerkz/netzhaut.netzwerkz.org">Docs Repository</a><br>
-            </div>
-          </div>
+<div style="margin: 0 20px;">
+    <div>
+              <h1>Changelogs</h1>
+              <div class="infobox">
+                <div class="innerinfobox">
+    <!-- NH_MAKE_INSERT_CHANGELOGS_BEGIN -->
+    2021-02-23 <a href="Dev/HTML/group__netzhautChangelog.html#v0.0.0.0">netzhaut v0.0.0.0</a><br>
+    2021-04-25 <a href="Dev/HTML/group__nhloaderChangelog.html#v0.0.0.1">nhloader v0.0.0.1</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhcoreChangelog.html#v0.0.0.0">nhcore v0.0.0.0</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhwsiChangelog.html#v0.0.0.0">nhwsi v0.0.0.0</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhttyChangelog.html#v0.0.0.0">nhtty v0.0.0.0</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhnetworkChangelog.html#v0.0.0.0">nhnetwork v0.0.0.0</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhecmascriptChangelog.html#v0.0.0.0">nhecmascript v0.0.0.0</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhhtmlChangelog.html#v0.0.0.0">nhhtml v0.0.0.0</a><br>
+    2021-04-25 <a href="Dev/HTML/group__nhwebidlChangelog.html#v0.0.0.1">nhwebidl v0.0.0.1</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhencodingChangelog.html#v0.0.0.0">nhencoding v0.0.0.0</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhdomChangelog.html#v0.0.0.0">nhdom v0.0.0.0</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhgfxChangelog.html#v0.0.0.0">nhgfx v0.0.0.0</a><br>
+    2021-04-24 <a href="Dev/HTML/group__nhcssChangelog.html#v0.0.1.1">nhcss v0.0.1.1</a><br>
+    2021-04-22 <a href="Dev/HTML/group__nhmakeChangelog.html#v0.1.1.1">nhmake v0.1.1.1</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhterminalChangelog.html#v0.0.0.0">nhterminal v0.0.0.0</a><br>
+    2021-02-23 <a href="Dev/HTML/group__nhwebbrowserChangelog.html#v0.0.0.0">nhwebbrowser v0.0.0.0</a><br>
+    <!-- NH_MAKE_INSERT_CHANGELOGS_END -->
+                </div>
+              </div>
+    </div>
+    <div>
+              <h1>Repositories</h1>
+              <div class="infobox">
+                <div class="innerinfobox">
+                  <a href="https://github.com/netzwerkz/netzhaut">Code Repository</a><br>
+                  <a href="https://github.com/netzwerkz/netzhaut.netzwerkz.org">Docs Repository</a><br>
+                </div>
+              </div>
+    </div>
+  <div>
           <h1>License</h1>
           <div>
             <p style="font-family:serif;">netzhaut Copyright (C) 2021<br>The netzhaut Authors<br>Published under MIT.</p>
             <p style="font-family:serif;">netzhaut docs Copyright (C) 2021<br>The netzhaut Authors<br>All rights reserved.</p>
           </div>
+</div>
+    <div>
           <h1>Contact</h1>
           <div class="infobox">
             <div class="innerinfobox">
@@ -172,7 +174,9 @@
 <!--              email: <a href="mailto:contact@netzhaut.dev">contact@netzhaut.dev</a><br> -->
             </div>
           </div>
-        </div>
+</div>
+</div>
+
       </div>
     </div>
   </div><!-- contents -->
