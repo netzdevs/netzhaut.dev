@@ -93,22 +93,22 @@ $(document).ready(function(){initNavTree('CodeStyle.html',''); initResizable(); 
 <div class="title">Code Style </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div style="width:700px;"></div><div style="width:700px;">Netzhaut uses a custom code-style focused on clean and expressive formatting. Styling not mentioned in this document can be freely chosen, but must be conforming to the general guidelines and the overall styling formula. <br  />
+<div class="textblock"><div style="max-width:700px;"></div><div style="max-width:700px;">Netzhaut uses a custom code-style focused on clean and expressive formatting. Styling not mentioned in this document can be freely chosen, but must be conforming to the general guidelines and the overall styling formula. <br  />
  <br  />
  General guidelines:<ul>
 <li>Use your own judgement.</li>
 <li>Break the rules if it makes sense e.g.: it improves readability substantially.</li>
 <li>Use the formatting of the file you're in, even if it breaks the rules.</li>
 </ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="General"></a>
+</div><div style="max-width:700px;"></div><h1><a class="anchor" id="General"></a>
 General</h1>
-<div style="width:700px;"><ul>
+<div style="max-width:700px;"><ul>
 <li>4 spaces indent.</li>
 <li>100 columns.</li>
 </ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="Code"></a>
+</div><div style="max-width:700px;"></div><h1><a class="anchor" id="Code"></a>
 Code</h1>
-<div style="width:700px;"><ul>
+<div style="max-width:700px;"><ul>
 <li><b>Code residing in src/bin is exempt from the next rule.</b></li>
 <li>For code residing in <b>src/lib</b>, type declarations are prefixed with the library prefix (<b>nh</b>), followed by an underscore (_), followed by the library suffix, followed by an underscore (_).</li>
 <li>Functions use the <b>camelCase</b> notation. Function declarations also use specific formatting based on parameters. <pre>
@@ -158,9 +158,9 @@ Code</h1>
     int **foo_pp;
 </pre></li>
 </ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="Naming"></a>
+</div><div style="max-width:700px;"></div><h1><a class="anchor" id="Naming"></a>
 File Naming</h1>
-<div style="width:700px;"><ul>
+<div style="max-width:700px;"><ul>
 <li>Headers use the .h extension.</li>
 <li>Implementation files use the .c extension.</li>
 <li>Include files use the .inc extension.</li>
@@ -171,10 +171,10 @@ File Naming</h1>
     FooBarGen.inc
 </pre></li>
 </ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="HeaderFormat"></a>
+</div><div style="max-width:700px;"></div><h1><a class="anchor" id="HeaderFormat"></a>
 Header Format</h1>
-<div style="width:700px;"> <b>Skeleton</b> <br  />
-</div><div style="width:700px;"><pre>
+<div style="max-width:700px;"> <b>Skeleton</b> <br  />
+</div><div style="max-width:700px;"><pre>
     #ifndef NH_SKELETON_H
     #define NH_SKELETON_H
 
@@ -231,8 +231,8 @@ Header Format</h1>
     /** @} */
 
     #endif
-</pre></div><div style="width:700px;"><b>Practice</b> <br  />
-</div><div style="width:700px;"><ul>
+</pre></div><div style="max-width:700px;"><b>Practice</b> <br  />
+</div><div style="max-width:700px;"><ul>
 <li>The format applies to all header-files inside <b>src/lib</b>.</li>
 <li>Blocks must be omitted If they contain no declarations. <br  />
 </li>
@@ -241,10 +241,10 @@ Header Format</h1>
 <li>Declarations must be indented by 4 whitespace. <br  />
 </li>
 </ul>
-</div><div style="width:700px;"></div><h1><a class="anchor" id="SourceFormat"></a>
+</div><div style="max-width:700px;"></div><h1><a class="anchor" id="SourceFormat"></a>
 Source Format</h1>
-<div style="width:700px;"> <b>Skeleton</b> <br  />
-</div><div style="width:700px;"><pre>
+<div style="max-width:700px;"> <b>Skeleton</b> <br  />
+</div><div style="max-width:700px;"><pre>
     // LICENSE NOTICE ==================================================================================
 
     /**
@@ -260,13 +260,13 @@ Source Format</h1>
     // IMPLEMENT =======================================================================================
 
     // Functions etc. go here
-</pre></div><div style="width:700px;"><b>Practice</b> <br  />
-</div><div style="width:700px;"><ul>
+</pre></div><div style="max-width:700px;"><b>Practice</b> <br  />
+</div><div style="max-width:700px;"><ul>
 <li>The format applies to all source-files in <b>src/lib</b>.</li>
 <li>Developers are encouraged to logically group code by using segmentation comments. At a minimum, a source file must begin with code-segments similiar to the ones from the skeleton.</li>
 <li>License notice and include code-segments are mandatory.</li>
 </ul>
-</div><div style="width:700px;"></div> </div></div><!-- contents -->
+</div><div style="max-width:700px;"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->

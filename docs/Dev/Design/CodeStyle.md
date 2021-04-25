@@ -1,6 +1,6 @@
 \page CodeStyle Code Style 
 
-<div style="width:700px;">
+<div style="max-width:700px;">
 
 Netzhaut uses a custom code-style focused on clean and expressive formatting. Styling not mentioned in this document can be freely chosen, but must be conforming to the general guidelines and the overall styling formula.  
 <br> 

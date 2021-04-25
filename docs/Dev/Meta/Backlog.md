@@ -1,6 +1,6 @@
 \page Backlog Backlog
 
-<div style="width:700px;">
+<div style="max-width:700px;">
 
 TODO
 

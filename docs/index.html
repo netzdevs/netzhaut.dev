@@ -57,8 +57,8 @@
      </div>
     </div>
   </div><!-- top -->
-  <div id="side-nav" class="ui-resizable side-nav-resizable" style="min-width:75px;">
-      <div style="position:fixed;text-align:center;width:inherit;min-width:75px;z-index:1000;">
+  <div id="side-nav" class="ui-resizable side-nav-resizable">
+      <div style="position:fixed;text-align:center;width:inherit;z-index:1000;">
         <h1><img alt="Logo" src="Logo/LogoSmall.png" style="width:20px;height:auto;"/> News</h1>
       </div>
     <div id="nav-tree" style="-ms-overflow-style:none;scrollbar-width:none;">
@@ -90,47 +90,43 @@
       </div>
     </div><!--header-->
     <div class="contents" style="display:flex;">
-      <div class="textblock" style="minimal-width:400px;width:700px;margin-right:50px;">
+      <div class="textblock" style="max-width:700px;margin-right:50px;">
         <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
         </h1>
         <div style="border-width:1px;border-style:solid;">
           <div style="padding-left: 10px;padding-right:10px;">
-            <p>netzhaut is an open-source web-browser-engine written from scratch in C99. The main design goals are customizability, conformity and simplicity. The project is currently in early development and thus not yet usable. See the <a href="Dev/HTML/Roadmap.html">roadmap</a> for more details. The engine is currently being developed for Linux, a Microsoft Windows port is planned once it matures enough.</p>
+            <p>netzhaut is an <b>open-source web-browser-engine</b> written from scratch in C99. The main design goals are <b>customizability</b>, <b>conformity</b> and <b>simplicity</b>. The project is currently in <b style="color:red;">early development</b> and thus not yet usable. The documentation is also heavy work-in-progress, things missing will be eventually added. </p>
+            <ul>
+              <li><b>Customizability</b></li>
+              <p>netzhaut implements a large array of technologies, primarily of course HTML, CSS and JavaScript, which can be used in many ways. Thus, netzhaut tries to provide a powerfull API so that developers may find netzhaut useful even in use-cases not related to web-browsers.</p>
+              <li><b>Conformity</b></li>
+              <p>This is not a toy project, netzhaut is designed and written to implement web-technology specifications in a conformant manner.</p>
+              <li><b>Simplicity</b></li>
+              <p>Simplicity is something that development focuses on a lot. We dont like complexity, not even if it's hidden/abstracted away. That's also why netzhaut is being written completely in C99.</p>
+            </ul>
+            <p>netzhaut is a project by the <a href="https://www.netzwerkz.org">netzwerkz</a> organization.</p>
           </div>
         </div>
-        <br><h1 class="doc-content-anchor"><a id="reqs"></a>Build Requirements
+        <h1 class="doc-content-anchor"><a id="intro"></a>Overview
         </h1>
         <div style="border-width:1px;border-style:solid;">
-          <div style="padding-left:10px;padding-right:10px;">
-            <p>For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</p>
-            <h3>Linux:</h3>
+          <div style="padding-left: 10px;padding-right:10px;">
+            <p>The documentation is split into <a href="Dev/HTML/Main.html">DEV DOCS</a> and <a href="API/HTML/index.html">API DOCS</a>. The following overview lists only the most useful documentation pieces to get a good grip of the project.</p>
             <ul>
-              <li><a href="https://gcc.gnu.org/">GCC</a></li>
-              <li><a href="https://www.x.org/wiki/">X11</a></li>
-              <li><a href="https://www.openssl.org/">OpenSSL</a></li>
-              <li><a href="https://www.freetype.org/">FreeType</a></li>
+              <li><a href="Dev/HTML/Roadmap.html">Roadmap</a></li>
+              <p>The roadmap is regularly updated to show current and previous development milestones.</p>
+              <li><a href="Dev/HTML/nhmake.html">nhmake</a></li>
+              <p>How to build netzhaut using nhmake.</p>
+              <li><a href="Dev/HTML/Conformance.html">Conformance</a></li>
+              <p>Tracks netzhaut's conformance status for various web-technologies.</p>
+              <li>TODO</li>
+              <p>TODO</p>
             </ul>
-            <h3>Microsoft Windows:</h3> 
-            <ul>
-              <li><a href="https://www.openssl.org/">OpenSSL</a></li>
-              <li><a href="https://www.freetype.org/">FreeType</a></li>
-            </ul>
-          </div>
-        </div>
-        <br><h1 class="doc-content-anchor"><a id="build"></a>Building
-        </h1>
-        <div style="border-width:1px;border-style:solid;">
-          <div style="padding-left:10px;padding-right:10px;">
-            <p>TODO
           </div>
         </div>
         <br>
       </div>
       <div style="display:inline-block;">
-          <h1>Links</h1>
-          <div>
-            <p><a href="Dev/HTML/Roadmap.html">Roadmap</a></p>
-          </div>
           <h1>Changelogs</h1>
           <div class="infobox">
             <div class="innerinfobox">
@@ -205,6 +201,67 @@ v0.0.0.0-0.1.2.4 pre-alpha-1
 </style>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

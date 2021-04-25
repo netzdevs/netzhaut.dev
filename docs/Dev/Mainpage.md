@@ -9,7 +9,9 @@ This is the <b>development documentation</b> for Netzhaut. It features
 - meta documents:
   - [roadmap](Roadmap.html)
   - [backlog](Backlog.html)
+  - [conformance](Conformance.html)
   - [project-layout](ProjectLayout.html)
+  - [nhmake](nhmake.html)
 - architecture documents: 
   - [system-architecture](SystemArchitecture.html)
   - [engine-architecture](EngineArchitecture.html)
