@@ -136,8 +136,8 @@ function initResizable()
   $("#splitbar").bind("dragstart", _preventDefault).bind("selectstart", _preventDefault);
   $(".ui-resizable-handle").dblclick(collapseExpand);
   $(window).on('load',resizeHeight);
-  if ($(window).width() < 900) {
-      restoreWidth(barWidth);
+  if ($(window).width() < desktop_vp) {
+      restoreWidth(0);
       collapsed=true;
   }
 
