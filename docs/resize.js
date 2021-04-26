@@ -25,7 +25,7 @@
 function initResizable()
 {
   var cookie_namespace = 'doxygen';
-  var sidenav,navtree,content,header,collapsed,collapsedWidth=0,barWidth=6,desktop_vp=768,titleHeight;
+  var sidenav,navtree,content,header,collapsed,collapsedWidth=0,barWidth=3,desktop_vp=768,titleHeight;
 
   function readCookie(cookie)
   {
@@ -100,7 +100,7 @@ function initResizable()
   function collapseExpand()
   {
     if (sidenav.width()>0) {
-      restoreWidth(0);
+      restoreWidth(barWidth);
       collapsed=true;
     }
     else {
@@ -136,5 +136,10 @@ function initResizable()
   $("#splitbar").bind("dragstart", _preventDefault).bind("selectstart", _preventDefault);
   $(".ui-resizable-handle").dblclick(collapseExpand);
   $(window).on('load',resizeHeight);
+  if ($(window).width() < 900) {
+      restoreWidth(barWidth);
+      collapsed=true;
+  }
+
 }
 /* @license-end */
