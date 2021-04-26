@@ -1,0 +1,26 @@
+var structnh__Window =
+[
+    [ "args_p", "structnh__Window.html#aebbe46593681f61b3b0d791d74ffc164", null ],
+    [ "atomic", "structnh__Window.html#afa33ad3fd0fdf548d79698c9829767b8", null ],
+    [ "atomicRender", "structnh__Window.html#a088808617be9594f0766f14f3efa0eea", null ],
+    [ "BackgroundColor", "structnh__Window.html#aad98248909fe421d10f7d49b5e630535", null ],
+    [ "deduceBackground", "structnh__Window.html#adcb07d91df8a49a26d31c5d825955440", null ],
+    [ "deduceTitle", "structnh__Window.html#a7264bcc6c01aa905d6544a4cd7aa370e", null ],
+    [ "Flags", "structnh__Window.html#a64a5805ec8be1a70756baf908b40ee17", null ],
+    [ "getNextImage", "structnh__Window.html#a3a3699955ff66036c058a157b0d82602", null ],
+    [ "halt", "structnh__Window.html#a5bdeb6a1666d4cc983b33d29f66ebb71", null ],
+    [ "Internal", "structnh__Window.html#ad0ef69199a002863e05f9605378ce774", null ],
+    [ "IO", "structnh__Window.html#ad84b431099f3130d0520461c2d3c3242", null ],
+    [ "Position", "structnh__Window.html#abe91ac2b71625b3ae796486284bbbe06", null ],
+    [ "ready", "structnh__Window.html#a885fb0db311ce401655a8622eab75889", null ],
+    [ "rendering", "structnh__Window.html#ab58e6831b4b34243f862161983d9089b", null ],
+    [ "resize", "structnh__Window.html#a3f72c51dd378d681505054b79690a45c", null ],
+    [ "Settings", "structnh__Window.html#ab225e948631edbb18ba222fc4af5a957", null ],
+    [ "signal", "structnh__Window.html#adeb117777a518736fe24cd0c8122aa76", null ],
+    [ "Size", "structnh__Window.html#a51ef87b82d9528524148e8c3e6099994", null ],
+    [ "skipRender", "structnh__Window.html#a816e71cb1d472e96a30c78bb77e21ff6", null ],
+    [ "Sync", "structnh__Window.html#abdcfe4ff42f5eabe048c522fd69d5f0a", null ],
+    [ "Tabs", "structnh__Window.html#a78ec7d061a3673dd2b31ba544231fead", null ],
+    [ "title_p", "structnh__Window.html#a30ce090e5d2005c04805a90c4cd01fb6", null ],
+    [ "undoHalt", "structnh__Window.html#a12123e8d7745fdc35fdfcede27c6ec87", null ]
+];
