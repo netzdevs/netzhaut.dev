@@ -80,14 +80,6 @@
   $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   /* @license-end */
   </script>
-<style>
-@media only screen and (max-width: 508px) {
-  /* For mobile phones: */
-  #side-nav {
-    width: 0px;
-  }
-}
-</style>
 
   <div id="doc-content" onscroll="scrollfunc()" style="margin:0;">
     <div class="PageDoc" id="pageheader"><div class="header">
@@ -95,12 +87,13 @@
         <div class="title">netzhaut | Web Browser Engine</div>
       </div>
     </div><!--header-->
+
     <div class="contents" style="display:flex;flex-wrap:wrap;margin:0;">
       <div class="textblock" style="max-width:700px;margin: 0 20px;">
         <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
         </h1>
         <div style="border-width:1px;border-style:solid;">
-          <div style="padding-left: 10px;padding-right:10px;">
+          <div style="padding-left:10px;padding-right:10px;">
             <p>netzhaut is an <b>open-source web-browser-engine</b> written from scratch in C99. The main design goals are <b>customizability</b>, <b>conformity</b> and <b>simplicity</b>. The project is currently in <b style="color:red;">early development</b> and thus not yet usable. The documentation is also heavy work-in-progress, things missing will be eventually added. </p>
               <p><b>Customizability</b></p>
               <p style="margin:10px;">netzhaut implements a large array of technologies, primarily of course HTML, CSS and JavaScript, which can be used in many ways. Thus, netzhaut tries to provide a powerfull API so that developers may find netzhaut useful even in use-cases not related to web-browsers.</p>
@@ -115,7 +108,7 @@
         <h1 class="doc-content-anchor"><a id="intro"></a>Overview
         </h1>
         <div style="border-width:1px;border-style:solid;">
-          <div style="padding-left: 10px;padding-right:10px;">
+          <div style="padding-left:10px;padding-right:10px;">
             <p>The documentation is split into <a href="dev/html/main.html">DEV DOCS</a> and <a href="api/html/index.html">API DOCS</a>. The following overview lists only the most useful documentation pieces to get a good grip of the project.</p>
               <p><a href="dev/html/roadmap.html">Roadmap</a></p>
               <p style="margin:10px">The roadmap is regularly updated to show current and previous development milestones.</p>
@@ -129,11 +122,12 @@
         </div>
         <br>
       </div>
-<div style="margin: 0 20px;">
-    <div>
-              <h1>Changelogs</h1>
-              <div class="infobox">
-                <div class="innerinfobox">
+
+      <div style="margin: 0 20px;">
+       <div>
+         <h1>Changelogs</h1>
+         <div class="infobox">
+           <div class="innerinfobox">
     <!-- NH_MAKE_INSERT_CHANGELOGS_BEGIN -->
 2021-02-23 <a href="dev/html/group__netzhautChangelog.html#v0.0.0.0">netzhaut v0.0.0.0</a><br>
 2021-04-25 <a href="dev/html/group__nhloaderChangelog.html#v0.0.0.1">nhloader v0.0.0.1</a><br>
