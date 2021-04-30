@@ -140,8 +140,17 @@ var group__nhgfxStructs =
       [ "GPUs", "structnh__vk__Vulkan.html#ac81e5c44f0b657b4955ff564739a2d6d", null ],
       [ "Host", "structnh__vk__Vulkan.html#ab11070a5445a04672aaf308dcc9b1878", null ]
     ] ],
+    [ "nh_gfx_HarfBuzzBuffer", "structnh__gfx__HarfBuzzBuffer.html", [
+      [ "external_p", "structnh__gfx__HarfBuzzBuffer.html#acfa99573a5d9240a45d20b6c9a124c11", null ]
+    ] ],
+    [ "nh_gfx_HarfBuzzGlyphInfo", "structnh__gfx__HarfBuzzGlyphInfo.html", [
+      [ "id", "structnh__gfx__HarfBuzzGlyphInfo.html#a6ed57cbe8a034ed6a195283f5fb2ea25", null ],
+      [ "xAdvance", "structnh__gfx__HarfBuzzGlyphInfo.html#a604af88e8719e2e5e1f7d3b216931447", null ],
+      [ "xOffset", "structnh__gfx__HarfBuzzGlyphInfo.html#aac1a1bb8905b4f58d52daa09d89eb8b5", null ],
+      [ "yAdvance", "structnh__gfx__HarfBuzzGlyphInfo.html#a11b400a7d23fa0b57d38486a22f0379a", null ],
+      [ "yOffset", "structnh__gfx__HarfBuzzGlyphInfo.html#a478c1c501da90f13bc6426f0d7a0b812", null ]
+    ] ],
     [ "nh_gfx_Glyph", "structnh__gfx__Glyph.html", [
-      [ "codepoint", "structnh__gfx__Glyph.html#a94fb8284aa910d5530a0f6ed6dc60796", null ],
       [ "external_p", "structnh__gfx__Glyph.html#a472fb0d3473a36510f28c190e0912ac5", null ],
       [ "height", "structnh__gfx__Glyph.html#a266bbdb6b0ef565ee95360a256b908df", null ],
       [ "u0", "structnh__gfx__Glyph.html#a16fac2293b75042252bbd5e8f71cb21d", null ],
@@ -149,9 +158,7 @@ var group__nhgfxStructs =
       [ "v0", "structnh__gfx__Glyph.html#a0ee71ba8d2a3c7627ee85d815708ae39", null ],
       [ "v1", "structnh__gfx__Glyph.html#af095fc33316bb5addf13bd54b181ffcc", null ],
       [ "width", "structnh__gfx__Glyph.html#aedf4bb54fc8ba20e9451c5ff09c7ae61", null ],
-      [ "xAdvance", "structnh__gfx__Glyph.html#a05d20f04dd303622aecf82a5be0f5132", null ],
       [ "xOffset", "structnh__gfx__Glyph.html#ac863cebc4b4e4d56ceed5d18c9d4e009", null ],
-      [ "yAdvance", "structnh__gfx__Glyph.html#a507dc7e091824f478dfec51613532537", null ],
       [ "yOffset", "structnh__gfx__Glyph.html#a9649a9203f40bd3fb1181729b4e720ee", null ]
     ] ],
     [ "nh_gfx_Atlas", "structnh__gfx__Atlas.html", [
@@ -164,16 +171,17 @@ var group__nhgfxStructs =
       [ "ascender", "structnh__gfx__FontInstance.html#af5a600566fbfd575779a60702c09dd9f", null ],
       [ "descender", "structnh__gfx__FontInstance.html#ae7074820b363282f82e0405745fa9b54", null ],
       [ "external_p", "structnh__gfx__FontInstance.html#a9bc921bdb133d1b0d3e7f857ec29319a", null ],
-      [ "fontSize", "structnh__gfx__FontInstance.html#ae8b657ea05601470d3c9482b5c213cf4", null ]
+      [ "fontSize", "structnh__gfx__FontInstance.html#ae8b657ea05601470d3c9482b5c213cf4", null ],
+      [ "hres", "structnh__gfx__FontInstance.html#a9b62d616427c85ebd60b71ec20a642cb", null ]
     ] ],
     [ "nh_gfx_Font", "structnh__gfx__Font.html", [
       [ "Atlas", "structnh__gfx__Font.html#a16c5736cd07d56213e163de0e3fe4f3c", null ],
-      [ "familyName_p", "structnh__gfx__Font.html#a7d7e5e32a1cf57d0bfe72cd2f823e8a4", null ],
+      [ "familyName_p", "structnh__gfx__Font.html#a28896e20dddf5f9e42fb995a8930d789", null ],
       [ "file_p", "structnh__gfx__Font.html#a596ae3f38f58aaf58e2e230e3bd7f83c", null ],
       [ "fileSize", "structnh__gfx__Font.html#a66fb5dbf94a6dca8c778148bbec680c1", null ],
       [ "id_p", "structnh__gfx__Font.html#a468df2f82e5217c14c833162b0cee488", null ],
       [ "Instances", "structnh__gfx__Font.html#aeeda9eea699b2c7188de58d659055b95", null ],
-      [ "styleName_p", "structnh__gfx__Font.html#a50f6b0cf2a54f6a403951339e2e6bab2", null ]
+      [ "styleName_p", "structnh__gfx__Font.html#a9f45cce5fe9b2300b83afda1c7c50048", null ]
     ] ],
     [ "nh_gfx_Surface", "structnh__gfx__Surface.html", [
       [ "api", "structnh__gfx__Surface.html#ac5d5dcd40a169e37dc158ee1e3688644", null ],

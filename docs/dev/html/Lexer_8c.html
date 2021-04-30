@@ -99,8 +99,9 @@ $(document).ready(function(){initNavTree('Lexer_8c.html',''); initResizable(); }
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Lexer_8h_source.html">Lexer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhecmascript_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Unicode_8h_source.html">../../nhcore/Unicode.h</a>&quot;</code><br />
+<code>#include &quot;../../nhencoding/Base/UnicodeDescription.h&quot;</code><br />
 <code>#include &quot;../../nhencoding/Encodings/UTF8.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="String_8h_source.html">../../nhcore/String.h</a>&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -117,8 +118,8 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa6fb81354fb6cf833becf29c314b5ba5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__Array.html">nh_Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#gaa6fb81354fb6cf833becf29c314b5ba5">nh_ecmascript_getInputElements</a> (<a class="el" href="structnh__UnicodeString.html">nh_UnicodeString</a> Codepoints)</td></tr>
-<tr class="separator:gaa6fb81354fb6cf833becf29c314b5ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga060e79463f1e25ca9d918b3e79529382"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__Array.html">nh_Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#ga060e79463f1e25ca9d918b3e79529382">nh_ecmascript_getInputElements</a> (<a class="el" href="structnh__encoding__UTF32String.html">nh_encoding_UTF32String</a> Codepoints)</td></tr>
+<tr class="separator:ga060e79463f1e25ca9d918b3e79529382"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaecc7ef07c266caa168832e49541fb57b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__Array.html">nh_Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#gaecc7ef07c266caa168832e49541fb57b">nh_ecmascript_discardRedundantInputElements</a> (<a class="el" href="structnh__Array.html">nh_Array</a> DirtyInputElements)</td></tr>
 <tr class="separator:gaecc7ef07c266caa168832e49541fb57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga98323c0ddae1b7793d2a9e70f323fc99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhecmascriptFunctions.html#ga98323c0ddae1b7793d2a9e70f323fc99">nh_ecmascript_isNumericToken</a> (<a class="el" href="structnh__ecmascript__InputElement.html">nh_ecmascript_InputElement</a> *InputElement_p)</td></tr>
@@ -166,7 +167,7 @@ Variables</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.2.4 pre-alpha-1
+v0.0.0.0-0.1.3.9 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

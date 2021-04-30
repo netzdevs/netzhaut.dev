@@ -99,9 +99,9 @@ $(document).ready(function(){initNavTree('nhhtml_2Parser_2Parser_8c.html',''); i
 <code>#include &quot;../Objects/Document.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhhtml_2Common_2Log_8h_source.html">../Common/Log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhhtml_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Unicode_8h_source.html">../../nhcore/Unicode.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Array_8h_source.html">../../nhcore/Array.h</a>&quot;</code><br />
 <code>#include &quot;../../nhwebidl/Runtime/String.h&quot;</code><br />
+<code>#include &quot;../../nhencoding/Encodings/UTF32.h&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -111,8 +111,8 @@ Functions</h2></td></tr>
 <tr class="memitem:ga242f2cd5c2a7d0a7159a8f842c08e3cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhhtmlEnums.html#ga84e1b4de60e74bff00ea42e21a22addb">NH_HTML_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhhtmlFunctions.html#ga242f2cd5c2a7d0a7159a8f842c08e3cc">nh_html_newParseError</a> (<a class="el" href="structnh__html__Parser.html">nh_html_Parser</a> *Parser_p, unsigned long index, <a class="el" href="group__nhhtmlEnums.html#ga973275968a1f3600aa94c99c0d724f9f">NH_HTML_PARSE_ERROR</a> type)</td></tr>
 <tr class="memdesc:ga242f2cd5c2a7d0a7159a8f842c08e3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__nhhtmlFunctions.html#ga242f2cd5c2a7d0a7159a8f842c08e3cc">More...</a><br /></td></tr>
 <tr class="separator:ga242f2cd5c2a7d0a7159a8f842c08e3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gace24ca5d27766d187adfc1fd77883c92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__webidl__Object.html">nh_webidl_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhhtmlFunctions.html#gace24ca5d27766d187adfc1fd77883c92">nh_html_parseDocument</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="structnh__UnicodeString.html">nh_UnicodeString</a> InputStream, <a class="el" href="structnh__webidl__Object.html">nh_webidl_Object</a> *Document_p)</td></tr>
-<tr class="separator:gace24ca5d27766d187adfc1fd77883c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa38ddfc38de0d63740050828215896ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__webidl__Object.html">nh_webidl_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhhtmlFunctions.html#gaa38ddfc38de0d63740050828215896ed">nh_html_parseDocument</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="structnh__encoding__UTF32String.html">nh_encoding_UTF32String</a> InputStream, <a class="el" href="structnh__webidl__Object.html">nh_webidl_Object</a> *Document_p)</td></tr>
+<tr class="separator:gaa38ddfc38de0d63740050828215896ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -128,7 +128,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.2.4 pre-alpha-1
+v0.0.0.0-0.1.3.9 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

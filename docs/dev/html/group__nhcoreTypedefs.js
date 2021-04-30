@@ -8,6 +8,5 @@ var group__nhcoreTypedefs =
     [ "nh_runWorkloads_f", "group__nhcoreTypedefs.html#ga775381231d4ecfb1aa03cbc3ec04fa47", null ],
     [ "nh_Stack", "group__nhcoreTypedefs.html#gaa5d61f179576bcb3d24431c632beb0a7", null ],
     [ "nh_String", "group__nhcoreTypedefs.html#ga0ab1eab4b5ec456b692d63ac8324afaf", null ],
-    [ "NH_UNICODE_CODEPOINT", "group__nhcoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2", null ],
     [ "NH_UNSIGNED_BYTE", "group__nhcoreTypedefs.html#gabc14a9cb063baa4b3001911965c0e64e", null ]
 ];

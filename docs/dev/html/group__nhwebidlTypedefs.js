@@ -16,5 +16,5 @@ var group__nhwebidlTypedefs =
     [ "NH_WEBIDL_UNSIGNED_LONG", "group__nhwebidlTypedefs.html#ga7987c8e911d502e774142311ef5df45f", null ],
     [ "NH_WEBIDL_UNSIGNED_LONG_LONG", "group__nhwebidlTypedefs.html#gaa3d3fb15edea44145c58ee8ec4362aaa", null ],
     [ "NH_WEBIDL_UNSIGNED_SHORT", "group__nhwebidlTypedefs.html#ga334c613b891aa29808f70aa12bb0d693", null ],
-    [ "nh_webidl_USVString", "group__nhwebidlTypedefs.html#ga45cfe44f922c43f14ea1131131b92593", null ]
+    [ "nh_webidl_USVString", "group__nhwebidlTypedefs.html#ga125069738b8779c09f145da229cfecaf", null ]
 ];

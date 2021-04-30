@@ -5,6 +5,6 @@ var structnh__tty__ProgramPrototype =
     [ "handleConsoleInput_f", "structnh__tty__ProgramPrototype.html#aae1595223f695c2abb681b51c227fc71", null ],
     [ "handleInput_f", "structnh__tty__ProgramPrototype.html#a90d2f2fab315797f162b03dd04852af7", null ],
     [ "init_f", "structnh__tty__ProgramPrototype.html#aa127a383a734806da8ac05b125d5e4b6", null ],
-    [ "Name", "structnh__tty__ProgramPrototype.html#a027323e0c8be28cc2ae3faee66efe2bc", null ],
+    [ "Name", "structnh__tty__ProgramPrototype.html#abb916944318a8795f9c6837b59eaaf46", null ],
     [ "update_f", "structnh__tty__ProgramPrototype.html#a19c649b1129efa7f3a96317cebf4d3b2", null ]
 ];

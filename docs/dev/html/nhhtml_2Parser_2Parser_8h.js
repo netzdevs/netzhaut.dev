@@ -1,6 +1,6 @@
 var nhhtml_2Parser_2Parser_8h =
 [
-    [ "nh_html_parseDocument_f", "group__nhhtmlTypedefs.html#ga163d3c49a4a23083a8df3d7a0a9d70a0", null ],
+    [ "nh_html_parseDocument_f", "group__nhhtmlTypedefs.html#gaf81bd658494711f7fba9a60e972b6930", null ],
     [ "NH_HTML_INSERTION_MODE", "group__nhhtmlEnums.html#ga7fdd96cb334c250519193f73b7b4391b", [
       [ "NH_HTML_INSERTION_MODE_INITIAL", "group__nhhtmlEnums.html#gga7fdd96cb334c250519193f73b7b4391ba942dcfe8c5356267f0dae3ab0acbae50", null ],
       [ "NH_HTML_INSERTION_MODE_BEFORE_HTML", "group__nhhtmlEnums.html#gga7fdd96cb334c250519193f73b7b4391ba2c850fd8b78f9fbc8c2e369a23d179dd", null ],
@@ -80,5 +80,5 @@ var nhhtml_2Parser_2Parser_8h =
       [ "NH_HTML_PARSE_ERROR_UNKNOWN_NAMED_CHARACTER_REFERENCE", "group__nhhtmlEnums.html#gga973275968a1f3600aa94c99c0d724f9fac5abfd6916a05e83a48e2fa430aff7ee", null ]
     ] ],
     [ "nh_html_newParseError", "group__nhhtmlFunctions.html#ga242f2cd5c2a7d0a7159a8f842c08e3cc", null ],
-    [ "nh_html_parseDocument", "group__nhhtmlFunctions.html#gace24ca5d27766d187adfc1fd77883c92", null ]
+    [ "nh_html_parseDocument", "group__nhhtmlFunctions.html#gaa38ddfc38de0d63740050828215896ed", null ]
 ];

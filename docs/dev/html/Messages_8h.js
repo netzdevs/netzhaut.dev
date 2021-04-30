@@ -16,5 +16,5 @@ var Messages_8h =
       [ "NH_TTY_MESSAGE_BINARY_QUERY_DELETE_INTERRUPTED", "group__nhttyEnums.html#gga1b6d652638163734b382da010f42a6e8aa1bdd32039aad38afd2278bb4c909dba", null ],
       [ "NH_TTY_MESSAGE_MISC_NO_CURRENT_PROGRAM", "group__nhttyEnums.html#gga1b6d652638163734b382da010f42a6e8a72c51e90a87c589063731d9fe99fa7b1", null ]
     ] ],
-    [ "nh_tty_getMessage", "group__nhttyFunctions.html#ga6dc223976562837500d047bba920c116", null ]
+    [ "nh_tty_getMessage", "group__nhttyFunctions.html#ga7b6e61a3ace5d38384556aa26b92c2d4", null ]
 ];

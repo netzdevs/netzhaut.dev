@@ -1,6 +1,6 @@
 var structnh__html__Tokenizer =
 [
-    [ "codepoint", "structnh__html__Tokenizer.html#a24e83ff8b90dd212be80f727910ff265", null ],
+    [ "codepoint", "structnh__html__Tokenizer.html#adc62485513fea9cb1446b2d5836f3ec9", null ],
     [ "Emits", "structnh__html__Tokenizer.html#a9654d7855cd8fda25127d75c3d930b34", null ],
     [ "index", "structnh__html__Tokenizer.html#aa4435cfef9b9aafa1752725ee6851e98", null ],
     [ "InputStream", "structnh__html__Tokenizer.html#aa0b229def9a743762169a709eb090dc6", null ],

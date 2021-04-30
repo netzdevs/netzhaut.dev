@@ -29,5 +29,5 @@ var searchData=
   ['executioncontext_2eh_305',['ExecutionContext.h',['../ExecutionContext_8h.html',1,'']]],
   ['executioncontextstack_306',['ExecutionContextStack',['../structnh__ecmascript__Agent.html#a06e79d6b9aeeaf2e2fd122773a01d626',1,'nh_ecmascript_Agent']]],
   ['extent2d_307',['Extent2D',['../structnh__vk__Surface.html#a4ea323cc4d0b4d03e5a701a35217537e',1,'nh_vk_Surface']]],
-  ['external_5fp_308',['external_p',['../structnh__gfx__FontInstance.html#a9bc921bdb133d1b0d3e7f857ec29319a',1,'nh_gfx_FontInstance::external_p()'],['../structnh__gfx__Atlas.html#aa27a56d15573c447a0c7152bedbf6d48',1,'nh_gfx_Atlas::external_p()'],['../structnh__gfx__Glyph.html#a472fb0d3473a36510f28c190e0912ac5',1,'nh_gfx_Glyph::external_p()']]]
+  ['external_5fp_308',['external_p',['../structnh__gfx__FontInstance.html#a9bc921bdb133d1b0d3e7f857ec29319a',1,'nh_gfx_FontInstance::external_p()'],['../structnh__gfx__Atlas.html#aa27a56d15573c447a0c7152bedbf6d48',1,'nh_gfx_Atlas::external_p()'],['../structnh__gfx__Glyph.html#a472fb0d3473a36510f28c190e0912ac5',1,'nh_gfx_Glyph::external_p()'],['../structnh__gfx__HarfBuzzBuffer.html#acfa99573a5d9240a45d20b6c9a124c11',1,'nh_gfx_HarfBuzzBuffer::external_p()']]]
 ];

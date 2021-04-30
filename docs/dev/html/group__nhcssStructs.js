@@ -14,7 +14,7 @@ var group__nhcssStructs =
     [ "nh_css_TextFragment", "structnh__css__TextFragment.html", [
       [ "Block", "structnh__css__TextFragment.html#a258f8dbe57d058b402fe43659c92f1cd", null ],
       [ "ContainingBlock_p", "structnh__css__TextFragment.html#a7a03c9f000fdd043fe200f6fb63d2eff", null ],
-      [ "text_p", "structnh__css__TextFragment.html#a9787e7486836fba69624cdf32e79c73d", null ],
+      [ "text_p", "structnh__css__TextFragment.html#a9df2dd2d3ecdf90694fafeefa1d97c78", null ],
       [ "textLength", "structnh__css__TextFragment.html#a160a2c83752d99850f0091b75e5ac49e", null ],
       [ "TextRun_p", "structnh__css__TextFragment.html#a35fcd402e212472c5a1ebd5ce21823a6", null ],
       [ "Values", "structnh__css__TextFragment.html#a6ae0a62d73dd823fe99e5198ab0ff9e8", null ],
@@ -62,7 +62,7 @@ var group__nhcssStructs =
     [ "nh_css_TextNode", "structnh__css__TextNode.html", [
       [ "ComputedValues_p", "structnh__css__TextNode.html#a546d025872530ddc8e8dde4ab2f228f2", null ],
       [ "Parent_p", "structnh__css__TextNode.html#a66da5c103f320662e9c2e84bbed3cd55", null ],
-      [ "String_p", "structnh__css__TextNode.html#a4fd722b93ee0eb72e2b220f7af2be858", null ],
+      [ "String", "structnh__css__TextNode.html#a5c2a5615f64523c3250868d5ae51c203", null ],
       [ "type", "structnh__css__TextNode.html#ae3d823a2871ab18787a3ec4fda2f0a3b", null ]
     ] ],
     [ "nh_css_Element", "structnh__css__Element.html", [
@@ -151,7 +151,7 @@ var group__nhcssStructs =
     ] ],
     [ "nh_css_AtRule", "structnh__css__AtRule.html", [
       [ "Block", "structnh__css__AtRule.html#ab111dcec8e73c1ae7ccf90452ec2571c", null ],
-      [ "Name_p", "structnh__css__AtRule.html#af2d18b2ec8216c832ec9dc4c89f539a4", null ],
+      [ "Name_p", "structnh__css__AtRule.html#a71fb28a6ac880d506e638f294e67c7f3", null ],
       [ "Prelude", "structnh__css__AtRule.html#a7c70bb8282b2cf13a7cb51b74db2c91b", null ],
       [ "type", "structnh__css__AtRule.html#aa8aa44c1d6e4c2370e8a56bc64a04a08", null ]
     ] ],
@@ -189,16 +189,16 @@ var group__nhcssStructs =
     ] ],
     [ "nh_css_OtherToken", "structnh__css__OtherToken.html", [
       [ "type", "structnh__css__OtherToken.html#ae9c3fcf6285377b69f725e60e3635868", null ],
-      [ "Value", "structnh__css__OtherToken.html#a19f9f443cb8b202cadb81e997cb93c7a", null ]
+      [ "Value", "structnh__css__OtherToken.html#a7311e26bba6697bbb90e9460b2c4a0f6", null ]
     ] ],
     [ "nh_css_HashToken", "structnh__css__HashToken.html", [
       [ "type", "structnh__css__HashToken.html#a9d72fd98336a3de3ba4f7f59874d9663", null ],
       [ "unrestricted", "structnh__css__HashToken.html#ae4f7612b8eba6f7003cd3f8477f8dac0", null ],
-      [ "Value", "structnh__css__HashToken.html#aa98973bbd5fb23b6a5033e4933140b07", null ]
+      [ "Value", "structnh__css__HashToken.html#a3bd54335eacbf3d541220137d948b2ab", null ]
     ] ],
     [ "nh_css_DelimToken", "structnh__css__DelimToken.html", [
       [ "type", "structnh__css__DelimToken.html#aa20cbeb0de5edf39a31bb64501c9e616", null ],
-      [ "value", "structnh__css__DelimToken.html#a6c8606863416bd03aa14d7e0d33be5dc", null ]
+      [ "value", "structnh__css__DelimToken.html#ace9c1577934551bb8b5bad0ed189eb45", null ]
     ] ],
     [ "nh_css_PercentageToken", "structnh__css__PercentageToken.html", [
       [ "type", "structnh__css__PercentageToken.html#a5b7c72d9572c1475fcfa950bf5e93575", null ],
@@ -212,7 +212,7 @@ var group__nhcssStructs =
     [ "nh_css_DimensionToken", "structnh__css__DimensionToken.html", [
       [ "isInteger", "structnh__css__DimensionToken.html#ae4e9431bbc94767c6f7a2f698b47fe57", null ],
       [ "type", "structnh__css__DimensionToken.html#aaee6d3d6c111383c35621949c4f08ef2", null ],
-      [ "Unit", "structnh__css__DimensionToken.html#af2a2b397ed5c859c7240020583d2e01f", null ],
+      [ "Unit", "structnh__css__DimensionToken.html#a66186c8a098f4d45019ca5330212aece", null ],
       [ "value", "structnh__css__DimensionToken.html#a3b22cb076ca0dcce28504ea8c1ac0e9a", null ]
     ] ],
     [ "nh_css_Token", "unionnh__css__Token.html", [

@@ -6,7 +6,7 @@ var group__nhttyStructs =
       [ "handleConsoleInput_f", "structnh__tty__ProgramPrototype.html#aae1595223f695c2abb681b51c227fc71", null ],
       [ "handleInput_f", "structnh__tty__ProgramPrototype.html#a90d2f2fab315797f162b03dd04852af7", null ],
       [ "init_f", "structnh__tty__ProgramPrototype.html#aa127a383a734806da8ac05b125d5e4b6", null ],
-      [ "Name", "structnh__tty__ProgramPrototype.html#a027323e0c8be28cc2ae3faee66efe2bc", null ],
+      [ "Name", "structnh__tty__ProgramPrototype.html#abb916944318a8795f9c6837b59eaaf46", null ],
       [ "update_f", "structnh__tty__ProgramPrototype.html#a19c649b1129efa7f3a96317cebf4d3b2", null ]
     ] ],
     [ "nh_tty_Program", "structnh__tty__Program.html", [
@@ -19,7 +19,7 @@ var group__nhttyStructs =
       [ "args_p", "structnh__tty__Console.html#a3faf882332e1fa5b12749eff9c356d7c", null ],
       [ "block", "structnh__tty__Console.html#a6b95f48d0208e9bbb91b215b3f3d464c", null ],
       [ "cachedHeight", "structnh__tty__Console.html#ad5403bfe08dbd8cc101d5a72781e1ab9", null ],
-      [ "callback_f", "structnh__tty__Console.html#a1b559ed73802582c9205423dd8e1c500", null ],
+      [ "callback_f", "structnh__tty__Console.html#aa4a1f25a5ebcf493d8b94585b5ca44c7", null ],
       [ "currentProgram", "structnh__tty__Console.html#a63edbe8f897de22fb47a833762f41674", null ],
       [ "cursorX", "structnh__tty__Console.html#ab19eab6a76fcf119789b15df3084aaa2", null ],
       [ "cursorY", "structnh__tty__Console.html#a21f54971323f40ef6eb98357a898c685", null ],

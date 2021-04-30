@@ -61,10 +61,10 @@ var group__nhcssFunctions =
     [ "nh_css_parseDeclarationsFromBytes", "group__nhcssFunctions.html#ga1d5d225af543e6bfdc97d8b58cca6eeb", null ],
     [ "nh_css_parseSelectorList", "group__nhcssFunctions.html#ga0b56be5dd033c18771369b9aaf6b7672", null ],
     [ "nh_css_parseStyleSheetFromBytes", "group__nhcssFunctions.html#ga61754932c30473f08c01e201d77914b7", null ],
-    [ "nh_css_parseStyleSheetFromUnicodeCodepoints", "group__nhcssFunctions.html#gaf54aa64c0b117e312e383969850356fb", null ],
+    [ "nh_css_parseStyleSheetFromUnicodeCodepoints", "group__nhcssFunctions.html#gad8e963b859f2783fff7a12a2507a8981", null ],
     [ "nh_css_render", "group__nhcssFunctions.html#gabf9cde9ca7d52b94bc7c36b0fb726111", null ],
     [ "nh_css_setSpecifiedValues", "group__nhcssFunctions.html#ga8f7271bf1803f3105b21643b1906f84a", null ],
     [ "nh_css_terminate", "group__nhcssFunctions.html#ga516a85ef9fc9392220b3ae9d0165faea", null ],
-    [ "nh_css_tokenize", "group__nhcssFunctions.html#ga46aaed3f4f7b05da4231d7b60d4d618b", null ],
+    [ "nh_css_tokenize", "group__nhcssFunctions.html#ga52baf57ebe4f7d7548950609b296509d", null ],
     [ "nh_css_triangulateBox", "group__nhcssFunctions.html#ga3f975d458e59acbff04ef32a0161549a", null ]
 ];

@@ -1,6 +1,6 @@
 var group__nhhtmlVars =
 [
-    [ "NH_HTML_CHARACTER_REFERENCE_CODEPOINTS_P", "group__nhhtmlVars.html#ga14977bc72c4c70b54d16696f757bc3ac", null ],
+    [ "NH_HTML_CHARACTER_REFERENCE_CODEPOINTS_P", "group__nhhtmlVars.html#ga137ef1bee79e02d9ee4720b7dbd591a7", null ],
     [ "NH_HTML_CHARACTER_REFERENCES_PP", "group__nhhtmlVars.html#ga990d3c592a47baf097777ce136dc6c3e", null ],
     [ "NH_HTML_INDEXMAP", "group__nhhtmlVars.html#ga53b2421e936fc150de405b2b30efad86", null ],
     [ "NH_HTML_RESULTS_PP", "group__nhhtmlVars.html#gaf9b54b1cdc38adf19db37362375a1ceb", null ],

@@ -18,6 +18,10 @@ var group__nhcoreStructs =
       [ "Arrays", "structnh__ArrayList.html#aa79b2deeb4642635fb6537c05c84fa11", null ],
       [ "elementSize", "structnh__ArrayList.html#a9d3e0af6094d0c7eec658ee104bf94d1", null ]
     ] ],
+    [ "nh_LinkedList", "structnh__LinkedList.html", [
+      [ "count", "structnh__LinkedList.html#ab15c1647db125254c825216d19cc24d6", null ],
+      [ "Head_p", "structnh__LinkedList.html#a8e16f738ebb78d46d2590c330d6b6c48", null ]
+    ] ],
     [ "nh_RingBuffer", "structnh__RingBuffer.html", [
       [ "data_p", "structnh__RingBuffer.html#a7d00b53ad33f9f1280f6ddee72e0953b", null ],
       [ "index", "structnh__RingBuffer.html#a5eee5233dc47fdc92fb1b4858dd03d48", null ],
@@ -28,11 +32,6 @@ var group__nhcoreStructs =
     [ "nh_RingBufferMarker", "structnh__RingBufferMarker.html", [
       [ "index", "structnh__RingBufferMarker.html#ad2c146b5b6098584db5bb64b79a3abb1", null ],
       [ "overflow", "structnh__RingBufferMarker.html#ac2baf6daa6b86ef635c112cc3a19c3d0", null ]
-    ] ],
-    [ "nh_UnicodeString", "structnh__UnicodeString.html", [
-      [ "Array", "structnh__UnicodeString.html#ae0827935d757ecc7de7c0d8704881290", null ],
-      [ "length", "structnh__UnicodeString.html#a9b920cb0328c2712a6991a2f5cd786c0", null ],
-      [ "p", "structnh__UnicodeString.html#a970eeef9d3ebeca285a6746077aa9b3c", null ]
     ] ],
     [ "nh_BigInt", "structnh__BigInt.html", [
       [ "TODO", "structnh__BigInt.html#aa248ada70cd31af0dd807610310007f3", null ]
@@ -114,10 +113,6 @@ var group__nhcoreStructs =
       [ "Flags", "structnh__Config.html#a8a6545da7bd7d7217a76ac6d51c5016a", null ],
       [ "InternalURNSyntax", "structnh__Config.html#a9af4eff030498451d91754e7f0b593aa", null ],
       [ "Settings", "structnh__Config.html#ae786a36fe3bcd5362d1cd627e36a1d36", null ]
-    ] ],
-    [ "nh_LinkedList", "structnh__LinkedList.html", [
-      [ "count", "structnh__LinkedList.html#ab15c1647db125254c825216d19cc24d6", null ],
-      [ "Head_p", "structnh__LinkedList.html#a8e16f738ebb78d46d2590c330d6b6c48", null ]
     ] ],
     [ "nh_LoggerNode", "structnh__LoggerNode.html", [
       [ "Children", "structnh__LoggerNode.html#ac3e4a2ee10dd4d6243fa15b48866222d", null ],

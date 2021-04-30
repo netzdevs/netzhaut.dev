@@ -8,7 +8,6 @@ var nhcore_2Common_2API_8h =
     [ "NH_CLIP", "group__nhcoreTypedefs.html#gac2a08fec147f0265c955bea1c7d3a30c", null ],
     [ "NH_PIXEL", "group__nhcoreTypedefs.html#ga6c1798d303514c640fd549973c9c80f7", null ],
     [ "nh_String", "group__nhcoreTypedefs.html#ga0ab1eab4b5ec456b692d63ac8324afaf", null ],
-    [ "NH_UNICODE_CODEPOINT", "group__nhcoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2", null ],
     [ "NH_UNSIGNED_BYTE", "group__nhcoreTypedefs.html#gabc14a9cb063baa4b3001911965c0e64e", null ],
     [ "NH_BOOL", "group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c", [
       [ "NH_FALSE", "group__nhcoreEnums.html#ggaa5bc4d468ba7fc657a127fa6ffca469ca5c9649fdb23ff6caf605a0ad546bfebe", null ],

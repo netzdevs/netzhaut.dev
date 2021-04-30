@@ -101,9 +101,10 @@ $(document).ready(function(){initNavTree('nhcss_2Parser_2Parser_8c.html',''); in
 <code>#include &quot;<a class="el" href="nhcss_2Parser_2Tokenizer_8h_source.html">Tokenizer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Log_8h_source.html">../Common/Log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Array_8h_source.html">../../nhcore/Array.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../../nhcore/Memory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Unicode_8h_source.html">../../nhcore/Unicode.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="List_8h_source.html">../../nhcore/List.h</a>&quot;</code><br />
+<code>#include &quot;../../nhencoding/Encodings/UTF32.h&quot;</code><br />
 <code>#include &quot;../../nhencoding/Encodings/UTF8.h&quot;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -123,8 +124,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga06b000a367c23f837227685e9f3027ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3471f8430ff37a3ae24b5b0b42556b1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__List.html">nh_List</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga3471f8430ff37a3ae24b5b0b42556b1f">nh_css_getTokensFromComponentValues</a> (<a class="el" href="unionnh__css__ComponentValue.html">nh_css_ComponentValue</a> *ComponentValues_p, unsigned long long length)</td></tr>
 <tr class="separator:ga3471f8430ff37a3ae24b5b0b42556b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf54aa64c0b117e312e383969850356fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__StyleSheet.html">nh_css_StyleSheet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gaf54aa64c0b117e312e383969850356fb">nh_css_parseStyleSheetFromUnicodeCodepoints</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="group__nhcoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> *codepoints_p, unsigned long long length)</td></tr>
-<tr class="separator:gaf54aa64c0b117e312e383969850356fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8e963b859f2783fff7a12a2507a8981"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__StyleSheet.html">nh_css_StyleSheet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gad8e963b859f2783fff7a12a2507a8981">nh_css_parseStyleSheetFromUnicodeCodepoints</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="group__nhencodingTypedefs.html#gad63619d1bc54238feaa157a43a3a8501">NH_ENCODING_UTF32</a> *codepoints_p, unsigned long long length)</td></tr>
+<tr class="separator:gad8e963b859f2783fff7a12a2507a8981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga61754932c30473f08c01e201d77914b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__StyleSheet.html">nh_css_StyleSheet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga61754932c30473f08c01e201d77914b7">nh_css_parseStyleSheetFromBytes</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *bytes_p, unsigned long long length)</td></tr>
 <tr class="separator:ga61754932c30473f08c01e201d77914b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ef020e600bc1d3cbc4f49fa303f2eed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__ComponentValueData.html">nh_css_ComponentValueData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga5ef020e600bc1d3cbc4f49fa303f2eed">nh_css_parseComponentValuesFromUTF8Codepoints</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *bytes_p, unsigned long long length)</td></tr>
@@ -152,7 +153,7 @@ Variables</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.2.4 pre-alpha-1
+v0.0.0.0-0.1.3.9 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

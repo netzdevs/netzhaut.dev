@@ -16,7 +16,5 @@ var BoxTree_8c =
     [ "nh_css_createBoxTree", "group__nhcssFunctions.html#gab676f1372d5e0d9415d417ed62df8247", null ],
     [ "nh_css_getBoxName", "group__nhcssFunctions.html#ga42752d48cad9a929218a7bbd6e619ec6", null ],
     [ "nh_css_getFormattingContext", "group__nhcssFunctions.html#gac42b3dbeb8ba39ae1e247f940c629530", null ],
-    [ "nh_css_getFormattingContextName", "group__nhcssFunctions.html#ga4bdeff0800d03e1ff6361df96f90458f", null ],
-    [ "nh_css_initBoxFragment", "BoxTree_8c.html#a1d7bdd9177ac9763b7a57598fab8b1b2", null ],
-    [ "nh_css_initTextFragment", "BoxTree_8c.html#a8a48a209ec3df9a2d3fb07a27e5b631d", null ]
+    [ "nh_css_getFormattingContextName", "group__nhcssFunctions.html#ga4bdeff0800d03e1ff6361df96f90458f", null ]
 ];

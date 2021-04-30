@@ -101,9 +101,10 @@ $(document).ready(function(){initNavTree('nhtty_2Tab_8c.html',''); initResizable
 <code>#include &quot;<a class="el" href="Program_8h_source.html">Program.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Terminal_8h_source.html">Terminal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Messages_8h_source.html">Messages.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../nhcore/Memory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Config_8h_source.html">../nhcore/Config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhtty_2Common_2Macro_8h_source.html">Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../nhcore/Memory.h</a>&quot;</code><br />
+<code>#include &quot;../nhencoding/Encodings/UTF32.h&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;sys/ioctl.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -129,8 +130,8 @@ Functions</h2></td></tr>
 <tr class="separator:gaa477dbc5c8bd1e8c742e78b02668d32b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2ab469dccbe2a97c9a2f6360e54f5b23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#ga2ab469dccbe2a97c9a2f6360e54f5b23">nh_tty_drawTabRow</a> (<a class="el" href="structnh__tty__Tab.html">nh_tty_Tab</a> *Tab_p, <a class="el" href="structnh__tty__Tile.html">nh_tty_Tile</a> *Tile_p, <a class="el" href="group__nhcoreTypedefs.html#ga0ab1eab4b5ec456b692d63ac8324afaf">nh_String</a> *Data_p, int row)</td></tr>
 <tr class="separator:ga2ab469dccbe2a97c9a2f6360e54f5b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15d36d8d8755b39f2aae63ad00c0f70d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#ga15d36d8d8755b39f2aae63ad00c0f70d">nh_tty_handleTabInput</a> (<a class="el" href="structnh__tty__Tab.html">nh_tty_Tab</a> *Tab_p, <a class="el" href="group__nhcoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> c)</td></tr>
-<tr class="separator:ga15d36d8d8755b39f2aae63ad00c0f70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5c453c662378835b47d5e9d96c0e570"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gab5c453c662378835b47d5e9d96c0e570">nh_tty_handleTabInput</a> (<a class="el" href="structnh__tty__Tab.html">nh_tty_Tab</a> *Tab_p, <a class="el" href="group__nhencodingTypedefs.html#gad63619d1bc54238feaa157a43a3a8501">NH_ENCODING_UTF32</a> c)</td></tr>
+<tr class="separator:gab5c453c662378835b47d5e9d96c0e570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ad3d8a3bd0c0b677acef144f2c2ef6d73"></a>
@@ -191,7 +192,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.2.4 pre-alpha-1
+v0.0.0.0-0.1.3.9 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

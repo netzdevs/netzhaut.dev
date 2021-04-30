@@ -9,7 +9,5 @@ var group__nhcoreMacros =
     [ "NH_MAX_FORKS", "group__nhcoreMacros.html#ga16dd3a816463c8012e7a6d747e523bec", null ],
     [ "NH_MAX_THREADS", "group__nhcoreMacros.html#ga4d997a661e4430e46769b1add2e342fe", null ],
     [ "NH_MAX_WORKLOADS", "group__nhcoreMacros.html#ga60f7970cfa73fcf82677935181679ad5", null ],
-    [ "NH_PIXEL_TO_CLIP", "group__nhcoreMacros.html#ga3605f81069c5025554d8b0d2c8264f53", null ],
-    [ "NH_UNICODE_LOOKUP_COUNT", "group__nhcoreMacros.html#ga7dbe55babbfc6fa2bc71066eccfda504", null ],
-    [ "NH_UNICODE_LOOKUP_UNDEFINED_RANGES_COUNT", "group__nhcoreMacros.html#gaa4c308d010f3e35df4f96aa24d0749ca", null ]
+    [ "NH_PIXEL_TO_CLIP", "group__nhcoreMacros.html#ga3605f81069c5025554d8b0d2c8264f53", null ]
 ];

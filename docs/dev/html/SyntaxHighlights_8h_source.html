@@ -99,42 +99,38 @@ $(document).ready(function(){initNavTree('SyntaxHighlights_8h_source.html',''); 
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;Common/Result.h&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../nhcore/Unicode.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../nhcore/String.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../nhcore/LinkedList.h&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../nhcore/List.h&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">   25</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">NH_TTY_TEXT</a> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993a8c56494a30f2a2d709b8f6b065f62a3f">   26</a></span>&#160;        <a class="code" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993a8c56494a30f2a2d709b8f6b065f62a3f">NH_TTY_TEXT_UNDEFINED</a>,</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993afe51d6306c23a7f702fa77edcdb2befc">   27</a></span>&#160;        <a class="code" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993afe51d6306c23a7f702fa77edcdb2befc">NH_TTY_TEXT_C</a>,</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993ae4c448d40f72c81759a0250971ff71f4">   28</a></span>&#160;        <a class="code" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993ae4c448d40f72c81759a0250971ff71f4">NH_TTY_TEXT_CPP</a>,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    } <a class="code" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">NH_TTY_TEXT</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__nhttyFunctions.html#ga5f1de151e87a1e33b19a50f251d1dfb2">   37</a></span>&#160;    <a class="code" href="structnh__UnicodeString.html">nh_UnicodeString</a> <a class="code" href="group__nhttyFunctions.html#ga5f1de151e87a1e33b19a50f251d1dfb2">nh_tty_cSyntaxHighlights</a>(</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="structnh__UnicodeString.html">nh_UnicodeString</a> *String_p</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Common/API.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">   21</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">NH_TTY_TEXT</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993a8c56494a30f2a2d709b8f6b065f62a3f">   22</a></span>&#160;        <a class="code" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993a8c56494a30f2a2d709b8f6b065f62a3f">NH_TTY_TEXT_UNDEFINED</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993afe51d6306c23a7f702fa77edcdb2befc">   23</a></span>&#160;        <a class="code" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993afe51d6306c23a7f702fa77edcdb2befc">NH_TTY_TEXT_C</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993ae4c448d40f72c81759a0250971ff71f4">   24</a></span>&#160;        <a class="code" href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993ae4c448d40f72c81759a0250971ff71f4">NH_TTY_TEXT_CPP</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    } <a class="code" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">NH_TTY_TEXT</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="group__nhttyFunctions.html#gafee6172d76cd66dbdf12f4847ca3103c">   33</a></span>&#160;    <a class="code" href="structnh__encoding__UTF32String.html">nh_encoding_UTF32String</a> <a class="code" href="group__nhttyFunctions.html#gafee6172d76cd66dbdf12f4847ca3103c">nh_tty_cSyntaxHighlights</a>(</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="structnh__encoding__UTF32String.html">nh_encoding_UTF32String</a> *String_p</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    );</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__nhttyFunctions.html#gab77b658e1a19b039a05fdf3b772f9c65">   37</a></span>&#160;    <a class="code" href="structnh__encoding__UTF32String.html">nh_encoding_UTF32String</a> <a class="code" href="group__nhttyFunctions.html#gab77b658e1a19b039a05fdf3b772f9c65">nh_tty_cppSyntaxHighlights</a>(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="structnh__encoding__UTF32String.html">nh_encoding_UTF32String</a> *String_p</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    );</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="group__nhttyFunctions.html#ga4aedd40772f1e2c347b41b6dc5055ba5">   41</a></span>&#160;    <a class="code" href="structnh__UnicodeString.html">nh_UnicodeString</a> <a class="code" href="group__nhttyFunctions.html#ga4aedd40772f1e2c347b41b6dc5055ba5">nh_tty_cppSyntaxHighlights</a>(</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="structnh__UnicodeString.html">nh_UnicodeString</a> *String_p</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">NH_TTY_TEXT</a> <a class="code" href="group__nhttyFunctions.html#ga8581d4a0529749e9acde8d47aaaf42eb">nh_tty_getTextType</a>(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *path_p         </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    );</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">NH_TTY_TEXT</a> <a class="code" href="group__nhttyFunctions.html#ga8581d4a0529749e9acde8d47aaaf42eb">nh_tty_getTextType</a>(</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *path_p         </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    );</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span></div>
 <div class="ttc" id="agroup__nhcoreTypedefs_html_ga97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> API.h:20</div></div>
-<div class="ttc" id="agroup__nhttyEnums_html_gaca9b738888edda9f90380b44e8488993"><div class="ttname"><a href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">NH_TTY_TEXT</a></div><div class="ttdeci">NH_TTY_TEXT</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.h:25</div></div>
-<div class="ttc" id="agroup__nhttyEnums_html_ggaca9b738888edda9f90380b44e8488993a8c56494a30f2a2d709b8f6b065f62a3f"><div class="ttname"><a href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993a8c56494a30f2a2d709b8f6b065f62a3f">NH_TTY_TEXT_UNDEFINED</a></div><div class="ttdeci">@ NH_TTY_TEXT_UNDEFINED</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.h:26</div></div>
-<div class="ttc" id="agroup__nhttyEnums_html_ggaca9b738888edda9f90380b44e8488993ae4c448d40f72c81759a0250971ff71f4"><div class="ttname"><a href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993ae4c448d40f72c81759a0250971ff71f4">NH_TTY_TEXT_CPP</a></div><div class="ttdeci">@ NH_TTY_TEXT_CPP</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.h:28</div></div>
-<div class="ttc" id="agroup__nhttyEnums_html_ggaca9b738888edda9f90380b44e8488993afe51d6306c23a7f702fa77edcdb2befc"><div class="ttname"><a href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993afe51d6306c23a7f702fa77edcdb2befc">NH_TTY_TEXT_C</a></div><div class="ttdeci">@ NH_TTY_TEXT_C</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.h:27</div></div>
-<div class="ttc" id="agroup__nhttyFunctions_html_ga4aedd40772f1e2c347b41b6dc5055ba5"><div class="ttname"><a href="group__nhttyFunctions.html#ga4aedd40772f1e2c347b41b6dc5055ba5">nh_tty_cppSyntaxHighlights</a></div><div class="ttdeci">nh_UnicodeString nh_tty_cppSyntaxHighlights(nh_UnicodeString *String_p)</div></div>
-<div class="ttc" id="agroup__nhttyFunctions_html_ga5f1de151e87a1e33b19a50f251d1dfb2"><div class="ttname"><a href="group__nhttyFunctions.html#ga5f1de151e87a1e33b19a50f251d1dfb2">nh_tty_cSyntaxHighlights</a></div><div class="ttdeci">nh_UnicodeString nh_tty_cSyntaxHighlights(nh_UnicodeString *String_p)</div></div>
+<div class="ttc" id="agroup__nhttyEnums_html_gaca9b738888edda9f90380b44e8488993"><div class="ttname"><a href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">NH_TTY_TEXT</a></div><div class="ttdeci">NH_TTY_TEXT</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.h:21</div></div>
+<div class="ttc" id="agroup__nhttyEnums_html_ggaca9b738888edda9f90380b44e8488993a8c56494a30f2a2d709b8f6b065f62a3f"><div class="ttname"><a href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993a8c56494a30f2a2d709b8f6b065f62a3f">NH_TTY_TEXT_UNDEFINED</a></div><div class="ttdeci">@ NH_TTY_TEXT_UNDEFINED</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.h:22</div></div>
+<div class="ttc" id="agroup__nhttyEnums_html_ggaca9b738888edda9f90380b44e8488993ae4c448d40f72c81759a0250971ff71f4"><div class="ttname"><a href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993ae4c448d40f72c81759a0250971ff71f4">NH_TTY_TEXT_CPP</a></div><div class="ttdeci">@ NH_TTY_TEXT_CPP</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.h:24</div></div>
+<div class="ttc" id="agroup__nhttyEnums_html_ggaca9b738888edda9f90380b44e8488993afe51d6306c23a7f702fa77edcdb2befc"><div class="ttname"><a href="group__nhttyEnums.html#ggaca9b738888edda9f90380b44e8488993afe51d6306c23a7f702fa77edcdb2befc">NH_TTY_TEXT_C</a></div><div class="ttdeci">@ NH_TTY_TEXT_C</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.h:23</div></div>
 <div class="ttc" id="agroup__nhttyFunctions_html_ga8581d4a0529749e9acde8d47aaaf42eb"><div class="ttname"><a href="group__nhttyFunctions.html#ga8581d4a0529749e9acde8d47aaaf42eb">nh_tty_getTextType</a></div><div class="ttdeci">NH_TTY_TEXT nh_tty_getTextType(NH_BYTE *path_p)</div><div class="ttdef"><b>Definition:</b> SyntaxHighlights.c:198</div></div>
-<div class="ttc" id="astructnh__UnicodeString_html"><div class="ttname"><a href="structnh__UnicodeString.html">nh_UnicodeString</a></div><div class="ttdef"><b>Definition:</b> API.h:132</div></div>
+<div class="ttc" id="agroup__nhttyFunctions_html_gab77b658e1a19b039a05fdf3b772f9c65"><div class="ttname"><a href="group__nhttyFunctions.html#gab77b658e1a19b039a05fdf3b772f9c65">nh_tty_cppSyntaxHighlights</a></div><div class="ttdeci">nh_encoding_UTF32String nh_tty_cppSyntaxHighlights(nh_encoding_UTF32String *String_p)</div></div>
+<div class="ttc" id="agroup__nhttyFunctions_html_gafee6172d76cd66dbdf12f4847ca3103c"><div class="ttname"><a href="group__nhttyFunctions.html#gafee6172d76cd66dbdf12f4847ca3103c">nh_tty_cSyntaxHighlights</a></div><div class="ttdeci">nh_encoding_UTF32String nh_tty_cSyntaxHighlights(nh_encoding_UTF32String *String_p)</div></div>
+<div class="ttc" id="astructnh__encoding__UTF32String_html"><div class="ttname"><a href="structnh__encoding__UTF32String.html">nh_encoding_UTF32String</a></div><div class="ttdef"><b>Definition:</b> API.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
@@ -149,7 +145,7 @@ $(document).ready(function(){initNavTree('SyntaxHighlights_8h_source.html',''); 
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.2.4 pre-alpha-1
+v0.0.0.0-0.1.3.9 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

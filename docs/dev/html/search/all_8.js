@@ -2,8 +2,8 @@ var searchData=
 [
   ['halt_384',['halt',['../structnh__Window.html#a5bdeb6a1666d4cc983b33d29f66ebb71',1,'nh_Window::halt()'],['../structnh__gfx__Surface.html#a86f113bb3158e92b0ead7c93614b1e37',1,'nh_gfx_Surface::halt()']]],
   ['haltdelay_385',['haltDelay',['../structnh__Workload.html#a15fb5dbb1cb739e9cecee228852bc7a0',1,'nh_Workload']]],
-  ['handle_5fp_386',['Handle_p',['../structnh__ecmascript__Environment.html#a17e8fd252c6c9654f96f5cf8f8309d34',1,'nh_ecmascript_Environment']]],
-  ['handle_5fp_387',['handle_p',['../structnh__tty__Program.html#a3e25a3db18300b2d72e56e8694078b76',1,'nh_tty_Program::handle_p()'],['../structnh__tty__File.html#af9adfeba3fd92589bc8a28ee1f88fd3b',1,'nh_tty_File::handle_p()'],['../structnh__ecmascript__ScriptOrModule.html#a829c04ffa5b8dfb7b67753e8670d2cbe',1,'nh_ecmascript_ScriptOrModule::handle_p()'],['../structnh__ecmascript__Any.html#ad74ac6d5dc424bf691b045e8ab0908d9',1,'nh_ecmascript_Any::handle_p()']]],
+  ['handle_5fp_386',['handle_p',['../structnh__tty__Program.html#a3e25a3db18300b2d72e56e8694078b76',1,'nh_tty_Program::handle_p()'],['../structnh__tty__File.html#af9adfeba3fd92589bc8a28ee1f88fd3b',1,'nh_tty_File::handle_p()'],['../structnh__ecmascript__ScriptOrModule.html#a829c04ffa5b8dfb7b67753e8670d2cbe',1,'nh_ecmascript_ScriptOrModule::handle_p()'],['../structnh__ecmascript__Any.html#ad74ac6d5dc424bf691b045e8ab0908d9',1,'nh_ecmascript_Any::handle_p()']]],
+  ['handle_5fp_387',['Handle_p',['../structnh__ecmascript__Environment.html#a17e8fd252c6c9654f96f5cf8f8309d34',1,'nh_ecmascript_Environment']]],
   ['handleconsoleinput_5ff_388',['handleConsoleInput_f',['../structnh__tty__ProgramPrototype.html#aae1595223f695c2abb681b51c227fc71',1,'nh_tty_ProgramPrototype']]],
   ['handleinput_5ff_389',['handleInput_f',['../structnh__tty__ProgramPrototype.html#a90d2f2fab315797f162b03dd04852af7',1,'nh_tty_ProgramPrototype']]],
   ['hasfocus_390',['hasFocus',['../structnh__tty__LoggerNode.html#abbe9abba9d32643515ec96d0b6dccf93',1,'nh_tty_LoggerNode::hasFocus()'],['../structnh__tty__Console.html#a75df5f6ba0690492e09b528b3bfd6352',1,'nh_tty_Console::hasFocus()']]],
@@ -28,6 +28,7 @@ var searchData=
   ['hostdefined_409',['HostDefined',['../structnh__ecmascript__Realm.html#aa326b66df76278cdf6dcd246a0f63c0a',1,'nh_ecmascript_Realm::HostDefined()'],['../structnh__ecmascript__Script.html#ae12ba60799d85c81fdd6f523361415a6',1,'nh_ecmascript_Script::HostDefined()']]],
   ['hostname_5fp_410',['hostname_p',['../structnh__System.html#ad43759a9d9b0f9133c8c1b3fe4c76999',1,'nh_System']]],
   ['hours_411',['hours',['../structnh__LocalTime.html#ac64e8504ef02a33a457a390b4d8fc2f5',1,'nh_LocalTime::hours()'],['../structnh__GeneralTime.html#aa1b09446f6b694aff7d76a2cd9817fec',1,'nh_GeneralTime::hours()']]],
-  ['ht_412',['ht',['../structnh__CPU.html#a98ed78763c61bd3a34d18dd437295ec0',1,'nh_CPU']]],
-  ['html_413',['html',['../structnh__Config_1_1Flags_1_1Log_1_1Flow.html#a5dd0cfb8e3f6f88d7097dc9277e3d4fe',1,'nh_Config::Flags::Log::Flow']]]
+  ['hres_412',['hres',['../structnh__gfx__FontInstance.html#a9b62d616427c85ebd60b71ec20a642cb',1,'nh_gfx_FontInstance']]],
+  ['ht_413',['ht',['../structnh__CPU.html#a98ed78763c61bd3a34d18dd437295ec0',1,'nh_CPU']]],
+  ['html_414',['html',['../structnh__Config_1_1Flags_1_1Log_1_1Flow.html#a5dd0cfb8e3f6f88d7097dc9277e3d4fe',1,'nh_Config::Flags::Log::Flow']]]
 ];

@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('TreeListing_8c.html',''); initResizabl
 <code>#include &quot;<a class="el" href="nhtty_2Common_2Macro_8h_source.html">Common/Macro.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../nhcore/Memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcore_2Common_2Macro_8h_source.html">../nhcore/Common/Macro.h</a>&quot;</code><br />
+<code>#include &quot;../nhencoding/Encodings/UTF32.h&quot;</code><br />
 <code>#include &quot;../nhencoding/Encodings/UTF8.h&quot;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
@@ -124,8 +125,8 @@ Functions</h2></td></tr>
 <tr class="separator:gae649409dc2f0f002eabef14027e23627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf505499b5be08eaf293d77379d726fe4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gaf505499b5be08eaf293d77379d726fe4">nh_tty_updateTreeListing</a> (<a class="el" href="structnh__tty__TreeListing.html">nh_tty_TreeListing</a> *Listing_p, <a class="el" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> *refresh_p)</td></tr>
 <tr class="separator:gaf505499b5be08eaf293d77379d726fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5e2c59ae86e23afc984a12c726e02cb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#ga5e2c59ae86e23afc984a12c726e02cb9">nh_tty_handleTreeListingInput</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p, int rows, <a class="el" href="group__nhcoreTypedefs.html#gab0b40e8d1d46988ec93871e6f704e1a2">NH_UNICODE_CODEPOINT</a> c)</td></tr>
-<tr class="separator:ga5e2c59ae86e23afc984a12c726e02cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac744b7f4ebc04aec63355c7c9059dd0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gac744b7f4ebc04aec63355c7c9059dd0a">nh_tty_handleTreeListingInput</a> (<a class="el" href="structnh__tty__Program.html">nh_tty_Program</a> *Program_p, int rows, <a class="el" href="group__nhencodingTypedefs.html#gad63619d1bc54238feaa157a43a3a8501">NH_ENCODING_UTF32</a> c)</td></tr>
+<tr class="separator:gac744b7f4ebc04aec63355c7c9059dd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaacd516b2f43535ae1a4850398e437600"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#gaacd516b2f43535ae1a4850398e437600">nh_tty_drawTreeListingRow</a> (<a class="el" href="structnh__tty__TreeListing.html">nh_tty_TreeListing</a> *Listing_p, <a class="el" href="group__nhcoreTypedefs.html#ga0ab1eab4b5ec456b692d63ac8324afaf">nh_String</a> *Row_p, <a class="el" href="group__nhttyEnums.html#gada17ce4059e7c9d948c179db2dfbebb7">NH_TTY_TILE_COLOR</a> color, int row)</td></tr>
 <tr class="separator:gaacd516b2f43535ae1a4850398e437600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0dab7a7c137b9d1a3af752f581265b5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhttyFunctions.html#ga0dab7a7c137b9d1a3af752f581265b5e">nh_tty_setTreeListingCursor</a> (<a class="el" href="structnh__tty__TreeListing.html">nh_tty_TreeListing</a> *Listing_p, int rows, <a class="el" href="structnh__tty__File.html">nh_tty_File</a> *File_p)</td></tr>
@@ -164,7 +165,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.2.4 pre-alpha-1
+v0.0.0.0-0.1.3.9 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

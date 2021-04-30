@@ -16,7 +16,7 @@ var nhwebidl_2Common_2API_8h =
     [ "NH_WEBIDL_UNSIGNED_LONG", "group__nhwebidlTypedefs.html#ga7987c8e911d502e774142311ef5df45f", null ],
     [ "NH_WEBIDL_UNSIGNED_LONG_LONG", "group__nhwebidlTypedefs.html#gaa3d3fb15edea44145c58ee8ec4362aaa", null ],
     [ "NH_WEBIDL_UNSIGNED_SHORT", "group__nhwebidlTypedefs.html#ga334c613b891aa29808f70aa12bb0d693", null ],
-    [ "nh_webidl_USVString", "group__nhwebidlTypedefs.html#ga45cfe44f922c43f14ea1131131b92593", null ],
+    [ "nh_webidl_USVString", "group__nhwebidlTypedefs.html#ga125069738b8779c09f145da229cfecaf", null ],
     [ "NH_WEBIDL_TYPE", "group__nhwebidlEnums.html#ga0131e445a26a1fd8db230c2c2bd32776", [
       [ "NH_WEBIDL_TYPE_WILDCARD", "group__nhwebidlEnums.html#gga0131e445a26a1fd8db230c2c2bd32776af502b8e05c9a959c3c1a2b6a94b6d7d0", null ],
       [ "NH_WEBIDL_TYPE_ANY", "group__nhwebidlEnums.html#gga0131e445a26a1fd8db230c2c2bd32776a89d6e39fe25f85ddf2e5f814463220bf", null ],

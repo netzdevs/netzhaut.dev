@@ -8,7 +8,5 @@ var group__nhcoreVars =
     [ "NH_PROCESS_POOL", "group__nhcoreVars.html#ga6131c73aa7f2df700a9782c4d5c0aec3", null ],
     [ "NH_RESULTS_PP", "group__nhcoreVars.html#ga4afb124a98c519338b36ca43f65b1dbc", null ],
     [ "NH_RESULTS_PP_COUNT", "group__nhcoreVars.html#gac58b0e1ebfd379df37659826dd7c5cbe", null ],
-    [ "NH_SYSTEM", "group__nhcoreVars.html#gaaa55332e15cc21d9749e76c11e059071", null ],
-    [ "NH_UNICODE_LOOKUP_PP", "group__nhcoreVars.html#ga9fffb886a941ae3da50527c29f60d9e3", null ],
-    [ "NH_UNICODE_LOOKUP_UNDEFINED_RANGES_PP", "group__nhcoreVars.html#ga238523c1a0de4c29afa9829964187123", null ]
+    [ "NH_SYSTEM", "group__nhcoreVars.html#gaaa55332e15cc21d9749e76c11e059071", null ]
 ];
