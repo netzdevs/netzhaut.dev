@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"structnh__CPU.html#a98ed78763c61bd3a34d18dd437295ec0":[8,0,3,28,1],
 "structnh__CPU.html#aa7e146bbdf7c035560f2a1370cb66e3b":[8,0,3,28,2],
 "structnh__Channel.html":[8,0,3,13],
 "structnh__ClipPosition.html":[8,0,3,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "structnh__Workload.html":[8,0,3,34],
 "structnh__Workload.html#a15fb5dbb1cb739e9cecee228852bc7a0":[8,0,3,34,3],
 "structnh__Workload.html#a1a4e70e9c76b52580ca4d497b92f4ddb":[8,0,3,34,4],
-"structnh__Workload.html#a3419529323169761612b1b78a8676a93":[8,0,3,34,2],
-"structnh__Workload.html#a76985259aa6b033672f463144ad90206":[8,0,3,34,5]
+"structnh__Workload.html#a3419529323169761612b1b78a8676a93":[8,0,3,34,2]
 };

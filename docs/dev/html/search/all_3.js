@@ -16,7 +16,7 @@ var searchData=
   ['chunkcount_160',['chunkCount',['../structnh__List.html#ad4fb750170946e4f1f12ae55ca992dcd',1,'nh_List']]],
   ['chunksize_161',['chunkSize',['../structnh__List.html#ac8ee21f3addcf15db96c883fcfe2813d',1,'nh_List']]],
   ['clearcolor_162',['ClearColor',['../structnh__gfx__Viewport.html#a63e90a4ce11adf969f82348af9a16cfa',1,'nh_gfx_Viewport']]],
-  ['cliplength_163',['clipLength',['../Box_8c.html#a8a88d7a5f24e3701abb9f7deccb7e97f',1,'Box.c']]],
+  ['clip_5flength_163',['CLIP_LENGTH',['../Box_8c.html#a49bb89ba03f3224dfdbb35805a58d629',1,'Box.c']]],
   ['close_164',['close',['../structnh__tty__Tab.html#af0416d1696bddd40083537010f0a6df8',1,'nh_tty_Tab::close()'],['../structnh__tty__Terminal.html#a903c7f614b9a9c84bd685a6041ec9e86',1,'nh_tty_Terminal::close()'],['../structnh__tty__Tile.html#a8d94009c22320fb11773d616e39c58bf',1,'nh_tty_Tile::close()']]],
   ['code_20style_165',['Code Style',['../codestyle.html',1,'']]],
   ['codepoint_166',['codepoint',['../structnh__html__Tokenizer.html#adc62485513fea9cb1446b2d5836f3ec9',1,'nh_html_Tokenizer']]],

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pixeltoclip_10460',['pixelToClip',['../Box_8c.html#a57438c71b55663ba4a52c183a4f3c66c',1,'Box.c']]]
+  ['pixel_5fto_5fclip_10461',['PIXEL_TO_CLIP',['../Box_8c.html#af2614797b9bf102455cf2d02f0b51a33',1,'Box.c']]],
+  ['pixel_5fto_5fclip_5flength_10462',['PIXEL_TO_CLIP_LENGTH',['../Vertices_8c.html#ac2b3c2f99e0789428a2870c85d9857d9',1,'Vertices.c']]]
 ];

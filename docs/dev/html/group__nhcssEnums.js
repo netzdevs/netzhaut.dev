@@ -205,6 +205,7 @@ var group__nhcssEnums =
       [ "NH_CSS_PROPERTY_BORDER_COLOR", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cae0631e73dfd901dd2506e1d0e0b388dc", null ],
       [ "NH_CSS_PROPERTY_BORDER_SPACING", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cafe86ab6cbf8d1a4ff1f4030e85a190b1", null ],
       [ "NH_CSS_PROPERTY_BORDER_STYLE", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6caf3febfc79afff0c2d706fd938b341b8a", null ],
+      [ "NH_CSS_PROPERTY_BORDER_RADIUS", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6caed71c35da6a6ac2bebc829eb2c86647c", null ],
       [ "NH_CSS_PROPERTY_BORDER_TOP", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca9e722e403c41bc49a306307369cb78f5", null ],
       [ "NH_CSS_PROPERTY_BORDER_RIGHT", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca83a01e18cce10a320ff32f8c6235dbaa", null ],
       [ "NH_CSS_PROPERTY_BORDER_BOTTOM", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca4d233ae957b66e47562aa81ff44ceb15", null ],

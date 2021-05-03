@@ -69,5 +69,5 @@ var group__nhcssFunctions =
     [ "nh_css_splitTextRun", "group__nhcssFunctions.html#ga7466d4e94e4cd3bc775025090d368742", null ],
     [ "nh_css_terminate", "group__nhcssFunctions.html#ga516a85ef9fc9392220b3ae9d0165faea", null ],
     [ "nh_css_tokenize", "group__nhcssFunctions.html#ga52baf57ebe4f7d7548950609b296509d", null ],
-    [ "nh_css_triangulateBox", "group__nhcssFunctions.html#ga01219c8395fca270cae2045b2360f539", null ]
+    [ "nh_css_triangulateBox", "group__nhcssFunctions.html#ga2c7e247cafdb3f466aa8a5e2ee450628", null ]
 ];

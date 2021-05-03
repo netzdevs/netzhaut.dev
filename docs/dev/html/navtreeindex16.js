@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"group__nhwebidlFunctions.html":[8,8,4],
 "group__nhwebidlFunctions.html#ga150ba74ca1180fb3bab8937da584d8dd":[8,8,4,5],
 "group__nhwebidlFunctions.html#ga21cd91588bb4a16039f19580be57c333":[8,8,4,4],
 "group__nhwebidlFunctions.html#ga3c3d3f45918f881f6bdd732a95ca9235":[8,8,4,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "structnh__BigInt.html":[8,0,3,6],
 "structnh__BigInt.html#aa248ada70cd31af0dd807610310007f3":[8,0,3,6,0],
 "structnh__CPU.html":[8,0,3,28],
-"structnh__CPU.html#a2dd1c3655e1ee695bdecb047d4883fbc":[8,0,3,28,0],
-"structnh__CPU.html#a98ed78763c61bd3a34d18dd437295ec0":[8,0,3,28,1]
+"structnh__CPU.html#a2dd1c3655e1ee695bdecb047d4883fbc":[8,0,3,28,0]
 };

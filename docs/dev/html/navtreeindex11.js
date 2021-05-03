@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"group__nhecmascriptEnums.html#gaac282ea1266c01394787093045a7e855":[8,3,2,4],
 "group__nhecmascriptEnums.html#gacdf1d2739e33c4730d5c5c16fc92164d":[8,3,2,6],
 "group__nhecmascriptEnums.html#gga09bcbc503973ad120c324a2575edd9baa8fcb3f83606f05246169aac89f8d3b76":[8,3,2,5,0],
 "group__nhecmascriptEnums.html#gga09bcbc503973ad120c324a2575edd9baaf47ce6242ba4b10981618333f2a4ee80":[8,3,2,5,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "group__nhecmascriptFunctions.html#ga40ce6d1415fc8d130ed43b624c44bb78":[8,3,4,68],
 "group__nhecmascriptFunctions.html#ga411850772b4b25ab4457dd9a589b76d9":[8,3,4,54],
 "group__nhecmascriptFunctions.html#ga4213e80a2ffabb075daf7733553c92da":[8,3,4,59],
-"group__nhecmascriptFunctions.html#ga436d73f5b762c780916c51171e653f04":[8,3,4,22],
-"group__nhecmascriptFunctions.html#ga45a83a4c15260ce9eebcc1729ef38f17":[8,3,4,62]
+"group__nhecmascriptFunctions.html#ga436d73f5b762c780916c51171e653f04":[8,3,4,22]
 };
