@@ -8,6 +8,7 @@ var group__nhcssFunctions =
     [ "nh_css_arrangeBoxTree", "group__nhcssFunctions.html#gaf692541ceefcbf7fa1b81ec7415fa66d", null ],
     [ "nh_css_arrangeInlineFormattingContext", "group__nhcssFunctions.html#ga4fd8da2e85ade2d52d4c68b1499c91b3", null ],
     [ "nh_css_cascade", "group__nhcssFunctions.html#gadabf7141a124506348caefd08076ad6a", null ],
+    [ "nh_css_collapse", "group__nhcssFunctions.html#ga936aa2a4d1ab75394dfac3472a8e717d", null ],
     [ "nh_css_colorToArray", "group__nhcssFunctions.html#ga9e2c09f37313e40761033a9b83fdc213", null ],
     [ "nh_css_compare", "group__nhcssFunctions.html#gab1825fd1730249e5300bef7801953d1e", null ],
     [ "nh_css_computeBoxValues", "group__nhcssFunctions.html#gac7399ce619c86750bb1fd86352dd505e", null ],
@@ -19,6 +20,7 @@ var group__nhcssFunctions =
     [ "nh_css_createInitialPropertyValues", "group__nhcssFunctions.html#gab6c7f1d16133b0aa803514a7df4f0c47", null ],
     [ "nh_css_createRenderer", "group__nhcssFunctions.html#ga02b4ca5ff5fd025fc27490bbbc0d7b0e", null ],
     [ "nh_css_createSourceTree", "group__nhcssFunctions.html#ga25dbd1ed60bb1ff50be5273dd5fb16ec", null ],
+    [ "nh_css_createTextRun", "group__nhcssFunctions.html#gab4350f36bf5b0bb06cbc8c70e6d2550f", null ],
     [ "nh_css_filterDeclarations", "group__nhcssFunctions.html#ga41de27fc57fdcfaa73557b52521f1a6a", null ],
     [ "nh_css_freeComputedValues", "group__nhcssFunctions.html#gab6a35d86e470301b748e1c1de5d97a92", null ],
     [ "nh_css_freeIndexMap", "group__nhcssFunctions.html#ga9dbba3e15792c4bde05079b7aab5c104", null ],
@@ -26,6 +28,7 @@ var group__nhcssFunctions =
     [ "nh_css_freeSpecifiedValues", "group__nhcssFunctions.html#ga60dc7ebaa8435bd3ecbe230cb91e752f", null ],
     [ "nh_css_getBackgroundVertices", "group__nhcssFunctions.html#gaf974877cfe6fd5e6bc5b09dcfda9fd05", null ],
     [ "nh_css_getBorderBox", "group__nhcssFunctions.html#ga46f3f1809019dfcb622ed02ee591165c", null ],
+    [ "nh_css_getBorderVertices", "group__nhcssFunctions.html#ga87c0adf0cf34d14d29ef9cb8500a75d1", null ],
     [ "nh_css_getBoxName", "group__nhcssFunctions.html#ga42752d48cad9a929218a7bbd6e619ec6", null ],
     [ "nh_css_getBoxTreeNodeDepth", "group__nhcssFunctions.html#gaac8100f7c2c56ba7603993fd2132ac8a", null ],
     [ "nh_css_getColor", "group__nhcssFunctions.html#gab610b6a3d20bb0f4dbe38f274d9fe7aa", null ],
@@ -43,7 +46,6 @@ var group__nhcssFunctions =
     [ "nh_css_getTextVertices", "group__nhcssFunctions.html#gae7717e02522cb2c5c8f368e0dd9c2bf2", null ],
     [ "nh_css_getTokenName", "group__nhcssFunctions.html#gaecae33c89ac256b15716efb157a490d5", null ],
     [ "nh_css_getTokensFromComponentValues", "group__nhcssFunctions.html#ga3471f8430ff37a3ae24b5b0b42556b1f", null ],
-    [ "nh_css_handleMarginCollapse", "group__nhcssFunctions.html#ga274c245c82f5c0e863f0a7497ccbae9e", null ],
     [ "nh_css_initialize", "group__nhcssFunctions.html#gae28b91824d5d5d43077927be56fa7d54", null ],
     [ "nh_css_initValue", "group__nhcssFunctions.html#gac06b307761930a93eb64536f73afd8e1", null ],
     [ "nh_css_isLengthPercentageValue", "group__nhcssFunctions.html#ga78b6bdfd3d1c3cf204ad33083abcfe08", null ],
@@ -64,7 +66,8 @@ var group__nhcssFunctions =
     [ "nh_css_parseStyleSheetFromUnicodeCodepoints", "group__nhcssFunctions.html#gad8e963b859f2783fff7a12a2507a8981", null ],
     [ "nh_css_render", "group__nhcssFunctions.html#gabf9cde9ca7d52b94bc7c36b0fb726111", null ],
     [ "nh_css_setSpecifiedValues", "group__nhcssFunctions.html#ga8f7271bf1803f3105b21643b1906f84a", null ],
+    [ "nh_css_splitTextRun", "group__nhcssFunctions.html#ga7466d4e94e4cd3bc775025090d368742", null ],
     [ "nh_css_terminate", "group__nhcssFunctions.html#ga516a85ef9fc9392220b3ae9d0165faea", null ],
     [ "nh_css_tokenize", "group__nhcssFunctions.html#ga52baf57ebe4f7d7548950609b296509d", null ],
-    [ "nh_css_triangulateBox", "group__nhcssFunctions.html#ga3f975d458e59acbff04ef32a0161549a", null ]
+    [ "nh_css_triangulateBox", "group__nhcssFunctions.html#ga01219c8395fca270cae2045b2360f539", null ]
 ];

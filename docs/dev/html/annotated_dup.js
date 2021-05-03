@@ -32,6 +32,7 @@ var annotated_dup =
     [ "nh_css_Function", "structnh__css__Function.html", "structnh__css__Function" ],
     [ "nh_css_HashToken", "structnh__css__HashToken.html", "structnh__css__HashToken" ],
     [ "nh_css_IndexMap", "structnh__css__IndexMap.html", "structnh__css__IndexMap" ],
+    [ "nh_css_InlineFormattingContext", "structnh__css__InlineFormattingContext.html", "structnh__css__InlineFormattingContext" ],
     [ "nh_css_LineBox", "structnh__css__LineBox.html", "structnh__css__LineBox" ],
     [ "nh_css_LogContext", "structnh__css__LogContext.html", "structnh__css__LogContext" ],
     [ "nh_css_Number", "structnh__css__Number.html", "structnh__css__Number" ],

@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "n",
   8: "_bcglmnprtv",
   9: "cdefmntv",
-  10: "bcemnprs"
+  10: "cdeiprs"
 };
 
 var indexSectionNames =

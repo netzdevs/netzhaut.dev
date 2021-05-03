@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>netzhaut | DEV DOCS: /home/dajo/netzhaut/src/lib/nhgfx/Base/Font.h Source File</title>
+<title>netzhaut | dev: /home/dajo/netzhaut/src/lib/nhgfx/Base/Font.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -214,7 +214,12 @@ $(document).ready(function(){initNavTree('Font_8h_source.html',''); initResizabl
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="structnh__gfx__FontInstance.html">nh_gfx_FontInstance</a> *Instance_p, <a class="code" href="group__nhencodingTypedefs.html#gad63619d1bc54238feaa157a43a3a8501">NH_ENCODING_UTF32</a> *text_p, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> textLength</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    );</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="group__nhgfxFunctions.html#ga26f5338854d16b77b21ab8de5ffa6efc">nh_gfx_getFittingTextLength</a>(</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="structnh__gfx__FontInstance.html">nh_gfx_FontInstance</a> *Instance_p, <a class="code" href="group__nhencodingTypedefs.html#gad63619d1bc54238feaa157a43a3a8501">NH_ENCODING_UTF32</a> *text_p, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> textLength, </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxWidth</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    );</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#endif </span></div>
 <div class="ttc" id="agroup__nhcoreTypedefs_html_ga97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> API.h:20</div></div>
 <div class="ttc" id="agroup__nhencodingTypedefs_html_gad63619d1bc54238feaa157a43a3a8501"><div class="ttname"><a href="group__nhencodingTypedefs.html#gad63619d1bc54238feaa157a43a3a8501">NH_ENCODING_UTF32</a></div><div class="ttdeci">uint_least32_t NH_ENCODING_UTF32</div><div class="ttdef"><b>Definition:</b> API.h:20</div></div>
 <div class="ttc" id="agroup__nhgfxEnums_html_ga40e840034eeb0d9aa68b5fbcfe56ffeb"><div class="ttname"><a href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a></div><div class="ttdeci">NH_GFX_RESULT</div><div class="ttdoc">Return values for functions.</div><div class="ttdef"><b>Definition:</b> Result.h:22</div></div>
@@ -222,6 +227,7 @@ $(document).ready(function(){initNavTree('Font_8h_source.html',''); initResizabl
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga0eae62125341ce4d04e80442e1bc286a"><div class="ttname"><a href="group__nhgfxFunctions.html#ga0eae62125341ce4d04e80442e1bc286a">nh_gfx_createHarfBuzzBuffer</a></div><div class="ttdeci">nh_gfx_HarfBuzzBuffer nh_gfx_createHarfBuzzBuffer(nh_gfx_FontInstance *Instance_p, NH_ENCODING_UTF32 *text_p, unsigned int textLength)</div><div class="ttdef"><b>Definition:</b> Font.c:342</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga0fc09f9d431f433d6a44488961962fbb"><div class="ttname"><a href="group__nhgfxFunctions.html#ga0fc09f9d431f433d6a44488961962fbb">nh_gfx_initializeFontManager</a></div><div class="ttdeci">NH_GFX_RESULT nh_gfx_initializeFontManager()</div><div class="ttdef"><b>Definition:</b> Font.c:53</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga225110ce14844d6d00601776cb46b730"><div class="ttname"><a href="group__nhgfxFunctions.html#ga225110ce14844d6d00601776cb46b730">nh_gfx_destroyHarfBuzzBuffer</a></div><div class="ttdeci">void nh_gfx_destroyHarfBuzzBuffer(nh_gfx_HarfBuzzBuffer Buffer)</div><div class="ttdef"><b>Definition:</b> Font.c:364</div></div>
+<div class="ttc" id="agroup__nhgfxFunctions_html_ga26f5338854d16b77b21ab8de5ffa6efc"><div class="ttname"><a href="group__nhgfxFunctions.html#ga26f5338854d16b77b21ab8de5ffa6efc">nh_gfx_getFittingTextLength</a></div><div class="ttdeci">unsigned int nh_gfx_getFittingTextLength(nh_gfx_FontInstance *Instance_p, NH_ENCODING_UTF32 *text_p, unsigned int textLength, unsigned int maxWidth)</div><div class="ttdef"><b>Definition:</b> Font.c:496</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga468226f2f54088a2eda263fb09b5c647"><div class="ttname"><a href="group__nhgfxFunctions.html#ga468226f2f54088a2eda263fb09b5c647">nh_gfx_getDefaultFont</a></div><div class="ttdeci">nh_gfx_Font * nh_gfx_getDefaultFont()</div><div class="ttdef"><b>Definition:</b> Font.c:406</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga490f8e2332c59ff8f159fba3695e8588"><div class="ttname"><a href="group__nhgfxFunctions.html#ga490f8e2332c59ff8f159fba3695e8588">nh_gfx_getTextWidth</a></div><div class="ttdeci">unsigned int nh_gfx_getTextWidth(nh_gfx_FontInstance *Instance_p, NH_ENCODING_UTF32 *text_p, unsigned int textLength)</div><div class="ttdef"><b>Definition:</b> Font.c:447</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga4f7cd01adf2374fa4c09b53523c2ec35"><div class="ttname"><a href="group__nhgfxFunctions.html#ga4f7cd01adf2374fa4c09b53523c2ec35">nh_gfx_getGlyph</a></div><div class="ttdeci">nh_gfx_Glyph nh_gfx_getGlyph(nh_gfx_FontInstance *Instance_p, NH_ENCODING_UTF32 id)</div><div class="ttdef"><b>Definition:</b> Font.c:283</div></div>
@@ -282,15 +288,15 @@ $(document).ready(function(){initNavTree('Font_8h_source.html',''); initResizabl
         <!-- <a href="http://www.doxygen.org/index.html"> -->
         <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.9.1 </li> -->
         <div id="foot"> 
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../api/html/main.html"><b>API DOCS</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../dev/html/introduction.html"><b>Usage</b></a></b>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.3.9 pre-alpha-1
+v0.0.0.0-0.1.3.10 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>
-          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>HOME</b></a></b>
+          <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>Home</b></a></b>
         </div>
       </div>
   </body>

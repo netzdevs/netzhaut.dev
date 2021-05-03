@@ -24,14 +24,27 @@
 */
 var NAVTREE =
 [
-  [ "netzhaut | API DOCS", "index.html", [
-    [ "Main", "main.html", null ]
+  [ "netzhaut | use", "index.html", [
+    [ "Introduction", "introduction.html", [
+      [ "About", "introduction.html#about", null ]
+    ] ],
+    [ "Build Instructions", "build.html", [
+      [ "Setup", "build.html#Setup", [
+        [ "Linux", "build.html#SetupLinux", null ]
+      ] ],
+      [ "Building", "build.html#Building", [
+        [ "Dependencies", "build.html#Dependencies", [
+          [ "Linux", "build.html#DepsLinux", null ]
+        ] ],
+        [ "Simple Building", "build.html#Build1", null ]
+      ] ]
+    ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"build.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,5 +1,5 @@
 var Block_8c =
 [
     [ "nh_css_arrangeBlockFormattingContext", "group__nhcssFunctions.html#gac00d875bad4daeccde7874b877ffdbaa", null ],
-    [ "nh_css_handleMarginCollapse", "group__nhcssFunctions.html#ga274c245c82f5c0e863f0a7497ccbae9e", null ]
+    [ "nh_css_collapse", "group__nhcssFunctions.html#ga936aa2a4d1ab75394dfac3472a8e717d", null ]
 ];

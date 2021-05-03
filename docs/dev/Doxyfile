@@ -32,7 +32,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "netzhaut | DEV DOCS" 
+PROJECT_NAME           = "netzhaut | dev" 
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -725,7 +725,7 @@ FILE_VERSION_FILTER    =
 # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
 # tag is left empty.
 
-LAYOUT_FILE            = ../DoxygenTheme/DoxygenLayout.xml
+LAYOUT_FILE            = ../theme/layoutdev.xml
 
 # The CITE_BIB_FILES tag can be used to specify one or more bib files containing
 # the reference definitions. This must be a list of .bib files. The .bib
@@ -813,7 +813,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = "main.md" "meta/roadmap.md" "meta/backlog.md" "meta/conformance.md" "architecture/projectlayout.md" "meta/nhmake.md" "architecture/systemarchitecture.md" "architecture/enginearchitecture.md" "design/codestyle.md" \
+INPUT                  = "introduction.md" "meta/guide.md" "meta/roadmap.md" "meta/conformance.md" "architecture/projectlayout.md" "meta/nhmake.md" "architecture/systemarchitecture.md" "architecture/enginearchitecture.md" "design/codestyle.md" \
 "../../../../../src/lib/nhcore/Common" "../../../../../src/lib/nhcore/" \
 "../../../../../src/lib/nhtty/Common" "../../../../../src/lib/nhtty/" \
 "../../../../../src/lib/nhloader/Common" "../../../../../src/lib/nhloader/" \
@@ -1021,7 +1021,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = main.md
+USE_MDFILE_AS_MAINPAGE = introduction.md
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing

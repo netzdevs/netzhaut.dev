@@ -1,8 +1,8 @@
-\page nhmake nhmake 
+\page build Build Instructions
 
 <div style="max-width:700px;">
 
-This document contains information about nhmake, the build-tool used by netzhaut.
+This document contains information on how to build netzhaut.
 
 \section Setup
 \subsection SetupLinux Linux
@@ -20,6 +20,7 @@ For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulka
 - X11
 - OpenSSL
 - FreeType
+- HarfBuzz
 
 \subsection Build1 Simple Building
 <pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">

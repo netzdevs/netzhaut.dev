@@ -8,17 +8,17 @@
   <meta name="generator" content="Doxygen 1.8.20"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>netzhaut | Web Browser Engine</title>
-  <link href="api/html/tabs.css" rel="stylesheet" type="text/css"/>
-  <script type="text/javascript" src="api/html/jquery.js"></script>
-  <script type="text/javascript" src="api/html/dynsections.js"></script>
-  <link href="api/html/navtree.css" rel="stylesheet" type="text/css"/>
+  <link href="use/html/tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="use/html/jquery.js"></script>
+  <script type="text/javascript" src="use/html/dynsections.js"></script>
+  <link href="use/html/navtree.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="resize.js"></script>
-  <script type="text/javascript" src="api/html/navtreedata.js"></script>
-  <script type="text/javascript" src="api/html/navtree.js"></script>
-  <link href="api/html/search/search.css" rel="stylesheet" type="text/css"/>
-  <script type="text/javascript" src="api/html/search/searchdata.js"></script>
-  <script type="text/javascript" src="api/html/search/search.js"></script>
-  <link href="api/html/doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="use/html/navtreedata.js"></script>
+  <script type="text/javascript" src="use/html/navtree.js"></script>
+  <link href="use/html/search/search.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="use/html/search/searchdata.js"></script>
+  <script type="text/javascript" src="use/html/search/search.js"></script>
+  <link href="use/html/doxygen.css" rel="stylesheet" type="text/css" />
   <link rel="icon" href="logo/favicon.png">
   <link href="theme/custom.css" rel="stylesheet" type="text/css"/>
   <style>
@@ -49,7 +49,7 @@
      <div style="height: 56px;">
       <div style="left:10px;top:17px;position:absolute;">
 <!-- NH_MAKE_INSERT_TIME_BEGIN -->
-2021-04-30
+2021-05-03
 <!-- NH_MAKE_INSERT_TIME_END -->
       </div>
       <div style="height:56px;right:10px;top:0px;position:absolute;background-color:#151515;"><a href="https://netzwerkz.org"><img alt="netzwerkz logo" style="height:56px;" src="logo/netzwerkz.png"/></a></div>
@@ -95,28 +95,43 @@
         </h1>
         <div style="border-width:1px;border-style:solid;">
           <div style="padding-left:10px;padding-right:10px;">
-            <p>netzhaut is an <b>open-source web-browser-engine</b> written from scratch in C99. The project is currently in <b style="color:red;">early development</b> and thus not yet usable. The documentation is also heavy work-in-progress, things missing will be eventually added. Following is a list of development goals.</p>
-              <p><b>Customizable</b></p>
-              <p style="margin:10px;">netzhaut implements a large array of technologies, primarily of course HTML, CSS and JavaScript, which can be used in many ways. Thus, netzhaut tries to provide a powerfull API so that developers may find netzhaut useful even in use-cases not related to web-browsers.</p>
-              <p><b>Conform</b></p>
-              <p style="margin:10px;">This is not a toy-project, netzhaut is designed and written to implement web-technology specifications in a conformant manner.</p>
-            </ul>
-            <p>netzhaut is a project by the <a href="https://www.netzwerkz.org">netzwerkz</a> organization.</p>
+            <p>netzhaut is an <b>open-source web-browser-engine</b> written from scratch in C99. Web-Browser-Engines are software systems which run web content on client machines. Popular examples are Chromium (Chrome), Gecko (Firefox) and WebKit (Safari).</p>
+            <p>The project is currently in <b style="color:red;">early development</b> and thus not yet usable. The documentation is also heavy work-in-progress, things missing will be eventually added. Following is a list of development goals.</p>
+            <p><b>Customizable</b></p>
+            <p style="margin:10px;">netzhaut implements a large array of technologies, primarily of course HTML, CSS and JavaScript, which can be used in many ways. Thus, netzhaut aims to provide a powerfull API so that developers may find netzhaut useful even in use-cases not related to web-browsers.</p>
+            <p><b>Conform</b></p>
+            <p style="margin:10px;">This is not a toy-project, netzhaut is designed and written to implement web-technology specifications in a conformant manner.</p>
+            <p><b>Lightweight</b></p>
+            <p style="margin:10px;">netzhaut aims to be lightweight by having as few dependencies as possible and by implementing a modular architecture, where modules are only required when needed.</p>
+            <p><b>User Friendly</b></p>
+            <p style="margin:10px;">Being lightweight is the first step to user friendliness. Additionally, netzhaut aims to provide self-updating capabilities and a generally hassle-free user experience.</p>
+            <p>netzhaut is a project by <a href="https://www.netzwerkz.org">netzwerkz</a>.</p>
           </div>
         </div>
-        <h1 class="doc-content-anchor"><a id="intro"></a>Overview
+        <h1 class="doc-content-anchor"><a id="intro"></a>Development Docs
         </h1>
         <div style="border-width:1px;border-style:solid;">
           <div style="padding-left:10px;padding-right:10px;">
-            <p>The documentation is split into <a href="dev/html/main.html">DEV DOCS</a> and <a href="api/html/index.html">API DOCS</a>. The following overview lists only the most useful documentation pieces to get a good grip of the project.</p>
-              <p><a href="dev/html/roadmap.html">Roadmap</a></p>
-              <p style="margin:10px">The roadmap is regularly updated to show current and previous development milestones.</p>
-              <p><a href="dev/html/nhmake.html">nhmake</a></p>
-              <p style="margin:10px">How to build netzhaut using nhmake.</p>
-              <p><a href="dev/html/conformance.html">Conformance</a></p>
-              <p style="margin:10px">Tracks netzhaut's conformance status for various web-technologies.</p>
-              <p>TODO</p>
-              <p style="margin:10px">TODO</p>
+            <p>For all development related documents, please go to the <a href="dev/html/introduction.html">Development Documentation</a>.</p>
+              <p><a href="dev/html/roadmap.html">Roadmap</a></br>
+              The roadmap is regularly updated to show current and previous development milestones.</p>
+              <p><a href="dev/html/guide.html">Development Guide</a></br>
+              How to develop netzhaut.</p>
+              <p><a href="dev/html/conformance.html">Conformance Report</a></br>
+              The conformance report tracks netzhaut's conformance status for various web-technologies.</p>
+              <p>TODO</br>
+              TODO</p>
+          </div>
+        </div>
+        <h1 class="doc-content-anchor"><a id="intro"></a>Usage Docs
+        </h1>
+        <div style="border-width:1px;border-style:solid;">
+          <div style="padding-left:10px;padding-right:10px;">
+            <p>For all usage related documents, please go to the <a href="use/html/introduction.html">Usage Documentation</a>.</p>
+              <p><a href="use/html/build.html">Build Instructions</a></br>
+              How to build netzhaut.</p>
+              <p>TODO</br>
+              TODO</p>
           </div>
         </div>
         <br>
@@ -140,7 +155,7 @@
 2021-02-23 <a href="dev/html/group__nhencodingChangelog.html#v0.0.0.0">nhencoding v0.0.0.0</a><br>
 2021-04-29 <a href="dev/html/group__nhdomChangelog.html#v0.0.1.0">nhdom v0.0.1.0</a><br>
 2021-04-30 <a href="dev/html/group__nhgfxChangelog.html#v0.0.0.1">nhgfx v0.0.0.1</a><br>
-2021-04-30 <a href="dev/html/group__nhcssChangelog.html#v0.0.1.2">nhcss v0.0.1.2</a><br>
+2021-05-01 <a href="dev/html/group__nhcssChangelog.html#v0.0.1.3">nhcss v0.0.1.3</a><br>
 2021-04-28 <a href="dev/html/group__nhmakeChangelog.html#v0.1.1.2">nhmake v0.1.1.2</a><br>
 2021-02-23 <a href="dev/html/group__nhterminalChangelog.html#v0.0.0.0">nhterminal v0.0.0.0</a><br>
 2021-02-23 <a href="dev/html/group__nhwebbrowserChangelog.html#v0.0.0.0">nhwebbrowser v0.0.0.0</a><br>
@@ -168,8 +183,8 @@
           <h1>Contact</h1>
           <div class="infobox">
             <div class="innerinfobox">
-              code issue: <a href="https://github.com/netzwerkz/netzhaut/issues/new">create new</a><br>
-              docs issue: <a href="https://github.com/netzwerkz/netzhaut.netzwerkz.org/issues/new">create new</a><br>
+              <a href="https://github.com/netzwerkz/netzhaut/issues">Create Issues via GitHub</a><br>
+              <a href="https://github.com/netzwerkz/netzhaut/discussions">Discuss via GitHub</a><br>
 <!--              email: <a href="mailto:contact@netzhaut.dev">contact@netzhaut.dev</a><br> -->
             </div>
           </div>
@@ -188,15 +203,15 @@
     <!-- <a href="http://www.doxygen.org/index.html"> -->
     <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.20 </li> -->
     <div id="foot"> 
-      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="dev/html/main.html"><b>DEV DOCS</b></a></b>
+      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="dev/html/introduction.html"><b>Development</b></a></b>
       <div style="color:#24bbc4;text-align:center;font-size:16px;">
         <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.3.9 pre-alpha-1
+v0.0.0.0-0.1.3.10 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
         </b>
       </div>
-      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="api/html/index.html"><b>API DOCS</b></a></b>
+      <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="use/html/introduction.html"><b>Usage</b></a></b>
     </div>
   </div>
 </body>
@@ -206,6 +221,39 @@ v0.0.0.0-0.1.3.9 pre-alpha-1
 </style>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

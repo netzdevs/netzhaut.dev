@@ -14,6 +14,7 @@ var group__nhgfxFunctions =
     [ "nh_gfx_destroyHarfBuzzBuffer", "group__nhgfxFunctions.html#ga225110ce14844d6d00601776cb46b730", null ],
     [ "nh_gfx_endRecording", "group__nhgfxFunctions.html#ga72e714be9efe3bde66b816f2062ebdc2", null ],
     [ "nh_gfx_getDefaultFont", "group__nhgfxFunctions.html#ga468226f2f54088a2eda263fb09b5c647", null ],
+    [ "nh_gfx_getFittingTextLength", "group__nhgfxFunctions.html#ga26f5338854d16b77b21ab8de5ffa6efc", null ],
     [ "nh_gfx_getFont", "group__nhgfxFunctions.html#gae57a922af53f18d5e5b74758c3cd13d7", null ],
     [ "nh_gfx_getFontInstance", "group__nhgfxFunctions.html#ga5848fe1d521e2f9aaebf3589beeae3c5", null ],
     [ "nh_gfx_getFontUsingId", "group__nhgfxFunctions.html#ga554d4dccda75527fbcb3c06304bf2a25", null ],

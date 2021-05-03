@@ -327,7 +327,8 @@ var group__nhcssEnums =
       [ "NH_CSS_SUCCESS", "group__nhcssEnums.html#gga5e92e4500eb7c137bfb01ca5d4d608dba217f3843da863b29c7653bf44db6751f", null ],
       [ "NH_CSS_ERROR_NULL_POINTER", "group__nhcssEnums.html#gga5e92e4500eb7c137bfb01ca5d4d608dba8ae978f9313888235c0dcf15185c5101", null ],
       [ "NH_CSS_ERROR_BAD_STATE", "group__nhcssEnums.html#gga5e92e4500eb7c137bfb01ca5d4d608dba02ed8a18878e84f305c38387806f348f", null ],
-      [ "NH_CSS_ERROR_MEMORY_ALLOCATION", "group__nhcssEnums.html#gga5e92e4500eb7c137bfb01ca5d4d608dbaacfcf302b40a581460f1f8ec6b21aea8", null ]
+      [ "NH_CSS_ERROR_MEMORY_ALLOCATION", "group__nhcssEnums.html#gga5e92e4500eb7c137bfb01ca5d4d608dbaacfcf302b40a581460f1f8ec6b21aea8", null ],
+      [ "NH_CSS_SIGNAL_SPLIT_INLINE_BOX", "group__nhcssEnums.html#gga5e92e4500eb7c137bfb01ca5d4d608dbab9bfe1306978d28e92f7b69943476366", null ]
     ] ],
     [ "NH_CSS_RULE", "group__nhcssEnums.html#gafdd87896d4092414a0b53782bcf4c60e", [
       [ "NH_CSS_RULE_QUALIFIED", "group__nhcssEnums.html#ggafdd87896d4092414a0b53782bcf4c60eaad04f7bcf5aa8f2c56b9b1e181b85e73", null ],
