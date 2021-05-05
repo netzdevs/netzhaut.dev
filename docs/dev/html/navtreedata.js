@@ -115,9 +115,9 @@ var NAVTREEINDEX =
 "group__nhwebidlFunctions.html",
 "structnh__CPU.html#a98ed78763c61bd3a34d18dd437295ec0",
 "structnh__Workload.html#a76985259aa6b033672f463144ad90206",
-"structnh__ecmascript__Environment.html",
-"structnh__html__Parser.html#a430ebd3457000c07f34c4167ff9dcd2b",
-"structnh__vk__PipelineInfo.html#a61a677f669fc1df836876ef9e4c1d7f5"
+"structnh__ecmascript__DeclarativeEnvironment.html#a5987cb29662494ac0402a4ddcc602ef2",
+"structnh__html__Parser.html#a05bf1904cd0ee2608ddbfa57974b4128",
+"structnh__vk__PipelineInfo.html#a48a58b2b2e25008114ffcb37154b5a69"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

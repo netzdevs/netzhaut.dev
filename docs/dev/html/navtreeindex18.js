@@ -116,9 +116,10 @@ var NAVTREEINDEX18 =
 "structnh__css__IndexMap.html#a8cf09c294de89f00d45d17b99dcba6c2":[8,4,3,0,0],
 "structnh__css__IndexMap.html#afa0a1f3755347f765f212ca1a46f0296":[8,4,3,0,1],
 "structnh__css__LogContext.html":[8,4,3,8],
-"structnh__css__LogContext.html#a7e5111b247b9664d3b425560229064a1":[8,4,3,8,1],
-"structnh__css__LogContext.html#a8c12c5d080609999147c5bef9b6674b3":[8,4,3,8,0],
-"structnh__css__LogContext.html#aa432d93d13b25b18a4f9f06cc8ae6458":[8,4,3,8,2],
+"structnh__css__LogContext.html#a7e5111b247b9664d3b425560229064a1":[8,4,3,8,2],
+"structnh__css__LogContext.html#a8c12c5d080609999147c5bef9b6674b3":[8,4,3,8,1],
+"structnh__css__LogContext.html#a94e50949b423abde64c50762bc85fba2":[8,4,3,8,0],
+"structnh__css__LogContext.html#aa432d93d13b25b18a4f9f06cc8ae6458":[8,4,3,8,3],
 "structnh__css__Number.html":[8,4,3,41],
 "structnh__css__Number.html#a158efbe536f8531e36efe41edda37636":[8,4,3,41,1],
 "structnh__css__Number.html#a7831332a50496cebe68f3ed9066c12aa":[8,4,3,41,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "structnh__ecmascript__DataPropertyDescriptor.html":[8,3,3,27],
 "structnh__ecmascript__DataPropertyDescriptor.html#acb7b51b051da1570f976b52c975de5b4":[8,3,3,27,1],
 "structnh__ecmascript__DataPropertyDescriptor.html#ad597a4c9aa795901bcecd4db9af192ee":[8,3,3,27,0],
-"structnh__ecmascript__DeclarativeEnvironment.html":[8,3,3,8],
-"structnh__ecmascript__DeclarativeEnvironment.html#a5987cb29662494ac0402a4ddcc602ef2":[8,3,3,8,0]
+"structnh__ecmascript__DeclarativeEnvironment.html":[8,3,3,8]
 };

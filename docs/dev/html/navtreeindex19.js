@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"structnh__ecmascript__DeclarativeEnvironment.html#a5987cb29662494ac0402a4ddcc602ef2":[8,3,3,8,0],
 "structnh__ecmascript__Environment.html":[8,3,3,6],
 "structnh__ecmascript__Environment.html#a09ee8ceb751374e5c693c8f5ea0e1963":[8,3,3,6,1],
 "structnh__ecmascript__Environment.html#a17e8fd252c6c9654f96f5cf8f8309d34":[8,3,3,6,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "structnh__html__ParseError.html":[8,11,3,1],
 "structnh__html__ParseError.html#a99371527594cbbc866ca9d95ffecf413":[8,11,3,1,0],
 "structnh__html__ParseError.html#ac4ccb6967d688aad7bc7fab81016bc10":[8,11,3,1,1],
-"structnh__html__Parser.html":[8,11,3,2],
-"structnh__html__Parser.html#a05bf1904cd0ee2608ddbfa57974b4128":[8,11,3,2,4]
+"structnh__html__Parser.html":[8,11,3,2]
 };
