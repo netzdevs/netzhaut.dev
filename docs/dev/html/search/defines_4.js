@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left_10454',['LEFT',['../BoxTriangulation_8c.html#a437ef08681e7210d6678427030446a54',1,'BoxTriangulation.c']]]
+  ['left_10355',['LEFT',['../BoxTriangulation_8c.html#a437ef08681e7210d6678427030446a54',1,'BoxTriangulation.c']]]
 ];

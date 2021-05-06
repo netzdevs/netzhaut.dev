@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('Vulkan_2Texture_8h_source.html',''); i
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GPU_8h.html">GPU.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../Base/Font.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../Fonts/FontManager.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('Vulkan_2Texture_8h_source.html',''); i
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    } <a class="code" href="structnh__vk__Texture.html">nh_vk_Texture</a>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="structnh__vk__Texture.html">nh_vk_Texture</a> *<a class="code" href="group__nhgfxFunctions.html#gaab387bc3f5a3c0c360c63cc00ba6982e">nh_vk_loadFontTexture</a>(</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="structnh__vk__GPU.html">nh_vk_GPU</a> *GPU_p, <a class="code" href="structnh__gfx__Font.html">nh_gfx_Font</a> *Font_p</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="structnh__vk__GPU.html">nh_vk_GPU</a> *GPU_p, nh_gfx_Font *Font_p</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    );</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__nhgfxFunctions.html#ga217932948db8ccf79482e3cd7b9de755">nh_vk_destroyTexture</a>(</div>
@@ -137,7 +137,6 @@ $(document).ready(function(){initNavTree('Vulkan_2Texture_8h_source.html',''); i
 <div class="ttc" id="aGPU_8h_html"><div class="ttname"><a href="GPU_8h.html">GPU.h</a></div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga217932948db8ccf79482e3cd7b9de755"><div class="ttname"><a href="group__nhgfxFunctions.html#ga217932948db8ccf79482e3cd7b9de755">nh_vk_destroyTexture</a></div><div class="ttdeci">void nh_vk_destroyTexture(nh_vk_GPU *GPU_p, nh_vk_Texture *Texture_p)</div><div class="ttdef"><b>Definition:</b> Texture.c:639</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_gaab387bc3f5a3c0c360c63cc00ba6982e"><div class="ttname"><a href="group__nhgfxFunctions.html#gaab387bc3f5a3c0c360c63cc00ba6982e">nh_vk_loadFontTexture</a></div><div class="ttdeci">nh_vk_Texture * nh_vk_loadFontTexture(nh_vk_GPU *GPU_p, nh_gfx_Font *Font_p)</div><div class="ttdef"><b>Definition:</b> Texture.c:596</div></div>
-<div class="ttc" id="astructnh__gfx__Font_html"><div class="ttname"><a href="structnh__gfx__Font.html">nh_gfx_Font</a></div><div class="ttdef"><b>Definition:</b> Font.h:62</div></div>
 <div class="ttc" id="astructnh__vk__GPU_html"><div class="ttname"><a href="structnh__vk__GPU.html">nh_vk_GPU</a></div><div class="ttdef"><b>Definition:</b> GPU.h:21</div></div>
 <div class="ttc" id="astructnh__vk__TextureInfo_html"><div class="ttname"><a href="structnh__vk__TextureInfo.html">nh_vk_TextureInfo</a></div><div class="ttdef"><b>Definition:</b> Texture.h:21</div></div>
 <div class="ttc" id="astructnh__vk__TextureInfo_html_a19b3a9c71c0800b12549bf50c6299391"><div class="ttname"><a href="structnh__vk__TextureInfo.html#a19b3a9c71c0800b12549bf50c6299391">nh_vk_TextureInfo::imageLayout</a></div><div class="ttdeci">VkImageLayout imageLayout</div><div class="ttdef"><b>Definition:</b> Texture.h:27</div></div>
@@ -171,7 +170,7 @@ $(document).ready(function(){initNavTree('Vulkan_2Texture_8h_source.html',''); i
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.4.9 pre-alpha-1
+v0.0.0.0-0.1.5.9 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

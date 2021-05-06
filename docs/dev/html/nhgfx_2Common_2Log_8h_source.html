@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('nhgfx_2Common_2Log_8h_source.html','')
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;API.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Result.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Base/Font.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Fonts/FontManager.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('nhgfx_2Common_2Log_8h_source.html','')
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    );</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__nhgfxFunctions.html#gaf0523bf7ee8c6ef42b7453b03cefee55">nh_gfx_logFont</a>(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="structnh__gfx__Font.html">nh_gfx_Font</a> *Font_p </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        nh_gfx_Font *Font_p </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    );</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="group__nhgfxFunctions.html#ga5f69b5f095e45755646ca95ce853005f">nh_gfx_logVulkanValidation</a>(</div>
@@ -129,11 +129,10 @@ $(document).ready(function(){initNavTree('nhgfx_2Common_2Log_8h_source.html','')
 <div class="ttc" id="agroup__nhcoreTypedefs_html_ga97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> API.h:20</div></div>
 <div class="ttc" id="agroup__nhgfxEnums_html_ga40e840034eeb0d9aa68b5fbcfe56ffeb"><div class="ttname"><a href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a></div><div class="ttdeci">NH_GFX_RESULT</div><div class="ttdoc">Return values for functions.</div><div class="ttdef"><b>Definition:</b> Result.h:22</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga3991cc123072f70fb7f60ee753adbc37"><div class="ttname"><a href="group__nhgfxFunctions.html#ga3991cc123072f70fb7f60ee753adbc37">_nh_gfx_logBegin</a></div><div class="ttdeci">NH_GFX_RESULT _nh_gfx_logBegin(const NH_BYTE *file_p, const NH_BYTE *function_p)</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT</div><div class="ttdef"><b>Definition:</b> Log.c:24</div></div>
-<div class="ttc" id="agroup__nhgfxFunctions_html_ga5f69b5f095e45755646ca95ce853005f"><div class="ttname"><a href="group__nhgfxFunctions.html#ga5f69b5f095e45755646ca95ce853005f">nh_gfx_logVulkanValidation</a></div><div class="ttdeci">void nh_gfx_logVulkanValidation(NH_BYTE *message_p)</div><div class="ttdef"><b>Definition:</b> Log.c:59</div></div>
+<div class="ttc" id="agroup__nhgfxFunctions_html_ga5f69b5f095e45755646ca95ce853005f"><div class="ttname"><a href="group__nhgfxFunctions.html#ga5f69b5f095e45755646ca95ce853005f">nh_gfx_logVulkanValidation</a></div><div class="ttdeci">void nh_gfx_logVulkanValidation(NH_BYTE *message_p)</div><div class="ttdef"><b>Definition:</b> Log.c:84</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_ga6c8a35e683e70c3e4426066f0ab0cd20"><div class="ttname"><a href="group__nhgfxFunctions.html#ga6c8a35e683e70c3e4426066f0ab0cd20">_nh_gfx_logEnd</a></div><div class="ttdeci">NH_GFX_RESULT _nh_gfx_logEnd(const NH_BYTE *file_p, const NH_BYTE *function_p)</div><div class="ttdef"><b>Definition:</b> Log.c:31</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_gae0fc3d370809dc3441d21a35369e2583"><div class="ttname"><a href="group__nhgfxFunctions.html#gae0fc3d370809dc3441d21a35369e2583">_nh_gfx_logDiagnosticEnd</a></div><div class="ttdeci">NH_GFX_RESULT _nh_gfx_logDiagnosticEnd(const NH_BYTE *file_p, const NH_BYTE *function_p, NH_GFX_RESULT result, int line)</div><div class="ttdef"><b>Definition:</b> Log.c:38</div></div>
 <div class="ttc" id="agroup__nhgfxFunctions_html_gaf0523bf7ee8c6ef42b7453b03cefee55"><div class="ttname"><a href="group__nhgfxFunctions.html#gaf0523bf7ee8c6ef42b7453b03cefee55">nh_gfx_logFont</a></div><div class="ttdeci">void nh_gfx_logFont(nh_gfx_Font *Font_p)</div><div class="ttdef"><b>Definition:</b> Log.c:46</div></div>
-<div class="ttc" id="astructnh__gfx__Font_html"><div class="ttname"><a href="structnh__gfx__Font.html">nh_gfx_Font</a></div><div class="ttdef"><b>Definition:</b> Font.h:62</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
@@ -148,7 +147,7 @@ $(document).ready(function(){initNavTree('nhgfx_2Common_2Log_8h_source.html','')
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.4.9 pre-alpha-1
+v0.0.0.0-0.1.5.9 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>
