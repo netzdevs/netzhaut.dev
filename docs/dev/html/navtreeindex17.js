@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"structnh__Config.html#a9af4eff030498451d91754e7f0b593aa":[8,0,3,14,3],
 "structnh__Config.html#ae786a36fe3bcd5362d1cd627e36a1d36":[8,0,3,14,4],
 "structnh__Config_1_1Flags.html":[8,0,3,14,0],
 "structnh__Config_1_1Flags.html#a16edd5961e6d6c7a7f837f3280559be7":[8,0,3,14,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "structnh__css__AtRule.html#aa8aa44c1d6e4c2370e8a56bc64a04a08":[8,4,3,23,3],
 "structnh__css__AtRule.html#ab111dcec8e73c1ae7ccf90452ec2571c":[8,4,3,23,0],
 "structnh__css__Box.html":[8,4,3,4],
-"structnh__css__Box.html#a1163e7a70e286b9633706ae2a22818ca":[8,4,3,4,0],
-"structnh__css__Box.html#a4043b1736c8475a1e2fc3974daf5ff0b":[8,4,3,4,1]
+"structnh__css__Box.html#a1163e7a70e286b9633706ae2a22818ca":[8,4,3,4,0]
 };

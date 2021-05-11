@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"group__nhwebidlTypedefs.html#ga334c613b891aa29808f70aa12bb0d693":[8,8,5,15],
 "group__nhwebidlTypedefs.html#ga3f43e892a780a5492fa0e2025b54a7e2":[8,8,5,5],
 "group__nhwebidlTypedefs.html#ga4b434b53c51084db968d18a90f4456fe":[8,8,5,10],
 "group__nhwebidlTypedefs.html#ga4d51a1984cbebe2b0fe38b5c17cbebec":[8,8,5,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "structnh__Color.html#af3bdb674e52b4a17cf4b19be8510e371":[8,0,3,11,0],
 "structnh__Color.html#aff9e75650b16dde6015f4f7c4f00696b":[8,0,3,11,2],
 "structnh__Config.html":[8,0,3,14],
-"structnh__Config.html#a8a6545da7bd7d7217a76ac6d51c5016a":[8,0,3,14,2],
-"structnh__Config.html#a9af4eff030498451d91754e7f0b593aa":[8,0,3,14,3]
+"structnh__Config.html#a8a6545da7bd7d7217a76ac6d51c5016a":[8,0,3,14,2]
 };

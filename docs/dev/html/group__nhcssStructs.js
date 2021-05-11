@@ -89,8 +89,10 @@ var group__nhcssStructs =
     ] ],
     [ "nh_css_TextValues", "structnh__css__TextValues.html", [
       [ "Color", "structnh__css__TextValues.html#aae249f9869a06100eb4a75df3acba554", null ],
-      [ "Font_p", "structnh__css__TextValues.html#aac99a7391cd6cfc47afb5e6d3302786b", null ],
+      [ "FontFamilies", "structnh__css__TextValues.html#a193b3803517cca1bc18d55d342eb73ef", null ],
       [ "fontSize", "structnh__css__TextValues.html#a7ad587697046cb00f2dcca2ea73006f2", null ],
+      [ "FontStyle", "structnh__css__TextValues.html#acab274afab9d2837d02fbdf2cea7d2b8", null ],
+      [ "Text", "structnh__css__TextValues.html#ad47d65981d922e80d7735c5e7b1627ea", null ],
       [ "textHeight", "structnh__css__TextValues.html#ac90c01da534988793cf9a266b72e4593", null ],
       [ "textWidth", "structnh__css__TextValues.html#ad920b0bde9f0127cd9a260e75516849e", null ]
     ] ],
@@ -112,9 +114,6 @@ var group__nhcssStructs =
       [ "borderTopLeftRadius", "structnh__css__BoxValues.html#a22e45f2a206d57ec574c029054a1c7ed", null ],
       [ "borderTopRightRadius", "structnh__css__BoxValues.html#a29084178060cc265c4edbb8ca062e4fb", null ],
       [ "borderTopStyle", "structnh__css__BoxValues.html#ab7a369e9ed6d4d2fee743438d988c102", null ],
-      [ "Color", "structnh__css__BoxValues.html#ad52db9dfb23602b839f18469f501b39e", null ],
-      [ "Font_p", "structnh__css__BoxValues.html#a4e6a11ffbfd38ffc6f798de28d38562e", null ],
-      [ "fontSize", "structnh__css__BoxValues.html#a3dc6a76d3da9b9f44f04c8e8d14c32a8", null ],
       [ "marginBottom", "structnh__css__BoxValues.html#ae82672e4cd72d119618aae2a252d524f", null ],
       [ "marginLeft", "structnh__css__BoxValues.html#aa1bde462252eb6e967c162a03488d45e", null ],
       [ "marginRight", "structnh__css__BoxValues.html#a3bfcd9563c85a994d180398e275aaca9", null ],

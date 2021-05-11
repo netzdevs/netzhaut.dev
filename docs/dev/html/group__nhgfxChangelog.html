@@ -104,7 +104,7 @@ Macros</h2></td></tr>
 <tr class="memitem:gab9783a225a2fb7c693ae43710d01612b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxChangelog.html#gab9783a225a2fb7c693ae43710d01612b">NH_GFX_MAJOR_VERSION</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:gab9783a225a2fb7c693ae43710d01612b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The major version is used for the completion of big functionalities.  <a href="group__nhgfxChangelog.html#gab9783a225a2fb7c693ae43710d01612b">More...</a><br /></td></tr>
 <tr class="separator:gab9783a225a2fb7c693ae43710d01612b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3deaa99c2de67cd397213cf690e5fa87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxChangelog.html#ga3deaa99c2de67cd397213cf690e5fa87">NH_GFX_MINOR_VERSION</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:ga3deaa99c2de67cd397213cf690e5fa87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxChangelog.html#ga3deaa99c2de67cd397213cf690e5fa87">NH_GFX_MINOR_VERSION</a>&#160;&#160;&#160;2</td></tr>
 <tr class="memdesc:ga3deaa99c2de67cd397213cf690e5fa87"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minor version is used for the addition of small functionalities.  <a href="group__nhgfxChangelog.html#ga3deaa99c2de67cd397213cf690e5fa87">More...</a><br /></td></tr>
 <tr class="separator:ga3deaa99c2de67cd397213cf690e5fa87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga93567de15dd9d8ab2ee40193857d7752"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxChangelog.html#ga93567de15dd9d8ab2ee40193857d7752">NH_GFX_PATCH_VERSION</a>&#160;&#160;&#160;0</td></tr>
@@ -158,12 +158,17 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NH_GFX_MINOR_VERSION&#160;&#160;&#160;1</td>
+          <td class="memname">#define NH_GFX_MINOR_VERSION&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The minor version is used for the addition of small functionalities. </p>
+<p>2021-05-10 | v0.0.2.0 <a class="anchor" id="v0.0.2.0"></a></p><ul>
+<li><a href="https://github.com/DajoFrey">Dajo Frey</a>: Fix text-width calculation by changing float-addition to int-addition in nh_gfx_getTextWidth().</li>
+<li><a href="https://github.com/DajoFrey">Dajo Frey</a>: Set fallback font-weight to 400 when parsing fails.</li>
+<li><a href="https://github.com/DajoFrey">Dajo Frey</a>: Add nh_gfx_createText() for rendering text using multiple fonts.</li>
+</ul>
 <p>2021-05-06 | v0.0.1.0 <a class="anchor" id="v0.0.1.0"></a></p><ul>
 <li><a href="https://github.com/DajoFrey">Dajo Frey</a>: Create new directory for font-related stuff.</li>
 <li><a href="https://github.com/DajoFrey">Dajo Frey</a>: Add first iteration of generic font-family handling.</li>
@@ -215,7 +220,7 @@ Macros</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.5.9 pre-alpha-1
+v0.0.0.0-0.1.7.7 pre-alpha-1
 <!-- NH_MAKE_INSERT_FULL_VERSION_END -->
             </b>
           </div>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"group__nhloaderTypedefs.html#ga8355ede1c26147574cf129706fbe45ba":[8,2,5,2],
 "group__nhloaderTypedefs.html#gad12634e6a9051532abfa622f2bf6e81b":[8,2,5,1],
 "group__nhloaderVars.html":[8,2,6],
 "group__nhloaderVars.html#ga1c839f924f1ff2c38bf10d9094610aa7":[8,2,6,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "group__nhwebidlStructs.html":[8,8,3],
 "group__nhwebidlTypedefs.html":[8,8,5],
 "group__nhwebidlTypedefs.html#ga0e6633cfbdd887360fa52f68c89b5e63":[8,8,5,7],
-"group__nhwebidlTypedefs.html#ga125069738b8779c09f145da229cfecaf":[8,8,5,16],
-"group__nhwebidlTypedefs.html#ga334c613b891aa29808f70aa12bb0d693":[8,8,5,15]
+"group__nhwebidlTypedefs.html#ga125069738b8779c09f145da229cfecaf":[8,8,5,16]
 };
