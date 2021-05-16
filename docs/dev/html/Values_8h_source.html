@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('Values_8h_source.html',''); initResiza
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Filter_8h.html">Filter.h</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Renderer/Renderer.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Main/Renderer.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Parser/Parser.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../Common/API.h&quot;</span></div>
@@ -190,8 +190,8 @@ $(document).ready(function(){initNavTree('Values_8h_source.html',''); initResiza
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="group__nhcssEnums.html#ga8fd3f4caa86bea3bb1bccc008122e15d">NH_CSS_VALUE_SCOPE</a> scope, <a class="code" href="group__nhcssEnums.html#ga5f555bd6be968619ed2a26b795318fa4">NH_CSS_VALUE</a> type</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    );</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga8f7271bf1803f3105b21643b1906f84a">nh_css_setSpecifiedValues</a>(</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="structnh__css__LogContext.html">nh_css_LogContext</a> *LogContext_p, <a class="code" href="group__nhdomTypedefs.html#ga3c00f6e04c6bd7f77f062cdd4a6547db">nh_dom_Element</a> *Element_p, <a class="code" href="structnh__List.html">nh_List</a> AuthorStyleSheets, </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gae3778cf8624298b76ce3ec3a29f21db1">nh_css_setSpecifiedValues</a>(</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        nh_css_LogContext *LogContext_p, <a class="code" href="group__nhdomTypedefs.html#ga3c00f6e04c6bd7f77f062cdd4a6547db">nh_dom_Element</a> *Element_p, <a class="code" href="group__nhcssTypedefs.html#ga0236c55e0823d35de2ae6f41998656d9">nh_css_StyleSheetList</a> *AuthorStyleSheets_p, </div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="structnh__List.html">nh_List</a> UserStyleSheets</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    );</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
@@ -270,10 +270,11 @@ $(document).ready(function(){initNavTree('Values_8h_source.html',''); initResiza
 <div class="ttc" id="agroup__nhcssEnums_html_gga8fd3f4caa86bea3bb1bccc008122e15da6a5f828f61d9e53cdd240978c386bb61"><div class="ttname"><a href="group__nhcssEnums.html#gga8fd3f4caa86bea3bb1bccc008122e15da6a5f828f61d9e53cdd240978c386bb61">NH_CSS_VALUE_SCOPE_COMPUTED</a></div><div class="ttdeci">@ NH_CSS_VALUE_SCOPE_COMPUTED</div><div class="ttdef"><b>Definition:</b> Values.h:77</div></div>
 <div class="ttc" id="agroup__nhcssFunctions_html_ga60dc7ebaa8435bd3ecbe230cb91e752f"><div class="ttname"><a href="group__nhcssFunctions.html#ga60dc7ebaa8435bd3ecbe230cb91e752f">nh_css_freeSpecifiedValues</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_freeSpecifiedValues(nh_dom_Node *Node_p)</div><div class="ttdef"><b>Definition:</b> Values.c:437</div></div>
 <div class="ttc" id="agroup__nhcssFunctions_html_ga78b6bdfd3d1c3cf204ad33083abcfe08"><div class="ttname"><a href="group__nhcssFunctions.html#ga78b6bdfd3d1c3cf204ad33083abcfe08">nh_css_isLengthPercentageValue</a></div><div class="ttdeci">NH_BOOL nh_css_isLengthPercentageValue(nh_css_Value *Value_p)</div><div class="ttdef"><b>Definition:</b> Values.c:173</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga8f7271bf1803f3105b21643b1906f84a"><div class="ttname"><a href="group__nhcssFunctions.html#ga8f7271bf1803f3105b21643b1906f84a">nh_css_setSpecifiedValues</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_setSpecifiedValues(nh_css_LogContext *LogContext_p, nh_dom_Element *Element_p, nh_List AuthorStyleSheets, nh_List UserStyleSheets)</div><div class="ttdef"><b>Definition:</b> Values.c:406</div></div>
 <div class="ttc" id="agroup__nhcssFunctions_html_gac06b307761930a93eb64536f73afd8e1"><div class="ttname"><a href="group__nhcssFunctions.html#gac06b307761930a93eb64536f73afd8e1">nh_css_initValue</a></div><div class="ttdeci">nh_css_Value nh_css_initValue(NH_CSS_VALUE_SCOPE scope, NH_CSS_VALUE type)</div><div class="ttdef"><b>Definition:</b> Values.c:87</div></div>
 <div class="ttc" id="agroup__nhcssFunctions_html_gacfc2329d649e9ded640db287f395701d"><div class="ttname"><a href="group__nhcssFunctions.html#gacfc2329d649e9ded640db287f395701d">nh_css_isStringValue</a></div><div class="ttdeci">NH_BOOL nh_css_isStringValue(nh_css_Value *Value_p)</div><div class="ttdef"><b>Definition:</b> Values.c:103</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_gae3778cf8624298b76ce3ec3a29f21db1"><div class="ttname"><a href="group__nhcssFunctions.html#gae3778cf8624298b76ce3ec3a29f21db1">nh_css_setSpecifiedValues</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_setSpecifiedValues(nh_css_LogContext *LogContext_p, nh_dom_Element *Element_p, nh_css_StyleSheetList *AuthorStyleSheets_p, nh_List UserStyleSheets)</div><div class="ttdef"><b>Definition:</b> Values.c:406</div></div>
 <div class="ttc" id="agroup__nhcssFunctions_html_gaeb08a71ee61f2cf72803fdcda8f2fd64"><div class="ttname"><a href="group__nhcssFunctions.html#gaeb08a71ee61f2cf72803fdcda8f2fd64">nh_css_isLengthValue</a></div><div class="ttdeci">NH_BOOL nh_css_isLengthValue(nh_css_Value *Value_p)</div><div class="ttdef"><b>Definition:</b> Values.c:166</div></div>
+<div class="ttc" id="agroup__nhcssTypedefs_html_ga0236c55e0823d35de2ae6f41998656d9"><div class="ttname"><a href="group__nhcssTypedefs.html#ga0236c55e0823d35de2ae6f41998656d9">nh_css_StyleSheetList</a></div><div class="ttdeci">struct nh_css_StyleSheetList nh_css_StyleSheetList</div><div class="ttdef"><b>Definition:</b> API.h:30</div></div>
 <div class="ttc" id="agroup__nhcssVars_html_gaa2b868d59d1545e7913247f761a3cd62"><div class="ttname"><a href="group__nhcssVars.html#gaa2b868d59d1545e7913247f761a3cd62">NH_CSS_TYPE_NAMES_PP</a></div><div class="ttdeci">const NH_BYTE * NH_CSS_TYPE_NAMES_PP[]</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT</div><div class="ttdef"><b>Definition:</b> Values.c:35</div></div>
 <div class="ttc" id="agroup__nhdomTypedefs_html_ga3c00f6e04c6bd7f77f062cdd4a6547db"><div class="ttname"><a href="group__nhdomTypedefs.html#ga3c00f6e04c6bd7f77f062cdd4a6547db">nh_dom_Element</a></div><div class="ttdeci">struct nh_dom_Element nh_dom_Element</div><div class="ttdef"><b>Definition:</b> API.h:22</div></div>
 <div class="ttc" id="agroup__nhdomTypedefs_html_ga73d9208680bb66d21d3201346efcc824"><div class="ttname"><a href="group__nhdomTypedefs.html#ga73d9208680bb66d21d3201346efcc824">nh_dom_Node</a></div><div class="ttdeci">struct nh_dom_Node nh_dom_Node</div><div class="ttdef"><b>Definition:</b> API.h:21</div></div>
@@ -281,7 +282,6 @@ $(document).ready(function(){initNavTree('Values_8h_source.html',''); initResiza
 <div class="ttc" id="astructnh__Array_html"><div class="ttname"><a href="structnh__Array.html">nh_Array</a></div><div class="ttdoc">Generic linked-list which holds data pointers.</div><div class="ttdef"><b>Definition:</b> API.h:95</div></div>
 <div class="ttc" id="astructnh__List_html"><div class="ttname"><a href="structnh__List.html">nh_List</a></div><div class="ttdoc">Dynamic list implementation using a two dimensional array.</div><div class="ttdef"><b>Definition:</b> API.h:106</div></div>
 <div class="ttc" id="astructnh__css__DeclaredValue_html"><div class="ttname"><a href="structnh__css__DeclaredValue.html">nh_css_DeclaredValue</a></div><div class="ttdef"><b>Definition:</b> Filter.h:53</div></div>
-<div class="ttc" id="astructnh__css__LogContext_html"><div class="ttname"><a href="structnh__css__LogContext.html">nh_css_LogContext</a></div><div class="ttdef"><b>Definition:</b> Renderer.h:23</div></div>
 <div class="ttc" id="astructnh__css__Number_html"><div class="ttname"><a href="structnh__css__Number.html">nh_css_Number</a></div><div class="ttdef"><b>Definition:</b> Values.h:97</div></div>
 <div class="ttc" id="astructnh__css__Number_html_a158efbe536f8531e36efe41edda37636"><div class="ttname"><a href="structnh__css__Number.html#a158efbe536f8531e36efe41edda37636">nh_css_Number::value</a></div><div class="ttdeci">NH_WEBIDL_DOUBLE value</div><div class="ttdef"><b>Definition:</b> Values.h:99</div></div>
 <div class="ttc" id="astructnh__css__Number_html_a7831332a50496cebe68f3ed9066c12aa"><div class="ttname"><a href="structnh__css__Number.html#a7831332a50496cebe68f3ed9066c12aa">nh_css_Number::Common</a></div><div class="ttdeci">nh_css_ValueCommon Common</div><div class="ttdef"><b>Definition:</b> Values.h:98</div></div>
@@ -307,9 +307,9 @@ $(document).ready(function(){initNavTree('Values_8h_source.html',''); initResiza
           <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../use/html/introduction.html"><b>Usage</b></a></b>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
-<!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.7.7 pre-alpha-1
-<!-- NH_MAKE_INSERT_FULL_VERSION_END -->
+<!-- NH_MAKE_INSERT_REV_BEGIN -->
+<b>rev.0.2.6.9</b>
+<!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>
           <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>Home</b></a></b>

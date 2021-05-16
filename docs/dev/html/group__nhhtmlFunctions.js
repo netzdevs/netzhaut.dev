@@ -39,5 +39,6 @@ var group__nhhtmlFunctions =
     [ "nh_html_pushOpenElement", "group__nhhtmlFunctions.html#ga512ceb49b56e61c23d3152d7cc8e3e07", null ],
     [ "nh_html_reconstructActiveFormattingElements", "group__nhhtmlFunctions.html#ga9b4b906e82b5a197dee5626ce1eb1a4d", null ],
     [ "nh_html_runAdoptionAgencyAlgorithm", "group__nhhtmlFunctions.html#gaa69be70c79782480bf7237e493c43b5f", null ],
-    [ "nh_html_terminate", "group__nhhtmlFunctions.html#gad6afeac7e480d3c3722008d4d1690ea6", null ]
+    [ "nh_html_terminate", "group__nhhtmlFunctions.html#gad6afeac7e480d3c3722008d4d1690ea6", null ],
+    [ "nh_html_updateAStyleBlock", "group__nhhtmlFunctions.html#ga57564dafd472f8944401c2d5160df875", null ]
 ];

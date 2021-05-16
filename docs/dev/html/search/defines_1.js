@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['bottom_10356',['BOTTOM',['../BoxTriangulation_8c.html#ae420caa0af9cbdf102ed255034e27c5b',1,'BoxTriangulation.c']]],
-  ['bottom_5fleft_10357',['BOTTOM_LEFT',['../BoxTriangulation_8c.html#a85d1ada414f4f1f10df50ef254c79c75',1,'BoxTriangulation.c']]],
-  ['bottom_5fright_10358',['BOTTOM_RIGHT',['../BoxTriangulation_8c.html#a9c05beaff6794473029413f2d78589f1',1,'BoxTriangulation.c']]]
+  ['clip_5flength_10140',['CLIP_LENGTH',['../Box_8c.html#a49bb89ba03f3224dfdbb35805a58d629',1,'Box.c']]],
+  ['compute_10141',['COMPUTE',['../Driver_8c.html#add1922c3577beb657e54eb077d86b358',1,'Driver.c']]],
+  ['creation_5ffailed_10142',['CREATION_FAILED',['../Helper_8c.html#a5c6fb6417d85858c29280abe50eecea4',1,'Helper.c']]]
 ];

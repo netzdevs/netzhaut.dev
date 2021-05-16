@@ -59,7 +59,7 @@ var group__nhgfxEnums =
       [ "NH_GFX_VULKAN_RESULT_MAX_ENUM", "group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba716df4e251688fde2deab204643eea8e", null ]
     ] ],
     [ "NH_GFX_VIEWPORT_OWNER", "group__nhgfxEnums.html#ga9d4f1367aabcb6dfaffe3c62937a157e", [
-      [ "NH_GFX_VIEWPORT_OWNER_HTML", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157eaad9255f7cb60216c188d2e5edcc13b69", null ],
+      [ "NH_GFX_VIEWPORT_OWNER_CSS", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea6d67827eccbdeed43c3920623a5b22d1", null ],
       [ "NH_GFX_VIEWPORT_OWNER_TTY", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea11d386ab183d0b2de2b94f06c033060e", null ],
       [ "NH_GFX_VIEWPORT_OWNER_USER", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea56034246c1f5dfcc464abee4fa53341f", null ],
       [ "NH_GFX_VIEWPORT_OWNER_NONE", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea10ae5c31408f00a338e6904098b82dbd", null ]

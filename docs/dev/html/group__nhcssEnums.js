@@ -1,14 +1,5 @@
 var group__nhcssEnums =
 [
-    [ "NH_CSS_BOX", "group__nhcssEnums.html#gabcb93bedf9e973f072446757c4925ba6", [
-      [ "NH_CSS_BOX_BLOCK_CONTAINER", "group__nhcssEnums.html#ggabcb93bedf9e973f072446757c4925ba6a30a54e29bdea67d11d6df4b654e1c703", null ],
-      [ "NH_CSS_BOX_INLINE", "group__nhcssEnums.html#ggabcb93bedf9e973f072446757c4925ba6aed9150fe19b7333757bb7aad70a7d3c0", null ],
-      [ "NH_CSS_BOX_ROOT_INLINE", "group__nhcssEnums.html#ggabcb93bedf9e973f072446757c4925ba6af5a29d6bc49c5906ab1dae3df8ff1680", null ]
-    ] ],
-    [ "NH_CSS_BOX_TREE_NODE", "group__nhcssEnums.html#ga28d6fa752e06082fca6084b18e45ddef", [
-      [ "NH_CSS_BOX_TREE_NODE_BOX", "group__nhcssEnums.html#gga28d6fa752e06082fca6084b18e45ddefac2c20c54a1fb355ad95aa577b9678b2d", null ],
-      [ "NH_CSS_BOX_TREE_NODE_TEXT_RUN", "group__nhcssEnums.html#gga28d6fa752e06082fca6084b18e45ddefaadcac4912507b630bfbc68015cb82c08", null ]
-    ] ],
     [ "NH_CSS_COLOR", "group__nhcssEnums.html#ga5a9fae66757261c5eceadcb9a8149185", [
       [ "NH_CSS_COLOR_ALICE_BLUE", "group__nhcssEnums.html#gga5a9fae66757261c5eceadcb9a8149185a15efa899f6e9f343e464beb1456b56cc", null ],
       [ "NH_CSS_COLOR_ANTIQUE_WHITE", "group__nhcssEnums.html#gga5a9fae66757261c5eceadcb9a8149185a73185fba77a7e999cb2dd2cbf108a310", null ],
@@ -170,10 +161,6 @@ var group__nhcssEnums =
       [ "NH_CSS_DECLARATION_ORIGIN_USER_AGENT", "group__nhcssEnums.html#gga878bd3154adf86870ce9724c2f0d7c49a9582b5c4380ee1195431554f9aa043b3", null ],
       [ "NH_CSS_DECLARATION_ORIGIN_ANIMATION", "group__nhcssEnums.html#gga878bd3154adf86870ce9724c2f0d7c49a1bf2360f38c461d8a187d6fc8b8f361e", null ],
       [ "NH_CSS_DECLARATION_ORIGIN_TRANSITION", "group__nhcssEnums.html#gga878bd3154adf86870ce9724c2f0d7c49adb90f968b9ba53219ab666dd3e169cc0", null ]
-    ] ],
-    [ "NH_CSS_FORMATTING_CONTEXT", "group__nhcssEnums.html#ga84441aa1220a7dcff6c80f0325b79c2f", [
-      [ "NH_CSS_FORMATTING_CONTEXT_BLOCK", "group__nhcssEnums.html#gga84441aa1220a7dcff6c80f0325b79c2fa7f7467b70d0cb9b406a9fa03edd40212", null ],
-      [ "NH_CSS_FORMATTING_CONTEXT_INLINE", "group__nhcssEnums.html#gga84441aa1220a7dcff6c80f0325b79c2fa7342bdc62bdb0e3de98c7e8982fbf712", null ]
     ] ],
     [ "NH_CSS_LINE_STYLE", "group__nhcssEnums.html#ga3f0b7cf428f1416e9ee7e5e504e61406", [
       [ "NH_CSS_LINE_STYLE_NONE", "group__nhcssEnums.html#gga3f0b7cf428f1416e9ee7e5e504e61406aff4ca4675ee5518fc474a5d53b6a90e5", null ],
@@ -358,10 +345,6 @@ var group__nhcssEnums =
       [ "NH_CSS_SELECTOR_PARSE_NODE_ATTR_MODIFIER", "group__nhcssEnums.html#ggaecf45df1afba40120405aaa8cb1d74e1a8069551473bbbee1ac49f6890d5d97a5", null ],
       [ "NH_CSS_SELECTOR_PARSE_NODE_PSEUDO_CLASS_SELECTOR", "group__nhcssEnums.html#ggaecf45df1afba40120405aaa8cb1d74e1a3b85cfb32857367e5524d6d7005f7268", null ],
       [ "NH_CSS_SELECTOR_PARSE_NODE_PSEUDO_ELEMENT_SELECTOR", "group__nhcssEnums.html#ggaecf45df1afba40120405aaa8cb1d74e1a040b451794b5772a72998392c4039096", null ]
-    ] ],
-    [ "NH_CSS_SOURCE", "group__nhcssEnums.html#gacd1da370e08cc041b1386c7509d7abb1", [
-      [ "NH_CSS_SOURCE_ELEMENT", "group__nhcssEnums.html#ggacd1da370e08cc041b1386c7509d7abb1a53cae44f101f3a33e87be85318227a13", null ],
-      [ "NH_CSS_SOURCE_TEXT_NODE", "group__nhcssEnums.html#ggacd1da370e08cc041b1386c7509d7abb1a750e2c4cbfc69463595e58d95f26ed4c", null ]
     ] ],
     [ "NH_CSS_TOKEN", "group__nhcssEnums.html#ga92345c0a17e19e42e460a1edbc9629e9", [
       [ "NH_CSS_TOKEN_IDENT", "group__nhcssEnums.html#gga92345c0a17e19e42e460a1edbc9629e9a8aa198237a1751f403ccfbc34c5739e7", null ],

@@ -99,6 +99,8 @@ $(document).ready(function(){initNavTree('nhcss_2Common_2Log_8c.html',''); initR
 <div class="textblock"><code>#include &quot;<a class="el" href="nhcss_2Common_2Log_8h_source.html">Log.h</a>&quot;</code><br />
 <code>#include &quot;MACRO/DEFAULT_CHECK.h&quot;</code><br />
 <code>#include &quot;MACRO/FLOW.h&quot;</code><br />
+<code>#include &quot;../Interfaces/CSSStyleDeclaration.h&quot;</code><br />
+<code>#include &quot;../Interfaces/CSSStyleRule.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Parser_2Parser_8h_source.html">../Parser/Parser.h</a>&quot;</code><br />
 <code>#include &quot;../../nhencoding/Encodings/UTF8.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcore_2Logger_8h_source.html">../../nhcore/Logger.h</a>&quot;</code><br />
@@ -125,17 +127,17 @@ Functions</h2></td></tr>
 <tr class="separator:ga5b6db3ab8e1019b05646bd96c257ad3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gace092ed6c8db80844928d878d28fd23d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gace092ed6c8db80844928d878d28fd23d">nh_css_logTokens</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="structnh__Array.html">nh_Array</a> *Tokens_p)</td></tr>
 <tr class="separator:gace092ed6c8db80844928d878d28fd23d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga52a2fd53408c85008d36abf744252fcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga52a2fd53408c85008d36abf744252fcf">nh_css_logRules</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="structnh__Array.html">nh_Array</a> *Rules_p)</td></tr>
-<tr class="separator:ga52a2fd53408c85008d36abf744252fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf84afe6adbdf7d8ddc186199a8e69721"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gaf84afe6adbdf7d8ddc186199a8e69721">nh_css_logStyleRules</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="structnh__Array.html">nh_Array</a> *StyleRules_p)</td></tr>
-<tr class="separator:gaf84afe6adbdf7d8ddc186199a8e69721"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83d72823686edc94e3e4c4b5513352cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga83d72823686edc94e3e4c4b5513352cb">nh_css_logFilter</a> (<a class="el" href="structnh__css__LogContext.html">nh_css_LogContext</a> *LogContext_p, <a class="el" href="structnh__css__Filter.html">nh_css_Filter</a> *Filter_p)</td></tr>
+<tr class="memitem:gab88dbc4546b2fd0b01c374c1e40e4365"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gab88dbc4546b2fd0b01c374c1e40e4365">nh_css_logRawRules</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="structnh__Array.html">nh_Array</a> *Rules_p)</td></tr>
+<tr class="separator:gab88dbc4546b2fd0b01c374c1e40e4365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga94b68b83ab9842ecb8b489a5a5b2c65b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga94b68b83ab9842ecb8b489a5a5b2c65b">nh_css_logRules</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="structnh__List.html">nh_List</a> *Rules_p)</td></tr>
+<tr class="separator:ga94b68b83ab9842ecb8b489a5a5b2c65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83d72823686edc94e3e4c4b5513352cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga83d72823686edc94e3e4c4b5513352cb">nh_css_logFilter</a> (nh_css_LogContext *LogContext_p, <a class="el" href="structnh__css__Filter.html">nh_css_Filter</a> *Filter_p)</td></tr>
 <tr class="separator:ga83d72823686edc94e3e4c4b5513352cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0fc7c1806bec031e1ef650e24aa902b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga0fc7c1806bec031e1ef650e24aa902b7">nh_css_logSpecifiedValues</a> (<a class="el" href="structnh__css__LogContext.html">nh_css_LogContext</a> *LogContext_p, <a class="el" href="structnh__Array.html">nh_Array</a> *SpecifiedValues_p)</td></tr>
+<tr class="memitem:ga0fc7c1806bec031e1ef650e24aa902b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga0fc7c1806bec031e1ef650e24aa902b7">nh_css_logSpecifiedValues</a> (nh_css_LogContext *LogContext_p, <a class="el" href="structnh__Array.html">nh_Array</a> *SpecifiedValues_p)</td></tr>
 <tr class="separator:ga0fc7c1806bec031e1ef650e24aa902b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaef2468f69598503fc8aff282037f74cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gaef2468f69598503fc8aff282037f74cb">nh_css_logSourceTree</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="unionnh__css__Source.html">nh_css_Source</a> *Root_p)</td></tr>
+<tr class="memitem:gaef2468f69598503fc8aff282037f74cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gaef2468f69598503fc8aff282037f74cb">nh_css_logSourceTree</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, nh_css_Source *Root_p)</td></tr>
 <tr class="separator:gaef2468f69598503fc8aff282037f74cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga997f0dd4d9e60e3d322c302168d0f76f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga997f0dd4d9e60e3d322c302168d0f76f">nh_css_logBoxTree</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="structnh__css__BoxTree.html">nh_css_BoxTree</a> Tree)</td></tr>
+<tr class="memitem:ga997f0dd4d9e60e3d322c302168d0f76f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga997f0dd4d9e60e3d322c302168d0f76f">nh_css_logBoxTree</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, nh_css_BoxTree Tree)</td></tr>
 <tr class="separator:ga997f0dd4d9e60e3d322c302168d0f76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -194,9 +196,9 @@ Functions</h2></td></tr>
           <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../use/html/introduction.html"><b>Usage</b></a></b>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
-<!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.7.7 pre-alpha-1
-<!-- NH_MAKE_INSERT_FULL_VERSION_END -->
+<!-- NH_MAKE_INSERT_REV_BEGIN -->
+<b>rev.0.2.6.9</b>
+<!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>
           <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>Home</b></a></b>

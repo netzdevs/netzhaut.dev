@@ -99,6 +99,11 @@ $(document).ready(function(){initNavTree('nhcss_2Parser_2Parser_8c.html',''); in
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="nhcss_2Parser_2Parser_8h_source.html">Parser.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Parser_2Tokenizer_8h_source.html">Tokenizer.h</a>&quot;</code><br />
+<code>#include &quot;../Interfaces/CSSRule.h&quot;</code><br />
+<code>#include &quot;../Interfaces/CSSStyleDeclaration.h&quot;</code><br />
+<code>#include &quot;../Interfaces/CSSStyleRule.h&quot;</code><br />
+<code>#include &quot;../Interfaces/CSSRuleList.h&quot;</code><br />
+<code>#include &quot;../Interfaces/CSSStyleSheet.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Log_8h_source.html">../Common/Log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Array_8h_source.html">../../nhcore/Array.h</a>&quot;</code><br />
@@ -122,12 +127,10 @@ Data Structures</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ga06b000a367c23f837227685e9f3027ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionnh__css__Token.html">nh_css_Token</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga06b000a367c23f837227685e9f3027ec">nh_css_getMirrorToken</a> (<a class="el" href="unionnh__css__Token.html">nh_css_Token</a> *Token_p)</td></tr>
 <tr class="separator:ga06b000a367c23f837227685e9f3027ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3471f8430ff37a3ae24b5b0b42556b1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__List.html">nh_List</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga3471f8430ff37a3ae24b5b0b42556b1f">nh_css_getTokensFromComponentValues</a> (<a class="el" href="unionnh__css__ComponentValue.html">nh_css_ComponentValue</a> *ComponentValues_p, unsigned long long length)</td></tr>
-<tr class="separator:ga3471f8430ff37a3ae24b5b0b42556b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8e963b859f2783fff7a12a2507a8981"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__StyleSheet.html">nh_css_StyleSheet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gad8e963b859f2783fff7a12a2507a8981">nh_css_parseStyleSheetFromUnicodeCodepoints</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="group__nhencodingTypedefs.html#gad63619d1bc54238feaa157a43a3a8501">NH_ENCODING_UTF32</a> *codepoints_p, unsigned long long length)</td></tr>
-<tr class="separator:gad8e963b859f2783fff7a12a2507a8981"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga61754932c30473f08c01e201d77914b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__StyleSheet.html">nh_css_StyleSheet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga61754932c30473f08c01e201d77914b7">nh_css_parseStyleSheetFromBytes</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *bytes_p, unsigned long long length)</td></tr>
-<tr class="separator:ga61754932c30473f08c01e201d77914b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73b49a2fac61f6ba803ac1fc1dbda1c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__List.html">nh_List</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga73b49a2fac61f6ba803ac1fc1dbda1c7">nh_css_getTokensFromComponentValues</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *ComponentValues_p)</td></tr>
+<tr class="separator:ga73b49a2fac61f6ba803ac1fc1dbda1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5bb5b4ae3ba7dd340fe9428a90fef78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gae5bb5b4ae3ba7dd340fe9428a90fef78">nh_css_parseStyleSheet</a> (<a class="el" href="group__nhcssTypedefs.html#ga8bd750b61b183bd52f3bed481151f7eb">nh_css_CSSStyleSheet</a> *StyleSheet_p, <a class="el" href="structnh__encoding__UTF32String.html">nh_encoding_UTF32String</a> *String_p, <a class="el" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a> log)</td></tr>
+<tr class="separator:gae5bb5b4ae3ba7dd340fe9428a90fef78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ef020e600bc1d3cbc4f49fa303f2eed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__ComponentValueData.html">nh_css_ComponentValueData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga5ef020e600bc1d3cbc4f49fa303f2eed">nh_css_parseComponentValuesFromUTF8Codepoints</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *bytes_p, unsigned long long length)</td></tr>
 <tr class="separator:ga5ef020e600bc1d3cbc4f49fa303f2eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1d5d225af543e6bfdc97d8b58cca6eeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__DeclarationData.html">nh_css_DeclarationData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga1d5d225af543e6bfdc97d8b58cca6eeb">nh_css_parseDeclarationsFromBytes</a> (<a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *bytes_p, unsigned long long length)</td></tr>
@@ -135,9 +138,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga25cd14f94db092197738fbdba6edbdb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__css__StyleSheet.html">nh_css_StyleSheet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssVars.html#ga25cd14f94db092197738fbdba6edbdb2">NH_CSS_DEFAULT_STYLE_SHEET</a></td></tr>
-<tr class="memdesc:ga25cd14f94db092197738fbdba6edbdb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__nhcssVars.html#ga25cd14f94db092197738fbdba6edbdb2">More...</a><br /></td></tr>
-<tr class="separator:ga25cd14f94db092197738fbdba6edbdb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac906464290507ff8ff7fff7a71134b97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssTypedefs.html#ga8bd750b61b183bd52f3bed481151f7eb">nh_css_CSSStyleSheet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssVars.html#gac906464290507ff8ff7fff7a71134b97">NH_CSS_DEFAULT_STYLE_SHEET_P</a> = NULL</td></tr>
+<tr class="memdesc:gac906464290507ff8ff7fff7a71134b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__nhcssVars.html#gac906464290507ff8ff7fff7a71134b97">More...</a><br /></td></tr>
+<tr class="separator:gac906464290507ff8ff7fff7a71134b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -152,9 +155,9 @@ Variables</h2></td></tr>
           <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../use/html/introduction.html"><b>Usage</b></a></b>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
-<!-- NH_MAKE_INSERT_FULL_VERSION_BEGIN -->
-v0.0.0.0-0.1.7.7 pre-alpha-1
-<!-- NH_MAKE_INSERT_FULL_VERSION_END -->
+<!-- NH_MAKE_INSERT_REV_BEGIN -->
+<b>rev.0.2.6.9</b>
+<!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>
           <b style="width:40%;text-align:center;font-size:16px;"><a style="color:#24bbc4;" href="../../index.html"><b>Home</b></a></b>

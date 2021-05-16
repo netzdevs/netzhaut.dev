@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['max_5fdepth_10364',['MAX_DEPTH',['../nhwebidl_2Common_2Log_8c.html#a5db49eeef5c9bb774f02996f684df238',1,'Log.c']]],
-  ['max_5findent_10365',['MAX_INDENT',['../nhhtml_2Common_2Log_8c.html#ab9ac5ee1679830523bb24f3b2c212059',1,'Log.c']]],
-  ['max_5fmessage_10366',['MAX_MESSAGE',['../nhhtml_2Common_2Log_8c.html#a8cea0c1cc1fc60a52e79998580bbf1a7',1,'Log.c']]],
-  ['min3_10367',['MIN3',['../String_8c.html#a4887ceeae88266064841cbbc11ef8b53',1,'String.c']]]
+  ['pixel_5fto_5fclip_10157',['PIXEL_TO_CLIP',['../Box_8c.html#af2614797b9bf102455cf2d02f0b51a33',1,'Box.c']]]
 ];
