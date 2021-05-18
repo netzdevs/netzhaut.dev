@@ -101,7 +101,7 @@ Macros</h2></td></tr>
 <tr class="memitem:ga9fd9ee9e025226c0743e8b9d2baea621"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssChangelog.html#ga9fd9ee9e025226c0743e8b9d2baea621">NH_CSS_API_VERSION</a>&#160;&#160;&#160;0</td></tr>
 <tr class="memdesc:ga9fd9ee9e025226c0743e8b9d2baea621"><td class="mdescLeft">&#160;</td><td class="mdescRight">The API version is used for backwards-incompatible API changes.  <a href="group__nhcssChangelog.html#ga9fd9ee9e025226c0743e8b9d2baea621">More...</a><br /></td></tr>
 <tr class="separator:ga9fd9ee9e025226c0743e8b9d2baea621"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga973c738945eaac34311dd415d00999bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssChangelog.html#ga973c738945eaac34311dd415d00999bd">NH_CSS_MAJOR_VERSION</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:ga973c738945eaac34311dd415d00999bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssChangelog.html#ga973c738945eaac34311dd415d00999bd">NH_CSS_MAJOR_VERSION</a>&#160;&#160;&#160;2</td></tr>
 <tr class="memdesc:ga973c738945eaac34311dd415d00999bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The major version is used for the completion of big functionalities.  <a href="group__nhcssChangelog.html#ga973c738945eaac34311dd415d00999bd">More...</a><br /></td></tr>
 <tr class="separator:ga973c738945eaac34311dd415d00999bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga999ea41331acdc3dd386bcebc0d57b40"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssChangelog.html#ga999ea41331acdc3dd386bcebc0d57b40">NH_CSS_MINOR_VERSION</a>&#160;&#160;&#160;0</td></tr>
@@ -139,12 +139,17 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NH_CSS_MAJOR_VERSION&#160;&#160;&#160;1</td>
+          <td class="memname">#define NH_CSS_MAJOR_VERSION&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>The major version is used for the completion of big functionalities. </p>
+<p>2021-05-18 | v0.2.0.0 <a class="anchor" id="v0.2.0.0"></a></p><ul>
+<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Improve logging.</li>
+<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Add fragment tree based layout/rendering.</li>
+<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Add inline-box fragmentation.</li>
+</ul>
 <p>2021-05-15 | v0.1.0.0 <a class="anchor" id="v0.1.0.0"></a></p><ul>
 <li><a href="https://github.com/dajofrey">Dajo Frey</a>: Add <a class="el" href="group__nhcssTypedefs.html#gaa6f1204b2924560ef1ab72d44d2c2cf0">nh_css_RenderContext</a> routines.</li>
 <li><a href="https://github.com/dajofrey">Dajo Frey</a>: Add CSSOM interfaces.</li>
@@ -180,11 +185,11 @@ Macros</h2></td></tr>
 <li><a href="https://github.com/dajofrey">Dajo Frey</a>: Improve text-rendering by offsetting correctly using the font ascender in nh_css_getTextVertices().</li>
 </ul>
 <p>2021-04-24 | v0.0.1.0 <a class="anchor" id="v0.0.1.0"></a></p><ul>
-<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Improve layout algorithm in <a class="el" href="group__nhcssFunctions.html#gac00d875bad4daeccde7874b877ffdbaa">nh_css_arrangeBlockFormattingContext()</a>.</li>
+<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Improve layout algorithm in <a class="el" href="group__nhcssFunctions.html#ga96a0d1b800087efccde9fadcb6ffc938" title="netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT">nh_css_arrangeBlockFormattingContext()</a>.</li>
 <li><a href="https://github.com/dajofrey">Dajo Frey</a>: Add <a class="el" href="group__nhcssFunctions.html#gaeb08a71ee61f2cf72803fdcda8f2fd64">nh_css_isLengthValue()</a> and <a class="el" href="group__nhcssFunctions.html#ga78b6bdfd3d1c3cf204ad33083abcfe08">nh_css_isLengthPercentageValue()</a>.</li>
 <li><a href="https://github.com/dajofrey">Dajo Frey</a>: Fix not initializing <a class="el" href="structnh__css__Declaration.html#a9d20a53e3fe55f6f180e29e7dc5f99aa">nh_css_Declaration::important</a>.</li>
-<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Add very simple margin-collapse routine <a class="el" href="group__nhcssFunctions.html#ga936aa2a4d1ab75394dfac3472a8e717d">nh_css_collapse()</a>.</li>
-<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Fix wrong variable assignments in <a class="el" href="group__nhcssFunctions.html#gac7399ce619c86750bb1fd86352dd505e">nh_css_computeBoxValues()</a>.</li>
+<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Add very simple margin-collapse routine nh_css_collapse().</li>
+<li><a href="https://github.com/dajofrey">Dajo Frey</a>: Fix wrong variable assignments in <a class="el" href="group__nhcssFunctions.html#ga4a868ca1509e9437d16da345f6fd96af">nh_css_computeBoxValues()</a>.</li>
 <li><a href="https://github.com/dajofrey">Dajo Frey</a>: Improve font-size and margin-block/margin-inline handling.</li>
 </ul>
 <p>2021-02-23 | v0.0.0.0</p><ul>
@@ -250,7 +255,7 @@ Macros</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.2.6.9</b>
+<b>rev.0.3.6.10</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

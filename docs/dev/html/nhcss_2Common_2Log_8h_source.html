@@ -100,72 +100,78 @@ $(document).ready(function(){initNavTree('nhcss_2Common_2Log_8h_source.html','')
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../Main/SourceTree.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../Main/BoxTree.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Main/Renderer.h&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Properties/Filter.h&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../Properties/Values.h&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;API.h&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;Result.h&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga258e69d90c2902681f9e41bb40363697">_nh_css_logBegin</a>(</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *file_p, <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *function_p</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    );</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga1479f0561e3402559c7140757056d6c9">_nh_css_logEnd</a>(</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *file_p, <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *function_p</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    );</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga5b6db3ab8e1019b05646bd96c257ad3b">_nh_css_logDiagnosticEnd</a>(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *file_p, <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *function_p, <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> result, <span class="keywordtype">int</span> line</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    );</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gace092ed6c8db80844928d878d28fd23d">nh_css_logTokens</a>(</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="code" href="structnh__Array.html">nh_Array</a> *Tokens_p</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    );</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gab88dbc4546b2fd0b01c374c1e40e4365">nh_css_logRawRules</a>(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="code" href="structnh__Array.html">nh_Array</a> *Rules_p</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    );</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga94b68b83ab9842ecb8b489a5a5b2c65b">nh_css_logRules</a>(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="code" href="structnh__List.html">nh_List</a> *StyleRules_p</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    );</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga83d72823686edc94e3e4c4b5513352cb">nh_css_logFilter</a>(</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        nh_css_LogContext *LogContext_p, <a class="code" href="structnh__css__Filter.html">nh_css_Filter</a> *Filter_p</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    );</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga0fc7c1806bec031e1ef650e24aa902b7">nh_css_logSpecifiedValues</a>(</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        nh_css_LogContext *LogContext_p, <a class="code" href="structnh__Array.html">nh_Array</a> *SpecifiedValues_p</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//    NH_CSS_RESULT nh_css_logFormattingTree(</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//        nh_css_LogContext *LogContext_p, nh_css_FormattingNode *Root_p</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//    );</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga997f0dd4d9e60e3d322c302168d0f76f">nh_css_logBoxTree</a>(</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, nh_css_BoxTree Tree </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gaef2468f69598503fc8aff282037f74cb">nh_css_logSourceTree</a>(</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, nh_css_Source *Root_p</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    );</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif </span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Main/FragmentTree.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Main/Renderer.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../Properties/Filter.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../Properties/Values.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;API.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;Result.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga258e69d90c2902681f9e41bb40363697">_nh_css_logBegin</a>(</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *file_p, <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *function_p</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    );</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga1479f0561e3402559c7140757056d6c9">_nh_css_logEnd</a>(</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *file_p, <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *function_p</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga5b6db3ab8e1019b05646bd96c257ad3b">_nh_css_logDiagnosticEnd</a>(</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *file_p, <span class="keyword">const</span> <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *function_p, <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> result, <span class="keywordtype">int</span> line</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gace092ed6c8db80844928d878d28fd23d">nh_css_logTokens</a>(</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="code" href="structnh__Array.html">nh_Array</a> *Tokens_p</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gab88dbc4546b2fd0b01c374c1e40e4365">nh_css_logRawRules</a>(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="code" href="structnh__Array.html">nh_Array</a> *Rules_p</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga94b68b83ab9842ecb8b489a5a5b2c65b">nh_css_logRules</a>(</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, <a class="code" href="structnh__List.html">nh_List</a> *StyleRules_p</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga83d72823686edc94e3e4c4b5513352cb">nh_css_logFilter</a>(</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        nh_css_LogContext *LogContext_p, <a class="code" href="structnh__css__Filter.html">nh_css_Filter</a> *Filter_p</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    );</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga0fc7c1806bec031e1ef650e24aa902b7">nh_css_logSpecifiedValues</a>(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        nh_css_LogContext *LogContext_p, <a class="code" href="structnh__Array.html">nh_Array</a> *SpecifiedValues_p</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//    NH_CSS_RESULT nh_css_logFormattingTree(</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//        nh_css_LogContext *LogContext_p, nh_css_FormattingNode *Root_p</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//    );</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga997f0dd4d9e60e3d322c302168d0f76f">nh_css_logBoxTree</a>(</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, nh_css_BoxTree Tree </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gaef2468f69598503fc8aff282037f74cb">nh_css_logSourceTree</a>(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, nh_css_Source *Root_p</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    );</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga1037d4ec7679e734ebd5daf9d77dcb0e">nh_css_logFragmentTree</a>(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *logId_p, nh_css_FragmentTree Tree</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif </span></div>
 <div class="ttc" id="agroup__nhcoreTypedefs_html_ga97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> API.h:20</div></div>
 <div class="ttc" id="agroup__nhcssEnums_html_ga5e92e4500eb7c137bfb01ca5d4d608db"><div class="ttname"><a href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a></div><div class="ttdeci">NH_CSS_RESULT</div><div class="ttdoc">Return values for functions.</div><div class="ttdef"><b>Definition:</b> Result.h:22</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga0fc7c1806bec031e1ef650e24aa902b7"><div class="ttname"><a href="group__nhcssFunctions.html#ga0fc7c1806bec031e1ef650e24aa902b7">nh_css_logSpecifiedValues</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logSpecifiedValues(nh_css_LogContext *LogContext_p, nh_Array *SpecifiedValues_p)</div><div class="ttdef"><b>Definition:</b> Log.c:418</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga1479f0561e3402559c7140757056d6c9"><div class="ttname"><a href="group__nhcssFunctions.html#ga1479f0561e3402559c7140757056d6c9">_nh_css_logEnd</a></div><div class="ttdeci">NH_CSS_RESULT _nh_css_logEnd(const NH_BYTE *file_p, const NH_BYTE *function_p)</div><div class="ttdef"><b>Definition:</b> Log.c:36</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga258e69d90c2902681f9e41bb40363697"><div class="ttname"><a href="group__nhcssFunctions.html#ga258e69d90c2902681f9e41bb40363697">_nh_css_logBegin</a></div><div class="ttdeci">NH_CSS_RESULT _nh_css_logBegin(const NH_BYTE *file_p, const NH_BYTE *function_p)</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT</div><div class="ttdef"><b>Definition:</b> Log.c:29</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga5b6db3ab8e1019b05646bd96c257ad3b"><div class="ttname"><a href="group__nhcssFunctions.html#ga5b6db3ab8e1019b05646bd96c257ad3b">_nh_css_logDiagnosticEnd</a></div><div class="ttdeci">NH_CSS_RESULT _nh_css_logDiagnosticEnd(const NH_BYTE *file_p, const NH_BYTE *function_p, NH_CSS_RESULT result, int line)</div><div class="ttdef"><b>Definition:</b> Log.c:43</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga83d72823686edc94e3e4c4b5513352cb"><div class="ttname"><a href="group__nhcssFunctions.html#ga83d72823686edc94e3e4c4b5513352cb">nh_css_logFilter</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logFilter(nh_css_LogContext *LogContext_p, nh_css_Filter *Filter_p)</div><div class="ttdef"><b>Definition:</b> Log.c:341</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga94b68b83ab9842ecb8b489a5a5b2c65b"><div class="ttname"><a href="group__nhcssFunctions.html#ga94b68b83ab9842ecb8b489a5a5b2c65b">nh_css_logRules</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logRules(NH_BYTE *logId_p, nh_List *StyleRules_p)</div><div class="ttdef"><b>Definition:</b> Log.c:281</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga997f0dd4d9e60e3d322c302168d0f76f"><div class="ttname"><a href="group__nhcssFunctions.html#ga997f0dd4d9e60e3d322c302168d0f76f">nh_css_logBoxTree</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logBoxTree(NH_BYTE *logId_p, nh_css_BoxTree Tree)</div><div class="ttdef"><b>Definition:</b> Log.c:615</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_gab88dbc4546b2fd0b01c374c1e40e4365"><div class="ttname"><a href="group__nhcssFunctions.html#gab88dbc4546b2fd0b01c374c1e40e4365">nh_css_logRawRules</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logRawRules(NH_BYTE *logId_p, nh_Array *Rules_p)</div><div class="ttdef"><b>Definition:</b> Log.c:175</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_gace092ed6c8db80844928d878d28fd23d"><div class="ttname"><a href="group__nhcssFunctions.html#gace092ed6c8db80844928d878d28fd23d">nh_css_logTokens</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logTokens(NH_BYTE *logId_p, nh_Array *Tokens_p)</div><div class="ttdef"><b>Definition:</b> Log.c:93</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_gaef2468f69598503fc8aff282037f74cb"><div class="ttname"><a href="group__nhcssFunctions.html#gaef2468f69598503fc8aff282037f74cb">nh_css_logSourceTree</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logSourceTree(NH_BYTE *logId_p, nh_css_Source *Root_p)</div><div class="ttdef"><b>Definition:</b> Log.c:524</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga0fc7c1806bec031e1ef650e24aa902b7"><div class="ttname"><a href="group__nhcssFunctions.html#ga0fc7c1806bec031e1ef650e24aa902b7">nh_css_logSpecifiedValues</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logSpecifiedValues(nh_css_LogContext *LogContext_p, nh_Array *SpecifiedValues_p)</div><div class="ttdef"><b>Definition:</b> Log.c:420</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga1037d4ec7679e734ebd5daf9d77dcb0e"><div class="ttname"><a href="group__nhcssFunctions.html#ga1037d4ec7679e734ebd5daf9d77dcb0e">nh_css_logFragmentTree</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logFragmentTree(NH_BYTE *logId_p, nh_css_FragmentTree Tree)</div><div class="ttdef"><b>Definition:</b> Log.c:613</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga1479f0561e3402559c7140757056d6c9"><div class="ttname"><a href="group__nhcssFunctions.html#ga1479f0561e3402559c7140757056d6c9">_nh_css_logEnd</a></div><div class="ttdeci">NH_CSS_RESULT _nh_css_logEnd(const NH_BYTE *file_p, const NH_BYTE *function_p)</div><div class="ttdef"><b>Definition:</b> Log.c:38</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga258e69d90c2902681f9e41bb40363697"><div class="ttname"><a href="group__nhcssFunctions.html#ga258e69d90c2902681f9e41bb40363697">_nh_css_logBegin</a></div><div class="ttdeci">NH_CSS_RESULT _nh_css_logBegin(const NH_BYTE *file_p, const NH_BYTE *function_p)</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT</div><div class="ttdef"><b>Definition:</b> Log.c:31</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga5b6db3ab8e1019b05646bd96c257ad3b"><div class="ttname"><a href="group__nhcssFunctions.html#ga5b6db3ab8e1019b05646bd96c257ad3b">_nh_css_logDiagnosticEnd</a></div><div class="ttdeci">NH_CSS_RESULT _nh_css_logDiagnosticEnd(const NH_BYTE *file_p, const NH_BYTE *function_p, NH_CSS_RESULT result, int line)</div><div class="ttdef"><b>Definition:</b> Log.c:45</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga83d72823686edc94e3e4c4b5513352cb"><div class="ttname"><a href="group__nhcssFunctions.html#ga83d72823686edc94e3e4c4b5513352cb">nh_css_logFilter</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logFilter(nh_css_LogContext *LogContext_p, nh_css_Filter *Filter_p)</div><div class="ttdef"><b>Definition:</b> Log.c:343</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga94b68b83ab9842ecb8b489a5a5b2c65b"><div class="ttname"><a href="group__nhcssFunctions.html#ga94b68b83ab9842ecb8b489a5a5b2c65b">nh_css_logRules</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logRules(NH_BYTE *logId_p, nh_List *StyleRules_p)</div><div class="ttdef"><b>Definition:</b> Log.c:283</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_ga997f0dd4d9e60e3d322c302168d0f76f"><div class="ttname"><a href="group__nhcssFunctions.html#ga997f0dd4d9e60e3d322c302168d0f76f">nh_css_logBoxTree</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logBoxTree(NH_BYTE *logId_p, nh_css_BoxTree Tree)</div><div class="ttdef"><b>Definition:</b> Log.c:550</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_gab88dbc4546b2fd0b01c374c1e40e4365"><div class="ttname"><a href="group__nhcssFunctions.html#gab88dbc4546b2fd0b01c374c1e40e4365">nh_css_logRawRules</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logRawRules(NH_BYTE *logId_p, nh_Array *Rules_p)</div><div class="ttdef"><b>Definition:</b> Log.c:177</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_gace092ed6c8db80844928d878d28fd23d"><div class="ttname"><a href="group__nhcssFunctions.html#gace092ed6c8db80844928d878d28fd23d">nh_css_logTokens</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logTokens(NH_BYTE *logId_p, nh_Array *Tokens_p)</div><div class="ttdef"><b>Definition:</b> Log.c:95</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_gaef2468f69598503fc8aff282037f74cb"><div class="ttname"><a href="group__nhcssFunctions.html#gaef2468f69598503fc8aff282037f74cb">nh_css_logSourceTree</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_logSourceTree(NH_BYTE *logId_p, nh_css_Source *Root_p)</div><div class="ttdef"><b>Definition:</b> Log.c:473</div></div>
 <div class="ttc" id="astructnh__Array_html"><div class="ttname"><a href="structnh__Array.html">nh_Array</a></div><div class="ttdoc">Generic linked-list which holds data pointers.</div><div class="ttdef"><b>Definition:</b> API.h:95</div></div>
 <div class="ttc" id="astructnh__List_html"><div class="ttname"><a href="structnh__List.html">nh_List</a></div><div class="ttdoc">Dynamic list implementation using a two dimensional array.</div><div class="ttdef"><b>Definition:</b> API.h:106</div></div>
 <div class="ttc" id="astructnh__css__Filter_html"><div class="ttname"><a href="structnh__css__Filter.html">nh_css_Filter</a></div><div class="ttdef"><b>Definition:</b> Filter.h:47</div></div>
@@ -183,7 +189,7 @@ $(document).ready(function(){initNavTree('nhcss_2Common_2Log_8h_source.html','')
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.2.6.9</b>
+<b>rev.0.3.6.10</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

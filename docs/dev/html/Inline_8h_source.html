@@ -98,20 +98,21 @@ $(document).ready(function(){initNavTree('Inline_8h_source.html',''); initResiza
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../Main/BoxTree.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../Main/FragmentTree.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../Common/API.h&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../Common/Result.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#ga4fd8da2e85ade2d52d4c68b1499c91b3">nh_css_arrangeInlineFormattingContext</a>(</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        nh_css_Box *Box_p, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> yOffset</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a> <a class="code" href="group__nhcssFunctions.html#gaeea872afa90326bed4bc99701c8ecac5">nh_css_arrangeInlineFormattingContext</a>(</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        nh_css_Fragment *Fragment_p, <a class="code" href="group__nhcoreTypedefs.html#ga6c1798d303514c640fd549973c9c80f7">NH_PIXEL</a> yOffset, <span class="keywordtype">int</span> *newFragments_p</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    );</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agroup__nhcoreTypedefs_html_ga6c1798d303514c640fd549973c9c80f7"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga6c1798d303514c640fd549973c9c80f7">NH_PIXEL</a></div><div class="ttdeci">int NH_PIXEL</div><div class="ttdef"><b>Definition:</b> API.h:22</div></div>
 <div class="ttc" id="agroup__nhcssEnums_html_ga5e92e4500eb7c137bfb01ca5d4d608db"><div class="ttname"><a href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a></div><div class="ttdeci">NH_CSS_RESULT</div><div class="ttdoc">Return values for functions.</div><div class="ttdef"><b>Definition:</b> Result.h:22</div></div>
-<div class="ttc" id="agroup__nhcssFunctions_html_ga4fd8da2e85ade2d52d4c68b1499c91b3"><div class="ttname"><a href="group__nhcssFunctions.html#ga4fd8da2e85ade2d52d4c68b1499c91b3">nh_css_arrangeInlineFormattingContext</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_arrangeInlineFormattingContext(nh_css_Box *Box_p, unsigned int yOffset)</div><div class="ttdef"><b>Definition:</b> Inline.c:230</div></div>
+<div class="ttc" id="agroup__nhcssFunctions_html_gaeea872afa90326bed4bc99701c8ecac5"><div class="ttname"><a href="group__nhcssFunctions.html#gaeea872afa90326bed4bc99701c8ecac5">nh_css_arrangeInlineFormattingContext</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_arrangeInlineFormattingContext(nh_css_Fragment *Fragment_p, NH_PIXEL yOffset, int *newFragments_p)</div><div class="ttdef"><b>Definition:</b> Inline.c:300</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
@@ -126,7 +127,7 @@ $(document).ready(function(){initNavTree('Inline_8h_source.html',''); initResiza
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.2.6.9</b>
+<b>rev.0.3.6.10</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>
