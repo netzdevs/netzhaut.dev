@@ -23,6 +23,10 @@ var group__nhcssStructs =
       [ "textHeight", "structnh__css__TextValues.html#ac90c01da534988793cf9a266b72e4593", null ],
       [ "textWidth", "structnh__css__TextValues.html#ad920b0bde9f0127cd9a260e75516849e", null ]
     ] ],
+    [ "nh_css_BoxSizing", "structnh__css__BoxSizing.html", [
+      [ "type", "structnh__css__BoxSizing.html#ac29b050e5110f736f847a2ff27e81fc6", null ],
+      [ "value", "structnh__css__BoxSizing.html#a64fcbdef14e22dc406a2347ea721232e", null ]
+    ] ],
     [ "nh_css_BoxValues", "structnh__css__BoxValues.html", [
       [ "BackgroundColor", "structnh__css__BoxValues.html#a5aa059bb2019706396caf07ca626486d", null ],
       [ "borderBottom", "structnh__css__BoxValues.html#a9fa8e8f175c78da0d01fe735403b8b91", null ],
@@ -41,15 +45,21 @@ var group__nhcssStructs =
       [ "borderTopLeftRadius", "structnh__css__BoxValues.html#a22e45f2a206d57ec574c029054a1c7ed", null ],
       [ "borderTopRightRadius", "structnh__css__BoxValues.html#a29084178060cc265c4edbb8ca062e4fb", null ],
       [ "borderTopStyle", "structnh__css__BoxValues.html#ab7a369e9ed6d4d2fee743438d988c102", null ],
+      [ "Height", "structnh__css__BoxValues.html#a12bf6311cdcfd16edcd2ee2ea781ab29", null ],
       [ "marginBottom", "structnh__css__BoxValues.html#ae82672e4cd72d119618aae2a252d524f", null ],
       [ "marginLeft", "structnh__css__BoxValues.html#aa1bde462252eb6e967c162a03488d45e", null ],
       [ "marginRight", "structnh__css__BoxValues.html#a3bfcd9563c85a994d180398e275aaca9", null ],
       [ "marginTop", "structnh__css__BoxValues.html#a79951e9a0f1f0db2d8e19f2be49a6c23", null ],
+      [ "MaxHeight", "structnh__css__BoxValues.html#a31761a6a3c69de3552f97f1c8756a1aa", null ],
+      [ "MaxWidth", "structnh__css__BoxValues.html#a26ce177020904f62c311e63714f8cf70", null ],
+      [ "MinHeight", "structnh__css__BoxValues.html#a99159f4984402aeac82f4361ff5e287c", null ],
+      [ "MinWidth", "structnh__css__BoxValues.html#a48a1fcca4e0cfa5eacd29b70ae6d7502", null ],
       [ "paddingBottom", "structnh__css__BoxValues.html#a59fd08508be8f9873076f0cb1cd32ba8", null ],
       [ "paddingLeft", "structnh__css__BoxValues.html#a190b821ce6618204349d7fa387fbbf1d", null ],
       [ "paddingRight", "structnh__css__BoxValues.html#a55f0482a633628dbd0b5931e805c5bd5", null ],
       [ "paddingTop", "structnh__css__BoxValues.html#af6a71544aca646ea476314c95718bde4", null ],
-      [ "position", "structnh__css__BoxValues.html#aa10cdc661d709d8e4bfb5d2e1a30c7f3", null ]
+      [ "position", "structnh__css__BoxValues.html#aa10cdc661d709d8e4bfb5d2e1a30c7f3", null ],
+      [ "Width", "structnh__css__BoxValues.html#a0f99c8a17249b257b6319768967b363a", null ]
     ] ],
     [ "nh_css_SimpleBlock", "structnh__css__SimpleBlock.html", [
       [ "ComponentValues", "structnh__css__SimpleBlock.html#a6f5f092f82e1d0dcb144319a2ca98dbc", null ],

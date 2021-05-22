@@ -63,6 +63,7 @@ var NAVTREE =
       [ "Minor Specifications", "conformance.html#minorspecs", null ],
       [ "CSS Specifications", "conformance.html#cssspecs", null ]
     ] ],
+    [ "The netzhaut Authors", "md_meta_authors.html", null ],
     [ "Project Layout", "projectlayout.html", [
       [ "Root Layout", "projectlayout.html#RootLayout", null ],
       [ "Source Layout", "projectlayout.html#SourceLayout", null ],
@@ -105,18 +106,18 @@ var NAVTREEINDEX =
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251cac30e33526a53ab8f65cdeb8211a710e5",
 "group__nhcoreEnums.html#ggae0b2efa3c723c1ac9cf24b25d5aa251cae5039a2ec2a0973d22f0f65816da44ab",
 "group__nhcoreFunctions.html#ga35744fc1d29a4f2f2bf1509deb4e9cc0",
-"group__nhcssEnums.html#gga5a9fae66757261c5eceadcb9a8149185a505975055fc6ee1f872b79d3e70bb8cf",
-"group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca5ed049abe5b4c75371bb67a5cd7275b0",
-"group__nhecmascriptEnums.html#gga384dfad47a30e2fd536a54eda8e73a23a91484f5edfb36f6795e15ec2d3983baa",
-"group__nhecmascriptFunctions.html#ga6901b40a17b37eeba62702b7921449ee",
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffebaea51ecb5dea57a6522397afc06971f25",
-"group__nhhtmlEnums.html#gga943494f6405ac44a581774cdc5eb91ada54589a9c291d27c8d5b31d4818bf9972",
-"group__nhnetworkEnums.html#ggaad4d920224cb20aad3e6b13f5baf007bab87ac8cffcb26caf00a70b1179608a98",
-"group__nhwsiChangelog.html#ga35b3e8002a29da730963aab4fe29f90b",
-"structnh__Config_1_1Flags_1_1Log.html#a9b91476b2aa85160fddb0e7c53f4b44e",
-"structnh__css__ClipBox.html#ad76879181ec7b42a98b2bff01ab7ccfb",
-"structnh__ecmascript__Realm.html#a94895e57506aa671f8f48fdb7bdb29f0",
-"structnh__tty__TextFile.html#ae7275145e8a8aa00556f90dd18031ec7"
+"group__nhcssEnums.html#gga5a9fae66757261c5eceadcb9a8149185a5039975c253856aeb84d262913f371b7",
+"group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca5bd4e74bbd18501e243f4434fa7460d3",
+"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a85e50916f9d4e3a1b593c884449bab44",
+"group__nhecmascriptFunctions.html#ga5f41bc44061e819d8c2721a8834c5d1d",
+"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffebac56d91e6dcfa4bd47dd475d2bd10b89f",
+"group__nhhtmlEnums.html#gga943494f6405ac44a581774cdc5eb91ada49acc74e665c63bc74c555928d80b000",
+"group__nhnetworkChangelog.html#gac10f90d186f88b86198151ba36ea6fb5",
+"group__nhwebidlVars.html",
+"structnh__Config_1_1Flags_1_1Log.html#a17750ae71fb8fc0cb4cffacb2898cebc",
+"structnh__css__BoxValues.html#a79951e9a0f1f0db2d8e19f2be49a6c23",
+"structnh__ecmascript__ParseNode.html#ab80932050cdaaef1efcef432a763fd2d",
+"structnh__tty__Terminal.html#a61b65d959442833a9877a475287aaa2f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

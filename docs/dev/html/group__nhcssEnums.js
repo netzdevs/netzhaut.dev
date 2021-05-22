@@ -1,5 +1,12 @@
 var group__nhcssEnums =
 [
+    [ "NH_CSS_BOX_SIZING", "group__nhcssEnums.html#gae276c30f7f0640dbace20c90c42feae0", [
+      [ "NH_CSS_BOX_SIZING_AUTO", "group__nhcssEnums.html#ggae276c30f7f0640dbace20c90c42feae0a00b3dff176fd8150b9709938c2311ae2", null ],
+      [ "NH_CSS_BOX_SIZING_NONE", "group__nhcssEnums.html#ggae276c30f7f0640dbace20c90c42feae0af1577793e31cef35ad3fb19e68cc3c42", null ],
+      [ "NH_CSS_BOX_SIZING_MIN_CONTENT", "group__nhcssEnums.html#ggae276c30f7f0640dbace20c90c42feae0a07f4d22c1ca18f83a4ca86a30db017e0", null ],
+      [ "NH_CSS_BOX_SIZING_MAX_CONTENT", "group__nhcssEnums.html#ggae276c30f7f0640dbace20c90c42feae0a6c17c22fb2ed476930986e7043f037c8", null ],
+      [ "NH_CSS_BOX_SIZING_FIT_CONTENT", "group__nhcssEnums.html#ggae276c30f7f0640dbace20c90c42feae0a842ad71fc581cb5366f802bd7ec874ae", null ]
+    ] ],
     [ "NH_CSS_COLOR", "group__nhcssEnums.html#ga5a9fae66757261c5eceadcb9a8149185", [
       [ "NH_CSS_COLOR_ALICE_BLUE", "group__nhcssEnums.html#gga5a9fae66757261c5eceadcb9a8149185a15efa899f6e9f343e464beb1456b56cc", null ],
       [ "NH_CSS_COLOR_ANTIQUE_WHITE", "group__nhcssEnums.html#gga5a9fae66757261c5eceadcb9a8149185a73185fba77a7e999cb2dd2cbf108a310", null ],

@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "n",
   8: "_cgmnpv",
   9: "cdefmntv",
-  10: "cdeiprs"
+  10: "cdeiprst"
 };
 
 var indexSectionNames =

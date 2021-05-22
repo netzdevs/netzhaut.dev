@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['system_20architecture_10500',['System Architecture',['../systemarchitecture.html',1,'']]]
+  ['the_20netzhaut_20authors_10234',['The netzhaut Authors',['../md_meta_authors.html',1,'']]]
 ];

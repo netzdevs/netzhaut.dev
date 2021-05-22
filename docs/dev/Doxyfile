@@ -813,7 +813,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = "introduction.md" "meta/guide.md" "meta/roadmap.md" "meta/conformance.md" "architecture/projectlayout.md" "meta/nhmake.md" "architecture/systemarchitecture.md" "architecture/enginearchitecture.md" "design/codestyle.md" \
+INPUT                  = "introduction.md" "meta/guide.md" "meta/roadmap.md" "meta/conformance.md" "meta/authors.md" "architecture/projectlayout.md" "meta/nhmake.md" "architecture/systemarchitecture.md" "architecture/enginearchitecture.md" "design/codestyle.md" \
 "../../../../../src/lib/nhcore/Common" "../../../../../src/lib/nhcore/" \
 "../../../../../src/lib/nhtty/Common" "../../../../../src/lib/nhtty/" \
 "../../../../../src/lib/nhloader/Common" "../../../../../src/lib/nhloader/" \

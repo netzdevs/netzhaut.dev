@@ -3,7 +3,7 @@ var group__nhcssFunctions =
     [ "_nh_css_logBegin", "group__nhcssFunctions.html#ga258e69d90c2902681f9e41bb40363697", null ],
     [ "_nh_css_logDiagnosticEnd", "group__nhcssFunctions.html#ga5b6db3ab8e1019b05646bd96c257ad3b", null ],
     [ "_nh_css_logEnd", "group__nhcssFunctions.html#ga1479f0561e3402559c7140757056d6c9", null ],
-    [ "nh_css_arrangeBlockFormattingContext", "group__nhcssFunctions.html#ga96a0d1b800087efccde9fadcb6ffc938", null ],
+    [ "nh_css_arrangeBlockFormattingContext", "group__nhcssFunctions.html#ga0eba201d198af21a5b316a66c007a28e", null ],
     [ "nh_css_arrangeInlineFormattingContext", "group__nhcssFunctions.html#gaeea872afa90326bed4bc99701c8ecac5", null ],
     [ "nh_css_cascade", "group__nhcssFunctions.html#gadabf7141a124506348caefd08076ad6a", null ],
     [ "nh_css_colorToArray", "group__nhcssFunctions.html#ga9e2c09f37313e40761033a9b83fdc213", null ],
