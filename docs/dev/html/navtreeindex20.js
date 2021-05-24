@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"structnh__tty__Terminal.html#a616a920bc28f6e5d7d59739cda9e489d":[9,1,3,10,2],
 "structnh__tty__Terminal.html#a61b65d959442833a9877a475287aaa2f":[9,1,3,10,5],
 "structnh__tty__Terminal.html#a8227478043b2077214b5f0baf049e1bc":[9,1,3,10,3],
 "structnh__tty__Terminal.html#a903c7f614b9a9c84bd685a6041ec9e86":[9,1,3,10,0],

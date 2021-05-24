@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"group__nhwebidlTypedefs.html#gadf701b357a3ab52232a7a107ad456d4d":[9,8,5,11],
 "group__nhwebidlVars.html":[9,8,6],
 "group__nhwebidlVars.html#ga378591d6bbb5a5b576e6a4767c1c1c94":[9,8,6,0],
 "group__nhwebidlVars.html#ga63689563639c8e9dbf86972c8283584f":[9,8,6,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "structnh__Config_1_1Flags_1_1Enabled.html#a0ce941f2e5e44b59a6d959e54ffdd741":[9,0,3,14,0,0,0],
 "structnh__Config_1_1Flags_1_1Enabled.html#a40de92c7944ebb69bf18ce21b2407035":[9,0,3,14,0,0,1],
 "structnh__Config_1_1Flags_1_1Log.html":[9,0,3,14,0,1],
-"structnh__Config_1_1Flags_1_1Log.html#a0cef593d033b1fcbb8fdd3b066bd52e5":[9,0,3,14,0,1,19],
-"structnh__Config_1_1Flags_1_1Log.html#a13b9885c292a4a45ed1459db0df587fc":[9,0,3,14,0,1,4]
+"structnh__Config_1_1Flags_1_1Log.html#a0cef593d033b1fcbb8fdd3b066bd52e5":[9,0,3,14,0,1,19]
 };
