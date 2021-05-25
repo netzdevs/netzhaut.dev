@@ -1,5 +1,17 @@
 var NAVTREEINDEX16 =
 {
+"group__nhwebidlTypedefs.html#ga4b434b53c51084db968d18a90f4456fe":[9,8,5,10],
+"group__nhwebidlTypedefs.html#ga4d51a1984cbebe2b0fe38b5c17cbebec":[9,8,5,6],
+"group__nhwebidlTypedefs.html#ga78b015e17320f0333f8890e988b7098e":[9,8,5,8],
+"group__nhwebidlTypedefs.html#ga7987c8e911d502e774142311ef5df45f":[9,8,5,13],
+"group__nhwebidlTypedefs.html#ga7da14f11b180f9ce701dedc5b55007fe":[9,8,5,3],
+"group__nhwebidlTypedefs.html#ga7e39d2ade543a1b7f4f9551de9c7c934":[9,8,5,0],
+"group__nhwebidlTypedefs.html#ga813becf82d2dd0c3c23e636c84b87e4b":[9,8,5,1],
+"group__nhwebidlTypedefs.html#ga92ba7d00198853e19ec1f3714073582e":[9,8,5,2],
+"group__nhwebidlTypedefs.html#ga983f4065633084d2e00110638ca853fc":[9,8,5,9],
+"group__nhwebidlTypedefs.html#ga9b651b01a0512adbd004b35410852070":[9,8,5,4],
+"group__nhwebidlTypedefs.html#gaa3d3fb15edea44145c58ee8ec4362aaa":[9,8,5,14],
+"group__nhwebidlTypedefs.html#gaa9fe145864cebaeec9a00f7ef4f64e1a":[9,8,5,12],
 "group__nhwebidlTypedefs.html#gadf701b357a3ab52232a7a107ad456d4d":[9,8,5,11],
 "group__nhwebidlVars.html":[9,8,6],
 "group__nhwebidlVars.html#ga378591d6bbb5a5b576e6a4767c1c1c94":[9,8,6,0],
@@ -237,17 +249,5 @@ var NAVTREEINDEX16 =
 "structnh__Color.html#aff9e75650b16dde6015f4f7c4f00696b":[9,0,3,11,2],
 "structnh__Config.html":[9,0,3,14],
 "structnh__Config.html#a8a6545da7bd7d7217a76ac6d51c5016a":[9,0,3,14,2],
-"structnh__Config.html#a9af4eff030498451d91754e7f0b593aa":[9,0,3,14,3],
-"structnh__Config.html#ae786a36fe3bcd5362d1cd627e36a1d36":[9,0,3,14,4],
-"structnh__Config_1_1Flags.html":[9,0,3,14,0],
-"structnh__Config_1_1Flags.html#a16edd5961e6d6c7a7f837f3280559be7":[9,0,3,14,0,2],
-"structnh__Config_1_1Flags.html#a1f5bc21dcd2a85b44830578ec29509c1":[9,0,3,14,0,6],
-"structnh__Config_1_1Flags.html#a32512618f8c014923417cf4ea8d43f24":[9,0,3,14,0,3],
-"structnh__Config_1_1Flags.html#a7e3399004c5ba0d1de732b8336aa7a60":[9,0,3,14,0,5],
-"structnh__Config_1_1Flags.html#ad33fb44409a513c444a3f88441102c5d":[9,0,3,14,0,4],
-"structnh__Config_1_1Flags_1_1Enabled.html":[9,0,3,14,0,0],
-"structnh__Config_1_1Flags_1_1Enabled.html#a0ce941f2e5e44b59a6d959e54ffdd741":[9,0,3,14,0,0,0],
-"structnh__Config_1_1Flags_1_1Enabled.html#a40de92c7944ebb69bf18ce21b2407035":[9,0,3,14,0,0,1],
-"structnh__Config_1_1Flags_1_1Log.html":[9,0,3,14,0,1],
-"structnh__Config_1_1Flags_1_1Log.html#a0cef593d033b1fcbb8fdd3b066bd52e5":[9,0,3,14,0,1,19]
+"structnh__Config.html#a9af4eff030498451d91754e7f0b593aa":[9,0,3,14,3]
 };

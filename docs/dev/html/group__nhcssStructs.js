@@ -20,6 +20,8 @@ var group__nhcssStructs =
       [ "fontSize", "structnh__css__TextValues.html#a7ad587697046cb00f2dcca2ea73006f2", null ],
       [ "FontStyle", "structnh__css__TextValues.html#acab274afab9d2837d02fbdf2cea7d2b8", null ],
       [ "Text", "structnh__css__TextValues.html#ad47d65981d922e80d7735c5e7b1627ea", null ],
+      [ "textAlignAll", "structnh__css__TextValues.html#afec8ce17f4ce6388d97742e69deee45b", null ],
+      [ "textAlignLast", "structnh__css__TextValues.html#adf8c3f7cd7c170c5fc4c0735e0ab1448", null ],
       [ "textHeight", "structnh__css__TextValues.html#ac90c01da534988793cf9a266b72e4593", null ],
       [ "textWidth", "structnh__css__TextValues.html#ad920b0bde9f0127cd9a260e75516849e", null ]
     ] ],

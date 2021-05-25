@@ -31,6 +31,7 @@ This document describes conformance progress of web-technology implementations b
 <div style="font-size:20px;">[CSS Object Model (CSSOM)](https://www.w3.org/TR/cssom-1/) __0%__</div>
 <div style="font-size:20px;">[CSS Style Attributes](https://www.w3.org/TR/css-style-attr/) __0%__</div>
 <div style="font-size:20px;">[CSS Syntax Module Level 3](https://www.w3.org/TR/css-syntax-3/) __50%__</div>
+<div style="font-size:20px;">[CSS Text Module Level 3](https://www.w3.org/TR/css-text-3) __0%__</div>
 <div style="font-size:20px;">[CSS Values and Units Module Level 4](https://www.w3.org/TR/css-values-4/) __0%__</div>
 <div style="font-size:20px;">[CSS Writing Modes Level 4](https://www.w3.org/TR/css-writing-modes-4/) __0%__</div>
 <div style="font-size:20px;">[Selectors Level 4](https://www.w3.org/TR/selectors-4/) __20%__</div>

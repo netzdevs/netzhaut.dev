@@ -301,6 +301,8 @@ var group__nhcssEnums =
       [ "NH_CSS_PROPERTY_STRESS", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca5b01826777b691ae037b0d37a165007b", null ],
       [ "NH_CSS_PROPERTY_TABLE_LAYOUT", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca1b36aebf69ff3cb822829558ef937a58", null ],
       [ "NH_CSS_PROPERTY_TEXT_ALIGN", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cae24a49dfeb45375da2e18d77a282e335", null ],
+      [ "NH_CSS_PROPERTY_TEXT_ALIGN_ALL", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca05c3b245058cb585a2ff69cbfea12396", null ],
+      [ "NH_CSS_PROPERTY_TEXT_ALIGN_LAST", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca7447770e70571fdee10871bf97753f3c", null ],
       [ "NH_CSS_PROPERTY_TEXT_DECORATION", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cac646ba0d57f77ccaf400f83502b458c6", null ],
       [ "NH_CSS_PROPERTY_TEXT_INDENT", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6caf41d1c0f253b187e0f491e3e599e16fc", null ],
       [ "NH_CSS_PROPERTY_TEXT_ORIENTATION", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca0f88d2a4909303a383b1f6db532f6a91", null ],
@@ -353,6 +355,17 @@ var group__nhcssEnums =
       [ "NH_CSS_SELECTOR_PARSE_NODE_ATTR_MODIFIER", "group__nhcssEnums.html#ggaecf45df1afba40120405aaa8cb1d74e1a8069551473bbbee1ac49f6890d5d97a5", null ],
       [ "NH_CSS_SELECTOR_PARSE_NODE_PSEUDO_CLASS_SELECTOR", "group__nhcssEnums.html#ggaecf45df1afba40120405aaa8cb1d74e1a3b85cfb32857367e5524d6d7005f7268", null ],
       [ "NH_CSS_SELECTOR_PARSE_NODE_PSEUDO_ELEMENT_SELECTOR", "group__nhcssEnums.html#ggaecf45df1afba40120405aaa8cb1d74e1a040b451794b5772a72998392c4039096", null ]
+    ] ],
+    [ "NH_CSS_TEXT_ALIGN", "group__nhcssEnums.html#ga5f17e3da38fb5e1b326a9b2706c99891", [
+      [ "NH_CSS_TEXT_ALIGN_START", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891afc0ac73a755a7b13371ec999c5260c71", null ],
+      [ "NH_CSS_TEXT_ALIGN_AUTO", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891a6283878885bbab830d874e644f584ae4", null ],
+      [ "NH_CSS_TEXT_ALIGN_END", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891aaed64df3d8c224311e9cc568db23bd03", null ],
+      [ "NH_CSS_TEXT_ALIGN_LEFT", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891a61595700f8b3bd0d114e850b257c0173", null ],
+      [ "NH_CSS_TEXT_ALIGN_RIGHT", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891a03cbcf01276c2ae6260aef6fd7ae110b", null ],
+      [ "NH_CSS_TEXT_ALIGN_CENTER", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891ad06885ca11d60d7022632291b140d956", null ],
+      [ "NH_CSS_TEXT_ALIGN_JUSTIFY", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891a40d382b2c8c4eba098a918297f275bdb", null ],
+      [ "NH_CSS_TEXT_ALIGN_MATCH_PARENT", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891a19b829a61e2f323434bebf650d4dd21a", null ],
+      [ "NH_CSS_TEXT_ALIGN_JUSTIFY_ALL", "group__nhcssEnums.html#gga5f17e3da38fb5e1b326a9b2706c99891acd1013913bd4521ff4433eda21c54586", null ]
     ] ],
     [ "NH_CSS_TOKEN", "group__nhcssEnums.html#ga92345c0a17e19e42e460a1edbc9629e9", [
       [ "NH_CSS_TOKEN_IDENT", "group__nhcssEnums.html#gga92345c0a17e19e42e460a1edbc9629e9a8aa198237a1751f403ccfbc34c5739e7", null ],

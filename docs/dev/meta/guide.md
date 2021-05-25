@@ -37,6 +37,7 @@ Here is a compilation of specifications which are currently used in development:
 - [CSS Object Model (CSSOM)](https://www.w3.org/TR/cssom-1/)
 - [CSS Style Attributes](https://www.w3.org/TR/css-style-attr/)
 - [CSS Syntax Module Level 3](https://www.w3.org/TR/css-syntax-3/)
+- [CSS Text Module Level 3](https://www.w3.org/TR/css-text-3)
 - [CSS Values and Units Module Level 4](https://www.w3.org/TR/css-values-4/)
 - [CSS Writing Modes Level 4](https://www.w3.org/TR/css-writing-modes-4/)
 - [DOM](https://dom.spec.whatwg.org/)  
