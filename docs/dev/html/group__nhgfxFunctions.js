@@ -1,5 +1,6 @@
 var group__nhgfxFunctions =
 [
+    [ "_nh_gfx_initConfig", "group__nhgfxFunctions.html#gadf567682d1947daa1cb5021af625fb49", null ],
     [ "_nh_gfx_logBegin", "group__nhgfxFunctions.html#ga3991cc123072f70fb7f60ee753adbc37", null ],
     [ "_nh_gfx_logDiagnosticEnd", "group__nhgfxFunctions.html#gae0fc3d370809dc3441d21a35369e2583", null ],
     [ "_nh_gfx_logEnd", "group__nhgfxFunctions.html#ga6c8a35e683e70c3e4426066f0ab0cd20", null ],

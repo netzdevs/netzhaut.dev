@@ -1,5 +1,10 @@
 var group__nhwsiStructs =
 [
+    [ "nh_wsi_Config", "structnh__wsi__Config.html", [
+      [ "logFlow", "structnh__wsi__Config.html#a48a77667272910619018f442c78d6444", null ],
+      [ "logMouse", "structnh__wsi__Config.html#a4f8cff39850e5525809c205f5956f3e7", null ],
+      [ "logWindow", "structnh__wsi__Config.html#aced1741a47004d994061cc9d6d09dce0", null ]
+    ] ],
     [ "nh_wsi_ConfigureEvent", "structnh__wsi__ConfigureEvent.html", [
       [ "Position", "structnh__wsi__ConfigureEvent.html#a09a50698b4b821294d26788d4d4b2dc5", null ],
       [ "Size", "structnh__wsi__ConfigureEvent.html#aa0ed458f23d39d28cf58232853c3f97f", null ]

@@ -90,7 +90,6 @@ $(document).ready(function(){initNavTree('Float_8c.html',''); initResizable(); }
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Float.c File Reference</div>  </div>
@@ -98,67 +97,22 @@ $(document).ready(function(){initNavTree('Float_8c.html',''); initResizable(); }
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Float_8h_source.html">Float.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Block_8h_source.html">Block.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Inline_8h_source.html">Inline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="LayoutValues_8h_source.html">LayoutValues.h</a>&quot;</code><br />
 <code>#include &quot;../Main/FormattingContext.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Log_8h_source.html">../Common/Log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="List_8h_source.html">../../nhcore/List.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Array_8h_source.html">../../nhcore/Array.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="nhcore_2Memory_8h_source.html">../../nhcore/Memory.h</a>&quot;</code><br />
-<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;../../nhcore/Util/List.h&quot;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnh__css__LineBox.html">nh_css_LineBox</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="structnh__css__LineBox.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnh__css__InlineFormattingContext.html">nh_css_InlineFormattingContext</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9443e0bc376766a26d86d931a0da07d9"><td class="memItemLeft" align="right" valign="top">nh_css_Fragment *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Float_8c.html#a9443e0bc376766a26d86d931a0da07d9">nh_css_splitInlineBox</a> (nh_css_Fragment *Box_p, int currentIndex, nh_css_Fragment *NewChild_p)</td></tr>
-<tr class="separator:a9443e0bc376766a26d86d931a0da07d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeea872afa90326bed4bc99701c8ecac5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#gaeea872afa90326bed4bc99701c8ecac5">nh_css_arrangeInlineFormattingContext</a> (nh_css_Fragment *Fragment_p, <a class="el" href="group__nhcoreTypedefs.html#ga6c1798d303514c640fd549973c9c80f7">NH_PIXEL</a> yOffset, int *newFragments_p)</td></tr>
-<tr class="separator:gaeea872afa90326bed4bc99701c8ecac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6121e51d62f59f7a953740f9a3067060"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga6121e51d62f59f7a953740f9a3067060">nh_css_arrangeFloat</a> (<a class="el" href="structnh__css__Layout.html">nh_css_Layout</a> *Layout_p, nh_css_Fragment *Fragment_p)</td></tr>
+<tr class="memdesc:ga6121e51d62f59f7a953740f9a3067060"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__nhcssFunctions.html#ga6121e51d62f59f7a953740f9a3067060">More...</a><br /></td></tr>
+<tr class="separator:ga6121e51d62f59f7a953740f9a3067060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a9443e0bc376766a26d86d931a0da07d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9443e0bc376766a26d86d931a0da07d9">&#9670;&nbsp;</a></span>nh_css_splitInlineBox()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">nh_css_Fragment* nh_css_splitInlineBox </td>
-          <td>(</td>
-          <td class="paramtype">nh_css_Fragment *&#160;</td>
-          <td class="paramname"><em>Box_p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>currentIndex</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">nh_css_Fragment *&#160;</td>
-          <td class="paramname"><em>NewChild_p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
@@ -173,7 +127,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.3.10.12</b>
+<b>rev.0.3.12.16</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

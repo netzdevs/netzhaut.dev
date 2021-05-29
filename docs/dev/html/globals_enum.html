@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 
 <h3><a id="index_n"></a>- n -</h3><ul>
 <li>NH_BOOL
-: <a class="el" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">API.h</a>
+: <a class="el" href="group__nhcoreEnums.html#gaa5bc4d468ba7fc657a127fa6ffca469c">Types.h</a>
 </li>
 <li>NH_CSS_BOX_SIZING
 : <a class="el" href="group__nhcssEnums.html#gae276c30f7f0640dbace20c90c42feae0">LayoutValues.h</a>
@@ -106,6 +106,9 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 </li>
 <li>NH_CSS_DECLARATION_ORIGIN
 : <a class="el" href="group__nhcssEnums.html#ga878bd3154adf86870ce9724c2f0d7c49">Filter.h</a>
+</li>
+<li>NH_CSS_FLOAT
+: <a class="el" href="group__nhcssEnums.html#ga5859665519928a4a058661aa2f6cd55f">LayoutValues.h</a>
 </li>
 <li>NH_CSS_INDEXMAP_E
 : <a class="el" href="nhcss_2Common_2IndexMap_8c.html#ac77d1254f284becbb81c5165a5521db6">IndexMap.c</a>
@@ -139,6 +142,9 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 </li>
 <li>NH_CSS_VALUE_SCOPE
 : <a class="el" href="group__nhcssEnums.html#ga8fd3f4caa86bea3bb1bccc008122e15d">Values.h</a>
+</li>
+<li>NH_CSS_WORD_BREAK
+: <a class="el" href="group__nhcssEnums.html#ga875f81200b343cca91deafe73a507bf8">LayoutValues.h</a>
 </li>
 <li>NH_DOM_RESULT
 : <a class="el" href="group__nhdomEnums.html#ga24923c9d55fec6e04f7b0ac599735852">Result.h</a>
@@ -188,11 +194,8 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 <li>NH_ENCODING_RESULT
 : <a class="el" href="group__nhencodingEnums.html#gae79fa0e2746a22700f41f5e126282a1c">Result.h</a>
 </li>
-<li>NH_ESCAPE
-: <a class="el" href="group__nhcoreEnums.html#ga7b9233aaafb716e3f4b33ebf1201773d">String.h</a>
-</li>
 <li>NH_GFX_API
-: <a class="el" href="group__nhgfxEnums.html#ga21d2442d00fbab18a4e53d156f98da70">API.h</a>
+: <a class="el" href="group__nhgfxEnums.html#ga21d2442d00fbab18a4e53d156f98da70">Types.h</a>
 </li>
 <li>NH_GFX_RESULT
 : <a class="el" href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">Result.h</a>
@@ -234,10 +237,7 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 : <a class="el" href="group__nhloaderEnums.html#ga1a5bd4322ba76a6a93862eb1d694bb9f">Result.h</a>
 </li>
 <li>NH_LOADER_SCOPE
-: <a class="el" href="group__nhloaderEnums.html#ga23e3ff4fac1a51efe9ba0cd3c7553785">API.h</a>
-</li>
-<li>NH_MEDIA
-: <a class="el" href="group__nhcoreEnums.html#gae0b2efa3c723c1ac9cf24b25d5aa251c">MediaType.h</a>
+: <a class="el" href="group__nhloaderEnums.html#ga23e3ff4fac1a51efe9ba0cd3c7553785">Types.h</a>
 </li>
 <li>NH_NETWORK_RESULT
 : <a class="el" href="group__nhnetworkEnums.html#gaad4d920224cb20aad3e6b13f5baf007b">Result.h</a>
@@ -246,31 +246,13 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 : <a class="el" href="group__nhcoreEnums.html#ga69553903dccbc47bc4a7b65724517c61">Result.h</a>
 </li>
 <li>NH_SIGNAL
-: <a class="el" href="group__nhcoreEnums.html#ga28e42e4741d8cc397fa6540cd142da9b">API.h</a>
+: <a class="el" href="group__nhcoreEnums.html#ga28e42e4741d8cc397fa6540cd142da9b">Types.h</a>
 </li>
 <li>NH_SWITCH
-: <a class="el" href="group__nhcoreEnums.html#ga8419da5d2763904acff8a81d19a81a7b">API.h</a>
-</li>
-<li>NH_TAB_STATE
-: <a class="el" href="group__nhcoreEnums.html#gaa335055df9c39f0510115ecc046704e8">Tab.h</a>
-</li>
-<li>NH_TTY_FILE
-: <a class="el" href="group__nhttyEnums.html#gac620116d873b7c5a4681caf3d5ea7f8a">FileEditor.h</a>
-</li>
-<li>NH_TTY_MESSAGE
-: <a class="el" href="group__nhttyEnums.html#ga1b6d652638163734b382da010f42a6e8">Messages.h</a>
+: <a class="el" href="group__nhcoreEnums.html#ga8419da5d2763904acff8a81d19a81a7b">Types.h</a>
 </li>
 <li>NH_TTY_RESULT
 : <a class="el" href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">Result.h</a>
-</li>
-<li>NH_TTY_TEXT
-: <a class="el" href="group__nhttyEnums.html#gaca9b738888edda9f90380b44e8488993">SyntaxHighlights.h</a>
-</li>
-<li>NH_TTY_TILE_COLOR
-: <a class="el" href="group__nhttyEnums.html#gada17ce4059e7c9d948c179db2dfbebb7">Tile.h</a>
-</li>
-<li>NH_TTY_TILE_ORIENTATION
-: <a class="el" href="group__nhttyEnums.html#gab42095075d74d27cf79b749171f5f5ff">Tile.h</a>
 </li>
 <li>NH_URI_SCHEME
 : <a class="el" href="group__nhcoreEnums.html#ga04c98696d4f138b3108693cde6d86822">URI.h</a>
@@ -288,28 +270,28 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
 : <a class="el" href="group__nhwebidlEnums.html#ga8f34c467c0edf82d1eeecd3c49a5606f">Result.h</a>
 </li>
 <li>NH_WEBIDL_TYPE
-: <a class="el" href="group__nhwebidlEnums.html#ga0131e445a26a1fd8db230c2c2bd32776">API.h</a>
+: <a class="el" href="group__nhwebidlEnums.html#ga0131e445a26a1fd8db230c2c2bd32776">Types.h</a>
 </li>
 <li>NH_WSI_KEY
-: <a class="el" href="group__nhwsiEnums.html#ga40728b2af638c7a3739a78bfba1606e3">API.h</a>
+: <a class="el" href="group__nhwsiEnums.html#ga40728b2af638c7a3739a78bfba1606e3">Types.h</a>
 </li>
 <li>NH_WSI_MOUSE
-: <a class="el" href="group__nhwsiEnums.html#ga5d903b141374857851720fb13135bedc">API.h</a>
+: <a class="el" href="group__nhwsiEnums.html#ga5d903b141374857851720fb13135bedc">Types.h</a>
 </li>
 <li>NH_WSI_MOUSE_CURSOR
-: <a class="el" href="group__nhwsiEnums.html#ga6668f2ba4f4f458c05c6b633ec97b40d">API.h</a>
+: <a class="el" href="group__nhwsiEnums.html#ga6668f2ba4f4f458c05c6b633ec97b40d">Types.h</a>
 </li>
 <li>NH_WSI_MOUSE_FLAG
-: <a class="el" href="group__nhwsiEnums.html#gadf7f6fb7ee4672ddc7e7403a9e67dc2e">API.h</a>
+: <a class="el" href="group__nhwsiEnums.html#gadf7f6fb7ee4672ddc7e7403a9e67dc2e">Types.h</a>
 </li>
 <li>NH_WSI_RESULT
 : <a class="el" href="group__nhwsiEnums.html#gaad76c7c64aab18b7bf38e2631a3da2a9">Result.h</a>
 </li>
 <li>NH_WSI_TRIGGER
-: <a class="el" href="group__nhwsiEnums.html#ga3a4b9620c442bf46d25a8ebd9234fd22">API.h</a>
+: <a class="el" href="group__nhwsiEnums.html#ga3a4b9620c442bf46d25a8ebd9234fd22">Types.h</a>
 </li>
 <li>NH_WSI_TYPE
-: <a class="el" href="group__nhwsiEnums.html#ga81b30f1370c54388e60a8a3e2979fc76">API.h</a>
+: <a class="el" href="group__nhwsiEnums.html#ga81b30f1370c54388e60a8a3e2979fc76">Types.h</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -326,7 +308,7 @@ $(document).ready(function(){initNavTree('globals_enum.html',''); initResizable(
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.3.10.12</b>
+<b>rev.0.3.12.16</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

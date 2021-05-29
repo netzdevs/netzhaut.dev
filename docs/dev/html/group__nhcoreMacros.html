@@ -104,20 +104,6 @@ Macros</h2></td></tr>
 <tr class="separator:gabba57fab50d61bac745a9028e952dee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3605f81069c5025554d8b0d2c8264f53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreMacros.html#ga3605f81069c5025554d8b0d2c8264f53">NH_PIXEL_TO_CLIP</a>(pixel,  Content_p,  basedOnWidth)</td></tr>
 <tr class="separator:ga3605f81069c5025554d8b0d2c8264f53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadea9a6bf9f9682f1e663bc958c230dfe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreMacros.html#gadea9a6bf9f9682f1e663bc958c230dfe">nh_HashMap</a>&#160;&#160;&#160;map_t</td></tr>
-<tr class="separator:gadea9a6bf9f9682f1e663bc958c230dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9c2828a48934c67bf2d082269e5e3ff7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreMacros.html#ga9c2828a48934c67bf2d082269e5e3ff7">NH_INIT_LINKED_LIST</a>(List)&#160;&#160;&#160;List.Head_p = NULL; List.count = 0;</td></tr>
-<tr class="separator:ga9c2828a48934c67bf2d082269e5e3ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3559aac40a0b8f55e249d99b5a363f56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreMacros.html#ga3559aac40a0b8f55e249d99b5a363f56">NH_LOGGER_END_OF_MESSAGE</a>&#160;&#160;&#160;'}'</td></tr>
-<tr class="separator:ga3559aac40a0b8f55e249d99b5a363f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga16dd3a816463c8012e7a6d747e523bec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreMacros.html#ga16dd3a816463c8012e7a6d747e523bec">NH_MAX_FORKS</a>&#160;&#160;&#160;16</td></tr>
-<tr class="separator:ga16dd3a816463c8012e7a6d747e523bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf30b37079d663cb59a104bd7e8a8e951"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreMacros.html#gaf30b37079d663cb59a104bd7e8a8e951">NH_HOSTNAME_LENGTH</a>&#160;&#160;&#160;255</td></tr>
-<tr class="separator:gaf30b37079d663cb59a104bd7e8a8e951"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d997a661e4430e46769b1add2e342fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreMacros.html#ga4d997a661e4430e46769b1add2e342fe">NH_MAX_THREADS</a>&#160;&#160;&#160;64</td></tr>
-<tr class="separator:ga4d997a661e4430e46769b1add2e342fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga60f7970cfa73fcf82677935181679ad5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcoreMacros.html#ga60f7970cfa73fcf82677935181679ad5">NH_MAX_WORKLOADS</a>&#160;&#160;&#160;128</td></tr>
-<tr class="separator:ga60f7970cfa73fcf82677935181679ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -177,110 +163,8 @@ Macros</h2></td></tr>
 <div class="line">        basedOnWidth ? (<a class="code" href="group__nhcoreTypedefs.html#ga6c1798d303514c640fd549973c9c80f7">NH_PIXEL</a>)(((((<span class="keywordtype">float</span>)clipValue + 1.0f) / Content_p-&gt;Settings.scale) * ((<span class="keywordtype">float</span>)Content_p-&gt;Tab_p-&gt;Size.width)) / 2.0f)  \</div>
 <div class="line">                     : (<a class="code" href="group__nhcoreTypedefs.html#ga6c1798d303514c640fd549973c9c80f7">NH_PIXEL</a>)(((((float)clipValue + 1.0f) / Content_p-&gt;Settings.scale) * ((<span class="keywordtype">float</span>)Content_p-&gt;Tab_p-&gt;Size.height)) / 2.0f) \</div>
 <div class="line">    )</div>
-<div class="ttc" id="agroup__nhcoreTypedefs_html_ga6c1798d303514c640fd549973c9c80f7"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga6c1798d303514c640fd549973c9c80f7">NH_PIXEL</a></div><div class="ttdeci">int NH_PIXEL</div><div class="ttdef"><b>Definition:</b> API.h:22</div></div>
+<div class="ttc" id="agroup__nhcoreTypedefs_html_ga6c1798d303514c640fd549973c9c80f7"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga6c1798d303514c640fd549973c9c80f7">NH_PIXEL</a></div><div class="ttdeci">int NH_PIXEL</div><div class="ttdef"><b>Definition:</b> Types.h:22</div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="gadea9a6bf9f9682f1e663bc958c230dfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gadea9a6bf9f9682f1e663bc958c230dfe">&#9670;&nbsp;</a></span>nh_HashMap</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define nh_HashMap&#160;&#160;&#160;map_t</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gaf30b37079d663cb59a104bd7e8a8e951"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf30b37079d663cb59a104bd7e8a8e951">&#9670;&nbsp;</a></span>NH_HOSTNAME_LENGTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NH_HOSTNAME_LENGTH&#160;&#160;&#160;255</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga9c2828a48934c67bf2d082269e5e3ff7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9c2828a48934c67bf2d082269e5e3ff7">&#9670;&nbsp;</a></span>NH_INIT_LINKED_LIST</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NH_INIT_LINKED_LIST</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">List</td><td>)</td>
-          <td>&#160;&#160;&#160;List.Head_p = NULL; List.count = 0;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga3559aac40a0b8f55e249d99b5a363f56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3559aac40a0b8f55e249d99b5a363f56">&#9670;&nbsp;</a></span>NH_LOGGER_END_OF_MESSAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NH_LOGGER_END_OF_MESSAGE&#160;&#160;&#160;'}'</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga16dd3a816463c8012e7a6d747e523bec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga16dd3a816463c8012e7a6d747e523bec">&#9670;&nbsp;</a></span>NH_MAX_FORKS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NH_MAX_FORKS&#160;&#160;&#160;16</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga4d997a661e4430e46769b1add2e342fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4d997a661e4430e46769b1add2e342fe">&#9670;&nbsp;</a></span>NH_MAX_THREADS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NH_MAX_THREADS&#160;&#160;&#160;64</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ga60f7970cfa73fcf82677935181679ad5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga60f7970cfa73fcf82677935181679ad5">&#9670;&nbsp;</a></span>NH_MAX_WORKLOADS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NH_MAX_WORKLOADS&#160;&#160;&#160;128</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 </div>
 </div>
 <a id="ga3605f81069c5025554d8b0d2c8264f53"></a>
@@ -335,7 +219,7 @@ Macros</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.3.10.12</b>
+<b>rev.0.3.12.16</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

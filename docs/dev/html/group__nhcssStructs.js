@@ -14,6 +14,11 @@ var group__nhcssStructs =
       [ "Position", "structnh__css__ClipBox.html#ad76879181ec7b42a98b2bff01ab7ccfb", null ],
       [ "Size", "structnh__css__ClipBox.html#aed7e5570ed5831a180990038232c4570", null ]
     ] ],
+    [ "nh_css_Layout", "structnh__css__Layout.html", [
+      [ "Floats", "structnh__css__Layout.html#afbe1466863fb212aebb2183c2f931966", null ],
+      [ "LineBoxes", "structnh__css__Layout.html#a8678af19022442e4ffb303eedff92f48", null ],
+      [ "Tree_p", "structnh__css__Layout.html#a38863506c9467618e2fac617eaf384ff", null ]
+    ] ],
     [ "nh_css_TextValues", "structnh__css__TextValues.html", [
       [ "Color", "structnh__css__TextValues.html#aae249f9869a06100eb4a75df3acba554", null ],
       [ "FontFamilies", "structnh__css__TextValues.html#a193b3803517cca1bc18d55d342eb73ef", null ],
@@ -23,13 +28,15 @@ var group__nhcssStructs =
       [ "textAlignAll", "structnh__css__TextValues.html#afec8ce17f4ce6388d97742e69deee45b", null ],
       [ "textAlignLast", "structnh__css__TextValues.html#adf8c3f7cd7c170c5fc4c0735e0ab1448", null ],
       [ "textHeight", "structnh__css__TextValues.html#ac90c01da534988793cf9a266b72e4593", null ],
-      [ "textWidth", "structnh__css__TextValues.html#ad920b0bde9f0127cd9a260e75516849e", null ]
+      [ "textWidth", "structnh__css__TextValues.html#ad920b0bde9f0127cd9a260e75516849e", null ],
+      [ "wordBreak", "structnh__css__TextValues.html#a70650db549dc1e482ed9b1140f5ecc59", null ]
     ] ],
     [ "nh_css_BoxSizing", "structnh__css__BoxSizing.html", [
       [ "type", "structnh__css__BoxSizing.html#ac29b050e5110f736f847a2ff27e81fc6", null ],
       [ "value", "structnh__css__BoxSizing.html#a64fcbdef14e22dc406a2347ea721232e", null ]
     ] ],
     [ "nh_css_BoxValues", "structnh__css__BoxValues.html", [
+      [ "_float", "structnh__css__BoxValues.html#abfad2106c007d9dfca4a4b21e84bb3b8", null ],
       [ "BackgroundColor", "structnh__css__BoxValues.html#a5aa059bb2019706396caf07ca626486d", null ],
       [ "borderBottom", "structnh__css__BoxValues.html#a9fa8e8f175c78da0d01fe735403b8b91", null ],
       [ "BorderBottomColor", "structnh__css__BoxValues.html#acd5dddf83117c162c43386b9a920e3b2", null ],

@@ -1,5 +1,10 @@
 var group__nhwebidlStructs =
 [
+    [ "nh_webidl_IndexMap", "structnh__webidl__IndexMap.html", [
+      [ "FragmentFunctionNames", "structnh__webidl__IndexMap.html#a6173d046128f5788f92c218f861ece23", null ],
+      [ "FragmentNames", "structnh__webidl__IndexMap.html#aa749916e2cbdbec35db2959208bebf58", null ],
+      [ "ParseNodeNames", "structnh__webidl__IndexMap.html#a2d6b1f0c7e25aaecf0d31e2ea9cefe53", null ]
+    ] ],
     [ "nh_webidl_Specification", "structnh__webidl__Specification.html", [
       [ "Fragments", "structnh__webidl__Specification.html#add7d3fe5ec41254b4c40ea6bc80fe720", null ],
       [ "name_p", "structnh__webidl__Specification.html#a9a0fb827541753436b99647b4e4cd182", null ]
@@ -26,10 +31,5 @@ var group__nhwebidlStructs =
     [ "nh_webidl_Any", "structnh__webidl__Any.html", [
       [ "type", "structnh__webidl__Any.html#a47ba084ee91f5bd1a972033fc2dcba10", null ],
       [ "value_p", "structnh__webidl__Any.html#a54a46b9aa71dece0c0505fa371ad34bf", null ]
-    ] ],
-    [ "nh_webidl_IndexMap", "structnh__webidl__IndexMap.html", [
-      [ "FragmentFunctionNames", "structnh__webidl__IndexMap.html#a6173d046128f5788f92c218f861ece23", null ],
-      [ "FragmentNames", "structnh__webidl__IndexMap.html#aa749916e2cbdbec35db2959208bebf58", null ],
-      [ "ParseNodeNames", "structnh__webidl__IndexMap.html#a2d6b1f0c7e25aaecf0d31e2ea9cefe53", null ]
     ] ]
 ];

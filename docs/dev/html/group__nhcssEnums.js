@@ -170,6 +170,11 @@ var group__nhcssEnums =
       [ "NH_CSS_DECLARATION_ORIGIN_ANIMATION", "group__nhcssEnums.html#gga878bd3154adf86870ce9724c2f0d7c49a1bf2360f38c461d8a187d6fc8b8f361e", null ],
       [ "NH_CSS_DECLARATION_ORIGIN_TRANSITION", "group__nhcssEnums.html#gga878bd3154adf86870ce9724c2f0d7c49adb90f968b9ba53219ab666dd3e169cc0", null ]
     ] ],
+    [ "NH_CSS_FLOAT", "group__nhcssEnums.html#ga5859665519928a4a058661aa2f6cd55f", [
+      [ "NH_CSS_FLOAT_LEFT", "group__nhcssEnums.html#gga5859665519928a4a058661aa2f6cd55fa13c153df6c83ad26046208a4a57f159a", null ],
+      [ "NH_CSS_FLOAT_RIGHT", "group__nhcssEnums.html#gga5859665519928a4a058661aa2f6cd55fa1d46efa5a12a224621c3d71e10fa2b76", null ],
+      [ "NH_CSS_FLOAT_NONE", "group__nhcssEnums.html#gga5859665519928a4a058661aa2f6cd55fa6544d4741ec4f19f9191e391f4c8ebd5", null ]
+    ] ],
     [ "NH_CSS_LINE_STYLE", "group__nhcssEnums.html#ga3f0b7cf428f1416e9ee7e5e504e61406", [
       [ "NH_CSS_LINE_STYLE_NONE", "group__nhcssEnums.html#gga3f0b7cf428f1416e9ee7e5e504e61406aff4ca4675ee5518fc474a5d53b6a90e5", null ],
       [ "NH_CSS_LINE_STYLE_HIDDEN", "group__nhcssEnums.html#gga3f0b7cf428f1416e9ee7e5e504e61406a8ee42d2035ed3cd23f5f3289947184e6", null ],
@@ -316,6 +321,7 @@ var group__nhcssEnums =
       [ "NH_CSS_PROPERTY_WHITE_SPACE", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca78c0fafbd18bde3f1f73517cfc02bbe5", null ],
       [ "NH_CSS_PROPERTY_WIDOWS", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca668eaf11e0fa36d847f79e800bfeb154", null ],
       [ "NH_CSS_PROPERTY_WIDTH", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cab144f89ecdcfa940a5318b64a210186a", null ],
+      [ "NH_CSS_PROPERTY_WORD_BREAK", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca2456aa54b033ac8d1b8f531a510feeee", null ],
       [ "NH_CSS_PROPERTY_WORD_SPACING", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6cad0247fe82320e50a2984cfdde12edd3e", null ],
       [ "NH_CSS_PROPERTY_WRITING_MODE", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca52315804b3c06c923980888f3f681a99", null ],
       [ "NH_CSS_PROPERTY_Z_INDEX", "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca85d472bd33ee0fa425094c36f7ed53ba", null ],
@@ -447,5 +453,11 @@ var group__nhcssEnums =
       [ "NH_CSS_VALUE_SCOPE_COMPUTED", "group__nhcssEnums.html#gga8fd3f4caa86bea3bb1bccc008122e15da6a5f828f61d9e53cdd240978c386bb61", null ],
       [ "NH_CSS_VALUE_SCOPE_USED", "group__nhcssEnums.html#gga8fd3f4caa86bea3bb1bccc008122e15da0dc2ed2426558d4d9648e8d27571c9c6", null ],
       [ "NH_CSS_VALUE_SCOPE_ACTUAL", "group__nhcssEnums.html#gga8fd3f4caa86bea3bb1bccc008122e15da66bdf996efad3cbff91637b5115a6640", null ]
+    ] ],
+    [ "NH_CSS_WORD_BREAK", "group__nhcssEnums.html#ga875f81200b343cca91deafe73a507bf8", [
+      [ "NH_CSS_WORD_BREAK_NORMAL", "group__nhcssEnums.html#gga875f81200b343cca91deafe73a507bf8aff02da6233f425972b1766839b582e02", null ],
+      [ "NH_CSS_WORD_BREAK_KEEP_ALL", "group__nhcssEnums.html#gga875f81200b343cca91deafe73a507bf8a2dd5f0bb1254864dd3c72928b656542e", null ],
+      [ "NH_CSS_WORD_BREAK_BREAK_ALL", "group__nhcssEnums.html#gga875f81200b343cca91deafe73a507bf8a906aeaf7bce7aaf0815cfafe1606bff7", null ],
+      [ "NH_CSS_WORD_BREAK_BREAK_WORD", "group__nhcssEnums.html#gga875f81200b343cca91deafe73a507bf8a573c42b588e411243465cf17c4f253ce", null ]
     ] ]
 ];

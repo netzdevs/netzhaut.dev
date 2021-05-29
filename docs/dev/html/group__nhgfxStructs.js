@@ -1,5 +1,8 @@
 var group__nhgfxStructs =
 [
+    [ "nh_gfx_Config", "structnh__gfx__Config.html", [
+      [ "gamma", "structnh__gfx__Config.html#a5a6c834b7a5aefa43f8b39f6c4f054ad", null ]
+    ] ],
     [ "nh_vk_DriverInfo", "structnh__vk__DriverInfo.html", [
       [ "deviceId", "structnh__vk__DriverInfo.html#a40b8fcbf9d24262d29016b5e3ba6ec2e", null ],
       [ "major", "structnh__vk__DriverInfo.html#a1a1c55775453b21f4c7aee3cb85e3f6e", null ],
@@ -22,12 +25,12 @@ var group__nhgfxStructs =
       [ "renderPassCount", "structnh__vk__Driver.html#ada8c56afa037043fb62eea798fa1ec18", null ]
     ] ],
     [ "nh_vk_GPU", "structnh__vk__GPU.html", [
-      [ "CSS", "structnh__vk__GPU.html#a7c88670cd524bb2c0eacb17b2082be24", null ],
+      [ "CSS", "structnh__vk__GPU.html#a919f0ca557023598ddd2efa23948e906", null ],
       [ "Driver", "structnh__vk__GPU.html#a26ffd2772cd9fd6bfd1f1c92650b9483", null ],
       [ "name_p", "structnh__vk__GPU.html#a3d889b15ff3cdd9cc72d769d7f48eabb", null ],
       [ "Pipelines_p", "structnh__vk__GPU.html#ab22a7ccab159092217a7a4e048ae1cb5", null ],
       [ "Textures", "structnh__vk__GPU.html#a6b5ce929bee29fc74521c226e12e1e6a", null ],
-      [ "TTY", "structnh__vk__GPU.html#a20c45f2965b2ee10b1223d127e2ef08c", null ]
+      [ "TTY", "structnh__vk__GPU.html#ad7e19a99ed38667ec4cc1ae5dc5824cb", null ]
     ] ],
     [ "nh_vk_BufferInfo", "structnh__vk__BufferInfo.html", [
       [ "createInfo", "structnh__vk__BufferInfo.html#a67ed3467def984e38cf141a2c56042cb", null ],
@@ -99,7 +102,7 @@ var group__nhgfxStructs =
     [ "nh_vk_Surface", "structnh__vk__Surface.html", [
       [ "CommandBuffers_p", "structnh__vk__Surface.html#abbd11624b5893f053a482f649c43e6fd", null ],
       [ "currentImage", "structnh__vk__Surface.html#ad0567d05e0056245470a8bed184ea919", null ],
-      [ "DepthStencil", "structnh__vk__Surface.html#a9b94ab6e3b52576c371bf6518f0ebd01", null ],
+      [ "DepthStencil", "structnh__vk__Surface.html#addf8c9105e10e4332e465e6b210dc3f9", null ],
       [ "Extent2D", "structnh__vk__Surface.html#a4ea323cc4d0b4d03e5a701a35217537e", null ],
       [ "Fence", "structnh__vk__Surface.html#a753365cf318d320b05f179fc08f820bb", null ],
       [ "Framebuffer_p", "structnh__vk__Surface.html#ab7e7aba3f587d64012fc9c5c80826513", null ],
@@ -112,9 +115,9 @@ var group__nhgfxStructs =
       [ "Memory", "structnh__vk__Surface.html#a4f90b8fc37a7379c66ee583e63022e92", null ],
       [ "Semaphore_p", "structnh__vk__Surface.html#aeaf6a924f6aa386353bde70825e1f270", null ],
       [ "SurfaceKHR_p", "structnh__vk__Surface.html#a76df11fdf089ace51f3b8af8b4b8cd9e", null ],
-      [ "Swapchain", "structnh__vk__Surface.html#aad6c29e5dfe5dc86c61104b62e38d05a", null ],
+      [ "Swapchain", "structnh__vk__Surface.html#af51f8d048e1b116fd784e9272b19e5ac", null ],
       [ "SwapchainKHR", "structnh__vk__Surface.html#a7cfdef37e58ff2a48e0d07e3057cafc4", null ],
-      [ "Sync", "structnh__vk__Surface.html#a46c90a9a87b96608de7864214858c1b8", null ]
+      [ "Sync", "structnh__vk__Surface.html#aec41d1741e5082e535a58b581d267fae", null ]
     ] ],
     [ "nh_vk_TextureInfo", "structnh__vk__TextureInfo.html", [
       [ "data_p", "structnh__vk__TextureInfo.html#a854c3715bf4a35dcc92091ec99cf1d5b", null ],
@@ -148,15 +151,15 @@ var group__nhgfxStructs =
       [ "BackgroundColor", "structnh__gfx__Surface.html#aa6b44e2549482883806e1a167d176f66", null ],
       [ "getNextImage", "structnh__gfx__Surface.html#a0593400bbb9ea40c41d13448d2416f32", null ],
       [ "halt", "structnh__gfx__Surface.html#a86f113bb3158e92b0ead7c93614b1e37", null ],
-      [ "Internal", "structnh__gfx__Surface.html#a2b3aa0c6ceece1eaad436374a1edaa29", null ],
+      [ "Internal", "structnh__gfx__Surface.html#ab602396d53729727dc8f28445958298b", null ],
       [ "ready", "structnh__gfx__Surface.html#a3e7a158ee43cf27344c1e064c837be28", null ],
       [ "rendering", "structnh__gfx__Surface.html#a8696beeff8ac4f03e28cc05bf27431b3", null ],
       [ "renderRequests", "structnh__gfx__Surface.html#a0587bf28210e406b2fdbd4c29b8281dc", null ],
       [ "resize", "structnh__gfx__Surface.html#a643094ff445359283f89e65539032e3d", null ],
-      [ "Settings", "structnh__gfx__Surface.html#adc45d40f185a8bcaacc7c10458a6f0b6", null ],
+      [ "Settings", "structnh__gfx__Surface.html#a5037e5ed65af4524acf5fa25a6128999", null ],
       [ "signal", "structnh__gfx__Surface.html#a2634781748af8fc56e7e8289d00ddf45", null ],
       [ "skipRender", "structnh__gfx__Surface.html#ac39ef1081587314756b1f677fa7f470e", null ],
-      [ "Sync", "structnh__gfx__Surface.html#a0c914031e17d2669626287ab7e60c648", null ],
+      [ "Sync", "structnh__gfx__Surface.html#aff535e44ba98bfb29c1dbf8cc451f1fd", null ],
       [ "undoHalt", "structnh__gfx__Surface.html#a1edc8540b6de9ca9e4ab6f2603c7663d", null ],
       [ "Viewports", "structnh__gfx__Surface.html#a801b418b3caa2506f8ed0689af9dfc7a", null ],
       [ "Vulkan", "structnh__gfx__Surface.html#ae1717d5cd98690a21ca6404bfba34e4e", null ],
@@ -178,11 +181,11 @@ var group__nhgfxStructs =
       [ "Position", "structnh__gfx__Viewport.html#a1a11cd5d0f1f2c86c27ad12c578e2d5b", null ],
       [ "priority", "structnh__gfx__Viewport.html#a61eb10634d20a563bafe3612bbe5274a", null ],
       [ "render", "structnh__gfx__Viewport.html#af4c5651afc12f18597ecc50187267765", null ],
-      [ "Settings", "structnh__gfx__Viewport.html#a6592e77c58ff06c4c337c1f3505d6eba", null ],
+      [ "Settings", "structnh__gfx__Viewport.html#a521299bda839ef7a554d77d73112f8d0", null ],
       [ "Size", "structnh__gfx__Viewport.html#a7cea6c25b57a9188374f622819fa1b4f", null ],
       [ "submittedBuffers_p", "structnh__gfx__Viewport.html#a6e18cf6cedbe37165123c69386209aa1", null ],
       [ "Surface_p", "structnh__gfx__Viewport.html#aaf804ef03b074484f15f718109337600", null ],
-      [ "Sync", "structnh__gfx__Viewport.html#ae172f560c4484e5d20207069396bd830", null ],
-      [ "Vulkan", "structnh__gfx__Viewport.html#acd5e98ebf743521b48bcc587f93831e5", null ]
+      [ "Sync", "structnh__gfx__Viewport.html#aa60e2210d75f344a4078d43f29d86bb6", null ],
+      [ "Vulkan", "structnh__gfx__Viewport.html#aacd9afa51b9ff146a3ec5b607afaed28", null ]
     ] ]
 ];

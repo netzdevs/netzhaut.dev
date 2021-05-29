@@ -1,14 +1,21 @@
 var group__nhcssFunctions =
 [
+    [ "nh_css_LineBox", "structnh__css__LineBox.html", [
+      [ "currentX", "structnh__css__LineBox.html#acd88277afa12bdd9a697307910e2567d", null ],
+      [ "Position", "structnh__css__LineBox.html#aad8cb7677848b35319c6c87a83ef51e6", null ],
+      [ "Size", "structnh__css__LineBox.html#a14929a1c591bc03becd34ccf9c260b99", null ]
+    ] ],
     [ "_nh_css_logBegin", "group__nhcssFunctions.html#ga258e69d90c2902681f9e41bb40363697", null ],
     [ "_nh_css_logDiagnosticEnd", "group__nhcssFunctions.html#ga5b6db3ab8e1019b05646bd96c257ad3b", null ],
     [ "_nh_css_logEnd", "group__nhcssFunctions.html#ga1479f0561e3402559c7140757056d6c9", null ],
-    [ "nh_css_arrangeBlockFormattingContext", "group__nhcssFunctions.html#ga0eba201d198af21a5b316a66c007a28e", null ],
-    [ "nh_css_arrangeInlineFormattingContext", "group__nhcssFunctions.html#gaeea872afa90326bed4bc99701c8ecac5", null ],
+    [ "nh_css_arrangeBlockFormattingContext", "group__nhcssFunctions.html#gaae257af326edf13d536ea232b217cf77", null ],
+    [ "nh_css_arrangeFloat", "group__nhcssFunctions.html#ga6121e51d62f59f7a953740f9a3067060", null ],
+    [ "nh_css_arrangeInlineFormattingContext", "group__nhcssFunctions.html#ga7a687ec90119087776ec7e4c47bc1d2a", null ],
     [ "nh_css_cascade", "group__nhcssFunctions.html#gadabf7141a124506348caefd08076ad6a", null ],
     [ "nh_css_colorToArray", "group__nhcssFunctions.html#ga9e2c09f37313e40761033a9b83fdc213", null ],
     [ "nh_css_compare", "group__nhcssFunctions.html#gab1825fd1730249e5300bef7801953d1e", null ],
     [ "nh_css_computeBoxValues", "group__nhcssFunctions.html#ga4a868ca1509e9437d16da345f6fd96af", null ],
+    [ "nh_css_computeLayout", "group__nhcssFunctions.html#ga045f36a6365a2cab51a07a2eb53ec7bc", null ],
     [ "nh_css_computeSpecifiedValues", "group__nhcssFunctions.html#ga7f20e1315b3e443c2bc64944dbcfdba4", null ],
     [ "nh_css_computeTextValues", "group__nhcssFunctions.html#gab9beac3e9bd4630b7d0d208cd353ce3d", null ],
     [ "nh_css_convertToClipBox", "group__nhcssFunctions.html#gab6bf6a18ec7ad62d4733c36807d8e065", null ],
