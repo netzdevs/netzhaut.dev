@@ -105,10 +105,10 @@ var NAVTREEINDEX =
 "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea56034246c1f5dfcc464abee4fa53341f",
 "group__nhhtmlEnums.html#gga943494f6405ac44a581774cdc5eb91ada67c57a7633469d4c0eb3ba01ac1d76dd",
 "group__nhnetworkStructs.html",
-"group__nhwsiEnums.html#gga5d903b141374857851720fb13135bedca16fb9547997ef6e33f8721e8bc60cc6e",
-"structnh__css__SelectorParseNode.html#a642f9d703c77e67236bd97728a407d57",
-"structnh__gfx__Surface.html#aa6b44e2549482883806e1a167d176f66",
-"structnh__webidl__Object.html#a1d828d40eb69c8d34fb7a16b0282ef00"
+"group__nhwsiEnums.html#gga40728b2af638c7a3739a78bfba1606e3afded0f201c6a9b45111e51d6e7af2d96",
+"structnh__css__SelectorParseNode.html#a573585e1cab92303d8b73d5a5fd3fa39",
+"structnh__gfx__Surface.html#a8bca9810fe8bdacf2720c042315bff36",
+"structnh__webidl__Object.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"structnh__css__SelectorParseNode.html#a573585e1cab92303d8b73d5a5fd3fa39":[9,4,3,15,0],
 "structnh__css__SelectorParseNode.html#a642f9d703c77e67236bd97728a407d57":[9,4,3,15,2],
 "structnh__css__SelectorParseNode.html#ae6d40a5784d76e81cbabd30f8a91266f":[9,4,3,15,1],
 "structnh__css__SimpleBlock.html":[9,4,3,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "structnh__gfx__Surface.html#a72d9d11ad2a830f86cb37b949ab526b9":[9,5,3,16,3],
 "structnh__gfx__Surface.html#a801b418b3caa2506f8ed0689af9dfc7a":[9,5,3,16,17],
 "structnh__gfx__Surface.html#a8696beeff8ac4f03e28cc05bf27431b3":[9,5,3,16,9],
-"structnh__gfx__Surface.html#a86f113bb3158e92b0ead7c93614b1e37":[9,5,3,16,6],
-"structnh__gfx__Surface.html#a8bca9810fe8bdacf2720c042315bff36":[9,5,3,16,2]
+"structnh__gfx__Surface.html#a86f113bb3158e92b0ead7c93614b1e37":[9,5,3,16,6]
 };

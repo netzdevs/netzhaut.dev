@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"structnh__gfx__Surface.html#a8bca9810fe8bdacf2720c042315bff36":[9,5,3,16,2],
 "structnh__gfx__Surface.html#aa6b44e2549482883806e1a167d176f66":[9,5,3,16,4],
 "structnh__gfx__Surface.html#ab602396d53729727dc8f28445958298b":[9,5,3,16,7],
 "structnh__gfx__Surface.html#ac39ef1081587314756b1f677fa7f470e":[9,5,3,16,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "structnh__webidl__Interface.html#abe2101fb07f703b879a16b3392e5537d":[9,8,3,3,2],
 "structnh__webidl__InterfaceInheritance.html":[9,8,3,2],
 "structnh__webidl__InterfaceInheritance.html#a7ea3684e5a9ab518c01bdb4738ef8bf7":[9,8,3,2,1],
-"structnh__webidl__InterfaceInheritance.html#acccbea3c81d639574ff44db38b3f9fdc":[9,8,3,2,0],
-"structnh__webidl__Object.html":[9,8,3,4]
+"structnh__webidl__InterfaceInheritance.html#acccbea3c81d639574ff44db38b3f9fdc":[9,8,3,2,0]
 };

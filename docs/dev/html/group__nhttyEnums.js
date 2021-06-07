@@ -8,6 +8,7 @@ var group__nhttyEnums =
       [ "NH_TTY_ERROR_TERMINFO_DATA_CANNOT_BE_FOUND", "group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aab4d2e33bc66b4dbe27168a2a3ec22ebb", null ],
       [ "NH_TTY_ERROR_UNKNOWN_TERMINAL_TYPE", "group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aac417384bebe46349337772eca78eafca", null ],
       [ "NH_TTY_ERROR_TERMINAL_IS_HARDCOPY", "group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aac63e35a399e774d5a9af45f767377a6c", null ],
-      [ "NH_TTY_ERROR_UNKNOWN_COMMAND", "group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aacdd2514031d9181dc1531066241d535a", null ]
+      [ "NH_TTY_ERROR_UNKNOWN_COMMAND", "group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aacdd2514031d9181dc1531066241d535a", null ],
+      [ "NH_TTY_ERROR_INVALID_ARGUMENT", "group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aac4a7332fb6222935cdfefc612a7067b9", null ]
     ] ]
 ];
