@@ -28,6 +28,11 @@ var group__nhcoreEnums =
       [ "NH_INTERNAL_URL_HTML_NODE_TEXT", "group__nhcoreEnums.html#gga0c2ec271669dc41c0725ff899f34058bae6802be2ab237276af4a405fdae3b7f4", null ],
       [ "NH_INTERNAL_URL_HTML_NODE_ATTRIBUTE_VALUE", "group__nhcoreEnums.html#gga0c2ec271669dc41c0725ff899f34058bac942310e539d94da98394770aa84025b", null ]
     ] ],
+    [ "NH_LOADER_SCOPE", "group__nhcoreEnums.html#ga23e3ff4fac1a51efe9ba0cd3c7553785", [
+      [ "NH_LOADER_SCOPE_LOCAL", "group__nhcoreEnums.html#gga23e3ff4fac1a51efe9ba0cd3c7553785a0be16c4a1649bc362b00f411928c64e4", null ],
+      [ "NH_LOADER_SCOPE_LOCAL_SYSTEM", "group__nhcoreEnums.html#gga23e3ff4fac1a51efe9ba0cd3c7553785a55e305662563b78d0d962d7d338bba83", null ],
+      [ "NH_LOADER_SCOPE_SYSTEM", "group__nhcoreEnums.html#gga23e3ff4fac1a51efe9ba0cd3c7553785a8c87681cfa2769df339cc8b9dadf9cde", null ]
+    ] ],
     [ "NH_RESULT", "group__nhcoreEnums.html#ga69553903dccbc47bc4a7b65724517c61", [
       [ "NH_SUCCESS", "group__nhcoreEnums.html#gga69553903dccbc47bc4a7b65724517c61ae9fff781cc6dc5200a1cc8546e6fae9b", null ],
       [ "NH_PENDING", "group__nhcoreEnums.html#gga69553903dccbc47bc4a7b65724517c61aa939c82d7c7765556c9f8b421a6843f3", null ],

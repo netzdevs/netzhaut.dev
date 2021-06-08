@@ -6,5 +6,6 @@ var group__nhhtmlVars =
     [ "NH_HTML_RESULTS_PP", "group__nhhtmlVars.html#gaf9b54b1cdc38adf19db37362375a1ceb", null ],
     [ "NH_HTML_RESULTS_PP_COUNT", "group__nhhtmlVars.html#ga0f846c82ba0ba5d5ce06e61583e42849", null ],
     [ "NH_HTML_TAG_NAMES_PP", "group__nhhtmlVars.html#ga87fb35d7a9c3f004c8f519d90afcce33", null ],
-    [ "NH_HTML_TAG_NAMES_PP_COUNT", "group__nhhtmlVars.html#gaebb16b16d2ee4ab5ac99680e3e466c08", null ]
+    [ "NH_HTML_TAG_NAMES_PP_COUNT", "group__nhhtmlVars.html#gaebb16b16d2ee4ab5ac99680e3e466c08", null ],
+    [ "NH_HTML_VERSION_P", "group__nhhtmlVars.html#gac52611b3ecc32cb37c7f35e25dc294e4", null ]
 ];

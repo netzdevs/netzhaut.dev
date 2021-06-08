@@ -16,7 +16,7 @@ var group__nhcoreFunctions =
     [ "nh_freeURI", "group__nhcoreFunctions.html#gad9c2fc7e357ec2ebd3f0658fca29c9aa", null ],
     [ "nh_getMediaType", "group__nhcoreFunctions.html#gad23d82433200d7b62b95494beff124b5", null ],
     [ "nh_getPayload", "group__nhcoreFunctions.html#ga00b2b71aba54af99fe90944b9714cce4", null ],
-    [ "nh_initialize", "group__nhcoreFunctions.html#gad455015e4a93dbc01312c9f9cbd7a7d0", null ],
+    [ "nh_logModules", "group__nhcoreFunctions.html#gaea4b0781f8806743be4a016c8961ad10", null ],
     [ "nh_logSystemInfo", "group__nhcoreFunctions.html#gafc6dab10c3d2a9265b136a1bdb2187fc", null ],
     [ "nh_stringifyURI", "group__nhcoreFunctions.html#gaefbc5c084ce19b5df6ef6de5fa6f4424", null ],
     [ "nh_terminate", "group__nhcoreFunctions.html#ga6d5e0ab7c19f983f7fb17689ab351507", null ]

@@ -9,5 +9,6 @@ var group__nhcssVars =
     [ "NH_CSS_PROPERTY_NAMES_PP", "group__nhcssVars.html#ga0c1b9522138e2b414ff7ce745ba0c987", null ],
     [ "NH_CSS_RESULTS_PP", "group__nhcssVars.html#ga50169cd580157f765957b553c7ebddec", null ],
     [ "NH_CSS_RESULTS_PP_COUNT", "group__nhcssVars.html#gaf85ec407bf69b38191725c05a4ba5f73", null ],
-    [ "NH_CSS_TYPE_NAMES_PP", "group__nhcssVars.html#gaa2b868d59d1545e7913247f761a3cd62", null ]
+    [ "NH_CSS_TYPE_NAMES_PP", "group__nhcssVars.html#gaa2b868d59d1545e7913247f761a3cd62", null ],
+    [ "NH_CSS_VERSION_P", "group__nhcssVars.html#ga617ff96e76d79708d357c57e52080990", null ]
 ];

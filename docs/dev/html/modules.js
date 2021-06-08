@@ -2,7 +2,6 @@ var modules =
 [
     [ "nhcore", "group__nhcore.html", "group__nhcore" ],
     [ "nhtty", "group__nhtty.html", "group__nhtty" ],
-    [ "nhloader", "group__nhloader.html", "group__nhloader" ],
     [ "nhecmascript", "group__nhecmascript.html", "group__nhecmascript" ],
     [ "nhcss", "group__nhcss.html", "group__nhcss" ],
     [ "nhgfx", "group__nhgfx.html", "group__nhgfx" ],

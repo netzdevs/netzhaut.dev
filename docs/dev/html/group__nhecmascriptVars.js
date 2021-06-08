@@ -9,5 +9,6 @@ var group__nhecmascriptVars =
     [ "NH_ECMASCRIPT_RESERVED_WORDS_PP", "group__nhecmascriptVars.html#ga81883fc4ee9f37117c7acdaa5c5ad9ba", null ],
     [ "NH_ECMASCRIPT_RESERVED_WORDS_PP_COUNT", "group__nhecmascriptVars.html#gacd5f339e5255ccb4198e3d5e922e12d5", null ],
     [ "NH_ECMASCRIPT_RESULTS_PP", "group__nhecmascriptVars.html#gaac3e99ce349613d6fc47ad6e81f7951d", null ],
-    [ "NH_ECMASCRIPT_RESULTS_PP_COUNT", "group__nhecmascriptVars.html#ga95f1715b3f9ce76b8675da21d2848ed4", null ]
+    [ "NH_ECMASCRIPT_RESULTS_PP_COUNT", "group__nhecmascriptVars.html#ga95f1715b3f9ce76b8675da21d2848ed4", null ],
+    [ "NH_ECMASCRIPT_VERSION_P", "group__nhecmascriptVars.html#ga89f148925467ed318e8bedc55642a193", null ]
 ];
