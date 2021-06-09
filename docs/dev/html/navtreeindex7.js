@@ -1,13 +1,18 @@
 var NAVTREEINDEX7 =
 {
+"group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aac417384bebe46349337772eca78eafca":[9,1,2,0,5],
+"group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aac49a559d972dc5856c51c635f2a49e05":[9,1,2,0,3],
+"group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aac4a7332fb6222935cdfefc612a7067b9":[9,1,2,0,8],
+"group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aac63e35a399e774d5a9af45f767377a6c":[9,1,2,0,6],
+"group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aacdd2514031d9181dc1531066241d535a":[9,1,2,0,7],
 "group__nhttyEnums.html#gga1e8b6ea94cb80a0f6ccae9464486dd8aade5711a3c7d006d063fe17b51613ec2a":[9,1,2,0,1],
 "group__nhttyFunctions.html":[9,1,4],
 "group__nhttyMacros.html":[9,1,1],
 "group__nhttyStructs.html":[9,1,3],
 "group__nhttyTypedefs.html":[9,1,5],
 "group__nhttyTypedefs.html#ga026fa8d2e6169d58e2159d40a16fa48a":[9,1,5,3],
-"group__nhttyTypedefs.html#ga052e6c24608ea54c2fa3686e527c87e3":[9,1,5,5],
 "group__nhttyTypedefs.html#ga096d5b9f485fb94241184c60d9e65beb":[9,1,5,0],
+"group__nhttyTypedefs.html#ga357d3e8fa1b0a3f4e2d850c1bdc3b807":[9,1,5,5],
 "group__nhttyTypedefs.html#ga41e2c88cd7a5b501963acfb76560d4a2":[9,1,5,4],
 "group__nhttyTypedefs.html#ga97420da7de9490584fe0f4abe0a592c0":[9,1,5,2],
 "group__nhttyTypedefs.html#gab5c143f96b503055e2505a42e878c95a":[9,1,5,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX7 =
 "group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ea1c0cf5e54ef0480b1f82244238e0f5bc":[9,8,2,3,1],
 "group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ea49043f61e701758a6fec004f310a38dd":[9,8,2,3,4],
 "group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ea843c89e666a49078db03df2e2d00a192":[9,8,2,3,0],
-"group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ea9bd012bbe2b8539bef8c229c316bfe33":[9,8,2,3,5],
-"group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ead81ec73dbd5f2d4761059352d336d161":[9,8,2,3,3],
-"group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2eafdf92ed38eb7a729fd29b564da0963d5":[9,8,2,3,2],
-"group__nhwsiFunctions.html":[9,8,4],
-"group__nhwsiFunctions.html#ga048b6326c149bc4dada900eb30ac5c96":[9,8,4,1],
-"group__nhwsiFunctions.html#ga2002c371c7a88323c0e955c0a708b4f6":[9,8,4,4]
+"group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ea9bd012bbe2b8539bef8c229c316bfe33":[9,8,2,3,5]
 };

@@ -1,5 +1,10 @@
 var NAVTREEINDEX11 =
 {
+"structnh__wsi__MouseEvent.html#a037ca131734cdd8d888dadf743978fad":[9,8,3,2,1],
+"structnh__wsi__MouseEvent.html#a3ed5effbac0a6236a0901c47abfe53d3":[9,8,3,2,0],
+"structnh__wsi__MouseEvent.html#a8c3371e2cb4316b1f80afef94021871d":[9,8,3,2,2],
+"systemarchitecture.html":[6],
+"systemarchitecture.html#Notation":[6,0],
 "systemarchitecture.html#SystemFlow":[6,3],
 "systemarchitecture.html#SystemLayerComponents":[6,2],
 "systemarchitecture.html#SystemLayers":[6,1],

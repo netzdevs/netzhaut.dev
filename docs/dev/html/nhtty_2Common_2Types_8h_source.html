@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('nhtty_2Common_2Types_8h_source.html','
 <div class="title">Types.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="nhtty_2Common_2Types_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="group__nhttyTypedefs.html#ga052e6c24608ea54c2fa3686e527c87e3">    1</a></span>&#160;<span class="preprocessor">#ifndef NH_TTY_TYPES_H</span></div>
+<a href="nhtty_2Common_2Types_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="group__nhttyTypedefs.html#ga357d3e8fa1b0a3f4e2d850c1bdc3b807">    1</a></span>&#160;<span class="preprocessor">#ifndef NH_TTY_TYPES_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define NH_TTY_TYPES_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span></div>
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('nhtty_2Common_2Types_8h_source.html','
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="group__nhttyTypedefs.html#ga052e6c24608ea54c2fa3686e527c87e3">nh_tty_Terminal</a> <a class="code" href="group__nhttyTypedefs.html#ga052e6c24608ea54c2fa3686e527c87e3">nh_tty_Terminal</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="group__nhttyTypedefs.html#ga357d3e8fa1b0a3f4e2d850c1bdc3b807">nh_tty_PseudoTerminal</a> <a class="code" href="group__nhttyTypedefs.html#ga357d3e8fa1b0a3f4e2d850c1bdc3b807">nh_tty_PseudoTerminal</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structnh__tty__Program.html">nh_tty_Program</a> <a class="code" href="structnh__tty__Program.html">nh_tty_Program</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="group__nhttyTypedefs.html#ga41e2c88cd7a5b501963acfb76560d4a2">   26</a></span>&#160;    <span class="keyword">typedef</span> <span class="keywordtype">void</span> *(*nh_tty_init_f)();</div>
@@ -141,8 +141,8 @@ $(document).ready(function(){initNavTree('nhtty_2Common_2Types_8h_source.html','
 <div class="ttc" id="agroup__nhencodingTypedefs_html_gad63619d1bc54238feaa157a43a3a8501"><div class="ttname"><a href="group__nhencodingTypedefs.html#gad63619d1bc54238feaa157a43a3a8501">NH_ENCODING_UTF32</a></div><div class="ttdeci">uint_least32_t NH_ENCODING_UTF32</div><div class="ttdef"><b>Definition:</b> Types.h:20</div></div>
 <div class="ttc" id="agroup__nhttyEnums_html_ga1e8b6ea94cb80a0f6ccae9464486dd8a"><div class="ttname"><a href="group__nhttyEnums.html#ga1e8b6ea94cb80a0f6ccae9464486dd8a">NH_TTY_RESULT</a></div><div class="ttdeci">NH_TTY_RESULT</div><div class="ttdoc">Return values for functions.</div><div class="ttdef"><b>Definition:</b> Result.h:22</div></div>
 <div class="ttc" id="agroup__nhttyTypedefs_html_ga026fa8d2e6169d58e2159d40a16fa48a"><div class="ttname"><a href="group__nhttyTypedefs.html#ga026fa8d2e6169d58e2159d40a16fa48a">nh_tty_handleInput_f</a></div><div class="ttdeci">NH_TTY_RESULT(* nh_tty_handleInput_f)(nh_tty_Program *Program_p, NH_ENCODING_UTF32 c)</div><div class="ttdef"><b>Definition:</b> Types.h:28</div></div>
-<div class="ttc" id="agroup__nhttyTypedefs_html_ga052e6c24608ea54c2fa3686e527c87e3"><div class="ttname"><a href="group__nhttyTypedefs.html#ga052e6c24608ea54c2fa3686e527c87e3">nh_tty_Terminal</a></div><div class="ttdeci">struct nh_tty_Terminal nh_tty_Terminal</div><div class="ttdef"><b>Definition:</b> Types.h:23</div></div>
 <div class="ttc" id="agroup__nhttyTypedefs_html_ga096d5b9f485fb94241184c60d9e65beb"><div class="ttname"><a href="group__nhttyTypedefs.html#ga096d5b9f485fb94241184c60d9e65beb">nh_tty_draw_f</a></div><div class="ttdeci">NH_TTY_RESULT(* nh_tty_draw_f)(nh_tty_Program *Program_p, nh_encoding_UTF8String *Row_p, int width, int height, int row)</div><div class="ttdef"><b>Definition:</b> Types.h:27</div></div>
+<div class="ttc" id="agroup__nhttyTypedefs_html_ga357d3e8fa1b0a3f4e2d850c1bdc3b807"><div class="ttname"><a href="group__nhttyTypedefs.html#ga357d3e8fa1b0a3f4e2d850c1bdc3b807">nh_tty_PseudoTerminal</a></div><div class="ttdeci">struct nh_tty_PseudoTerminal nh_tty_PseudoTerminal</div><div class="ttdef"><b>Definition:</b> Types.h:23</div></div>
 <div class="ttc" id="agroup__nhttyTypedefs_html_ga41e2c88cd7a5b501963acfb76560d4a2"><div class="ttname"><a href="group__nhttyTypedefs.html#ga41e2c88cd7a5b501963acfb76560d4a2">nh_tty_init_f</a></div><div class="ttdeci">void *(* nh_tty_init_f)()</div><div class="ttdef"><b>Definition:</b> Types.h:26</div></div>
 <div class="ttc" id="agroup__nhttyTypedefs_html_ga97420da7de9490584fe0f4abe0a592c0"><div class="ttname"><a href="group__nhttyTypedefs.html#ga97420da7de9490584fe0f4abe0a592c0">nh_tty_handleCommand_f</a></div><div class="ttdeci">NH_TTY_RESULT(* nh_tty_handleCommand_f)(nh_tty_Program *Program_p, nh_List *Arguments_p)</div><div class="ttdef"><b>Definition:</b> Types.h:31</div></div>
 <div class="ttc" id="agroup__nhttyTypedefs_html_gab5c143f96b503055e2505a42e878c95a"><div class="ttname"><a href="group__nhttyTypedefs.html#gab5c143f96b503055e2505a42e878c95a">nh_tty_getCursorPosition_f</a></div><div class="ttdeci">NH_TTY_RESULT(* nh_tty_getCursorPosition_f)(nh_tty_Program *Program_p, int *x_p, int *y_p)</div><div class="ttdef"><b>Definition:</b> Types.h:29</div></div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('nhtty_2Common_2Types_8h_source.html','
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.4.19.14</b>
+<b>rev.0.5.13.16</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>
