@@ -4,9 +4,6 @@ var group__nhcoreFunctions =
     [ "_nh_logBegin", "group__nhcoreFunctions.html#ga9709e8397045f10fb486504fd7226f08", null ],
     [ "_nh_logDiagnosticEnd", "group__nhcoreFunctions.html#ga05f88a1e956acb6fe3fa3df0999fea3e", null ],
     [ "_nh_logEnd", "group__nhcoreFunctions.html#gae9c75dd22ed32d07357e77ba46c19eb2", null ],
-    [ "_nh_tty_logBegin", "group__nhcoreFunctions.html#gac017b4d583822e4b7f7c62d236b437ff", null ],
-    [ "_nh_tty_logDiagnosticEnd", "group__nhcoreFunctions.html#ga932e540bb034f73daae7d037bbca010a", null ],
-    [ "_nh_tty_logEnd", "group__nhcoreFunctions.html#gada9cf9e13c1cbca070ff6de633a93d7b", null ],
     [ "nh_addInternalURNSyntax", "group__nhcoreFunctions.html#gaccc481ab554379b3b7066d5d5d59e07d", null ],
     [ "nh_copyURI", "group__nhcoreFunctions.html#ga433d0d3f556878004a83a3762bc74fbf", null ],
     [ "nh_correspondingURI", "group__nhcoreFunctions.html#ga22ff8cffecdbef55e4ce6754917ee0c1", null ],
@@ -22,7 +19,5 @@ var group__nhcoreFunctions =
     [ "nh_logModules", "group__nhcoreFunctions.html#gaea4b0781f8806743be4a016c8961ad10", null ],
     [ "nh_logSystemInfo", "group__nhcoreFunctions.html#gafc6dab10c3d2a9265b136a1bdb2187fc", null ],
     [ "nh_stringifyURI", "group__nhcoreFunctions.html#gaefbc5c084ce19b5df6ef6de5fa6f4424", null ],
-    [ "nh_terminate", "group__nhcoreFunctions.html#ga6d5e0ab7c19f983f7fb17689ab351507", null ],
-    [ "nh_tty_logCSI", "group__nhcoreFunctions.html#gaeeec25882bc209561f74a16407c2dd57", null ],
-    [ "nh_tty_logTerminalMode", "group__nhcoreFunctions.html#gaa3236e36014649c0eee316d48445fefa", null ]
+    [ "nh_terminate", "group__nhcoreFunctions.html#ga6d5e0ab7c19f983f7fb17689ab351507", null ]
 ];

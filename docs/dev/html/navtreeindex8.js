@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ea843c89e666a49078db03df2e2d00a192":[9,8,2,3,0],
+"group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ea9bd012bbe2b8539bef8c229c316bfe33":[9,8,2,3,5],
 "group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2ead81ec73dbd5f2d4761059352d336d161":[9,8,2,3,3],
 "group__nhwsiEnums.html#ggadf7f6fb7ee4672ddc7e7403a9e67dc2eafdf92ed38eb7a729fd29b564da0963d5":[9,8,2,3,2],
 "group__nhwsiFunctions.html":[9,8,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "structnh__css__TextValues.html#acab274afab9d2837d02fbdf2cea7d2b8":[9,3,3,4,3],
 "structnh__css__TextValues.html#ad47d65981d922e80d7735c5e7b1627ea":[9,3,3,4,4],
 "structnh__css__TextValues.html#ad920b0bde9f0127cd9a260e75516849e":[9,3,3,4,8],
-"structnh__css__TextValues.html#adf8c3f7cd7c170c5fc4c0735e0ab1448":[9,3,3,4,6],
-"structnh__css__TextValues.html#afec8ce17f4ce6388d97742e69deee45b":[9,3,3,4,5],
-"structnh__css__Value.html":[9,3,3,27]
+"structnh__css__TextValues.html#adf8c3f7cd7c170c5fc4c0735e0ab1448":[9,3,3,4,6]
 };

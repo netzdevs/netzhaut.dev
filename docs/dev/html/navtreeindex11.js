@@ -1,5 +1,13 @@
 var NAVTREEINDEX11 =
 {
+"structnh__wsi__Keyboard.html#a987db7aac71f7324c145528510df96a8":[9,8,3,5,0],
+"structnh__wsi__KeyboardEvent.html":[9,8,3,4],
+"structnh__wsi__KeyboardEvent.html#a0c35741b5ab16ce2b2637d198db21880":[9,8,3,4,0],
+"structnh__wsi__KeyboardEvent.html#a0da82de1b1561f27cf847e0e0a9568d6":[9,8,3,4,1],
+"structnh__wsi__Mouse.html":[9,8,3,3],
+"structnh__wsi__Mouse.html#a608aff4b7d0c6e3fb933395d8edbb910":[9,8,3,3,1],
+"structnh__wsi__Mouse.html#ae962935791aa45c8b000e86519dad7cb":[9,8,3,3,0],
+"structnh__wsi__MouseEvent.html":[9,8,3,2],
 "structnh__wsi__MouseEvent.html#a037ca131734cdd8d888dadf743978fad":[9,8,3,2,1],
 "structnh__wsi__MouseEvent.html#a3ed5effbac0a6236a0901c47abfe53d3":[9,8,3,2,0],
 "structnh__wsi__MouseEvent.html#a8c3371e2cb4316b1f80afef94021871d":[9,8,3,2,2],

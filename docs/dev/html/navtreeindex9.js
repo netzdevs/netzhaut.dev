@@ -1,5 +1,7 @@
 var NAVTREEINDEX9 =
 {
+"structnh__css__TextValues.html#afec8ce17f4ce6388d97742e69deee45b":[9,3,3,4,5],
+"structnh__css__Value.html":[9,3,3,27],
 "structnh__css__Value.html#a0ce9d90201140d843cd8eb88137c29d7":[9,3,3,27,2],
 "structnh__css__Value.html#a36c524be2f0ddb8e8282cde4e5275bd5":[9,3,3,27,1],
 "structnh__css__Value.html#a77038bd3b424b8fb31266fe440a981c2":[9,3,3,27,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX9 =
 "structnh__gfx__Viewport.html#a63e90a4ce11adf969f82348af9a16cfa":[9,4,3,18,2],
 "structnh__gfx__Viewport.html#a6e18cf6cedbe37165123c69386209aa1":[9,4,3,18,13],
 "structnh__gfx__Viewport.html#a73234c5f3e9c5bdb79dc3ec4e835cc1c":[9,4,3,18,5],
-"structnh__gfx__Viewport.html#a7cea6c25b57a9188374f622819fa1b4f":[9,4,3,18,12],
-"structnh__gfx__Viewport.html#a8cfcfd4cb20ff95467e1c351ec4efb4c":[9,4,3,18,6],
-"structnh__gfx__Viewport.html#aa60e2210d75f344a4078d43f29d86bb6":[9,4,3,18,15]
+"structnh__gfx__Viewport.html#a7cea6c25b57a9188374f622819fa1b4f":[9,4,3,18,12]
 };
