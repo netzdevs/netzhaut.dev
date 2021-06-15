@@ -1,5 +1,10 @@
 var group__nhttyStructs =
 [
+    [ "nh_tty_Event", "structnh__tty__Event.html", [
+      [ "codepoint", "structnh__tty__Event.html#a5bc888327adae856f0b43e95fe7a9e29", null ],
+      [ "special", "structnh__tty__Event.html#add934e14790711d293a9d3b8c35f653b", null ],
+      [ "trigger", "structnh__tty__Event.html#a7cf7d184f450d9b397e4e29273624ee0", null ]
+    ] ],
     [ "nh_tty_ProgramCallbacks", "structnh__tty__ProgramCallbacks.html", [
       [ "createView_f", "structnh__tty__ProgramCallbacks.html#ae35ccdf1dc68d0c3fbb758b507afed27", null ],
       [ "destroyView_f", "structnh__tty__ProgramCallbacks.html#af181c691c725ec5fb131b3359e8f1f95", null ],

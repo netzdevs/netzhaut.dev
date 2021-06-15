@@ -10,6 +10,7 @@ var modules =
     [ "nhwebidl", "group__nhwebidl.html", "group__nhwebidl" ],
     [ "nhwsi", "group__nhwsi.html", "group__nhwsi" ],
     [ "nhnetwork", "group__nhnetwork.html", "group__nhnetwork" ],
+    [ "nhterm", "group__nhterm.html", "group__nhterm" ],
     [ "nhhtml", "group__nhhtml.html", "group__nhhtml" ],
     [ "nhmake", "group__nhmake.html", "group__nhmake" ],
     [ "nhwebbrowser", "group__nhwebbrowser.html", "group__nhwebbrowser" ],

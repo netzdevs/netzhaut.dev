@@ -60,7 +60,7 @@ var group__nhgfxEnums =
     ] ],
     [ "NH_GFX_VIEWPORT_OWNER", "group__nhgfxEnums.html#ga9d4f1367aabcb6dfaffe3c62937a157e", [
       [ "NH_GFX_VIEWPORT_OWNER_CSS", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea6d67827eccbdeed43c3920623a5b22d1", null ],
-      [ "NH_GFX_VIEWPORT_OWNER_TTY", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea11d386ab183d0b2de2b94f06c033060e", null ],
+      [ "NH_GFX_VIEWPORT_OWNER_TERM", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ead5a3216b557af79bfcba5489ff16eb7d", null ],
       [ "NH_GFX_VIEWPORT_OWNER_USER", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea56034246c1f5dfcc464abee4fa53341f", null ],
       [ "NH_GFX_VIEWPORT_OWNER_NONE", "group__nhgfxEnums.html#gga9d4f1367aabcb6dfaffe3c62937a157ea10ae5c31408f00a338e6904098b82dbd", null ]
     ] ],

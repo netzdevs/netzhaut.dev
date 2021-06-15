@@ -1,5 +1,7 @@
 var NAVTREEINDEX11 =
 {
+"structnh__wsi__Keyboard.html":[9,8,3,5],
+"structnh__wsi__Keyboard.html#a49cb6942652043a2dae57d0492029b35":[9,8,3,5,1],
 "structnh__wsi__Keyboard.html#a987db7aac71f7324c145528510df96a8":[9,8,3,5,0],
 "structnh__wsi__KeyboardEvent.html":[9,8,3,4],
 "structnh__wsi__KeyboardEvent.html#a0c35741b5ab16ce2b2637d198db21880":[9,8,3,4,0],

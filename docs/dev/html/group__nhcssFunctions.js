@@ -60,5 +60,6 @@ var group__nhcssFunctions =
     [ "nh_css_parseStyleSheet", "group__nhcssFunctions.html#gae5bb5b4ae3ba7dd340fe9428a90fef78", null ],
     [ "nh_css_setSpecifiedValues", "group__nhcssFunctions.html#gae3778cf8624298b76ce3ec3a29f21db1", null ],
     [ "nh_css_terminate", "group__nhcssFunctions.html#ga516a85ef9fc9392220b3ae9d0165faea", null ],
-    [ "nh_css_tokenize", "group__nhcssFunctions.html#ga911513d4fc31dc0f7e169d87792ad8cc", null ]
+    [ "nh_css_tokenize", "group__nhcssFunctions.html#ga911513d4fc31dc0f7e169d87792ad8cc", null ],
+    [ "nh_term_initialize", "group__nhcssFunctions.html#gab1c2bb09d593273544c231ebd819deac", null ]
 ];

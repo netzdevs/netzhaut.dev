@@ -29,8 +29,8 @@ var group__nhgfxStructs =
       [ "Driver", "structnh__vk__GPU.html#a26ffd2772cd9fd6bfd1f1c92650b9483", null ],
       [ "name_p", "structnh__vk__GPU.html#a3d889b15ff3cdd9cc72d769d7f48eabb", null ],
       [ "Pipelines_p", "structnh__vk__GPU.html#ab22a7ccab159092217a7a4e048ae1cb5", null ],
-      [ "Textures", "structnh__vk__GPU.html#a6b5ce929bee29fc74521c226e12e1e6a", null ],
-      [ "TTY", "structnh__vk__GPU.html#ad7e19a99ed38667ec4cc1ae5dc5824cb", null ]
+      [ "Term", "structnh__vk__GPU.html#a77e46eb31f041fb85f00a3f47067dfac", null ],
+      [ "Textures", "structnh__vk__GPU.html#a6b5ce929bee29fc74521c226e12e1e6a", null ]
     ] ],
     [ "nh_vk_BufferInfo", "structnh__vk__BufferInfo.html", [
       [ "createInfo", "structnh__vk__BufferInfo.html#a67ed3467def984e38cf141a2c56042cb", null ],

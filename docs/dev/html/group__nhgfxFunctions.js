@@ -5,6 +5,7 @@ var group__nhgfxFunctions =
     [ "_nh_gfx_logDiagnosticEnd", "group__nhgfxFunctions.html#gae0fc3d370809dc3441d21a35369e2583", null ],
     [ "_nh_gfx_logEnd", "group__nhgfxFunctions.html#ga6c8a35e683e70c3e4426066f0ab0cd20", null ],
     [ "nh_gfx_beginRecording", "group__nhgfxFunctions.html#ga87d86b205bbc09765b5b63282d36d54d", null ],
+    [ "nh_gfx_claimViewport", "group__nhgfxFunctions.html#gaa4edf184f487b5c26aad3c8b70df6a6a", null ],
     [ "nh_gfx_createSurface", "group__nhgfxFunctions.html#gaa070a65ef7802264c6f8dcd5c2635b68", null ],
     [ "nh_gfx_createViewport", "group__nhgfxFunctions.html#ga8055c1de813a1e22eacb04d7c9fc8c4c", null ],
     [ "nh_gfx_endRecording", "group__nhgfxFunctions.html#ga72e714be9efe3bde66b816f2062ebdc2", null ],
@@ -44,6 +45,7 @@ var group__nhgfxFunctions =
     [ "nh_vk_mapDeviceMemory", "group__nhgfxFunctions.html#gad4954d86849a8700dbc870cdedf08899", null ],
     [ "nh_vk_prepareDefaultPipelineInfo", "group__nhgfxFunctions.html#gad363cb1731446231d458f8077a3fda0f", null ],
     [ "nh_vk_prepareRendering", "group__nhgfxFunctions.html#ga3456425716f9f4a12bed9eecffb8241d", null ],
+    [ "nh_vk_reloadFontTexture", "group__nhgfxFunctions.html#ga023d628cc2bec2f5da5e20ffff97fe26", null ],
     [ "nh_vk_render", "group__nhgfxFunctions.html#ga9d8120491036b94faab6635d1244c8e8", null ],
     [ "nh_vk_resize", "group__nhgfxFunctions.html#ga9ff63b415e581e819515334dfb3f7aca", null ]
 ];

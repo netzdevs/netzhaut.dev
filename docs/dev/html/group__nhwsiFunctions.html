@@ -103,11 +103,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga2002c371c7a88323c0e955c0a708b4f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhwsiEnums.html#gaad76c7c64aab18b7bf38e2631a3da2a9">NH_WSI_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhwsiFunctions.html#ga2002c371c7a88323c0e955c0a708b4f6">nh_wsi_initialize</a> ()</td></tr>
 <tr class="memdesc:ga2002c371c7a88323c0e955c0a708b4f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__nhwsiFunctions.html#ga2002c371c7a88323c0e955c0a708b4f6">More...</a><br /></td></tr>
 <tr class="separator:ga2002c371c7a88323c0e955c0a708b4f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa300fc0bb8101e81cc8849e004d271b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhwsiFunctions.html#gaa300fc0bb8101e81cc8849e004d271b8">nh_wsi_logMouse</a> (<a class="el" href="structnh__wsi__MouseEvent.html">nh_wsi_MouseEvent</a> *Event_p)</td></tr>
-<tr class="memdesc:gaa300fc0bb8101e81cc8849e004d271b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__nhwsiFunctions.html#gaa300fc0bb8101e81cc8849e004d271b8">More...</a><br /></td></tr>
-<tr class="separator:gaa300fc0bb8101e81cc8849e004d271b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8bf66bb68ebfb17a03825328c530065a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhwsiFunctions.html#ga8bf66bb68ebfb17a03825328c530065a">nh_wsi_logWindow</a> (<a class="el" href="structnh__wsi__ConfigureEvent.html">nh_wsi_ConfigureEvent</a> *Event_p)</td></tr>
-<tr class="separator:ga8bf66bb68ebfb17a03825328c530065a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91b747deabe270a381dc50576a04875b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhwsiFunctions.html#ga91b747deabe270a381dc50576a04875b">nh_wsi_logEvent</a> (<a class="el" href="group__nhwsiTypedefs.html#gaa51d32c78e5f2a95ef417e63d1568b7d">nh_wsi_Window</a> *Window_p, <a class="el" href="structnh__wsi__Event.html">nh_wsi_Event</a> *Event_p)</td></tr>
+<tr class="memdesc:ga91b747deabe270a381dc50576a04875b"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__nhwsiFunctions.html#ga91b747deabe270a381dc50576a04875b">More...</a><br /></td></tr>
+<tr class="separator:ga91b747deabe270a381dc50576a04875b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga048b6326c149bc4dada900eb30ac5c96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhwsiEnums.html#gaad76c7c64aab18b7bf38e2631a3da2a9">NH_WSI_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhwsiFunctions.html#ga048b6326c149bc4dada900eb30ac5c96">_nh_wsi_logBegin</a> (const char *file_p, const char *function_p)</td></tr>
 <tr class="separator:ga048b6326c149bc4dada900eb30ac5c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5228ed8695b2673304a497170e7c321b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhwsiEnums.html#gaad76c7c64aab18b7bf38e2631a3da2a9">NH_WSI_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhwsiFunctions.html#ga5228ed8695b2673304a497170e7c321b">_nh_wsi_logEnd</a> (const char *file_p, const char *function_p)</td></tr>
@@ -249,41 +247,33 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="gaa300fc0bb8101e81cc8849e004d271b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa300fc0bb8101e81cc8849e004d271b8">&#9670;&nbsp;</a></span>nh_wsi_logMouse()</h2>
+<a id="ga91b747deabe270a381dc50576a04875b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91b747deabe270a381dc50576a04875b">&#9670;&nbsp;</a></span>nh_wsi_logEvent()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void nh_wsi_logMouse </td>
+          <td class="memname">void nh_wsi_logEvent </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structnh__wsi__MouseEvent.html">nh_wsi_MouseEvent</a> *&#160;</td>
-          <td class="paramname"><em>Event_p</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__nhwsiTypedefs.html#gaa51d32c78e5f2a95ef417e63d1568b7d">nh_wsi_Window</a> *&#160;</td>
+          <td class="paramname"><em>Window_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structnh__wsi__Event.html">nh_wsi_Event</a> *&#160;</td>
+          <td class="paramname"><em>Event_p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT </p>
-
-</div>
-</div>
-<a id="ga8bf66bb68ebfb17a03825328c530065a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8bf66bb68ebfb17a03825328c530065a">&#9670;&nbsp;</a></span>nh_wsi_logWindow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void nh_wsi_logWindow </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structnh__wsi__ConfigureEvent.html">nh_wsi_ConfigureEvent</a> *&#160;</td>
-          <td class="paramname"><em>Event_p</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -301,7 +291,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.5.15.15</b>
+<b>rev.0.6.16.14</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

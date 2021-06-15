@@ -172,6 +172,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga9ff63b415e581e819515334dfb3f7aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaab387bc3f5a3c0c360c63cc00ba6982e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__vk__Texture.html">nh_vk_Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxFunctions.html#gaab387bc3f5a3c0c360c63cc00ba6982e">nh_vk_loadFontTexture</a> (<a class="el" href="structnh__vk__GPU.html">nh_vk_GPU</a> *GPU_p, nh_gfx_Font *Font_p)</td></tr>
 <tr class="separator:gaab387bc3f5a3c0c360c63cc00ba6982e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga023d628cc2bec2f5da5e20ffff97fe26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__vk__Texture.html">nh_vk_Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxFunctions.html#ga023d628cc2bec2f5da5e20ffff97fe26">nh_vk_reloadFontTexture</a> (<a class="el" href="structnh__vk__GPU.html">nh_vk_GPU</a> *GPU_p, nh_gfx_Font *Font_p)</td></tr>
+<tr class="separator:ga023d628cc2bec2f5da5e20ffff97fe26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga217932948db8ccf79482e3cd7b9de755"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxFunctions.html#ga217932948db8ccf79482e3cd7b9de755">nh_vk_destroyTexture</a> (<a class="el" href="structnh__vk__GPU.html">nh_vk_GPU</a> *GPU_p, <a class="el" href="structnh__vk__Texture.html">nh_vk_Texture</a> *Texture_p)</td></tr>
 <tr class="separator:ga217932948db8ccf79482e3cd7b9de755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf422a525392ce0596e25e4f68e2af1db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxFunctions.html#gaf422a525392ce0596e25e4f68e2af1db">nh_vk_createViewport</a> (<a class="el" href="structnh__gfx__Viewport.html">nh_gfx_Viewport</a> *Viewport_p)</td></tr>
@@ -198,6 +200,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga87d86b205bbc09765b5b63282d36d54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga72e714be9efe3bde66b816f2062ebdc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxFunctions.html#ga72e714be9efe3bde66b816f2062ebdc2">nh_gfx_endRecording</a> (<a class="el" href="structnh__gfx__Viewport.html">nh_gfx_Viewport</a> *Viewport_p)</td></tr>
 <tr class="separator:ga72e714be9efe3bde66b816f2062ebdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4edf184f487b5c26aad3c8b70df6a6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhgfxFunctions.html#gaa4edf184f487b5c26aad3c8b70df6a6a">nh_gfx_claimViewport</a> (<a class="el" href="structnh__gfx__Viewport.html">nh_gfx_Viewport</a> *Viewport_p, <a class="el" href="group__nhgfxEnums.html#ga9d4f1367aabcb6dfaffe3c62937a157e">NH_GFX_VIEWPORT_OWNER</a> owner, void *owner_p)</td></tr>
+<tr class="separator:gaa4edf184f487b5c26aad3c8b70df6a6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
@@ -328,6 +332,40 @@ Functions</h2></td></tr>
           <td class="paramtype"><a class="el" href="structnh__gfx__Viewport.html">nh_gfx_Viewport</a> *&#160;</td>
           <td class="paramname"><em>Viewport_p</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa4edf184f487b5c26aad3c8b70df6a6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4edf184f487b5c26aad3c8b70df6a6a">&#9670;&nbsp;</a></span>nh_gfx_claimViewport()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a> nh_gfx_claimViewport </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnh__gfx__Viewport.html">nh_gfx_Viewport</a> *&#160;</td>
+          <td class="paramname"><em>Viewport_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__nhgfxEnums.html#ga9d4f1367aabcb6dfaffe3c62937a157e">NH_GFX_VIEWPORT_OWNER</a>&#160;</td>
+          <td class="paramname"><em>owner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>owner_p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1359,6 +1397,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga023d628cc2bec2f5da5e20ffff97fe26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga023d628cc2bec2f5da5e20ffff97fe26">&#9670;&nbsp;</a></span>nh_vk_reloadFontTexture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structnh__vk__Texture.html">nh_vk_Texture</a>* nh_vk_reloadFontTexture </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structnh__vk__GPU.html">nh_vk_GPU</a> *&#160;</td>
+          <td class="paramname"><em>GPU_p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">nh_gfx_Font *&#160;</td>
+          <td class="paramname"><em>Font_p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ga9d8120491036b94faab6635d1244c8e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9d8120491036b94faab6635d1244c8e8">&#9670;&nbsp;</a></span>nh_vk_render()</h2>
 
@@ -1419,7 +1485,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.5.15.15</b>
+<b>rev.0.6.16.14</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>
