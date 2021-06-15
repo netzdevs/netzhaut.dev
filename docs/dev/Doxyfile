@@ -828,8 +828,8 @@ INPUT                  = "introduction.md" "meta/guide.md" "meta/roadmap.md" "me
 "../../../../../src/lib/nhterm/Common" \
 "../../../../../src/lib/nhhtml/Common"  "../../../../../src/lib/nhhtml/Parser" \
 "../../../../../src/bin/nhmake/About.h" \
-"../../../../../src/bin/nhwebbrowser/About.h" \
-"../../../../../src/bin/nhterminal/About.h" \
+"../../../../../src/bin/nhdev/About.h" \
+"../../../../../src/bin/nht/About.h" \
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

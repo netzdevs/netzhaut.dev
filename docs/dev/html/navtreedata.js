@@ -36,7 +36,8 @@ var NAVTREE =
       [ "pre-alpha-1", "roadmap.html#pre-alpha-1", [
         [ "Completed", "roadmap.html#pre-alpha-1complete", [
           [ "Improved Build Tool", "roadmap.html#pre-alpha-1build", null ],
-          [ "Improved Text Processing", "roadmap.html#pre-alpha-1text", null ]
+          [ "Improved Text Processing", "roadmap.html#pre-alpha-1text", null ],
+          [ "Improved TTY Interface", "roadmap.html#pre-alpha-1term", null ]
         ] ],
         [ "In Progress", "roadmap.html#pre-alpha-1progress", [
           [ "Advanced CSS Layout Engine", "roadmap.html#pre-alpha-1layout", null ],
@@ -100,14 +101,14 @@ var NAVTREEINDEX =
 "codestyle.html",
 "group__nhcssEnums.html#gga5a9fae66757261c5eceadcb9a8149185a8041eb24cde9b76b6097e960947fcb5c",
 "group__nhcssEnums.html#ggab34dab72261097d5941740976503da6ca78c0fafbd18bde3f1f73517cfc02bbe5",
-"group__nhecmascriptEnums.html#gga384dfad47a30e2fd536a54eda8e73a23ab96c92443b84c7978bd4ad1010b27545",
-"group__nhecmascriptFunctions.html#ga693dae51af24f38168457a2256f609b5",
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffebae483688cb19b09dd166e62517a8f6907",
-"group__nhhtmlEnums.html#gga943494f6405ac44a581774cdc5eb91ada4bac0aacc3b630089aeed4f71565d3db",
-"group__nhtermFunctions.html#gad7a653eb9bec29666ad0c565d1eb0a96",
-"structnh__ArrayList.html",
-"structnh__ecmascript__DataPropertyDescriptor.html",
-"structnh__html__Tokenizer.html#adc62485513fea9cb1446b2d5836f3ec9"
+"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a8d485ca0510bbae2a7fea154b4d60ea8",
+"group__nhecmascriptFunctions.html#ga6022e991b8cd758d75aadd02a0528fc4",
+"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffebac1fd182954ae6ec8a02017d9993dd12e",
+"group__nhhtmlEnums.html#gga943494f6405ac44a581774cdc5eb91ada4213d6e0fcac2439809d031d5f94bb82",
+"group__nhtermEnums.html#gadf3b18d1c0b13f949b319a1b45455198",
+"structnh__Array.html#aaf1549992ad53d96cef64a12d6ae1786",
+"structnh__ecmascript__DataProperty.html#aa9cb940cf8365893041527db90cfc67e",
+"structnh__html__Tokenizer.html#aab8dc71f0db1e67a124299795f5b54e6"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

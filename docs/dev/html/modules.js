@@ -13,6 +13,6 @@ var modules =
     [ "nhterm", "group__nhterm.html", "group__nhterm" ],
     [ "nhhtml", "group__nhhtml.html", "group__nhhtml" ],
     [ "nhmake", "group__nhmake.html", "group__nhmake" ],
-    [ "nhwebbrowser", "group__nhwebbrowser.html", "group__nhwebbrowser" ],
-    [ "nhterminal", "group__nhterminal.html", "group__nhterminal" ]
+    [ "nhdev", "group__nhdev.html", "group__nhdev" ],
+    [ "nht", "group__nht.html", "group__nht" ]
 ];

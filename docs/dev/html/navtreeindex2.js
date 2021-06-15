@@ -178,6 +178,12 @@ var NAVTREEINDEX2 =
 "group__nhcssVars.html#gac906464290507ff8ff7fff7a71134b97":[9,3,6,3],
 "group__nhcssVars.html#gae9fffcfb3b0f719c1b07ddb7f508a324":[9,3,6,4],
 "group__nhcssVars.html#gaf85ec407bf69b38191725c05a4ba5f73":[9,3,6,8],
+"group__nhdev.html":[9,13],
+"group__nhdevChangelog.html":[9,13,0],
+"group__nhdevChangelog.html#ga4a23412e478018c18599382aaae72361":[9,13,0,0],
+"group__nhdevChangelog.html#ga59799057e28282a1ebf87760c2c62289":[9,13,0,1],
+"group__nhdevChangelog.html#gac5b80da2f99d8685d6d128997f51c450":[9,13,0,3],
+"group__nhdevChangelog.html#gac8d478b260c2647ed50f966ce01faefd":[9,13,0,2],
 "group__nhdom.html":[9,5],
 "group__nhdomChangelog.html":[9,5,0],
 "group__nhdomChangelog.html#ga8ccf34e4cf4283d701b0a97f8fd727bc":[9,5,0,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX2 =
 "group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a68f3df485af53eafe8f090909b6de3cc":[9,2,2,3,4],
 "group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a795929971b609b626cea3dd287d449a4":[9,2,2,3,10],
 "group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a828c274888c60e13816598a42f0cd729":[9,2,2,3,6],
-"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a85e50916f9d4e3a1b593c884449bab44":[9,2,2,3,11],
-"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a8d485ca0510bbae2a7fea154b4d60ea8":[9,2,2,3,0],
-"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a9499af7abbda8470b118d39a25994789":[9,2,2,3,8],
-"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1aa3f87aa27338018d8ef123f17eec866f":[9,2,2,3,3],
-"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1ab0f8b215193f63d15632dbaab5757e3a":[9,2,2,3,13],
-"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1ac68fea6a554eaf6f361964bcc24f5be4":[9,2,2,3,12],
-"group__nhecmascriptEnums.html#gga384dfad47a30e2fd536a54eda8e73a23a91484f5edfb36f6795e15ec2d3983baa":[9,2,2,9,2]
+"group__nhecmascriptEnums.html#gga28628bf1ec956ce7685d62a21af900f1a85e50916f9d4e3a1b593c884449bab44":[9,2,2,3,11]
 };

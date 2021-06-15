@@ -23,7 +23,12 @@ The script language from the internal build-tool used by netzhaut is now a separ
 
 \subsubsection pre-alpha-1text Improved Text Processing 
 <div style="margin-left:20px;">
-The text-processing pipeline is now based on the common combination FreeType + HarfBuzz and should allow for stable font-handling across platforms.  
+The text-processing pipeline is now based on the common combination FreeType + HarfBuzz and should allow for stable font-handling across platforms (for now).  
+</div>
+
+\subsubsection pre-alpha-1term Improved TTY Interface
+<div style="margin-left:20px;">
+The TTY interface can now be displayed directly or externally using standard output. To facilitate this, the nhtty module was greatly overhauled and expanded. For direct display, the nhterm module was introduced. Also, internal tty-based programs such as the logger, editor etc. have been improved.
 </div>
 
 \subsection pre-alpha-1progress In Progress
