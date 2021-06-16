@@ -1,5 +1,7 @@
 var NAVTREEINDEX10 =
 {
+"structnh__html__Tokenizer.html#aa0b229def9a743762169a709eb090dc6":[9,11,3,8,3],
+"structnh__html__Tokenizer.html#aa4435cfef9b9aafa1752725ee6851e98":[9,11,3,8,2],
 "structnh__html__Tokenizer.html#aab8dc71f0db1e67a124299795f5b54e6":[9,11,3,8,4],
 "structnh__html__Tokenizer.html#adc62485513fea9cb1446b2d5836f3ec9":[9,11,3,8,0],
 "structnh__html__Tokenizer.html#ae68381669f7380d21d26929de29fc0a4":[9,11,3,8,8],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"group__nhtermEnums.html":[9,10,2],
 "group__nhtermEnums.html#gadf3b18d1c0b13f949b319a1b45455198":[9,10,2,0],
 "group__nhtermEnums.html#ggadf3b18d1c0b13f949b319a1b45455198a086e7ca752010e34e2736e9d263cfdaf":[9,10,2,0,3],
 "group__nhtermEnums.html#ggadf3b18d1c0b13f949b319a1b45455198a142a67ad1ca5c9d8fc60e735f531d959":[9,10,2,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "structnh__Array.html":[9,0,3,2],
 "structnh__Array.html#a124c48239a6c79d723d1390a55634c29":[9,0,3,2,4],
 "structnh__Array.html#a57eb92a594f5a5f0b0fa66ef803c86b3":[9,0,3,2,0],
-"structnh__Array.html#a68340e4ed177499c005e293902906a4e":[9,0,3,2,3],
-"structnh__Array.html#aa4a74d8f27b73debcb259b6244665a1f":[9,0,3,2,1]
+"structnh__Array.html#a68340e4ed177499c005e293902906a4e":[9,0,3,2,3]
 };

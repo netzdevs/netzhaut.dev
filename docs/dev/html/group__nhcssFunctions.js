@@ -3,6 +3,7 @@ var group__nhcssFunctions =
     [ "nh_css_LineBox", "structnh__css__LineBox.html", [
       [ "currentX", "structnh__css__LineBox.html#acd88277afa12bdd9a697307910e2567d", null ],
       [ "Position", "structnh__css__LineBox.html#aad8cb7677848b35319c6c87a83ef51e6", null ],
+      [ "RootInline_p", "structnh__css__LineBox.html#a1ef6bff383ef095e31a26e031ce1924e", null ],
       [ "Size", "structnh__css__LineBox.html#a14929a1c591bc03becd34ccf9c260b99", null ]
     ] ],
     [ "_nh_css_logBegin", "group__nhcssFunctions.html#ga258e69d90c2902681f9e41bb40363697", null ],
@@ -16,7 +17,7 @@ var group__nhcssFunctions =
     [ "nh_css_compare", "group__nhcssFunctions.html#gab1825fd1730249e5300bef7801953d1e", null ],
     [ "nh_css_computeBoxValues", "group__nhcssFunctions.html#ga4a868ca1509e9437d16da345f6fd96af", null ],
     [ "nh_css_computeLayout", "group__nhcssFunctions.html#ga045f36a6365a2cab51a07a2eb53ec7bc", null ],
-    [ "nh_css_computeSpecifiedValues", "group__nhcssFunctions.html#ga7f20e1315b3e443c2bc64944dbcfdba4", null ],
+    [ "nh_css_computeSpecifiedValues", "group__nhcssFunctions.html#ga756427315f0e5cf63ceb52988e4b18b9", null ],
     [ "nh_css_computeTextValues", "group__nhcssFunctions.html#gab9beac3e9bd4630b7d0d208cd353ce3d", null ],
     [ "nh_css_convertToClipBox", "group__nhcssFunctions.html#gab6bf6a18ec7ad62d4733c36807d8e065", null ],
     [ "nh_css_createIndexMap", "group__nhcssFunctions.html#ga1f69bb66534203bff750e5220c8073a3", null ],
@@ -46,6 +47,7 @@ var group__nhcssFunctions =
     [ "nh_css_isLengthValue", "group__nhcssFunctions.html#gaeb08a71ee61f2cf72803fdcda8f2fd64", null ],
     [ "nh_css_isStringValue", "group__nhcssFunctions.html#gacfc2329d649e9ded640db287f395701d", null ],
     [ "nh_css_logBoxTree", "group__nhcssFunctions.html#ga997f0dd4d9e60e3d322c302168d0f76f", null ],
+    [ "nh_css_logComputedValues", "group__nhcssFunctions.html#ga1475acb1a8d6d56b7ca334f32b822755", null ],
     [ "nh_css_logFilter", "group__nhcssFunctions.html#ga83d72823686edc94e3e4c4b5513352cb", null ],
     [ "nh_css_logFragmentTree", "group__nhcssFunctions.html#ga1037d4ec7679e734ebd5daf9d77dcb0e", null ],
     [ "nh_css_logRawRules", "group__nhcssFunctions.html#gab88dbc4546b2fd0b01c374c1e40e4365", null ],

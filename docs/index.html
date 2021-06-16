@@ -53,7 +53,7 @@
 <!-- NH_MAKE_INSERT_VER_END -->
 <br>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.6.16.16</b>
+<b>rev.0.6.16.17</b>
 <!-- NH_MAKE_INSERT_REV_END -->
       </div>
       <div style="height:56px;right:10px;top:0px;position:absolute;background-color:#151515;"><a href="https://netzwerkz.org"><img alt="netzwerkz logo" style="height:56px;" src="logo/netzwerkz.png"/></a></div>
@@ -69,10 +69,10 @@
           <h1><img alt="netzhaut logo" src="logo/netzhaut.png" style="width:20px;height:auto;"/> News</h1>
         </div>
 <!-- NH_MAKE_INSERT_NEWS_BEGIN -->
-<p><b>2021-05-18</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> CSS Update 4: Layout calculation is now done using a separate Fragment-Tree structure compared to the previous hybrid Box/Fragment-Tree. This improves code-readability and eliminates a lot of complexities. Here is a quick look at a Fragment-Tree using the logger: <a href="https://imgur.com/a/G9yQGzD">https://imgur.com/a/3GCG64w</a></p>
-<p><b>2021-05-15</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> CSS Update 3: The CSS implementation is now based on compliant W3C CSSOM interfaces which will easily link to the JavaScript engine.</p>
-<p><b>2021-05-11</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> CSS Update 2: Added initial implementations for the most common text related properties. Text-Rendering now correctly uses fallbacks. Currently, the only thing completely unsupported regarding text-rendering is emoji-rendering. <a href="https://imgur.com/a/3GCG64w">https://imgur.com/a/3GCG64w</a></p>
-<p><b>2021-05-05</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> CSS Update 1: Margin-collapse is currently disabled but the initial implementations for box-model, inline/block-layout and font-size are done. <a href="https://imgur.com/a/vJ09pYe">https://imgur.com/a/vJ09pYe</a></p>
+<p><b>2021-05-18</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> Layout calculation is now done using a separate Fragment-Tree structure compared to the previous hybrid Box/Fragment-Tree. This improves code-readability and eliminates a lot of complexities. Here is a quick look at a Fragment-Tree using the logger: <a href="https://imgur.com/a/G9yQGzD">https://imgur.com/a/3GCG64w</a></p>
+<p><b>2021-05-15</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> The CSS implementation is now based on compliant W3C CSSOM interfaces which will easily link to the JavaScript engine.</p>
+<p><b>2021-05-11</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> Added initial implementations for the most common text related properties. Text-Rendering now correctly uses fallbacks. Currently, the only thing completely unsupported regarding text-rendering is emoji-rendering. <a href="https://imgur.com/a/3GCG64w">https://imgur.com/a/3GCG64w</a></p>
+<p><b>2021-05-05</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> Margin-collapse is currently disabled but the initial implementations for box-model, inline/block-layout and font-size are done. <a href="https://imgur.com/a/vJ09pYe">https://imgur.com/a/vJ09pYe</a></p>
 <p><b>2021-04-30</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> Text processing is now done using the common combo FreeType+HarfBuzz. Text rendering is still very much experimental but the general pipeline should be stable now.</p>
 <p><b>2021-04-22</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> The internal build-system solution used by netzhaut has been moved to a new project, called <a href="https://selfmake.netzwerkz.org">selfmake</a>.</p>
 <p><b>2021-04-13</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> hello world!</p>
@@ -162,7 +162,7 @@
 2021-06-09 <a href="dev/html/group__nhencodingChangelog.html#v0.0.3.1">nhencoding v0.0.3.1</a><br>
 2021-05-24 <a href="dev/html/group__nhdomChangelog.html#v0.0.1.2">nhdom v0.0.1.2</a><br>
 2021-06-14 <a href="dev/html/group__nhgfxChangelog.html#v0.0.3.1">nhgfx v0.0.3.1</a><br>
-2021-05-27 <a href="dev/html/group__nhcssChangelog.html#v0.2.3.1">nhcss v0.2.3.1</a><br>
+2021-06-16 <a href="dev/html/group__nhcssChangelog.html#v0.2.3.2">nhcss v0.2.3.2</a><br>
 2021-06-15 <a href="dev/html/group__nhtermChangelog.html#v0.0.0.1">nhterm v0.0.0.1</a><br>
 2021-05-16 <a href="dev/html/group__nhmakeChangelog.html#v0.1.1.5">nhmake v0.1.1.5</a><br>
 2021-02-23 <a href="dev/html/group__nhtChangelog.html#v0.0.0.0">nht v0.0.0.0</a><br>
@@ -200,7 +200,7 @@
 <!-- NH_MAKE_INSERT_VER_END -->
 and revision version 
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.6.16.16</b>
+<b>rev.0.6.16.17</b>
 <!-- NH_MAKE_INSERT_REV_END -->
 which is the accumulation of all module versions. All versions follow the same semantics which are explained in the changelogs. The project stage 
 <!-- NH_MAKE_INSERT_STAGE_BEGIN -->
@@ -249,6 +249,9 @@ is documented in the <a href="dev/html/roadmap.html">roadmap</a>.
 </style>
 
 </html>
+
+
+
 
 
 
