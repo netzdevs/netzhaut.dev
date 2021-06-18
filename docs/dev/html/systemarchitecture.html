@@ -95,10 +95,10 @@ $(document).ready(function(){initNavTree('systemarchitecture.html',''); initResi
 <div class="contents">
 <div class="textblock"><div style="width:700px;"></div><div style="width:700px;">This document explains the current state of the system architecture. It defines components and interconnections between components. This is the highest abstraction level of the project.</div><div style="width:700px;"></div><h1><a class="anchor" id="Notation"></a>
 Notation</h1>
-<div style="width:700px;"> <img src="../Architecture/ComponentTypes.svg" alt="Component Types" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Component Types</b> <br  />
+<div style="width:700px;"> <img src="../architecture/componenttypes.svg" alt="Component Types" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Component Types</b> <br  />
  In order to differentiate and group components, the above notation is used in the following sections. A component therefore is defined by its name and box-style.</div><div style="width:700px;"></div><h1><a class="anchor" id="SystemLayers"></a>
 System Layers</h1>
-<div style="width:700px;"> <img src="../Architecture/SystemLayers.svg" alt="System Layers" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Layers</b> <br  />
+<div style="width:700px;"> <img src="../architecture/systemlayers.svg" alt="System Layers" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Layers</b> <br  />
  At the top-level, the system architecture for Netzhaut is comprised of 3 layers: The API layer, the Application layer and the Support layer. <br  />
  <br  />
 </div><div style="width:700px;"><b>API Layer</b> <br  />
@@ -112,14 +112,14 @@ System Layers</h1>
  <br  />
 </div><div style="width:700px;"></div><h1><a class="anchor" id="SystemLayerComponents"></a>
 System Layer Components</h1>
-<div style="width:700px;"> <img src="../Architecture/SystemLayerComponents.svg" alt="System Layer Components" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Netzhaut library</b> <br  />
+<div style="width:700px;"> <img src="../architecture/systemlayercomponents.svg" alt="System Layer Components" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Netzhaut library</b> <br  />
  The Netzhaut library is the only component that users need to directly include or link to. In the initialization phase, the Netzhaut library acts as a bootstrap for the NhLoader library and other essential components. Apart from that, it dispatches function calls to the appropriate components using the NhLoader library. <br  />
  <br  />
 </div><div style="width:700px;"><b>NhLoader Library</b> <br  />
  The NhLoader library implements loading, unloading and updating of engine components as well as calling engine functions. The distinction between Netzhaut library and NhLoader library allows for components to be updated at runtime except the Netzhaut library, which doesn't need this capability anyway. <br  />
  <br  />
 </div><div style="width:700px;"><b>Engine Group</b> <br  />
- The engine is a group of different libraries which implement various system features. The group is explained in the <a href="EngineArchitecture.html">Engine Architecture</a> document. <br  />
+ The engine is a group of different libraries which implement various system features. The group is explained in the <a href="enginearchitecture.html">Engine Architecture</a> document. <br  />
  <br  />
 </div><div style="width:700px;"><b>External Group</b> <br  />
  The external group is a mix of different libraries providing external functionality not implemented by Netzhaut Authors. Standard libraries are exempt from being represented in the architecture and thus, are not included in the external group. <br  />
@@ -128,7 +128,7 @@ System Layer Components</h1>
  The NhInstaller binary builds the project, generates documentation and executes other development routines. <br  />
 </div><div style="width:700px;"></div><h1><a class="anchor" id="SystemFlow"></a>
 System Flow</h1>
-<div style="width:700px;"> <img src="../Architecture/SystemFlow.svg" alt="System Flow" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>API</b> <br  />
+<div style="width:700px;"> <img src="../architecture/systemflow.svg" alt="System Flow" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>API</b> <br  />
  The user calls functions from the Netzhaut library. Initially, the Netzhaut library loads the NhLoader library. After that, every function call to the Netzhaut library involves the NhLoader library loading a corresponding function pointer from an engine library, which the Netzhaut library then calls directly, returning the result thus giving feedback to the user. <br  />
  <br  />
 </div><div style="width:700px;"><b>Loader</b> <br  />
@@ -152,7 +152,7 @@ System Flow</h1>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.6.16.17</b>
+<b>rev.0.6.17.15</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

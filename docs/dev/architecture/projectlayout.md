@@ -6,7 +6,7 @@ This document explains current directory layouts and, in some places, defines la
 
 \section RootLayout Root Layout 
 
-<img alt="Root Layout" src="../Architecture/RootLayout.svg"/>
+<img alt="Root Layout" src="../architecture/rootlayout.svg"/>
 
 **bin**  
 The bin directory contains executables that were created by building project source code. The only exeption to this is the NhInstaller executable, which is located in the build directory.  
@@ -18,7 +18,7 @@ The build directory contains resources regarding the build process. This is wher
 
 \section SourceLayout Source Layout 
 
-<img alt="Source Layout" src="../Architecture/SourceLayout.svg"/>
+<img alt="Source Layout" src="../architecture/sourceLayout.svg"/>
 
 **lib**   
 The engine source code is comprised of library source code inside the lib directory. The directory name of a library must be the full library name, including the 'Nh' prefix. The 'Netzhaut' library is exempt from this rule. Generally, all directories/files inside the lib directory must begin with an uppercase letter.   
@@ -30,7 +30,7 @@ The bin directory holds the source code of smaller projects which can be compile
 
 \section LibraryLayout Library Layout 
 
-<img alt="Library Layout" src="../Architecture/LibraryLayout.svg"/>
+<img alt="Library Layout" src="../architecture/librarylayout.svg"/>
 
 **Common**  
 A library directory must contain a Common directory. Some files inside the Common directory are optional (OPT) or required (REQ).   

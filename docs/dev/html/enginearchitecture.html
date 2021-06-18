@@ -95,10 +95,10 @@ $(document).ready(function(){initNavTree('enginearchitecture.html',''); initResi
 <div class="contents">
 <div class="textblock"><div style="width:700px;"></div><div style="width:700px;">This document explains the current state of the engine architecture. It defines components and interconnections between components.</div><div style="width:700px;"></div><h1><a class="anchor" id="Notation"></a>
 Notation</h1>
-<div style="width:700px;"> <img src="../Architecture/ComponentTypes.svg" alt="Component Types" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Component Types</b> <br  />
+<div style="width:700px;"> <img src="../architecture/componenttypes.svg" alt="Component Types" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Component Types</b> <br  />
  In order to differentiate and group components, the above notation is used in the following sections. A component therefore is defined by its name and box-style.</div><div style="width:700px;"></div><h1><a class="anchor" id="EngineComponents"></a>
 Engine Components</h1>
-<div style="width:700px;"> <img src="../Architecture/EngineComponents.svg" alt="Engine Components" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>WebCore Group</b> <br  />
+<div style="width:700px;"> <img src="../architecture/enginecomponents.svg" alt="Engine Components" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>WebCore Group</b> <br  />
  The WebCore group contains the implementation of fundamental web-technologies. <br  />
  <br  />
 </div><div style="width:700px;"><b>WebDiverse Group</b> <br  />
@@ -111,11 +111,11 @@ Engine Components</h1>
  The NhTTY library implements an independent presentation layer which allows Netzhaut to be controlled using text-only surfaces. <br  />
 </div><div style="width:700px;"></div><h1><a class="anchor" id="EngineFlow"></a>
 Engine Flow</h1>
-<div style="width:700px;"> <img src="../Architecture/EngineFlow.svg" alt="Engine Flow" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Flow</b> <br  />
+<div style="width:700px;"> <img src="../architecture/engineflow.svg" alt="Engine Flow" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Flow</b> <br  />
  The engine flow is based on the platform group, which is used by all components. The WebCore and WebDiverse groups stand in close relation to each other. Together they implement web-technologies that a web-browser-engine is expected to support. The NhTTY library can call all other components because of its controlling capabilities. <br  />
 </div><div style="width:700px;"></div><h1><a class="anchor" id="WebCoreComponents"></a>
 WebCore Components</h1>
-<div style="width:700px;"> <img src="../Architecture/EngineWebCoreComponents.svg" alt="WebCore Components" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>NhDOM Library</b> <br  />
+<div style="width:700px;"> <img src="../architecture/enginewebcorecomponents.svg" alt="WebCore Components" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>NhDOM Library</b> <br  />
  The DOM implementation is contained inside the NhDOM library. The implementation is based on the following specification:<ul>
 <li><a href="https://dom.spec.whatwg.org/">DOM</a> <br  />
 </li>
@@ -158,7 +158,7 @@ WebCore Components</h1>
 </ul>
 </div><div style="width:700px;"></div><h1><a class="anchor" id="WebCoreFlow"></a>
 WebCore Flow</h1>
-<div style="width:700px;"> <img src="../Architecture/EngineWebCoreFlow.svg" alt="WebCore Flow" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Flow</b> <br  />
+<div style="width:700px;"> <img src="../architecture/enginewebcoreflow.svg" alt="WebCore Flow" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Flow</b> <br  />
  The NhHTML library calls the NhCSS library for presenting HTML documents. Both libraries rely on the NhDOM library for access and manipulation of DOM tree nodes. The NhWebIDL library implements the interface between the scripting engine in form of the NhECMAScript library and all other web-technology implementing libraries. <br  />
 </div><div style="width:700px;"></div><h1><a class="anchor" id="WebDiverseComponents"></a>
 WebDiverse Components</h1>
@@ -179,7 +179,7 @@ WebPlatform Components</h1>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.6.16.17</b>
+<b>rev.0.6.17.15</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

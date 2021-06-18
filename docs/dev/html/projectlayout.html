@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('projectlayout.html',''); initResizable
 <div class="contents">
 <div class="textblock"><div style="width:700px;"></div><div style="width:700px;">This document explains current directory layouts and, in some places, defines layouts and rules which must be consistently implemented. This is necessary in order to maintain a streamlined structural foundation in which development takes place.</div><div style="width:700px;"></div><h1><a class="anchor" id="RootLayout"></a>
 Root Layout</h1>
-<div style="width:700px;"> <img src="../Architecture/RootLayout.svg" alt="Root Layout" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>bin</b> <br  />
+<div style="width:700px;"> <img src="../architecture/rootlayout.svg" alt="Root Layout" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>bin</b> <br  />
  The bin directory contains executables that were created by building project source code. The only exeption to this is the NhInstaller executable, which is located in the build directory. <br  />
  <br  />
 </div><div style="width:700px;"><b>build</b> <br  />
@@ -103,7 +103,7 @@ Root Layout</h1>
  <br  />
 </div><div style="width:700px;"></div><h1><a class="anchor" id="SourceLayout"></a>
 Source Layout</h1>
-<div style="width:700px;"> <img src="../Architecture/SourceLayout.svg" alt="Source Layout" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>lib</b> <br  />
+<div style="width:700px;"> <img src="../architecture/sourceLayout.svg" alt="Source Layout" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>lib</b> <br  />
  The engine source code is comprised of library source code inside the lib directory. The directory name of a library must be the full library name, including the 'Nh' prefix. The 'Netzhaut' library is exempt from this rule. Generally, all directories/files inside the lib directory must begin with an uppercase letter. <br  />
  <br  />
 </div><div style="width:700px;"><b>bin</b> <br  />
@@ -111,7 +111,7 @@ Source Layout</h1>
  <br  />
 </div><div style="width:700px;"></div><h1><a class="anchor" id="LibraryLayout"></a>
 Library Layout</h1>
-<div style="width:700px;"> <img src="../Architecture/LibraryLayout.svg" alt="Library Layout" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Common</b> <br  />
+<div style="width:700px;"> <img src="../architecture/librarylayout.svg" alt="Library Layout" style="pointer-events: none;" class="inline"/></div><div style="width:700px;"><b>Common</b> <br  />
  A library directory must contain a Common directory. Some files inside the Common directory are optional (OPT) or required (REQ). <br  />
  <br  />
 </div><div style="width:700px;"><b>About.h</b> <br  />
@@ -140,7 +140,7 @@ Binary Layout</h1>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.6.16.17</b>
+<b>rev.0.6.17.15</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

@@ -15,6 +15,7 @@ var group__nhcssStructs =
       [ "Size", "structnh__css__ClipBox.html#aed7e5570ed5831a180990038232c4570", null ]
     ] ],
     [ "nh_css_Layout", "structnh__css__Layout.html", [
+      [ "_float", "structnh__css__Layout.html#aef963afbbd6265faeb504f70a44c77f8", null ],
       [ "Floats", "structnh__css__Layout.html#afbe1466863fb212aebb2183c2f931966", null ],
       [ "LineBoxes", "structnh__css__Layout.html#a8678af19022442e4ffb303eedff92f48", null ],
       [ "Tree_p", "structnh__css__Layout.html#a38863506c9467618e2fac617eaf384ff", null ]
@@ -30,6 +31,7 @@ var group__nhcssStructs =
       [ "wordBreak", "structnh__css__TextValues.html#a70650db549dc1e482ed9b1140f5ecc59", null ]
     ] ],
     [ "nh_css_BoxSizing", "structnh__css__BoxSizing.html", [
+      [ "percentage", "structnh__css__BoxSizing.html#a045b35e6160a8e1445a0de4fc5b6aa5e", null ],
       [ "type", "structnh__css__BoxSizing.html#ac29b050e5110f736f847a2ff27e81fc6", null ],
       [ "value", "structnh__css__BoxSizing.html#a64fcbdef14e22dc406a2347ea721232e", null ]
     ] ],

@@ -4,6 +4,7 @@ var group__nhcssFunctions =
       [ "currentX", "structnh__css__LineBox.html#acd88277afa12bdd9a697307910e2567d", null ],
       [ "Position", "structnh__css__LineBox.html#aad8cb7677848b35319c6c87a83ef51e6", null ],
       [ "RootInline_p", "structnh__css__LineBox.html#a1ef6bff383ef095e31a26e031ce1924e", null ],
+      [ "shortened", "structnh__css__LineBox.html#afc84b86b628431689402d92a9a25fcbc", null ],
       [ "Size", "structnh__css__LineBox.html#a14929a1c591bc03becd34ccf9c260b99", null ]
     ] ],
     [ "_nh_css_logBegin", "group__nhcssFunctions.html#ga258e69d90c2902681f9e41bb40363697", null ],
@@ -56,11 +57,13 @@ var group__nhcssFunctions =
     [ "nh_css_logSpecifiedValues", "group__nhcssFunctions.html#ga0fc7c1806bec031e1ef650e24aa902b7", null ],
     [ "nh_css_logTokens", "group__nhcssFunctions.html#gace092ed6c8db80844928d878d28fd23d", null ],
     [ "nh_css_matchSelectors", "group__nhcssFunctions.html#gaab6915e6e7bbb5259b38e68ae1642455", null ],
+    [ "nh_css_offsetLineBoxFromFloats", "group__nhcssFunctions.html#ga1da37c7c987a573fb0fd35cda5dbe185", null ],
     [ "nh_css_parseComponentValuesFromUTF8Codepoints", "group__nhcssFunctions.html#ga5ef020e600bc1d3cbc4f49fa303f2eed", null ],
     [ "nh_css_parseDeclarationsFromBytes", "group__nhcssFunctions.html#ga1d5d225af543e6bfdc97d8b58cca6eeb", null ],
     [ "nh_css_parseSelectorList", "group__nhcssFunctions.html#ga0b56be5dd033c18771369b9aaf6b7672", null ],
     [ "nh_css_parseStyleSheet", "group__nhcssFunctions.html#gae5bb5b4ae3ba7dd340fe9428a90fef78", null ],
     [ "nh_css_setSpecifiedValues", "group__nhcssFunctions.html#gae3778cf8624298b76ce3ec3a29f21db1", null ],
+    [ "nh_css_shiftLineBoxDownward", "group__nhcssFunctions.html#gabb08e169620f02b64fbad4aea22ab885", null ],
     [ "nh_css_terminate", "group__nhcssFunctions.html#ga516a85ef9fc9392220b3ae9d0165faea", null ],
     [ "nh_css_tokenize", "group__nhcssFunctions.html#ga911513d4fc31dc0f7e169d87792ad8cc", null ],
     [ "nh_term_initialize", "group__nhcssFunctions.html#gab1c2bb09d593273544c231ebd819deac", null ]

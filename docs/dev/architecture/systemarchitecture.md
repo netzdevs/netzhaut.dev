@@ -6,14 +6,14 @@ This document explains the current state of the system architecture. It defines 
 
 \section Notation Notation 
 
-<img alt="Component Types" src="../Architecture/ComponentTypes.svg"/>
+<img alt="Component Types" src="../architecture/componenttypes.svg"/>
 
 **Component Types**  
 In order to differentiate and group components, the above notation is used in the following sections. A component therefore is defined by its name and box-style.
 
 \section SystemLayers System Layers 
 
-<img alt="System Layers" src="../Architecture/SystemLayers.svg"/>
+<img alt="System Layers" src="../architecture/systemlayers.svg"/>
 
 **Layers**  
 At the top-level, the system architecture for Netzhaut is comprised of 3 layers: The API layer, the Application layer and the Support layer.  
@@ -33,7 +33,7 @@ The Support layer contains external components that are developed independently 
 
 \section SystemLayerComponents System Layer Components
 
-<img alt="System Layer Components" src="../Architecture/SystemLayerComponents.svg"/>
+<img alt="System Layer Components" src="../architecture/systemlayercomponents.svg"/>
 
 **Netzhaut library**  
 The Netzhaut library is the only component that users need to directly include or link to. In the initialization phase, the Netzhaut library acts as a bootstrap for the NhLoader library and other essential components. Apart from that, it dispatches function calls to the appropriate components using the NhLoader library.  
@@ -44,7 +44,7 @@ The NhLoader library implements loading, unloading and updating of engine compon
 <br>
 
 **Engine Group**  
-The engine is a group of different libraries which implement various system features. The group is explained in the [Engine Architecture](EngineArchitecture.html) document.   
+The engine is a group of different libraries which implement various system features. The group is explained in the [Engine Architecture](enginearchitecture.html) document.   
 <br>
 
 **External Group**  
@@ -57,7 +57,7 @@ The NhInstaller binary builds the project, generates documentation and executes 
 
 \section SystemFlow System Flow
 
-<img alt="System Flow" src="../Architecture/SystemFlow.svg"/>
+<img alt="System Flow" src="../architecture/systemflow.svg"/>
 
 **API**  
 The user calls functions from the Netzhaut library. Initially, the Netzhaut library loads the NhLoader library. After that, every function call to the Netzhaut library involves the NhLoader library loading a corresponding function pointer from an engine library, which the Netzhaut library then calls directly, returning the result thus giving feedback to the user.   

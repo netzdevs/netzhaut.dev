@@ -6,14 +6,14 @@ This document explains the current state of the engine architecture. It defines 
 
 \section Notation Notation 
 
-<img alt="Component Types" src="../Architecture/ComponentTypes.svg"/>
+<img alt="Component Types" src="../architecture/componenttypes.svg"/>
 
 **Component Types**  
 In order to differentiate and group components, the above notation is used in the following sections. A component therefore is defined by its name and box-style.
 
 \section EngineComponents Engine Components
 
-<img alt="Engine Components" src="../Architecture/EngineComponents.svg"/>
+<img alt="Engine Components" src="../architecture/enginecomponents.svg"/>
 
 **WebCore Group**  
 The WebCore group contains the implementation of fundamental web-technologies.  
@@ -33,14 +33,14 @@ The NhTTY library implements an independent presentation layer which allows Netz
 
 \section EngineFlow Engine Flow
 
-<img alt="Engine Flow" src="../Architecture/EngineFlow.svg"/>
+<img alt="Engine Flow" src="../architecture/engineflow.svg"/>
 
 **Flow**  
 The engine flow is based on the platform group, which is used by all components. The WebCore and WebDiverse groups stand in close relation to each other. Together they implement web-technologies that a web-browser-engine is expected to support. The NhTTY library can call all other components because of its controlling capabilities.  
 
 \section WebCoreComponents WebCore Components
 
-<img alt="WebCore Components" src="../Architecture/EngineWebCoreComponents.svg"/>
+<img alt="WebCore Components" src="../architecture/enginewebcorecomponents.svg"/>
 
 **NhDOM Library**  
 The DOM implementation is contained inside the NhDOM library. The implementation is based on the following specification: 
@@ -83,7 +83,7 @@ The NhWebIDL library provides the backbone for all scripting related web-technol
 
 \section WebCoreFlow WebCore Flow
 
-<img alt="WebCore Flow" src="../Architecture/EngineWebCoreFlow.svg"/>
+<img alt="WebCore Flow" src="../architecture/enginewebcoreflow.svg"/>
 
 **Flow**  
 The NhHTML library calls the NhCSS library for presenting HTML documents. Both libraries rely on the NhDOM library for access and manipulation of DOM tree nodes. The NhWebIDL library implements the interface between the scripting engine in form of the NhECMAScript library and all other web-technology implementing libraries.  
