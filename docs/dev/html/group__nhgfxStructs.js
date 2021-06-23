@@ -25,10 +25,10 @@ var group__nhgfxStructs =
       [ "renderPassCount", "structnh__vk__Driver.html#ada8c56afa037043fb62eea798fa1ec18", null ]
     ] ],
     [ "nh_vk_GPU", "structnh__vk__GPU.html", [
-      [ "CSS", "structnh__vk__GPU.html#a919f0ca557023598ddd2efa23948e906", null ],
       [ "Driver", "structnh__vk__GPU.html#a26ffd2772cd9fd6bfd1f1c92650b9483", null ],
       [ "name_p", "structnh__vk__GPU.html#a3d889b15ff3cdd9cc72d769d7f48eabb", null ],
       [ "Pipelines_p", "structnh__vk__GPU.html#ab22a7ccab159092217a7a4e048ae1cb5", null ],
+      [ "Renderer", "structnh__vk__GPU.html#a29d65604e6bda693009d6c5bf700c107", null ],
       [ "Term", "structnh__vk__GPU.html#a77e46eb31f041fb85f00a3f47067dfac", null ],
       [ "Textures", "structnh__vk__GPU.html#a6b5ce929bee29fc74521c226e12e1e6a", null ]
     ] ],

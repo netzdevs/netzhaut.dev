@@ -4,6 +4,9 @@ var group__nhcssStructs =
       [ "Colors", "structnh__css__IndexMap.html#a8cf09c294de89f00d45d17b99dcba6c2", null ],
       [ "Properties", "structnh__css__IndexMap.html#afa0a1f3755347f765f212ca1a46f0296", null ]
     ] ],
+    [ "nh_css_CanvasType", "structnh__css__CanvasType.html", [
+      [ "Size", "structnh__css__CanvasType.html#a63224ff43c9514a7a17fabaabd075998", null ]
+    ] ],
     [ "nh_css_PixelBox", "structnh__css__PixelBox.html", [
       [ "depth", "structnh__css__PixelBox.html#af5da5e11a5b0b44211fe9d8a6133b8a5", null ],
       [ "Position", "structnh__css__PixelBox.html#a3dc054281d22ecfbba9f92751c68a267", null ],
@@ -13,12 +16,6 @@ var group__nhcssStructs =
       [ "depth", "structnh__css__ClipBox.html#a717e34ecfd44a29abfd5c58b0290a447", null ],
       [ "Position", "structnh__css__ClipBox.html#ad76879181ec7b42a98b2bff01ab7ccfb", null ],
       [ "Size", "structnh__css__ClipBox.html#aed7e5570ed5831a180990038232c4570", null ]
-    ] ],
-    [ "nh_css_Layout", "structnh__css__Layout.html", [
-      [ "_float", "structnh__css__Layout.html#aef963afbbd6265faeb504f70a44c77f8", null ],
-      [ "Floats", "structnh__css__Layout.html#afbe1466863fb212aebb2183c2f931966", null ],
-      [ "LineBoxes", "structnh__css__Layout.html#a8678af19022442e4ffb303eedff92f48", null ],
-      [ "Tree_p", "structnh__css__Layout.html#a38863506c9467618e2fac617eaf384ff", null ]
     ] ],
     [ "nh_css_TextValues", "structnh__css__TextValues.html", [
       [ "Color", "structnh__css__TextValues.html#aae249f9869a06100eb4a75df3acba554", null ],

@@ -1,13 +1,16 @@
 var group__netzhautFunctions =
 [
-    [ "nh_css_addViewport", "group__netzhautFunctions.html#ga8917566c723d225a00bfec468844c1fa", null ],
-    [ "nh_css_createRenderContext", "group__netzhautFunctions.html#gaba80f181970c0dc2c9df5b273afea178", null ],
+    [ "nh_css_addCanvasType", "group__netzhautFunctions.html#ga9e62ff9c3d76aa3fc92834c87647b75c", null ],
+    [ "nh_css_createCanvasType", "group__netzhautFunctions.html#gaa5a3e795816ac2b7036abb9f34444d13", null ],
+    [ "nh_css_createLayoutEngine", "group__netzhautFunctions.html#ga2b0b6e4bc8cd07c9f9bf57cd77434818", null ],
     [ "nh_gfx_createSurface", "group__netzhautFunctions.html#gaa070a65ef7802264c6f8dcd5c2635b68", null ],
     [ "nh_gfx_createViewport", "group__netzhautFunctions.html#ga8055c1de813a1e22eacb04d7c9fc8c4c", null ],
     [ "nh_html_createDocumentContext", "group__netzhautFunctions.html#ga9cec13ecffa4bdca247056fc71a33ce8", null ],
     [ "nh_html_loadBytes", "group__netzhautFunctions.html#ga9719e8d5a4b7073c1ab02b2133b81545", null ],
     [ "nh_initialize", "group__netzhautFunctions.html#gae5dc0521ef50af787d3d477c1f2c5efd", null ],
     [ "nh_keepRunning", "group__netzhautFunctions.html#gae34aaf14dc2db5afd40f5c2ae4015061", null ],
+    [ "nh_renderer_addViewport", "group__netzhautFunctions.html#ga3e05677417ffe74bc9cea03ce6b57869", null ],
+    [ "nh_renderer_createRenderer", "group__netzhautFunctions.html#gaa61f031219c93a9117c7ee59183ef2ac", null ],
     [ "nh_run", "group__netzhautFunctions.html#ga0190f368741b44e4f703a9fe31571c23", null ],
     [ "nh_term_openTerminal", "group__netzhautFunctions.html#ga33ddff526d32b2e68e861e78dfd6c42a", null ],
     [ "nh_term_setViewport", "group__netzhautFunctions.html#ga3f0ef19d4c87d7c0e1c2fd5c95d6988f", null ],

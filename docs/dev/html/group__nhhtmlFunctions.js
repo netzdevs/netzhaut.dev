@@ -32,7 +32,7 @@ var group__nhhtmlFunctions =
     [ "nh_html_inSpecialCategory", "group__nhhtmlFunctions.html#gab315bb82451cbe56ac41ef17f8f0ed0d", null ],
     [ "nh_html_logDocument", "group__nhhtmlFunctions.html#ga0120e584758c7b3615645531f14700f6", null ],
     [ "nh_html_newParseError", "group__nhhtmlFunctions.html#ga242f2cd5c2a7d0a7159a8f842c08e3cc", null ],
-    [ "nh_html_parseDocument", "group__nhhtmlFunctions.html#gaa38ddfc38de0d63740050828215896ed", null ],
+    [ "nh_html_parseDocument", "group__nhhtmlFunctions.html#ga18bf526143944d5069fdd6b8d393085b", null ],
     [ "nh_html_parseRAWTEXTOrRCDATA", "group__nhhtmlFunctions.html#ga5af2748554fb0a508c445a435168bc94", null ],
     [ "nh_html_popCurrentNode", "group__nhhtmlFunctions.html#gad686a86e46eddc21e7a06b36f76931d4", null ],
     [ "nh_html_pushActiveFormattingElement", "group__nhhtmlFunctions.html#ga2e0c0a189b127d3a021c535192472b9b", null ],

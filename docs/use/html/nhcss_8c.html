@@ -98,7 +98,8 @@ $(document).ready(function(){initNavTree('nhcss_8c.html',''); initResizable(); }
 <div class="textblock"><code>#include &quot;<a class="el" href="nhcss_8h_source.html">nhcss.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="netzhaut_8h_source.html">netzhaut.h</a>&quot;</code><br />
 <code>#include &quot;../nhcore/Loader/Loader.h&quot;</code><br />
-<code>#include &quot;../nhcss/Main/RenderContext.h&quot;</code><br />
+<code>#include &quot;../nhcss/Main/LayoutEngine.h&quot;</code><br />
+<code>#include &quot;../nhcss/Main/Canvas.h&quot;</code><br />
 <code>#include &lt;dlfcn.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -107,11 +108,13 @@ $(document).ready(function(){initNavTree('nhcss_8c.html',''); initResizable(); }
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaba80f181970c0dc2c9df5b273afea178"><td class="memItemLeft" align="right" valign="top">nh_css_RenderContext *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__netzhautFunctions.html#gaba80f181970c0dc2c9df5b273afea178">nh_css_createRenderContext</a> (nh_html_DocumentContext *DocumentContext_p)</td></tr>
-<tr class="memdesc:gaba80f181970c0dc2c9df5b273afea178"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__netzhautFunctions.html#gaba80f181970c0dc2c9df5b273afea178">More...</a><br /></td></tr>
-<tr class="separator:gaba80f181970c0dc2c9df5b273afea178"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8917566c723d225a00bfec468844c1fa"><td class="memItemLeft" align="right" valign="top">NH_CSS_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__netzhautFunctions.html#ga8917566c723d225a00bfec468844c1fa">nh_css_addViewport</a> (nh_css_RenderContext *RenderContext_p, nh_gfx_Viewport *Viewport_p)</td></tr>
-<tr class="separator:ga8917566c723d225a00bfec468844c1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b0b6e4bc8cd07c9f9bf57cd77434818"><td class="memItemLeft" align="right" valign="top">nh_css_LayoutEngine *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__netzhautFunctions.html#ga2b0b6e4bc8cd07c9f9bf57cd77434818">nh_css_createLayoutEngine</a> (nh_html_DocumentContext *DocumentContext_p)</td></tr>
+<tr class="memdesc:ga2b0b6e4bc8cd07c9f9bf57cd77434818"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__netzhautFunctions.html#ga2b0b6e4bc8cd07c9f9bf57cd77434818">More...</a><br /></td></tr>
+<tr class="separator:ga2b0b6e4bc8cd07c9f9bf57cd77434818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa5a3e795816ac2b7036abb9f34444d13"><td class="memItemLeft" align="right" valign="top">nh_css_CanvasType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__netzhautFunctions.html#gaa5a3e795816ac2b7036abb9f34444d13">nh_css_createCanvasType</a> (nh_PixelSize Size)</td></tr>
+<tr class="separator:gaa5a3e795816ac2b7036abb9f34444d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e62ff9c3d76aa3fc92834c87647b75c"><td class="memItemLeft" align="right" valign="top">NH_CSS_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__netzhautFunctions.html#ga9e62ff9c3d76aa3fc92834c87647b75c">nh_css_addCanvasType</a> (nh_css_LayoutEngine *LayoutEngine_p, nh_css_CanvasType CanvasType)</td></tr>
+<tr class="separator:ga9e62ff9c3d76aa3fc92834c87647b75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -127,7 +130,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_VER_BEGIN -->
-<b>ver.0.1.0.0</b>
+<b>ver.0.2.0.0</b>
 <!-- NH_MAKE_INSERT_VER_END -->
             </b>
           </div>

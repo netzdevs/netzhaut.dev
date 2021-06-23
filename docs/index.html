@@ -49,11 +49,11 @@
      <div style="height: 56px;">
       <div style="left:10px;top:7px;position:absolute;">
 <!-- NH_MAKE_INSERT_VER_BEGIN -->
-<b>ver.0.1.0.0</b>
+<b>ver.0.2.0.0</b>
 <!-- NH_MAKE_INSERT_VER_END -->
 <br>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.6.17.15</b>
+<b>rev.0.7.17.19</b>
 <!-- NH_MAKE_INSERT_REV_END -->
       </div>
       <div style="height:56px;right:10px;top:0px;position:absolute;background-color:#151515;"><a href="https://netzwerkz.org"><img alt="netzwerkz logo" style="height:56px;" src="logo/netzwerkz.png"/></a></div>
@@ -69,6 +69,7 @@
           <h1><img alt="netzhaut logo" src="logo/netzhaut.png" style="width:20px;height:auto;"/> News</h1>
         </div>
 <!-- NH_MAKE_INSERT_NEWS_BEGIN -->
+<p><b>2021-06-21</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> Recent progress includes improved terminal-like features, primarily implemented via the nhtty/nhterm modules. Also, the HTML processing pipeline is now much more flexible with less dependencies between modules, such as nhhtml and nhcss.</p>
 <p><b>2021-05-18</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> Layout calculation is now done using a separate Fragment-Tree structure compared to the previous hybrid Box/Fragment-Tree. This improves code-readability and eliminates a lot of complexities. Here is a quick look at a Fragment-Tree using the logger: <a href="https://imgur.com/a/G9yQGzD">https://imgur.com/a/3GCG64w</a></p>
 <p><b>2021-05-15</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> The CSS implementation is now based on compliant W3C CSSOM interfaces which will easily link to the JavaScript engine.</p>
 <p><b>2021-05-11</b> | <a href="https://github.com/dajofrey">Dajo Frey</a> <br> Added initial implementations for the most common text related properties. Text-Rendering now correctly uses fallbacks. Currently, the only thing completely unsupported regarding text-rendering is emoji-rendering. <a href="https://imgur.com/a/3GCG64w">https://imgur.com/a/3GCG64w</a></p>
@@ -151,17 +152,18 @@
          <div class="infobox">
            <div class="innerinfobox">
     <!-- NH_MAKE_INSERT_CHANGELOGS_BEGIN -->
-2021-06-14 <a href="dev/html/group__netzhautChangelog.html#v0.1.0.0">netzhaut v0.1.0.0</a><br>
-2021-06-12 <a href="dev/html/group__nhcoreChangelog.html#v0.1.0.2">nhcore v0.1.0.2</a><br>
+2021-06-23 <a href="dev/html/group__netzhautChangelog.html#v0.2.0.0">netzhaut v0.2.0.0</a><br>
+2021-06-23 <a href="dev/html/group__nhcoreChangelog.html#v0.1.0.3">nhcore v0.1.0.3</a><br>
 2021-06-14 <a href="dev/html/group__nhwsiChangelog.html#v0.0.1.0">nhwsi v0.0.1.0</a><br>
-2021-06-10 <a href="dev/html/group__nhttyChangelog.html#v0.1.2.1">nhtty v0.1.2.1</a><br>
+2021-06-23 <a href="dev/html/group__nhttyChangelog.html#v0.1.2.2">nhtty v0.1.2.2</a><br>
 2021-02-23 <a href="dev/html/group__nhnetworkChangelog.html#v0.0.0.0">nhnetwork v0.0.0.0</a><br>
 2021-02-23 <a href="dev/html/group__nhecmascriptChangelog.html#v0.0.0.0">nhecmascript v0.0.0.0</a><br>
-2021-05-22 <a href="dev/html/group__nhhtmlChangelog.html#v0.0.2.0">nhhtml v0.0.2.0</a><br>
-2021-05-27 <a href="dev/html/group__nhwebidlChangelog.html#v0.0.0.2">nhwebidl v0.0.0.2</a><br>
+2021-06-21 <a href="dev/html/group__nhhtmlChangelog.html#v0.0.2.1">nhhtml v0.0.2.1</a><br>
+2021-06-21 <a href="dev/html/group__nhwebidlChangelog.html#v0.0.0.3">nhwebidl v0.0.0.3</a><br>
 2021-06-09 <a href="dev/html/group__nhencodingChangelog.html#v0.0.3.1">nhencoding v0.0.3.1</a><br>
 2021-05-24 <a href="dev/html/group__nhdomChangelog.html#v0.0.1.2">nhdom v0.0.1.2</a><br>
 2021-06-14 <a href="dev/html/group__nhgfxChangelog.html#v0.0.3.1">nhgfx v0.0.3.1</a><br>
+2021-06-23 <a href="dev/html/group__nhrendererChangelog.html#v0.0.0.0">nhrenderer v0.0.0.0</a><br>
 2021-06-18 <a href="dev/html/group__nhcssChangelog.html#v0.2.4.0">nhcss v0.2.4.0</a><br>
 2021-06-15 <a href="dev/html/group__nhtermChangelog.html#v0.0.0.1">nhterm v0.0.0.1</a><br>
 2021-05-16 <a href="dev/html/group__nhmakeChangelog.html#v0.1.1.5">nhmake v0.1.1.5</a><br>
@@ -196,11 +198,11 @@
           <div style="max-width:200px;">
             <p>The full project version consists of the API version 
 <!-- NH_MAKE_INSERT_VER_BEGIN -->
-<b>ver.0.1.0.0</b>
+<b>ver.0.2.0.0</b>
 <!-- NH_MAKE_INSERT_VER_END -->
 and revision version 
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.6.17.15</b>
+<b>rev.0.7.17.19</b>
 <!-- NH_MAKE_INSERT_REV_END -->
 which is the accumulation of all module versions. All versions follow the same semantics which are explained in the changelogs. The project stage 
 <!-- NH_MAKE_INSERT_STAGE_BEGIN -->
@@ -249,6 +251,13 @@ is documented in the <a href="dev/html/roadmap.html">roadmap</a>.
 </style>
 
 </html>
+
+
+
+
+
+
+
 
 
 

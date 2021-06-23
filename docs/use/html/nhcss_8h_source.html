@@ -105,17 +105,22 @@ $(document).ready(function(){initNavTree('nhcss_8h_source.html',''); initResizab
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    nh_css_RenderContext *<a class="code" href="group__netzhautFunctions.html#gaba80f181970c0dc2c9df5b273afea178">nh_css_createRenderContext</a>(</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    nh_css_LayoutEngine *<a class="code" href="group__netzhautFunctions.html#ga2b0b6e4bc8cd07c9f9bf57cd77434818">nh_css_createLayoutEngine</a>(</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        nh_html_DocumentContext *DocumentContext_p</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    );</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    NH_CSS_RESULT <a class="code" href="group__netzhautFunctions.html#ga8917566c723d225a00bfec468844c1fa">nh_css_addViewport</a>(</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        nh_css_RenderContext *RenderContext_p, nh_gfx_Viewport *Viewport_p</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    nh_css_CanvasType <a class="code" href="group__netzhautFunctions.html#gaa5a3e795816ac2b7036abb9f34444d13">nh_css_createCanvasType</a>(</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        nh_PixelSize Size </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    );</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// NETZHAUT_CSS_H</span></div>
-<div class="ttc" id="agroup__netzhautFunctions_html_ga8917566c723d225a00bfec468844c1fa"><div class="ttname"><a href="group__netzhautFunctions.html#ga8917566c723d225a00bfec468844c1fa">nh_css_addViewport</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_addViewport(nh_css_RenderContext *RenderContext_p, nh_gfx_Viewport *Viewport_p)</div><div class="ttdef"><b>Definition:</b> nhcss.c:32</div></div>
-<div class="ttc" id="agroup__netzhautFunctions_html_gaba80f181970c0dc2c9df5b273afea178"><div class="ttname"><a href="group__netzhautFunctions.html#gaba80f181970c0dc2c9df5b273afea178">nh_css_createRenderContext</a></div><div class="ttdeci">nh_css_RenderContext * nh_css_createRenderContext(nh_html_DocumentContext *DocumentContext_p)</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT</div><div class="ttdef"><b>Definition:</b> nhcss.c:25</div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    NH_CSS_RESULT <a class="code" href="group__netzhautFunctions.html#ga9e62ff9c3d76aa3fc92834c87647b75c">nh_css_addCanvasType</a>(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        nh_css_LayoutEngine *LayoutEngine_p, nh_css_CanvasType CanvasType</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// NETZHAUT_CSS_H</span></div>
+<div class="ttc" id="agroup__netzhautFunctions_html_ga2b0b6e4bc8cd07c9f9bf57cd77434818"><div class="ttname"><a href="group__netzhautFunctions.html#ga2b0b6e4bc8cd07c9f9bf57cd77434818">nh_css_createLayoutEngine</a></div><div class="ttdeci">nh_css_LayoutEngine * nh_css_createLayoutEngine(nh_html_DocumentContext *DocumentContext_p)</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT</div><div class="ttdef"><b>Definition:</b> nhcss.c:26</div></div>
+<div class="ttc" id="agroup__netzhautFunctions_html_ga9e62ff9c3d76aa3fc92834c87647b75c"><div class="ttname"><a href="group__netzhautFunctions.html#ga9e62ff9c3d76aa3fc92834c87647b75c">nh_css_addCanvasType</a></div><div class="ttdeci">NH_CSS_RESULT nh_css_addCanvasType(nh_css_LayoutEngine *LayoutEngine_p, nh_css_CanvasType CanvasType)</div><div class="ttdef"><b>Definition:</b> nhcss.c:42</div></div>
+<div class="ttc" id="agroup__netzhautFunctions_html_gaa5a3e795816ac2b7036abb9f34444d13"><div class="ttname"><a href="group__netzhautFunctions.html#gaa5a3e795816ac2b7036abb9f34444d13">nh_css_createCanvasType</a></div><div class="ttdeci">nh_css_CanvasType nh_css_createCanvasType(nh_PixelSize Size)</div><div class="ttdef"><b>Definition:</b> nhcss.c:33</div></div>
 <div class="ttc" id="anhhtml_8h_html"><div class="ttname"><a href="nhhtml_8h.html">nhhtml.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -131,7 +136,7 @@ $(document).ready(function(){initNavTree('nhcss_8h_source.html',''); initResizab
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_VER_BEGIN -->
-<b>ver.0.1.0.0</b>
+<b>ver.0.2.0.0</b>
 <!-- NH_MAKE_INSERT_VER_END -->
             </b>
           </div>

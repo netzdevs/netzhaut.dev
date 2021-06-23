@@ -6,6 +6,6 @@ var group__nhcssTypedefs =
     [ "nh_css_CSSStyleRule", "group__nhcssTypedefs.html#ga6dd0c39d6865e40fa7013574ed4995b2", null ],
     [ "nh_css_CSSStyleSheet", "group__nhcssTypedefs.html#ga8bd750b61b183bd52f3bed481151f7eb", null ],
     [ "nh_css_Document", "group__nhcssTypedefs.html#gaae92197044ff50c5f82ca7747daef675", null ],
-    [ "nh_css_RenderContext", "group__nhcssTypedefs.html#gaa6f1204b2924560ef1ab72d44d2c2cf0", null ],
+    [ "nh_css_LayoutEngine", "group__nhcssTypedefs.html#gaa15a6b675f5ee780cd6bb784404f6e27", null ],
     [ "nh_css_StyleSheetList", "group__nhcssTypedefs.html#ga0236c55e0823d35de2ae6f41998656d9", null ]
 ];

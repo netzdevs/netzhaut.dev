@@ -1,6 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"group__nhtermChangelog.html#gae1213bbc690a00379e998d24f0e841d9":[9,10,0,0],
 "group__nhtermChangelog.html#gaef42af6cf0f1adabab835fbe7b3ab7f8":[9,10,0,2],
 "group__nhtermChangelog.html#gaffb8a0483a1d7f7f8fb47612e490ec88":[9,10,0,1],
 "group__nhtermEnums.html":[9,10,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX7 =
 "roadmap.html#pre-alpha-1progress":[2,0,1],
 "roadmap.html#pre-alpha-1term":[2,0,0,2],
 "roadmap.html#pre-alpha-1text":[2,0,0,1],
-"structnh__Array.html":[9,0,3,2]
+"structnh__Array.html":[9,0,3,2],
+"structnh__Array.html#a124c48239a6c79d723d1390a55634c29":[9,0,3,2,4]
 };
