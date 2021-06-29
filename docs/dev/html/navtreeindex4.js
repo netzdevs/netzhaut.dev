@@ -1,5 +1,12 @@
 var NAVTREEINDEX4 =
 {
+"group__nhecmascriptFunctions.html#ga530e5711f05d08321e9a511aa2d72601":[9,2,4,19],
+"group__nhecmascriptFunctions.html#ga538e98c20dd8bd78e3e27b3ae705fc9d":[9,2,4,41],
+"group__nhecmascriptFunctions.html#ga56308427de1e312aae1662e47ed636a9":[9,2,4,127],
+"group__nhecmascriptFunctions.html#ga563b5276cdab501645388959f9d0a21e":[9,2,4,79],
+"group__nhecmascriptFunctions.html#ga56454c37fc924fcf4c3d7e6429a72a09":[9,2,4,32],
+"group__nhecmascriptFunctions.html#ga573bb226b7fc4798c97577de006cc071":[9,2,4,21],
+"group__nhecmascriptFunctions.html#ga5816bfecb8d7b57da9b7d198600e0e86":[9,2,4,71],
 "group__nhecmascriptFunctions.html#ga58c675a4d2e04dd4eeda0ba9212aab59":[9,2,4,0],
 "group__nhecmascriptFunctions.html#ga58eb6503413f7bcf593bc8b0a2a4d75b":[9,2,4,58],
 "group__nhecmascriptFunctions.html#ga5e39d9a7fae34cc1c7c7e8bb4117fb76":[9,2,4,95],
@@ -242,12 +249,5 @@ var NAVTREEINDEX4 =
 "group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba5c82d6c554ebb71074dbf5e8fda63b4d":[9,4,2,1,32],
 "group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba5e13415f56fb475e973b3a47b6a0b3ae":[9,4,2,1,47],
 "group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba6a20eb083c612c1bc5da017462cc28dc":[9,4,2,1,51],
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba716df4e251688fde2deab204643eea8e":[9,4,2,1,52],
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba7622b66259a45fbe2213b0cb26e299e2":[9,4,2,1,7],
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba77e2303664215c5805212b3348edb0da":[9,4,2,1,45],
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba7da4dcc7c0c73e9b44b93ca8d4c05e47":[9,4,2,1,8],
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba9626af7dda5eebfad20dcd6c5c8f8314":[9,4,2,1,30],
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba9d922751afc2632cabff0462787cb1ef":[9,4,2,1,49],
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffebaa4d54cf0980cfa1694fa84761d9de35c":[9,4,2,1,3],
-"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffebaa6ab7a2a964edd784669997aee9be68f":[9,4,2,1,50]
+"group__nhgfxEnums.html#gga40e840034eeb0d9aa68b5fbcfe56ffeba716df4e251688fde2deab204643eea8e":[9,4,2,1,52]
 };

@@ -1,5 +1,6 @@
 var group__nhcssTypedefs =
 [
+    [ "nh_css_CSSCounterStyleRule", "group__nhcssTypedefs.html#ga5095f5f562c40256401cde3106b9117b", null ],
     [ "nh_css_CSSRule", "group__nhcssTypedefs.html#gaeddc50d2c1323f3fae5e4fd11d922135", null ],
     [ "nh_css_CSSRuleList", "group__nhcssTypedefs.html#gadf3c2bfa762ab5dfe72a356dc247a271", null ],
     [ "nh_css_CSSStyleDeclaration", "group__nhcssTypedefs.html#ga1611bfb32503782004142f538cf7cce3", null ],

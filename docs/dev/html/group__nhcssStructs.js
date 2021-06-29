@@ -69,26 +69,6 @@ var group__nhcssStructs =
       [ "textAlignLast", "structnh__css__BoxValues.html#ad5fe255fcd9757d353a5c6cefdcc4604", null ],
       [ "Width", "structnh__css__BoxValues.html#a0f99c8a17249b257b6319768967b363a", null ]
     ] ],
-    [ "nh_css_SimpleBlock", "structnh__css__SimpleBlock.html", [
-      [ "ComponentValues", "structnh__css__SimpleBlock.html#a6f5f092f82e1d0dcb144319a2ca98dbc", null ],
-      [ "Token_p", "structnh__css__SimpleBlock.html#af9e72acbdcb162852c8e66332eb9c385", null ],
-      [ "type", "structnh__css__SimpleBlock.html#a48d4f745ab1217b66e8946c55a52fc66", null ]
-    ] ],
-    [ "nh_css_Function", "structnh__css__Function.html", [
-      [ "ComponentValues", "structnh__css__Function.html#af732e917276ffc04b1f259492a2985eb", null ],
-      [ "Token_p", "structnh__css__Function.html#acef4047e924f45021635de29addfa563", null ],
-      [ "type", "structnh__css__Function.html#a4e51749c5f19b5f2b5f3d72101785a76", null ]
-    ] ],
-    [ "nh_css_PreservedToken", "structnh__css__PreservedToken.html", [
-      [ "Token_p", "structnh__css__PreservedToken.html#afa5b7c8bcb8b1138cbad16a5dffa7bcc", null ],
-      [ "type", "structnh__css__PreservedToken.html#ab83bfbbf1579a01415a596ad150fe762", null ]
-    ] ],
-    [ "nh_css_ComponentValue", "unionnh__css__ComponentValue.html", [
-      [ "Block", "unionnh__css__ComponentValue.html#a9c8453edb47bf52908929073365ec25b", null ],
-      [ "Function", "unionnh__css__ComponentValue.html#a701eaf7219a0e76c71f87a35c2fc80ce", null ],
-      [ "PreservedToken", "unionnh__css__ComponentValue.html#a6a942683446768a08900a8e282ae03f2", null ],
-      [ "type", "unionnh__css__ComponentValue.html#a254e59c3191143142a3a7256d692040d", null ]
-    ] ],
     [ "nh_css_ComponentValueData", "structnh__css__ComponentValueData.html", [
       [ "ComponentValues", "structnh__css__ComponentValueData.html#a8684603a87be0bd38604cc085a9b24cd", null ],
       [ "Tokens", "structnh__css__ComponentValueData.html#af4467bb783cacdd5ea82ac84574b3699", null ]
@@ -96,17 +76,6 @@ var group__nhcssStructs =
     [ "nh_css_DeclarationData", "structnh__css__DeclarationData.html", [
       [ "Declarations", "structnh__css__DeclarationData.html#aee234674d63e58144dd3917b4afac4d0", null ],
       [ "Tokens", "structnh__css__DeclarationData.html#aae6350b026c94967754213588ceda61e", null ]
-    ] ],
-    [ "nh_css_Declaration", "structnh__css__Declaration.html", [
-      [ "ComponentValues", "structnh__css__Declaration.html#aad37ff3ac71053168c855f7119805865", null ],
-      [ "important", "structnh__css__Declaration.html#a9d20a53e3fe55f6f180e29e7dc5f99aa", null ],
-      [ "Name", "structnh__css__Declaration.html#a80bb47a0fc5fb90351af3f25abbd24f4", null ]
-    ] ],
-    [ "nh_css_RawRule", "structnh__css__RawRule.html", [
-      [ "Block", "structnh__css__RawRule.html#a5ba978a1aa7dcf87572a7769b91530b9", null ],
-      [ "Name_p", "structnh__css__RawRule.html#aa95aeec65a233753774696c0200cf791", null ],
-      [ "Prelude", "structnh__css__RawRule.html#ad11740982296347058b844e4e2ca6bc8", null ],
-      [ "type", "structnh__css__RawRule.html#a65f5b2c6e635db5eeccb33ad802c7506", null ]
     ] ],
     [ "nh_css_SelectorParseNode", "structnh__css__SelectorParseNode.html", [
       [ "Children", "structnh__css__SelectorParseNode.html#a573585e1cab92303d8b73d5a5fd3fa39", null ],
@@ -149,6 +118,41 @@ var group__nhcssStructs =
       [ "Other", "unionnh__css__Token.html#a1cd58e81678d3c578f22b56f8373973e", null ],
       [ "Percentage", "unionnh__css__Token.html#a4410d12c8e3797a20db0a3d8e0831ac0", null ],
       [ "type", "unionnh__css__Token.html#a8cdb2aa9f7fa27816ae86db40887c883", null ]
+    ] ],
+    [ "nh_css_TokenParser", "structnh__css__TokenParser.html", [
+      [ "length", "structnh__css__TokenParser.html#a0a14020f668f77d2be4b126750ee100c", null ],
+      [ "Tokens_pp", "structnh__css__TokenParser.html#a137e5cab74060702150d5aaf6cd2d63c", null ]
+    ] ],
+    [ "nh_css_SimpleBlock", "structnh__css__SimpleBlock.html", [
+      [ "ComponentValues", "structnh__css__SimpleBlock.html#a6f5f092f82e1d0dcb144319a2ca98dbc", null ],
+      [ "Token_p", "structnh__css__SimpleBlock.html#af9e72acbdcb162852c8e66332eb9c385", null ],
+      [ "type", "structnh__css__SimpleBlock.html#a48d4f745ab1217b66e8946c55a52fc66", null ]
+    ] ],
+    [ "nh_css_Function", "structnh__css__Function.html", [
+      [ "ComponentValues", "structnh__css__Function.html#af732e917276ffc04b1f259492a2985eb", null ],
+      [ "Token_p", "structnh__css__Function.html#acef4047e924f45021635de29addfa563", null ],
+      [ "type", "structnh__css__Function.html#a4e51749c5f19b5f2b5f3d72101785a76", null ]
+    ] ],
+    [ "nh_css_PreservedToken", "structnh__css__PreservedToken.html", [
+      [ "Token_p", "structnh__css__PreservedToken.html#afa5b7c8bcb8b1138cbad16a5dffa7bcc", null ],
+      [ "type", "structnh__css__PreservedToken.html#ab83bfbbf1579a01415a596ad150fe762", null ]
+    ] ],
+    [ "nh_css_ComponentValue", "unionnh__css__ComponentValue.html", [
+      [ "Block", "unionnh__css__ComponentValue.html#a9c8453edb47bf52908929073365ec25b", null ],
+      [ "Function", "unionnh__css__ComponentValue.html#a701eaf7219a0e76c71f87a35c2fc80ce", null ],
+      [ "PreservedToken", "unionnh__css__ComponentValue.html#a6a942683446768a08900a8e282ae03f2", null ],
+      [ "type", "unionnh__css__ComponentValue.html#a254e59c3191143142a3a7256d692040d", null ]
+    ] ],
+    [ "nh_css_Declaration", "structnh__css__Declaration.html", [
+      [ "ComponentValues", "structnh__css__Declaration.html#aad37ff3ac71053168c855f7119805865", null ],
+      [ "important", "structnh__css__Declaration.html#a9d20a53e3fe55f6f180e29e7dc5f99aa", null ],
+      [ "Name", "structnh__css__Declaration.html#a80bb47a0fc5fb90351af3f25abbd24f4", null ]
+    ] ],
+    [ "nh_css_RawRule", "structnh__css__RawRule.html", [
+      [ "Block", "structnh__css__RawRule.html#a5ba978a1aa7dcf87572a7769b91530b9", null ],
+      [ "Name_p", "structnh__css__RawRule.html#aa95aeec65a233753774696c0200cf791", null ],
+      [ "Prelude", "structnh__css__RawRule.html#ad11740982296347058b844e4e2ca6bc8", null ],
+      [ "type", "structnh__css__RawRule.html#a65f5b2c6e635db5eeccb33ad802c7506", null ]
     ] ],
     [ "nh_css_Filter", "structnh__css__Filter.html", [
       [ "DeclaredValueLists", "structnh__css__Filter.html#a49d5597afce02a7ba903292e2a2a7eb5", null ],
