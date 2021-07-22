@@ -3,7 +3,7 @@ var group__nhcssVars =
     [ "NH_CSS_COLORS_PP", "group__nhcssVars.html#ga467ce2d1eb8e084575dedb5c61372689", null ],
     [ "NH_CSS_COLORS_PP_COUNT", "group__nhcssVars.html#ga7ccecbe0ab5a0ef0ed81747cfd38e8c2", null ],
     [ "NH_CSS_DECLARATION_ORIGIN_NAMES_PP", "group__nhcssVars.html#ga85bf2344b183bcc626440cca3e12309b", null ],
-    [ "NH_CSS_DEFAULT_STYLE_SHEET_P", "group__nhcssVars.html#gac906464290507ff8ff7fff7a71134b97", null ],
+    [ "NH_CSS_DEFAULT_STYLE_SHEET_P", "group__nhcssVars.html#ga5324eb9533b266ebc8f4ff8febf5ea9c", null ],
     [ "NH_CSS_INDEXMAP", "group__nhcssVars.html#gae9fffcfb3b0f719c1b07ddb7f508a324", null ],
     [ "NH_CSS_PROPERTY_INHERITED_P", "group__nhcssVars.html#ga11fd928f988a7a27ef5eb2bccf5b183b", null ],
     [ "NH_CSS_PROPERTY_NAMES_PP", "group__nhcssVars.html#ga0c1b9522138e2b414ff7ce745ba0c987", null ],

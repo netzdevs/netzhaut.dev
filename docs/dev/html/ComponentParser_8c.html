@@ -97,12 +97,12 @@ $(document).ready(function(){initNavTree('ComponentParser_8c.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="ComponentParser_8h_source.html">ComponentParser.h</a>&quot;</code><br />
-<code>#include &quot;../Interfaces/CSSRule.h&quot;</code><br />
-<code>#include &quot;../Interfaces/CSSStyleDeclaration.h&quot;</code><br />
-<code>#include &quot;../Interfaces/CSSStyleRule.h&quot;</code><br />
-<code>#include &quot;../Interfaces/CSSRuleList.h&quot;</code><br />
-<code>#include &quot;../Interfaces/CSSStyleSheet.h&quot;</code><br />
-<code>#include &quot;../Interfaces/CSSCounterStyleRule.h&quot;</code><br />
+<code>#include &quot;../Interfaces/Rule.h&quot;</code><br />
+<code>#include &quot;../Interfaces/StyleDeclaration.h&quot;</code><br />
+<code>#include &quot;../Interfaces/StyleRule.h&quot;</code><br />
+<code>#include &quot;../Interfaces/RuleList.h&quot;</code><br />
+<code>#include &quot;../Interfaces/StyleSheet.h&quot;</code><br />
+<code>#include &quot;../Interfaces/CounterStyleRule.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Log_8h_source.html">../Common/Log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="nhcss_2Common_2Macro_8h_source.html">../Common/Macro.h</a>&quot;</code><br />
 <code>#include &quot;../../nhcore/Util/Array.h&quot;</code><br />
@@ -127,8 +127,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga06b000a367c23f837227685e9f3027ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga73b49a2fac61f6ba803ac1fc1dbda1c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structnh__List.html">nh_List</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga73b49a2fac61f6ba803ac1fc1dbda1c7">nh_css_getTokensFromComponentValues</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *ComponentValues_p)</td></tr>
 <tr class="separator:ga73b49a2fac61f6ba803ac1fc1dbda1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1e0bda7742639c80d7a060e0ca7dbf36"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga1e0bda7742639c80d7a060e0ca7dbf36">nh_css_parseRules</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *RawRules_p, <a class="el" href="group__nhcssTypedefs.html#gadf3c2bfa762ab5dfe72a356dc247a271">nh_css_CSSRuleList</a> *StyleRules_p)</td></tr>
-<tr class="separator:ga1e0bda7742639c80d7a060e0ca7dbf36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f1466c4c0e3a537d2b4a2163d3bfa00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcssEnums.html#ga5e92e4500eb7c137bfb01ca5d4d608db">NH_CSS_RESULT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__nhcssFunctions.html#ga6f1466c4c0e3a537d2b4a2163d3bfa00">nh_css_parseRules</a> (<a class="el" href="structnh__Array.html">nh_Array</a> *Rules_p, <a class="el" href="group__nhcssTypedefs.html#ga920eaa56c5adadde1143c301df0280d9">nh_css_RuleListObject</a> *RuleList_p)</td></tr>
+<tr class="separator:ga6f1466c4c0e3a537d2b4a2163d3bfa00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -144,7 +144,7 @@ Functions</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.7.19.16</b>
+<b>rev.0.8.18.16</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

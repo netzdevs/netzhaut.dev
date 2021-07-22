@@ -14,7 +14,7 @@ var group__nhecmascriptFunctions =
     [ "nh_ecmascript_allocateExecutionContext", "group__nhecmascriptFunctions.html#ga65b51aeb86bbf7f096e4de801ac3e60f", null ],
     [ "nh_ecmascript_allocateNumber", "group__nhecmascriptFunctions.html#gaf7424299d3c38ab4b2858fb4615a8e6c", null ],
     [ "nh_ecmascript_allocateString", "group__nhecmascriptFunctions.html#gad7ff7f66bb26268544646a0e5af225f7", null ],
-    [ "nh_ecmascript_appendFormatToString", "group__nhecmascriptFunctions.html#ga5f41bc44061e819d8c2721a8834c5d1d", null ],
+    [ "nh_ecmascript_appendFormatToString", "group__nhecmascriptFunctions.html#gaee9d709e10d5639590b21488212fcabe", null ],
     [ "nh_ecmascript_await", "group__nhecmascriptFunctions.html#ga94cede8eb49f157816a7f6752de39efd", null ],
     [ "nh_ecmascript_canDeclareGlobalFunction", "group__nhecmascriptFunctions.html#gac930d825fb9ccd7473abd1267fa750f7", null ],
     [ "nh_ecmascript_canDeclareGlobalVar", "group__nhecmascriptFunctions.html#ga06bf33f3c8efa6556d355fad43d89fa1", null ],

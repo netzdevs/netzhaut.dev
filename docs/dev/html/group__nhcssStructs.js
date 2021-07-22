@@ -148,11 +148,11 @@ var group__nhcssStructs =
       [ "important", "structnh__css__Declaration.html#a9d20a53e3fe55f6f180e29e7dc5f99aa", null ],
       [ "Name", "structnh__css__Declaration.html#a80bb47a0fc5fb90351af3f25abbd24f4", null ]
     ] ],
-    [ "nh_css_RawRule", "structnh__css__RawRule.html", [
-      [ "Block", "structnh__css__RawRule.html#a5ba978a1aa7dcf87572a7769b91530b9", null ],
-      [ "Name_p", "structnh__css__RawRule.html#aa95aeec65a233753774696c0200cf791", null ],
-      [ "Prelude", "structnh__css__RawRule.html#ad11740982296347058b844e4e2ca6bc8", null ],
-      [ "type", "structnh__css__RawRule.html#a65f5b2c6e635db5eeccb33ad802c7506", null ]
+    [ "nh_css_Rule", "structnh__css__Rule.html", [
+      [ "Block", "structnh__css__Rule.html#a61e46d5b1e38166b86c2485cfd3d15cd", null ],
+      [ "Name_p", "structnh__css__Rule.html#a7b02a5ee20f1343546492ae310544519", null ],
+      [ "Prelude", "structnh__css__Rule.html#a8acbcfcea87a3f2b07760f64212e756b", null ],
+      [ "type", "structnh__css__Rule.html#a61742716ee2a9101ae3e1eac76945163", null ]
     ] ],
     [ "nh_css_Filter", "structnh__css__Filter.html", [
       [ "DeclaredValueLists", "structnh__css__Filter.html#a49d5597afce02a7ba903292e2a2a7eb5", null ],

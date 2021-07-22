@@ -112,9 +112,9 @@ Data Fields</h2></td></tr>
 <tr class="separator:a57eb92a594f5a5f0b0fa66ef803c86b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a124c48239a6c79d723d1390a55634c29"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnh__Array.html#a124c48239a6c79d723d1390a55634c29">length</a></td></tr>
 <tr class="separator:a124c48239a6c79d723d1390a55634c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf1549992ad53d96cef64a12d6ae1786"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnh__Array.html#aaf1549992ad53d96cef64a12d6ae1786">bytes_p</a></td></tr>
-<tr class="memdesc:aaf1549992ad53d96cef64a12d6ae1786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque pointer to the first item in the list.  <a href="structnh__Array.html#aaf1549992ad53d96cef64a12d6ae1786">More...</a><br /></td></tr>
-<tr class="separator:aaf1549992ad53d96cef64a12d6ae1786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b5bafc0518cccc798ce3d09ae91559"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnh__Array.html#a94b5bafc0518cccc798ce3d09ae91559">p</a></td></tr>
+<tr class="memdesc:a94b5bafc0518cccc798ce3d09ae91559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opaque pointer to the first item in the list.  <a href="structnh__Array.html#a94b5bafc0518cccc798ce3d09ae91559">More...</a><br /></td></tr>
+<tr class="separator:a94b5bafc0518cccc798ce3d09ae91559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Generic linked-list which holds data pointers. </p>
@@ -144,23 +144,6 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaf1549992ad53d96cef64a12d6ae1786"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf1549992ad53d96cef64a12d6ae1786">&#9670;&nbsp;</a></span>bytes_p</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a>* nh_Array::bytes_p</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Opaque pointer to the first item in the list. </p>
-<p>A list with count == 0 should have this set as NULL. The actual data should always be queried using nh_getFromLinkedList. </p>
 
 </div>
 </div>
@@ -194,6 +177,23 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
+<a id="a94b5bafc0518cccc798ce3d09ae91559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b5bafc0518cccc798ce3d09ae91559">&#9670;&nbsp;</a></span>p</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a>* nh_Array::p</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opaque pointer to the first item in the list. </p>
+<p>A list with count == 0 should have this set as NULL. The actual data should always be queried using nh_getFromLinkedList. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
@@ -208,7 +208,7 @@ Data Fields</h2></td></tr>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.7.19.16</b>
+<b>rev.0.8.18.16</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

@@ -11,6 +11,7 @@ var modules =
     [ "nhwsi", "group__nhwsi.html", "group__nhwsi" ],
     [ "nhnetwork", "group__nhnetwork.html", "group__nhnetwork" ],
     [ "nhterm", "group__nhterm.html", "group__nhterm" ],
+    [ "nhurl", "group__nhurl.html", "group__nhurl" ],
     [ "nhhtml", "group__nhhtml.html", "group__nhhtml" ],
     [ "nhmake", "group__nhmake.html", "group__nhmake" ],
     [ "nhdev", "group__nhdev.html", "group__nhdev" ],

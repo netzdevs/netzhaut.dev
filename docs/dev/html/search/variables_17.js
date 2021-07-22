@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_3854',['y',['../structnh__PixelPosition.html#ac5f05c27573fdb091d51f94c8686edd0',1,'nh_PixelPosition::y()'],['../structnh__ClipPosition.html#a5b88f566ca571d7bfe16101b12dace4b',1,'nh_ClipPosition::y()']]]
+  ['x_3978',['x',['../structnh__PixelPosition.html#afde55e3d8fc7eb86ac98fd2342ce42a4',1,'nh_PixelPosition::x()'],['../structnh__ClipPosition.html#ab89784d38a786b9f42577d120b564734',1,'nh_ClipPosition::x()']]]
 ];

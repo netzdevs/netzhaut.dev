@@ -95,16 +95,16 @@ $(document).ready(function(){initNavTree('build.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><div style="max-width:700px;"></div><div style="max-width:700px;">This document contains information on how to build netzhaut.</div><div style="max-width:700px;"></div><h1><a class="anchor" id="Setup"></a>
 Setup</h1>
-<div style="max-width:700px;"></div><h2><a class="anchor" id="SetupLinux"></a>
+<div style="max-width:700px;">Building netzhaut requires a few setup procedures to be executed beforehand. First, the source code must be downloaded.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupLinux"></a>
 Linux</h2>
 <div style="max-width:700px;"><pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
 git clone <a href="https://github.com/netzwerkz/netzhaut.git">https://github.com/netzwerkz/netzhaut.git</a>
 cd netzhaut &amp;&amp; ./build/nhmake.sh &amp;&amp; ./build/nhmake --init
 </pre></div><div style="max-width:700px;"></div><h1><a class="anchor" id="Building"></a>
 Building</h1>
-<div style="max-width:700px;"> </div><h2><a class="anchor" id="Dependencies"></a>
+<div style="max-width:700px;">Before building, please make sure that relevant dependencies are installed. Building is done exclusively using the nhmake tool, which was build during setup.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="Dependencies"></a>
 Dependencies</h2>
-<div style="max-width:700px;">For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</div><div style="max-width:700px;"> </div><h3><a class="anchor" id="DepsLinux"></a>
+<div style="max-width:700px;">For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</div><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h3><a class="anchor" id="DepsLinux"></a>
 Linux</h3>
 <div style="max-width:700px;"><ul>
 <li>GCC</li>
@@ -134,7 +134,7 @@ Simple Building</h2>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_VER_BEGIN -->
-<b>ver.0.2.0.0</b>
+<b>ver.0.2.0.1</b>
 <!-- NH_MAKE_INSERT_VER_END -->
             </b>
           </div>

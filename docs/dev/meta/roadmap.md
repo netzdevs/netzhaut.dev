@@ -8,7 +8,7 @@ Generally, milestones are defined at the start of a stage. However, work on othe
 <br>
 Early development is divided into <b>initial development</b>, <b>pre-alpha-1</b> and <b>pre-alpha-2</b>. 
 
-\section pre-alpha-1 pre-alpha-1 
+\section pre-alpha-1 Pre-Alpha-1 
 
 <pre>Q1 2021 - Q1 2022</pre>
 
@@ -31,6 +31,11 @@ The text-processing pipeline is now based on the common combination FreeType + H
 The TTY interface can now be displayed directly or externally using standard output. To facilitate this, the nhtty module was greatly overhauled and expanded. For direct display, the nhterm module was introduced. Also, internal tty-based programs such as the logger, editor etc. have been improved.
 </div>
 
+\subsubsection pre-alpha-1url URL Processing
+<div style="margin-left:20px;">
+The nhurl library finally provides initial routines for processing urls internally based on the WHATWG URL standard.  
+</div>
+
 \subsection pre-alpha-1progress In Progress
 
 \subsubsection pre-alpha-1layout Advanced CSS Layout Engine
@@ -43,7 +48,7 @@ Implement inline/block layout. Implement margin-collapsing.
 Improve value filtering. Implement simple inheritance.
 </div>
 
-\section initial Initial development
+\section initial Initial Development
 
 <pre>Q2 2020 - Q1 2021</pre>
 
@@ -61,7 +66,7 @@ The implementation is divided into multiple libraries, managed by a loader-libra
 WebIDL interfaces are parsed at runtime in order to provide OOP-like routines and facilitate ECMAScript bindings. In the implementation, objects such as Document, HTMLElement, etc. are represented as linked structs. Each struct has an associated interface which is used to generate an attribute list. Object attributes are placed into this list according to the position in the interface allowing for easy bindings in combination with a universially applied type system. Operation bindings are essentially created by calling functions in a standardized, interface based way using function pointers. Inheritance is imitated by creating structs for each inherited interface and linking them together. All in all, this system is easy to work with since it's based on a lot of automatic mechanisms.  
 </div>
 
-\subsubsection initialparsers First iteration of specification conforming parsers
+\subsubsection initialparsers First Iteration Of Specification Conforming Parsers
 <div style="margin-left:20px;">
 This includes implementation of the ECMAScript parser, CSS/Selectors parser, HTML parser and WebIDL parser. The parsers are hand-written and while far from finished, a good chunk of implementation work has been completed.  
 </div>
@@ -86,19 +91,19 @@ API principles have been established and core routines such as creating windows,
 During initial/pre-alpha development, logging is mostly done by using a build-in TTY interface which will be expanded later on but is already functional during this stage. Logging messages are stored in a tree structure which makes managing huge amounts of traffic possible by using qualified node identifiers.  
 </div>
 
-\subsubsection initialinstaller First Installer iteration
+\subsubsection initialinstaller First Installer Iteration
 <div style="margin-left:20px;">
 A custom installer has been written to facilitate development/building/installing in the most simplistic way possible. Later on, it could also be used to execute test routines etc.  
-</div>
-
-\subsubsection initialother Other
-<div style="margin-left:20px;">
-Standard utilities for handling data using Arrays, Lists, etc. have been written. Unicode and the UTF-8 encoding are handled adequately. Work on Networking and URL libraries has started. Work on the ECMAScript engine has begun.  
 </div>
 
 \subsubsection initialdocumentation Initial Documentation
 <div style="margin-left:20px;">
 Finally, basic documentation structures/methods have been designed and a road-map has been established.  
+</div>
+
+\subsubsection initialother Other
+<div style="margin-left:20px;">
+Standard utilities for handling data using Arrays, Lists, etc. have been written. Unicode and the UTF-8 encoding are handled adequately. Work on Networking and URL libraries has started. Work on the ECMAScript engine has begun.  
 </div>
 
 <br>

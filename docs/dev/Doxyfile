@@ -826,6 +826,7 @@ INPUT                  = "introduction.md" "meta/guide.md" "meta/roadmap.md" "me
 "../../../../../src/lib/nhwsi/Common" \
 "../../../../../src/lib/nhnetwork/Common" \
 "../../../../../src/lib/nhterm/Common" \
+"../../../../../src/lib/nhurl/Common" \
 "../../../../../src/lib/nhhtml/Common"  "../../../../../src/lib/nhhtml/Parser" \
 "../../../../../src/bin/nhmake/About.h" \
 "../../../../../src/bin/nhdev/About.h" \

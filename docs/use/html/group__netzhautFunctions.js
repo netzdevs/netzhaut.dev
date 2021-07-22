@@ -8,6 +8,7 @@ var group__netzhautFunctions =
     [ "nh_html_createDocumentContext", "group__netzhautFunctions.html#ga9cec13ecffa4bdca247056fc71a33ce8", null ],
     [ "nh_html_loadBytes", "group__netzhautFunctions.html#ga9719e8d5a4b7073c1ab02b2133b81545", null ],
     [ "nh_initialize", "group__netzhautFunctions.html#gae5dc0521ef50af787d3d477c1f2c5efd", null ],
+    [ "nh_initializeUsingDefaultArguments", "group__netzhautFunctions.html#ga2bcd06216570b8148f2aaa63b998dd23", null ],
     [ "nh_keepRunning", "group__netzhautFunctions.html#gae34aaf14dc2db5afd40f5c2ae4015061", null ],
     [ "nh_renderer_addViewport", "group__netzhautFunctions.html#ga3e05677417ffe74bc9cea03ce6b57869", null ],
     [ "nh_renderer_createRenderer", "group__netzhautFunctions.html#gaa61f031219c93a9117c7ee59183ef2ac", null ],

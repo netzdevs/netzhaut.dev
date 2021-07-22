@@ -93,11 +93,9 @@ $(document).ready(function(){initNavTree('guide.html',''); initResizable(); });
 <div class="title">Development Guide </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="modules"></a>
+<div class="textblock"><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h1><a class="anchor" id="modules"></a>
 Modules</h1>
-<p>The implementation is divided into following libraries (or modules):</p>
-<ul>
-<li><a href="group__nhloader.html">nhloader</a></li>
+<div style="max-width:700px;"> The implementation is divided into following libraries (or modules):</div><div style="max-width:700px;"><ul>
 <li><a href="group__nhcore.html">nhcore</a></li>
 <li><a href="group__nhwsi.html">nhwsi</a></li>
 <li><a href="group__nhtty.html">nhtty</a></li>
@@ -109,13 +107,14 @@ Modules</h1>
 <li><a href="group__nhdom.html">nhdom</a></li>
 <li><a href="group__nhgfx.html">nhgfx</a></li>
 <li><a href="group__nhcss.html">nhcss</a></li>
+<li><a href="group__nhurl.html">nhurl</a></li>
 </ul>
-<p>This list excludes the netzhaut library since it acts solely as the API, thus providing not much functionality other than a little bit of initialization and dispatching.</p>
-<h1><a class="anchor" id="specs"></a>
+</div><div style="max-width:700px;">This list excludes the netzhaut library since it acts solely as the API, thus providing not much functionality other than a little bit of initialization and dispatching.</div><div style="max-width:700px;"></div><h1><a class="anchor" id="specs"></a>
 Specifications</h1>
-<p>Here is a compilation of specifications which are currently used in development:</p>
-<ul>
-<li><a href="http://www.open-std.org/jtc1/sc22/WG14/www/docs/n1256.pdf">C99</a> - <a href="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n897.pdf">C99 Rationale</a></li>
+<div style="max-width:700px;"> The following specifications are actively used in development. Implementing a web-browser-engine isn't possible without them. Implementers must use these specifications whenever they are relevant. Also, some specifications are living documents or might become deprecated and implementers need to act accordingly. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="specsw3c"></a>
+World Wide Web Consortium (W3C)</h2>
+<div style="max-width:700px;"><ul>
 <li><a href="https://www.w3.org/TR/css-backgrounds-3/">CSS Backgrounds and Borders Module Level 3</a></li>
 <li><a href="https://www.w3.org/TR/css-box-4/">CSS Box Model Module Level 4</a></li>
 <li><a href="https://www.w3.org/TR/css-sizing-3/">CSS Box Sizing Module Level 3</a></li>
@@ -134,23 +133,59 @@ Specifications</h1>
 <li><a href="https://www.w3.org/TR/css-text-3">CSS Text Module Level 3</a></li>
 <li><a href="https://www.w3.org/TR/css-values-4/">CSS Values and Units Module Level 4</a></li>
 <li><a href="https://www.w3.org/TR/css-writing-modes-4/">CSS Writing Modes Level 4</a></li>
+<li><a href="https://www.w3.org/TR/selectors-4/">Selectors Level 4</a></li>
+<li><a href="https://w3c.github.io/FileAPI/">FileAPI</a></li>
+<li><a href="https://heycam.github.io/webidl/">WebIDL</a> <br  />
+</li>
+</ul>
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="specswhatwg"></a>
+Web Hypertext Application Technology Working Group (WHATWG)</h2>
+<div style="max-width:700px;"><ul>
 <li><a href="https://dom.spec.whatwg.org/">DOM</a> <br  />
 </li>
-<li><a href="https://www.ecma-international.org/ecma-262/">ECMAScript</a> <br  />
-</li>
 <li><a href="https://encoding.spec.whatwg.org/">Encoding</a></li>
-<li><a href="https://w3c.github.io/FileAPI/">FileAPI</a></li>
 <li><a href="https://html.spec.whatwg.org/multipage/">HTML</a> <br  />
 </li>
-<li><a href="https://www.w3.org/TR/selectors-4/">Selectors Level 4</a></li>
 <li><a href="https://url.spec.whatwg.org/">URL</a> <br  />
 </li>
+</ul>
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="specsecma"></a>
+ecma</h2>
+<div style="max-width:700px;"><ul>
+<li><a href="https://www.ecma-international.org/ecma-262/">ecma-262 (ECMAScript)</a> <br  />
+</li>
+</ul>
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="specsdec"></a>
+Digital Equipment Corporation (DEC)</h2>
+<div style="max-width:700px;"><ul>
 <li><a href="https://vt100.net/docs/vt100-ug/chapter3.html">VT100</a> <br  />
 </li>
-<li><a href="https://heycam.github.io/webidl/">WebIDL</a> <br  />
- </li>
 </ul>
-</div></div><!-- contents -->
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="specsietf"></a>
+Internet Engineering Task Force (IETF)</h2>
+<div style="max-width:700px;"><ul>
+<li><a href="https://www.ietf.org/rfc/rfc3492.txt">RFC3492: Punycode: A Bootstring encoding of Unicode for IDNA</a></li>
+</ul>
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="suppunicode"></a>
+Unicode Consortium</h2>
+<div style="max-width:700px;"><ul>
+<li><a href="https://www.unicode.org/reports/tr46">Unicode IDNA Compatibility Processing</a></li>
+</ul>
+</div><div style="max-width:700px;"></div><h1><a class="anchor" id="suppspecs"></a>
+Supplementary Specifications</h1>
+<div style="max-width:700px;"> Supplementary specifications are relevant but probably not used directly in development. Thus, the following entries are mostly anecdotes. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="suppspecsiso"></a>
+ISO/IEC</h2>
+<div style="max-width:700px;"><ul>
+<li><a href="http://www.open-std.org/jtc1/sc22/WG14/www/docs/n1256.pdf">9899:TC3 (C99)</a></li>
+<li><a href="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n897.pdf">C9X Rationale</a></li>
+</ul>
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="suppspecsietf"></a>
+Internet Engineering Task Force (IETF)</h2>
+<div style="max-width:700px;"><ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc4291">RFC4291: IP Version 6 Addressing Architecture</a></li>
+</ul>
+</div><div style="max-width:700px;"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
     <!-- HTML footer for doxygen 1.8.15-->
@@ -165,7 +200,7 @@ Specifications</h1>
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.7.19.16</b>
+<b>rev.0.8.18.16</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>
