@@ -25,9 +25,6 @@
 var NAVTREE =
 [
   [ "netzhaut | use", "index.html", [
-    [ "Introduction", "introduction.html", [
-      [ "About", "introduction.html#about", null ]
-    ] ],
     [ "Build Instructions", "build.html", [
       [ "Setup", "build.html#Setup", [
         [ "Linux", "build.html#SetupLinux", null ]
@@ -38,6 +35,9 @@ var NAVTREE =
         ] ],
         [ "Simple Building", "build.html#Build1", null ]
       ] ]
+    ] ],
+    [ "Introduction", "introduction.html", [
+      [ "About", "introduction.html#about", null ]
     ] ],
     [ "Modules", "modules.html", "modules" ],
     [ "Files", "files.html", [

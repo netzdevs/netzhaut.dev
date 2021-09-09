@@ -64,14 +64,6 @@ var group__nhcoreStructs =
       [ "g", "structnh__Color.html#aff9e75650b16dde6015f4f7c4f00696b", null ],
       [ "r", "structnh__Color.html#a3e215d0cfe3ec590a0411f03a0a55dcb", null ]
     ] ],
-    [ "nh_URI", "structnh__URI.html", [
-      [ "base_p", "structnh__URI.html#a011bc092c04db34533b02bb323a8a56a", null ],
-      [ "data_p", "structnh__URI.html#ab50b370d2e701ae34090f647b113f003", null ],
-      [ "location_p", "structnh__URI.html#a3efa545c998b3d4b6a65e2d8ea0c9f3f", null ],
-      [ "payload_p", "structnh__URI.html#a8b8f7a91d56f6edd8e26d3f8a4a13e18", null ],
-      [ "scheme", "structnh__URI.html#abfb241e927a85fce3826620bf078b516", null ],
-      [ "size", "structnh__URI.html#a89658e3947a2c274d6b88b8c7e4d859a", null ]
-    ] ],
     [ "nh_Texture", "structnh__Texture.html", [
       [ "compression", "structnh__Texture.html#abd3f0f11ab89141209842748d47f6700", null ],
       [ "data_p", "structnh__Texture.html#a835e71270fadffb11a30220244ff26e4", null ],
