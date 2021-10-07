@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('Driver_8h_source.html',''); initResiza
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Host_8h.html">Host.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;../Common/Types.h&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;../Common/Private.h&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;../Common/Result.h&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
@@ -127,20 +127,20 @@ $(document).ready(function(){initNavTree('Driver_8h_source.html',''); initResiza
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structnh__vk__Driver.html#ada8c56afa037043fb62eea798fa1ec18">   43</a></span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="structnh__vk__Driver.html#ada8c56afa037043fb62eea798fa1ec18">renderPassCount</a>;          </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    } <a class="code hl_struct" href="structnh__vk__Driver.html">nh_vk_Driver</a>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_enumeration" href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a> <a class="code hl_function" href="group__nhgfxFunctions.html#ga1d9cf10b83bcd1324140cf005dda5586">nh_vk_createDriver</a>(</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_struct" href="structnh__vk__Host.html">nh_vk_Host</a> *Host_p, <a class="code hl_struct" href="structnh__vk__Driver.html">nh_vk_Driver</a> *Driver_p, <a class="code hl_typedef" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *name_p</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_enumeration" href="group__lib__nhgfx__enums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a> <a class="code hl_function" href="group__lib__nhgfx__functions.html#ga1d9cf10b83bcd1324140cf005dda5586">nh_vk_createDriver</a>(</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_struct" href="structnh__vk__Host.html">nh_vk_Host</a> *Host_p, <a class="code hl_struct" href="structnh__vk__Driver.html">nh_vk_Driver</a> *Driver_p, <a class="code hl_typedef" href="group__lib__nhcore__typedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *name_p</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    );</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__nhgfxFunctions.html#gadc141fd3d50ef5000ef25127cf90a969">nh_vk_destroyDriver</a>(</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="group__lib__nhgfx__functions.html#gadc141fd3d50ef5000ef25127cf90a969">nh_vk_destroyDriver</a>(</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_struct" href="structnh__vk__Driver.html">nh_vk_Driver</a> *Driver_p</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    );</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aHost_8h_html"><div class="ttname"><a href="Host_8h.html">Host.h</a></div></div>
-<div class="ttc" id="agroup__nhcoreTypedefs_html_ga97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> Types.h:21</div></div>
-<div class="ttc" id="agroup__nhgfxEnums_html_ga40e840034eeb0d9aa68b5fbcfe56ffeb"><div class="ttname"><a href="group__nhgfxEnums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a></div><div class="ttdeci">NH_GFX_RESULT</div><div class="ttdoc">Return values for functions.</div><div class="ttdef"><b>Definition:</b> Result.h:22</div></div>
-<div class="ttc" id="agroup__nhgfxFunctions_html_ga1d9cf10b83bcd1324140cf005dda5586"><div class="ttname"><a href="group__nhgfxFunctions.html#ga1d9cf10b83bcd1324140cf005dda5586">nh_vk_createDriver</a></div><div class="ttdeci">NH_GFX_RESULT nh_vk_createDriver(nh_vk_Host *Host_p, nh_vk_Driver *Driver_p, NH_BYTE *name_p)</div><div class="ttdef"><b>Definition:</b> Driver.c:159</div></div>
-<div class="ttc" id="agroup__nhgfxFunctions_html_gadc141fd3d50ef5000ef25127cf90a969"><div class="ttname"><a href="group__nhgfxFunctions.html#gadc141fd3d50ef5000ef25127cf90a969">nh_vk_destroyDriver</a></div><div class="ttdeci">void nh_vk_destroyDriver(nh_vk_Driver *Driver_p)</div><div class="ttdef"><b>Definition:</b> Driver.c:190</div></div>
+<div class="ttc" id="agroup__lib__nhcore__typedefs_html_ga97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="group__lib__nhcore__typedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> Public.h:21</div></div>
+<div class="ttc" id="agroup__lib__nhgfx__enums_html_ga40e840034eeb0d9aa68b5fbcfe56ffeb"><div class="ttname"><a href="group__lib__nhgfx__enums.html#ga40e840034eeb0d9aa68b5fbcfe56ffeb">NH_GFX_RESULT</a></div><div class="ttdeci">NH_GFX_RESULT</div><div class="ttdoc">Return values for functions.</div><div class="ttdef"><b>Definition:</b> Result.h:22</div></div>
+<div class="ttc" id="agroup__lib__nhgfx__functions_html_ga1d9cf10b83bcd1324140cf005dda5586"><div class="ttname"><a href="group__lib__nhgfx__functions.html#ga1d9cf10b83bcd1324140cf005dda5586">nh_vk_createDriver</a></div><div class="ttdeci">NH_GFX_RESULT nh_vk_createDriver(nh_vk_Host *Host_p, nh_vk_Driver *Driver_p, NH_BYTE *name_p)</div><div class="ttdef"><b>Definition:</b> Driver.c:159</div></div>
+<div class="ttc" id="agroup__lib__nhgfx__functions_html_gadc141fd3d50ef5000ef25127cf90a969"><div class="ttname"><a href="group__lib__nhgfx__functions.html#gadc141fd3d50ef5000ef25127cf90a969">nh_vk_destroyDriver</a></div><div class="ttdeci">void nh_vk_destroyDriver(nh_vk_Driver *Driver_p)</div><div class="ttdef"><b>Definition:</b> Driver.c:190</div></div>
 <div class="ttc" id="astructnh__vk__DriverInfo_html"><div class="ttname"><a href="structnh__vk__DriverInfo.html">nh_vk_DriverInfo</a></div><div class="ttdef"><b>Definition:</b> Driver.h:23</div></div>
 <div class="ttc" id="astructnh__vk__DriverInfo_html_a1a1c55775453b21f4c7aee3cb85e3f6e"><div class="ttname"><a href="structnh__vk__DriverInfo.html#a1a1c55775453b21f4c7aee3cb85e3f6e">nh_vk_DriverInfo::major</a></div><div class="ttdeci">uint32_t major</div><div class="ttdef"><b>Definition:</b> Driver.h:24</div></div>
 <div class="ttc" id="astructnh__vk__DriverInfo_html_a40b8fcbf9d24262d29016b5e3ba6ec2e"><div class="ttname"><a href="structnh__vk__DriverInfo.html#a40b8fcbf9d24262d29016b5e3ba6ec2e">nh_vk_DriverInfo::deviceId</a></div><div class="ttdeci">uint32_t deviceId</div><div class="ttdef"><b>Definition:</b> Driver.h:28</div></div>
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('Driver_8h_source.html',''); initResiza
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.8.19.16</b>
+<b>rev.0.8.23.10</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

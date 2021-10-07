@@ -1,0 +1,6 @@
+var group__lib__nhurl__vars =
+[
+    [ "NH_URL_RESULTS_PP", "group__lib__nhurl__vars.html#gaa5e9c0be715a39888006385288c98ee0", null ],
+    [ "NH_URL_RESULTS_PP_COUNT", "group__lib__nhurl__vars.html#gaefe8fb241cbd578f2fa16adbbfeba1c8", null ],
+    [ "NH_URL_VERSION_P", "group__lib__nhurl__vars.html#ga7ffdd114d64153f56d8edadb0001222d", null ]
+];

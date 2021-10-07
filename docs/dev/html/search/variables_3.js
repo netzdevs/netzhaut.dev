@@ -39,7 +39,7 @@ var searchData=
   ['create_36',['Create',['../structnh__ecmascript__IntrinsicObject.html#a1791b5e7f4bfe9a8c9a7f742b7328eb8',1,'nh_ecmascript_IntrinsicObject']]],
   ['createinfo_37',['createInfo',['../structnh__vk__BufferInfo.html#a67ed3467def984e38cf141a2c56042cb',1,'nh_vk_BufferInfo']]],
   ['createview_5ff_38',['createView_f',['../structnh__tty__ProgramCallbacks.html#ae35ccdf1dc68d0c3fbb758b507afed27',1,'nh_tty_ProgramCallbacks']]],
-  ['current_39',['current',['../structnh__css__ComponentParser.html#a209eddb6f989d65fbe9f5b2d6520387f',1,'nh_css_ComponentParser']]],
+  ['current_39',['current',['../structnh__tty__Idle.html#a939dac374c6cf9c631d558dbcdfe7d47',1,'nh_tty_Idle::current()'],['../structnh__css__ComponentParser.html#a209eddb6f989d65fbe9f5b2d6520387f',1,'nh_css_ComponentParser::current()']]],
   ['currentimage_40',['currentImage',['../structnh__vk__Surface.html#ad0567d05e0056245470a8bed184ea919',1,'nh_vk_Surface']]],
   ['currentx_41',['currentX',['../structnh__css__LineBox.html#acd88277afa12bdd9a697307910e2567d',1,'nh_css_LineBox']]]
 ];

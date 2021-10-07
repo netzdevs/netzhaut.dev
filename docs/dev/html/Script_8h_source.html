@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('Script_8h_source.html',''); initResiza
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;Parser.h&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="Environment_8h.html">Environment.h</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;../Common/Types.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;../Common/Private.h&quot;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
@@ -118,21 +118,21 @@ $(document).ready(function(){initNavTree('Script_8h_source.html',''); initResiza
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    } <a class="code hl_struct" href="structnh__ecmascript__Script.html">nh_ecmascript_Script</a>;</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// https://tc39.es/ecma262/#sec-parse-script</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_struct" href="structnh__ecmascript__Script.html">nh_ecmascript_Script</a> *<a class="code hl_function" href="group__nhecmascriptFunctions.html#ga642e980c87c7a9c6ba509b86640b2433">nh_ecmascript_parseScript</a>(</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_typedef" href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *sourceText_p, <a class="code hl_struct" href="structnh__ecmascript__Realm.html">nh_ecmascript_Realm</a> *Realm_p, <span class="keywordtype">int</span> encoding</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_struct" href="structnh__ecmascript__Script.html">nh_ecmascript_Script</a> *<a class="code hl_function" href="group__lib__nhecmascript__functions.html#ga642e980c87c7a9c6ba509b86640b2433">nh_ecmascript_parseScript</a>(</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_typedef" href="group__lib__nhcore__typedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a> *sourceText_p, <a class="code hl_struct" href="structnh__ecmascript__Realm.html">nh_ecmascript_Realm</a> *Realm_p, <span class="keywordtype">int</span> encoding</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    );</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// https://www.ecma-international.org/ecma-262/#sec-runtime-semantics-scriptevaluation</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_struct" href="structnh__ecmascript__Completion.html">nh_ecmascript_Completion</a> <a class="code hl_function" href="group__nhecmascriptFunctions.html#gae810ff06d71121becac61f975f516855">nh_ecmascript_evaluateScript</a>(</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_struct" href="structnh__ecmascript__Completion.html">nh_ecmascript_Completion</a> <a class="code hl_function" href="group__lib__nhecmascript__functions.html#gae810ff06d71121becac61f975f516855">nh_ecmascript_evaluateScript</a>(</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_struct" href="structnh__ecmascript__Script.html">nh_ecmascript_Script</a> *Script_p</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    );</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aEnvironment_8h_html"><div class="ttname"><a href="Environment_8h.html">Environment.h</a></div></div>
 <div class="ttc" id="aRealm_8h_html"><div class="ttname"><a href="Realm_8h.html">Realm.h</a></div></div>
-<div class="ttc" id="agroup__nhcoreTypedefs_html_ga97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="group__nhcoreTypedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> Types.h:21</div></div>
-<div class="ttc" id="agroup__nhecmascriptFunctions_html_ga642e980c87c7a9c6ba509b86640b2433"><div class="ttname"><a href="group__nhecmascriptFunctions.html#ga642e980c87c7a9c6ba509b86640b2433">nh_ecmascript_parseScript</a></div><div class="ttdeci">nh_ecmascript_Script * nh_ecmascript_parseScript(NH_BYTE *sourceText_p, nh_ecmascript_Realm *Realm_p, int encoding)</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT</div><div class="ttdef"><b>Definition:</b> Script.c:35</div></div>
-<div class="ttc" id="agroup__nhecmascriptFunctions_html_gae810ff06d71121becac61f975f516855"><div class="ttname"><a href="group__nhecmascriptFunctions.html#gae810ff06d71121becac61f975f516855">nh_ecmascript_evaluateScript</a></div><div class="ttdeci">nh_ecmascript_Completion nh_ecmascript_evaluateScript(nh_ecmascript_Script *Script_p)</div><div class="ttdef"><b>Definition:</b> Script.c:84</div></div>
+<div class="ttc" id="agroup__lib__nhcore__typedefs_html_ga97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="group__lib__nhcore__typedefs.html#ga97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> Public.h:21</div></div>
+<div class="ttc" id="agroup__lib__nhecmascript__functions_html_ga642e980c87c7a9c6ba509b86640b2433"><div class="ttname"><a href="group__lib__nhecmascript__functions.html#ga642e980c87c7a9c6ba509b86640b2433">nh_ecmascript_parseScript</a></div><div class="ttdeci">nh_ecmascript_Script * nh_ecmascript_parseScript(NH_BYTE *sourceText_p, nh_ecmascript_Realm *Realm_p, int encoding)</div><div class="ttdef"><b>Definition:</b> Script.c:53</div></div>
+<div class="ttc" id="agroup__lib__nhecmascript__functions_html_gae810ff06d71121becac61f975f516855"><div class="ttname"><a href="group__lib__nhecmascript__functions.html#gae810ff06d71121becac61f975f516855">nh_ecmascript_evaluateScript</a></div><div class="ttdeci">nh_ecmascript_Completion nh_ecmascript_evaluateScript(nh_ecmascript_Script *Script_p)</div><div class="ttdef"><b>Definition:</b> Script.c:97</div></div>
 <div class="ttc" id="astructnh__ecmascript__Completion_html"><div class="ttname"><a href="structnh__ecmascript__Completion.html">nh_ecmascript_Completion</a></div><div class="ttdef"><b>Definition:</b> Completion.h:45</div></div>
 <div class="ttc" id="astructnh__ecmascript__Environment_html"><div class="ttname"><a href="structnh__ecmascript__Environment.html">nh_ecmascript_Environment</a></div><div class="ttdef"><b>Definition:</b> Environment.h:33</div></div>
 <div class="ttc" id="astructnh__ecmascript__ParseNode_html"><div class="ttname"><a href="structnh__ecmascript__ParseNode.html">nh_ecmascript_ParseNode</a></div><div class="ttdef"><b>Definition:</b> Parser.h:204</div></div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('Script_8h_source.html',''); initResiza
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_REV_BEGIN -->
-<b>rev.0.8.19.16</b>
+<b>rev.0.8.23.10</b>
 <!-- NH_MAKE_INSERT_REV_END -->
             </b>
           </div>

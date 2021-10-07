@@ -814,6 +814,7 @@ WARN_LOGFILE           =
 # Note: If this tag is empty the current directory is searched.
 
 INPUT                  = "introduction.md" "meta/guide.md" "meta/roadmap.md" "meta/conformance.md" "meta/authors.md" "architecture/projectlayout.md" "meta/nhmake.md" "architecture/systemarchitecture.md" "architecture/enginearchitecture.md" "design/codestyle.md" \
+"../../../../../src/lib/netzhaut" \
 "../../../../../src/lib/nhcore/Common" "../../../../../src/lib/nhcore/" \
 "../../../../../src/lib/nhtty/Common" "../../../../../src/lib/nhtty/" \
 "../../../../../src/lib/nhloader/Common" "../../../../../src/lib/nhloader/" \
@@ -828,9 +829,14 @@ INPUT                  = "introduction.md" "meta/guide.md" "meta/roadmap.md" "me
 "../../../../../src/lib/nhterm/Common" \
 "../../../../../src/lib/nhurl/Common" \
 "../../../../../src/lib/nhhtml/Common"  "../../../../../src/lib/nhhtml/Parser" \
-"../../../../../src/bin/nhmake/About.h" \
-"../../../../../src/bin/nhdev/About.h" \
-"../../../../../src/bin/nht/About.h" \
+\
+"../../../../../src/bin/netzhaut" \
+"../../../../../src/bin/nhhtml" \
+"../../../../../src/bin/nhtty" \
+"../../../../../src/bin/nhecmascript" \
+"../../../../../src/bin/nhcore" \
+\
+"../../../../../src/bin/nhmake" \
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

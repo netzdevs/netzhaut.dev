@@ -97,48 +97,25 @@ $(document).ready(function(){initNavTree('netzhaut_8h_source.html',''); initResi
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef DOXYGEN_SHOULD_SKIP_THIS</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="nhrenderer_8h.html">nhrenderer.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="nhhtml_8h.html">nhhtml.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="nhterm_8h.html">nhterm.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;nhcore/Common/Types.h&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;nhcore/Common/Result.h&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="group__netzhautMacros.html#ga7dfcee9184e7a27bacdda49f4af97156">   31</a></span><span class="preprocessor">    #define NETZHAUT_API_VERSION 0</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group__netzhautMacros.html#gab749c92c3381ed21cfa836449d9129e5">   48</a></span><span class="preprocessor">    #define NETZHAUT_MAJOR_VERSION 2</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="group__netzhautMacros.html#gac37f265063ce6a21f6b2b0c0bc172822">   64</a></span><span class="preprocessor">    #define NETZHAUT_MINOR_VERSION 0</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="group__netzhautMacros.html#ga9e286a9adbd25e0d958b73da59e9b89d">   81</a></span><span class="preprocessor">    #define NETZHAUT_PATCH_VERSION 1</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">extern</span> nh_Loader *<a class="code hl_variable" href="group__netzhautVars.html#ga4171ef8041db1120cf2270e8a6b6904e">NH_LOADER_P</a>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    NH_RESULT <a class="code hl_function" href="group__netzhautFunctions.html#gae5dc0521ef50af787d3d477c1f2c5efd">nh_initialize</a>(</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>         NH_LOADER_SCOPE loaderScope, NH_BYTE *loaderPath_p, NH_BOOL install</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    );</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    NH_RESULT <a class="code hl_function" href="group__netzhautFunctions.html#ga2bcd06216570b8148f2aaa63b998dd23">nh_initializeUsingDefaultArguments</a>(</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    );</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="group__netzhautFunctions.html#ga0190f368741b44e4f703a9fe31571c23">nh_run</a>(</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    );</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    NH_BOOL <a class="code hl_function" href="group__netzhautFunctions.html#gae34aaf14dc2db5afd40f5c2ae4015061">nh_keepRunning</a>(</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    );</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="nhcore_8h.html">nhcore.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="nhrenderer_8h.html">nhrenderer.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="nhhtml_8h.html">nhhtml.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="nhterm_8h.html">nhterm.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="nhecmascript_8h.html">nhecmascript.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="group__lib__netzhaut__changelog.html#ga7dfcee9184e7a27bacdda49f4af97156">   52</a></span><span class="preprocessor">    #define NETZHAUT_API_VERSION 0</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="group__lib__netzhaut__changelog.html#gab749c92c3381ed21cfa836449d9129e5">   69</a></span><span class="preprocessor">    #define NETZHAUT_MAJOR_VERSION 2</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="group__lib__netzhaut__changelog.html#gac37f265063ce6a21f6b2b0c0bc172822">   91</a></span><span class="preprocessor">    #define NETZHAUT_MINOR_VERSION 2</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="group__lib__netzhaut__changelog.html#ga9e286a9adbd25e0d958b73da59e9b89d">  108</a></span><span class="preprocessor">    #define NETZHAUT_PATCH_VERSION 0</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    NH_RESULT <a class="code hl_function" href="group__netzhautFunctions.html#ga6d5e0ab7c19f983f7fb17689ab351507">nh_terminate</a>(</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    );</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif </span><span class="comment">// NETZHAUT_H</span></div>
-<div class="ttc" id="agroup__netzhautFunctions_html_ga0190f368741b44e4f703a9fe31571c23"><div class="ttname"><a href="group__netzhautFunctions.html#ga0190f368741b44e4f703a9fe31571c23">nh_run</a></div><div class="ttdeci">unsigned int nh_run()</div><div class="ttdef"><b>Definition:</b> netzhaut.c:151</div></div>
-<div class="ttc" id="agroup__netzhautFunctions_html_ga2bcd06216570b8148f2aaa63b998dd23"><div class="ttname"><a href="group__netzhautFunctions.html#ga2bcd06216570b8148f2aaa63b998dd23">nh_initializeUsingDefaultArguments</a></div><div class="ttdeci">NH_RESULT nh_initializeUsingDefaultArguments()</div><div class="ttdef"><b>Definition:</b> netzhaut.c:144</div></div>
-<div class="ttc" id="agroup__netzhautFunctions_html_ga6d5e0ab7c19f983f7fb17689ab351507"><div class="ttname"><a href="group__netzhautFunctions.html#ga6d5e0ab7c19f983f7fb17689ab351507">nh_terminate</a></div><div class="ttdeci">NH_RESULT nh_terminate()</div><div class="ttdef"><b>Definition:</b> netzhaut.c:167</div></div>
-<div class="ttc" id="agroup__netzhautFunctions_html_gae34aaf14dc2db5afd40f5c2ae4015061"><div class="ttname"><a href="group__netzhautFunctions.html#gae34aaf14dc2db5afd40f5c2ae4015061">nh_keepRunning</a></div><div class="ttdeci">NH_BOOL nh_keepRunning()</div><div class="ttdef"><b>Definition:</b> netzhaut.c:159</div></div>
-<div class="ttc" id="agroup__netzhautFunctions_html_gae5dc0521ef50af787d3d477c1f2c5efd"><div class="ttname"><a href="group__netzhautFunctions.html#gae5dc0521ef50af787d3d477c1f2c5efd">nh_initialize</a></div><div class="ttdeci">NH_RESULT nh_initialize(NH_LOADER_SCOPE loaderScope, NH_BYTE *loaderPath_p, NH_BOOL install)</div><div class="ttdef"><b>Definition:</b> netzhaut.c:126</div></div>
-<div class="ttc" id="agroup__netzhautVars_html_ga4171ef8041db1120cf2270e8a6b6904e"><div class="ttname"><a href="group__netzhautVars.html#ga4171ef8041db1120cf2270e8a6b6904e">NH_LOADER_P</a></div><div class="ttdeci">nh_Loader * NH_LOADER_P</div><div class="ttdoc">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT</div><div class="ttdef"><b>Definition:</b> netzhaut.c:26</div></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif </span><span class="comment">// NETZHAUT_H</span></div>
+<div class="ttc" id="anhcore_8h_html"><div class="ttname"><a href="nhcore_8h.html">nhcore.h</a></div></div>
+<div class="ttc" id="anhecmascript_8h_html"><div class="ttname"><a href="nhecmascript_8h.html">nhecmascript.h</a></div></div>
 <div class="ttc" id="anhhtml_8h_html"><div class="ttname"><a href="nhhtml_8h.html">nhhtml.h</a></div></div>
 <div class="ttc" id="anhrenderer_8h_html"><div class="ttname"><a href="nhrenderer_8h.html">nhrenderer.h</a></div></div>
 <div class="ttc" id="anhterm_8h_html"><div class="ttname"><a href="nhterm_8h.html">nhterm.h</a></div></div>
@@ -156,7 +133,7 @@ $(document).ready(function(){initNavTree('netzhaut_8h_source.html',''); initResi
           <div style="color:#24bbc4;text-align:center;font-size:16px;">
             <b>
 <!-- NH_MAKE_INSERT_VER_BEGIN -->
-<b>ver.0.2.0.1</b>
+<b>ver.0.2.2.0</b>
 <!-- NH_MAKE_INSERT_VER_END -->
             </b>
           </div>

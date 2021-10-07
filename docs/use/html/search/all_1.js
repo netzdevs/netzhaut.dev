@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['introduction_0',['Introduction',['../introduction.html',1,'']]],
-  ['introduction_2emd_1',['introduction.md',['../introduction_8md.html',1,'']]]
+  ['changelog_0',['Changelog',['../group__lib__netzhaut__changelog.html',1,'']]]
 ];

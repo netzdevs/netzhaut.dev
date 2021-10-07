@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['max_5fdepth_0',['MAX_DEPTH',['../nhwebidl_2Common_2Log_8c.html#a5db49eeef5c9bb774f02996f684df238',1,'Log.c']]],
-  ['max_5findent_1',['MAX_INDENT',['../nhhtml_2Common_2Log_8c.html#ab9ac5ee1679830523bb24f3b2c212059',1,'Log.c']]],
-  ['max_5fmessage_2',['MAX_MESSAGE',['../nhhtml_2Common_2Log_8c.html#a8cea0c1cc1fc60a52e79998580bbf1a7',1,'Log.c']]]
+  ['license_5fnotice_0',['LICENSE_NOTICE',['../UnicodeData_8c.html#a1d20a06c46043ef1f7bbe033c1603ef6',1,'LICENSE_NOTICE():&#160;UnicodeData.c'],['../WebIDL_8c.html#a1d20a06c46043ef1f7bbe033c1603ef6',1,'LICENSE_NOTICE():&#160;WebIDL.c']]]
 ];

@@ -1,4 +1,0 @@
-var nhdom_2Common_2Initialize_8c =
-[
-    [ "nh_dom_initialize", "group__nhdomFunctions.html#ga2c2072e18c9df4ab9bf0074f709b76c3", null ]
-];
