@@ -26,19 +26,17 @@ var NAVTREE =
 [
   [ "Netzhaut General", "index.html", [
     [ "Roadmap", "md_roadmap.html", [
-      [ "Pre-Alpha-1", "md_roadmap.html#pre-alpha-1", [
-        [ "Completed", "md_roadmap.html#pre-alpha-1complete", [
-          [ "Improved Build Tool", "md_roadmap.html#pre-alpha-1build", null ],
-          [ "Improved Text Processing", "md_roadmap.html#pre-alpha-1text", null ],
-          [ "Improved TTY Interface", "md_roadmap.html#pre-alpha-1term", null ],
-          [ "URL Processing", "md_roadmap.html#pre-alpha-1url", null ]
-        ] ],
-        [ "In Progress", "md_roadmap.html#pre-alpha-1progress", [
-          [ "Advanced CSS Layout Engine", "md_roadmap.html#pre-alpha-1layout", null ],
-          [ "CSS Values", "md_roadmap.html#pre-alpha-1parsing", null ]
+      [ "Roadmap", "md_roadmap.html#about", null ],
+      [ "prototype.1", "md_roadmap.html#prototype1", [
+        [ "In Progress", "md_roadmap.html#prototype1progress", null ],
+        [ "Completed", "md_roadmap.html#prototype1complete", [
+          [ "Improved Build Tool", "md_roadmap.html#prototype1build", null ],
+          [ "Improved Text Processing", "md_roadmap.html#prototype1text", null ],
+          [ "Improved TTY Interface", "md_roadmap.html#prototype1term", null ],
+          [ "URL Processing", "md_roadmap.html#prototype1url", null ]
         ] ]
       ] ],
-      [ "Initial Development", "md_roadmap.html#initial", [
+      [ "prototype.0", "md_roadmap.html#prototype0", [
         [ "Completed", "md_roadmap.html#initialcompleted", [
           [ "Component Design", "md_roadmap.html#initialcomponents", null ],
           [ "Object Oriented Design", "md_roadmap.html#initialoop", null ],

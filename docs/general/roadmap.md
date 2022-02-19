@@ -2,53 +2,53 @@
 
 <div style="max-width:700px;">
 
-The roadmap documents previous, current and future development-stages. Each stage sets out a general direction of development. Milestones are declared as "In Progress" or "Completed". Once all milestones are declared "Completed", development moves on to a new stage.  
+\section about Roadmap
+
+The roadmap documents previous, current and future development-stages. Each stage sets out general directions/tasks of development. Milestones are declared as "In Progress" or "Completed". Once all milestones are declared "Completed", development moves on to a new stage.  
 <br>
 Generally, milestones are defined at the start of a stage. However, work on other emerging and pressing matters may require time as well and might be added to the roadmap later on.  
 <br>
-Early development is divided into <b>initial development</b>, <b>pre-alpha-1</b> and <b>pre-alpha-2</b>. 
+Early development is done using evolutionary prototyping.
 
-\section pre-alpha-1 Pre-Alpha-1 
+\section prototype1 prototype.1 
 
-<pre>Q1 2021 - Q1 2022</pre>
+<pre>Q1 2021 - Q4 2022</pre>
 
 This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering.   
 
-\subsection pre-alpha-1complete Completed
+\subsection prototype1progress In Progress
 
-\subsubsection pre-alpha-1build Improved Build Tool
+<pre style="margin-left:20px;">
+Advanced CSS Layout Engine
+Implement inline/block layout. Implement margin-collapsing.
+
+CSS Values
+Improve value filtering. Implement simple inheritance.
+</pre>
+
+\subsection prototype1complete Completed
+
+\subsubsection prototype1build Improved Build Tool
 <div style="margin-left:20px;">
 The script language from the internal build-tool used by netzhaut is now a separate project at https://selfmake.netzwerkz.org. The language has improved a lot and the separation allows for development to target wider audiences.  
 </div>
 
-\subsubsection pre-alpha-1text Improved Text Processing 
+\subsubsection prototype1text Improved Text Processing 
 <div style="margin-left:20px;">
 The text-processing pipeline is now based on the common combination FreeType + HarfBuzz and should allow for stable font-handling across platforms (for now).  
 </div>
 
-\subsubsection pre-alpha-1term Improved TTY Interface
+\subsubsection prototype1term Improved TTY Interface
 <div style="margin-left:20px;">
 The TTY interface can now be displayed directly or externally using standard output. To facilitate this, the nhtty module was greatly overhauled and expanded. For direct display, the nhterm module was introduced. Also, internal tty-based programs such as the logger, editor etc. have been improved.
 </div>
 
-\subsubsection pre-alpha-1url URL Processing
+\subsubsection prototype1url URL Processing
 <div style="margin-left:20px;">
 The nhurl library finally provides initial routines for processing urls internally based on the WHATWG URL standard.  
 </div>
 
-\subsection pre-alpha-1progress In Progress
-
-\subsubsection pre-alpha-1layout Advanced CSS Layout Engine
-<div style="margin-left:20px;">
-Implement inline/block layout. Implement margin-collapsing.
-</div>
-
-\subsubsection pre-alpha-1parsing CSS Values
-<div style="margin-left:20px;">
-Improve value filtering. Implement simple inheritance.
-</div>
-
-\section initial Initial Development
+\section prototype0 prototype.0
 
 <pre>Q2 2020 - Q1 2021</pre>
 

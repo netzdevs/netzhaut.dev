@@ -92,34 +92,38 @@ $(document).ready(function(){initNavTree('md_roadmap.html',''); initResizable();
   <div class="headertitle"><div class="title">Roadmap </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="roadmap"></a> </p><div style="max-width:700px;"></div><div style="max-width:700px;">The roadmap documents previous, current and future development-stages. Each stage sets out a general direction of development. Milestones are declared as "In Progress" or "Completed". Once all milestones are declared "Completed", development moves on to a new stage. <br  />
+<div class="textblock"><p ><a class="anchor" id="roadmap"></a> </p><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h1><a class="anchor" id="about"></a>
+Roadmap</h1>
+<div style="max-width:700px;"> The roadmap documents previous, current and future development-stages. Each stage sets out general directions/tasks of development. Milestones are declared as "In Progress" or "Completed". Once all milestones are declared "Completed", development moves on to a new stage. <br  />
  <br  />
  Generally, milestones are defined at the start of a stage. However, work on other emerging and pressing matters may require time as well and might be added to the roadmap later on. <br  />
  <br  />
- Early development is divided into <b>initial development</b>, <b>pre-alpha-1</b> and <b>pre-alpha-2</b>.</div><div style="max-width:700px;"></div><h1><a class="anchor" id="pre-alpha-1"></a>
-Pre-Alpha-1</h1>
-<div style="max-width:700px;"> <pre>Q1 2021 - Q1 2022</pre></div><div style="max-width:700px;">This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering. <br  />
-</div><div style="max-width:700px;"></div><h2><a class="anchor" id="pre-alpha-1complete"></a>
+ Early development is done using evolutionary prototyping.</div><div style="max-width:700px;"></div><h1><a class="anchor" id="prototype1"></a>
+prototype.1</h1>
+<div style="max-width:700px;"> <pre>Q1 2021 - Q4 2022</pre></div><div style="max-width:700px;">This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="prototype1progress"></a>
+In Progress</h2>
+<div style="max-width:700px;"> <pre style="margin-left:20px;">
+Advanced CSS Layout Engine
+Implement inline/block layout. Implement margin-collapsing.
+
+CSS Values
+Improve value filtering. Implement simple inheritance.
+</pre></div><div style="max-width:700px;"></div><h2><a class="anchor" id="prototype1complete"></a>
 Completed</h2>
-<div style="max-width:700px;"> </div><h3><a class="anchor" id="pre-alpha-1build"></a>
+<div style="max-width:700px;"> </div><h3><a class="anchor" id="prototype1build"></a>
 Improved Build Tool</h3>
 <div style="max-width:700px;"><div style="margin-left:20px;"> The script language from the internal build-tool used by netzhaut is now a separate project at <a href="https://selfmake.netzwerkz.org">https://selfmake.netzwerkz.org</a>. The language has improved a lot and the separation allows for development to target wider audiences. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="pre-alpha-1text"></a>
+ </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="prototype1text"></a>
 Improved Text Processing</h3>
 <div style="max-width:700px;"><div style="margin-left:20px;"> The text-processing pipeline is now based on the common combination FreeType + HarfBuzz and should allow for stable font-handling across platforms (for now). <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="pre-alpha-1term"></a>
+ </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="prototype1term"></a>
 Improved TTY Interface</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> The TTY interface can now be displayed directly or externally using standard output. To facilitate this, the nhtty module was greatly overhauled and expanded. For direct display, the nhterm module was introduced. Also, internal tty-based programs such as the logger, editor etc. have been improved. </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="pre-alpha-1url"></a>
+<div style="max-width:700px;"><div style="margin-left:20px;"> The TTY interface can now be displayed directly or externally using standard output. To facilitate this, the nhtty module was greatly overhauled and expanded. For direct display, the nhterm module was introduced. Also, internal tty-based programs such as the logger, editor etc. have been improved. </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="prototype1url"></a>
 URL Processing</h3>
 <div style="max-width:700px;"><div style="margin-left:20px;"> The nhurl library finally provides initial routines for processing urls internally based on the WHATWG URL standard. <br  />
- </div></div><div style="max-width:700px;"></div><h2><a class="anchor" id="pre-alpha-1progress"></a>
-In Progress</h2>
-<div style="max-width:700px;"> </div><h3><a class="anchor" id="pre-alpha-1layout"></a>
-Advanced CSS Layout Engine</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> Implement inline/block layout. Implement margin-collapsing. </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="pre-alpha-1parsing"></a>
-CSS Values</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> Improve value filtering. Implement simple inheritance. </div></div><div style="max-width:700px;"></div><h1><a class="anchor" id="initial"></a>
-Initial Development</h1>
+ </div></div><div style="max-width:700px;"></div><h1><a class="anchor" id="prototype0"></a>
+prototype.0</h1>
 <div style="max-width:700px;"> <pre>Q2 2020 - Q1 2021</pre></div><div style="max-width:700px;">This stage focused on design, architecture and implementing a stable foundation for later development. As a result, every core component of the engine has a functioning initial implementation that is able to interconnect with related components. Also, a degree of project stability has been achieved that allows for iterative development to take place at faster pace. <br  />
 </div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialcompleted"></a>
 Completed</h2>
@@ -169,7 +173,7 @@ Other</h3>
         <b>
 [
 <!-- NH_MAKE_INSERT_STAGE_BEGIN -->
-pre-alpha-1
+prototype.1
 <!-- NH_MAKE_INSERT_STAGE_END -->
 ]
 [
