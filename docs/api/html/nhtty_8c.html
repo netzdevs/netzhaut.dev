@@ -97,9 +97,9 @@ $(document).ready(function(){initNavTree('nhtty_8c.html',''); initResizable(); }
 <div class="textblock"><code>#include &quot;<a class="el" href="nhtty_8h_source.html">nhtty.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="netzhaut_8h_source.html">netzhaut.h</a>&quot;</code><br />
 <code>#include &quot;../nhcore/Loader/Loader.h&quot;</code><br />
-<code>#include &quot;../nhtty/PseudoTerminal/PseudoTerminal.h&quot;</code><br />
-<code>#include &quot;../nhtty/PseudoTerminal/StandardIO.h&quot;</code><br />
-<code>#include &quot;../nhtty/PseudoTerminal/Program.h&quot;</code><br />
+<code>#include &quot;../nhtty/TTY/TTY.h&quot;</code><br />
+<code>#include &quot;../nhtty/TTY/StandardIO.h&quot;</code><br />
+<code>#include &quot;../nhtty/TTY/Program.h&quot;</code><br />
 <code>#include &lt;dlfcn.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
@@ -108,23 +108,23 @@ $(document).ready(function(){initNavTree('nhtty_8c.html',''); initResizable(); }
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gafc4ab3541547af292f55e56f2140cb0d"><td class="memItemLeft" align="right" valign="top">nh_tty_PseudoTerminal *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gafc4ab3541547af292f55e56f2140cb0d">nh_tty_openPseudoTerminal</a> ()</td></tr>
-<tr class="memdesc:gafc4ab3541547af292f55e56f2140cb0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__lib__netzhaut__functions.html#gafc4ab3541547af292f55e56f2140cb0d">More...</a><br /></td></tr>
-<tr class="separator:gafc4ab3541547af292f55e56f2140cb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga610654033eb085f919aae0938ae2ddd3"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga610654033eb085f919aae0938ae2ddd3">nh_tty_addDefaultProgram</a> (nh_tty_PseudoTerminal *PseudoTerminal_p, NH_BYTE *name_p)</td></tr>
-<tr class="separator:ga610654033eb085f919aae0938ae2ddd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af88b427672e23a82b09b8a6b9824e46d"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nhtty_8c.html#af88b427672e23a82b09b8a6b9824e46d">nh_tty_addProgram</a> (nh_tty_PseudoTerminal *PseudoTerminal_p, nh_tty_ProgramPrototype *Prototype_p)</td></tr>
-<tr class="separator:af88b427672e23a82b09b8a6b9824e46d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga38abb20ded0a25f578faa2a15204fa92"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga38abb20ded0a25f578faa2a15204fa92">nh_tty_claimStandardIO</a> (nh_tty_PseudoTerminal *PseudoTerminal_p)</td></tr>
-<tr class="separator:ga38abb20ded0a25f578faa2a15204fa92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6440cd464082367f4ed522828bba9975"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga6440cd464082367f4ed522828bba9975">nh_tty_unclaimStandardIO</a> (nh_tty_PseudoTerminal *PseudoTerminal_p)</td></tr>
-<tr class="separator:ga6440cd464082367f4ed522828bba9975"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabfff53228a277df135b7064057b27ab6"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gabfff53228a277df135b7064057b27ab6">nh_tty_sendInput</a> (nh_tty_PseudoTerminal *PseudoTerminal_p, nh_wsi_Event Event)</td></tr>
-<tr class="separator:gabfff53228a277df135b7064057b27ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80add16a42c196e9930d9761beea9e2e"><td class="memItemLeft" align="right" valign="top">nh_tty_TTY *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga80add16a42c196e9930d9761beea9e2e">nh_tty_openTTY</a> ()</td></tr>
+<tr class="memdesc:ga80add16a42c196e9930d9761beea9e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">netzhaut - Web Browser Engine Copyright (C) 2020 The netzhaut Authors Published under MIT  <a href="group__lib__netzhaut__functions.html#ga80add16a42c196e9930d9761beea9e2e">More...</a><br /></td></tr>
+<tr class="separator:ga80add16a42c196e9930d9761beea9e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac9506237b6ec5b7fc37349decf24ba6e"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gac9506237b6ec5b7fc37349decf24ba6e">nh_tty_addDefaultProgram</a> (nh_tty_TTY *TTY_p, NH_BYTE *name_p)</td></tr>
+<tr class="separator:gac9506237b6ec5b7fc37349decf24ba6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a9f7ebed13edea3b9470a22cc0edc64"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nhtty_8c.html#a2a9f7ebed13edea3b9470a22cc0edc64">nh_tty_addProgram</a> (nh_tty_TTY *TTY_p, nh_tty_ProgramPrototype *Prototype_p)</td></tr>
+<tr class="separator:a2a9f7ebed13edea3b9470a22cc0edc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab036adb97135b7aa2542fa6c494251f6"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gab036adb97135b7aa2542fa6c494251f6">nh_tty_claimStandardIO</a> (nh_tty_TTY *TTY_p)</td></tr>
+<tr class="separator:gab036adb97135b7aa2542fa6c494251f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga212abdc1ea25a65b63c352fb97c9cc58"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga212abdc1ea25a65b63c352fb97c9cc58">nh_tty_unclaimStandardIO</a> (nh_tty_TTY *TTY_p)</td></tr>
+<tr class="separator:ga212abdc1ea25a65b63c352fb97c9cc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49e39f1640ff4d64bfebe11ea25c5699"><td class="memItemLeft" align="right" valign="top">NH_TTY_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga49e39f1640ff4d64bfebe11ea25c5699">nh_tty_sendInput</a> (nh_tty_TTY *TTY_p, nh_wsi_Event Event)</td></tr>
+<tr class="separator:ga49e39f1640ff4d64bfebe11ea25c5699"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af88b427672e23a82b09b8a6b9824e46d" name="af88b427672e23a82b09b8a6b9824e46d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af88b427672e23a82b09b8a6b9824e46d">&#9670;&nbsp;</a></span>nh_tty_addProgram()</h2>
+<a id="a2a9f7ebed13edea3b9470a22cc0edc64" name="a2a9f7ebed13edea3b9470a22cc0edc64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a9f7ebed13edea3b9470a22cc0edc64">&#9670;&nbsp;</a></span>nh_tty_addProgram()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,8 +132,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">NH_TTY_RESULT nh_tty_addProgram </td>
           <td>(</td>
-          <td class="paramtype">nh_tty_PseudoTerminal *&#160;</td>
-          <td class="paramname"><em>PseudoTerminal_p</em>, </td>
+          <td class="paramtype">nh_tty_TTY *&#160;</td>
+          <td class="paramname"><em>TTY_p</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

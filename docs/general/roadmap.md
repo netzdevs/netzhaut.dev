@@ -14,7 +14,7 @@ Early development is done using evolutionary prototyping.
 
 <pre>Q1 2021 - Q4 2022</pre>
 
-This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering.   
+This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering. 
 
 \subsection prototype1progress In Progress
 

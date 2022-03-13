@@ -1,6 +1,6 @@
 var group__lib__nhnetwork =
 [
-    [ "Changelog", "group__lib__nhnetwork__changelog.html", "group__lib__nhnetwork__changelog" ],
+    [ "Version", "group__lib__nhnetwork__version.html", "group__lib__nhnetwork__version" ],
     [ "Macros", "group__lib__nhnetwork__macros.html", null ],
     [ "Enumerations", "group__lib__nhnetwork__enums.html", "group__lib__nhnetwork__enums" ],
     [ "Data Structures", "group__lib__nhnetwork__structs.html", null ],

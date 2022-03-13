@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['changelog_0',['Changelog',['../group__lib__netzhaut__changelog.html',1,'']]]
+  ['functions_0',['Functions',['../group__lib__netzhaut__functions.html',1,'']]]
 ];

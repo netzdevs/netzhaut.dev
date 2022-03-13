@@ -26,8 +26,10 @@ var NAVTREE =
 [
   [ "Netzhaut Guides", "index.html", [
     [ "Build Instructions", "md_build.html", [
+      [ "Build Instructions", "md_build.html#about", null ],
       [ "Setup", "md_build.html#Setup", [
-        [ "Linux", "md_build.html#SetupLinux", null ]
+        [ "Setup on Linux", "md_build.html#SetupLinux", null ],
+        [ "Setup on Windows", "md_build.html#SetupWindows", null ]
       ] ],
       [ "Building", "md_build.html#Building", [
         [ "Dependencies", "md_build.html#Dependencies", [

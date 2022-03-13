@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('nhmake_8c.html',''); initResizable(); 
 <code>#include &quot;../nhmake/Core/Thread.h&quot;</code><br />
 <code>#include &quot;../nhmake/Core/Configure.h&quot;</code><br />
 <code>#include &quot;../nhmake/Core/Changes.h&quot;</code><br />
+<code>#include &quot;../nhmake/Core/Version.h&quot;</code><br />
 <code>#include &quot;../nhmake/UI/Message.h&quot;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;dlfcn.h&gt;</code><br />
@@ -160,12 +161,20 @@ Functions</h2></td></tr>
 <tr class="separator:ga4cd843ec0522728fd4c03394af43f826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa0a089b6ab21c6dcbdbb4055c2005048"><td class="memItemLeft" align="right" valign="top">NH_MAKE_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gaa0a089b6ab21c6dcbdbb4055c2005048">nh_make_messagef</a> (NH_BYTE *format_p,...)</td></tr>
 <tr class="separator:gaa0a089b6ab21c6dcbdbb4055c2005048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga433bb02f87756a360740d7198a8771bc"><td class="memItemLeft" align="right" valign="top">nh_make_ChangesElement *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga433bb02f87756a360740d7198a8771bc">nh_make_parseChangesFile</a> (NH_BYTE *path_p)</td></tr>
-<tr class="separator:ga433bb02f87756a360740d7198a8771bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga560301f72e8fbe56ce2dda999e100e03"><td class="memItemLeft" align="right" valign="top">NH_BYTE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga560301f72e8fbe56ce2dda999e100e03">nh_make_getChangesSummary</a> (nh_make_ChangesElement *Root_p)</td></tr>
-<tr class="separator:ga560301f72e8fbe56ce2dda999e100e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae31cd9e1dc3ee1e54fd11a1ae65feb18"><td class="memItemLeft" align="right" valign="top">nh_make_ChangesModule *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gae31cd9e1dc3ee1e54fd11a1ae65feb18">nh_make_getChangesModules</a> (nh_make_ChangesElement *Root_p, int *modules_p)</td></tr>
-<tr class="separator:gae31cd9e1dc3ee1e54fd11a1ae65feb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e2680b03110a57676c1dcd39b9f4bbf"><td class="memItemLeft" align="right" valign="top">nh_make_ChangesNode *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga3e2680b03110a57676c1dcd39b9f4bbf">nh_make_parseChangesFile</a> (NH_BYTE *path_p)</td></tr>
+<tr class="separator:ga3e2680b03110a57676c1dcd39b9f4bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga216aad46b403d337005a381924b4a974"><td class="memItemLeft" align="right" valign="top">nh_make_Changes *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga216aad46b403d337005a381924b4a974">nh_make_getChanges</a> (nh_make_ChangesNode *Root_p, int *changes_p)</td></tr>
+<tr class="separator:ga216aad46b403d337005a381924b4a974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab0df0c3a568808243847b457328c7ed2"><td class="memItemLeft" align="right" valign="top">NH_MAKE_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gab0df0c3a568808243847b457328c7ed2">nh_make_printChanges</a> (nh_make_Runtime *Runtime_p, nh_make_Changes *Changes_p, NH_MAKE_PRINT_CHANGES type)</td></tr>
+<tr class="separator:gab0df0c3a568808243847b457328c7ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf4f3c7f9fd49bf5148ae0ba198fb84b9"><td class="memItemLeft" align="right" valign="top">NH_MAKE_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gaf4f3c7f9fd49bf5148ae0ba198fb84b9">nh_make_stringifySourceContextNameAndVersion</a> (nh_make_SourceContext *SourceContext_p, NH_BYTE string_p[255])</td></tr>
+<tr class="separator:gaf4f3c7f9fd49bf5148ae0ba198fb84b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8128cd3f9b8c0c56e3b4b89a8402e2f4"><td class="memItemLeft" align="right" valign="top">NH_MAKE_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#ga8128cd3f9b8c0c56e3b4b89a8402e2f4">nh_make_normalizeChanges</a> (nh_make_Changes *Changes_p, NH_BYTE *changes_p, int length)</td></tr>
+<tr class="separator:ga8128cd3f9b8c0c56e3b4b89a8402e2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaacc33a8e714ce90e04144b3373c9b62a"><td class="memItemLeft" align="right" valign="top">NH_MAKE_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gaacc33a8e714ce90e04144b3373c9b62a">nh_make_addDateAndIdToChanges</a> (nh_make_Changes *Changes_p)</td></tr>
+<tr class="separator:gaacc33a8e714ce90e04144b3373c9b62a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5671f1bcb28c9b1bd8d154a3dbae276"><td class="memItemLeft" align="right" valign="top">NH_MAKE_RESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lib__netzhaut__functions.html#gad5671f1bcb28c9b1bd8d154a3dbae276">nh_make_updateVersions</a> (nh_make_Runtime *Runtime_p)</td></tr>
+<tr class="separator:gad5671f1bcb28c9b1bd8d154a3dbae276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

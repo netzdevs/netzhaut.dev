@@ -1,5 +1,11 @@
 var NAVTREEINDEX9 =
 {
+"structnh__gfx__Surface.html#a0587bf28210e406b2fdbd4c29b8281dc":[0,0,5,3,16,10],
+"structnh__gfx__Surface.html#a0593400bbb9ea40c41d13448d2416f32":[0,0,5,3,16,5],
+"structnh__gfx__Surface.html#a1edc8540b6de9ca9e4ab6f2603c7663d":[0,0,5,3,16,16],
+"structnh__gfx__Surface.html#a2634781748af8fc56e7e8289d00ddf45":[0,0,5,3,16,13],
+"structnh__gfx__Surface.html#a3e7a158ee43cf27344c1e064c837be28":[0,0,5,3,16,8],
+"structnh__gfx__Surface.html#a5037e5ed65af4524acf5fa25a6128999":[0,0,5,3,16,12],
 "structnh__gfx__Surface.html#a643094ff445359283f89e65539032e3d":[0,0,5,3,16,11],
 "structnh__gfx__Surface.html#a6a6b8868e1c58744bb9a0794c2349d5c":[0,0,5,3,16,1],
 "structnh__gfx__Surface.html#a72d9d11ad2a830f86cb37b949ab526b9":[0,0,5,3,16,3],
@@ -243,9 +249,5 @@ var NAVTREEINDEX9 =
 "unionnh__ecmascript__PropertyFields.html":[0,0,3,3,25],
 "unionnh__ecmascript__PropertyFields.html#a64ef8325e8e2c2c86323cf55d5e37b9e":[0,0,3,3,25,1],
 "unionnh__ecmascript__PropertyFields.html#ac16190491755b6b288bc81a4086d1569":[0,0,3,3,25,0],
-"unionnh__html__Token.html":[0,0,13,3,7],
-"unionnh__html__Token.html#a1a2da222185e160ec45345cef531b08a":[0,0,13,3,7,0],
-"unionnh__html__Token.html#a2271493ac0bc17d5228b9acf1e523e4f":[0,0,13,3,7,2],
-"unionnh__html__Token.html#a2e0f96e7dd9f56adf23008289cf751f1":[0,0,13,3,7,3],
-"unionnh__html__Token.html#a369f9ba00092856bdf56c537298b95be":[0,0,13,3,7,1]
+"unionnh__html__Token.html":[0,0,13,3,7]
 };

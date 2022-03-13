@@ -1,6 +1,6 @@
 var group__lib__nhterm =
 [
-    [ "Changelog", "group__lib__nhterm__changelog.html", "group__lib__nhterm__changelog" ],
+    [ "Version", "group__lib__nhterm__version.html", "group__lib__nhterm__version" ],
     [ "Macros", "group__lib__nhterm__macros.html", null ],
     [ "Enumerations", "group__lib__nhterm__enums.html", "group__lib__nhterm__enums" ],
     [ "Data Structures", "group__lib__nhterm__structs.html", null ],

@@ -1,6 +1,6 @@
 var group__lib__nhecmascript =
 [
-    [ "Changelog", "group__lib__nhecmascript__changelog.html", "group__lib__nhecmascript__changelog" ],
+    [ "Version", "group__lib__nhecmascript__version.html", "group__lib__nhecmascript__version" ],
     [ "Macros", "group__lib__nhecmascript__macros.html", "group__lib__nhecmascript__macros" ],
     [ "Enumerations", "group__lib__nhecmascript__enums.html", "group__lib__nhecmascript__enums" ],
     [ "Data Structures", "group__lib__nhecmascript__structs.html", "group__lib__nhecmascript__structs" ],

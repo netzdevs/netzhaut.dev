@@ -92,13 +92,24 @@ $(document).ready(function(){initNavTree('md_build.html',''); initResizable(); }
   <div class="headertitle"><div class="title">Build Instructions </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="build"></a> </p><div style="max-width:700px;"></div><div style="max-width:700px;">This document contains information on how to build netzhaut.</div><div style="max-width:700px;"></div><h1><a class="anchor" id="Setup"></a>
+<div class="textblock"><p ><a class="anchor" id="build"></a> </p><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h1><a class="anchor" id="about"></a>
+Build Instructions</h1>
+<div style="max-width:700px;"> This document contains information on how to build netzhaut.</div><div style="max-width:700px;"></div><h1><a class="anchor" id="Setup"></a>
 Setup</h1>
-<div style="max-width:700px;">Building netzhaut requires a few setup procedures to be executed beforehand. First, the source code must be downloaded.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupLinux"></a>
-Linux</h2>
+<div style="max-width:700px;">Building netzhaut requires a few setup procedures to be executed beforehand.<ol type="1">
+<li>The source code must be downloaded.</li>
+<li>The <b>nhmake</b> build-tool (consisting of <b>src/bin/nhmake</b> and <b>src/lib/nhmake</b> source code) must be build.</li>
+<li>The <b>nhmake</b> build-tool must be used to initialize the project. Initializing the project means that the <b>nhmake</b> build-tool will download external resources, copy files around etc.. After initialization, netzhaut can be build using the <b>nhmake</b> build-tool.</li>
+</ol>
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupLinux"></a>
+Setup on Linux</h2>
 <div style="max-width:700px;"><pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
 git clone <a href="https://github.com/netzwerkz/netzhaut.git">https://github.com/netzwerkz/netzhaut.git</a>
 cd netzhaut &amp;&amp; ./build/nhmake.sh &amp;&amp; ./build/nhmake --init
+</pre></div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupWindows"></a>
+Setup on Windows</h2>
+<div style="max-width:700px;"><pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
+TODO
 </pre></div><div style="max-width:700px;"></div><h1><a class="anchor" id="Building"></a>
 Building</h1>
 <div style="max-width:700px;">Before building, please make sure that relevant dependencies are installed. Building is done exclusively using the nhmake tool, which was build during setup.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="Dependencies"></a>
@@ -115,9 +126,9 @@ Linux</h3>
 </div><div style="max-width:700px;"></div><h2><a class="anchor" id="Build1"></a>
 Simple Building</h2>
 <div style="max-width:700px;"><pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
-./build/nhmake -b ALL  # build netzhaut + examples
-./build/nhmake -b LIBS # build netzhaut
-./build/nhmake -b BINS # build examples
+./build/nhmake -b ALL  # build library code + binary code
+./build/nhmake -b LIBS # build library code 
+./build/nhmake -b BINS # build binary code 
 </pre></div><div style="max-width:700px;"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

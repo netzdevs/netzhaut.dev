@@ -1,6 +1,6 @@
 var group__lib__nhtty =
 [
-    [ "Changelog", "group__lib__nhtty__changelog.html", "group__lib__nhtty__changelog" ],
+    [ "Version", "group__lib__nhtty__version.html", "group__lib__nhtty__version" ],
     [ "Macros", "group__lib__nhtty__macros.html", null ],
     [ "Enumerations", "group__lib__nhtty__enums.html", "group__lib__nhtty__enums" ],
     [ "Data Structures", "group__lib__nhtty__structs.html", "group__lib__nhtty__structs" ],

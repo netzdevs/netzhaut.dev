@@ -1,4 +1,4 @@
 var modules =
 [
-    [ "lib", "group__lib.html", "group__lib" ]
+    [ "Bla", "group__bla.html", "group__bla" ]
 ];

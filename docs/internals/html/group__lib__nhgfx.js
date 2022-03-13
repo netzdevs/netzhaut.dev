@@ -1,6 +1,6 @@
 var group__lib__nhgfx =
 [
-    [ "Changelog", "group__lib__nhgfx__changelog.html", "group__lib__nhgfx__changelog" ],
+    [ "Version", "group__lib__nhgfx__version.html", "group__lib__nhgfx__version" ],
     [ "Macros", "group__lib__nhgfx__macros.html", null ],
     [ "Enumerations", "group__lib__nhgfx__enums.html", "group__lib__nhgfx__enums" ],
     [ "Data Structures", "group__lib__nhgfx__structs.html", "group__lib__nhgfx__structs" ],

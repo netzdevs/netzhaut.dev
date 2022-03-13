@@ -52,9 +52,10 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Conformance Report", "md_conformance.html", [
-      [ "Major Specifications", "md_conformance.html#majorspecs", null ],
-      [ "Minor Specifications", "md_conformance.html#minorspecs", null ],
-      [ "CSS Specifications", "md_conformance.html#cssspecs", null ]
+      [ "Conformance Report", "md_conformance.html#conformanceAbout", null ],
+      [ "Major Specifications", "md_conformance.html#conformanceMajor", null ],
+      [ "Minor Specifications", "md_conformance.html#conformanceMinor", null ],
+      [ "CSS Specifications", "md_conformance.html#conformanceCSS", null ]
     ] ],
     [ "The Netzhaut Authors", "md_authors.html", [
       [ "Creator", "md_authors.html#Creator", null ]

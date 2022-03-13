@@ -31,19 +31,19 @@ var NAVTREE =
       [ "Library Layout", "md_projectlayout.html#LibraryLayout", null ],
       [ "Binary Layout", "md_projectlayout.html#Binary", null ]
     ] ],
+    [ "System Architecture", "md_systemarchitecture.html", [
+      [ "Notation", "md_systemarchitecture.html#Notation", null ],
+      [ "System Layers", "md_systemarchitecture.html#SystemLayers", null ],
+      [ "System Layer Components", "md_systemarchitecture.html#SystemLayerComponents", null ],
+      [ "System Flow", "md_systemarchitecture.html#SystemFlow", null ]
+    ] ],
     [ "Engine Architecture", "md_enginearchitecture.html", [
-      [ "Notation", "md_enginearchitecture.html#Notation", null ],
       [ "Engine Components", "md_enginearchitecture.html#EngineComponents", null ],
       [ "Engine Flow", "md_enginearchitecture.html#EngineFlow", null ],
       [ "WebCore Components", "md_enginearchitecture.html#WebCoreComponents", null ],
       [ "WebCore Flow", "md_enginearchitecture.html#WebCoreFlow", null ],
       [ "WebDiverse Components", "md_enginearchitecture.html#WebDiverseComponents", null ],
       [ "WebPlatform Components", "md_enginearchitecture.html#WebPlatformComponents", null ]
-    ] ],
-    [ "System Architecture", "md_systemarchitecture.html", [
-      [ "System Layers", "md_systemarchitecture.html#SystemLayers", null ],
-      [ "System Layer Components", "md_systemarchitecture.html#SystemLayerComponents", null ],
-      [ "System Flow", "md_systemarchitecture.html#SystemFlow", null ]
     ] ]
   ] ]
 ];

@@ -25,21 +25,21 @@
 var NAVTREE =
 [
   [ "Netzhaut Design", "index.html", [
-    [ "Code Style", "codestylepage.html", [
-      [ "Code Style", "codestylepage.html#codestyle", null ],
-      [ "General", "codestylepage.html#general", null ],
-      [ "Code", "codestylepage.html#code", null ],
-      [ "File Naming", "codestylepage.html#Naming", null ],
-      [ "Header Format", "codestylepage.html#HeaderFormat", null ],
-      [ "Source Format", "codestylepage.html#sourceformat", null ]
+    [ "Code Style", "md_codestyle.html", [
+      [ "Code Style", "md_codestyle.html#codestyle", null ],
+      [ "General", "md_codestyle.html#general", null ],
+      [ "Code", "md_codestyle.html#code", null ],
+      [ "File Naming", "md_codestyle.html#Naming", null ],
+      [ "Header Format", "md_codestyle.html#HeaderFormat", null ],
+      [ "Source Format", "md_codestyle.html#sourceformat", null ]
     ] ],
-    [ "Modules", "modules.html", "modules" ]
+    [ "nhmake", "md_nhmake.html", "md_nhmake" ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"codestylepage.html"
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
