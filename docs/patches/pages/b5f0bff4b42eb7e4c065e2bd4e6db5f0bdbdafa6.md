@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 @htmlonly
-
 <pre>
 commit b5f0bff4b42eb7e4c065e2bd4e6db5f0bdbdafa6
 Author: Dajo Frey &ltdajofrey+github@gmail.com>
@@ -49636,4 +49634,3 @@ index c8cce83..025492d 100644
 
 </pre>
 @endhtmlonly
->>>>>>> 243089fbe6054067679c1869c37d3b3aa3cb01d8
