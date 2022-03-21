@@ -1,3 +1,4 @@
+@htmlonly
 <pre>
 commit b5f0bff4b42eb7e4c065e2bd4e6db5f0bdbdafa6
 Author: Dajo Frey &ltdajofrey+github@gmail.com>
@@ -24839,3 +24840,4 @@ index c8cce83..025492d 100644
  /** @} */
 
 </pre>
+@endhtmlonly
