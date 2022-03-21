@@ -24,24 +24,12 @@
 */
 var NAVTREE =
 [
-  [ "Netzhaut Internals", "index.html", [
-    [ "Modules", "modules.html", "modules" ]
-  ] ]
+  [ "Netzhaut Internals", "index.html", ]
 ];
 
 var NAVTREEINDEX =
 [
-"group__bin.html",
-"group__lib__nhcss__enums.html#gga5a9fae66757261c5eceadcb9a8149185a5d6601db5c978f769c0e6d3099afb280",
-"group__lib__nhcss__enums.html#ggab34dab72261097d5941740976503da6ca523b5d8aabb815d9a5ed3c836101c535",
-"group__lib__nhecmascript__enums.html#gga28628bf1ec956ce7685d62a21af900f1a0de936f4b64127ad0071d0a554e08220",
-"group__lib__nhecmascript__functions.html#ga4fe52b4d21e1d2170d51f2ef29b47665",
-"group__lib__nhgfx__enums.html#gga40e840034eeb0d9aa68b5fbcfe56ffebab11840d8a73e20fb0bab31c5fe5382fb",
-"group__lib__nhhtml__enums.html#gga943494f6405ac44a581774cdc5eb91ada3efeedec72dabb14223d23d7d9b3320e",
-"group__lib__nhterm__enums.html#ggadf3b18d1c0b13f949b319a1b45455198abc0fd80eeb8b89dedfffdbf2062d655c",
-"structnh__css__PercentageToken.html#a455e502ddcc3bfefff20cca53654f0fd",
-"structnh__gfx__Surface.html#a0587bf28210e406b2fdbd4c29b8281dc",
-"unionnh__html__Token.html#a1a2da222185e160ec45345cef531b08a"
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

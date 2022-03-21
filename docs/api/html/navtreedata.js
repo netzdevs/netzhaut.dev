@@ -24,14 +24,12 @@
 */
 var NAVTREE =
 [
-  [ "Netzhaut API", "index.html", [
-    [ "Modules", "modules.html", "modules" ]
-  ] ]
+  [ "Netzhaut API", "index.html", ]
 ];
 
 var NAVTREEINDEX =
 [
-"group__lib.html"
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

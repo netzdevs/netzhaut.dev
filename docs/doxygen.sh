@@ -16,3 +16,9 @@ cd ..
 cd api 
 doxygen Doxyfile 
 cd ..
+cd changelogs 
+doxygen Doxyfile 
+cd ..
+cd patches 
+doxygen Doxyfile 
+cd ..
