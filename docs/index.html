@@ -55,15 +55,25 @@
             <br>
             <b>Web Browser Engine</b>
           </div>
-          <div style="height:56px;right:10px;top:0px;position:absolute;background-color:#151515;"><a href="https://netzwerkz.org"><img alt="netzwerkz logo" style="height:56px;" src="logo/netzwerkz.png"/></a></div>
+          <div style="height:56px;text-align:right;right:10px;top:4px;position:absolute;">
+<b>
+<!-- NH_MAKE_INSERT_API_VERSION_BEGIN -->
+ver.0.2.3.0
+<!-- NH_MAKE_INSERT_API_VERSION_END -->
+<br>
+<!-- NH_MAKE_INSERT_REVISION_BEGIN -->
+rev.08400
+<!-- NH_MAKE_INSERT_REVISION_END -->
+</b>
+          </div>
           <div id="projectlogo"><img alt="netzhaut logo" src="logo/netzhaut.png"/></div>
         </div>
       </div>
       <div id="titlearea">
         <div class="topnav">
           <a class="active" href="index.html">Home</a>
-          <a href="guides/html/index.html">Guides</a>
           <a href="general/html/index.html">General</a>
+          <a href="guides/html/index.html">Guides</a>
           <a href="architecture/html/index.html">Architecture</a>
           <a href="design/html/index.html">Design</a>
           <a href="internals/html/index.html">Internals</a>
@@ -113,20 +123,17 @@
 
     <div class="contents" style="display:flex;flex-wrap:wrap;margin:0;">
       <div class="textblock" style="max-width:700px;margin: 0 20px;">
-        <h1 class="doc-content-anchor"><a id="intro"></a>Introduction
+        <h1 class="doc-content-anchor"><a id="general"></a>General
         </h1>
         <div style="border-width:1px;border-style:solid;">
           <div style="padding-left:10px;padding-right:10px;">
-            <p>Netzhaut is a <b>open-source web-browser-engine</b> written from scratch in C99. Web-Browser-Engines are software systems which run web content on client machines. Popular examples are Chromium (Chrome), Gecko (Firefox) and WebKit (Safari).</p>
-            <p>The project is currently in the <b style="color:red;">prototyping</b> phase and thus not yet usable. The documentation is also heavy work-in-progress. Following is a list of development goals.</p>
-            <p><b>Customizable</b></p>
-            <p style="margin:10px;">Netzhaut implements a large array of technologies, primarily of course HTML, CSS and JavaScript, which can be used in many ways. Thus, netzhaut aims to provide a powerfull API so that developers can use netzhaut in as many use-cases as possible.</p>
-            <p><b>Conform</b></p>
-            <p style="margin:10px;">This is not a toy-project, Netzhaut is designed and written to implement web-technology specifications in a conformant manner.</p>
-            <p><b>Lightweight</b></p>
-            <p style="margin:10px;">Netzhaut aims to be lightweight by having as few dependencies as possible and by implementing a modular architecture, where modules are only required when needed.</p>
-            <p><b>User Friendly</b></p>
-            <p style="margin:10px;">For Netzhaut development, being lightweight is the first step to user friendliness. Additionally, netzhaut aims to provide self-updating capabilities and a generally hassle-free user experience.</p>
+            <p>For all general documents, please load <a href="general/html/index.html">General</a>.</p>
+              <p><a href="general/html/md_intro.html">Introduction</a></br>
+              What is Netzhaut?</p>
+              <p><a href="general/html/md_roadmap.html">Roadmap</a></br>
+              What are previous, current and future development milestones?</p>
+              <p><a href="general/html/md_conformance.html">Conformance Report</a></br>
+              What is the current conformance status for specifications like HTML, ECMAScript etc.?</p>
           </div>
         </div>
         <h1 class="doc-content-anchor"><a id="guides"></a>Guides
@@ -135,18 +142,7 @@
           <div style="padding-left:10px;padding-right:10px;">
             <p>The most important documentation for any big software project is probably a good assortment of guides to provide a starting point for developing or using the project. For all guides, please load <a href="guides/html/index.html">Guides</a>.</p>
               <p><a href="guides/html/md_build.html">Build Instructions</a></br>
-              How to build Netzhaut.</p>
-          </div>
-        </div>
-        <h1 class="doc-content-anchor"><a id="general"></a>General
-        </h1>
-        <div style="border-width:1px;border-style:solid;">
-          <div style="padding-left:10px;padding-right:10px;">
-            <p>For all general documents, please load <a href="general/html/index.html">General</a>.</p>
-              <p><a href="general/html/md_roadmap.html">Roadmap</a></br>
-              The roadmap is regularly updated to show current and previous development milestones.</p>
-              <p><a href="general/html/md_conformance.html">Conformance Report</a></br>
-              The conformance report tracks netzhaut's conformance status for implemented specifications.</p>
+              How do I build Netzhaut?</p>
           </div>
         </div>
         <h1 class="doc-content-anchor"><a id="architecture"></a>Architecture
@@ -155,7 +151,7 @@
           <div style="padding-left:10px;padding-right:10px;">
             <p>For developers. Architecture documents define or document the structure and interconnections of Netzhaut and Netzhaut modules. For all architecture documents, please load <a href="architecture/html/index.html">Architecture</a>.</p>
               <p><a href="architecture/html/md_projectlayout.html">Project Layout</a></br>
-              Explains the files and directories that make up Netzhaut.</p>
+              What is the Netzhaut directory structure and what kind of files are in it?</p>
           </div>
         </div>
         <h1 class="doc-content-anchor"><a id="design"></a>Design
@@ -164,12 +160,11 @@
           <div style="padding-left:10px;padding-right:10px;">
             <p>For developers. Design documents define or document the inner workings of Netzhaut. For all design documents, please load <a href="design/html/index.html">Design</a>.</p>
               <p><a href="design/html/md_codestyle.html">Code Style</a></br>
-              Formatting and other conventions that Netzhaut code needs to adhere to.</p>
+              What kind of formatting conventions needs Netzhaut code adhere to?</p>
           </div>
         </div>
         <br>
       </div>
-
       <div style="margin: 0 20px;">
        <div>
          <h1>Changelogs</h1>
@@ -200,31 +195,11 @@
 <!-- NH_MAKE_INSERT_CHANGELOGS_END -->
                 </div>
               </div>
-    </div>
-    <div>
-          <h1>Contact</h1>
-          <div class="infobox">
-            <div class="innerinfobox">
-              Report via <a href="https://github.com/netzdevs/netzhaut/issues">GitHub</a><br>
-              Discuss via <a href="https://github.com/netzdevs/netzhaut/discussions">GitHub</a><br>
-              Email at <a href="mailto:contact@netzhaut.dev">contact@netzhaut.dev</a><br>
             </div>
-          </div>
-</div>
-    <div>
-              <h1>Repositories</h1>
-              <div class="infobox">
-                <div class="innerinfobox">
-                  <a href="https://github.com/netzdevs/netzhaut">Code Repository</a><br>
-                  <a href="https://github.com/netzdevs/netzhaut.dev">Docs Repository</a><br>
-                </div>
-              </div>
-    </div>
-
-  <div>
-          <h1>Versioning</h1>
-          <div style="max-width:200px;">
-            <p>The full project version consists of the API version 
+            <div>
+              <h1>Versioning</h1>
+              <div style="max-width:200px;">
+                <p>The full project version consists of the API version 
 <b>
 <!-- NH_MAKE_INSERT_API_VERSION_BEGIN -->
 ver.0.2.3.0
@@ -236,7 +211,7 @@ and revision
 rev.08400
 <!-- NH_MAKE_INSERT_REVISION_END -->
 </b>
-which is the accumulation of all module versions. The project stage 
+, which is the accumulation of all module versions. The project stage 
 <b>
 <!-- NH_MAKE_INSERT_STAGE_BEGIN -->
 prototype.1
@@ -244,21 +219,21 @@ prototype.1
 </b>
 is documented in the <a href="general/html/md_roadmap.html">roadmap</a>.
 </p>
+              </div>
+            </div>
+            <div>
+              <h1>License</h1>
+              <div>
+                <p style="font-family:serif;">Netzhaut Copyright (C) 2021<br>The Netzhaut Authors<br>Published under MIT.</p>
+                <p style="font-family:serif;">Netzhaut Docs Copyright (C) 2021<br>The Netzhaut Authors<br>All rights reserved.</p>
+              </div>
+            </div>
           </div>
-</div>
-  <div>
-          <h1>License</h1>
-          <div>
-            <p style="font-family:serif;">Netzhaut Copyright (C) 2021<br>The Netzhaut Authors<br>Published under MIT.</p>
-            <p style="font-family:serif;">Netzhaut Docs Copyright (C) 2021<br>The Netzhaut Authors<br>All rights reserved.</p>
-          </div>
-</div>
-</div>
-
+        </div>
       </div>
     </div>
   </div><!-- contents -->
-  </div><!-- doc-content -->
+  </div><!-- doc-/<content -->
   <!-- HTML footer for doxygen 1.8.15-->
   <!-- start footer part -->
   <div id="nav-path" class="navpath">
@@ -268,20 +243,7 @@ is documented in the <a href="general/html/md_roadmap.html">roadmap</a>.
     <!-- <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.20 </li> -->
     <div id="foot"> 
       <div style="color:#24bbc4;text-align:center;margin:auto;font-size:16px;">
-        <b>
-<!-- NH_MAKE_INSERT_STAGE_BEGIN -->
-prototype.1
-<!-- NH_MAKE_INSERT_STAGE_END -->
--
-<!-- NH_MAKE_INSERT_API_VERSION_BEGIN -->
-ver.0.2.3.0
-<!-- NH_MAKE_INSERT_API_VERSION_END -->
--
-<!-- NH_MAKE_INSERT_REVISION_BEGIN -->
-rev.08400
-<!-- NH_MAKE_INSERT_REVISION_END -->
-          </b>
-        </div>
+        <a href="https://github.com/netzdevs/netzhaut">Code Repo</a> | <a href="https://github.com/netzdevs/netzhaut.dev">Docs Repo</a> | <a href="mailto:contact@netzhaut.dev">Send EMail</a>
       </div>
     </div>
   </body>

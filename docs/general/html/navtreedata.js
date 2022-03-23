@@ -25,8 +25,16 @@
 var NAVTREE =
 [
   [ "Netzhaut General", "index.html", [
+    [ "Introduction", "md_intro.html", [
+      [ "Introduction", "md_intro.html#about", null ],
+      [ "Goals", "md_intro.html#goals", [
+        [ "Customizable", "md_intro.html#customizable", null ],
+        [ "Conform", "md_intro.html#conform", null ],
+        [ "Lightweight", "md_intro.html#lightweight", null ],
+        [ "User Friendly", "md_intro.html#friendly", null ]
+      ] ]
+    ] ],
     [ "Roadmap", "md_roadmap.html", [
-      [ "Roadmap", "md_roadmap.html#about", null ],
       [ "prototype.1", "md_roadmap.html#prototype1", [
         [ "In Progress", "md_roadmap.html#prototype1progress", null ],
         [ "Completed", "md_roadmap.html#prototype1complete", [

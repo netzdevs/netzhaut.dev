@@ -14,7 +14,7 @@ Building netzhaut requires a few setup procedures to be executed beforehand.
 
 \subsection SetupLinux Setup on Linux
 <pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
-git clone https://github.com/netzwerkz/netzhaut.git
+git clone https://github.com/netzdevs/netzhaut.git
 cd netzhaut && ./build/nhmake.sh && ./build/nhmake --init
 </pre>
 
