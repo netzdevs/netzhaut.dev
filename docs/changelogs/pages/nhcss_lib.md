@@ -5,14 +5,14 @@
 \section nhcss0360 v0.3.6.0
 
 <pre>
-2022-03-16,22:02:49
+2022-03-16
 </pre>
 
  Rework nhmake. Refactor a lot of stuff.
 
 
 
-\section nhcss0350 v0.3.5.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-06-29
@@ -22,7 +22,7 @@
 
 
 
-\section nhcss0341 v0.3.4.1
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-06-27
@@ -32,7 +32,7 @@
 
 
 
-\section nhcss0340 v0.3.4.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-06-18
@@ -42,7 +42,7 @@
 
 
 
-\section nhcss0331 v0.3.3.1
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-27
@@ -52,7 +52,7 @@
 
 
 
-\section nhcss0330 v0.3.3.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-25
@@ -62,7 +62,7 @@
 
 
 
-\section nhcss0320 v0.3.2.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-22
@@ -72,7 +72,7 @@
 
 
 
-\section nhcss0310 v0.3.1.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-22
@@ -82,7 +82,7 @@
 
 
 
-\section nhcss0300 v0.3.0.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-18
@@ -92,7 +92,7 @@
 
 
 
-\section nhcss0200 v0.2.0.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-15
@@ -102,7 +102,7 @@
 
 
 
-\section nhcss0140 v0.1.4.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-11
@@ -112,7 +112,7 @@
 
 
 
-\section nhcss0131 v0.1.3.1
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-06
@@ -122,7 +122,7 @@
 
 
 
-\section nhcss0130 v0.1.3.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-05
@@ -132,7 +132,7 @@
 
 
 
-\section nhcss0120 v0.1.2.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-03
@@ -142,7 +142,7 @@
 
 
 
-\section nhcss0113 v0.1.1.3
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-05-01
@@ -152,7 +152,7 @@
 
 
 
-\section nhcss0112 v0.1.1.2
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-04-30
@@ -162,7 +162,7 @@
 
 
 
-\section nhcss0111 v0.1.1.1
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-04-24
@@ -172,7 +172,7 @@
 
 
 
-\section nhcss0110 v0.1.1.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-04-24
@@ -182,7 +182,7 @@
 
 
 
-\section nhcss0100 v0.1.0.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-04-10
@@ -192,7 +192,7 @@
 
 
 
-\section nhcss0000 v0.0.0.0
+\section nhcss0360 v0.3.6.0
 
 <pre>
 2021-02-23

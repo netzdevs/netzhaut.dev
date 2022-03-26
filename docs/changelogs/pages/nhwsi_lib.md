@@ -5,14 +5,14 @@
 \section nhwsi0020 v0.0.2.0
 
 <pre>
-2022-03-16,22:02:49
+2022-03-16
 </pre>
 
  Rework nhmake. Refactor a lot of stuff.
 
 
 
-\section nhwsi0010 v0.0.1.0
+\section nhwsi0020 v0.0.2.0
 
 <pre>
 2021-06-14
@@ -22,7 +22,7 @@
 
 
 
-\section nhwsi0001 v0.0.0.1
+\section nhwsi0020 v0.0.2.0
 
 <pre>
 2021-05-28
@@ -32,7 +32,7 @@
 
 
 
-\section nhwsi0000 v0.0.0.0
+\section nhwsi0020 v0.0.2.0
 
 <pre>
 2021-02-23

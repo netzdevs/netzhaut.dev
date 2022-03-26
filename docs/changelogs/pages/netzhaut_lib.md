@@ -2,17 +2,27 @@
 
 <div style="max-width:700px;">
 
-\section netzhaut0230 v0.2.3.0
+\section netzhaut0240 v0.2.4.0
 
 <pre>
-2022-03-16,22:02:49
+2022-03-24
+</pre>
+
+ Improve build system.
+
+
+
+\section netzhaut0240 v0.2.4.0
+
+<pre>
+2022-03-16
 </pre>
 
  Rework nhmake. Refactor a lot of stuff.
 
 
 
-\section netzhaut0220 v0.2.2.0
+\section netzhaut0240 v0.2.4.0
 
 <pre>
 2021-10-07
@@ -22,7 +32,7 @@
 
 
 
-\section netzhaut0210 v0.2.1.0
+\section netzhaut0240 v0.2.4.0
 
 <pre>
 2021-09-24
@@ -32,7 +42,7 @@
 
 
 
-\section netzhaut0200 v0.2.0.0
+\section netzhaut0240 v0.2.4.0
 
 <pre>
 2021-06-23
@@ -42,7 +52,7 @@
 
 
 
-\section netzhaut0100 v0.1.0.0
+\section netzhaut0240 v0.2.4.0
 
 <pre>
 2021-06-14
@@ -52,7 +62,7 @@
 
 
 
-\section netzhaut0020 v0.0.2.0
+\section netzhaut0240 v0.2.4.0
 
 <pre>
 2021-06-11
@@ -62,7 +72,7 @@
 
 
 
-\section netzhaut0010 v0.0.1.0
+\section netzhaut0240 v0.2.4.0
 
 <pre>
 2021-05-13
@@ -72,7 +82,7 @@
 
 
 
-\section netzhaut0000 v0.0.0.0
+\section netzhaut0240 v0.2.4.0
 
 <pre>
 2021-02-23

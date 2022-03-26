@@ -5,14 +5,14 @@
 \section nhterm0010 v0.0.1.0
 
 <pre>
-2022-03-16,22:02:49
+2022-03-16
 </pre>
 
  Rework nhmake. Refactor a lot of stuff.
 
 
 
-\section nhterm0001 v0.0.0.1
+\section nhterm0010 v0.0.1.0
 
 <pre>
 2021-06-15
@@ -22,7 +22,7 @@
 
 
 
-\section nhterm0000 v0.0.0.0
+\section nhterm0010 v0.0.1.0
 
 <pre>
 2021-06-10

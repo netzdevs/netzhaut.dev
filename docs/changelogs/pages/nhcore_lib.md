@@ -5,14 +5,14 @@
 \section nhcore0150 v0.1.5.0
 
 <pre>
-2022-03-16,22:02:49
+2022-03-16
 </pre>
 
  Rework nhmake. Refactor a lot of stuff.
 
 
 
-\section nhcore0140 v0.1.4.0
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-07-14
@@ -22,7 +22,7 @@
 
 
 
-\section nhcore0130 v0.1.3.0
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-07-03
@@ -32,7 +32,7 @@
 
 
 
-\section nhcore0120 v0.1.2.0
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-06-24
@@ -42,7 +42,7 @@
 
 
 
-\section nhcore0110 v0.1.1.0
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-06-23
@@ -52,7 +52,7 @@
 
 
 
-\section nhcore0102 v0.1.0.2
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-06-12
@@ -62,7 +62,7 @@
 
 
 
-\section nhcore0101 v0.1.0.1
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-06-10
@@ -72,7 +72,7 @@
 
 
 
-\section nhcore0100 v0.1.0.0
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-06-08
@@ -82,7 +82,7 @@
 
 
 
-\section nhcore0004 v0.0.0.4
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-06-05
@@ -92,7 +92,7 @@
 
 
 
-\section nhcore0003 v0.0.0.3
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-05-31
@@ -102,7 +102,7 @@
 
 
 
-\section nhcore0002 v0.0.0.2
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-05-28
@@ -112,7 +112,7 @@
 
 
 
-\section nhcore0001 v0.0.0.1
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-04-29
@@ -122,7 +122,7 @@
 
 
 
-\section nhcore0000 v0.0.0.0
+\section nhcore0150 v0.1.5.0
 
 <pre>
 2021-02-23

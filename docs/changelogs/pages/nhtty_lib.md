@@ -5,14 +5,14 @@
 \section nhtty0130 v0.1.3.0
 
 <pre>
-2022-03-16,22:02:49
+2022-03-16
 </pre>
 
  Rework nhmake. Refactor a lot of stuff.
 
 
 
-\section nhtty0122 v0.1.2.2
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-23
@@ -22,7 +22,7 @@
 
 
 
-\section nhtty0121 v0.1.2.1
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-15
@@ -32,7 +32,7 @@
 
 
 
-\section nhtty0120 v0.1.2.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-15
@@ -42,7 +42,7 @@
 
 
 
-\section nhtty0110 v0.1.1.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-11
@@ -52,7 +52,7 @@
 
 
 
-\section nhtty0100 v0.1.0.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-10
@@ -62,7 +62,7 @@
 
 
 
-\section nhtty0060 v0.0.6.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-08
@@ -72,7 +72,7 @@
 
 
 
-\section nhtty0050 v0.0.5.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-07
@@ -82,7 +82,7 @@
 
 
 
-\section nhtty0040 v0.0.4.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-06
@@ -92,7 +92,7 @@
 
 
 
-\section nhtty0030 v0.0.3.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-06-03
@@ -102,7 +102,7 @@
 
 
 
-\section nhtty0020 v0.0.2.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-05-31
@@ -112,7 +112,7 @@
 
 
 
-\section nhtty0010 v0.0.1.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-05-29
@@ -122,7 +122,7 @@
 
 
 
-\section nhtty0000 v0.0.0.0
+\section nhtty0130 v0.1.3.0
 
 <pre>
 2021-02-23

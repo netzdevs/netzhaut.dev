@@ -5,14 +5,14 @@
 \section nhgfx0050 v0.0.5.0
 
 <pre>
-2022-03-16,22:02:49
+2022-03-16
 </pre>
 
  Rework nhmake. Refactor a lot of stuff.
 
 
 
-\section nhgfx0041 v0.0.4.1
+\section nhgfx0050 v0.0.5.0
 
 <pre>
 2021-06-14
@@ -22,7 +22,7 @@
 
 
 
-\section nhgfx0040 v0.0.4.0
+\section nhgfx0050 v0.0.5.0
 
 <pre>
 2021-06-12
@@ -32,7 +32,7 @@
 
 
 
-\section nhgfx0032 v0.0.3.2
+\section nhgfx0050 v0.0.5.0
 
 <pre>
 2021-05-25
@@ -42,7 +42,7 @@
 
 
 
-\section nhgfx0031 v0.0.3.1
+\section nhgfx0050 v0.0.5.0
 
 <pre>
 2021-05-16
@@ -52,7 +52,7 @@
 
 
 
-\section nhgfx0030 v0.0.3.0
+\section nhgfx0050 v0.0.5.0
 
 <pre>
 2021-05-10
@@ -62,7 +62,7 @@
 
 
 
-\section nhgfx0020 v0.0.2.0
+\section nhgfx0050 v0.0.5.0
 
 <pre>
 2021-05-06
@@ -72,7 +72,7 @@
 
 
 
-\section nhgfx0010 v0.0.1.0
+\section nhgfx0050 v0.0.5.0
 
 <pre>
 2021-04-30
@@ -82,7 +82,7 @@
 
 
 
-\section nhgfx0000 v0.0.0.0
+\section nhgfx0050 v0.0.5.0
 
 <pre>
 2021-02-23
