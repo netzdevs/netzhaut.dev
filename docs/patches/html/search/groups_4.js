@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['functions_0',['Functions',['../group__lib__netzhaut__functions.html',1,'(Global Namespace)'],['../group__lib__nhmake__functions.html',1,'(Global Namespace)'],['../group__selfmakeAPIFunctions.html',1,'(Global Namespace)'],['../group__selfmakeFunctions.html',1,'(Global Namespace)']]]
+  ['macros_0',['Macros',['../group__lib__nhterm__macros.html',1,'(Global Namespace)'],['../group__lib__nhterminal__macros.html',1,'(Global Namespace)']]]
 ];

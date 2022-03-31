@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['nhmake_0',['nhmake',['../group__lib__nhmake.html',1,'']]],
-  ['nhmakefunctions_1',['NhmakeFunctions',['../group__nhmakeFunctions.html',1,'']]],
-  ['nhtty_2',['nhtty',['../group__lib__nhtty.html',1,'']]]
+  ['variables_0',['Variables',['../group__lib__nhterm__vars.html',1,'(Global Namespace)'],['../group__lib__nhterminal__vars.html',1,'(Global Namespace)']]],
+  ['version_1',['Version',['../group__lib__nhterm__version.html',1,'(Global Namespace)'],['../group__lib__nhterminal__version.html',1,'(Global Namespace)']]]
 ];

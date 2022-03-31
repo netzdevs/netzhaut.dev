@@ -2,6 +2,22 @@
 
 <div style="max-width:700px;">
 
+\section undefined0002 v0.0.0.2
+
+<pre>
+2022-03-31,01:08:49
+</pre>
+
+ Refactor. Restructure. Improve nhmake.
+
+
+
+
+
+
+
+
+
 \section undefined0001 v0.0.0.1
 
 <pre>
@@ -9,8 +25,6 @@
 </pre>
 
  Fix autodoc script.
-
-[feef10f0dc64a0a51872b1ae5c88cd4ac10af9e7](../../patches/html/md_pages_feef10f0dc64a0a51872b1ae5c88cd4ac10af9e7.html)
 
 
 

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['selfmake_20api_0',['selfmake API',['../group__selfmakeAPI.html',1,'']]],
-  ['selfmake_20internal_1',['selfmake internal',['../group__selfmake.html',1,'']]],
-  ['smcorefunctions_2',['SmcoreFunctions',['../group__smcoreFunctions.html',1,'']]],
-  ['smcorestructs_3',['SmcoreStructs',['../group__smcoreStructs.html',1,'']]]
+  ['variables_0',['Variables',['../group__lib__nhterm__vars.html',1,'(Global Namespace)'],['../group__lib__nhterminal__vars.html',1,'(Global Namespace)']]],
+  ['version_1',['Version',['../group__lib__nhterm__version.html',1,'(Global Namespace)'],['../group__lib__nhterminal__version.html',1,'(Global Namespace)']]]
 ];

@@ -2,6 +2,22 @@
 
 <div style="max-width:700px;">
 
+\section netzhaut0250 v0.2.5.0
+
+<pre>
+2022-03-31,01:08:49
+</pre>
+
+ Refactor. Restructure. Improve nhmake.
+
+
+
+
+
+
+
+
+
 \section netzhaut0240 v0.2.4.0
 
 <pre>
@@ -12,7 +28,7 @@
 
 
 
-\section netzhaut0240 v0.2.4.0
+\section netzhaut0230 v0.2.3.0
 
 <pre>
 2022-03-16
@@ -22,7 +38,7 @@
 
 
 
-\section netzhaut0240 v0.2.4.0
+\section netzhaut0220 v0.2.2.0
 
 <pre>
 2021-10-07
@@ -32,7 +48,7 @@
 
 
 
-\section netzhaut0240 v0.2.4.0
+\section netzhaut0210 v0.2.1.0
 
 <pre>
 2021-09-24
@@ -42,7 +58,7 @@
 
 
 
-\section netzhaut0240 v0.2.4.0
+\section netzhaut0200 v0.2.0.0
 
 <pre>
 2021-06-23
@@ -52,17 +68,17 @@
 
 
 
-\section netzhaut0240 v0.2.4.0
+\section netzhaut0100 v0.1.0.0
 
 <pre>
 2021-06-14
 </pre>
 
- Add first iteration of nhterm interface. Add nhwsi functions. Add and rename nhtty functions.
+ Add first iteration of nhterminal interface. Add nhwsi functions. Add and rename nhtty functions.
 
 
 
-\section netzhaut0240 v0.2.4.0
+\section netzhaut0020 v0.0.2.0
 
 <pre>
 2021-06-11
@@ -72,7 +88,7 @@
 
 
 
-\section netzhaut0240 v0.2.4.0
+\section netzhaut0010 v0.0.1.0
 
 <pre>
 2021-05-13
@@ -82,7 +98,7 @@
 
 
 
-\section netzhaut0240 v0.2.4.0
+\section netzhaut0000 v0.0.0.0
 
 <pre>
 2021-02-23
