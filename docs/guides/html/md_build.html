@@ -111,13 +111,25 @@ Setup</h1>
 <div style="max-width:700px;">Building netzhaut requires a few setup procedures to be executed beforehand.<ol type="1">
 <li>The source code must be downloaded.</li>
 <li>The <b>nhmake</b> build-tool (consisting of <b>src/bin/nhmake</b> and <b>src/lib/nhmake</b> source code) must be build.</li>
-<li>The <b>nhmake</b> build-tool must be used to initialize the project. Initializing the project means that the <b>nhmake</b> build-tool will download external resources, copy files around etc.. After initialization, netzhaut can be build using the <b>nhmake</b> build-tool.</li>
+<li>The <b>nhmake</b> build-tool must be used to initialize the project before building. Initializing the project means that the <b>nhmake</b> build-tool will download external resources, copy files around etc.. After initialization, netzhaut can be partially build using the <b>nhmake</b> build-tool. <br  />
+</li>
+<li>For compiling <b>nhterminal</b> and <b>nhrenderer</b>, GLSL sources need to be compiled before building.</li>
 </ol>
-</div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupLinux"></a>
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="Dependencies"></a>
+Dependencies</h2>
+<div style="max-width:700px;">For setup, Netzhaut requires some external dependencies.</div><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h3><a class="anchor" id="DepsLinux"></a>
+Linux</h3>
+<div style="max-width:700px;"><ul>
+<li>wget</li>
+<li>TODO</li>
+</ul>
+</div><div style="max-width:700px;"></div><h3><a class="anchor" id="DepsWindows"></a>
+Windows</h3>
+<div style="max-width:700px;">TODO</div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupLinux"></a>
 Setup on Linux</h2>
 <div style="max-width:700px;"><pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
 git clone <a href="https://github.com/netzdevs/netzhaut.git">https://github.com/netzdevs/netzhaut.git</a>
-cd netzhaut &amp;&amp; ./build/nhmake.sh &amp;&amp; ./build/nhmake --init
+cd netzhaut &amp;&amp; ./build/nhmake.sh &amp;&amp; ./build/nhmake --init --glsl download compile
 </pre></div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupWindows"></a>
 Setup on Windows</h2>
 <div style="max-width:700px;"><pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
@@ -126,7 +138,7 @@ TODO
 Building</h1>
 <div style="max-width:700px;">Before building, please make sure that relevant dependencies are installed. Building is done exclusively using the nhmake tool, which was build during setup.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="Dependencies"></a>
 Dependencies</h2>
-<div style="max-width:700px;">For rendering, netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</div><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h3><a class="anchor" id="DepsLinux"></a>
+<div style="max-width:700px;">For rendering, Netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</div><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h3><a class="anchor" id="DepsLinux"></a>
 Linux</h3>
 <div style="max-width:700px;"><ul>
 <li>GCC</li>
