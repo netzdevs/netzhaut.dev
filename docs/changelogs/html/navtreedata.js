@@ -38,6 +38,7 @@ var NAVTREE =
       [ "v0.0.0.0", "md_pages_netzhaut_lib.html#netzhaut0000", null ]
     ] ],
     [ "nhcore", "md_pages_nhcore_lib.html", [
+      [ "v0.1.5.1", "md_pages_nhcore_lib.html#nhcore0151", null ],
       [ "v0.1.5.0", "md_pages_nhcore_lib.html#nhcore0150", null ],
       [ "v0.1.4.0", "md_pages_nhcore_lib.html#nhcore0140", null ],
       [ "v0.1.3.0", "md_pages_nhcore_lib.html#nhcore0130", null ],
@@ -116,6 +117,7 @@ var NAVTREE =
       [ "v0.0.0.0", "md_pages_nhhtml_lib.html#nhhtml0000", null ]
     ] ],
     [ "nhmake", "md_pages_nhmake_lib.html", [
+      [ "v0.2.5.2", "md_pages_nhmake_lib.html#nhmake0252", null ],
       [ "v0.2.5.1", "md_pages_nhmake_lib.html#nhmake0251", null ],
       [ "v0.2.5.0", "md_pages_nhmake_lib.html#nhmake0250", null ],
       [ "v0.2.4.0", "md_pages_nhmake_lib.html#nhmake0240", null ],

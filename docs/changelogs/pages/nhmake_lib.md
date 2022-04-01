@@ -2,6 +2,18 @@
 
 <div style="max-width:700px;">
 
+\section nhmake0252 v0.2.5.2
+
+<pre>
+2022-04-02,00:49:19
+</pre>
+
+ Fix bugs.
+
+[eae7ba2399f55cb4c3804cd9679821a52f13b3e1](../../patches/html/md_pages_eae7ba2399f55cb4c3804cd9679821a52f13b3e1.html)
+
+
+
 \section nhmake0251 v0.2.5.1
 
 <pre>
