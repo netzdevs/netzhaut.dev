@@ -22,3 +22,5 @@ cd ..
 cd patches 
 doxygen Doxyfile 
 cd ..
+# Remove patch pages otherwise github-pages checks will fail.
+rm patches/pages/*
