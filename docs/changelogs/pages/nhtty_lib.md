@@ -2,6 +2,20 @@
 
 <div style="max-width:700px;">
 
+\section nhtty0140 v0.1.4.0
+
+<pre>
+2022-04-26,20:26:20
+</pre>
+
+ Improve nhtty and begin OpenGL implemention.
+
+[dbec20eec4d6326b3825f70d60559b6b94d61f68](../../patches/html/md_pages_dbec20eec4d6326b3825f70d60559b6b94d61f68.html)
+
+
+
+
+
 \section nhtty0130 v0.1.3.0
 
 <pre>
