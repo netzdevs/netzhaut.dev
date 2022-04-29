@@ -365,7 +365,6 @@ td.memItemLeft, td.memItemRight {
 
 .titlearea {
 	border-bottom: 1px solid #24bbc4;
-        
 }
 
 /*********************************************/
@@ -385,6 +384,27 @@ td.memItemLeft, td.memItemRight {
 /*********************************************/
 /**                 Footer                  **/
 /*********************************************/
+
+#foot {
+	align-items:center;
+        background-color:#151515;
+	text-align:center;
+	font-size:16px;
+	display:flex;
+	overflow-x:auto;
+	justify-content: center;
+	border-top:3px solid #24bbc4;
+        padding-top:5px;
+	padding-bottom:5px;
+}
+
+#footelem {
+        padding:2px;
+	background-color:#24bbc4;
+	color:#232425;
+	margin-left:5px;
+	margin-right:5px;
+}
 
 #nav-path {
         background: #24bbc4;
