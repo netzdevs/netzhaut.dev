@@ -98,6 +98,7 @@ var NAVTREE =
       [ "v0.0.0.0", "md_pages_nhencoding_lib.html#nhencoding0000", null ]
     ] ],
     [ "nhgfx", "md_pages_nhgfx_lib.html", [
+      [ "v0.0.6.0", "md_pages_nhgfx_lib.html#nhgfx0060", null ],
       [ "v0.0.5.0", "md_pages_nhgfx_lib.html#nhgfx0050", null ],
       [ "v0.0.4.1", "md_pages_nhgfx_lib.html#nhgfx0041", null ],
       [ "v0.0.4.0", "md_pages_nhgfx_lib.html#nhgfx0040", null ],
@@ -143,6 +144,7 @@ var NAVTREE =
       [ "v0.0.0.0", "md_pages_nhnetwork_lib.html#nhnetwork0000", null ]
     ] ],
     [ "nhrenderer", "md_pages_nhrenderer_lib.html", [
+      [ "v0.0.2.0", "md_pages_nhrenderer_lib.html#nhrenderer0020", null ],
       [ "v0.0.1.0", "md_pages_nhrenderer_lib.html#nhrenderer0010", null ],
       [ "v0.0.0.0", "md_pages_nhrenderer_lib.html#nhrenderer0000", null ]
     ] ],

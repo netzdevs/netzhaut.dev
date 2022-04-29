@@ -5,12 +5,12 @@
 \section nhtty0140 v0.1.4.0
 
 <pre>
-2022-04-26,20:26:20
+2022-04-29,20:34:22
 </pre>
 
- Improve nhtty and begin OpenGL implemention.
+ Improve nhtty and begin OpenGL implementation.
 
-[dbec20eec4d6326b3825f70d60559b6b94d61f68](../../patches/html/md_pages_dbec20eec4d6326b3825f70d60559b6b94d61f68.html)
+[4ba35ffb4c8797b2086385b66bc7747184bd9c5e](../../patches/html/md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html)
 
 
 

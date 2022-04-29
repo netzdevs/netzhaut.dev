@@ -1,10 +1,11 @@
-From dbec20eec4d6326b3825f70d60559b6b94d61f68 Mon Sep 17 00:00:00 2001
+From 4ba35ffb4c8797b2086385b66bc7747184bd9c5e Mon Sep 17 00:00:00 2001
 From: Dajo Frey <dajo.frey@gmail.com>
-Date: Tue, 26 Apr 2022 20:25:39 +0200
-Subject: [PATCH] Improve nhtty and begin OpenGL implemention.
+Date: Fri, 29 Apr 2022 20:32:20 +0200
+Subject: [PATCH] Improve nhtty and begin OpenGL implementation.
 
 ---
- CHANGES.txt                                   |    4 +
+ CHANGELOG.txt                                 |    4 +-
+ CHANGES.txt                                   |    1 +
  build/.nhmake/options.nhmake                  |   20 +-
  build/.nhmake/source.nhmake                   |   10 +-
  external/netzhaut.dev                         |    2 +-
@@ -23,7 +24,11 @@ Subject: [PATCH] Improve nhtty and begin OpenGL implemention.
  .../examples/x11/Makefile                     |    6 +
  .../examples/x11/x11-example.c                |  212 +
  .../simple-opengl-loader.h                    | 6791 +++++++++++++++++
+ src/bin/nhmake/Main.c                         |    3 +-
  src/bin/nhtty/Main.c                          |    3 +
+ src/lib/netzhaut/nhmake.c                     |    7 +
+ src/lib/netzhaut/nhmake.h                     |    7 +
+ src/lib/nhcore/Common/About.h                 |    2 +-
  src/lib/nhcore/Common/Types/Private.h         |   12 +
  src/lib/nhcore/Util/Time.h                    |    6 -
  src/lib/nhgfx/Base/Surface.c                  |   17 +-
@@ -60,6 +65,8 @@ Subject: [PATCH] Improve nhtty and begin OpenGL implemention.
  src/lib/nhgfx/Vulkan/Texture.c                |   88 +-
  src/lib/nhgfx/Vulkan/Viewport.c               |   27 +-
  src/lib/nhgfx/Vulkan/Viewport.h               |   15 +-
+ src/lib/nhmake/Common/About.h                 |    2 +-
+ src/lib/nhmake/Core/Changelog.h               |    4 +
  src/lib/nhrenderer/Vulkan/Descriptor.c        |    8 +-
  src/lib/nhrenderer/Vulkan/Pipeline.c          |   32 +-
  src/lib/nhrenderer/Vulkan/Record.c            |   70 +-
@@ -69,6 +76,7 @@ Subject: [PATCH] Improve nhtty and begin OpenGL implemention.
  src/lib/nhterminal/Vulkan/Pipeline.c          |    8 +-
  src/lib/nhterminal/Vulkan/Render.c            |   10 +-
  src/lib/nhterminal/Vulkan/Text.c              |    2 +-
+ src/lib/nhtty/Common/About.h                  |    2 +-
  src/lib/nhtty/Common/Types/Private.h          |    3 +-
  src/lib/nhtty/Editor/ChangesFile.c            |    3 +-
  src/lib/nhtty/Editor/ChangesFile.h            |    3 +-
@@ -92,7 +100,7 @@ Subject: [PATCH] Improve nhtty and begin OpenGL implemention.
  src/lib/nhtty/TTY/Tile.c                      |   40 +-
  src/lib/nhtty/TTY/Tiling.c                    |  100 +-
  src/lib/nhtty/TTY/Tiling.h                    |   11 +-
- 88 files changed, 13865 insertions(+), 464 deletions(-)
+ 96 files changed, 13887 insertions(+), 470 deletions(-)
  create mode 100644 CHANGES.txt
  create mode 100644 external/simple-opengl-loader-master/.gitignore
  create mode 100644 external/simple-opengl-loader-master/CHANGELOG.md
@@ -131,16 +139,25 @@ Subject: [PATCH] Improve nhtty and begin OpenGL implemention.
  create mode 100644 src/lib/nhtty/Preferences/Preferences.c
  create mode 100644 src/lib/nhtty/Preferences/Preferences.h
 
+diff --git a/CHANGELOG.txt b/CHANGELOG.txt
+index 61d7676..bbdc4ea 100644
+--- a/CHANGELOG.txt
++++ b/CHANGELOG.txt
+@@ -1,5 +1,5 @@
+-changes{date:"2022-04-02,00:49:19"id:"eae7ba2399f55cb4c3804cd9679821a52f13b3e1"summary:"Fix bugs."workload{scope:"patch"lib:"nhmake","nhcore"author{name:"Dajo Frey"}}}
+-changes{date:"2022-03-31,19:25:15"id:"fb799d7a436b3d9d336500b8d5ff3b19291dc526"summary:"Fix stuff."workload{scope:"patch"lib:"nhmake"author{name:"Dajo Frey"}}}
++changes{date:"2022-04-06"summary:"Fix bugs."workload{scope:"patch"lib:"nhmake","nhcore"author{name:"Dajo Frey"}}}
++changes{date:"2022-04-02"summary:"Fix stuff."workload{scope:"patch"lib:"nhmake"author{name:"Dajo Frey"}}}
+ changes{date:"2022-03-31,01:08:49"summary:"Refactor. Restructure. Improve nhmake."workload{scope:"patch"summary:"Refactor scripts and restructure."author{name:"Dajo Frey"}}workload{scope:"minor"summary:"Refactor changes implementation."lib:"nhmake"author{name:"Dajo Frey"}}workload{scope:"minor"summary:"Change general structure and nhmake API."lib:"netzhaut"author{name:"Dajo Frey"}}workload{scope:"patch"summary:"Rename module."lib:"nhterminal"author{name:"Dajo Frey"}}}
+ changes{date:"2022-03-27,00:57:16"summary:"Fix autodoc script."workload{scope:"patch"author{name:"Dajo Frey"}}}
+ changes{date:"2022-03-24"summary:"Improve build system."workload{scope:"minor"lib:"nhmake","netzhaut"bin:"nhmake"author{name:"Dajo Frey"}}}
 diff --git a/CHANGES.txt b/CHANGES.txt
 new file mode 100644
-index 0000000..edf478a
+index 0000000..16ac698
 --- /dev/null
 +++ b/CHANGES.txt
-@@ -0,0 +1,4 @@
-+changes{date:"2022-04-26"summary:"Improve nhtty and begin OpenGL implemention."
-+workload{summary:"Add preferences etc. and fix bugs."scope:"minor"lib:"nhtty"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}
-+workload{summary:"Begin OpenGL implementation."scope:"minor"lib:"nhgfx, nhrenderer"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}
-+}
+@@ -0,0 +1 @@
++changes{summary:"Improve nhtty and begin OpenGL implementation."workload{scope:"minor"summary:"Add preferences etc. and fix bugs."lib:"nhtty"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}workload{scope:"minor"summary:"Begin OpenGL implementation."lib:"nhgfx","nhrenderer"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}}
 diff --git a/build/.nhmake/options.nhmake b/build/.nhmake/options.nhmake
 index 2d76fd6..0abd13d 100644
 --- a/build/.nhmake/options.nhmake
@@ -239,12 +256,12 @@ index 0286022..f377b90 100644
          "Main/Renderer.c"
          "Main/BoxTriangulation.c"
 diff --git a/external/netzhaut.dev b/external/netzhaut.dev
-index ce43a79..2772c34 160000
+index ce43a79..6edfa54 160000
 --- a/external/netzhaut.dev
 +++ b/external/netzhaut.dev
 @@ -1 +1 @@
 -Subproject commit ce43a792971d3a1acc4be1c4a692b34bb4d1752a
-+Subproject commit 2772c34ca07fb8d05a1b6e379d2d8560c2c5e2d8
++Subproject commit 6edfa54fcbe4e97bc3988015c8f6b8924315207b
 diff --git a/external/simple-opengl-loader-master/.gitignore b/external/simple-opengl-loader-master/.gitignore
 new file mode 100644
 index 0000000..758ace0
@@ -10052,6 +10069,20 @@ index 0000000..3f56166
 +#endif
 +
 +#endif
+diff --git a/src/bin/nhmake/Main.c b/src/bin/nhmake/Main.c
+index 4e8253f..a68412d 100644
+--- a/src/bin/nhmake/Main.c
++++ b/src/bin/nhmake/Main.c
+@@ -96,7 +96,8 @@ static NH_MAKE_RESULT updateChangelog(
+     free(newData_p);
+     free(data_p);
+ 
+-    return NH_MAKE_SUCCESS;
++    // In the end, make sure that runtime uses the updated changelog.
++    return nh_make_updateChangelog(Runtime_p);
+ }
+ 
+ static NH_MAKE_RESULT updateVersions(
 diff --git a/src/bin/nhtty/Main.c b/src/bin/nhtty/Main.c
 index 487b8b6..b38a9f1 100644
 --- a/src/bin/nhtty/Main.c
@@ -10066,6 +10097,66 @@ index 487b8b6..b38a9f1 100644
  
      while (1) {
          if (!nh_run()) {usleep(10000);}
+diff --git a/src/lib/netzhaut/nhmake.c b/src/lib/netzhaut/nhmake.c
+index 033f74c..5bebd92 100644
+--- a/src/lib/netzhaut/nhmake.c
++++ b/src/lib/netzhaut/nhmake.c
+@@ -202,6 +202,13 @@ nh_make_Changelog nh_make_createChangelog(
+     return createChangelog_f ? createChangelog_f(path_p) : Changelog;
+ }
+ 
++NH_MAKE_RESULT nh_make_updateChangelog(
++    nh_make_Runtime *Runtime_p)
++{
++    nh_make_updateChangelog_f updateChangelog_f = !NH_LOADER_P ? NULL : NH_LOADER_P->loadSymbol_f(NH_MODULE_MAKE, 0, "nh_make_updateChangelog");
++    return updateChangelog_f ? updateChangelog_f(Runtime_p) : NH_MAKE_ERROR_BAD_STATE;
++}
++
+ nh_make_Changelog *nh_make_getChangelog(
+     nh_make_Runtime *Runtime_p)
+ {
+diff --git a/src/lib/netzhaut/nhmake.h b/src/lib/netzhaut/nhmake.h
+index 0f2921a..2576f37 100644
+--- a/src/lib/netzhaut/nhmake.h
++++ b/src/lib/netzhaut/nhmake.h
+@@ -108,10 +108,16 @@
+     );
+ 
+ 
++// CHANGELOG =======================================================================================
++
+     nh_make_Changelog nh_make_createChangelog(
+         NH_BYTE *path_p
+     );
+ 
++    NH_MAKE_RESULT nh_make_updateChangelog(
++        nh_make_Runtime *Runtime_p
++    );
++
+     nh_make_Changelog *nh_make_getChangelog(
+         nh_make_Runtime *Runtime_p
+     );
+@@ -136,6 +142,7 @@
+         nh_make_Changelog *Changelog_p, NH_BYTE *result_p, int length
+     );
+ 
++// VERSIONS ========================================================================================
+ 
+     NH_MAKE_RESULT nh_make_updateVersions(
+         nh_make_Runtime *Runtime_p
+diff --git a/src/lib/nhcore/Common/About.h b/src/lib/nhcore/Common/About.h
+index 6c51e37..c22a2e2 100644
+--- a/src/lib/nhcore/Common/About.h
++++ b/src/lib/nhcore/Common/About.h
+@@ -60,7 +60,7 @@
+     /**
+      * The patch version is used for bugfixes or non-consequential changes. 
+      */
+-    #define NH_CORE_PATCH_VERSION 0
++    #define NH_CORE_PATCH_VERSION 1
+ 
+     /**
+      * Version array.
 diff --git a/src/lib/nhcore/Common/Types/Private.h b/src/lib/nhcore/Common/Types/Private.h
 index 0e75672..c73edec 100644
 --- a/src/lib/nhcore/Common/Types/Private.h
@@ -14792,6 +14883,34 @@ index f52e88e..18ad2ef 100644
  
  #endif
 +
+diff --git a/src/lib/nhmake/Common/About.h b/src/lib/nhmake/Common/About.h
+index b78cc01..7a67922 100644
+--- a/src/lib/nhmake/Common/About.h
++++ b/src/lib/nhmake/Common/About.h
+@@ -78,7 +78,7 @@
+     /**
+      * The patch version is used for bugfixes or non-consequential changes.
+      */
+-    #define NH_MAKE_PATCH_VERSION 1
++    #define NH_MAKE_PATCH_VERSION 2
+ 
+     /**
+      * Version array.
+diff --git a/src/lib/nhmake/Core/Changelog.h b/src/lib/nhmake/Core/Changelog.h
+index 2a6b40f..9b13ac6 100644
+--- a/src/lib/nhmake/Core/Changelog.h
++++ b/src/lib/nhmake/Core/Changelog.h
+@@ -36,6 +36,10 @@
+         NH_BYTE *path_p
+     );
+ 
++    typedef NH_MAKE_RESULT (*nh_make_updateChangelog_f)(
++        nh_make_Runtime *Runtime_p
++    );
++
+     typedef nh_make_Changelog *(*nh_make_getChangelog_f)(
+         nh_make_Runtime *Runtime_p
+     );
 diff --git a/src/lib/nhrenderer/Vulkan/Descriptor.c b/src/lib/nhrenderer/Vulkan/Descriptor.c
 index b70a202..791d372 100644
 --- a/src/lib/nhrenderer/Vulkan/Descriptor.c
@@ -15395,6 +15514,19 @@ index 9939ca5..cf7b8f1 100644
  
  NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
  }
+diff --git a/src/lib/nhtty/Common/About.h b/src/lib/nhtty/Common/About.h
+index 06fbac2..bc0609b 100644
+--- a/src/lib/nhtty/Common/About.h
++++ b/src/lib/nhtty/Common/About.h
+@@ -57,7 +57,7 @@
+     /**
+      * The minor version is used for the addition of small functionalities or consequential changes. 
+      */
+-    #define NH_TTY_MINOR_VERSION 3
++    #define NH_TTY_MINOR_VERSION 4
+ 
+     /**
+      * The patch version is used for bugfixes or non-consequential changes. 
 diff --git a/src/lib/nhtty/Common/Types/Private.h b/src/lib/nhtty/Common/Types/Private.h
 index 0e052f0..1cc547a 100644
 --- a/src/lib/nhtty/Common/Types/Private.h

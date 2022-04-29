@@ -5,12 +5,10 @@
 \section nhcore0151 v0.1.5.1
 
 <pre>
-2022-04-02,00:49:19
+2022-04-06
 </pre>
 
  Fix bugs.
-
-[eae7ba2399f55cb4c3804cd9679821a52f13b3e1](../../patches/html/md_pages_eae7ba2399f55cb4c3804cd9679821a52f13b3e1.html)
 
 
 
