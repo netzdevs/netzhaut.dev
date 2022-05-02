@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "Netzhaut Changelogs", "index.html", [
     [ "netzhaut", "md_pages_netzhaut_lib.html", [
+      [ "v0.2.6.0", "md_pages_netzhaut_lib.html#netzhaut0260", null ],
       [ "v0.2.5.0", "md_pages_netzhaut_lib.html#netzhaut0250", null ],
       [ "v0.2.4.0", "md_pages_netzhaut_lib.html#netzhaut0240", null ],
       [ "v0.2.3.0", "md_pages_netzhaut_lib.html#netzhaut0230", null ],
@@ -118,6 +119,7 @@ var NAVTREE =
       [ "v0.0.0.0", "md_pages_nhhtml_lib.html#nhhtml0000", null ]
     ] ],
     [ "nhmake", "md_pages_nhmake_lib.html", [
+      [ "v0.2.6.0", "md_pages_nhmake_lib.html#nhmake0260", null ],
       [ "v0.2.5.2", "md_pages_nhmake_lib.html#nhmake0252", null ],
       [ "v0.2.5.1", "md_pages_nhmake_lib.html#nhmake0251", null ],
       [ "v0.2.5.0", "md_pages_nhmake_lib.html#nhmake0250", null ],

@@ -24,7 +24,10 @@
 */
 var NAVTREE =
 [
-  [ "Netzhaut Patches", "index.html", ]
+  [ "Netzhaut Patches", "index.html", [
+    [ "4ba35ffb4c8797b2086385b66bc7747184bd9c5e", "md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html", null ],
+    [ "eafc68b059025388c61b5e4822614dfa7b8d39d0", "md_pages_eafc68b059025388c61b5e4822614dfa7b8d39d0.html", null ]
+  ] ]
 ];
 
 var NAVTREEINDEX =

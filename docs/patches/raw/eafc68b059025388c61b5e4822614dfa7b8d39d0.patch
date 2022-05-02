@@ -1,0 +1,1083 @@
+From eafc68b059025388c61b5e4822614dfa7b8d39d0 Mon Sep 17 00:00:00 2001
+From: Dajo Frey <dajo.frey@gmail.com>
+Date: Mon, 2 May 2022 22:01:21 +0200
+Subject: [PATCH] Improve changelog related implementation.
+
+---
+ CHANGELOG.txt                        |   6 +-
+ CHANGES.txt                          |   1 +
+ build/.nhmake/options.nhmake         |  30 ++-
+ external/netzhaut.dev                |   2 +-
+ src/bin/nhmake/Changelogs.c          | 105 +++++++-
+ src/bin/nhmake/Helper.c              |  39 ++-
+ src/bin/nhmake/Main.c                |  16 +-
+ src/bin/nhmake/Patches.c             |   2 +-
+ src/bin/nhmake/Patches.h             |   2 +-
+ src/bin/nhmake/Version.c             |   4 +-
+ src/lib/netzhaut/netzhaut.h          |   2 +-
+ src/lib/netzhaut/nhmake.c            |  13 +
+ src/lib/netzhaut/nhmake.h            |   6 +-
+ src/lib/nhmake/Common/About.h        |   4 +-
+ src/lib/nhmake/Common/Types/Public.h |   4 +
+ src/lib/nhmake/Core/Changelog.c      | 352 +++++++++++++++------------
+ src/lib/nhmake/Core/Version.c        |  18 ++
+ src/lib/nhmake/Core/Version.h        |   4 +
+ 18 files changed, 391 insertions(+), 219 deletions(-)
+ create mode 100644 CHANGES.txt
+
+diff --git a/CHANGELOG.txt b/CHANGELOG.txt
+index 938ef66..44187b5 100644
+--- a/CHANGELOG.txt
++++ b/CHANGELOG.txt
+@@ -1,8 +1,8 @@
+-changes{date:"2022-04-29,20:34:22"id:"4ba35ffb4c8797b2086385b66bc7747184bd9c5e"summary:"Improve nhtty and begin OpenGL implementation."workload{scope:"minor"summary:"Add preferences etc. and fix bugs."lib:"nhtty"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}workload{scope:"minor"summary:"Begin OpenGL implementation."lib:"nhgfx","nhrenderer"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}}
++changes{date:"2022-04-29"time:"20:34:22"id:"4ba35ffb4c8797b2086385b66bc7747184bd9c5e"summary:"Improve nhtty and begin OpenGL implementation."workload{scope:"minor"summary:"Add preferences etc. and fix bugs."lib:"nhtty"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}workload{scope:"minor"summary:"Begin OpenGL implementation."lib:"nhgfx","nhrenderer"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}}
+ changes{date:"2022-04-06"summary:"Fix bugs."workload{scope:"patch"lib:"nhmake","nhcore"author{name:"Dajo Frey"}}}
+ changes{date:"2022-04-02"summary:"Fix stuff."workload{scope:"patch"lib:"nhmake"author{name:"Dajo Frey"}}}
+-changes{date:"2022-03-31,01:08:49"summary:"Refactor. Restructure. Improve nhmake."workload{scope:"patch"summary:"Refactor scripts and restructure."author{name:"Dajo Frey"}}workload{scope:"minor"summary:"Refactor changes implementation."lib:"nhmake"author{name:"Dajo Frey"}}workload{scope:"minor"summary:"Change general structure and nhmake API."lib:"netzhaut"author{name:"Dajo Frey"}}workload{scope:"patch"summary:"Rename module."lib:"nhterminal"author{name:"Dajo Frey"}}}
+-changes{date:"2022-03-27,00:57:16"summary:"Fix autodoc script."workload{scope:"patch"author{name:"Dajo Frey"}}}
++changes{date:"2022-03-31"time:"01:08:49"summary:"Refactor. Restructure. Improve nhmake."workload{scope:"patch"summary:"Refactor scripts and restructure."author{name:"Dajo Frey"}}workload{scope:"minor"summary:"Refactor changes implementation."lib:"nhmake"author{name:"Dajo Frey"}}workload{scope:"minor"summary:"Change general structure and nhmake API."lib:"netzhaut"author{name:"Dajo Frey"}}workload{scope:"patch"summary:"Rename module."lib:"nhterminal"author{name:"Dajo Frey"}}}
++changes{date:"2022-03-27"time:"00:57:16"summary:"Fix autodoc script."workload{scope:"patch"author{name:"Dajo Frey"}}}
+ changes{date:"2022-03-24"summary:"Improve build system."workload{scope:"minor"lib:"nhmake","netzhaut"bin:"nhmake"author{name:"Dajo Frey"}}}
+ changes{date:"2022-03-16"summary:"Rework nhmake. Refactor a lot of stuff."workload{scope:"minor"lib:"netzhaut","nhcss","nhcore","nhdom","nhecmascript","nhencoding","nhgfx","nhhtml","nhmake","nhnetwork","nhrenderer","nhterminal","nhtty","nhurl","nhwebidl","nhwsi"bin:"nhmake"author{name:"Dajo Frey"}}}
+ changes{date:"2021-10-07"summary:"Add core functions."workload{scope:"minor"lib:"netzhaut"author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}}}
+diff --git a/CHANGES.txt b/CHANGES.txt
+new file mode 100644
+index 0000000..16551fe
+--- /dev/null
++++ b/CHANGES.txt
+@@ -0,0 +1 @@
++changes{author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}summary:"Improve changelog related implementation."workload{scope:"minor"summary:"Add time element and revision helper."lib:"nhmake"}workload{scope:"minor"summary:"Fix some issues and improve changelog generation."bin:"nhmake"}workload{scope:"minor"summary:"Add revision function."lib:"netzhaut"}workload{scope:"minor"summary:"Update changelog and nhmake options."}}
+diff --git a/build/.nhmake/options.nhmake b/build/.nhmake/options.nhmake
+index 0abd13d..a3238f4 100644
+--- a/build/.nhmake/options.nhmake
++++ b/build/.nhmake/options.nhmake
+@@ -138,20 +138,24 @@
+ 
+ // AUTODOC =========================================================================================
+ 
+---autodoc generate 
++// Add changes description to changelog, remove changes description file and add HEAD to patches.
++--autodoc add
+ {
+-    // Update Netzhaut.
+     chdir()
+-    updateChangelog("CHANGES.txt")
+-    updateVersions()
++    addToChangelog("CHANGES.txt")
+     system("cp CHANGES.txt /tmp/CHANGES.txt")
+     system("rm CHANGES.txt")
+-
+-    // Update Netzhaut docs.
+-    createPatch(
++    addToRawPatches(
+         "HEAD", 
+         "external/netzhaut.dev/docs/patches/raw"
+     ) 
++}
++
++// Update documentation based on changelog and patches.
++--autodoc update
++{
++    chdir()
++    updateVersions()
+     createPatchPages(
+         "external/netzhaut.dev/docs/patches/raw",
+         "external/netzhaut.dev/docs/patches/pages"
+@@ -168,14 +172,14 @@
+         "external/netzhaut.dev/docs/theme/header_patches.html"
+     )
+     createChangelogs(
++        "external/netzhaut.dev/docs/changelogs/main.md"
+         "external/netzhaut.dev/docs/changelogs/pages"
+     )
+-
+-    // Generate docs.
+     chdir("external/netzhaut.dev/docs")
+     system("./doxygen.sh")
+ }
+ 
++// Create autodoc commits.
+ --autodoc commit
+ {
+     // Commit Netzhaut changes.
+@@ -198,18 +202,18 @@
+     printVersions()
+ }
+ 
+-"[dev] Show Netzhaut history."
+---show history 
++"[dev] Show full changelog."
++--show changelog 
+ {
+     chdir()
+-    printHistory()
++    printChangelog("CHANGELOG.txt")
+ }
+ 
+ "[dev] Show current documented changes."
+ --show changes
+ {
+     chdir()
+-    printChanges("CHANGES.txt")
++    printChangelog("CHANGES.txt")
+ }
+ 
+ // GLSL ============================================================================================
+diff --git a/external/netzhaut.dev b/external/netzhaut.dev
+index 6edfa54..5826dd4 160000
+--- a/external/netzhaut.dev
++++ b/external/netzhaut.dev
+@@ -1 +1 @@
+-Subproject commit 6edfa54fcbe4e97bc3988015c8f6b8924315207b
++Subproject commit 5826dd4d873acc191d58579ba630eeba931a70b3
+diff --git a/src/bin/nhmake/Changelogs.c b/src/bin/nhmake/Changelogs.c
+index 0cec550..6786ace 100644
+--- a/src/bin/nhmake/Changelogs.c
++++ b/src/bin/nhmake/Changelogs.c
+@@ -32,6 +32,7 @@ static NH_BYTE *writeChangelog(
+ 
+     int length = 255;
+     if (Changes_p->date_p) {length += strlen(Changes_p->date_p);}
++    if (Changes_p->time_p) {length += strlen(Changes_p->time_p);}
+     if (Changes_p->summary_p) {length += strlen(Changes_p->summary_p);}
+     if (Changes_p->id_p) {length += strlen(Changes_p->id_p);}
+     if (data_p) {length += strlen(data_p);}
+@@ -39,7 +40,7 @@ static NH_BYTE *writeChangelog(
+     if (!data_p) {
+         data_p = malloc(sizeof(NH_BYTE) * length);
+         if (!data_p) {return NULL;}
+-        memset(data_p, 0, length); 
++        memset(data_p, 0, length);
+     }
+     else {
+         data_p = realloc(data_p, strlen(data_p)+length);
+@@ -56,11 +57,15 @@ static NH_BYTE *writeChangelog(
+     nh_make_Version Version = nh_make_getVersion(nh_make_getChangelog(Runtime_p), Context_p, Changes_p);
+     sprintf(data_p+strlen(data_p), "\\section %s%d%d%d%d v%d.%d.%d.%d", Context_p->name_p ? Context_p->name_p : "undefined", Version.api, 
+         Version.major, Version.minor, Version.patch, Version.api, Version.major, Version.minor, Version.patch);
+-    if (Changes_p->date_p) {sprintf(data_p+strlen(data_p), "\n\n<pre>\n%s\n</pre>", Changes_p->date_p);}
+-    if (Changes_p->summary_p) {sprintf(data_p+strlen(data_p), "\n\n %s", Changes_p->summary_p);}
++    if (Changes_p->date_p) {sprintf(data_p+strlen(data_p), "\n\n%s", Changes_p->date_p);}
++    if (Changes_p->time_p) {sprintf(data_p+strlen(data_p), " | %s", Changes_p->time_p);}
++    nh_make_Version Revision = nh_make_getRevision(Runtime_p, Changes_p);
++    sprintf(data_p+strlen(data_p), " | rev.%d%d%d%d", Revision.api, Revision.major, Revision.minor, Revision.patch);
+     if (Changes_p->id_p) {
+-        sprintf(data_p+strlen(data_p), "\n\n[%s](../../patches/html/md_pages_%s.html)", Changes_p->id_p, Changes_p->id_p);
++        sprintf(data_p+strlen(data_p), " | [%s](../../patches/html/md_pages_%s.html)", Changes_p->id_p, Changes_p->id_p);
+     }
++    sprintf(data_p+strlen(data_p), "\n\n ---");
++    if (Changes_p->summary_p) {sprintf(data_p+strlen(data_p), "\n\n %s", Changes_p->summary_p);}
+ 
+     for (int i = 0; i < Changes_p->workloads; ++i) {
+         sprintf(data_p+strlen(data_p), "\n\n");
+@@ -73,19 +78,103 @@ static NH_BYTE *writeChangelog(
+     return data_p;
+ }
+ 
++static NH_BYTE *writeChangelogIndex(
++    nh_make_Runtime *Runtime_p)
++{
++    int length = 255;
++
++    NH_BYTE *data_p = malloc(sizeof(NH_BYTE)*length);
++    if (!data_p) {return NULL;}
++    memset(data_p, 0, length);
++
++    nh_make_Changelog *Changelog_p = nh_make_getChangelog(Runtime_p);
++    sprintf(data_p+strlen(data_p), "<div style=\"max-width:700px;\">\n\n");
++
++    for (int i = 0; i < Changelog_p->changes; ++i) 
++    {
++        length += strlen(Changelog_p->Changes_p[i].summary_p)+255;
++
++        data_p = realloc(data_p, length);
++        if (!data_p) {return NULL;}
++        memset(data_p+strlen(data_p), 0, length-strlen(data_p)); 
++
++        if (Changelog_p->Changes_p[i].date_p) {sprintf(data_p+strlen(data_p), "%s ", Changelog_p->Changes_p[i].date_p);}
++        if (Changelog_p->Changes_p[i].time_p) {sprintf(data_p+strlen(data_p), "| %s ", Changelog_p->Changes_p[i].time_p);}
++        nh_make_Version Revision = nh_make_getRevision(Runtime_p, Changelog_p->Changes_p+i);
++        sprintf(data_p+strlen(data_p), " | rev.%d%d%d%d", Revision.api, Revision.major, Revision.minor, Revision.patch);
++        if (Changelog_p->Changes_p[i].id_p) {
++            sprintf(data_p+strlen(data_p), 
++                " | [%s](../../patches/html/md_pages_%s.html)", Changelog_p->Changes_p[i].id_p, Changelog_p->Changes_p[i].id_p);
++        }
++        sprintf(data_p+strlen(data_p), "\n\n ---\n");
++
++        int links = 0;
++
++        for (int j = 0; j < Changelog_p->Changes_p[i].workloads; ++j) 
++        {
++            nh_make_Workload *Workload_p = Changelog_p->Changes_p[i].Workloads_p+j;
++            NH_BOOL libs = NH_FALSE;
++
++            for (int k = 0; k < Workload_p->libs; ++k) {
++                nh_make_SourceContext *Context_p = 
++                    nh_make_getSourceContext(Runtime_p, Workload_p->libs_pp[k], NH_MAKE_SOURCE_CONTEXT_SHARED_LIBRARY);
++                if (!Context_p) {continue;}
++                if (links) {sprintf(data_p+strlen(data_p), ", ");}
++                nh_make_Version Version = nh_make_getVersion(Changelog_p, Context_p, Changelog_p->Changes_p+i);
++                sprintf(data_p+strlen(data_p), "[%s](md_pages_%s_lib.html#%s%d%d%d%d)", 
++                    Workload_p->libs_pp[k], Workload_p->libs_pp[k], Workload_p->libs_pp[k], Version.api, Version.major, Version.minor, Version.patch);
++                links++;
++            }
++            for (int k = 0; k < Workload_p->bins; ++k) {
++                if (libs) {sprintf(data_p+strlen(data_p), ", ");} 
++                nh_make_SourceContext *Context_p = 
++                    nh_make_getSourceContext(Runtime_p, Workload_p->bins_pp[k], NH_MAKE_SOURCE_CONTEXT_BINARY);
++                if (!Context_p) {continue;}
++                if (links) {sprintf(data_p+strlen(data_p), ", ");}
++                nh_make_Version Version = nh_make_getVersion(Changelog_p, Context_p, Changelog_p->Changes_p+i);
++                sprintf(data_p+strlen(data_p), "[%s](md_pages_%s_bin.html#%s%d%d%d%d)",
++                    Workload_p->bins_pp[k], Workload_p->bins_pp[k], Workload_p->bins_pp[k], Version.api, Version.major, Version.minor, Version.patch);
++                links++;
++            }
++        }
++
++       if (!links) {
++            nh_make_SourceContext *Context_p = 
++                nh_make_getSourceContext(Runtime_p, NULL, 0);
++            nh_make_Version Version = nh_make_getVersion(Changelog_p, Context_p, Changelog_p->Changes_p+i);
++            sprintf(data_p+strlen(data_p), "[(undefined)](md_pages_undefined.html#undefined%d%d%d%d)", 
++                Version.api, Version.major, Version.minor, Version.patch);
++        }
++
++        sprintf(data_p+strlen(data_p), "<br>");
++        sprintf(data_p+strlen(data_p), "%s<br><br>", Changelog_p->Changes_p[i].summary_p);
++    }
++
++    sprintf(data_p+strlen(data_p), "\n</div>");
++
++    return data_p;
++}
++
+ NH_MAKE_RESULT createChangelogs(
+     nh_make_Runtime *Runtime_p, nh_make_Function *Function_p)
+ {
+-    if (Function_p->arguments != 1) {return NH_MAKE_ERROR_BAD_STATE;}
++    if (Function_p->arguments != 2) {return NH_MAKE_ERROR_BAD_STATE;}
+ 
+     nh_make_SourceContextArray *Array_p = nh_make_getSourceContextArray(Runtime_p);
+     if (!Array_p) {return NH_MAKE_ERROR_BAD_STATE;}
+ 
++    NH_BYTE *data_p = writeChangelogIndex(Runtime_p);
++    if (!data_p) {return NH_MAKE_ERROR_BAD_STATE;}
++
++    nh_make_writeBytesToFile(Function_p->arguments_pp[0], data_p);
++    free(data_p);
++    data_p = NULL;
++
+     for (int i = 0, matches = 0; i < Array_p->length; ++i, matches = 0) 
+     {
+         nh_make_ChangelogPart Part = 
+             nh_make_getChangelogForContext(nh_make_getChangelog(Runtime_p), &Array_p->SourceContexts_p[i]);
+-        NH_BYTE *data_p = NULL;
++        data_p = NULL;
+ 
+         for (int j = 0; j < Part.changes; ++j) {
+             data_p = writeChangelog(Runtime_p, Part.Changes_pp[j], Array_p->SourceContexts_p+i, data_p);
+@@ -100,10 +189,10 @@ NH_MAKE_RESULT createChangelogs(
+         memset(path_p, 0, 255);
+ 
+         if (Array_p->SourceContexts_p[i].name_p) {
+-            sprintf(path_p, "%s/%s_%s.md", Function_p->arguments_pp[0], Array_p->SourceContexts_p[i].name_p, 
++            sprintf(path_p, "%s/%s_%s.md", Function_p->arguments_pp[1], Array_p->SourceContexts_p[i].name_p, 
+                 Array_p->SourceContexts_p[i].type == NH_MAKE_SOURCE_CONTEXT_BINARY ? "bin" : "lib");
+         }
+-        else {sprintf(path_p, "%s/undefined.md", Function_p->arguments_pp[0]); }
++        else {sprintf(path_p, "%s/undefined.md", Function_p->arguments_pp[1]); }
+ 
+         if (data_p) {
+             nh_make_writeBytesToFile(path_p, data_p);
+diff --git a/src/bin/nhmake/Helper.c b/src/bin/nhmake/Helper.c
+index dbe1b2d..76f381d 100644
+--- a/src/bin/nhmake/Helper.c
++++ b/src/bin/nhmake/Helper.c
+@@ -36,37 +36,36 @@ void getId(
+     pclose(Out_p);
+ }
+ 
+-// TODO Fix memory leak.
+-static NH_MAKE_RESULT addDateAndIdToChanges(
+-    nh_make_Changes *Changes_p)
++NH_BYTE *getNormalizedChangesString(
++    NH_BYTE *path_p, NH_BYTE *changes_p, int length)
+ {
+-    NH_BYTE id_p[255];
+-    memset(id_p, 0, 255);
+-    getId(id_p, "HEAD");
++    nh_make_Changelog Changelog = nh_make_createChangelog(path_p);
+ 
+     time_t t = time(NULL);
+     struct tm tm = *localtime(&t);
++
++    NH_BYTE date_p[255];
++    memset(date_p, 0, 255);
++    sprintf(date_p, "%d-%02d-%02d", tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday);
++
+     NH_BYTE time_p[255];
+     memset(time_p, 0, 255);
+-    sprintf(time_p, "%d-%02d-%02d,%02d:%02d:%02d", tm.tm_year+1900, tm.tm_mon+1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
+-
+-    Changes_p->date_p = malloc(sizeof(NH_BYTE) * (strlen(time_p) + 1));
+-    if (!Changes_p->date_p) {return NH_MAKE_ERROR_BAD_STATE;}
+-    strcpy(Changes_p->date_p, time_p);
++    sprintf(time_p, "%02d:%02d:%02d", tm.tm_hour, tm.tm_min, tm.tm_sec);
+ 
+-    Changes_p->id_p = malloc(sizeof(NH_BYTE) * (strlen(id_p) + 1));
+-    if (!Changes_p->id_p) {return NH_MAKE_ERROR_BAD_STATE;}
+-    strcpy(Changes_p->id_p, id_p);
+-}
++    NH_BYTE id_p[255];
++    memset(id_p, 0, 255);
++    getId(id_p, "HEAD");
+ 
+-NH_BYTE *getNormalizedChangesString(
+-    NH_BYTE *path_p, NH_BYTE *changes_p, int length)
+-{
+-    nh_make_Changelog Changelog = nh_make_createChangelog(path_p);
++    Changelog.Changes_p->date_p = date_p;
++    Changelog.Changes_p->time_p = time_p;
++    Changelog.Changes_p->id_p = id_p;
+ 
+-    addDateAndIdToChanges(Changelog.Changes_p);
+     nh_make_stringifyChangelog(&Changelog, changes_p, length);
+ 
++    Changelog.Changes_p->date_p = NULL;
++    Changelog.Changes_p->time_p = NULL;
++    Changelog.Changes_p->id_p = NULL;
++
+     nh_make_freeChangelog(&Changelog);
+ 
+     return changes_p;
+diff --git a/src/bin/nhmake/Main.c b/src/bin/nhmake/Main.c
+index a68412d..c452f85 100644
+--- a/src/bin/nhmake/Main.c
++++ b/src/bin/nhmake/Main.c
+@@ -27,7 +27,7 @@
+ 
+ // MISC CALLBACKS ==================================================================================
+ 
+-static NH_MAKE_RESULT printChanges(
++static NH_MAKE_RESULT printChangelog(
+     nh_make_Runtime *Runtime_p, nh_make_Function *Function_p)
+ {
+     if (Function_p->arguments != 1) {
+@@ -64,7 +64,7 @@ static NH_MAKE_RESULT printVersions(
+ }
+ 
+ // TODO Fix memory leak.
+-static NH_MAKE_RESULT updateChangelog(
++static NH_MAKE_RESULT addToChangelog(
+     nh_make_Runtime *Runtime_p, nh_make_Function *Function_p)
+ {
+     if (Function_p->arguments != 1) {
+@@ -126,20 +126,20 @@ static NH_MAKE_RESULT functionCallback(
+     else if (!strcmp(Function_p->name_p, "processWebIDL")) {
+         return processWebIDL(Runtime_p);
+     }
+-    else if (!strcmp(Function_p->name_p, "printChanges")) {
+-        return printChanges(Runtime_p, Function_p);
++    else if (!strcmp(Function_p->name_p, "printChangelog")) {
++        return printChangelog(Runtime_p, Function_p);
+     }
+     else if (!strcmp(Function_p->name_p, "printVersions")) {
+         return printVersions(Runtime_p);
+     }
+-    else if (!strcmp(Function_p->name_p, "updateChangelog")) {
+-        return updateChangelog(Runtime_p, Function_p);
++    else if (!strcmp(Function_p->name_p, "addToChangelog")) {
++        return addToChangelog(Runtime_p, Function_p);
+     }
+     else if (!strcmp(Function_p->name_p, "updateVersions")) {
+         return updateVersions(Runtime_p, Function_p);
+     }
+-    else if (!strcmp(Function_p->name_p, "createPatch")) {
+-        return createPatch(Runtime_p, Function_p);
++    else if (!strcmp(Function_p->name_p, "addToRawPatches")) {
++        return addToRawPatches(Runtime_p, Function_p);
+     }
+     else if (!strcmp(Function_p->name_p, "createPatchPages")) {
+         return createPatchPages(Runtime_p, Function_p);
+diff --git a/src/bin/nhmake/Patches.c b/src/bin/nhmake/Patches.c
+index fc9627e..295397d 100644
+--- a/src/bin/nhmake/Patches.c
++++ b/src/bin/nhmake/Patches.c
+@@ -25,7 +25,7 @@
+ 
+ // PATCH ===========================================================================================
+ 
+-NH_MAKE_RESULT createPatch(
++NH_MAKE_RESULT addToRawPatches(
+     nh_make_Runtime *Runtime_p, nh_make_Function *Function_p)
+ {
+     if (Function_p->arguments != 2) {
+diff --git a/src/bin/nhmake/Patches.h b/src/bin/nhmake/Patches.h
+index 7b26ec8..b51d2b1 100644
+--- a/src/bin/nhmake/Patches.h
++++ b/src/bin/nhmake/Patches.h
+@@ -17,7 +17,7 @@
+  *  @{
+  */
+ 
+-    NH_MAKE_RESULT createPatch(
++    NH_MAKE_RESULT addToRawPatches(
+         nh_make_Runtime *Runtime_p, nh_make_Function *Function_p
+     );
+ 
+diff --git a/src/bin/nhmake/Version.c b/src/bin/nhmake/Version.c
+index dec7b5e..af46cdc 100644
+--- a/src/bin/nhmake/Version.c
++++ b/src/bin/nhmake/Version.c
+@@ -42,9 +42,9 @@ static void getVersionSum(
+ void getVersionString(
+     nh_make_Runtime *Runtime_p, NH_BYTE *version_p)
+ {
+-    nh_make_SourceContextArray *Array_p = nh_make_getSourceContextArray(Runtime_p); 
++    nh_make_SourceContextArray *Array_p = nh_make_getSourceContextArray(Runtime_p);
+     nh_make_SourceContext *SourceContext_p = nh_make_getSourceContext(Runtime_p, "netzhaut", NH_MAKE_SOURCE_CONTEXT_SHARED_LIBRARY);
+-    sprintf(version_p, "ver.%ld.%ld.%ld.%ld", SourceContext_p->Version.api, SourceContext_p->Version.major, 
++    sprintf(version_p, "ver.%ld.%ld.%ld.%ld", SourceContext_p->Version.api, SourceContext_p->Version.major,
+         SourceContext_p->Version.minor, SourceContext_p->Version.patch);
+ }
+ 
+diff --git a/src/lib/netzhaut/netzhaut.h b/src/lib/netzhaut/netzhaut.h
+index 4e6c7bf..6fad0c3 100644
+--- a/src/lib/netzhaut/netzhaut.h
++++ b/src/lib/netzhaut/netzhaut.h
+@@ -57,7 +57,7 @@
+     /**
+      * The minor version is used for documenting the addition of small functionalities or consequential changes. 
+      */
+-    #define NETZHAUT_MINOR_VERSION 5
++    #define NETZHAUT_MINOR_VERSION 6
+ 
+     /**
+      * The patch version is used for documenting bugfixes or non-consequential changes. 
+diff --git a/src/lib/netzhaut/nhmake.c b/src/lib/netzhaut/nhmake.c
+index 5bebd92..e8caf69 100644
+--- a/src/lib/netzhaut/nhmake.c
++++ b/src/lib/netzhaut/nhmake.c
+@@ -192,6 +192,8 @@ NH_MAKE_RESULT nh_make_messagef(
+     return messagef_f ? messagef_f(format_p) : NH_MAKE_ERROR_BAD_STATE;
+ }
+ 
++// CHANGELOG =======================================================================================
++
+ nh_make_Changelog nh_make_createChangelog(
+     NH_BYTE *path_p)
+ {
+@@ -256,6 +258,8 @@ NH_MAKE_RESULT nh_make_stringifyChangelog(
+     return stringifyChangelog_f ? stringifyChangelog_f(Changelog_p, result_p, length) : NH_MAKE_ERROR_BAD_STATE;
+ }
+ 
++// VERSION =========================================================================================
++
+ NH_MAKE_RESULT nh_make_updateVersions(
+     nh_make_Runtime *Runtime_p)
+ {
+@@ -272,3 +276,12 @@ nh_make_Version nh_make_getVersion(
+     return getVersion_f ? getVersion_f(Changelog_p, Context_p, LastChanges_p) : Version;
+ }
+ 
++nh_make_Version nh_make_getRevision(
++    nh_make_Runtime *Runtime_p, nh_make_Changes *LastChanges_p)
++{
++    nh_make_Version Revision;
++    memset(&Revision, 0, sizeof(Revision));
++    nh_make_getRevision_f getRevision_f = !NH_LOADER_P ? NULL : NH_LOADER_P->loadSymbol_f(NH_MODULE_MAKE, 0, "nh_make_getRevision");
++    return getRevision_f ? getRevision_f(Runtime_p, LastChanges_p) : Revision;
++}
++
+diff --git a/src/lib/netzhaut/nhmake.h b/src/lib/netzhaut/nhmake.h
+index 2576f37..e9ec00f 100644
+--- a/src/lib/netzhaut/nhmake.h
++++ b/src/lib/netzhaut/nhmake.h
+@@ -142,7 +142,7 @@
+         nh_make_Changelog *Changelog_p, NH_BYTE *result_p, int length
+     );
+ 
+-// VERSIONS ========================================================================================
++// VERSION =========================================================================================
+ 
+     NH_MAKE_RESULT nh_make_updateVersions(
+         nh_make_Runtime *Runtime_p
+@@ -152,6 +152,10 @@
+         nh_make_Changelog *Changelog_p, nh_make_SourceContext *Context_p, nh_make_Changes *LastChanges_p
+     );
+ 
++    nh_make_Version nh_make_getRevision(
++        nh_make_Runtime *Runtime_p, nh_make_Changes *LastChanges_p
++    );
++
+ /** @} */
+ 
+ #endif // NETZHAUT_MAKE_H
+diff --git a/src/lib/nhmake/Common/About.h b/src/lib/nhmake/Common/About.h
+index 7a67922..c603130 100644
+--- a/src/lib/nhmake/Common/About.h
++++ b/src/lib/nhmake/Common/About.h
+@@ -73,12 +73,12 @@
+     /**
+      * The minor version is used for the addition of small functionalities.
+      */
+-    #define NH_MAKE_MINOR_VERSION 5
++    #define NH_MAKE_MINOR_VERSION 6
+ 
+     /**
+      * The patch version is used for bugfixes or non-consequential changes.
+      */
+-    #define NH_MAKE_PATCH_VERSION 2
++    #define NH_MAKE_PATCH_VERSION 0
+ 
+     /**
+      * Version array.
+diff --git a/src/lib/nhmake/Common/Types/Public.h b/src/lib/nhmake/Common/Types/Public.h
+index 5b69949..075a8df 100644
+--- a/src/lib/nhmake/Common/Types/Public.h
++++ b/src/lib/nhmake/Common/Types/Public.h
+@@ -74,6 +74,7 @@
+         NH_MAKE_CHANGES_NODE_SUMMARY,
+         NH_MAKE_CHANGES_NODE_AUTHOR,
+         NH_MAKE_CHANGES_NODE_DATE,
++        NH_MAKE_CHANGES_NODE_TIME,
+         NH_MAKE_CHANGES_NODE_ID,
+         NH_MAKE_CHANGES_NODE_WORKLOAD_BIN,
+         NH_MAKE_CHANGES_NODE_WORKLOAD_LIB,
+@@ -153,10 +154,13 @@
+ 
+     typedef struct nh_make_Changes {
+         NH_BYTE *date_p;
++        NH_BYTE *time_p;
+         NH_BYTE *id_p;
+         NH_BYTE *summary_p;
+         int workloads;
+         nh_make_Workload *Workloads_p;
++        int authors;
++        nh_make_Author *Authors_p;
+     } nh_make_Changes;
+ 
+     typedef struct nh_make_Changelog {
+diff --git a/src/lib/nhmake/Core/Changelog.c b/src/lib/nhmake/Core/Changelog.c
+index 5723521..4de5422 100644
+--- a/src/lib/nhmake/Core/Changelog.c
++++ b/src/lib/nhmake/Core/Changelog.c
+@@ -83,48 +83,74 @@ NH_MAKE_BEGIN()
+ NH_MAKE_END(Node_p)
+ }
+ 
+-static NH_MAKE_RESULT nh_make_parseChild(
+-    nh_make_ChangesParser *Parser_p) 
++static NH_MAKE_CHANGES_NODE nh_make_getChildType(
++    nh_make_ChangesParser *Parser_p)
+ {
+ NH_MAKE_BEGIN()
+ 
+-    if (!Parser_p->Token_p->string_p) {
+-         NH_MAKE_END(NH_MAKE_ERROR_BAD_STATE)       
+-    }
+-
+     NH_MAKE_CHANGES_NODE type = NH_MAKE_CHANGES_NODE_UNDEFINED;
+ 
+-    if (!strcmp(Parser_p->Token_p->string_p, "summary") && Parser_p->type == NH_MAKE_CHANGES_NODE_ROOT) {
+-        type = NH_MAKE_CHANGES_NODE_SUMMARY;
+-    }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "date")) {
+-        type = NH_MAKE_CHANGES_NODE_DATE;
+-    }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "id")) {
+-        type = NH_MAKE_CHANGES_NODE_ID;
+-    }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "summary") && Parser_p->type == NH_MAKE_CHANGES_NODE_WORKLOAD) {
+-        type = NH_MAKE_CHANGES_NODE_WORKLOAD_SUMMARY;
+-    }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "bin")) {
+-        type = NH_MAKE_CHANGES_NODE_WORKLOAD_BIN;
+-    }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "lib")) {
+-        type = NH_MAKE_CHANGES_NODE_WORKLOAD_LIB;
++    if (Parser_p->Node_p->type == NH_MAKE_CHANGES_NODE_ROOT) 
++    {
++        if (!strcmp(Parser_p->Token_p->string_p, "date")) {
++            type = NH_MAKE_CHANGES_NODE_DATE;
++        }
++        else if (!strcmp(Parser_p->Token_p->string_p, "time")) {
++            type = NH_MAKE_CHANGES_NODE_TIME;
++        }
++        else if (!strcmp(Parser_p->Token_p->string_p, "id")) {
++            type = NH_MAKE_CHANGES_NODE_ID;
++        }
+     }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "scope")) {
+-        type = NH_MAKE_CHANGES_NODE_WORKLOAD_SCOPE;
++
++    if (Parser_p->Node_p->type == NH_MAKE_CHANGES_NODE_WORKLOAD) 
++    {
++        if (!strcmp(Parser_p->Token_p->string_p, "bin")) {
++            type = NH_MAKE_CHANGES_NODE_WORKLOAD_BIN;
++        }
++        else if (!strcmp(Parser_p->Token_p->string_p, "lib")) {
++            type = NH_MAKE_CHANGES_NODE_WORKLOAD_LIB;
++        }
++        else if (!strcmp(Parser_p->Token_p->string_p, "scope")) {
++            type = NH_MAKE_CHANGES_NODE_WORKLOAD_SCOPE;
++        }
+     }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "contact")) {
+-        type = NH_MAKE_CHANGES_NODE_AUTHOR_CONTACT;
++
++    if (Parser_p->Node_p->type == NH_MAKE_CHANGES_NODE_ROOT 
++    ||  Parser_p->Node_p->type == NH_MAKE_CHANGES_NODE_WORKLOAD) 
++    {
++        if (!strcmp(Parser_p->Token_p->string_p, "summary")) {
++            type = NH_MAKE_CHANGES_NODE_SUMMARY;
++        }
+     }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "message")) {
+-        type = NH_MAKE_CHANGES_NODE_AUTHOR_MESSAGE;
++
++    if (Parser_p->Node_p->type == NH_MAKE_CHANGES_NODE_AUTHOR) 
++    {
++        if (!strcmp(Parser_p->Token_p->string_p, "contact")) {
++            type = NH_MAKE_CHANGES_NODE_AUTHOR_CONTACT;
++        }
++        else if (!strcmp(Parser_p->Token_p->string_p, "message")) {
++            type = NH_MAKE_CHANGES_NODE_AUTHOR_MESSAGE;
++        }
++        else if (!strcmp(Parser_p->Token_p->string_p, "name")) {
++            type = NH_MAKE_CHANGES_NODE_AUTHOR_NAME;
++        }
+     }
+-    else if (!strcmp(Parser_p->Token_p->string_p, "name")) {
+-        type = NH_MAKE_CHANGES_NODE_AUTHOR_NAME;
++
++NH_MAKE_END(type)
++}
++
++static NH_MAKE_RESULT nh_make_parseChild(
++    nh_make_ChangesParser *Parser_p) 
++{
++NH_MAKE_BEGIN()
++
++    if (!Parser_p->Token_p->string_p) {
++         NH_MAKE_END(NH_MAKE_ERROR_BAD_STATE)       
+     }
+ 
++    NH_MAKE_CHANGES_NODE type = nh_make_getChildType(Parser_p);
++
+     if (type == NH_MAKE_CHANGES_NODE_UNDEFINED) {
+         NH_MAKE_END(NH_MAKE_ERROR_BAD_STATE)
+     }
+@@ -257,71 +283,7 @@ NH_MAKE_END((nh_make_ChangesNode*)Parser.Node_p)
+ 
+ // PARSE PARSE-TREE ================================================================================
+ 
+-typedef struct nh_make_ChangesNodeArray {
+-    nh_make_ChangesNode **Nodes_pp;
+-    int nodes; 
+-} nh_make_ChangesNodeArray;
+-
+-static nh_make_ChangesNodeArray nh_make_initChangesNodeArray()
+-{
+-NH_MAKE_BEGIN()
+-
+-    nh_make_ChangesNodeArray Array;
+-    Array.Nodes_pp = NULL;
+-    Array.nodes = 0;
+-
+-NH_MAKE_END(Array)
+-}
+-
+-static NH_MAKE_RESULT nh_make_addToChangesNodeArray(
+-    nh_make_ChangesNodeArray *Array_p, nh_make_ChangesNode *Node_p)
+-{
+-NH_MAKE_BEGIN()
+-
+-     if (!Array_p->Nodes_pp) {
+-        Array_p->Nodes_pp = malloc(sizeof(nh_make_ChangesNode*));
+-        NH_MAKE_CHECK_NULL(Array_p->Nodes_pp)
+-        Array_p->Nodes_pp[0] = Node_p;
+-        Array_p->nodes = 1;
+-    }
+-    else {
+-        Array_p->Nodes_pp =
+-            realloc(Array_p->Nodes_pp, sizeof(nh_make_ChangesNode*) * (Array_p->nodes + 1));
+-        NH_MAKE_CHECK_NULL(Array_p->Nodes_pp)
+-        Array_p->Nodes_pp[Array_p->nodes] = Node_p;
+-        Array_p->nodes++;
+-    }
+-   
+-NH_MAKE_END(NH_MAKE_SUCCESS)
+-}
+-
+-static void nh_make_freeChangesNodeArray(
+-    nh_make_ChangesNodeArray *Array_p)
+-{
+-NH_MAKE_BEGIN()
+-
+-    free(Array_p->Nodes_pp);
+-
+-NH_MAKE_SILENT_END()
+-}
+-
+-static NH_MAKE_RESULT nh_make_getChangesNode(
+-    nh_make_ChangesNodeArray *Array_p, nh_make_ChangesNode *Node_p, NH_MAKE_CHANGES_NODE type)
+-{
+-NH_MAKE_BEGIN()
+-
+-    if (Node_p->type == type) {
+-        NH_MAKE_CHECK(nh_make_addToChangesNodeArray(Array_p, Node_p))
+-    }
+-
+-    for (int i = 0; i < Node_p->children; ++i) {
+-        nh_make_getChangesNode(Array_p, Node_p->Children_pp[i], type);
+-    }
+-
+-NH_MAKE_END(NH_MAKE_SUCCESS)
+-}
+-
+-static NH_MAKE_RESULT nh_make_getChangesAuthor(
++static NH_MAKE_RESULT nh_make_getAuthor(
+     nh_make_Author *Author_p, nh_make_ChangesNode *Node_p)
+ {
+ NH_MAKE_BEGIN()
+@@ -362,8 +324,8 @@ NH_MAKE_BEGIN()
+ NH_MAKE_DIAGNOSTIC_END(NH_MAKE_SUCCESS)
+ }
+ 
+-static NH_MAKE_RESULT nh_make_getWorkload(
+-    nh_make_Workload *Workload_p, nh_make_ChangesNode *Node_p)
++static void nh_make_initWorkload(
++    nh_make_Workload *Workload_p)
+ {
+ NH_MAKE_BEGIN()
+ 
+@@ -376,6 +338,16 @@ NH_MAKE_BEGIN()
+     Workload_p->Authors_p = NULL;
+     Workload_p->authors = 0;
+ 
++NH_MAKE_SILENT_END()
++}
++
++static NH_MAKE_RESULT nh_make_getWorkload(
++    nh_make_Workload *Workload_p, nh_make_ChangesNode *Node_p)
++{
++NH_MAKE_BEGIN()
++
++    nh_make_initWorkload(Workload_p);
++
+     int authors = 0, bins = 0, libs = 0;
+ 
+     for (int i = 0; i < Node_p->children; ++i) {
+@@ -429,7 +401,7 @@ NH_MAKE_BEGIN()
+         NH_MAKE_CHECK_NULL(Workload_p->Authors_p)
+         for (int i = 0, j = 0; i < Node_p->children; ++i) {
+             if (Node_p->Children_pp[i]->type == NH_MAKE_CHANGES_NODE_AUTHOR) {
+-                nh_make_getChangesAuthor(Workload_p->Authors_p+j, Node_p->Children_pp[i]);
++                nh_make_getAuthor(Workload_p->Authors_p+j, Node_p->Children_pp[i]);
+                 j++;
+             }
+         }
+@@ -445,15 +417,17 @@ static void nh_make_initChanges(
+ NH_MAKE_BEGIN()
+ 
+     Changes_p->date_p = NULL;
++    Changes_p->time_p = NULL;
+     Changes_p->id_p = NULL;
+     Changes_p->summary_p = NULL;
+     Changes_p->workloads = 0;
+     Changes_p->Workloads_p = NULL;
++    Changes_p->authors = 0;
++    Changes_p->Authors_p = NULL;
+ 
+ NH_MAKE_SILENT_END()
+ }
+ 
+-// TODO Fix memory leak.
+ static NH_MAKE_RESULT nh_make_parseChangesNode(
+     nh_make_ChangesNode *Root_p, nh_make_Changes *Changes_p)
+ {
+@@ -461,43 +435,62 @@ NH_MAKE_BEGIN()
+ 
+     nh_make_initChanges(Changes_p);
+ 
+-    nh_make_ChangesNodeArray Array = nh_make_initChangesNodeArray();
+-    NH_MAKE_CHECK(nh_make_getChangesNode(&Array, Root_p, NH_MAKE_CHANGES_NODE_SUMMARY))
+-    if (Array.nodes != 1) {NH_MAKE_END(NH_MAKE_ERROR_BAD_STATE)}
+-    Changes_p->summary_p = Array.Nodes_pp[0]->text_p;
+-    nh_make_freeChangesNodeArray(&Array);
+-
+-    Array = nh_make_initChangesNodeArray();
+-    NH_MAKE_CHECK(nh_make_getChangesNode(&Array, Root_p, NH_MAKE_CHANGES_NODE_ID))
+-    if (Array.nodes >= 1) {
+-        Changes_p->id_p = Array.Nodes_pp[0]->text_p;
+-    }
+-    nh_make_freeChangesNodeArray(&Array);
++    int workloads = 0;
++    int authors = 0;
+ 
+-    Array = nh_make_initChangesNodeArray();
+-    NH_MAKE_CHECK(nh_make_getChangesNode(&Array, Root_p, NH_MAKE_CHANGES_NODE_DATE))
+-    if (Array.nodes >= 1) {
+-        Changes_p->date_p = Array.Nodes_pp[0]->text_p;
++    for (int i = 0; i < Root_p->children; ++i) {
++        nh_make_ChangesNode *Child_p = Root_p->Children_pp[i];
++        switch (Child_p->type) {
++            case NH_MAKE_CHANGES_NODE_SUMMARY :
++                Changes_p->summary_p = Child_p->text_p;
++                break;
++            case NH_MAKE_CHANGES_NODE_ID :
++                Changes_p->id_p = Child_p->text_p;
++                break;
++            case NH_MAKE_CHANGES_NODE_DATE :
++                Changes_p->date_p = Child_p->text_p;
++                break;
++            case NH_MAKE_CHANGES_NODE_TIME :
++                Changes_p->time_p = Child_p->text_p;
++                break;
++            case NH_MAKE_CHANGES_NODE_WORKLOAD :
++                ++workloads;
++                break;
++            case NH_MAKE_CHANGES_NODE_AUTHOR :
++                ++authors;
++                break;
++        }
+     }
+-    nh_make_freeChangesNodeArray(&Array);
+ 
+-    Array = nh_make_initChangesNodeArray();
+-    NH_MAKE_CHECK(nh_make_getChangesNode(&Array, Root_p, NH_MAKE_CHANGES_NODE_WORKLOAD))
++    if (workloads)
++    {
++        Changes_p->Workloads_p = malloc(sizeof(nh_make_Workload)*workloads);
++        NH_MAKE_CHECK_NULL(Changes_p->Workloads_p)
++
++        for (int i = 0, count = 0; i < Root_p->children; ++i) {
++            if (Root_p->Children_pp[i]->type == NH_MAKE_CHANGES_NODE_WORKLOAD) {
++                NH_MAKE_CHECK(nh_make_getWorkload(Changes_p->Workloads_p+count, Root_p->Children_pp[i]))
++                count++;
++            } 
++        }
+ 
+-    if (Array.nodes == 0) {
+-        NH_MAKE_END(NH_MAKE_ERROR_BAD_STATE)
++        Changes_p->workloads = workloads;
+     }
+ 
+-    Changes_p->Workloads_p = malloc(sizeof(nh_make_Workload)*Array.nodes);
+-    NH_MAKE_CHECK_NULL(Changes_p->Workloads_p)
+-
+-    for (int i = 0; i < Array.nodes; ++i) {
+-        NH_MAKE_CHECK(nh_make_getWorkload(Changes_p->Workloads_p+i, Array.Nodes_pp[i]))
+-    } 
+-
+-    Changes_p->workloads = Array.nodes;
++    if (authors)
++    {
++        Changes_p->Authors_p = malloc(sizeof(nh_make_Author)*authors);
++        NH_MAKE_CHECK_NULL(Changes_p->Authors_p)
++
++        for (int i = 0, count = 0; i < Root_p->children; ++i) {
++            if (Root_p->Children_pp[i]->type == NH_MAKE_CHANGES_NODE_AUTHOR) {
++                NH_MAKE_CHECK(nh_make_getAuthor(Changes_p->Authors_p+count, Root_p->Children_pp[i]))
++                count++;
++            } 
++        }
+ 
+-    nh_make_freeChangesNodeArray(&Array);
++        Changes_p->authors = authors;
++    }
+ 
+ NH_MAKE_END(NH_MAKE_SUCCESS)
+ }
+@@ -509,29 +502,23 @@ NH_MAKE_BEGIN()
+ 
+ #include NH_MAKE_CUSTOM_CHECK
+ 
+-    if (changes_p) {*changes_p = 0;}
+-
+-    nh_make_ChangesNodeArray Array = nh_make_initChangesNodeArray();
+-    NH_MAKE_CHECK(NULL, nh_make_getChangesNode(&Array, Root_p, NH_MAKE_CHANGES_NODE_ROOT))
++    if (Root_p->children <= 0) {NH_MAKE_END(NULL)}
+ 
+-    if (Array.nodes <= 0) {NH_MAKE_END(NULL)}
+-
+-    nh_make_Changes *Changes_p = malloc(sizeof(nh_make_Changes)*Array.nodes);
++    nh_make_Changes *Changes_p = malloc(sizeof(nh_make_Changes)*Root_p->children);
+     NH_MAKE_CHECK_NULL(NULL, Changes_p)
+ 
+-    for (int i = 0; i < Array.nodes; ++i) {
+-        NH_MAKE_CHECK(NULL, nh_make_parseChangesNode(Array.Nodes_pp[i], Changes_p+i))
++    for (int i = 0; i < Root_p->children; ++i) {
++        NH_MAKE_CHECK(NULL, nh_make_parseChangesNode(Root_p->Children_pp[i], Changes_p+i))
+     } 
+-    if (changes_p) {*changes_p = Array.nodes;}
+ 
+-    nh_make_freeChangesNodeArray(&Array);
++    if (changes_p) {*changes_p = Root_p->children;}
+ 
+ #include NH_MAKE_DEFAULT_CHECK
+ 
+ NH_MAKE_END(Changes_p)
+ }
+ 
+-// MESSAGE =========================================================================================
++// PRINT ===========================================================================================
+ 
+ NH_MAKE_RESULT nh_make_printChangelog(
+     nh_make_Runtime *Runtime_p, nh_make_Changelog *Changelog_p)
+@@ -541,27 +528,59 @@ NH_MAKE_BEGIN()
+     for (int j = 0; j < Changelog_p->changes; ++j) 
+     {
+         nh_make_Changes *Changes_p = Changelog_p->Changes_p+j;
+-        nh_make_messagef("%s", Changes_p->summary_p);
++        nh_make_messagef("changes");
++
++        if (Changes_p->summary_p) {
++            nh_make_messagef("| summary: %s", Changes_p->summary_p);
++        }
++        if (Changes_p->id_p) {
++            nh_make_messagef("| id: %s", Changes_p->id_p);
++        }
++        if (Changes_p->date_p) {
++            nh_make_messagef("| date: %s", Changes_p->date_p);
++        }
++        if (Changes_p->time_p) {
++            nh_make_messagef("| time: %s", Changes_p->time_p);
++        }
++
++        for (int i = 0; i < Changes_p->authors; ++i) 
++        {
++            nh_make_messagef("| author");
++
++            if (Changes_p->Authors_p[i].name_p) {
++                nh_make_messagef(": | name: %s", Changes_p->Authors_p[i].name_p);
++            }
++            for (int k = 0; k < Changes_p->Authors_p[i].messages; ++k) {
++                nh_make_messagef(": | message %d: %s", k, Changes_p->Authors_p[i].messages_pp[k]);
++            }
++        }
+ 
+         for (int i = 0; i < Changes_p->workloads; ++i) 
+         {
+             nh_make_Workload *Workload_p = Changes_p->Workloads_p+i;
+-            nh_make_messagef("  [%s update]", Workload_p->scope_p);
+-    
++            nh_make_messagef("| workload");
++
++            if (Workload_p->scope_p) {
++                nh_make_messagef(": | scope: %s", Workload_p->scope_p);
++            }
+ 	    if (Workload_p->summary_p) {
+-                nh_make_messagef("  summary: %s", Workload_p->summary_p);
++                nh_make_messagef(": | summary: %s", Workload_p->summary_p);
+             }
+ 
+-            for (int j = 0; j < Workload_p->libs; ++j) {
+-                nh_make_messagef("  lib: %s", Workload_p->libs_pp[j]);
++            for (int k = 0; k < Workload_p->libs; ++k) {
++                nh_make_messagef(": | lib %d: %s", k, Workload_p->libs_pp[k]);
+             }
+-            for (int j = 0; j < Workload_p->bins; ++j) {
+-                nh_make_messagef("  bin: %s", Workload_p->bins_pp[j]);
++            for (int k = 0; k < Workload_p->bins; ++k) {
++                nh_make_messagef(": | bin %d: %s", k, Workload_p->bins_pp[k]);
+             }
+-            for (int j = 0; j < Workload_p->authors; ++j) {
+-                nh_make_messagef("    author: %s", Workload_p->Authors_p[j].name_p);
+-                for (int k = 0; k < Workload_p->Authors_p[j].messages; ++k) {
+-                    nh_make_messagef("      message %d: %s", k, Workload_p->Authors_p[j].messages_pp[k]);
++
++            for (int k = 0; k < Workload_p->authors; ++k) {
++                nh_make_messagef(": | author");
++                if (Workload_p->Authors_p[k].name_p) {
++                    nh_make_messagef(": : | name: %s", Workload_p->Authors_p[k].name_p);
++                }
++                for (int l = 0; l < Workload_p->Authors_p[k].messages; ++l) {
++                    nh_make_messagef(": : | message %d: %s", l, Workload_p->Authors_p[k].messages_pp[l]);
+                 }
+             }
+         }
+@@ -638,13 +657,30 @@ NH_MAKE_BEGIN()
+ 
+     memset(result_p, 0, length);
+ 
+-    for (int j = 0; j < Changelog_p->changes; ++j) {
+-        sprintf(result_p+strlen(result_p), "changes{date:\"%s\"id:\"%s\"summary:\"%s\"",
+-            Changelog_p->Changes_p[j].date_p, Changelog_p->Changes_p[j].id_p, 
+-	    Changelog_p->Changes_p[j].summary_p);
++    for (int j = 0; j < Changelog_p->changes; ++j) 
++    {
++        sprintf(result_p+strlen(result_p), "changes{");
++
++        if (Changelog_p->Changes_p[j].date_p) {
++            sprintf(result_p+strlen(result_p), "date:\"%s\"", Changelog_p->Changes_p[j].date_p);
++        }
++        if (Changelog_p->Changes_p[j].time_p) {
++            sprintf(result_p+strlen(result_p), "time:\"%s\"", Changelog_p->Changes_p[j].time_p);
++        }
++        if (Changelog_p->Changes_p[j].id_p) {
++            sprintf(result_p+strlen(result_p), "id:\"%s\"", Changelog_p->Changes_p[j].id_p);
++        }
++        if (Changelog_p->Changes_p[j].summary_p) {
++            sprintf(result_p+strlen(result_p), "summary:\"%s\"", Changelog_p->Changes_p[j].summary_p);
++        }
++
++        for (int i = 0; i < Changelog_p->Changes_p[j].authors; ++i) {
++            NH_MAKE_CHECK(nh_make_stringifyAuthor(Changelog_p->Changes_p[j].Authors_p+i, result_p))
++        }
+         for (int i = 0; i < Changelog_p->Changes_p[j].workloads; ++i) {
+             NH_MAKE_CHECK(nh_make_stringifyWorkload(Changelog_p->Changes_p[j].Workloads_p+i, result_p))
+         }
++
+         strcpy(result_p+strlen(result_p), "}");
+     }
+ 
+diff --git a/src/lib/nhmake/Core/Version.c b/src/lib/nhmake/Core/Version.c
+index cd81daf..d35651d 100644
+--- a/src/lib/nhmake/Core/Version.c
++++ b/src/lib/nhmake/Core/Version.c
+@@ -100,6 +100,24 @@ NH_MAKE_BEGIN()
+ NH_MAKE_DIAGNOSTIC_END(NH_MAKE_SUCCESS)
+ }
+ 
++nh_make_Version nh_make_getRevision(
++    nh_make_Runtime *Runtime_p, nh_make_Changes *LastChanges_p)
++{
++NH_MAKE_BEGIN()
++
++    nh_make_Version Revision = nh_make_initVersion();
++    for (int i = 0; i < Runtime_p->SourceContextArray.length; ++i) {
++        nh_make_Version Version = 
++            nh_make_getVersion(nh_make_getChangelog(Runtime_p), Runtime_p->SourceContextArray.SourceContexts_p+i, LastChanges_p); 
++        Revision.api += Version.api;
++        Revision.major += Version.major;
++        Revision.minor += Version.minor;
++        Revision.patch += Version.patch;
++    }
++
++NH_MAKE_END(Revision)
++}
++
+ nh_make_Version nh_make_getVersion(
+     nh_make_Changelog *Changelog_p, nh_make_SourceContext *Context_p, nh_make_Changes *LastChanges_p)
+ {
+diff --git a/src/lib/nhmake/Core/Version.h b/src/lib/nhmake/Core/Version.h
+index d371fc9..ce02899 100644
+--- a/src/lib/nhmake/Core/Version.h
++++ b/src/lib/nhmake/Core/Version.h
+@@ -25,6 +25,10 @@
+         nh_make_Changelog *Changelog_p, nh_make_SourceContext *Context_p, nh_make_Changes *LastChanges_p
+     );
+ 
++    typedef nh_make_Version (*nh_make_getRevision_f)(
++        nh_make_Runtime *Runtime_p, nh_make_Changes *LastChanges_p
++    );
++
+ /** @} */
+ 
+ /** @addtogroup lib_nhmake_functions
+-- 
+2.35.1
+
