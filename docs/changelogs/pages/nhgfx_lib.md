@@ -2,9 +2,19 @@
 
 <div style="max-width:700px;">
 
+\section nhgfx0070 v0.0.7.0
+
+2022-05-23 | 23:45:23 | rev.010553 | [open patch](../../patches/html/md_pages_6811cfdd57cf3fd4a0dbec076ef11a8723f5787a.html)
+
+ ---
+
+ Continue work on OpenGL implementation.
+
+
+
 \section nhgfx0060 v0.0.6.0
 
-2022-04-29 | 20:34:22 | rev.010506 | [4ba35ffb4c8797b2086385b66bc7747184bd9c5e](../../patches/html/md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html)
+2022-04-29 | 20:34:22 | rev.010506 | [open patch](../../patches/html/md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html)
 
  ---
 

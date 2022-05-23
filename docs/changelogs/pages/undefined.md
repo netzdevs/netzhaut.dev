@@ -4,7 +4,7 @@
 
 \section undefined0002 v0.0.0.2
 
-2022-05-02 | 22:01:31 | rev.010524 | [eafc68b059025388c61b5e4822614dfa7b8d39d0](../../patches/html/md_pages_eafc68b059025388c61b5e4822614dfa7b8d39d0.html)
+2022-05-02 | 22:01:31 | rev.010524 | [open patch](../../patches/html/md_pages_eafc68b059025388c61b5e4822614dfa7b8d39d0.html)
 
  ---
 

@@ -1,9 +1,12 @@
 <div style="max-width:700px;">
 
-2022-05-02 | 22:01:31  | rev.010524 | [eafc68b059025388c61b5e4822614dfa7b8d39d0](../../patches/html/md_pages_eafc68b059025388c61b5e4822614dfa7b8d39d0.html)
+2022-05-23 | 23:45:23  | rev.010553 | [open patch](../../patches/html/md_pages_6811cfdd57cf3fd4a0dbec076ef11a8723f5787a.html)
 
  ---
-[nhmake](md_pages_nhmake_lib.html#nhmake0260), [netzhaut](md_pages_netzhaut_lib.html#netzhaut0260)<br>Improve changelog related implementation.<br><br>2022-04-29 | 20:34:22  | rev.010506 | [4ba35ffb4c8797b2086385b66bc7747184bd9c5e](../../patches/html/md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html)
+[nhgfx](md_pages_nhgfx_lib.html#nhgfx0070), [nhterminal](md_pages_nhterminal_lib.html#nhterminal0020), [nhwsi](md_pages_nhwsi_lib.html#nhwsi0030)<br>Continue work on OpenGL implementation.<br><br>2022-05-02 | 22:01:31  | rev.010524 | [open patch](../../patches/html/md_pages_eafc68b059025388c61b5e4822614dfa7b8d39d0.html)
+
+ ---
+[nhmake](md_pages_nhmake_lib.html#nhmake0260), [netzhaut](md_pages_netzhaut_lib.html#netzhaut0260)<br>Improve changelog related implementation.<br><br>2022-04-29 | 20:34:22  | rev.010506 | [open patch](../../patches/html/md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html)
 
  ---
 [nhtty](md_pages_nhtty_lib.html#nhtty0140), [nhgfx](md_pages_nhgfx_lib.html#nhgfx0060), [nhrenderer](md_pages_nhrenderer_lib.html#nhrenderer0020)<br>Improve nhtty and begin OpenGL implementation.<br><br>2022-04-06  | rev.010476

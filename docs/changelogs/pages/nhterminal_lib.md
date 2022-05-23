@@ -2,6 +2,16 @@
 
 <div style="max-width:700px;">
 
+\section nhterminal0020 v0.0.2.0
+
+2022-05-23 | 23:45:23 | rev.010553 | [open patch](../../patches/html/md_pages_6811cfdd57cf3fd4a0dbec076ef11a8723f5787a.html)
+
+ ---
+
+ Continue work on OpenGL implementation.
+
+
+
 \section nhterminal0011 v0.0.1.1
 
 2022-03-31 | 01:08:49 | rev.010473

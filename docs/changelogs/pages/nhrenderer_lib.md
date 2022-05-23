@@ -4,7 +4,7 @@
 
 \section nhrenderer0020 v0.0.2.0
 
-2022-04-29 | 20:34:22 | rev.010506 | [4ba35ffb4c8797b2086385b66bc7747184bd9c5e](../../patches/html/md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html)
+2022-04-29 | 20:34:22 | rev.010506 | [open patch](../../patches/html/md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html)
 
  ---
 
