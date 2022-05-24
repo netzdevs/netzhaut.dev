@@ -1,6 +1,9 @@
 <div style="max-width:700px;">
 
-2022-05-23 | 23:45:23  | rev.010553 | [open patch](../../patches/html/md_pages_6811cfdd57cf3fd4a0dbec076ef11a8723f5787a.html)
+2022-05-24 | 18:26:08  | rev.010554 | [open patch](../../patches/html/md_pages_bc79b0851df5427401418f9ed6539bb7ab0adb0b.html)
+
+ ---
+[nhterminal](md_pages_nhterminal_lib.html#nhterminal0021)<br>Make temporary terminal font selection more robust.<br><br>2022-05-23 | 23:45:23  | rev.010553 | [open patch](../../patches/html/md_pages_6811cfdd57cf3fd4a0dbec076ef11a8723f5787a.html)
 
  ---
 [nhgfx](md_pages_nhgfx_lib.html#nhgfx0070), [nhterminal](md_pages_nhterminal_lib.html#nhterminal0020), [nhwsi](md_pages_nhwsi_lib.html#nhwsi0030)<br>Continue work on OpenGL implementation.<br><br>2022-05-02 | 22:01:31  | rev.010524 | [open patch](../../patches/html/md_pages_eafc68b059025388c61b5e4822614dfa7b8d39d0.html)
