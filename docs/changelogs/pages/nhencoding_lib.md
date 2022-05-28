@@ -2,94 +2,76 @@
 
 <div style="max-width:700px;">
 
-\section nhencoding0120 v0.1.2.0
+\section nhencoding0120 ver.0.1.2.0
 
-2022-03-16 | rev.010430
+2022-03-16 | rev.0.10.43.0
 
  ---
 
  Rework nhmake. Refactor a lot of stuff.
 
+<br>\section nhencoding0110 ver.0.1.1.0
 
-
-\section nhencoding0110 v0.1.1.0
-
-2021-09-09 | rev.010239
+2021-09-09 | rev.0.10.23.9
 
  ---
 
  Add convenience function nh_encoding_compareUTF32ASCII().
 
+<br>\section nhencoding0100 ver.0.1.0.0
 
-
-\section nhencoding0100 v0.1.0.0
-
-2021-07-08 | rev.010208
+2021-07-08 | rev.0.10.20.8
 
  ---
 
  Add abstract ref nh_encoding_String interface. Add nh_encoding_splitUTF32(). Add nh_encoding_digitsToNumber().
 
+<br>\section nhencoding0040 ver.0.0.4.0
 
-
-\section nhencoding0040 v0.0.4.0
-
-2021-06-29 | rev.082512
+2021-06-29 | rev.0.8.25.12
 
  ---
 
  Change nh_encoding_compareUTF32() parameters. Add nh_encoding_hexDigitToNumber().
 
+<br>\section nhencoding0031 ver.0.0.3.1
 
-
-\section nhencoding0031 v0.0.3.1
-
-2021-06-09 | rev.052311
+2021-06-09 | rev.0.5.23.11
 
  ---
 
  Improve UTF8 decoding functions by adding read parameters.
 
+<br>\section nhencoding0030 ver.0.0.3.0
 
-
-\section nhencoding0030 v0.0.3.0
-
-2021-06-07 | rev.042114
+2021-06-07 | rev.0.4.21.14
 
  ---
 
  Add nh_encoding_compareUTF32(). Add nh_encoding_appendUTF32Codepoint(). Rename some UTF32 functions.
 
+<br>\section nhencoding0020 ver.0.0.2.0
 
-
-\section nhencoding0020 v0.0.2.0
-
-2021-05-30 | rev.041712
+2021-05-30 | rev.0.4.17.12
 
  ---
 
  Add simple UTF32 matching function.
 
+<br>\section nhencoding0010 ver.0.0.1.0
 
-
-\section nhencoding0010 v0.0.1.0
-
-2021-05-29 | rev.041512
+2021-05-29 | rev.0.4.15.12
 
  ---
 
  Add UTF32 functions.
 
+<br>\section nhencoding0000 ver.0.0.0.0
 
-
-\section nhencoding0000 v0.0.0.0
-
-2021-02-23 | rev.0000
+2021-02-23 | rev.0.0.0.0
 
  ---
 
  Initial version.
 
-
-
-</div>
+<br></div>

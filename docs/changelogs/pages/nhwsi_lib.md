@@ -2,54 +2,44 @@
 
 <div style="max-width:700px;">
 
-\section nhwsi0030 v0.0.3.0
+\section nhwsi0030 ver.0.0.3.0
 
-2022-05-23 | 23:45:23 | rev.010553 | [open patch](../../patches/html/md_pages_6811cfdd57cf3fd4a0dbec076ef11a8723f5787a.html)
+2022-05-23 | 23:45:23 | rev.0.10.55.3
 
  ---
 
  Continue work on OpenGL implementation.
 
+<br>\section nhwsi0020 ver.0.0.2.0
 
-
-\section nhwsi0020 v0.0.2.0
-
-2022-03-16 | rev.010430
+2022-03-16 | rev.0.10.43.0
 
  ---
 
  Rework nhmake. Refactor a lot of stuff.
 
+<br>\section nhwsi0010 ver.0.0.1.0
 
-
-\section nhwsi0010 v0.0.1.0
-
-2021-06-14 | rev.071911
+2021-06-14 | rev.0.7.19.11
 
  ---
 
  Rewrite event-handling structures. Simplify keyboard handling. Add event callback.
 
+<br>\section nhwsi0001 ver.0.0.0.1
 
-
-\section nhwsi0001 v0.0.0.1
-
-2021-05-28 | rev.041412
+2021-05-28 | rev.0.4.14.12
 
  ---
 
  Reorganize files.
 
+<br>\section nhwsi0000 ver.0.0.0.0
 
-
-\section nhwsi0000 v0.0.0.0
-
-2021-02-23 | rev.0000
+2021-02-23 | rev.0.0.0.0
 
  ---
 
  Initial version.
 
-
-
-</div>
+<br></div>

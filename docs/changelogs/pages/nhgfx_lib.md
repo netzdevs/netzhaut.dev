@@ -2,19 +2,33 @@
 
 <div style="max-width:700px;">
 
-\section nhgfx0070 v0.0.7.0
+\section nhgfx0072 ver.0.0.7.2
 
-2022-05-23 | 23:45:23 | rev.010553 | [open patch](../../patches/html/md_pages_6811cfdd57cf3fd4a0dbec076ef11a8723f5787a.html)
+2022-05-28 | 16:07:04 | rev.0.10.55.7 | [open patch](../../patches/html/md_pages_be7dfc8a21e4e40b9a4cdbd66d9ce21a411efed6.html)
+
+ ---
+
+ Partially fix OpenGL implementation.
+
+<br>\section nhgfx0071 ver.0.0.7.1
+
+2022-05-27 | 16:36:15 | rev.0.10.55.5
+
+ ---
+
+ Hopefully fix font-size issue.
+
+<br>\section nhgfx0070 ver.0.0.7.0
+
+2022-05-23 | 23:45:23 | rev.0.10.55.3
 
  ---
 
  Continue work on OpenGL implementation.
 
+<br>\section nhgfx0060 ver.0.0.6.0
 
-
-\section nhgfx0060 v0.0.6.0
-
-2022-04-29 | 20:34:22 | rev.010506 | [open patch](../../patches/html/md_pages_4ba35ffb4c8797b2086385b66bc7747184bd9c5e.html)
+2022-04-29 | 20:34:22 | rev.0.10.50.6
 
  ---
 
@@ -22,96 +36,76 @@
 
 
 
+<br>\section nhgfx0050 ver.0.0.5.0
 
-
-\section nhgfx0050 v0.0.5.0
-
-2022-03-16 | rev.010430
+2022-03-16 | rev.0.10.43.0
 
  ---
 
  Rework nhmake. Refactor a lot of stuff.
 
+<br>\section nhgfx0041 ver.0.0.4.1
 
-
-\section nhgfx0041 v0.0.4.1
-
-2021-06-14 | rev.071812
+2021-06-14 | rev.0.7.18.12
 
  ---
 
  Add nh_gfx_vk_reloadFontTexture(). Fix wrong scissor position for vulkan viewports.
 
+<br>\section nhgfx0040 ver.0.0.4.0
 
-
-\section nhgfx0040 v0.0.4.0
-
-2021-06-12 | rev.062011
+2021-06-12 | rev.0.6.20.11
 
  ---
 
  Add nh_gfx_claimViewport() to streamline viewport claiming. Add monospace font-family names. Add nh_gfx_createTextFromFont().
 
+<br>\section nhgfx0032 ver.0.0.3.2
 
-
-\section nhgfx0032 v0.0.3.2
-
-2021-05-25 | rev.04148
+2021-05-25 | rev.0.4.14.8
 
  ---
 
  Fix nh_gfx_getFittingTextLength() by calculating width based on pixel.
 
+<br>\section nhgfx0031 ver.0.0.3.1
 
-
-\section nhgfx0031 v0.0.3.1
-
-2021-05-16 | rev.0397
+2021-05-16 | rev.0.3.9.7
 
  ---
 
  Add codepoint to ref nh_gfx_Glyph.
 
+<br>\section nhgfx0030 ver.0.0.3.0
 
-
-\section nhgfx0030 v0.0.3.0
-
-2021-05-10 | rev.0298
+2021-05-10 | rev.0.2.9.8
 
  ---
 
  Fix text-width calculation by changing float-addition to int-addition in nh_gfx_getTextWidth(). Set fallback font-weight to 400 when parsing fails. Add nh_gfx_createText() for rendering text using multiple fonts.
 
+<br>\section nhgfx0020 ver.0.0.2.0
 
-
-\section nhgfx0020 v0.0.2.0
-
-2021-05-06 | rev.0288
+2021-05-06 | rev.0.2.8.8
 
  ---
 
  Create new directory for font-related stuff. Add first iteration of generic font-family handling. Improve general font-handling. Improve font-logging.
 
+<br>\section nhgfx0010 ver.0.0.1.0
 
-
-\section nhgfx0010 v0.0.1.0
-
-2021-04-30 | rev.0257
+2021-04-30 | rev.0.2.5.7
 
  ---
 
  Change nh_gfx_getGlyph(), nh_gfx_getTextHeight(), and nh_gfx_getTextWidth() to accept UTF32 arguments instead of UTF8. Improve font rendering by adding Harfbuzz routines. Improve font logging. Remove font-prototype concept.
 
+<br>\section nhgfx0000 ver.0.0.0.0
 
-
-\section nhgfx0000 v0.0.0.0
-
-2021-02-23 | rev.0000
+2021-02-23 | rev.0.0.0.0
 
  ---
 
  Initial version.
 
-
-
-</div>
+<br></div>

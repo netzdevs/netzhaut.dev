@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9"/>
     <meta name="generator" content="Doxygen 1.9.2"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Netzhaut | Web Browser Engine | Changelogs</title>
+    <title>Netzhaut | Web Browser Engine | Patches</title>
     <link href="tabs.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="dynsections.js"></script>
@@ -43,7 +43,7 @@ ver.0.2.6.0
 <!-- NH_MAKE_INSERT_API_VERSION_END -->
 <br>
 <!-- NH_MAKE_INSERT_REVISION_BEGIN -->
-rev.0.10.55.7
+rev.0.10.55.5
 <!-- NH_MAKE_INSERT_REVISION_END -->
 </b>
           </div>
@@ -58,8 +58,8 @@ rev.0.10.55.7
           <a href="../../design/html/index.html">Design</a>
           <a href="../../internals/html/index.html">Internals</a>
           <a href="../../api/html/index.html">API</a>
-          <a class="active" href="../../changelogs/html/index.html">Changelogs</a>
-          <a href="../../patches/html/index.html">Patches</a>
+          <a href="../../changelogs/html/index.html">Changelogs</a>
+          <a class="active" href="../../patches/html/index.html">Patches</a>
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",'Search','.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dir_208d2690607c4e3d3fabfa1d18673d36.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_pages_bc79b0851df5427401418f9ed6539bb7ab0adb0b.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -100,11 +100,61 @@ $(document).ready(function(){initNavTree('dir_208d2690607c4e3d3fabfa1d18673d36.h
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">pages Directory Reference</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">bc79b0851df5427401418f9ed6539bb7ab0adb0b </div></div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p > 
+
+<pre>
+From bc79b0851df5427401418f9ed6539bb7ab0adb0b Mon Sep 17 00:00:00 2001
+From: Dajo Frey &ltdajo.frey@gmail.com>
+Date: Tue, 24 May 2022 18:24:28 +0200
+Subject: [PATCH] Make temporary terminal font selection more robust.
+
+---
+ CHANGES.txt                            |  1 +
+ src/lib/nhterminal/Terminal/Terminal.c | 11 ++++++++++-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+ create mode 100644 CHANGES.txt
+
+diff --git a/CHANGES.txt b/CHANGES.txt
+new file mode 100644
+index 0000000..4d03501
+--- /dev/null
++++ b/CHANGES.txt
+@@ -0,0 +1 @@
++changes{date:"2022-05-24"summary:"Make temporary terminal font selection more robust."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"patch"lib:"nhterminal"}}
+diff --git a/src/lib/nhterminal/Terminal/Terminal.c b/src/lib/nhterminal/Terminal/Terminal.c
+index 19811ed..5294708 100644
+--- a/src/lib/nhterminal/Terminal/Terminal.c
++++ b/src/lib/nhterminal/Terminal/Terminal.c
+@@ -83,7 +83,16 @@ NH_TERMINAL_BEGIN()
+ 
+         nh_gfx_Text Text;
+         NH_ENCODING_UTF32 c = 'e';
+-        nh_gfx_createTextFromFont(&Text, &c, 1, Terminal_p->Graphics.fontSize, Terminal_p->Graphics.Fonts.pp[0]);
++
++        NH_GFX_RESULT failure = 1;
++        for (int i = 0; i &lt Terminal_p->Graphics.Fonts.size; ++i) {
++            failure = nh_gfx_createTextFromFont(&Text, &c, 1, Terminal_p->Graphics.fontSize, Terminal_p->Graphics.Fonts.pp[i]);
++            if (!failure) {
++                Terminal_p->Graphics.font = i;
++                break;
++            }
++        }
++        if (failure) {NH_TERMINAL_END(NH_TERMINAL_ERROR_BAD_STATE)}
+ 
+         Terminal_p->Grid.Size.width = Terminal_p->Graphics.Viewport_p->Settings.Size.width;
+         Terminal_p->Grid.Size.height = Terminal_p->Graphics.Viewport_p->Settings.Size.height;
+-- 
+2.36.1
+
+
+</pre>
+ </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
   <!-- HTML footer for doxygen 1.8.15-->
   <!-- start footer part -->

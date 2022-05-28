@@ -43,7 +43,7 @@ ver.0.2.6.0
 <!-- NH_MAKE_INSERT_API_VERSION_END -->
 <br>
 <!-- NH_MAKE_INSERT_REVISION_BEGIN -->
-rev.010554
+rev.0.10.55.7
 <!-- NH_MAKE_INSERT_REVISION_END -->
 </b>
           </div>
@@ -104,71 +104,72 @@ $(document).ready(function(){initNavTree('md_roadmap.html',''); initResizable();
   <div class="headertitle"><div class="title">Roadmap </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="roadmap"></a> </p><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h1><a class="anchor" id="about"></a>
-Introduction</h1>
+<div class="textblock"><p ><a class="anchor" id="roadmap"></a> </p><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h1><a class="anchor" id="roadmapabout"></a>
+Roadmap</h1>
 <div style="max-width:700px;"> The roadmap documents previous, current and future development-stages. Each stage sets out general directions/tasks of development. Milestones are declared as "In Progress" or "Completed". Once all milestones are declared "Completed", development moves on to a new stage. <br  />
  <br  />
  Generally, milestones are defined at the start of a stage. However, work on other emerging and pressing matters may require time as well and might be added to the roadmap later on. <br  />
  <br  />
- Early development is done using evolutionary prototyping.</div><div style="max-width:700px;"></div><h1><a class="anchor" id="prototype1"></a>
-prototype.1</h1>
-<div style="max-width:700px;"> <pre>Q1 2021 - Q4 2022</pre></div><div style="max-width:700px;">This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="prototype1progress"></a>
-In Progress</h2>
-<div style="max-width:700px;"> <pre style="margin-left:20px;">
-Advanced CSS Layout Engine
+ Early development is done using evolutionary prototyping.</div><div style="max-width:700px;"><br  />
+ </div><h1><a class="anchor" id="inprogress"></a>
+In Progress</h1>
+<div style="max-width:700px;"> <pre>
+Advanced CSS Layout Engine (prototype.1)
 Implement inline/block layout. Implement margin-collapsing.
 
-CSS Values
+CSS Values (prototype.1)
 Improve value filtering. Implement simple inheritance.
-</pre></div><div style="max-width:700px;"></div><h2><a class="anchor" id="prototype1complete"></a>
-Completed</h2>
-<div style="max-width:700px;"> </div><h3><a class="anchor" id="prototype1build"></a>
-Improved Build Tool</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> The script language from the internal build-tool used by netzhaut is now a separate project at <a href="https://selfmake.netzwerkz.org">https://selfmake.netzwerkz.org</a>. The language has improved a lot and the separation allows for development to target wider audiences. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="prototype1text"></a>
-Improved Text Processing</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> The text-processing pipeline is now based on the common combination FreeType + HarfBuzz and should allow for stable font-handling across platforms (for now). <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="prototype1term"></a>
-Improved TTY Interface</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> The TTY interface can now be displayed directly or externally using standard output. To facilitate this, the nhtty module was greatly overhauled and expanded. For direct display, the nhterm module was introduced. Also, internal tty-based programs such as the logger, editor etc. have been improved. </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="prototype1url"></a>
-URL Processing</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> The nhurl library finally provides initial routines for processing urls internally based on the WHATWG URL standard. <br  />
- </div></div><div style="max-width:700px;"></div><h1><a class="anchor" id="prototype0"></a>
+</pre></div><div style="max-width:700px;"><br  />
+ </div><h1><a class="anchor" id="prototype1"></a>
+prototype.1</h1>
+<div style="max-width:700px;"><hr  />
+ <pre>Q1 2021 - Q4 2022</pre></div><div style="max-width:700px;">This stage focuses on rendering HTML documents. This means that most work is put into CSS conforming processing, formatting and rendering.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="prototype1build"></a>
+Improved Build Tool</h2>
+<div style="max-width:700px;">The script language from the internal build-tool used by netzhaut is now a separate project at <a href="https://selfmake.netzwerkz.org">https://selfmake.netzwerkz.org</a>. The language has improved a lot and the separation allows for development to target wider audiences. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="prototype1text"></a>
+Improved Text Processing</h2>
+<div style="max-width:700px;">The text-processing pipeline is now based on the common combination FreeType + HarfBuzz and should allow for stable font-handling across platforms (for now). <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="prototype1term"></a>
+Improved TTY Interface</h2>
+<div style="max-width:700px;">The TTY interface can now be displayed directly or externally using standard output. To facilitate this, the nhtty module was greatly overhauled and expanded. For direct display, the nhterm module was introduced. Also, internal tty-based programs such as the logger, editor etc. have been improved.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="prototype1url"></a>
+URL Processing</h2>
+<div style="max-width:700px;">The nhurl library finally provides initial routines for processing urls internally based on the WHATWG URL standard. <br  />
+</div><div style="max-width:700px;"><br  />
+ </div><h1><a class="anchor" id="prototype0"></a>
 prototype.0</h1>
-<div style="max-width:700px;"> <pre>Q2 2020 - Q1 2021</pre></div><div style="max-width:700px;">This stage focused on design, architecture and implementing a stable foundation for later development. As a result, every core component of the engine has a functioning initial implementation that is able to interconnect with related components. Also, a degree of project stability has been achieved that allows for iterative development to take place at faster pace. <br  />
-</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialcompleted"></a>
-Completed</h2>
-<div style="max-width:700px;"> </div><h3><a class="anchor" id="initialcomponents"></a>
-Component Design</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> The implementation is divided into multiple libraries, managed by a loader-library which handles loading requests/dependencies at runtime. The architecture is designed to be able to handle installing/updating/reloading of libraries at runtime. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initialoop"></a>
-Object Oriented Design</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> WebIDL interfaces are parsed at runtime in order to provide OOP-like routines and facilitate ECMAScript bindings. In the implementation, objects such as Document, HTMLElement, etc. are represented as linked structs. Each struct has an associated interface which is used to generate an attribute list. Object attributes are placed into this list according to the position in the interface allowing for easy bindings in combination with a universially applied type system. Operation bindings are essentially created by calling functions in a standardized, interface based way using function pointers. Inheritance is imitated by creating structs for each inherited interface and linking them together. All in all, this system is easy to work with since it's based on a lot of automatic mechanisms. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initialparsers"></a>
-First Iteration Of Specification Conforming Parsers</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> This includes implementation of the ECMAScript parser, CSS/Selectors parser, HTML parser and WebIDL parser. The parsers are hand-written and while far from finished, a good chunk of implementation work has been completed. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initialthreading"></a>
-Threading Design</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> The threading architecture is based on workloads. Each workload is assigned to a thread and executed once every thread cycle. netzhaut can be configured to use 0 to unlimited threads. When using 0 threads, the host program needs to call the workload execution routine manually since netzhaut relies purely on the host program thread in that case. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initialrendering"></a>
-Rendering</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> Basic rendering routines have been written, establishing the foundation of the rendering engine developed during pre-alpha-1. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initialapi"></a>
-Initial API</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> API principles have been established and core routines such as creating windows, creating viewports and creating document-contexts are operational enough to provide a good foundation. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initiallogging"></a>
-Logging Interface</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> During initial/pre-alpha development, logging is mostly done by using a build-in TTY interface which will be expanded later on but is already functional during this stage. Logging messages are stored in a tree structure which makes managing huge amounts of traffic possible by using qualified node identifiers. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initialinstaller"></a>
-First Installer Iteration</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> A custom installer has been written to facilitate development/building/installing in the most simplistic way possible. Later on, it could also be used to execute test routines etc. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initialdocumentation"></a>
-Initial Documentation</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> Finally, basic documentation structures/methods have been designed and a road-map has been established. <br  />
- </div></div><div style="max-width:700px;"></div><h3><a class="anchor" id="initialother"></a>
-Other</h3>
-<div style="max-width:700px;"><div style="margin-left:20px;"> Standard utilities for handling data using Arrays, Lists, etc. have been written. Unicode and the UTF-8 encoding are handled adequately. Work on Networking and URL libraries has started. Work on the ECMAScript engine has begun. <br  />
- </div></div><div style="max-width:700px;"><br  />
+<div style="max-width:700px;"><hr  />
+ <pre>Q2 2020 - Q1 2021</pre></div><div style="max-width:700px;">This stage focused on design, architecture and implementing a stable foundation for later development. As a result, every core component of the engine has a functioning initial implementation that is able to interconnect with related components. Also, a degree of project stability has been achieved that allows for iterative development to take place at faster pace. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialcomponents"></a>
+Component Design</h2>
+<div style="max-width:700px;">The implementation is divided into multiple libraries, managed by a loader-library which handles loading requests/dependencies at runtime. The architecture is designed to be able to handle installing/updating/reloading of libraries at runtime. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialoop"></a>
+Object Oriented Design</h2>
+<div style="max-width:700px;">WebIDL interfaces are parsed at runtime in order to provide OOP-like routines and facilitate ECMAScript bindings. In the implementation, objects such as Document, HTMLElement, etc. are represented as linked structs. Each struct has an associated interface which is used to generate an attribute list. Object attributes are placed into this list according to the position in the interface allowing for easy bindings in combination with a universially applied type system. Operation bindings are essentially created by calling functions in a standardized, interface based way using function pointers. Inheritance is imitated by creating structs for each inherited interface and linking them together. All in all, this system is easy to work with since it's based on a lot of automatic mechanisms. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialparsers"></a>
+First Iteration Of Specification Conforming Parsers</h2>
+<div style="max-width:700px;">This includes implementation of the ECMAScript parser, CSS/Selectors parser, HTML parser and WebIDL parser. The parsers are hand-written and while far from finished, a good chunk of implementation work has been completed. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialthreading"></a>
+Threading Design</h2>
+<div style="max-width:700px;">The threading architecture is based on workloads. Each workload is assigned to a thread and executed once every thread cycle. netzhaut can be configured to use 0 to unlimited threads. When using 0 threads, the host program needs to call the workload execution routine manually since netzhaut relies purely on the host program thread in that case. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialrendering"></a>
+Rendering</h2>
+<div style="max-width:700px;">Basic rendering routines have been written, establishing the foundation of the rendering engine developed during pre-alpha-1. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialapi"></a>
+Initial API</h2>
+<div style="max-width:700px;">API principles have been established and core routines such as creating windows, creating viewports and creating document-contexts are operational enough to provide a good foundation. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initiallogging"></a>
+Logging Interface</h2>
+<div style="max-width:700px;">During initial/pre-alpha development, logging is mostly done by using a build-in TTY interface which will be expanded later on but is already functional during this stage. Logging messages are stored in a tree structure which makes managing huge amounts of traffic possible by using qualified node identifiers. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialinstaller"></a>
+First Installer Iteration</h2>
+<div style="max-width:700px;">A custom installer has been written to facilitate development/building/installing in the most simplistic way possible. Later on, it could also be used to execute test routines etc. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialdocumentation"></a>
+Initial Documentation</h2>
+<div style="max-width:700px;">Finally, basic documentation structures/methods have been designed and a road-map has been established. <br  />
+</div><div style="max-width:700px;"></div><h2><a class="anchor" id="initialother"></a>
+Other</h2>
+<div style="max-width:700px;">Standard utilities for handling data using Arrays, Lists, etc. have been written. Unicode and the UTF-8 encoding are handled adequately. Work on Networking and URL libraries has started. Work on the ECMAScript engine has begun. <br  />
+</div><div style="max-width:700px;"><br  />
 </div><div style="max-width:700px;"></div> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

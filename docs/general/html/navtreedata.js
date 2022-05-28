@@ -28,35 +28,32 @@ var NAVTREE =
     [ "Introduction", "md_intro.html", [
       [ "Introduction", "md_intro.html#about", null ],
       [ "Goals", "md_intro.html#goals", [
-        [ "Customizable", "md_intro.html#customizable", null ],
-        [ "Conform", "md_intro.html#conform", null ],
-        [ "Lightweight", "md_intro.html#lightweight", null ],
-        [ "User Friendly", "md_intro.html#friendly", null ]
+        [ "customizable", "md_intro.html#customizable", null ],
+        [ "conform", "md_intro.html#conform", null ],
+        [ "lightweight", "md_intro.html#lightweight", null ],
+        [ "user friendly", "md_intro.html#friendly", null ]
       ] ]
     ] ],
     [ "Roadmap", "md_roadmap.html", [
+      [ "Roadmap", "md_roadmap.html#roadmapabout", null ],
+      [ "In Progress", "md_roadmap.html#inprogress", null ],
       [ "prototype.1", "md_roadmap.html#prototype1", [
-        [ "In Progress", "md_roadmap.html#prototype1progress", null ],
-        [ "Completed", "md_roadmap.html#prototype1complete", [
-          [ "Improved Build Tool", "md_roadmap.html#prototype1build", null ],
-          [ "Improved Text Processing", "md_roadmap.html#prototype1text", null ],
-          [ "Improved TTY Interface", "md_roadmap.html#prototype1term", null ],
-          [ "URL Processing", "md_roadmap.html#prototype1url", null ]
-        ] ]
+        [ "Improved Build Tool", "md_roadmap.html#prototype1build", null ],
+        [ "Improved Text Processing", "md_roadmap.html#prototype1text", null ],
+        [ "Improved TTY Interface", "md_roadmap.html#prototype1term", null ],
+        [ "URL Processing", "md_roadmap.html#prototype1url", null ]
       ] ],
       [ "prototype.0", "md_roadmap.html#prototype0", [
-        [ "Completed", "md_roadmap.html#initialcompleted", [
-          [ "Component Design", "md_roadmap.html#initialcomponents", null ],
-          [ "Object Oriented Design", "md_roadmap.html#initialoop", null ],
-          [ "First Iteration Of Specification Conforming Parsers", "md_roadmap.html#initialparsers", null ],
-          [ "Threading Design", "md_roadmap.html#initialthreading", null ],
-          [ "Rendering", "md_roadmap.html#initialrendering", null ],
-          [ "Initial API", "md_roadmap.html#initialapi", null ],
-          [ "Logging Interface", "md_roadmap.html#initiallogging", null ],
-          [ "First Installer Iteration", "md_roadmap.html#initialinstaller", null ],
-          [ "Initial Documentation", "md_roadmap.html#initialdocumentation", null ],
-          [ "Other", "md_roadmap.html#initialother", null ]
-        ] ]
+        [ "Component Design", "md_roadmap.html#initialcomponents", null ],
+        [ "Object Oriented Design", "md_roadmap.html#initialoop", null ],
+        [ "First Iteration Of Specification Conforming Parsers", "md_roadmap.html#initialparsers", null ],
+        [ "Threading Design", "md_roadmap.html#initialthreading", null ],
+        [ "Rendering", "md_roadmap.html#initialrendering", null ],
+        [ "Initial API", "md_roadmap.html#initialapi", null ],
+        [ "Logging Interface", "md_roadmap.html#initiallogging", null ],
+        [ "First Installer Iteration", "md_roadmap.html#initialinstaller", null ],
+        [ "Initial Documentation", "md_roadmap.html#initialdocumentation", null ],
+        [ "Other", "md_roadmap.html#initialother", null ]
       ] ]
     ] ],
     [ "Conformance Report", "md_conformance.html", [

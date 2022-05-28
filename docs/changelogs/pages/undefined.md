@@ -2,9 +2,9 @@
 
 <div style="max-width:700px;">
 
-\section undefined0002 v0.0.0.2
+\section undefined0002 ver.0.0.0.2
 
-2022-05-02 | 22:01:31 | rev.010524 | [open patch](../../patches/html/md_pages_eafc68b059025388c61b5e4822614dfa7b8d39d0.html)
+2022-05-02 | 22:01:31 | rev.0.10.52.4
 
  ---
 
@@ -16,11 +16,9 @@
 
 
 
+<br>\section undefined0002 ver.0.0.0.2
 
-
-\section undefined0002 v0.0.0.2
-
-2022-03-31 | 01:08:49 | rev.010473
+2022-03-31 | 01:08:49 | rev.0.10.47.3
 
  ---
 
@@ -32,16 +30,12 @@
 
 
 
+<br>\section undefined0001 ver.0.0.0.1
 
-
-\section undefined0001 v0.0.0.1
-
-2022-03-27 | 00:57:16 | rev.010451
+2022-03-27 | 00:57:16 | rev.0.10.45.1
 
  ---
 
  Fix autodoc script.
 
-
-
-</div>
+<br></div>
