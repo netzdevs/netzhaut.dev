@@ -1,11 +1,6 @@
-This is the space for general documents. It is comprised of the following documents.
-
 <div style="max-width:700px;">
-
-- [Introduction](md_intro.html)
-- [Roadmap](md_roadmap.html)
-- [Conformance Report](md_conformance.html)
-- [The Netzhaut Authors](md_authors.html)
+Just general documents.
+<br><br>
 
 [Introduction](md_intro.html)   
 What is Netzhaut?  
