@@ -2,9 +2,17 @@
 
 <div style="max-width:700px;">
 
-\section nhterminal0022 ver.0.0.2.2
+\section nhterminal0023 ver.0.0.2.3
 
-2022-05-28 | 16:07:04 | rev.0.10.55.7 | [open patch](../../patches/html/md_pages_be7dfc8a21e4e40b9a4cdbd66d9ce21a411efed6.html)
+2022-05-29 | 20:04:45 | rev.0.10.55.9
+
+ ---
+
+ Get text rendering kinda working using OpenGL.
+
+<br>\section nhterminal0022 ver.0.0.2.2
+
+2022-05-28 | 16:07:04 | rev.0.10.55.7
 
  ---
 

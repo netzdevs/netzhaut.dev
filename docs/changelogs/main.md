@@ -1,8 +1,13 @@
 <div style="max-width:700px;">
 
-<h1>rev.0.10.55.7</h1>
+<h1>rev.0.10.55.9</h1>
 
-2022-05-28 | 16:07:04  | [open patch](../../patches/html/md_pages_be7dfc8a21e4e40b9a4cdbd66d9ce21a411efed6.html)
+2022-05-29 | 20:04:45 
+
+ ---
+[nhgfx](md_pages_nhgfx_lib.html#nhgfx0073), [nhterminal](md_pages_nhterminal_lib.html#nhterminal0023)<br>Get text rendering kinda working using OpenGL.<br><br><h1>rev.0.10.55.7</h1>
+
+2022-05-28 | 16:07:04 
 
  ---
 [nhgfx](md_pages_nhgfx_lib.html#nhgfx0072), [nhterminal](md_pages_nhterminal_lib.html#nhterminal0022)<br>Partially fix OpenGL implementation.<br><br><h1>rev.0.10.55.5</h1>

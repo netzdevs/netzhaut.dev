@@ -2,9 +2,17 @@
 
 <div style="max-width:700px;">
 
-\section nhgfx0072 ver.0.0.7.2
+\section nhgfx0073 ver.0.0.7.3
 
-2022-05-28 | 16:07:04 | rev.0.10.55.7 | [open patch](../../patches/html/md_pages_be7dfc8a21e4e40b9a4cdbd66d9ce21a411efed6.html)
+2022-05-29 | 20:04:45 | rev.0.10.55.9
+
+ ---
+
+ Get text rendering kinda working using OpenGL.
+
+<br>\section nhgfx0072 ver.0.0.7.2
+
+2022-05-28 | 16:07:04 | rev.0.10.55.7
 
  ---
 
