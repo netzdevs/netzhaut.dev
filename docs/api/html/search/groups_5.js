@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['variables_0',['Variables',['../group__lib__netzhaut__vars.html',1,'']]]
+  ['typedefs_0',['Typedefs',['../group__lib__netzhaut__typedefs.html',1,'']]]
 ];

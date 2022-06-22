@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['macros_0',['Macros',['../group__lib__netzhaut__macros.html',1,'']]]
+  ['selfmakeapienums_0',['SelfmakeAPIEnums',['../group__selfmakeAPIEnums.html',1,'']]],
+  ['selfmakeapivars_1',['SelfmakeAPIVars',['../group__selfmakeAPIVars.html',1,'']]]
 ];

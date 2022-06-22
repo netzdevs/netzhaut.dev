@@ -1,15 +1,3 @@
-cd guides 
-doxygen Doxyfile 
-cd ..
-cd general 
-doxygen Doxyfile 
-cd ..
-cd architecture 
-doxygen Doxyfile 
-cd ..
-cd design 
-doxygen Doxyfile 
-cd ..
 cd internals 
 doxygen Doxyfile 
 cd ..
