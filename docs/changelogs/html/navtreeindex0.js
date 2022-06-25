@@ -135,7 +135,7 @@ var NAVTREEINDEX0 =
 "md_pages_nhterminal_lib.html#nhterminal0023":[12,3],
 "md_pages_nhterminal_lib.html#nhterminal0024":[12,2],
 "md_pages_nhterminal_lib.html#nhterminal0030":[12,1],
-"md_pages_nhterminal_lib.html#nhterminal0031":[12,0],
+"md_pages_nhterminal_lib.html#nhterminal0040":[12,0],
 "md_pages_nhtty_lib.html":[13],
 "md_pages_nhtty_lib.html#nhtty0000":[13,14],
 "md_pages_nhtty_lib.html#nhtty0010":[13,13],

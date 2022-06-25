@@ -1,13 +1,13 @@
 <div style="max-width:700px;">
 
-<h1>rev.0.10.56.13</h1>
+<h1>rev.0.10.57.12</h1>
 
-2022-06-25 | 16:31:53  | [open patch](../../patches/html/md_pages_ca8fce54ac9ee57314d1244655d413af4d347673.html)
+2022-06-25 | 16:54:27 
 
  ---
-[nhterminal](md_pages_nhterminal_lib.html#nhterminal0031)<br>Add GLSL macro for texture2D portability.<br><br><h1>rev.0.10.56.12</h1>
+[nhterminal](md_pages_nhterminal_lib.html#nhterminal0040)<br>Add GLSL macro for texture2D portability. Improve color handling.<br><br><h1>rev.0.10.56.12</h1>
 
-2022-06-25 | 13:00:31  | [open patch](../../patches/html/md_pages_9751decae0c75ab6611dd1e0a46a8e978affde20.html)
+2022-06-25 | 13:00:31 
 
  ---
 [nhterminal](md_pages_nhterminal_lib.html#nhterminal0030)<br>Improve foreground and background rendering.<br><br><h1>rev.0.10.55.16</h1>

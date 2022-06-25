@@ -161,7 +161,7 @@ var NAVTREE =
       [ "v0.0.1.0", "md_pages_nhterm_lib.html#nhterm0010", null ]
     ] ],
     [ "nhterminal", "md_pages_nhterminal_lib.html", [
-      [ "ver.0.0.3.1", "md_pages_nhterminal_lib.html#nhterminal0031", null ],
+      [ "ver.0.0.4.0", "md_pages_nhterminal_lib.html#nhterminal0040", null ],
       [ "ver.0.0.3.0", "md_pages_nhterminal_lib.html#nhterminal0030", null ],
       [ "ver.0.0.2.4", "md_pages_nhterminal_lib.html#nhterminal0024", null ],
       [ "ver.0.0.2.3", "md_pages_nhterminal_lib.html#nhterminal0023", null ],
