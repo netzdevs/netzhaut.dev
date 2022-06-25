@@ -1,6 +1,16 @@
 <div style="max-width:700px;">
 
-<h1>rev.0.10.55.9</h1>
+<h1>rev.0.10.56.12</h1>
+
+2022-06-25 | 13:00:31  | [open patch](../../patches/html/md_pages_9751decae0c75ab6611dd1e0a46a8e978affde20.html)
+
+ ---
+[nhterminal](md_pages_nhterminal_lib.html#nhterminal0030)<br>Improve foreground and background rendering.<br><br><h1>rev.0.10.55.16</h1>
+
+2022-06-22 | 22:33:10 
+
+ ---
+[nhgfx](md_pages_nhgfx_lib.html#nhgfx0074), [nhterminal](md_pages_nhterminal_lib.html#nhterminal0024), [nhcore](md_pages_nhcore_lib.html#nhcore0152), [nhwsi](md_pages_nhwsi_lib.html#nhwsi0031), [nhtty](md_pages_nhtty_lib.html#nhtty0141), [nhurl](md_pages_nhurl_lib.html#nhurl0021), [nhencoding](md_pages_nhencoding_lib.html#nhencoding0121)<br>Improve OpenGL implementation etc..<br><br><h1>rev.0.10.55.9</h1>
 
 2022-05-29 | 20:04:45 
 

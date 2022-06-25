@@ -39,6 +39,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_netzhaut_lib.html#netzhaut0000", null ]
     ] ],
     [ "nhcore", "md_pages_nhcore_lib.html", [
+      [ "ver.0.1.5.2", "md_pages_nhcore_lib.html#nhcore0152", null ],
       [ "ver.0.1.5.1", "md_pages_nhcore_lib.html#nhcore0151", null ],
       [ "ver.0.1.5.0", "md_pages_nhcore_lib.html#nhcore0150", null ],
       [ "ver.0.1.4.0", "md_pages_nhcore_lib.html#nhcore0140", null ],
@@ -88,6 +89,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_nhecmascript_lib.html#nhecmascript0000", null ]
     ] ],
     [ "nhencoding", "md_pages_nhencoding_lib.html", [
+      [ "ver.0.1.2.1", "md_pages_nhencoding_lib.html#nhencoding0121", null ],
       [ "ver.0.1.2.0", "md_pages_nhencoding_lib.html#nhencoding0120", null ],
       [ "ver.0.1.1.0", "md_pages_nhencoding_lib.html#nhencoding0110", null ],
       [ "ver.0.1.0.0", "md_pages_nhencoding_lib.html#nhencoding0100", null ],
@@ -99,6 +101,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_nhencoding_lib.html#nhencoding0000", null ]
     ] ],
     [ "nhgfx", "md_pages_nhgfx_lib.html", [
+      [ "ver.0.0.7.4", "md_pages_nhgfx_lib.html#nhgfx0074", null ],
       [ "ver.0.0.7.3", "md_pages_nhgfx_lib.html#nhgfx0073", null ],
       [ "ver.0.0.7.2", "md_pages_nhgfx_lib.html#nhgfx0072", null ],
       [ "ver.0.0.7.1", "md_pages_nhgfx_lib.html#nhgfx0071", null ],
@@ -158,6 +161,8 @@ var NAVTREE =
       [ "v0.0.1.0", "md_pages_nhterm_lib.html#nhterm0010", null ]
     ] ],
     [ "nhterminal", "md_pages_nhterminal_lib.html", [
+      [ "ver.0.0.3.0", "md_pages_nhterminal_lib.html#nhterminal0030", null ],
+      [ "ver.0.0.2.4", "md_pages_nhterminal_lib.html#nhterminal0024", null ],
       [ "ver.0.0.2.3", "md_pages_nhterminal_lib.html#nhterminal0023", null ],
       [ "ver.0.0.2.2", "md_pages_nhterminal_lib.html#nhterminal0022", null ],
       [ "ver.0.0.2.1", "md_pages_nhterminal_lib.html#nhterminal0021", null ],
@@ -168,6 +173,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_nhterminal_lib.html#nhterminal0000", null ]
     ] ],
     [ "nhtty", "md_pages_nhtty_lib.html", [
+      [ "ver.0.1.4.1", "md_pages_nhtty_lib.html#nhtty0141", null ],
       [ "ver.0.1.4.0", "md_pages_nhtty_lib.html#nhtty0140", null ],
       [ "ver.0.1.3.0", "md_pages_nhtty_lib.html#nhtty0130", null ],
       [ "ver.0.1.2.2", "md_pages_nhtty_lib.html#nhtty0122", null ],
@@ -184,6 +190,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_nhtty_lib.html#nhtty0000", null ]
     ] ],
     [ "nhurl", "md_pages_nhurl_lib.html", [
+      [ "ver.0.0.2.1", "md_pages_nhurl_lib.html#nhurl0021", null ],
       [ "ver.0.0.2.0", "md_pages_nhurl_lib.html#nhurl0020", null ],
       [ "ver.0.0.1.0", "md_pages_nhurl_lib.html#nhurl0010", null ],
       [ "ver.0.0.0.0", "md_pages_nhurl_lib.html#nhurl0000", null ]
@@ -196,6 +203,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_nhwebidl_lib.html#nhwebidl0000", null ]
     ] ],
     [ "nhwsi", "md_pages_nhwsi_lib.html", [
+      [ "ver.0.0.3.1", "md_pages_nhwsi_lib.html#nhwsi0031", null ],
       [ "ver.0.0.3.0", "md_pages_nhwsi_lib.html#nhwsi0030", null ],
       [ "ver.0.0.2.0", "md_pages_nhwsi_lib.html#nhwsi0020", null ],
       [ "ver.0.0.1.0", "md_pages_nhwsi_lib.html#nhwsi0010", null ],

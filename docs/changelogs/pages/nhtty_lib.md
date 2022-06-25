@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhtty0140 ver.0.1.4.0
+\section nhtty0141 ver.0.1.4.1
+
+2022-06-22 | 22:33:10 | rev.0.10.55.16
+
+ ---
+
+ Improve OpenGL implementation etc..
+
+<br>\section nhtty0140 ver.0.1.4.0
 
 2022-04-29 | 20:34:22 | rev.0.10.50.6
 

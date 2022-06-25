@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhgfx0073 ver.0.0.7.3
+\section nhgfx0074 ver.0.0.7.4
+
+2022-06-22 | 22:33:10 | rev.0.10.55.16
+
+ ---
+
+ Improve OpenGL implementation etc..
+
+<br>\section nhgfx0073 ver.0.0.7.3
 
 2022-05-29 | 20:04:45 | rev.0.10.55.9
 

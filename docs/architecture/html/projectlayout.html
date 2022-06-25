@@ -32,7 +32,7 @@ ver.0.2.6.0
 <!-- NH_MAKE_INSERT_API_VERSION_END -->
 <br/>
 <!-- NH_MAKE_INSERT_REVISION_BEGIN -->
-rev.0.10.55.23
+rev.0.10.56.12
 <!-- NH_MAKE_INSERT_REVISION_END -->
 </b>
           </div>
@@ -82,7 +82,7 @@ rev.0.10.55.23
            The build directory contains resources regarding the build process. This is where build scripts and the NhInstaller executable are located. <br  />
            <br  />
           </div><div style="width:700px;"></div><h1><a class="anchor" id="SourceLayout"></a>
-          src/</h1>
+          netzhaut/src/</h1>
           <div style="width:700px;text-align:center;"> <img src="../svg/sourcelayout.svg" alt="Source Layout" style="pointer-events:none;" class="inline"/></div><div style="width:700px;"><b>lib</b> <br/>
            The engine source code is comprised of library source code inside the lib directory. The directory name of a library must be the full library name, including the 'Nh' prefix. The 'Netzhaut' library is exempt from this rule. Generally, all directories/files inside the lib directory must begin with an uppercase letter. <br  />
            <br  />
@@ -90,7 +90,7 @@ rev.0.10.55.23
            The bin directory holds the source code of smaller projects which can be compiled as executables. This is the directory where example source code and the installer source code is located. Generally, all directories/files inside the bin directory must begin with an uppercase letter. <br  />
            <br  />
           </div><div style="width:700px;"></div><h1><a class="anchor" id="LibraryLayout"></a>
-          lib/</h1>
+          netzhaut/src/lib/</h1>
           <div style="width:700px;text-align:center;"> <img src="../svg/librarylayout.svg" alt="Library Layout" style="pointer-events:none;" class="inline"/></div><div style="width:700px;"><b>Common</b> <br  />
            A library directory must contain a Common directory. Some files inside the Common directory are optional (OPT) or required (REQ). <br  />
            <br  />
@@ -103,7 +103,7 @@ rev.0.10.55.23
           </div><div style="width:700px;"><b>Initialize.h/c and Terminate.h/c</b> <br  />
            The loader tries to call initialize/terminate functions while loading or closing a library. These files contain the code for these functions. <br  />
           </div><div style="width:700px;"></div><h1><a class="anchor" id="Binary"></a>
-          Binary Layout</h1>
+          netzhaut/src/bin/</h1>
           <div style="width:700px;"> <b>TODO</b> <br  />
           </div><div style="width:700px;"></div>
         </div>

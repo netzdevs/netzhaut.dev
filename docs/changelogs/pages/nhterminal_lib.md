@@ -2,7 +2,23 @@
 
 <div style="max-width:700px;">
 
-\section nhterminal0023 ver.0.0.2.3
+\section nhterminal0030 ver.0.0.3.0
+
+2022-06-25 | 13:00:31 | rev.0.10.56.12 | [open patch](../../patches/html/md_pages_9751decae0c75ab6611dd1e0a46a8e978affde20.html)
+
+ ---
+
+ Improve foreground and background rendering.
+
+<br>\section nhterminal0024 ver.0.0.2.4
+
+2022-06-22 | 22:33:10 | rev.0.10.55.16
+
+ ---
+
+ Improve OpenGL implementation etc..
+
+<br>\section nhterminal0023 ver.0.0.2.3
 
 2022-05-29 | 20:04:45 | rev.0.10.55.9
 

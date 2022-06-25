@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhwsi0030 ver.0.0.3.0
+\section nhwsi0031 ver.0.0.3.1
+
+2022-06-22 | 22:33:10 | rev.0.10.55.16
+
+ ---
+
+ Improve OpenGL implementation etc..
+
+<br>\section nhwsi0030 ver.0.0.3.0
 
 2022-05-23 | 23:45:23 | rev.0.10.55.3
 

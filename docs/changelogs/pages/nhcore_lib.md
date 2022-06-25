@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhcore0151 ver.0.1.5.1
+\section nhcore0152 ver.0.1.5.2
+
+2022-06-22 | 22:33:10 | rev.0.10.55.16
+
+ ---
+
+ Improve OpenGL implementation etc..
+
+<br>\section nhcore0151 ver.0.1.5.1
 
 2022-04-06 | rev.0.10.47.6
 
