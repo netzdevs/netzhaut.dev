@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhterminal0030 ver.0.0.3.0
+\section nhterminal0031 ver.0.0.3.1
+
+2022-06-25 | 16:31:53 | rev.0.10.56.13 | [open patch](../../patches/html/md_pages_ca8fce54ac9ee57314d1244655d413af4d347673.html)
+
+ ---
+
+ Add GLSL macro for texture2D portability.
+
+<br>\section nhterminal0030 ver.0.0.3.0
 
 2022-06-25 | 13:00:31 | rev.0.10.56.12 | [open patch](../../patches/html/md_pages_9751decae0c75ab6611dd1e0a46a8e978affde20.html)
 
