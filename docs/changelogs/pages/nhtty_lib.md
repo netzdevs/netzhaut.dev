@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhtty0141 ver.0.1.4.1
+\section nhtty0150 ver.0.1.5.0
+
+2022-06-26 | 18:33:23 | rev.0.10.59.11 | [open patch](../../patches/html/md_pages_200c10bc1f4174699465ed7f44a6df32f215fc36.html)
+
+ ---
+
+ Add cursor. Refactor. Improve rendering.
+
+<br>\section nhtty0141 ver.0.1.4.1
 
 2022-06-22 | 22:33:10 | rev.0.10.55.16
 

@@ -48,7 +48,7 @@ var searchData=
   ['nh_5ftty_5fdraw_5ff_45',['nh_tty_draw_f',['../nhtty_2Common_2Types_2Public_8h.html#a096d5b9f485fb94241184c60d9e65beb',1,'Public.h']]],
   ['nh_5ftty_5fgetcursorposition_5ff_46',['nh_tty_getCursorPosition_f',['../nhtty_2Common_2Types_2Public_8h.html#ab5c143f96b503055e2505a42e878c95a',1,'Public.h']]],
   ['nh_5ftty_5fhandlecommand_5ff_47',['nh_tty_handleCommand_f',['../nhtty_2Common_2Types_2Public_8h.html#a97420da7de9490584fe0f4abe0a592c0',1,'Public.h']]],
-  ['nh_5ftty_5fhandleinput_5ff_48',['nh_tty_handleInput_f',['../nhtty_2Common_2Types_2Public_8h.html#a45997554c795f90dbff6cf017cc22e9a',1,'Public.h']]],
+  ['nh_5ftty_5fhandleinput_5ff_48',['nh_tty_handleInput_f',['../nhtty_2Common_2Types_2Public_8h.html#a2605a9a323a7a278370ff5c2bea74d82',1,'Public.h']]],
   ['nh_5ftty_5finit_5ff_49',['nh_tty_init_f',['../nhtty_2Common_2Types_2Public_8h.html#a55150138fa614b9d7194eef4f1b5fc3c',1,'Public.h']]],
   ['nh_5ftty_5ftty_50',['nh_tty_TTY',['../nhtty_2Common_2Types_2Public_8h.html#a009ae0c4118a6079f55363e13f540191',1,'Public.h']]],
   ['nh_5ftty_5fupdate_5ff_51',['nh_tty_update_f',['../nhtty_2Common_2Types_2Public_8h.html#ade398b1bb9eac8b3ab72a72c55b08d12',1,'Public.h']]],

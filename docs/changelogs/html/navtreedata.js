@@ -161,6 +161,7 @@ var NAVTREE =
       [ "v0.0.1.0", "md_pages_nhterm_lib.html#nhterm0010", null ]
     ] ],
     [ "nhterminal", "md_pages_nhterminal_lib.html", [
+      [ "ver.0.0.5.0", "md_pages_nhterminal_lib.html#nhterminal0050", null ],
       [ "ver.0.0.4.0", "md_pages_nhterminal_lib.html#nhterminal0040", null ],
       [ "ver.0.0.3.0", "md_pages_nhterminal_lib.html#nhterminal0030", null ],
       [ "ver.0.0.2.4", "md_pages_nhterminal_lib.html#nhterminal0024", null ],
@@ -174,6 +175,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_nhterminal_lib.html#nhterminal0000", null ]
     ] ],
     [ "nhtty", "md_pages_nhtty_lib.html", [
+      [ "ver.0.1.5.0", "md_pages_nhtty_lib.html#nhtty0150", null ],
       [ "ver.0.1.4.1", "md_pages_nhtty_lib.html#nhtty0141", null ],
       [ "ver.0.1.4.0", "md_pages_nhtty_lib.html#nhtty0140", null ],
       [ "ver.0.1.3.0", "md_pages_nhtty_lib.html#nhtty0130", null ],

@@ -1,6 +1,11 @@
 <div style="max-width:700px;">
 
-<h1>rev.0.10.57.12</h1>
+<h1>rev.0.10.59.11</h1>
+
+2022-06-26 | 18:33:23  | [open patch](../../patches/html/md_pages_200c10bc1f4174699465ed7f44a6df32f215fc36.html)
+
+ ---
+[nhterminal](md_pages_nhterminal_lib.html#nhterminal0050), [nhtty](md_pages_nhtty_lib.html#nhtty0150)<br>Add cursor. Refactor. Improve rendering.<br><br><h1>rev.0.10.57.12</h1>
 
 2022-06-25 | 16:54:27 
 

@@ -8,7 +8,7 @@ var searchData=
   ['child_5fp_5',['Child_p',['../structnh__webidl__Object.html#ab5a7972bc511a9d9fa75c04a51909b7f',1,'nh_webidl_Object']]],
   ['chunkcount_6',['chunkCount',['../structnh__List.html#ad4fb750170946e4f1f12ae55ca992dcd',1,'nh_List']]],
   ['chunksize_7',['chunkSize',['../structnh__List.html#ac8ee21f3addcf15db96c883fcfe2813d',1,'nh_List']]],
-  ['codepoint_8',['codepoint',['../structnh__tty__Event.html#a5bc888327adae856f0b43e95fe7a9e29',1,'nh_tty_Event::codepoint()'],['../structnh__wsi__KeyboardEvent.html#a8a17b2fd4f2ea792ce01e0f8084ce048',1,'nh_wsi_KeyboardEvent::codepoint()']]],
+  ['codepoint_8',['codepoint',['../structnh__wsi__KeyboardEvent.html#a8a17b2fd4f2ea792ce01e0f8084ce048',1,'nh_wsi_KeyboardEvent']]],
   ['command_9',['command',['../structnh__tty__Program.html#a441a241730c6e6225adc66d0a0552179',1,'nh_tty_Program']]],
   ['commands_10',['commands',['../structnh__tty__ProgramPrototype.html#a7c276afc4f2adfd7f5b56e9fe273593d',1,'nh_tty_ProgramPrototype']]],
   ['commands_5fpp_11',['commands_pp',['../structnh__tty__ProgramPrototype.html#a94538ff658abc0d34e35873f6194d234',1,'nh_tty_ProgramPrototype']]],

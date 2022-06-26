@@ -1,0 +1,2261 @@
+From 200c10bc1f4174699465ed7f44a6df32f215fc36 Mon Sep 17 00:00:00 2001
+From: Dajo Frey <dajo.frey@gmail.com>
+Date: Sun, 26 Jun 2022 18:33:13 +0200
+Subject: [PATCH] Add cursor. Refactor. Improve rendering.
+
+---
+ CHANGELOG.txt                           |   2 +-
+ CHANGES.txt                             |   1 +
+ build/.nhmake/source.nhmake             |   1 -
+ external/netzhaut.dev                   |   2 +-
+ src/bin/nhtty/Main.c                    |  13 +-
+ src/lib/nhcore/Common/Types/Public.h    |  11 +-
+ src/lib/nhcore/Util/RingBuffer.c        |   8 +-
+ src/lib/nhcore/Util/RingBuffer.h        |   2 +-
+ src/lib/nhterminal/OpenGL/Background.c  |   9 +-
+ src/lib/nhterminal/OpenGL/Render.c      |  62 ++-----
+ src/lib/nhterminal/OpenGL/Text.c        |  16 +-
+ src/lib/nhterminal/Terminal/Graphics.c  | 109 ++++++++----
+ src/lib/nhterminal/Terminal/Graphics.h  |  14 +-
+ src/lib/nhterminal/Terminal/Grid.c      | 116 ++++++++-----
+ src/lib/nhterminal/Terminal/Grid.h      |  24 ++-
+ src/lib/nhterminal/Terminal/Parser.c    |  51 +++---
+ src/lib/nhterminal/Terminal/Terminal.c  |  40 +++--
+ src/lib/nhterminal/Terminal/Terminal.h  |   2 -
+ src/lib/nhtty/Common/Types/Public.h     |  11 +-
+ src/lib/nhtty/Editor/Editor.c           |   2 +-
+ src/lib/nhtty/Editor/Editor.h           |   2 +-
+ src/lib/nhtty/Editor/TreeListing.c      |   2 +-
+ src/lib/nhtty/Logger/Logger.c           |   2 +-
+ src/lib/nhtty/Logger/Logger.h           |   2 +-
+ src/lib/nhtty/Preferences/Preferences.c | 213 ------------------------
+ src/lib/nhtty/Preferences/Preferences.h | 100 -----------
+ src/lib/nhtty/Shell/Shell.c             |   2 +-
+ src/lib/nhtty/Shell/Shell.h             |   2 +-
+ src/lib/nhtty/TTY/Console.c             |   8 +-
+ src/lib/nhtty/TTY/Console.h             |   2 +-
+ src/lib/nhtty/TTY/Draw.c                |   9 +-
+ src/lib/nhtty/TTY/Program.c             |  33 ++--
+ src/lib/nhtty/TTY/StandardIO.c          |  33 +++-
+ src/lib/nhtty/TTY/StandardIO.h          |   6 +-
+ src/lib/nhtty/TTY/Status.c              |   2 +-
+ src/lib/nhtty/TTY/Status.h              |   4 +-
+ src/lib/nhtty/TTY/TTY.c                 |  94 +++--------
+ src/lib/nhtty/TTY/TTY.h                 |   7 +-
+ src/lib/nhtty/TTY/Tab.c                 |   4 +-
+ src/lib/nhtty/TTY/Tab.h                 |   2 +-
+ src/lib/nhtty/TTY/Tile.c                |   4 +-
+ src/lib/nhtty/TTY/Tile.h                |   2 +-
+ src/lib/nhtty/TTY/Tiling.c              |   2 +-
+ src/lib/nhtty/TTY/Tiling.h              |   2 +-
+ src/lib/nhtty/TTY/View.c                |  41 +++--
+ src/lib/nhtty/TTY/View.h                |  13 +-
+ src/lib/nhwsi/Main/Window.c             |   2 +-
+ src/lib/nhwsi/Main/Window.h             |   3 +-
+ 48 files changed, 426 insertions(+), 668 deletions(-)
+ create mode 100644 CHANGES.txt
+ delete mode 100644 src/lib/nhtty/Preferences/Preferences.c
+ delete mode 100644 src/lib/nhtty/Preferences/Preferences.h
+
+diff --git a/CHANGELOG.txt b/CHANGELOG.txt
+index 8c25641..618c02f 100644
+--- a/CHANGELOG.txt
++++ b/CHANGELOG.txt
+@@ -1,4 +1,4 @@
+-changes{date:"2022-06-25"time:"16:54:27"id:"eda7ddefc4425e17c4d74d342342802e3d6aaebe"summary:"Add GLSL macro for texture2D portability. Improve color handling."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"minor"lib:"nhterminal"}}
++changes{date:"2022-06-25"time:"16:54:27"summary:"Add GLSL macro for texture2D portability. Improve color handling."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"minor"lib:"nhterminal"}}
+ changes{date:"2022-06-25"time:"13:00:31"summary:"Improve foreground and background rendering."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"minor"lib:"nhterminal"}}
+ changes{date:"2022-06-22"time:"22:33:10"summary:"Improve OpenGL implementation etc.."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"patch"lib:"nhgfx","nhterminal","nhcore","nhwsi","nhtty","nhurl","nhencoding"}}
+ changes{date:"2022-05-29"time:"20:04:45"summary:"Get text rendering kinda working using OpenGL."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"patch"lib:"nhgfx","nhterminal"}}
+diff --git a/CHANGES.txt b/CHANGES.txt
+new file mode 100644
+index 0000000..7c1db7a
+--- /dev/null
++++ b/CHANGES.txt
+@@ -0,0 +1 @@
++changes{summary:"Add cursor. Refactor. Improve rendering."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"minor"lib:"nhterminal","nhtty"}}
+diff --git a/build/.nhmake/source.nhmake b/build/.nhmake/source.nhmake
+index fc8380f..ddeebb3 100644
+--- a/build/.nhmake/source.nhmake
++++ b/build/.nhmake/source.nhmake
+@@ -193,7 +193,6 @@ source_lib(
+         "Logger/Logger.c"
+         "Shell/Shell.c"
+         "Shell/Output.c"
+-        "Preferences/Preferences.c"
+         "Common/Result.c"
+         "Common/About.c"
+         "Common/Log.c"
+diff --git a/external/netzhaut.dev b/external/netzhaut.dev
+index e04c9ae..cb2c39d 160000
+--- a/external/netzhaut.dev
++++ b/external/netzhaut.dev
+@@ -1 +1 @@
+-Subproject commit e04c9aec40dccbe2d96397661a6f4cb928189b5c
++Subproject commit cb2c39dfe6867c3a6fda619d0ead4de85d909524
+diff --git a/src/bin/nhtty/Main.c b/src/bin/nhtty/Main.c
+index 529b86f..f43fdd7 100644
+--- a/src/bin/nhtty/Main.c
++++ b/src/bin/nhtty/Main.c
+@@ -117,11 +117,11 @@ int main(int argc, char **argv_pp)
+         
+         nh_wsi_setEventListener(Window_p, handleWindowInput);
+ 
+-        nh_Color Color;
+-        Color.r = 0.0f;
+-        Color.g = 1.0f;
+-        Color.b = 0.0f;
+-        nh_terminal_setColor(Terminal_p, Color, NH_TRUE); 
++//        nh_Color Color;
++//        Color.r = 0.0f;
++//        Color.g = 1.0f;
++//        Color.b = 0.0f;
++//        nh_terminal_setColor(Terminal_p, Color, NH_TRUE); 
+     }
+ 
+     if (nh_tty_addDefaultProgram(TTY_p, "shell") != NH_TTY_SUCCESS) {
+@@ -133,9 +133,6 @@ int main(int argc, char **argv_pp)
+     if (nh_tty_addDefaultProgram(TTY_p, "logger") != NH_TTY_SUCCESS) {
+         return 1;
+     }
+-    if (nh_tty_addDefaultProgram(TTY_p, "preferences") != NH_TTY_SUCCESS) {
+-        return 1;
+-    }
+ 
+     while (1) {
+         if (!nh_run()) {usleep(10000);}
+diff --git a/src/lib/nhcore/Common/Types/Public.h b/src/lib/nhcore/Common/Types/Public.h
+index 22c733d..94a8e14 100644
+--- a/src/lib/nhcore/Common/Types/Public.h
++++ b/src/lib/nhcore/Common/Types/Public.h
+@@ -116,17 +116,18 @@
+         nh_LinkedListItem *Head_p; /**<Opaque pointer to the first item in the list. A list with \ref count == 0 should have this set as NULL. The actual data should always be queried using @ref nh_getFromLinkedList.*/
+     } nh_LinkedList;
+ 
++    typedef struct nh_RingBufferMarker {
++        int index;
++        int overflow;
++    } nh_RingBufferMarker;
++
+     typedef struct nh_RingBuffer {
++        nh_RingBufferMarker Marker; /**<For convenience.*/
+         int itemCount, itemByteSize;
+         int index;                                      
+         int overflow;
+         void *data_p; 
+     } nh_RingBuffer;
+-    
+-    typedef struct nh_RingBufferMarker {
+-        int index;
+-        int overflow;
+-    } nh_RingBufferMarker;
+ 
+     typedef struct nh_BigInt {
+         int TODO;   
+diff --git a/src/lib/nhcore/Util/RingBuffer.c b/src/lib/nhcore/Util/RingBuffer.c
+index 5037d4e..b3f7ecf 100644
+--- a/src/lib/nhcore/Util/RingBuffer.c
++++ b/src/lib/nhcore/Util/RingBuffer.c
+@@ -23,10 +23,12 @@
+ // ITERATOR ========================================================================================
+ 
+ NH_RESULT nh_initRingBuffer(
+-    nh_RingBuffer *Buffer_p, int itemCount, int itemByteSize, void InitBuffer(nh_RingBuffer *Buffer_p, int itemCount))
++    nh_RingBuffer *Buffer_p, int itemCount, int itemByteSize, void init_f(nh_RingBuffer *Buffer_p, int itemCount))
+ {
+ NH_BEGIN()
+ 
++    nh_initRingBufferMarker(&Buffer_p->Marker);
++
+     Buffer_p->itemCount = itemCount;
+     Buffer_p->itemByteSize = itemByteSize;
+ 
+@@ -36,7 +38,9 @@ NH_BEGIN()
+     Buffer_p->data_p = nh_allocate(itemCount * itemByteSize);
+     NH_CHECK_MEM(Buffer_p->data_p)
+ 
+-    InitBuffer(Buffer_p, itemCount);
++    if (init_f) {
++        init_f(Buffer_p, itemCount);
++    }
+ 
+     Buffer_p->overflow = 0;
+     Buffer_p->index = -1;
+diff --git a/src/lib/nhcore/Util/RingBuffer.h b/src/lib/nhcore/Util/RingBuffer.h
+index 44f9e86..4d474e3 100644
+--- a/src/lib/nhcore/Util/RingBuffer.h
++++ b/src/lib/nhcore/Util/RingBuffer.h
+@@ -18,7 +18,7 @@
+  */
+ 
+     NH_RESULT nh_initRingBuffer(
+-        nh_RingBuffer *Buffer_p, int itemCount, int itemByteSize, void InitBuffer(nh_RingBuffer *Buffer_p, int itemCount)
++        nh_RingBuffer *Buffer_p, int itemCount, int itemByteSize, void init_f(nh_RingBuffer *Buffer_p, int itemCount)
+     );
+ 
+     void *nh_advanceRingBuffer(
+diff --git a/src/lib/nhterminal/OpenGL/Background.c b/src/lib/nhterminal/OpenGL/Background.c
+index 1db591e..e9de3c3 100644
+--- a/src/lib/nhterminal/OpenGL/Background.c
++++ b/src/lib/nhterminal/OpenGL/Background.c
+@@ -159,12 +159,9 @@ NH_TERMINAL_BEGIN()
+         Graphics_p->Background.Action.init = NH_FALSE;
+     }
+ 
+-//    if (Graphics_p->Background.Action.updateVertices) {
+-        nh_terminal_updateOpenGLBackgroundVertices(&Graphics_p->Background.OpenGL,
+-            Graphics_p->Viewport_p->OpenGL.CommandBuffer_p, &Graphics_p->Background.Vertices,
+-            &Graphics_p->Background.Indices);
+-        Graphics_p->Background.Action.updateVertices = NH_FALSE;
+-//    }
++    nh_terminal_updateOpenGLBackgroundVertices(&Graphics_p->Background.OpenGL,
++        Graphics_p->Viewport_p->OpenGL.CommandBuffer_p, &Graphics_p->Background.Vertices,
++        &Graphics_p->Background.Indices);
+ 
+ NH_TERMINAL_DIAGNOSTIC_END(NH_SUCCESS)
+ }
+diff --git a/src/lib/nhterminal/OpenGL/Render.c b/src/lib/nhterminal/OpenGL/Render.c
+index e7c7d6a..d1ca7fb 100644
+--- a/src/lib/nhterminal/OpenGL/Render.c
++++ b/src/lib/nhterminal/OpenGL/Render.c
+@@ -30,10 +30,6 @@ static NH_TERMINAL_RESULT nh_terminal_drawOpenGLBackground(
+ {
+ NH_TERMINAL_BEGIN()
+ 
+-    if (Grid_p->rows <= 0 || Grid_p->Rows.size == 0) {
+-        NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+-    }
+-
+     nh_opengl_CommandBuffer *CommandBuffer_p = Graphics_p->Viewport_p->OpenGL.CommandBuffer_p;
+ 
+     static const GLchar *colorName_p = "in_color";
+@@ -41,31 +37,16 @@ NH_TERMINAL_BEGIN()
+         &nh_opengl_addCommand(CommandBuffer_p, "glGetUniformLocation", Graphics_p->Background.OpenGL.Program_p, 
+             nh_opengl_glchar(NULL, NULL, 0, &colorName_p))->Result;
+ 
+-    int total = 0;
+     int offset = 0;
+-    int x = 0;
+-    int y = 0;
+-
+-    nh_terminal_Tile *Tile_p = ((nh_terminal_Tile*)((nh_List*)Grid_p->Rows.pp[0])->pp[0]);
+-    nh_Color Color = nh_terminal_isCustomColor(Graphics_p, &Tile_p->Background.Color, NH_FALSE) ? Tile_p->Background.Color : Graphics_p->Background.Color;
+-
+-    while (NH_TRUE) 
+-    {
+-        offset += total;
+-
+-        nh_Color NextColor = Color;
+-        total = nh_terminal_getCurrentColorRange(Graphics_p, Grid_p, &NextColor, &x, &y, NH_FALSE) * 6;
+-        if (!total) {break;}
+-
+-        nh_opengl_addCommand(CommandBuffer_p, "glUniform3f", Color_p, nh_opengl_glfloat(NULL, Color.r),
+-            nh_opengl_glfloat(NULL, Color.g), nh_opengl_glfloat(NULL, Color.b));
+-
++    for (int i = 0; i < Graphics_p->Background.Ranges.length; ++i) {
++        nh_terminal_AttributeRange *Range_p = ((nh_terminal_AttributeRange*)Graphics_p->Background.Ranges.p)+i;
++        nh_opengl_addCommand(CommandBuffer_p, "glUniform3f", Color_p, nh_opengl_glfloat(NULL, Range_p->Color.r),
++            nh_opengl_glfloat(NULL, Range_p->Color.g), nh_opengl_glfloat(NULL, Range_p->Color.b));
+         nh_opengl_addCommand(CommandBuffer_p, "glDrawElements", 
+-            nh_opengl_glenum(NULL, GL_TRIANGLES), nh_opengl_glsizei(NULL, total), 
++            nh_opengl_glenum(NULL, GL_TRIANGLES), nh_opengl_glsizei(NULL, Range_p->indices), 
+             nh_opengl_glenum(NULL, GL_UNSIGNED_INT),
+             nh_opengl_pointer(NULL, (void*)(sizeof(uint32_t)*offset)));
+-
+-        Color = NextColor;
++        offset += Range_p->indices;
+     }
+ 
+ NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
+@@ -94,10 +75,6 @@ static NH_TERMINAL_RESULT nh_terminal_drawOpenGLForeground(
+ {
+ NH_TERMINAL_BEGIN()
+ 
+-    if (Grid_p->rows <= 0 || Grid_p->Rows.size == 0) {
+-        NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+-    }
+-
+     nh_opengl_CommandBuffer *CommandBuffer_p = Graphics_p->Viewport_p->OpenGL.CommandBuffer_p;
+ 
+     static const GLchar *colorName_p = "in_color";
+@@ -105,31 +82,16 @@ NH_TERMINAL_BEGIN()
+         &nh_opengl_addCommand(CommandBuffer_p, "glGetUniformLocation", Graphics_p->Text.OpenGL.Program_p, 
+             nh_opengl_glchar(NULL, NULL, 0, &colorName_p))->Result;
+ 
+-    int total = 0;
+     int offset = 0;
+-    int x = 0;
+-    int y = 0;
+-
+-    nh_terminal_Tile *Tile_p = ((nh_terminal_Tile*)((nh_List*)Grid_p->Rows.pp[0])->pp[0]);
+-    nh_Color Color = nh_terminal_isCustomColor(Graphics_p, &Tile_p->Foreground.Color, NH_TRUE) ? Tile_p->Foreground.Color : Graphics_p->Text.Color;
+-
+-    while (NH_TRUE) 
+-    {
+-        offset += total;
+-
+-        nh_Color NextColor = Color;
+-        total = nh_terminal_getCurrentColorRange(Graphics_p, Grid_p, &NextColor, &x, &y, NH_TRUE) * 6;
+-        if (!total) {break;}
+-
+-        nh_opengl_addCommand(CommandBuffer_p, "glUniform3f", Color_p, nh_opengl_glfloat(NULL, Color.r),
+-            nh_opengl_glfloat(NULL, Color.g), nh_opengl_glfloat(NULL, Color.b));
+-
++    for (int i = 0; i < Graphics_p->Text.Ranges.length; ++i) {
++        nh_terminal_AttributeRange *Range_p = ((nh_terminal_AttributeRange*)Graphics_p->Text.Ranges.p)+i;
++        nh_opengl_addCommand(CommandBuffer_p, "glUniform3f", Color_p, nh_opengl_glfloat(NULL, Range_p->Color.r),
++            nh_opengl_glfloat(NULL, Range_p->Color.g), nh_opengl_glfloat(NULL, Range_p->Color.b));
+         nh_opengl_addCommand(CommandBuffer_p, "glDrawElements", 
+-            nh_opengl_glenum(NULL, GL_TRIANGLES), nh_opengl_glsizei(NULL, total), 
++            nh_opengl_glenum(NULL, GL_TRIANGLES), nh_opengl_glsizei(NULL, Range_p->indices), 
+             nh_opengl_glenum(NULL, GL_UNSIGNED_INT),
+             nh_opengl_pointer(NULL, (void*)(sizeof(uint32_t)*offset)));
+-
+-        Color = NextColor;
++        offset += Range_p->indices;
+     }
+ 
+ NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
+diff --git a/src/lib/nhterminal/OpenGL/Text.c b/src/lib/nhterminal/OpenGL/Text.c
+index c1d2bcb..2694da3 100644
+--- a/src/lib/nhterminal/OpenGL/Text.c
++++ b/src/lib/nhterminal/OpenGL/Text.c
+@@ -229,18 +229,12 @@ NH_TERMINAL_BEGIN()
+         Graphics_p->Text.Action.init = NH_FALSE;
+     }
+ 
+-    if (Graphics_p->Text.Action.updateFont) {
+-        nh_terminal_updateOpenGLTextFont(&Graphics_p->Text, 
+-            Graphics_p->Viewport_p->OpenGL.CommandBuffer_p);
+-        Graphics_p->Text.Action.updateFont = NH_FALSE;
+-    }
++    nh_terminal_updateOpenGLTextFont(&Graphics_p->Text, 
++        Graphics_p->Viewport_p->OpenGL.CommandBuffer_p);
+ 
+-    if (Graphics_p->Text.Action.updateVertices) {
+-        nh_terminal_updateOpenGLTextVertices(&Graphics_p->Text.OpenGL,
+-            Graphics_p->Viewport_p->OpenGL.CommandBuffer_p, &Graphics_p->Text.Vertices,
+-            &Graphics_p->Text.Indices);
+-        Graphics_p->Text.Action.updateVertices = NH_FALSE;
+-    }
++    nh_terminal_updateOpenGLTextVertices(&Graphics_p->Text.OpenGL,
++        Graphics_p->Viewport_p->OpenGL.CommandBuffer_p, &Graphics_p->Text.Vertices,
++        &Graphics_p->Text.Indices);
+ 
+ NH_TERMINAL_DIAGNOSTIC_END(NH_SUCCESS)
+ }
+diff --git a/src/lib/nhterminal/Terminal/Graphics.c b/src/lib/nhterminal/Terminal/Graphics.c
+index 36fc6fd..f6b9a0c 100644
+--- a/src/lib/nhterminal/Terminal/Graphics.c
++++ b/src/lib/nhterminal/Terminal/Graphics.c
+@@ -54,10 +54,7 @@ static nh_terminal_GraphicsAction nh_terminal_initGraphicsAction()
+ NH_TERMINAL_BEGIN()
+ 
+     nh_terminal_GraphicsAction Action;
+-
+     Action.init = NH_TRUE;
+-    Action.updateFont = NH_TRUE;
+-    Action.updateVertices = NH_FALSE;
+ 
+ NH_TERMINAL_END(Action)
+ }
+@@ -77,10 +74,11 @@ NH_TERMINAL_BEGIN()
+     Graphics_p->Text.Action = nh_terminal_initGraphicsAction();
+     Graphics_p->Text.Vertices = nh_initArray(sizeof(float), 1024);
+     Graphics_p->Text.Indices  = nh_initArray(sizeof(uint32_t), 1024);
++    Graphics_p->Text.Ranges = nh_initArray(sizeof(nh_terminal_AttributeRange), 32);
+ 
+-    Graphics_p->Text.Color.r = 0.8f;
+-    Graphics_p->Text.Color.g = 0.8f;
+-    Graphics_p->Text.Color.b = 0.8f;
++    Graphics_p->Text.Color.r = 1.0f;
++    Graphics_p->Text.Color.g = 1.0f;
++    Graphics_p->Text.Color.b = 1.0f;
+     Graphics_p->Text.Color.a = 1.0f;
+ 
+     nh_terminal_initOpenGLText(&Graphics_p->Text.OpenGL);
+@@ -88,10 +86,11 @@ NH_TERMINAL_BEGIN()
+     Graphics_p->Background.Action = nh_terminal_initGraphicsAction();
+     Graphics_p->Background.Vertices = nh_initArray(sizeof(float), 1024);
+     Graphics_p->Background.Indices  = nh_initArray(sizeof(uint32_t), 1024);
++    Graphics_p->Background.Ranges = nh_initArray(sizeof(nh_terminal_AttributeRange), 32);
+ 
+-    Graphics_p->Background.Color.r = 0.2f;
+-    Graphics_p->Background.Color.g = 0.2f;
+-    Graphics_p->Background.Color.b = 0.2f;
++    Graphics_p->Background.Color.r = 0.0f;
++    Graphics_p->Background.Color.g = 0.0f;
++    Graphics_p->Background.Color.b = 0.0f;
+     Graphics_p->Background.Color.a = 1.0f;
+ 
+     nh_terminal_initOpenGLBackground(&Graphics_p->Background.OpenGL);
+@@ -180,6 +179,9 @@ NH_TERMINAL_BEGIN()
+     NH_TERMINAL_CHECK(nh_terminal_getBackgroundData(Grid_p, &Graphics_p->Background.Vertices, 
+         &Graphics_p->Background.Indices, Graphics_p))
+ 
++    NH_TERMINAL_CHECK(nh_terminal_computeRange(Graphics_p, Grid_p, NH_TRUE))
++    NH_TERMINAL_CHECK(nh_terminal_computeRange(Graphics_p, Grid_p, NH_FALSE))
++
+ NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+ }
+ 
+@@ -372,9 +374,9 @@ NH_TERMINAL_BEGIN()
+ NH_TERMINAL_END(custom)
+ }
+ 
+-int nh_terminal_getCurrentColorRange(
+-    nh_terminal_Graphics *Graphics_p, nh_terminal_Grid *Grid_p, nh_Color *Current_p, int *x_p,
+-    int *y_p, NH_BOOL foreground)
++static int nh_terminal_getCurrentColorRange(
++    nh_terminal_Graphics *Graphics_p, nh_terminal_Grid *Grid_p, nh_Color *Current_p, int *col_p,
++    int *row_p, NH_BOOL foreground)
+ {
+ NH_TERMINAL_BEGIN()
+ 
+@@ -382,9 +384,9 @@ NH_TERMINAL_BEGIN()
+ 
+     int total = 0;
+ 
+-    for (int y = *y_p; y < Grid_p->rows; ++y) {
+-        for (int x = *x_p; x < Grid_p->cols; ++x) {
+-            nh_terminal_Tile *Tile_p = ((nh_terminal_Tile*)((nh_List*)Grid_p->Rows.pp[y])->pp[x]);
++    for (int row = *row_p; row < Grid_p->rows; ++row) {
++        for (int col = *col_p; col < Grid_p->cols; ++col) {
++            nh_terminal_Tile *Tile_p = ((nh_terminal_Tile*)((nh_List*)Grid_p->Rows.pp[row])->pp[col]);
+             if (foreground && (!Tile_p->codepoint || Tile_p->codepoint == ' ')){
+                 continue;
+             }
+@@ -392,22 +394,22 @@ NH_TERMINAL_BEGIN()
+                 continue;
+             }
+             if (foreground) {
+-                NH_BOOL custom2 = nh_terminal_isCustomColor(Graphics_p, &Tile_p->Foreground.Color, foreground);
++                NH_BOOL custom2 = nh_terminal_isCustomColor(Graphics_p, &Tile_p->Foreground.Color, NH_TRUE);
+                 if (!custom2 && !custom) {
+                     ++total;
+                     continue;
+                 }
+                 if (!custom2 && custom || custom2 && !custom) {
+-                    *x_p = x;
+-                    *y_p = y;
++                    *col_p = col;
++                    *row_p = row;
+                     *Current_p = custom2 ? Tile_p->Foreground.Color : Graphics_p->Text.Color;
+                     NH_TERMINAL_END(total)
+                 }
+                 if (custom2 && custom) {
+                     if (Tile_p->Foreground.Color.r != Current_p->r || Tile_p->Foreground.Color.g != Current_p->g || 
+                         Tile_p->Foreground.Color.b != Current_p->b || Tile_p->Foreground.Color.a != Current_p->a) {
+-                        *x_p = x;
+-                        *y_p = y;
++                        *col_p = col;
++                        *row_p = row;
+                         *Current_p = Tile_p->Foreground.Color;
+                         NH_TERMINAL_END(total)
+                     }
+@@ -416,18 +418,18 @@ NH_TERMINAL_BEGIN()
+                 }
+             }
+             else {
+-                NH_BOOL custom2 = nh_terminal_isCustomColor(Graphics_p, &Tile_p->Background.Color, foreground);
++                NH_BOOL custom2 = nh_terminal_isCustomColor(Graphics_p, &Tile_p->Background.Color, NH_FALSE);
+                 if (custom2 && !custom) {
+-                    *x_p = x;
+-                    *y_p = y;
++                    *col_p = col;
++                    *row_p = row;
+                     *Current_p = custom2 ? Tile_p->Background.Color : Graphics_p->Background.Color;
+                     NH_TERMINAL_END(total)
+                 }
+                 if (custom2 && custom) {
+                     if (Tile_p->Background.Color.r != Current_p->r || Tile_p->Background.Color.g != Current_p->g || 
+                         Tile_p->Background.Color.b != Current_p->b || Tile_p->Background.Color.a != Current_p->a) {
+-                        *x_p = x;
+-                        *y_p = y;
++                        *col_p = col;
++                        *row_p = row;
+                         *Current_p = Tile_p->Background.Color;
+                         NH_TERMINAL_END(total)
+                     }
+@@ -437,12 +439,63 @@ NH_TERMINAL_BEGIN()
+             }
+             exit(0);
+         }
+-        *x_p = 0;
++        *col_p = 0;
+     }
+ 
+-    *x_p = Grid_p->cols;
+-    *y_p = Grid_p->rows;
++    *col_p = Grid_p->cols;
++    *row_p = Grid_p->rows;
+ 
+ NH_TERMINAL_END(total)
+ }
+ 
++NH_TERMINAL_RESULT nh_terminal_computeRange(
++    nh_terminal_Graphics *Graphics_p, nh_terminal_Grid *Grid_p, NH_BOOL foreground)
++{
++NH_TERMINAL_BEGIN()
++
++    if (foreground) {
++        nh_freeArray(&Graphics_p->Text.Ranges);
++        Graphics_p->Text.Ranges = nh_initArray(sizeof(nh_terminal_AttributeRange), 32);
++    } else {
++        nh_freeArray(&Graphics_p->Background.Ranges);
++        Graphics_p->Background.Ranges = nh_initArray(sizeof(nh_terminal_AttributeRange), 32);
++    }
++
++    if (Grid_p->rows <= 0 || Grid_p->Rows.size == 0) {
++        NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
++    }
++
++    int total = 0;
++    int offset = 0;
++    int row = 0;
++    int col = 0;
++
++    nh_terminal_Tile *Tile_p = ((nh_terminal_Tile*)((nh_List*)Grid_p->Rows.pp[0])->pp[0]);
++    nh_Color Color;
++
++    if (foreground) {
++        Color = nh_terminal_isCustomColor(Graphics_p, &Tile_p->Foreground.Color, NH_TRUE) 
++            ? Tile_p->Foreground.Color : Graphics_p->Text.Color;
++    } else {
++        Color = nh_terminal_isCustomColor(Graphics_p, &Tile_p->Background.Color, NH_FALSE) 
++            ? Tile_p->Background.Color : Graphics_p->Background.Color;
++    }
++
++    while (NH_TRUE)
++    {
++        offset += total;
++
++        nh_Color NextColor = Color;
++        total = nh_terminal_getCurrentColorRange(Graphics_p, Grid_p, &NextColor, &col, &row, foreground) * 6;
++        if (!total) {break;}
++
++        nh_terminal_AttributeRange *Range_p = nh_incrementArray(foreground ? &Graphics_p->Text.Ranges : &Graphics_p->Background.Ranges);
++        Range_p->Color = Color;
++        Range_p->indices = total;
++
++        Color = NextColor;
++    }
++
++NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
++}
++
+diff --git a/src/lib/nhterminal/Terminal/Graphics.h b/src/lib/nhterminal/Terminal/Graphics.h
+index 689ec63..724d759 100644
+--- a/src/lib/nhterminal/Terminal/Graphics.h
++++ b/src/lib/nhterminal/Terminal/Graphics.h
+@@ -21,10 +21,13 @@
+  *  @{
+  */
+ 
++    typedef struct nh_terminal_AttributeRange {
++        nh_Color Color;
++        int indices;
++    } nh_terminal_AttributeRange;
++
+     typedef struct nh_terminal_GraphicsAction {
+         NH_BOOL init;
+-        NH_BOOL updateFont;
+-        NH_BOOL updateVertices;
+     } nh_terminal_GraphicsAction;
+ 
+     typedef struct nh_terminal_GraphicsText {
+@@ -37,6 +40,7 @@
+         int font;
+         int fontSize;
+         nh_Color Color;
++        nh_Array Ranges;
+     } nh_terminal_GraphicsText;
+ 
+     typedef struct nh_terminal_GraphicsBackground {
+@@ -45,6 +49,7 @@
+         nh_Array Vertices;
+         nh_Array Indices;
+         nh_Color Color;
++        nh_Array Ranges;
+     } nh_terminal_GraphicsBackground;
+ 
+     typedef struct nh_terminal_Graphics {
+@@ -88,9 +93,8 @@
+         nh_terminal_Graphics *Graphics_p, nh_Color *Color_p, NH_BOOL foreground
+     );
+ 
+-    int nh_terminal_getCurrentColorRange(
+-        nh_terminal_Graphics *Graphics_p, nh_terminal_Grid *Grid_p, nh_Color *Current_p, int *x_p,
+-        int *y_p, NH_BOOL foreground
++    NH_TERMINAL_RESULT nh_terminal_computeRange(
++        nh_terminal_Graphics *Graphics_p, nh_terminal_Grid *Grid_p, NH_BOOL foreground
+     );
+ 
+ /** @} */
+diff --git a/src/lib/nhterminal/Terminal/Grid.c b/src/lib/nhterminal/Terminal/Grid.c
+index 4c90dc1..7e0e3e5 100644
+--- a/src/lib/nhterminal/Terminal/Grid.c
++++ b/src/lib/nhterminal/Terminal/Grid.c
+@@ -29,6 +29,7 @@
+ 
+ #include <string.h>
+ #include <stdio.h>
++
+ // INIT ============================================================================================
+ 
+ NH_TERMINAL_RESULT nh_terminal_initGrid(
+@@ -42,13 +43,17 @@ NH_TERMINAL_BEGIN()
+     Grid_p->cols = 0;
+     Grid_p->rows = 0;
+ 
+-    nh_terminal_resetCursor(Grid_p);
++    Grid_p->Cursor.blinkFrequency = 0.5;
++    Grid_p->Cursor.LastBlink = nh_getSystemTime();
++    Grid_p->Cursor.on = NH_FALSE;
++
++    nh_terminal_resetCursor(&Grid_p->Cursor);
+ 
+ NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+ }
+ 
+ static NH_TERMINAL_RESULT nh_terminal_initTile(
+-    nh_terminal_Grid *Grid_p, nh_terminal_Graphics *Graphics_p, nh_terminal_Tile *Tile_p)
++    nh_terminal_Grid *Grid_p, nh_terminal_Graphics *Graphics_p, nh_terminal_Tile *Tile_p, int row, int col)
+ {
+ NH_TERMINAL_BEGIN()
+ 
+@@ -69,7 +74,7 @@ NH_TERMINAL_BEGIN()
+     Tile_p->Attributes = nh_initString(8);
+ 
+     NH_TERMINAL_CHECK(nh_terminal_getBackgroundVertices(
+-        Graphics_p, Grid_p, Grid_p->Cursor.x, Grid_p->Cursor.y, Tile_p->Background.vertices_p
++        Graphics_p, Grid_p, col, row, Tile_p->Background.vertices_p
+     ))
+  
+ NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+@@ -78,81 +83,98 @@ NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+ // CURSOR ==========================================================================================
+ 
+ void nh_terminal_resetCursor(
+-    nh_terminal_Grid *Grid_p)
++    nh_terminal_Cursor *Cursor_p)
+ {
+ NH_TERMINAL_BEGIN()
+ 
+-    Grid_p->Cursor.x = 0;
+-    Grid_p->Cursor.y = 0;
++    Cursor_p->row = 0;
++    Cursor_p->col = 0;
++    Cursor_p->home = NH_TRUE;
+ 
+ NH_TERMINAL_SILENT_END()
+ }
+ 
+ void nh_terminal_setCursor(
+-    nh_terminal_Grid *Grid_p, int x, int y)
++    nh_terminal_Cursor *Cursor_p, int row, int col)
+ {
+ NH_TERMINAL_BEGIN()
+ 
+-    Grid_p->Cursor.x = x;
+-    Grid_p->Cursor.y = y;
++    Cursor_p->home = NH_FALSE;
++    Cursor_p->row = row;
++    Cursor_p->col = col;
+ 
+ NH_TERMINAL_SILENT_END()
+ }
+ 
+-nh_terminal_Tile *nh_terminal_getCursorTile(
+-    nh_terminal_Grid *Grid_p, void *Graphics_p)
++NH_BOOL nh_terminal_updateCursorBlink(
++    nh_terminal_Cursor *Cursor_p)
++{
++NH_TERMINAL_BEGIN()
++
++    nh_SystemTime Time = nh_getSystemTime();
++
++    if (nh_getSystemTimeDiffInSeconds(Cursor_p->LastBlink, Time) < Cursor_p->blinkFrequency) {
++        NH_TERMINAL_END(NH_FALSE)
++    }
++
++    Cursor_p->LastBlink = Time;
++    Cursor_p->on = !Cursor_p->on;
++
++NH_TERMINAL_END(NH_TRUE)
++}
++
++// UPDATE ==========================================================================================
++
++nh_terminal_Tile *nh_terminal_getTile(
++    nh_terminal_Grid *Grid_p, void *Graphics_p, int row, int col)
+ {
+ NH_TERMINAL_BEGIN()
+ 
+ #include NH_TERMINAL_CUSTOM_CHECK
+ 
+-    while (Grid_p->Rows.size <= Grid_p->Cursor.y) {
++    while (Grid_p->Rows.size <= row) {
+         nh_appendToList(&Grid_p->Rows, NULL);
+     }
+ 
+-    if (!Grid_p->Rows.pp[Grid_p->Cursor.y]) {
+-        Grid_p->Rows.pp[Grid_p->Cursor.y] = nh_allocate(sizeof(nh_List));
+-        NH_TERMINAL_CHECK_MEM(NULL, Grid_p->Rows.pp[Grid_p->Cursor.y])
+-        *((nh_List*)Grid_p->Rows.pp[Grid_p->Cursor.y]) = nh_initList(128);
++    if (!Grid_p->Rows.pp[row]) {
++        Grid_p->Rows.pp[row] = nh_allocate(sizeof(nh_List));
++        NH_TERMINAL_CHECK_MEM(NULL, Grid_p->Rows.pp[row])
++        *((nh_List*)Grid_p->Rows.pp[row]) = nh_initList(128);
+     }
+ 
+-    nh_List *Cols_p = Grid_p->Rows.pp[Grid_p->Cursor.y];
++    nh_List *Cols_p = Grid_p->Rows.pp[row];
+ 
+-     while (Cols_p->size <= Grid_p->Cursor.x) {
++     while (Cols_p->size <= col) {
+         nh_appendToList(Cols_p, NULL);
+     }
+ 
+-    if (!Cols_p->pp[Grid_p->Cursor.x]) {
+-        Cols_p->pp[Grid_p->Cursor.x] = nh_allocate(sizeof(nh_terminal_Tile));
+-        NH_TERMINAL_CHECK_MEM(NULL, Cols_p->pp[Grid_p->Cursor.x])
+-        NH_TERMINAL_CHECK(NULL, nh_terminal_initTile(Grid_p, Graphics_p, Cols_p->pp[Grid_p->Cursor.x]))
++    if (!Cols_p->pp[col]) {
++        Cols_p->pp[col] = nh_allocate(sizeof(nh_terminal_Tile));
++        NH_TERMINAL_CHECK_MEM(NULL, Cols_p->pp[col])
++        NH_TERMINAL_CHECK(NULL, nh_terminal_initTile(Grid_p, Graphics_p, Cols_p->pp[col], row, col))
+     }
+ 
+ #include NH_TERMINAL_DEFAULT_CHECK
+ 
+-NH_TERMINAL_END(Cols_p->pp[Grid_p->Cursor.x])
++NH_TERMINAL_END(Cols_p->pp[col])
+ }
+ 
+-// UPDATE ==========================================================================================
+-
+ NH_TERMINAL_RESULT nh_terminal_insertCodepoint(
+-    nh_terminal_Grid *Grid_p, void *Graphics_p, NH_ENCODING_UTF32 codepoint)
++    nh_terminal_Grid *Grid_p, void *Graphics_p, NH_ENCODING_UTF32 codepoint, int row, int col)
+ {
+ NH_TERMINAL_BEGIN()
+ 
+-    nh_terminal_Tile *Tile_p = nh_terminal_getCursorTile(Grid_p, Graphics_p);
++    nh_terminal_Tile *Tile_p = nh_terminal_getTile(Grid_p, Graphics_p, row, col);
+     NH_TERMINAL_CHECK_NULL(Tile_p)
+ 
+     if (Tile_p->codepoint != codepoint) 
+     {
+         NH_TERMINAL_CHECK(nh_terminal_getForegroundVertices(
+-            Graphics_p, Grid_p, codepoint, Grid_p->Cursor.x, Grid_p->Cursor.y, Tile_p->Foreground.vertices_p
++            Graphics_p, Grid_p, codepoint, col, row, Tile_p->Foreground.vertices_p
+         ))
+         Tile_p->codepoint = codepoint;
+     }
+ 
+-    Grid_p->Cursor.x++;
+-
+ NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+ }
+ 
+@@ -174,15 +196,22 @@ NH_TERMINAL_BEGIN()
+             {
+                 case '1' : 
+                     Color.r = 1.0;
++                    Color.g = 0.0;
++                    Color.b = 0.0;
+                     break; 
+                 case '2' :
++                    Color.r = 0.0;
+                     Color.g = 1.0;
++                    Color.b = 0.0;
+                     break; 
+                 case '3' :
+                     Color.r = 1.0;
+                     Color.g = 1.0;
++                    Color.b = 0.0;
+                     break;
+                 case '4' :
++                    Color.r = 0.0;
++                    Color.g = 0.0;
+                     Color.b = 1.0;
+                     break;
+                 case '5' : break;
+@@ -208,16 +237,27 @@ NH_TERMINAL_BEGIN()
+     nh_Color Foreground = ((nh_terminal_Graphics*)Graphics_p)->Text.Color;
+     nh_Color Background = ((nh_terminal_Graphics*)Graphics_p)->Background.Color;
+ 
+-    for (int i = 0; i < Grid_p->Rows.size; ++i) {
+-        nh_List *Row_p = Grid_p->Rows.pp[i];
+-        for (int j = 0; j < Row_p->size; ++j) {
+-            nh_terminal_Tile *Tile_p = Row_p->pp[j];
++    for (int row = 0; row < Grid_p->Rows.size; ++row) {
++        nh_List *Row_p = Grid_p->Rows.pp[row];
++        for (int col = 0; col < Row_p->size; ++col) {
++            nh_terminal_Tile *Tile_p = Row_p->pp[col];
+             if (Tile_p->Attributes.length > 0) {
+                 Foreground = nh_terminal_getColorFromAttributes(Graphics_p, Tile_p->Attributes.p, NH_TRUE);
+                 Background = nh_terminal_getColorFromAttributes(Graphics_p, Tile_p->Attributes.p, NH_FALSE);
+             }
++
+             Tile_p->Foreground.Color = Foreground;
+             Tile_p->Background.Color = Background;
++
++            if (Grid_p->Cursor.col == col && Grid_p->Cursor.row == row && !Grid_p->Cursor.home) {
++                Tile_p->Background.Color = Grid_p->Cursor.on ? ((nh_terminal_Graphics*)Graphics_p)->Text.Color :
++                    ((nh_terminal_Graphics*)Graphics_p)->Background.Color;
++            }
++
++            if (nh_terminal_isCustomColor(Graphics_p, &Background, NH_FALSE)) {
++                Tile_p->Foreground.Color = ((nh_terminal_Graphics*)Graphics_p)->Background.Color;
++            }
++ 
+         } 
+     }
+ 
+@@ -229,10 +269,10 @@ NH_TERMINAL_RESULT nh_terminal_resetGridAttributes(
+ {
+ NH_TERMINAL_BEGIN()
+ 
+-    for (int i = 0; i < Grid_p->Rows.size; ++i) {
+-        nh_List *Row_p = Grid_p->Rows.pp[i];
+-        for (int j = 0; j < Row_p->size; ++j) {
+-            nh_terminal_Tile *Tile_p = Row_p->pp[j];
++    for (int row = 0; row < Grid_p->Rows.size; ++row) {
++        nh_List *Row_p = Grid_p->Rows.pp[row];
++        for (int col = 0; col < Row_p->size; ++col) {
++            nh_terminal_Tile *Tile_p = Row_p->pp[col];
+             nh_freeString(&Tile_p->Attributes);
+             Tile_p->Attributes = nh_initString(8);
+         } 
+diff --git a/src/lib/nhterminal/Terminal/Grid.h b/src/lib/nhterminal/Terminal/Grid.h
+index 6213f3c..a732e02 100644
+--- a/src/lib/nhterminal/Terminal/Grid.h
++++ b/src/lib/nhterminal/Terminal/Grid.h
+@@ -11,6 +11,8 @@
+ 
+ #include "../Common/Types/Private.h"
+ 
++#include "../../nhcore/Util/Time.h"
++
+ #endif
+ 
+ /** @addtogroup lib_nhterminal_structs
+@@ -18,8 +20,12 @@
+  */
+ 
+     typedef struct nh_terminal_Cursor {
+-        int x;
+-        int y;
++        double blinkFrequency;   /**<Frequency of cursor change.*/
++        NH_BOOL on;              /**<If true, cursor is in visible period.*/
++        NH_BOOL home;            /**<If true, cursor is not visible.*/
++        nh_SystemTime LastBlink; /**<System time of last blink change.*/
++        int row;                 /**<Cursor row position.*/
++        int col;                 /**<Cursor column position.*/
+     } nh_terminal_Cursor;
+ 
+     typedef struct nh_terminal_TileForeground {
+@@ -55,15 +61,19 @@
+  */
+ 
+     void nh_terminal_resetCursor(
+-        nh_terminal_Grid *Grid_p
++        nh_terminal_Cursor *Cursor_p
+     );
+ 
+     void nh_terminal_setCursor(
+-        nh_terminal_Grid *Grid_p, int x, int y
++        nh_terminal_Cursor *Cursor_p, int x, int y
+     );
+ 
+-    nh_terminal_Tile *nh_terminal_getCursorTile(
+-        nh_terminal_Grid *Grid_p, void *Graphics_p
++    NH_BOOL nh_terminal_updateCursorBlink(
++        nh_terminal_Cursor *Cursor_p
++    );
++
++    nh_terminal_Tile *nh_terminal_getTile(
++        nh_terminal_Grid *Grid_p, void *Graphics_p, int row, int col
+     );
+ 
+     NH_TERMINAL_RESULT nh_terminal_initGrid(
+@@ -71,7 +81,7 @@
+     );
+ 
+     NH_TERMINAL_RESULT nh_terminal_insertCodepoint(
+-        nh_terminal_Grid *Grid_p, void *Graphics_p, NH_ENCODING_UTF32 codepoint
++        nh_terminal_Grid *Grid_p, void *Graphics_p, NH_ENCODING_UTF32 codepoint, int row, int col
+     );
+ 
+     NH_TERMINAL_RESULT nh_terminal_updateGridAttributes(
+diff --git a/src/lib/nhterminal/Terminal/Parser.c b/src/lib/nhterminal/Terminal/Parser.c
+index 4376c74..bc34eb4 100644
+--- a/src/lib/nhterminal/Terminal/Parser.c
++++ b/src/lib/nhterminal/Terminal/Parser.c
+@@ -30,6 +30,8 @@
+ // DECLARE =========================================================================================
+ 
+ typedef struct nh_terminal_Parser {
++    int row;
++    int col;
+     nh_terminal_Terminal *Terminal_p;
+     nh_encoding_UTF32String EscapeSequence;
+     NH_ENCODING_UTF32 *codepoint_p;
+@@ -37,6 +39,7 @@ typedef struct nh_terminal_Parser {
+ 
+ // PARSE ===========================================================================================
+ 
++
+ static nh_terminal_Parser *nh_terminal_advanceParser(
+     nh_terminal_Parser *Parser_p)
+ {
+@@ -63,15 +66,16 @@ static NH_TERMINAL_RESULT nh_terminal_handleCUP(
+ {
+ NH_TERMINAL_BEGIN()
+ 
+-    int x = 0;
+-    int y = 0;
++    int row = 0;
++    int col = 0;
+ 
+     if (Parameters_p->length == 0) {
+-        nh_terminal_resetCursor(&Parser_p->Terminal_p->Grid);
++        nh_terminal_resetGridAttributes(&Parser_p->Terminal_p->Grid);
++        nh_terminal_resetCursor(&Parser_p->Terminal_p->Grid.Cursor);
+         NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
+     }
+  
+-    x = atoi(Parameters_p->p);
++    row = atoi(Parameters_p->p);
+ 
+     int i = 0;
+     NH_BYTE *p = Parameters_p->p;
+@@ -79,10 +83,10 @@ NH_TERMINAL_BEGIN()
+ 
+     if (*p == ';') {++p;}
+     if (*p) {
+-        y = atoi(p);
++        col = atoi(p);
+     }
+ 
+-    nh_terminal_setCursor(&Parser_p->Terminal_p->Grid, x, y);
++    nh_terminal_setCursor(&Parser_p->Terminal_p->Grid.Cursor, row-1, col-1);
+ 
+ NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
+ }
+@@ -113,7 +117,8 @@ NH_TERMINAL_BEGIN()
+         case 'l' : // RM
+             break;
+         case 'm' : // Character Attributes
+-            nh_terminal_Tile *Tile_p = nh_terminal_getCursorTile(&Parser_p->Terminal_p->Grid, &Parser_p->Terminal_p->Graphics);
++            nh_terminal_Tile *Tile_p = nh_terminal_getTile(
++                &Parser_p->Terminal_p->Grid, &Parser_p->Terminal_p->Graphics, Parser_p->row, Parser_p->col);
+             NH_TERMINAL_CHECK_NULL(Tile_p)
+             nh_freeString(&Tile_p->Attributes);
+             Tile_p->Attributes = nh_initString(8);
+@@ -156,19 +161,18 @@ NH_TERMINAL_BEGIN()
+                 break;
+ 
+             case '\r' :
+-                Parser_p->Terminal_p->Grid.Cursor.x = 0;
+-                nh_terminal_advanceParser(Parser_p);
++                nh_terminal_advanceParser(Parser_p); Parser_p->col = 0;
+                 break;
+  
+             case '\n' :
+-                Parser_p->Terminal_p->Grid.Cursor.y++;
+-                nh_terminal_advanceParser(Parser_p);
++                nh_terminal_advanceParser(Parser_p); Parser_p->row++;
+                 break;
+ 
+             default :
+                 NH_TERMINAL_CHECK(nh_terminal_insertCodepoint(
+-                    &Parser_p->Terminal_p->Grid, &Parser_p->Terminal_p->Graphics, *(Parser_p->codepoint_p)))
+-                nh_terminal_advanceParser(Parser_p);
++                    &Parser_p->Terminal_p->Grid, &Parser_p->Terminal_p->Graphics, 
++                    *(Parser_p->codepoint_p), Parser_p->row, Parser_p->col))
++                nh_terminal_advanceParser(Parser_p); Parser_p->col++;
+                 break;
+         }
+     }
+@@ -178,19 +182,6 @@ NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+ 
+ // START ===========================================================================================
+ 
+-static nh_terminal_Parser nh_terminal_initParser(
+-    nh_terminal_Terminal *Terminal_p, NH_ENCODING_UTF32 *codepoint_p)
+-{
+-NH_TERMINAL_BEGIN()
+-
+-    nh_terminal_Parser Parser;
+-    Parser.Terminal_p = Terminal_p;
+-    Parser.codepoint_p = codepoint_p;
+-    Parser.EscapeSequence = nh_encoding_initUTF32(16);
+-
+-NH_TERMINAL_END(Parser)
+-}
+-
+ NH_TERMINAL_RESULT nh_terminal_parseString(
+     nh_terminal_Terminal *Terminal_p, nh_encoding_UTF32String *String_p)
+ {
+@@ -198,7 +189,13 @@ NH_TERMINAL_BEGIN()
+ 
+     nh_encoding_appendUTF32Codepoint(String_p, 0);
+ 
+-    nh_terminal_Parser Parser = nh_terminal_initParser(Terminal_p, String_p->p);
++    nh_terminal_Parser Parser;
++    Parser.row            = 0;
++    Parser.col            = 0;
++    Parser.Terminal_p     = Terminal_p;
++    Parser.codepoint_p    = String_p->p;
++    Parser.EscapeSequence = nh_encoding_initUTF32(16);
++
+     NH_TERMINAL_CHECK(nh_terminal_parseCodepoints(&Parser))
+ 
+ NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+diff --git a/src/lib/nhterminal/Terminal/Terminal.c b/src/lib/nhterminal/Terminal/Terminal.c
+index b1c1f8b..4cc61f2 100644
+--- a/src/lib/nhterminal/Terminal/Terminal.c
++++ b/src/lib/nhterminal/Terminal/Terminal.c
+@@ -47,15 +47,12 @@ NH_TERMINAL_BEGIN()
+ 
+     nh_terminal_Terminal Terminal;
+ 
+-    Terminal.TTY_p = Workload_p->args_p;
+-    Terminal.View_p = nh_tty_createView(Terminal.TTY_p, NH_FALSE);
++    Terminal.View_p = nh_tty_createView(Workload_p->args_p, NH_FALSE);
+     NH_TERMINAL_CHECK_MEM(NULL, Terminal.View_p)
+ 
+     NH_TERMINAL_CHECK(NULL, nh_terminal_initGraphics(&Terminal.Graphics))
+     NH_TERMINAL_CHECK(NULL, nh_terminal_initGrid(&Terminal.Grid))
+ 
+-    nh_initRingBufferMarker(&Terminal.InputMarker);
+-
+     nh_terminal_Terminal *Terminal_p = nh_allocate(sizeof(nh_terminal_Terminal));
+     NH_TERMINAL_CHECK_MEM(NULL, Terminal_p)
+ 
+@@ -118,9 +115,6 @@ NH_TERMINAL_BEGIN()
+ 
+     NH_TERMINAL_CHECK(nh_terminal_updateSize(Terminal_p))
+ 
+-    Terminal_p->Graphics.Text.Action.updateVertices = NH_TRUE;
+-    Terminal_p->Graphics.Text.Action.updateFont = NH_TRUE;
+-
+     *update_p = NH_TRUE;
+ 
+ NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
+@@ -132,23 +126,35 @@ static NH_TERMINAL_RESULT nh_terminal_handleInputIfRequired(
+ NH_TERMINAL_BEGIN()
+ 
+     nh_String *String_p = NULL;
++    nh_wsi_Event *Event_p = NULL;
+ 
+     do {
+-        String_p = nh_incrementRingBufferMarker(&Terminal_p->View_p->Output, &Terminal_p->InputMarker);
++        String_p = nh_incrementRingBufferMarker(
++            &Terminal_p->View_p->Buffer.Draw, &Terminal_p->View_p->Buffer.Draw.Marker);
++
+         if (!String_p) {break;}
+ 
+         nh_encoding_UTF32String String = nh_encoding_decodeUTF8(String_p->p, String_p->length, NULL);
+         NH_TERMINAL_CHECK(nh_terminal_parseString(Terminal_p, &String))
+-        NH_TERMINAL_CHECK(nh_terminal_updateGridAttributes(&Terminal_p->Grid, &Terminal_p->Graphics))
+         nh_encoding_freeUTF32(&String);
+ 
+-        Terminal_p->Graphics.Text.Action.updateVertices = NH_TRUE;
+-        Terminal_p->Graphics.Text.Action.updateFont = NH_TRUE;
+-
+         *update_p = NH_TRUE;
+ 
+     } while (String_p);
+ 
++    do {
++        Event_p = nh_incrementRingBufferMarker(
++            &Terminal_p->View_p->Buffer.Event, &Terminal_p->View_p->Buffer.Event.Marker);
++
++        if (!Event_p) {break;}
++
++        Terminal_p->Grid.Cursor.on = NH_TRUE;
++        Terminal_p->Grid.Cursor.LastBlink = nh_getSystemTime();
++
++        *update_p = NH_TRUE;
++
++    } while (Event_p);
++
+ NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
+ }
+ 
+@@ -169,12 +175,17 @@ NH_TERMINAL_BEGIN()
+     NH_TERMINAL_CHECK(NH_SIGNAL_ERROR, nh_terminal_updateSizeIfRequired(Terminal_p, &update))
+     NH_TERMINAL_CHECK(NH_SIGNAL_ERROR, nh_terminal_handleInputIfRequired(Terminal_p, &update))
+ 
++    if (nh_terminal_updateCursorBlink(&Terminal_p->Grid.Cursor)) {
++        update = NH_TRUE;
++    }
++
+     if (update) {
++        NH_TERMINAL_CHECK(NH_SIGNAL_ERROR, nh_terminal_updateGridAttributes(&Terminal_p->Grid, 
++            &Terminal_p->Graphics))
+         NH_TERMINAL_CHECK(NH_SIGNAL_ERROR, nh_terminal_updateGraphicsData(&Terminal_p->Graphics,
+             &Terminal_p->Grid))
+         NH_TERMINAL_CHECK(NH_SIGNAL_ERROR, nh_terminal_renderGraphics(&Terminal_p->Graphics, 
+             &Terminal_p->Grid))
+-        nh_terminal_resetGridAttributes(&Terminal_p->Grid);
+         NH_TERMINAL_END(NH_SIGNAL_OK)
+     }
+ 
+@@ -221,9 +232,6 @@ NH_TERMINAL_BEGIN()
+         Terminal_p->Graphics.Background.Color = Color;
+     }
+ 
+-    Terminal_p->Graphics.Text.Action.updateVertices = NH_TRUE;
+-    Terminal_p->Graphics.Text.Action.updateFont = NH_TRUE;
+-
+ NH_TERMINAL_END(NH_TERMINAL_SUCCESS)
+ }
+ 
+diff --git a/src/lib/nhterminal/Terminal/Terminal.h b/src/lib/nhterminal/Terminal/Terminal.h
+index 7277a33..ede8a82 100644
+--- a/src/lib/nhterminal/Terminal/Terminal.h
++++ b/src/lib/nhterminal/Terminal/Terminal.h
+@@ -25,9 +25,7 @@
+     typedef struct nh_terminal_Terminal {
+         nh_terminal_Grid Grid;
+         nh_terminal_Graphics Graphics;
+-        nh_tty_TTY *TTY_p;
+         nh_tty_View *View_p;
+-        nh_RingBufferMarker InputMarker;
+     } nh_terminal_Terminal;
+ 
+ /** @} */
+diff --git a/src/lib/nhtty/Common/Types/Public.h b/src/lib/nhtty/Common/Types/Public.h
+index d1d95ae..0199f32 100644
+--- a/src/lib/nhtty/Common/Types/Public.h
++++ b/src/lib/nhtty/Common/Types/Public.h
+@@ -17,15 +17,6 @@
+ 
+ #endif
+ 
+-/** @{ */
+-
+-    typedef struct nh_tty_Event {
+-        NH_ENCODING_UTF32 codepoint;
+-        NH_WSI_TRIGGER trigger;
+-        NH_WSI_KEY special;
+-    } nh_tty_Event;
+-    
+-/** @} */
+ /** @{ */
+ 
+     typedef struct nh_tty_TTY nh_tty_TTY;
+@@ -33,8 +24,8 @@
+     
+     typedef void *(*nh_tty_init_f)();
+     typedef NH_TTY_RESULT (*nh_tty_draw_f)(nh_tty_Program *Program_p, nh_encoding_UTF8String *Row_p, int width, int height, int row);
+-    typedef NH_TTY_RESULT (*nh_tty_handleInput_f)(nh_tty_Program *Program_p, nh_tty_Event Event);
+     typedef NH_TTY_RESULT (*nh_tty_getCursorPosition_f)(nh_tty_Program *Program_p, int *x_p, int *y_p);
++    typedef NH_TTY_RESULT (*nh_tty_handleInput_f)(nh_tty_Program *Program_p, nh_wsi_KeyboardEvent Event);
+     typedef NH_TTY_RESULT (*nh_tty_update_f)(nh_tty_Program *Program_p);
+     typedef NH_TTY_RESULT (*nh_tty_handleCommand_f)(nh_tty_Program *Program_p, nh_List *Arguments_p);
+     typedef void *(*nh_tty_createView_f)();
+diff --git a/src/lib/nhtty/Editor/Editor.c b/src/lib/nhtty/Editor/Editor.c
+index 44f8155..ce5c511 100644
+--- a/src/lib/nhtty/Editor/Editor.c
++++ b/src/lib/nhtty/Editor/Editor.c
+@@ -246,7 +246,7 @@ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+ 
+ NH_TTY_RESULT nh_tty_handleEditorInput(
+-    nh_tty_Program *Program_p, nh_tty_Event Event)
++    nh_tty_Program *Program_p, nh_wsi_KeyboardEvent Event)
+ {
+ NH_TTY_BEGIN()
+ 
+diff --git a/src/lib/nhtty/Editor/Editor.h b/src/lib/nhtty/Editor/Editor.h
+index 14331f0..1f8169c 100644
+--- a/src/lib/nhtty/Editor/Editor.h
++++ b/src/lib/nhtty/Editor/Editor.h
+@@ -88,7 +88,7 @@
+     );
+ 
+     NH_TTY_RESULT nh_tty_handleEditorInput(
+-        nh_tty_Program *Program_p, nh_tty_Event Event
++        nh_tty_Program *Program_p, nh_wsi_KeyboardEvent Event
+     );
+ 
+     NH_TTY_RESULT nh_tty_drawEditorRow(
+diff --git a/src/lib/nhtty/Editor/TreeListing.c b/src/lib/nhtty/Editor/TreeListing.c
+index 6531022..f6038a8 100644
+--- a/src/lib/nhtty/Editor/TreeListing.c
++++ b/src/lib/nhtty/Editor/TreeListing.c
+@@ -273,7 +273,7 @@ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+ 
+ static NH_TTY_RESULT nh_tty_delete(
+-    nh_tty_Status *Status_p, nh_tty_Event Event, NH_BOOL *continue_p)
++    nh_tty_Status *Status_p, nh_wsi_KeyboardEvent Event, NH_BOOL *continue_p)
+ {
+ NH_TTY_BEGIN()
+ 
+diff --git a/src/lib/nhtty/Logger/Logger.c b/src/lib/nhtty/Logger/Logger.c
+index b55d1e0..da6172b 100644
+--- a/src/lib/nhtty/Logger/Logger.c
++++ b/src/lib/nhtty/Logger/Logger.c
+@@ -379,7 +379,7 @@ NH_TTY_SILENT_END()
+ }
+ 
+ NH_TTY_RESULT nh_tty_handleLoggerInput(
+-    nh_tty_Program *Program_p, nh_tty_Event Event)
++    nh_tty_Program *Program_p, nh_wsi_KeyboardEvent Event)
+ {
+ NH_TTY_BEGIN()
+ 
+diff --git a/src/lib/nhtty/Logger/Logger.h b/src/lib/nhtty/Logger/Logger.h
+index e3bb3d3..77360da 100644
+--- a/src/lib/nhtty/Logger/Logger.h
++++ b/src/lib/nhtty/Logger/Logger.h
+@@ -75,7 +75,7 @@
+     );
+ 
+     NH_TTY_RESULT nh_tty_handleLoggerInput(
+-        nh_tty_Program *Program_p, nh_tty_Event Event
++        nh_tty_Program *Program_p, nh_wsi_KeyboardEvent Event
+     );
+ 
+ /** @} */
+diff --git a/src/lib/nhtty/Preferences/Preferences.c b/src/lib/nhtty/Preferences/Preferences.c
+deleted file mode 100644
+index bea7fe2..0000000
+--- a/src/lib/nhtty/Preferences/Preferences.c
++++ /dev/null
+@@ -1,213 +0,0 @@
+-// LICENSE NOTICE ==================================================================================
+-
+-/**
+- * netzhaut - Web Browser Engine
+- * Copyright (C) 2020 The netzhaut Authors
+- * Published under MIT
+- */
+-
+-// INCLUDE =========================================================================================
+-
+-#include "Preferences.h"
+-
+-#include "../TTY/TTY.h"
+-#include "../Common/Macros/Macros.h"
+-
+-#include NH_TTY_FLOW
+-#include NH_TTY_DEFAULT_CHECK
+-
+-#include "../../nhcore/System/Logger.h"
+-#include "../../nhcore/System/Memory.h"
+-
+-#include "../../nhencoding/Encodings/UTF32.h"
+-#include "../../nhencoding/Encodings/UTF8.h"
+-
+-#include <stddef.h>
+-#include <unistd.h>
+-#include <stdio.h>
+-#include <string.h>
+-#include <dirent.h>
+-#include <stdlib.h>
+-
+-#include <sys/types.h>
+-#include <sys/stat.h>
+-
+-// INIT ============================================================================================
+-
+-void *nh_tty_initPreferences()
+-{
+-NH_TTY_BEGIN()
+-
+-#include NH_TTY_CUSTOM_CHECK
+-
+-    nh_tty_Preferences *Preferences_p = nh_allocate(sizeof(nh_tty_Preferences));
+-    NH_TTY_CHECK_MEM(NULL, Preferences_p)
+-
+-    Preferences_p->focus       = 0;
+-    Preferences_p->insertMode  = NH_FALSE;
+-    Preferences_p->treeListing = NH_TRUE;
+-
+-    Preferences_p->LastUpdate = nh_getSystemTime();
+-    Preferences_p->updateIntervalInSeconds = 1.0;
+-
+-#include NH_TTY_DEFAULT_CHECK
+-
+-NH_TTY_END(Preferences_p)
+-}
+-
+-// VIEW ============================================================================================
+-
+-void *nh_tty_createPreferencesView()
+-{
+-NH_TTY_BEGIN()
+-
+-    nh_tty_PreferencesView *View_p = nh_allocate(sizeof(nh_tty_PreferencesView));
+-
+-    View_p->FileViews = nh_initList(8);
+-    View_p->helpScroll = 0;
+-    View_p->height = 0;
+-    View_p->treeListingOffset = 0;
+-    View_p->treeListingCurrent = 0;
+-    View_p->filePreferencesWidth = 0;
+-
+-NH_TTY_END(View_p)
+-}
+-
+-void nh_tty_destroyPreferencesView(
+-    void *p)
+-{
+-NH_TTY_BEGIN()
+-
+-    nh_free(p);
+-
+-NH_TTY_SILENT_END()
+-}
+-
+-// UPDATE ==========================================================================================
+-
+-NH_TTY_RESULT nh_tty_updatePreferences(
+-    nh_tty_Program *Program_p)
+-{
+-NH_TTY_BEGIN()
+-
+-    nh_tty_Preferences *Preferences_p = Program_p->handle_p;
+-
+-    nh_SystemTime Now = nh_getSystemTime();
+-    if (nh_getSystemTimeDiffInSeconds(Preferences_p->LastUpdate, Now) < Preferences_p->updateIntervalInSeconds) {
+-        NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+-    }
+-
+-    NH_BOOL updated = NH_FALSE;
+-    Preferences_p->LastUpdate = Now;
+-
+-NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+-}
+-
+-// INPUT ===========================================================================================
+-
+-NH_TTY_RESULT nh_tty_handlePreferencesInput(
+-    nh_tty_Program *Program_p, nh_tty_Event Event)
+-{
+-NH_TTY_BEGIN()
+-
+-    if (Event.trigger != NH_WSI_TRIGGER_PRESS) {NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)}
+-
+-    NH_ENCODING_UTF32 c = Event.codepoint;
+-    nh_tty_Preferences *Preferences_p = Program_p->handle_p;
+-
+-    switch (c) 
+-    {
+-        case CTRL_KEY('w') :
+-        case CTRL_KEY('a') :
+-        case CTRL_KEY('s') :
+-        case CTRL_KEY('d') :
+-            break;
+-
+-        default :
+-	    break;
+-    }
+- 
+-NH_TTY_END(NH_TTY_SUCCESS)
+-}
+-
+-// DRAW ============================================================================================
+-
+-NH_TTY_RESULT nh_tty_drawPreferencesRow(
+-    nh_tty_Program *Program_p, nh_encoding_UTF8String *Row_p, int width, int height, int row)
+-{
+-NH_TTY_BEGIN()
+-
+-    nh_tty_Preferences *Preferences_p = Program_p->handle_p;
+-    nh_tty_PreferencesView *View_p = Program_p->view_p;
+-
+-    View_p->height = height;
+-
+-    NH_ENCODING_UTF32 tmp_p[1];
+-    tmp_p[0] = 32;
+-
+-    for (int i = 0; i < width; ++i) {
+-        nh_encoding_appendUTF8(Row_p, tmp_p, 1);
+-    }
+-
+-NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+-}
+-
+-// CURSOR ==========================================================================================
+-
+-NH_TTY_RESULT nh_tty_getPreferencesCursor(
+-    nh_tty_Program *Program_p, int *x_p, int *y_p)
+-{
+-NH_TTY_BEGIN()
+-
+-    *x_p = -1;
+-    *y_p = -1;
+-
+-NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+-}
+-
+-// COMMANDS ========================================================================================
+-
+-NH_BYTE *NH_TTY_PREFERENCES_COMMANDS_PP[] = {
+-    "borders",
+-    "topbars",
+-};
+-
+-int NH_TTY_PREFERENCES_COMMANDS_PP_SIZE = sizeof(NH_TTY_PREFERENCES_COMMANDS_PP)/sizeof(NH_TTY_PREFERENCES_COMMANDS_PP[0]);
+-
+-NH_TTY_RESULT nh_tty_executePreferencesCommand(
+-    nh_tty_Program *Program_p, nh_List *Arguments_p)
+-{
+-NH_TTY_BEGIN()
+-
+-    nh_tty_Preferences *Preferences_p = Program_p->handle_p;
+-
+-    switch (Program_p->command)
+-    {
+-        case NH_TTY_PREFERENCES_COMMAND_BORDERS:
+-	    if (Arguments_p->size == 1) {
+-                nh_encoding_UTF32String *Argument_p = Arguments_p->pp[0];
+-                if (nh_encoding_compareUTF32ASCII(Argument_p->p, "on")) {
+-		    nh_tty_setBorders(NH_TRUE);
+-	        }
+-		if (nh_encoding_compareUTF32ASCII(Argument_p->p, "off")) {
+-		    nh_tty_setBorders(NH_FALSE);
+-	        }
+-            }
+-            break;
+-        case NH_TTY_PREFERENCES_COMMAND_TOPBARS:
+-	    if (Arguments_p->size == 1) {
+-                nh_encoding_UTF32String *Argument_p = Arguments_p->pp[0];
+-                if (nh_encoding_compareUTF32ASCII(Argument_p->p, "on")) {
+-		    nh_tty_setTopBars(NH_TRUE);
+-	        }
+-		if (nh_encoding_compareUTF32ASCII(Argument_p->p, "off")) {
+-		    nh_tty_setTopBars(NH_FALSE);
+-	        }
+-            }
+-            break;
+-        default : NH_TTY_DIAGNOSTIC_END(NH_TTY_ERROR_UNKNOWN_COMMAND)
+-    }
+-
+-NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+-}
+-
+diff --git a/src/lib/nhtty/Preferences/Preferences.h b/src/lib/nhtty/Preferences/Preferences.h
+deleted file mode 100644
+index 85ee332..0000000
+--- a/src/lib/nhtty/Preferences/Preferences.h
++++ /dev/null
+@@ -1,100 +0,0 @@
+-#ifndef NH_TTY_PREFERENCES_H
+-#define NH_TTY_PREFERENCES_H
+-
+-#ifndef DOXYGEN_SHOULD_SKIP_THIS
+-
+-/**
+- * netzhaut - Web Browser Engine
+- * Copyright (C) 2020 The netzhaut Authors
+- * Published under MIT
+- */
+-
+-#include "../TTY/Program.h"
+-#include "../Common/Types/Private.h"
+-
+-#include "../../nhcore/Util/String.h"
+-#include "../../nhcore/Util/Time.h"
+-
+-#endif
+-
+-/** @addtogroup lib_nhtty_enums
+- *  @{
+- */
+-
+-    typedef enum NH_TTY_PREFERENCES_COMMAND {
+-        NH_TTY_PREFERENCES_COMMAND_BORDERS,
+-        NH_TTY_PREFERENCES_COMMAND_TOPBARS,
+-    } NH_TTY_PREFERENCES_COMMAND;
+-
+-/** @} */
+-
+-/** @addtogroup lib_nhtty_structs
+- *  @{
+- */
+-
+-    typedef struct nh_tty_PreferencesView {
+-        nh_List FileViews;
+-        int helpScroll;
+-        int height;
+-        int filePreferencesWidth;
+-        int treeListingWidth;
+-        int treeListingOffset;
+-        int treeListingCurrent;
+-    } nh_tty_PreferencesView;
+-
+-    typedef struct nh_tty_Preferences {
+-        int focus;
+-        NH_BOOL insertMode;
+-        NH_BOOL treeListing;
+-        nh_SystemTime LastUpdate;
+-        double updateIntervalInSeconds;
+-    } nh_tty_Preferences;
+-
+-/** @} */
+-
+-/** @addtogroup lib_nhtty_vars
+- *  @{
+- */
+-
+-    extern NH_BYTE *NH_TTY_PREFERENCES_COMMANDS_PP[];
+-    extern int NH_TTY_PREFERENCES_COMMANDS_PP_SIZE;
+-
+-/** @} */
+-
+-/** @addtogroup lib_nhtty_functions
+- *  @{
+- */
+-
+-    void *nh_tty_createPreferencesView(
+-    );
+-    
+-    void nh_tty_destroyPreferencesView(
+-        void *p
+-    );
+-
+-    void *nh_tty_initPreferences(
+-    );
+-
+-    NH_TTY_RESULT nh_tty_updatePreferences(
+-        nh_tty_Program *Program_p
+-    );
+-
+-    NH_TTY_RESULT nh_tty_handlePreferencesInput(
+-        nh_tty_Program *Program_p, nh_tty_Event Event
+-    );
+-
+-    NH_TTY_RESULT nh_tty_drawPreferencesRow(
+-        nh_tty_Program *Program_p, nh_encoding_UTF8String *Row_p, int width, int height, int row 
+-    );
+-
+-    NH_TTY_RESULT nh_tty_getPreferencesCursor(
+-        nh_tty_Program *Program_p, int *x_p, int *y_p
+-    );
+-
+-    NH_TTY_RESULT nh_tty_executePreferencesCommand(
+-        nh_tty_Program *Program_p, nh_List *Arguments_p
+-    );
+-
+-/** @} */
+-
+-#endif 
+diff --git a/src/lib/nhtty/Shell/Shell.c b/src/lib/nhtty/Shell/Shell.c
+index 2e3c99c..639cd37 100644
+--- a/src/lib/nhtty/Shell/Shell.c
++++ b/src/lib/nhtty/Shell/Shell.c
+@@ -526,7 +526,7 @@ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ // INPUT ===========================================================================================
+ 
+ NH_TTY_RESULT nh_tty_handleShellInput(
+-    nh_tty_Program *Program_p, nh_tty_Event Event)
++    nh_tty_Program *Program_p, nh_wsi_KeyboardEvent Event)
+ {
+ NH_TTY_BEGIN()
+ 
+diff --git a/src/lib/nhtty/Shell/Shell.h b/src/lib/nhtty/Shell/Shell.h
+index 6a40b04..5495dfc 100644
+--- a/src/lib/nhtty/Shell/Shell.h
++++ b/src/lib/nhtty/Shell/Shell.h
+@@ -109,7 +109,7 @@
+     );
+ 
+     NH_TTY_RESULT nh_tty_handleShellInput(
+-        nh_tty_Program *Program_p, nh_tty_Event Event
++        nh_tty_Program *Program_p, nh_wsi_KeyboardEvent Event
+     );
+ 
+     NH_TTY_RESULT nh_tty_drawShellRow(
+diff --git a/src/lib/nhtty/TTY/Console.c b/src/lib/nhtty/TTY/Console.c
+index 64d6902..748ace6 100644
+--- a/src/lib/nhtty/TTY/Console.c
++++ b/src/lib/nhtty/TTY/Console.c
+@@ -330,7 +330,7 @@ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ // INPUT ===========================================================================================
+ 
+ NH_TTY_RESULT nh_tty_handleConsoleInput(
+-    nh_tty_Console *Console_p, nh_tty_Event Event)
++    nh_tty_Console *Console_p, nh_wsi_KeyboardEvent Event)
+ {
+ NH_TTY_BEGIN()
+ 
+@@ -560,10 +560,12 @@ NH_TTY_RESULT nh_tty_updateConsole(
+ {
+ NH_TTY_BEGIN()
+ 
+-    if (nh_getSystemTimeDiffInSeconds(Console_p->Suggestions.Time, nh_getSystemTime()) 
++    nh_SystemTime Now = nh_getSystemTime();
++
++    if (nh_getSystemTimeDiffInSeconds(Console_p->Suggestions.Time, Now) 
+ 	>= Console_p->Suggestions.interval) 
+     {
+-        Console_p->Suggestions.Time = nh_getSystemTime();
++        Console_p->Suggestions.Time = Now;
+         Console_p->Suggestions.update = NH_TRUE;
+         Console_p->refresh = NH_TRUE;
+     }
+diff --git a/src/lib/nhtty/TTY/Console.h b/src/lib/nhtty/TTY/Console.h
+index adbafbd..c1b8260 100644
+--- a/src/lib/nhtty/TTY/Console.h
++++ b/src/lib/nhtty/TTY/Console.h
+@@ -56,7 +56,7 @@
+     );
+ 
+     NH_TTY_RESULT nh_tty_handleConsoleInput(
+-        nh_tty_Console *Console_p, nh_tty_Event Event 
++        nh_tty_Console *Console_p, nh_wsi_KeyboardEvent Event 
+     );
+ 
+     NH_TTY_RESULT nh_tty_drawConsoleRow(
+diff --git a/src/lib/nhtty/TTY/Draw.c b/src/lib/nhtty/TTY/Draw.c
+index 87972ca..86e5f51 100644
+--- a/src/lib/nhtty/TTY/Draw.c
++++ b/src/lib/nhtty/TTY/Draw.c
+@@ -93,9 +93,8 @@ NH_TTY_BEGIN()
+         NH_BYTE buf[32] = {'\0'};
+         snprintf(buf, sizeof(buf), "\x1b[%d;%dH", y, x);
+         nh_appendFormatToString(&Data, buf);
+-        nh_appendFormatToString(&Data, "\x1b[?25h");
+ 
+-        NH_TTY_CHECK(nh_tty_writeToView(View_p, Data.p, Data.length))
++        NH_TTY_CHECK(nh_tty_writeToDrawBuffer(View_p, Data.p, Data.length))
+ 
+         nh_freeString(&Data);
+     }
+@@ -131,8 +130,8 @@ NH_TTY_BEGIN()
+ 
+     nh_String Data = nh_initString(255);
+ 
+-    nh_appendFormatToString(&Data, "\x1b[H"); // move cursor to home
+-    nh_appendFormatToString(&Data, "\x1b[?25l");
++    // Move cursor to home, this triggers attribute reset in nhterminal.
++    nh_appendFormatToString(&Data, "\x1b[H");
+ 
+     for (int row = 0, col = 0; row < View_p->rows; ++row, col = 0) {
+         while (col < View_p->cols) {
+@@ -156,7 +155,7 @@ NH_TTY_BEGIN()
+         if (row < View_p->rows - 1) {nh_appendFormatToString(&Data, "\r\n");}
+     }
+ 
+-    NH_TTY_CHECK(nh_tty_writeToView(View_p, Data.p, Data.length))
++    NH_TTY_CHECK(nh_tty_writeToDrawBuffer(View_p, Data.p, Data.length))
+ 
+     nh_freeString(&Data);
+     nh_freeList(&Tiles, NH_FALSE);
+diff --git a/src/lib/nhtty/TTY/Program.c b/src/lib/nhtty/TTY/Program.c
+index 94f099a..2fbc8e3 100644
+--- a/src/lib/nhtty/TTY/Program.c
++++ b/src/lib/nhtty/TTY/Program.c
+@@ -15,7 +15,6 @@
+ #include "../Editor/Editor.h"
+ #include "../Shell/Shell.h"
+ #include "../Logger/Logger.h"
+-#include "../Preferences/Preferences.h"
+ #include "../Common/Macros/Macros.h"
+ #include NH_TTY_FLOW
+ #include NH_TTY_CUSTOM_CHECK
+@@ -158,22 +157,22 @@ NH_TTY_BEGIN()
+             defaultNames_pp[2], 5, NH_TTY_SHELL_COMMANDS_PP, NH_TTY_SHELL_COMMANDS_PP_SIZE, Callbacks 
+         )))
+     }
+-    else if (!strcmp(name_p, "preferences")) {
+-
+-        nh_tty_ProgramCallbacks Callbacks;
+-        Callbacks.init_f              = nh_tty_initPreferences; 
+-        Callbacks.draw_f              = nh_tty_drawPreferencesRow; 
+-        Callbacks.handleInput_f       = nh_tty_handlePreferencesInput; 
+-        Callbacks.getCursorPosition_f = nh_tty_getPreferencesCursor; 
+-        Callbacks.update_f            = nh_tty_updatePreferences;
+-        Callbacks.handleCommand_f     = nh_tty_executePreferencesCommand;
+-        Callbacks.createView_f        = nh_tty_createPreferencesView;
+-        Callbacks.destroyView_f       = nh_tty_destroyPreferencesView;
+-
+-        NH_CHECK(NH_TTY_ERROR_BAD_STATE, nh_appendToList(Prototypes_p, nh_tty_createProgramPrototype(
+-            defaultNames_pp[3], 11, NH_TTY_PREFERENCES_COMMANDS_PP, NH_TTY_PREFERENCES_COMMANDS_PP_SIZE, Callbacks 
+-        )))
+-    }
++//    else if (!strcmp(name_p, "preferences")) {
++//
++//        nh_tty_ProgramCallbacks Callbacks;
++//        Callbacks.init_f              = nh_tty_initPreferences; 
++//        Callbacks.draw_f              = nh_tty_drawPreferencesRow; 
++//        Callbacks.handleInput_f       = nh_tty_handlePreferencesInput; 
++//        Callbacks.getCursorPosition_f = nh_tty_getPreferencesCursor; 
++//        Callbacks.update_f            = nh_tty_updatePreferences;
++//        Callbacks.handleCommand_f     = nh_tty_executePreferencesCommand;
++//        Callbacks.createView_f        = nh_tty_createPreferencesView;
++//        Callbacks.destroyView_f       = nh_tty_destroyPreferencesView;
++//
++//        NH_CHECK(NH_TTY_ERROR_BAD_STATE, nh_appendToList(Prototypes_p, nh_tty_createProgramPrototype(
++//            defaultNames_pp[3], 11, NH_TTY_PREFERENCES_COMMANDS_PP, NH_TTY_PREFERENCES_COMMANDS_PP_SIZE, Callbacks 
++//        )))
++//    }
+     else {NH_TTY_DIAGNOSTIC_END(NH_TTY_ERROR_BAD_STATE)}
+ 
+     NH_TTY_CHECK(NH_TTY_ERROR_BAD_STATE, nh_tty_updateProgramInstances(TTY_p))
+diff --git a/src/lib/nhtty/TTY/StandardIO.c b/src/lib/nhtty/TTY/StandardIO.c
+index 07f4540..d43062d 100644
+--- a/src/lib/nhtty/TTY/StandardIO.c
++++ b/src/lib/nhtty/TTY/StandardIO.c
+@@ -27,6 +27,7 @@
+ #include "../../nhcore/System/Thread.h"
+ #include "../../nhcore/System/Memory.h"
+ #include "../../nhcore/System/Process.h"
++#include "../../nhcore/Util/RingBuffer.h"
+ 
+ #include "../../nhencoding/Encodings/UTF8.h"
+ #include "../../nhencoding/Encodings/UTF32.h"
+@@ -136,15 +137,29 @@ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+ 
+ NH_TTY_RESULT nh_tty_readStandardInput(
+-    NH_ENCODING_UTF32 *codepoint_p)
++    nh_tty_TTY *TTY_p)
+ {
+ NH_TTY_BEGIN()
+ 
++    NH_ENCODING_UTF32 codepoint;
++
++    do {
++
++    codepoint = 0;
++
+ #ifdef __unix__
+-    NH_TTY_DIAGNOSTIC_END(nh_tty_readLinuxStandardInput(codepoint_p))
++    NH_TTY_CHECK(nh_tty_readLinuxStandardInput(&codepoint))
+ #endif
+ 
+-NH_TTY_DIAGNOSTIC_END(NH_TTY_ERROR_BAD_STATE)
++    if (codepoint) {
++        nh_wsi_KeyboardEvent *Event_p = nh_advanceRingBuffer(&TTY_p->Buffer.Keyboard);
++        Event_p->codepoint = codepoint;
++        Event_p->trigger = NH_WSI_TRIGGER_PRESS;
++    }
++
++    }  while (codepoint);
++
++NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+ 
+ // WRITE ===========================================================================================
+@@ -259,3 +274,15 @@ NH_TTY_BEGIN()
+ NH_TTY_END(NH_TTY_SUCCESS)
+ }
+ 
++NH_BOOL nh_tty_claimsStandardIO(
++    nh_tty_TTY *TTY_p)
++{
++NH_TTY_BEGIN()
++
++    for (int i = 0; i < TTY_p->Views.size; ++i) {
++        if (((nh_tty_View*)TTY_p->Views.pp[i])->standardIO) {NH_TTY_END(NH_TRUE)}
++    }
++
++NH_TTY_END(NH_FALSE)
++}
++
+diff --git a/src/lib/nhtty/TTY/StandardIO.h b/src/lib/nhtty/TTY/StandardIO.h
+index 04638cd..9ff8c67 100644
+--- a/src/lib/nhtty/TTY/StandardIO.h
++++ b/src/lib/nhtty/TTY/StandardIO.h
+@@ -39,7 +39,7 @@
+     );
+     
+     NH_TTY_RESULT nh_tty_readStandardInput(
+-        NH_ENCODING_UTF32 *codepoint_p
++        nh_tty_TTY *TTY_p
+     );
+     
+     NH_TTY_RESULT nh_tty_writeToStandardOutput(
+@@ -54,6 +54,10 @@
+         nh_tty_TTY *TTY_p
+     );
+ 
++    NH_BOOL nh_tty_claimsStandardIO(
++        nh_tty_TTY *TTY_p
++    );
++
+ /** @} */
+ 
+ #endif 
+diff --git a/src/lib/nhtty/TTY/Status.c b/src/lib/nhtty/TTY/Status.c
+index 11d37b2..57eac3b 100644
+--- a/src/lib/nhtty/TTY/Status.c
++++ b/src/lib/nhtty/TTY/Status.c
+@@ -97,7 +97,7 @@ NH_TTY_END(NH_TTY_SUCCESS)
+ 
+ NH_TTY_RESULT nh_tty_setBinaryQueryMessage(
+     NH_ENCODING_UTF32 *query_p, int length, void *args_p, 
+-    NH_TTY_RESULT (*callback_f)(nh_tty_Status *Status_p, nh_tty_Event Event, NH_BOOL *continue_p))
++    NH_TTY_RESULT (*callback_f)(nh_tty_Status *Status_p, nh_wsi_KeyboardEvent Event, NH_BOOL *continue_p))
+ {
+ NH_TTY_BEGIN()
+ 
+diff --git a/src/lib/nhtty/TTY/Status.h b/src/lib/nhtty/TTY/Status.h
+index 3695d3b..41b30e1 100644
+--- a/src/lib/nhtty/TTY/Status.h
++++ b/src/lib/nhtty/TTY/Status.h
+@@ -24,7 +24,7 @@
+         NH_BOOL block;
+         nh_encoding_UTF32String Message;
+         void *args_p;
+-        NH_TTY_RESULT (*callback_f)(struct nh_tty_Status *Status_p, nh_tty_Event Event, NH_BOOL *continue_p);
++        NH_TTY_RESULT (*callback_f)(struct nh_tty_Status *Status_p, nh_wsi_KeyboardEvent Event, NH_BOOL *continue_p);
+     } nh_tty_Status;
+ 
+ /** @} */
+@@ -49,7 +49,7 @@
+     );
+ 
+     NH_TTY_RESULT nh_tty_setBinaryQueryMessage(
+-        NH_ENCODING_UTF32 *query_p, int length, void *args_p, NH_TTY_RESULT (*callback_f)(nh_tty_Status *Status_p, nh_tty_Event Event, NH_BOOL *continue_p)
++        NH_ENCODING_UTF32 *query_p, int length, void *args_p, NH_TTY_RESULT (*callback_f)(nh_tty_Status *Status_p, nh_wsi_KeyboardEvent Event, NH_BOOL *continue_p)
+     );
+ 
+     NH_TTY_RESULT nh_tty_drawStatusRow(
+diff --git a/src/lib/nhtty/TTY/TTY.c b/src/lib/nhtty/TTY/TTY.c
+index 7864ea8..6419a14 100644
+--- a/src/lib/nhtty/TTY/TTY.c
++++ b/src/lib/nhtty/TTY/TTY.c
+@@ -85,20 +85,6 @@ NH_TTY_BEGIN()
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+ 
+-static void nh_tty_initInput(
+-    nh_RingBuffer *Buffer_p, int itemCount)
+-{
+-NH_TTY_BEGIN()
+-
+-    for (int i = 0; i < itemCount; ++i) {
+-        nh_tty_Event *Event_p = nh_advanceRingBuffer(Buffer_p);
+-        Event_p->codepoint = 0;
+-        Event_p->trigger = 0;
+-    }
+-
+-NH_TTY_SILENT_END()
+-}
+-
+ static nh_tty_Config nh_tty_initConfig()
+ {
+ NH_TTY_BEGIN()
+@@ -121,8 +107,8 @@ NH_TTY_BEGIN()
+ 
+ #include NH_TTY_CUSTOM_CHECK
+ 
+-    static NH_BYTE *path_p = "nhtty/Main/TerminalLogic.c";
+-    static NH_BYTE *name_p = "Terminal Logic Workload";
++    static NH_BYTE *path_p = "nhtty/TTY/TTY.c";
++    static NH_BYTE *name_p = "TTY Workload";
+     Workload_p->path_p = path_p;
+     Workload_p->name_p = name_p;
+ 
+@@ -141,9 +127,8 @@ NH_TTY_BEGIN()
+     TTY_p->TopBars.on = NH_TRUE;
+ 
+     NH_TTY_CHECK(NULL, nh_initRingBuffer(
+-        &TTY_p->Input, 64, sizeof(nh_wsi_Event), nh_tty_initInput
++        &TTY_p->Buffer.Keyboard, 64, sizeof(nh_wsi_KeyboardEvent), NULL 
+     ))
+-    nh_initRingBufferMarker(&TTY_p->InputMarker);
+ 
+     NH_TTY_CHECK(NULL, nh_tty_addTab(TTY_p))
+ 
+@@ -154,58 +139,28 @@ NH_TTY_END(TTY_p)
+ 
+ // RUN =============================================================================================
+ 
+-static NH_BOOL nh_tty_claimsStandardIO(
+-    nh_tty_TTY *TTY_p)
+-{
+-NH_TTY_BEGIN()
+-
+-    for (int i = 0; i < TTY_p->Views.size; ++i) {
+-        if (((nh_tty_View*)TTY_p->Views.pp[i])->standardIO) {NH_TTY_END(NH_TRUE)}
+-    }
+-
+-NH_TTY_END(NH_FALSE)
+-}
+-
+-static NH_TTY_RESULT nh_tty_readInput(
+-    nh_tty_TTY *TTY_p) 
+-{
+-NH_TTY_BEGIN()
+-
+-    NH_ENCODING_UTF32 codepoint;
+-
+-    do {
+-        codepoint = 0;
+-        NH_TTY_CHECK(nh_tty_readStandardInput(&codepoint))
+-
+-        if (codepoint) {
+-            nh_tty_Event *Event_p = nh_advanceRingBuffer(&TTY_p->Input);
+-            Event_p->codepoint = codepoint;
+-            Event_p->trigger = NH_WSI_TRIGGER_PRESS;
+-        }
+-    }
+-    while (codepoint);
+-
+-NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+-}
+-
+ static NH_TTY_RESULT nh_tty_handleInput(
+     nh_tty_TTY *TTY_p) 
+ {
+ NH_TTY_BEGIN()
+ 
+     if (nh_tty_claimsStandardIO(TTY_p)) {
+-        NH_TTY_CHECK(nh_tty_readInput(TTY_p))
++        NH_TTY_CHECK(nh_tty_readStandardInput(TTY_p))
+     }
+ 
+-    nh_tty_Event *Event_p = NULL;
++    while (1)
++    {
++        nh_wsi_KeyboardEvent *Event_p = 
++            nh_incrementRingBufferMarker(&TTY_p->Buffer.Keyboard, &TTY_p->Buffer.Keyboard.Marker);
++
++        if (!Event_p) {break;}
++
++        NH_TTY_CHECK(nh_tty_handleTabInput(TTY_p->Tab_p, *Event_p))
+ 
+-    do {
+-        Event_p = nh_incrementRingBufferMarker(&TTY_p->Input, &TTY_p->InputMarker);
+-        if (Event_p) {
+-            TTY_p->Tab_p->refreshCursor = NH_TRUE;
+-            NH_TTY_CHECK(nh_tty_handleTabInput(TTY_p->Tab_p, *Event_p))
++        for (int i = 0; i < TTY_p->Views.size; ++i) {
++            NH_TTY_CHECK(nh_tty_writeToEventBuffer(TTY_p->Views.pp[i], *Event_p))
+         }
+-    } while (Event_p);
++    }
+ 
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+@@ -239,14 +194,11 @@ NH_TTY_BEGIN()
+     NH_TTY_CHECK_NULL(NH_SIGNAL_ERROR, args_p)
+     nh_tty_TTY *TTY_p = args_p;
+ 
+-    for (int i = 0; i < TTY_p->Views.size; ++i)
+-    {
+-        nh_tty_View *View_p = TTY_p->Views.pp[i];
+-
+-        NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_handleWindowResize(TTY_p, View_p))
+-        NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_handleInput(TTY_p))
++    for (int i = 0; i < TTY_p->Views.size; ++i) {
++        NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_handleWindowResize(TTY_p, TTY_p->Views.pp[i]))
+     }
+     
++    NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_handleInput(TTY_p))
+     NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_updateTab(TTY_p->Tab_p))
+ 
+     if (TTY_p->Tab_p->refreshScreen) {
+@@ -292,15 +244,13 @@ NH_TTY_BEGIN()
+     {
+         case NH_WSI_EVENT_KEYBOARD :
+         {
+-            nh_tty_Event *Event_p = nh_advanceRingBuffer(&TTY_p->Input);
+-            Event_p->codepoint = ((nh_wsi_KeyboardEvent*)Event.p)->codepoint;
+-            Event_p->trigger = ((nh_wsi_KeyboardEvent*)Event.p)->trigger;
+-            Event_p->special = ((nh_wsi_KeyboardEvent*)Event.p)->special;
++            nh_wsi_KeyboardEvent *Event_p = nh_advanceRingBuffer(&TTY_p->Buffer.Keyboard);
++            *Event_p = *((nh_wsi_KeyboardEvent*)Event.p);
+             if (Event_p->special == NH_WSI_KEY_CONTROL_L) {ctrl = Event_p->trigger == NH_WSI_TRIGGER_PRESS;}
+             if (ctrl && Event_p->codepoint) {Event_p->codepoint = CTRL_KEY(Event_p->codepoint);}
+             break;
+         }
+-        default : NH_TTY_DIAGNOSTIC_END(NH_TTY_ERROR_BAD_STATE)
++        default : break;
+     }
+ 
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+@@ -325,7 +275,7 @@ NH_TTY_BEGIN()
+ NH_TTY_END(TTY_p)
+ }
+ 
+-// CONFIGURE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++// CONFIGURE ======================================================================================= 
+ 
+ NH_TTY_RESULT nh_tty_setTopBars(
+     NH_BOOL on)
+diff --git a/src/lib/nhtty/TTY/TTY.h b/src/lib/nhtty/TTY/TTY.h
+index 2e144a4..726dd73 100644
+--- a/src/lib/nhtty/TTY/TTY.h
++++ b/src/lib/nhtty/TTY/TTY.h
+@@ -57,17 +57,20 @@
+         NH_BOOL horizontalBorders;
+     } nh_tty_Config;
+ 
++    typedef struct nh_tty_Buffer {
++        nh_RingBuffer Keyboard;
++    } nh_tty_Buffer;
++
+     typedef struct nh_tty_TTY {
+         nh_tty_Config Config;
+         nh_tty_Clipboard Clipboard;
+         nh_tty_Borders Borders;
+ 	nh_tty_TopBars TopBars;
++        nh_tty_Buffer Buffer;
+         nh_List Views;
+         nh_List Prototypes;
+         nh_LinkedList Tabs;
+         nh_tty_Tab *Tab_p;
+-        nh_RingBuffer Input;
+-        nh_RingBufferMarker InputMarker;
+         NH_BOOL close;
+     } nh_tty_TTY;
+ 
+diff --git a/src/lib/nhtty/TTY/Tab.c b/src/lib/nhtty/TTY/Tab.c
+index f12576d..4cd87f0 100644
+--- a/src/lib/nhtty/TTY/Tab.c
++++ b/src/lib/nhtty/TTY/Tab.c
+@@ -143,10 +143,12 @@ NH_TTY_DIAGNOSTIC_END(nh_tty_drawTileRow(Tile_p, Data_p, row))
+ // INPUT ===========================================================================================
+ 
+ NH_TTY_RESULT nh_tty_handleTabInput(
+-    nh_tty_Tab *Tab_p, nh_tty_Event Event)
++    nh_tty_Tab *Tab_p, nh_wsi_KeyboardEvent Event)
+ {
+ NH_TTY_BEGIN()
+ 
++    Tab_p->refreshCursor = NH_TRUE;
++ 
+     if (Tab_p->tilingEditorState == 0 && (Event.codepoint != NH_TTY_TILING_KEY || Event.trigger != NH_WSI_TRIGGER_PRESS)) {
+         NH_TTY_CHECK(nh_tty_handleTileInput(Tab_p->Tile_p, Event))
+         Tab_p->refreshScreen = Tab_p->Tile_p->refresh;
+diff --git a/src/lib/nhtty/TTY/Tab.h b/src/lib/nhtty/TTY/Tab.h
+index c42c7d0..7f21779 100644
+--- a/src/lib/nhtty/TTY/Tab.h
++++ b/src/lib/nhtty/TTY/Tab.h
+@@ -51,7 +51,7 @@
+     );
+ 
+     NH_TTY_RESULT nh_tty_handleTabInput(
+-        nh_tty_Tab *Tab_p, nh_tty_Event Event 
++        nh_tty_Tab *Tab_p, nh_wsi_KeyboardEvent Event 
+     );
+ 
+ /** @} */
+diff --git a/src/lib/nhtty/TTY/Tile.c b/src/lib/nhtty/TTY/Tile.c
+index 80c9a50..a3bd56d 100644
+--- a/src/lib/nhtty/TTY/Tile.c
++++ b/src/lib/nhtty/TTY/Tile.c
+@@ -81,7 +81,7 @@ NH_TTY_BEGIN()
+         Tile_p->refresh = NH_TRUE;
+         Program_p->refresh = NH_FALSE;
+     }
+-    if (Tile_p->Console.refresh = NH_TRUE) {
++    if (Tile_p->Console.refresh == NH_TRUE) {
+         Tile_p->refresh = NH_TRUE;
+         Tile_p->Console.refresh = NH_FALSE;
+     }
+@@ -305,7 +305,7 @@ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ // INPUT ===========================================================================================
+ 
+ NH_TTY_RESULT nh_tty_handleTileInput(
+-    nh_tty_Tile *Tile_p, nh_tty_Event Event)
++    nh_tty_Tile *Tile_p, nh_wsi_KeyboardEvent Event)
+ {
+ NH_TTY_BEGIN()
+ 
+diff --git a/src/lib/nhtty/TTY/Tile.h b/src/lib/nhtty/TTY/Tile.h
+index 196584b..a68a840 100644
+--- a/src/lib/nhtty/TTY/Tile.h
++++ b/src/lib/nhtty/TTY/Tile.h
+@@ -116,7 +116,7 @@
+     );
+ 
+     NH_TTY_RESULT nh_tty_handleTileInput(
+-        nh_tty_Tile *Tile_p, nh_tty_Event Event
++        nh_tty_Tile *Tile_p, nh_wsi_KeyboardEvent Event
+     );
+ 
+ /** @} */
+diff --git a/src/lib/nhtty/TTY/Tiling.c b/src/lib/nhtty/TTY/Tiling.c
+index c5e550a..5f43c33 100644
+--- a/src/lib/nhtty/TTY/Tiling.c
++++ b/src/lib/nhtty/TTY/Tiling.c
+@@ -497,7 +497,7 @@ NH_TTY_DIAGNOSTIC_END(nh_tty_updateTilingMessages(Tab_p))
+ }
+ 
+ NH_TTY_RESULT nh_tty_handleTilingEditorInput(
+-    nh_tty_Tab *Tab_p, nh_tty_Event Event)
++    nh_tty_Tab *Tab_p, nh_wsi_KeyboardEvent Event)
+ {
+ NH_TTY_BEGIN()
+ 
+diff --git a/src/lib/nhtty/TTY/Tiling.h b/src/lib/nhtty/TTY/Tiling.h
+index ab904e2..df810cc 100644
+--- a/src/lib/nhtty/TTY/Tiling.h
++++ b/src/lib/nhtty/TTY/Tiling.h
+@@ -68,7 +68,7 @@ typedef struct nh_tty_Tab nh_tty_Tab;
+     );
+ 
+     NH_TTY_RESULT nh_tty_handleTilingEditorInput(
+-        nh_tty_Tab *Tab_p, nh_tty_Event Event 
++        nh_tty_Tab *Tab_p, nh_wsi_KeyboardEvent Event 
+     );
+ 
+     NH_TTY_RESULT nh_tty_drawTilingMessageRow(
+diff --git a/src/lib/nhtty/TTY/View.c b/src/lib/nhtty/TTY/View.c
+index 154d897..f650d6b 100644
+--- a/src/lib/nhtty/TTY/View.c
++++ b/src/lib/nhtty/TTY/View.c
+@@ -49,7 +49,7 @@ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ 
+ // CREATE/DESTROY ==================================================================================
+ 
+-static void nh_tty_initOutput(
++static void nh_tty_initDrawBuffer(
+     nh_RingBuffer *Buffer_p, int itemCount)
+ {
+ NH_TTY_BEGIN()
+@@ -78,7 +78,10 @@ NH_TTY_BEGIN()
+     View.previousCols = 0;
+ 
+     NH_CHECK(NULL, nh_initRingBuffer(
+-        &View.Output, 64, sizeof(nh_String), nh_tty_initOutput
++        &View.Buffer.Draw, 64, sizeof(nh_String), nh_tty_initDrawBuffer
++    ))
++    NH_CHECK(NULL, nh_initRingBuffer(
++        &View.Buffer.Event, 64, sizeof(nh_wsi_Event), NULL 
+     ))
+ 
+     NH_TTY_CHECK(NULL, nh_tty_incrementProgramViews(TTY_p))
+@@ -99,7 +102,9 @@ NH_TTY_RESULT nh_tty_destroyView(
+ {
+ NH_TTY_BEGIN()
+ 
+-    nh_freeRingBuffer(&View_p->Output);
++    nh_freeRingBuffer(&View_p->Buffer.Draw);
++    nh_freeRingBuffer(&View_p->Buffer.Event);
++ 
+     nh_removeFromList2(&TTY_p->Views, NH_TRUE, View_p);
+ 
+ NH_TTY_END(NH_TTY_SUCCESS)
+@@ -107,21 +112,37 @@ NH_TTY_END(NH_TTY_SUCCESS)
+ 
+ // WRITE ===========================================================================================
+ 
+-NH_TTY_RESULT nh_tty_writeToView(
++NH_TTY_RESULT nh_tty_writeToDrawBuffer(
+     nh_tty_View *View_p, NH_BYTE *p, int bytes)
+ {
+ NH_TTY_BEGIN()
+ 
+     if (View_p->standardIO) {
+-        NH_TTY_CHECK(nh_tty_writeToStandardOutput(p, bytes))
++        NH_TTY_END(nh_tty_writeToStandardOutput(p, bytes))
+     }
+-    else {
+-        nh_String *String_p = nh_advanceRingBuffer(&View_p->Output);
+-        nh_freeString(String_p);
+-        *String_p = nh_initString(bytes + 1);
+-        nh_appendToString(String_p, p, bytes);
++
++    // Write to nhterminal.
++    nh_String *String_p = nh_advanceRingBuffer(&View_p->Buffer.Draw);
++    nh_freeString(String_p);
++    *String_p = nh_initString(bytes + 1);
++    nh_appendToString(String_p, p, bytes);
++
++NH_TTY_END(NH_TTY_SUCCESS)
++}
++
++NH_TTY_RESULT nh_tty_writeToEventBuffer(
++    nh_tty_View *View_p, nh_wsi_KeyboardEvent Event)
++{
++NH_TTY_BEGIN()
++
++    if (View_p->standardIO) {
++        NH_TTY_END(NH_TTY_SUCCESS)
+     }
+ 
++    // Write to nhterminal.
++    nh_wsi_KeyboardEvent *Event_p = nh_advanceRingBuffer(&View_p->Buffer.Event);
++    *Event_p = Event;
++
+ NH_TTY_END(NH_TTY_SUCCESS)
+ }
+ 
+diff --git a/src/lib/nhtty/TTY/View.h b/src/lib/nhtty/TTY/View.h
+index ecbd485..af15646 100644
+--- a/src/lib/nhtty/TTY/View.h
++++ b/src/lib/nhtty/TTY/View.h
+@@ -21,9 +21,14 @@
+  *  @{
+  */
+ 
++    typedef struct nh_tty_ViewBuffer {
++        nh_RingBuffer Draw;
++        nh_RingBuffer Event;
++    } nh_tty_ViewBuffer;
++
+     typedef struct nh_tty_View {
++        nh_tty_ViewBuffer Buffer;
+         NH_BOOL standardIO;
+-        nh_RingBuffer Output;
+         int cols, rows;
+         int previousCols, previousRows;
+ #ifdef __unix__
+@@ -49,10 +54,14 @@
+         nh_tty_TTY *TTY_p, nh_tty_View *View_p
+     );
+ 
+-    NH_TTY_RESULT nh_tty_writeToView(
++    NH_TTY_RESULT nh_tty_writeToDrawBuffer(
+         nh_tty_View *View_p, NH_BYTE *p, int bytes
+     );
+ 
++    NH_TTY_RESULT nh_tty_writeToEventBuffer(
++        nh_tty_View *View_p, nh_wsi_KeyboardEvent Event
++    );
++
+ /** @} */
+ 
+ #endif 
+diff --git a/src/lib/nhwsi/Main/Window.c b/src/lib/nhwsi/Main/Window.c
+index bb8dd15..0728cf0 100644
+--- a/src/lib/nhwsi/Main/Window.c
++++ b/src/lib/nhwsi/Main/Window.c
+@@ -75,10 +75,10 @@ NH_WSI_BEGIN();
+ 
+     nh_wsi_Window Window;
+ 
+-    Window.Configuration = Configuration;
+     Window.surface_p = NULL;
+     Window.callback_f = NULL;
+     Window.type = nh_wsi_getType();
++
+     if (Window.type < 0) {NH_WSI_END(NULL)}
+ 
+     switch (Window.type)
+diff --git a/src/lib/nhwsi/Main/Window.h b/src/lib/nhwsi/Main/Window.h
+index 78985ad..9efcc99 100644
+--- a/src/lib/nhwsi/Main/Window.h
++++ b/src/lib/nhwsi/Main/Window.h
+@@ -22,11 +22,10 @@
+ 
+     typedef struct nh_wsi_Window {
+         NH_WSI_TYPE type;
+-        nh_wsi_WindowConfiguration Configuration;
+         void *surface_p;
++        nh_wsi_callback_f callback_f;
+         nh_X11_Window X11;
+         nh_Win32_Window Win32;
+-        nh_wsi_callback_f callback_f;
+     } nh_wsi_Window;
+ 
+ /** @} */
+-- 
+2.35.1
+
