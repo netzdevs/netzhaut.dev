@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhgfx0074 ver.0.0.7.4
+\section nhgfx0080 ver.0.0.8.0
+
+2022-07-11 | 19:36:24 | rev.0.10.63.6 | [open patch](../../patches/html/md_pages_b70d2f7003b4ab08a55d81d9bcfce1e5f251cd1f.html)
+
+ ---
+
+ Improve OpenGL rendering and window handling.
+
+<br>\section nhgfx0074 ver.0.0.7.4
 
 2022-06-22 | 22:33:10 | rev.0.10.55.16
 

@@ -79,5 +79,8 @@ are mostly anecdotes.
 \subsection suppspecsietf Internet Engineering Task Force (IETF)
 - [RFC4291: IP Version 6 Addressing Architecture](https://datatracker.ietf.org/doc/html/rfc4291)
 
+\subsection wsi WSI
+- [Extended Window Manager Hints](https://specifications.freedesktop.org/wm-spec/wm-spec-latest.html)
+
 </div>
 

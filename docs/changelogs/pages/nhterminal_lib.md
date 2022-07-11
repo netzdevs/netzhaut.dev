@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhterminal0050 ver.0.0.5.0
+\section nhterminal0060 ver.0.0.6.0
+
+2022-07-11 | 19:36:24 | rev.0.10.63.6 | [open patch](../../patches/html/md_pages_b70d2f7003b4ab08a55d81d9bcfce1e5f251cd1f.html)
+
+ ---
+
+ Improve OpenGL rendering and window handling.
+
+<br>\section nhterminal0050 ver.0.0.5.0
 
 2022-06-26 | 18:33:23 | rev.0.10.59.11 | [open patch](../../patches/html/md_pages_200c10bc1f4174699465ed7f44a6df32f215fc36.html)
 

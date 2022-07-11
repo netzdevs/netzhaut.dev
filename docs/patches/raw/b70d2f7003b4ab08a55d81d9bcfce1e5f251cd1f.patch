@@ -1,0 +1,3506 @@
+From b70d2f7003b4ab08a55d81d9bcfce1e5f251cd1f Mon Sep 17 00:00:00 2001
+From: Dajo Frey <dajo.frey@gmail.com>
+Date: Mon, 11 Jul 2022 19:32:42 +0200
+Subject: [PATCH] Improve OpenGL rendering and window handling.
+
+---
+ CHANGES.txt                                 |   1 +
+ build/.nhmake/source.nhmake                 |   4 +-
+ external/netzhaut.dev                       |   2 +-
+ src/bin/nhtty/Main.c                        |  28 +-
+ src/lib/netzhaut/nhgfx.c                    |   6 +
+ src/lib/netzhaut/nhgfx.h                    |   7 +
+ src/lib/netzhaut/nhterminal.c               |   7 +
+ src/lib/netzhaut/nhterminal.h               |   7 +
+ src/lib/nhgfx/Base/Viewport.c               |  13 +
+ src/lib/nhgfx/Base/Viewport.h               |   8 +-
+ src/lib/nhgfx/OpenGL/API.h                  |   1 +
+ src/lib/nhgfx/OpenGL/Render.c               |   9 +-
+ src/lib/nhgfx/OpenGL/Surface.c              |  24 +-
+ src/lib/nhgfx/OpenGL/Surface.h              |   2 +-
+ src/lib/nhgfx/Vulkan/Surface.c              |   5 +-
+ src/lib/nhmake/UI/X11.c                     |   6 +-
+ src/lib/nhmake/UI/X11.h                     |   2 +-
+ src/lib/nhterminal/Terminal/Graphics.c      |   2 +-
+ src/lib/nhterminal/Terminal/Grid.c          |  16 +-
+ src/lib/nhterminal/Terminal/Terminal.c      |  45 +-
+ src/lib/nhterminal/Terminal/Terminal.h      |   4 +
+ src/lib/nhtty/TTY/Console.c                 |   5 +-
+ src/lib/nhtty/TTY/Draw.c                    |   2 -
+ src/lib/nhtty/TTY/TTY.c                     |  40 +-
+ src/lib/nhtty/TTY/TTY.h                     |  14 +-
+ src/lib/nhtty/TTY/Tile.c                    |  33 +-
+ src/lib/nhtty/TTY/Tiling.c                  |   6 +-
+ src/lib/nhtty/TTY/View.c                    |   2 +-
+ src/lib/nhtty/TTY/View.h                    |   2 +-
+ src/lib/nhwsi/Common/Initialize.c           |   9 +-
+ src/lib/nhwsi/Common/Log.c                  |   2 +-
+ src/lib/nhwsi/Common/Macros.h               |  84 ++
+ src/lib/nhwsi/Common/Macros/CUSTOM_CHECK.h  |  29 -
+ src/lib/nhwsi/Common/Macros/DEFAULT_CHECK.h |  29 -
+ src/lib/nhwsi/Common/Macros/FLOW.h          |  35 -
+ src/lib/nhwsi/Common/Macros/Macros.h        |  22 -
+ src/lib/nhwsi/Common/Types/Public.h         |   3 +
+ src/lib/nhwsi/Main/Event.c                  |  29 +-
+ src/lib/nhwsi/Main/Listener.c               |  18 +-
+ src/lib/nhwsi/Main/Window.c                 |  72 +-
+ src/lib/nhwsi/Main/Window.h                 |   8 +-
+ src/lib/nhwsi/Platforms/{ => Win32}/Win32.c |   0
+ src/lib/nhwsi/Platforms/{ => Win32}/Win32.h |   0
+ src/lib/nhwsi/Platforms/X11.c               | 589 --------------
+ src/lib/nhwsi/Platforms/X11.h               |  83 --
+ src/lib/nhwsi/Platforms/X11/Init.c          | 260 ++++++
+ src/lib/nhwsi/Platforms/X11/Init.h          | 131 +++
+ src/lib/nhwsi/Platforms/X11/Window.c        | 830 ++++++++++++++++++++
+ src/lib/nhwsi/Platforms/X11/Window.h        |  76 ++
+ 49 files changed, 1681 insertions(+), 931 deletions(-)
+ create mode 100644 CHANGES.txt
+ create mode 100644 src/lib/nhwsi/Common/Macros.h
+ delete mode 100644 src/lib/nhwsi/Common/Macros/CUSTOM_CHECK.h
+ delete mode 100644 src/lib/nhwsi/Common/Macros/DEFAULT_CHECK.h
+ delete mode 100644 src/lib/nhwsi/Common/Macros/FLOW.h
+ delete mode 100644 src/lib/nhwsi/Common/Macros/Macros.h
+ rename src/lib/nhwsi/Platforms/{ => Win32}/Win32.c (100%)
+ rename src/lib/nhwsi/Platforms/{ => Win32}/Win32.h (100%)
+ delete mode 100644 src/lib/nhwsi/Platforms/X11.c
+ delete mode 100644 src/lib/nhwsi/Platforms/X11.h
+ create mode 100644 src/lib/nhwsi/Platforms/X11/Init.c
+ create mode 100644 src/lib/nhwsi/Platforms/X11/Init.h
+ create mode 100644 src/lib/nhwsi/Platforms/X11/Window.c
+ create mode 100644 src/lib/nhwsi/Platforms/X11/Window.h
+
+diff --git a/CHANGES.txt b/CHANGES.txt
+new file mode 100644
+index 0000000..e776cd2
+--- /dev/null
++++ b/CHANGES.txt
+@@ -0,0 +1 @@
++changes{summary:"Improve OpenGL rendering and window handling."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"minor"lib:"nhterminal","nhtty","nhgfx","nhwsi"}}
+diff --git a/build/.nhmake/source.nhmake b/build/.nhmake/source.nhmake
+index ddeebb3..19fefb0 100644
+--- a/build/.nhmake/source.nhmake
++++ b/build/.nhmake/source.nhmake
+@@ -127,8 +127,8 @@ source_lib(
+         "Main/Window.c"
+         "Main/Event.c"
+         "Main/Listener.c"
+-        "Platforms/Win32.c"
+-        "Platforms/X11.c"
++        "Platforms/X11/Init.c"
++        "Platforms/X11/Window.c"
+         "Common/Log.c"
+         "Common/Result.c"
+         "Common/Initialize.c"
+diff --git a/external/netzhaut.dev b/external/netzhaut.dev
+index cb2c39d..e6403ac 160000
+--- a/external/netzhaut.dev
++++ b/external/netzhaut.dev
+@@ -1 +1 @@
+-Subproject commit cb2c39dfe6867c3a6fda619d0ead4de85d909524
++Subproject commit e6403accdbaf8f8f7ddbc5b744d90d0d1a8eab30
+diff --git a/src/bin/nhtty/Main.c b/src/bin/nhtty/Main.c
+index f43fdd7..a464cd9 100644
+--- a/src/bin/nhtty/Main.c
++++ b/src/bin/nhtty/Main.c
+@@ -25,7 +25,11 @@ typedef struct StartUpInput {
+ } StartUpInput;
+ 
+ static StartUpInput Input;
++static nh_PixelPosition Position = {0};
++
++static nh_gfx_Viewport *Viewport_p = NULL;
+ static nh_tty_TTY *TTY_p = NULL;
++static nh_terminal_Terminal *Terminal_p = NULL;
+ 
+ // HELPER ==========================================================================================
+ 
+@@ -65,9 +69,18 @@ static void handleWindowInput(
+     switch (Event.type)
+     {
+         case NH_WSI_EVENT_KEYBOARD :
++        case NH_WSI_EVENT_CONFIGURE :
+             nh_tty_sendInput(TTY_p, Event);
++            if (Terminal_p) {
++                nh_terminal_sendInput(Terminal_p, Event);
++            }
+             break;
+     }
++
++    if (Event.type == NH_WSI_EVENT_CONFIGURE && Viewport_p) {
++        nh_wsi_ConfigureEvent *Event_p = Event.p;
++        nh_gfx_configureViewport(Viewport_p, Position, Event_p->Size); 
++    }
+ }
+ 
+ // MAIN ============================================================================================
+@@ -87,14 +100,17 @@ int main(int argc, char **argv_pp)
+ 
+     if (Input.renderer)
+     {
+-        nh_terminal_Terminal *Terminal_p =  nh_terminal_openTerminal(TTY_p);
++        Terminal_p =  nh_terminal_openTerminal(TTY_p);
+         if (!Terminal_p) {return 1;}
+ 
+         nh_wsi_WindowConfiguration WindowConfiguration;
++
+         if (nh_wsi_initWindowConfiguration(&WindowConfiguration) != NH_WSI_SUCCESS) {
+             return 1;
+         }
+-
++WindowConfiguration.Size.width=3000;
++WindowConfiguration.Size.height=2000;
++ 
+         nh_wsi_Window *Window_p = 
+             nh_wsi_createWindow(WindowConfiguration, nh_gfx_getSurfaceRequirements());
+         if (!Window_p) {return 1;}
+@@ -102,13 +118,11 @@ int main(int argc, char **argv_pp)
+         nh_gfx_Surface *Surface_p = nh_gfx_createSurface(Window_p, getGraphicsBackend());
+         if (!Surface_p) {return 1;}
+     
+-        nh_PixelPosition Position = {0};
+-
+         nh_PixelSize Size;
+-        Size.width  = 1000;
+-        Size.height = 1000;
++        Size.width  = 3000;
++        Size.height = 2000;
+     
+-        nh_gfx_Viewport *Viewport_p = nh_gfx_createViewport(Surface_p, Position, Size);
++        Viewport_p = nh_gfx_createViewport(Surface_p, Position, Size);
+         if (!Viewport_p) {return 1;}
+     
+         if (nh_terminal_setViewport(Terminal_p, Viewport_p) != NH_TERMINAL_SUCCESS) {
+diff --git a/src/lib/netzhaut/nhgfx.c b/src/lib/netzhaut/nhgfx.c
+index 54ce848..00a2eab 100644
+--- a/src/lib/netzhaut/nhgfx.c
++++ b/src/lib/netzhaut/nhgfx.c
+@@ -44,3 +44,9 @@ nh_gfx_Viewport *nh_gfx_createViewport(
+     return createViewport_f ? createViewport_f(Surface_p, Position, Size) : NULL;
+ }
+ 
++NH_GFX_RESULT nh_gfx_configureViewport(
++    nh_gfx_Viewport *Viewport_p, nh_PixelPosition Position, nh_PixelSize Size)
++{
++    nh_gfx_configureViewport_f configureViewport_f = !NH_LOADER_P ? NULL : NH_LOADER_P->loadSymbol_f(NH_MODULE_GFX, 0, "nh_gfx_configureViewport");
++    return configureViewport_f ? configureViewport_f(Viewport_p, Position, Size) : NH_GFX_ERROR_BAD_STATE;
++}
+diff --git a/src/lib/netzhaut/nhgfx.h b/src/lib/netzhaut/nhgfx.h
+index 0edb398..25b3edd 100644
+--- a/src/lib/netzhaut/nhgfx.h
++++ b/src/lib/netzhaut/nhgfx.h
+@@ -42,6 +42,13 @@
+         nh_gfx_Surface *Surface_p, nh_PixelPosition Position, nh_PixelSize Size
+     );
+ 
++    /**
++     * Todo.
++     */
++    NH_GFX_RESULT nh_gfx_configureViewport(
++        nh_gfx_Viewport *Viewport_p, nh_PixelPosition Position, nh_PixelSize Size
++    );
++
+ /** @} */
+ 
+ #endif // NH_GFX_H
+diff --git a/src/lib/netzhaut/nhterminal.c b/src/lib/netzhaut/nhterminal.c
+index 41abeb4..c2b7ade 100644
+--- a/src/lib/netzhaut/nhterminal.c
++++ b/src/lib/netzhaut/nhterminal.c
+@@ -43,3 +43,10 @@ NH_TERMINAL_RESULT nh_terminal_setColor(
+     return setColor_f ? setColor_f(Terminal_p, Color, foreground) : NH_TERMINAL_ERROR_NULL_POINTER;
+ }
+ 
++NH_TERMINAL_RESULT nh_terminal_sendInput(
++    nh_terminal_Terminal *Terminal_p, nh_wsi_Event Event)
++{
++    nh_terminal_sendInput_f sendInput_f = !NH_LOADER_P || !Terminal_p ? NULL : NH_LOADER_P->loadSymbol_f(NH_MODULE_TERMINAL, 0, "nh_terminal_sendInput");
++    return sendInput_f ? sendInput_f(Terminal_p, Event) : NH_TTY_ERROR_BAD_STATE;
++}
++
+diff --git a/src/lib/netzhaut/nhterminal.h b/src/lib/netzhaut/nhterminal.h
+index 92bcad1..187dba3 100644
+--- a/src/lib/netzhaut/nhterminal.h
++++ b/src/lib/netzhaut/nhterminal.h
+@@ -67,6 +67,13 @@
+         nh_terminal_Terminal *Terminal_p, nh_Color Color, NH_BOOL foreground 
+     );
+ 
++    /**
++     * Todo.
++     */
++    NH_TERMINAL_RESULT nh_terminal_sendInput(
++        nh_terminal_Terminal *Terminal_p, nh_wsi_Event Event
++    );
++
+ /** @} */
+ 
+ #endif // NH_TERMINAL_H
+diff --git a/src/lib/nhgfx/Base/Viewport.c b/src/lib/nhgfx/Base/Viewport.c
+index 74e244e..2d64a4e 100644
+--- a/src/lib/nhgfx/Base/Viewport.c
++++ b/src/lib/nhgfx/Base/Viewport.c
+@@ -76,6 +76,19 @@ NH_GFX_BEGIN()
+ 
+ NH_GFX_END(Viewport_p)
+ }
++ 
++NH_GFX_RESULT nh_gfx_configureViewport(
++    nh_gfx_Viewport *Viewport_p, nh_PixelPosition Position, nh_PixelSize Size)
++{
++NH_GFX_BEGIN()
++
++    NH_GFX_CHECK_NULL(Viewport_p)
++
++    Viewport_p->Settings.Size     = Size;
++    Viewport_p->Settings.Position = Position;
++ 
++NH_GFX_DIAGNOSTIC_END(NH_GFX_SUCCESS)
++}
+ 
+ // BEGIN RECORDING =================================================================================
+ 
+diff --git a/src/lib/nhgfx/Base/Viewport.h b/src/lib/nhgfx/Base/Viewport.h
+index f884f5a..8574399 100644
+--- a/src/lib/nhgfx/Base/Viewport.h
++++ b/src/lib/nhgfx/Base/Viewport.h
+@@ -69,16 +69,16 @@
+         nh_gfx_Surface *Surface_p, nh_PixelPosition Position, nh_PixelSize Size
+     );
+ 
++    typedef NH_GFX_RESULT (*nh_gfx_configureViewport_f)(
++        nh_gfx_Viewport *Viewport_p, nh_PixelPosition Position, nh_PixelSize Size
++    );
++
+ /** @} */
+ 
+ /** @addtogroup lib_nhgfx_functions
+  *  @{
+  */
+ 
+-    nh_gfx_Viewport *nh_gfx_createViewport(
+-        nh_gfx_Surface *Surface_p, nh_PixelPosition Position, nh_PixelSize Size
+-    );
+-    
+     NH_GFX_RESULT nh_gfx_beginRecording(
+         nh_gfx_Viewport *Viewport_p
+     );
+diff --git a/src/lib/nhgfx/OpenGL/API.h b/src/lib/nhgfx/OpenGL/API.h
+index adc8f5d..d75bd6f 100644
+--- a/src/lib/nhgfx/OpenGL/API.h
++++ b/src/lib/nhgfx/OpenGL/API.h
+@@ -201,6 +201,7 @@
+         NH_GFX_OPENGL_COMMAND_GLLIGHTMODELIV,
+         NH_GFX_OPENGL_COMMAND_GLLINESTIPPLE,
+         NH_GFX_OPENGL_COMMAND_GLLINEWIDTH,
++        NH_GFX_OPENGL_COMMAND_GLLINKPROGRAM,
+         NH_GFX_OPENGL_COMMAND_GLLISTBASE,
+         NH_GFX_OPENGL_COMMAND_GLLOADIDENTITY,
+         NH_GFX_OPENGL_COMMAND_GLLOADMATRIXD,
+diff --git a/src/lib/nhgfx/OpenGL/Render.c b/src/lib/nhgfx/OpenGL/Render.c
+index d462186..106a3a6 100644
+--- a/src/lib/nhgfx/OpenGL/Render.c
++++ b/src/lib/nhgfx/OpenGL/Render.c
+@@ -20,6 +20,7 @@
+ #include "../../nhcore/System/Memory.h"
+ 
+ #include "../../nhwsi/Main/Window.h"
++#include "../../nhwsi/Platforms/X11/Init.h"
+ 
+ // RENDER ==========================================================================================
+ 
+@@ -28,7 +29,9 @@ NH_GFX_RESULT nh_opengl_render(
+ {
+ NH_GFX_BEGIN()
+ 
+-    glXMakeCurrent(Surface_p->Window_p->X11.Display_p, Surface_p->Window_p->X11.XWindow, 
++puts("render begin");
++
++    glXMakeCurrent(Surface_p->Window_p->X11.Common_p->Display_p, Surface_p->Window_p->X11.Handle, 
+         Surface_p->OpenGL.Context_p);
+ 
+     for (int i = 0; i < SortedViewports_p->size; ++i) {
+@@ -36,7 +39,9 @@ NH_GFX_BEGIN()
+         NH_GFX_CHECK(nh_opengl_executeCommandBuffer(Viewport_p->OpenGL.CommandBuffer_p))
+     }
+ 
+-    glXSwapBuffers(Surface_p->Window_p->X11.Display_p, Surface_p->Window_p->X11.XWindow);
++    glXSwapBuffers(Surface_p->Window_p->X11.Common_p->Display_p, Surface_p->Window_p->X11.Handle);
++
++puts("render end");
+ 
+ NH_GFX_DIAGNOSTIC_END(NH_GFX_SUCCESS)
+ }
+diff --git a/src/lib/nhgfx/OpenGL/Surface.c b/src/lib/nhgfx/OpenGL/Surface.c
+index 2be1998..4d6b44f 100644
+--- a/src/lib/nhgfx/OpenGL/Surface.c
++++ b/src/lib/nhgfx/OpenGL/Surface.c
+@@ -20,6 +20,7 @@
+ #include "../../nhcore/Util/Array.h"
+ 
+ #include "../../nhwsi/Main/Window.h"
++#include "../../nhwsi/Platforms/X11/Init.h"
+ 
+ #include <limits.h>
+ #include <string.h>
+@@ -43,10 +44,14 @@ NH_GFX_END(Surface)
+ 
+ // CREATE ==========================================================================================
+ 
++/**
++ * GLX_DRAWABLE_TYPE is probably a hack, i had serious perfomance issues with just the GLX_WINDOW_BIT
++ * after resizing the window.
++ */
+ static int VISUAL_DATA_P[] = {
+     GLX_RENDER_TYPE, GLX_RGBA_BIT,
+-    GLX_DRAWABLE_TYPE, GLX_WINDOW_BIT,
+-    GLX_DOUBLEBUFFER, True,
++    GLX_DRAWABLE_TYPE, GLX_WINDOW_BIT | GLX_PIXMAP_BIT | GLX_PBUFFER_BIT,
++    GLX_DOUBLEBUFFER, False,
+     GLX_RED_SIZE, 8,
+     GLX_GREEN_SIZE, 8,
+     GLX_BLUE_SIZE, 8,
+@@ -65,13 +70,13 @@ NH_GFX_BEGIN()
+ 
+     int count = 0;
+     GLXFBConfig *FrameBufferConfigurations_p = 
+-        glXChooseFBConfig(Window_p->X11.Display_p, DefaultScreen(Window_p->X11.Display_p), VISUAL_DATA_P, &count);
++        glXChooseFBConfig(Window_p->X11.Common_p->Display_p, Window_p->X11.Common_p->screen, VISUAL_DATA_P, &count);
+ 
+     GLXFBConfig FrameBufferConfiguration_p = NULL; 
+ 
+     for (int i = 0; i < count; i++) {
+         XVisualInfo *Info_p = (XVisualInfo*) 
+-            glXGetVisualFromFBConfig(Window_p->X11.Display_p, FrameBufferConfigurations_p[i]);
++            glXGetVisualFromFBConfig(Window_p->X11.Common_p->Display_p, FrameBufferConfigurations_p[i]);
+         // We need to use the FBC that relates to the Visual that was used for window creation.
+         if (Info_p->visualid == Window_p->X11.Info.visualid) {
+             FrameBufferConfiguration_p = FrameBufferConfigurations_p[i];
+@@ -100,7 +105,7 @@ NH_GFX_BEGIN()
+ 
+     /* Create modern OpenGL context */
+     Surface_p->Context_p = glXCreateContextAttribsARB_f(
+-        Window_p->X11.Display_p, FrameBufferConfiguration_p, NULL, true, contextAttributes_p);
++        Window_p->X11.Common_p->Display_p, FrameBufferConfiguration_p, NULL, true, contextAttributes_p);
+ 
+     if (!Surface_p->Context_p) {
+         NH_GFX_DIAGNOSTIC_END(NH_GFX_ERROR_BAD_STATE)
+@@ -134,12 +139,13 @@ NH_GFX_END(NH_GFX_SUCCESS)
+ // DESTROY =========================================================================================
+ 
+ NH_GFX_RESULT nh_opengl_destroySurface(
+-    nh_opengl_Surface *Surface_p)
++    nh_opengl_Surface *Surface_p, nh_wsi_Window *Window_p)
+ {
+ NH_GFX_BEGIN()
+ 
+-    // TODO
+-
++    glXDestroyContext(Window_p->X11.Common_p->Display_p, Surface_p->Context_p);
++    nh_free(Surface_p->CommandBuffers_p);
++    
+ NH_GFX_END(NH_GFX_SUCCESS)
+ }
+ 
+@@ -166,7 +172,7 @@ NH_GFX_BEGIN()
+         XRenderPictFormat *Format_p = XRenderFindVisualFormat(Display_p, Visual_p->visual);
+         if (!Format_p) {continue;}
+ 
+-        // We need a framebuffer with alpha capability.
++        // We need a framebuffer with alpha capabilities.
+         if (Format_p->direct.alphaMask > 0) {
+             nh_appendToArray(&Requirements_p->Ids, &Visual_p->visualid, 1);
+         }
+diff --git a/src/lib/nhgfx/OpenGL/Surface.h b/src/lib/nhgfx/OpenGL/Surface.h
+index 4fe7f37..d291b65 100644
+--- a/src/lib/nhgfx/OpenGL/Surface.h
++++ b/src/lib/nhgfx/OpenGL/Surface.h
+@@ -43,7 +43,7 @@
+     );
+ 
+     NH_GFX_RESULT nh_opengl_destroySurface(
+-        nh_opengl_Surface *Surface_p;
++        nh_opengl_Surface *Surface_p, nh_wsi_Window *Window_p
+     );
+ 
+     NH_GFX_RESULT nh_opengl_createSurfaceRequirements(
+diff --git a/src/lib/nhgfx/Vulkan/Surface.c b/src/lib/nhgfx/Vulkan/Surface.c
+index cb846c3..30096dd 100644
+--- a/src/lib/nhgfx/Vulkan/Surface.c
++++ b/src/lib/nhgfx/Vulkan/Surface.c
+@@ -23,6 +23,7 @@
+ #include "../../nhcore/System/Memory.h"
+ 
+ #include "../../nhwsi/Main/Window.h"
++#include "../../nhwsi/Platforms/X11/Init.h"
+ 
+ #include <limits.h>
+ #include <string.h>
+@@ -63,8 +64,8 @@ NH_GFX_BEGIN()
+         { 
+             .sType  = VK_STRUCTURE_TYPE_XLIB_SURFACE_CREATE_INFO_KHR,
+             .pNext  = VK_NULL_HANDLE,
+-            .dpy    = Window_p->X11.Display_p,
+-            .window = Window_p->X11.XWindow, 
++            .dpy    = Window_p->X11.Common_p->Display_p,
++            .window = Window_p->X11.Handle, 
+         };
+         Host_p->Functions.vkCreateXlibSurfaceKHR(
+             Host_p->Instance, &surfaceInfo, VK_NULL_HANDLE, SurfaceKHR_p
+diff --git a/src/lib/nhmake/UI/X11.c b/src/lib/nhmake/UI/X11.c
+index 2ee56e5..c962cb9 100644
+--- a/src/lib/nhmake/UI/X11.c
++++ b/src/lib/nhmake/UI/X11.c
+@@ -160,8 +160,8 @@ NH_MAKE_BEGIN()
+     nh_make_createFont();
+ 
+ // window delete protocol
+-    Data.DeleteAtom = XInternAtom(Data.Display_p, "WM_DELETE_WINDOW", 0);
+-    XSetWMProtocols(Data.Display_p, Data.Window, &Data.DeleteAtom, 1);
++    Data.WM_DELETE_WINDOW = XInternAtom(Data.Display_p, "WM_DELETE_WINDOW", 0);
++    XSetWMProtocols(Data.Display_p, Data.Window, &Data.WM_DELETE_WINDOW, 1);
+ 
+ // xdnd (file-)drop
+     Atom xdndAware = XInternAtom(Data.Display_p, "XdndAware", 0); 
+@@ -238,7 +238,7 @@ NH_MAKE_BEGIN()
+         
+         if (Event.type == ClientMessage)
+         {   
+-                 if (Event.xclient.data.l[0] == Data.DeleteAtom) {nh_make_handleGUIExit();}
++                 if (Event.xclient.data.l[0] == Data.WM_DELETE_WINDOW) {nh_make_handleGUIExit();}
+             else if (Event.type == Expose) {}
+             else if (Event.xclient.message_type == XdndEnter) 
+             {
+diff --git a/src/lib/nhmake/UI/X11.h b/src/lib/nhmake/UI/X11.h
+index b4af280..9b51a57 100644
+--- a/src/lib/nhmake/UI/X11.h
++++ b/src/lib/nhmake/UI/X11.h
+@@ -35,7 +35,7 @@
+         Display *Display_p;
+         Window Root;
+         Window Window;
+-        Atom DeleteAtom;
++        Atom WM_DELETE_WINDOW;
+         xcb_connection_t *Connection_p;
+         int32_t keyboardDeviceID;
+         struct xkb_keymap *Keymap_p;
+diff --git a/src/lib/nhterminal/Terminal/Graphics.c b/src/lib/nhterminal/Terminal/Graphics.c
+index f6b9a0c..512cf38 100644
+--- a/src/lib/nhterminal/Terminal/Graphics.c
++++ b/src/lib/nhterminal/Terminal/Graphics.c
+@@ -69,7 +69,7 @@ NH_TERMINAL_BEGIN()
+     NH_TERMINAL_CHECK(nh_terminal_getMonospaceFonts(&Graphics_p->Text.Fonts))
+ 
+     Graphics_p->Text.font = 0;
+-    Graphics_p->Text.fontSize = 20;
++    Graphics_p->Text.fontSize = 30;
+ 
+     Graphics_p->Text.Action = nh_terminal_initGraphicsAction();
+     Graphics_p->Text.Vertices = nh_initArray(sizeof(float), 1024);
+diff --git a/src/lib/nhterminal/Terminal/Grid.c b/src/lib/nhterminal/Terminal/Grid.c
+index 7e0e3e5..94e0d04 100644
+--- a/src/lib/nhterminal/Terminal/Grid.c
++++ b/src/lib/nhterminal/Terminal/Grid.c
+@@ -187,6 +187,7 @@ NH_TERMINAL_BEGIN()
+ 
+     while (*p) {
+         if ((foreground && *p == '1') || (!foreground && *p == '7')) {
++            if (!foreground) {Color = Graphics_p->Text.Color;}
+             ++p;
+             if (*p != ';') {break;}
+             ++p;
+@@ -214,12 +215,21 @@ NH_TERMINAL_BEGIN()
+                     Color.g = 0.0;
+                     Color.b = 1.0;
+                     break;
+-                case '5' : break;
+-                case '6' : break;
+-                case '7' : break;
++                case '5' : 
++                    Color.r = 0.0;
++                    Color.g = 1.0;
++                    Color.b = 1.0;
++                    break;
++                case '6' :
++                    Color.r = 1.0;
++                    Color.g = 0.0;
++                    Color.b = 1.0;
++                    break;
++                case '7' :
+                     Color.r = 1.0;
+                     Color.g = 1.0;
+                     Color.b = 1.0;
++                    break;
+                 default : break;
+             }
+         }
+diff --git a/src/lib/nhterminal/Terminal/Terminal.c b/src/lib/nhterminal/Terminal/Terminal.c
+index 4cc61f2..c158c9a 100644
+--- a/src/lib/nhterminal/Terminal/Terminal.c
++++ b/src/lib/nhterminal/Terminal/Terminal.c
+@@ -99,6 +99,19 @@ NH_TERMINAL_BEGIN()
+ 
+     nh_gfx_freeText(&Text);
+ 
++    for (int row = 0; row < Terminal_p->Grid.rows; ++row) {
++        for (int col = 0; col < Terminal_p->Grid.cols; ++col) {
++            nh_terminal_Tile *Tile_p = 
++                nh_terminal_getTile(&Terminal_p->Grid, &Terminal_p->Graphics, row, col);
++            NH_TERMINAL_CHECK_NULL(Tile_p)
++            NH_TERMINAL_CHECK(nh_terminal_getForegroundVertices(
++                &Terminal_p->Graphics, &Terminal_p->Grid, Tile_p->codepoint, col, row, 
++                Tile_p->Foreground.vertices_p))
++            NH_TERMINAL_CHECK(nh_terminal_getBackgroundVertices(
++                &Terminal_p->Graphics, &Terminal_p->Grid,col, row, Tile_p->Background.vertices_p))
++        }
++    }
++
+ NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
+ }
+ 
+@@ -142,19 +155,6 @@ NH_TERMINAL_BEGIN()
+ 
+     } while (String_p);
+ 
+-    do {
+-        Event_p = nh_incrementRingBufferMarker(
+-            &Terminal_p->View_p->Buffer.Event, &Terminal_p->View_p->Buffer.Event.Marker);
+-
+-        if (!Event_p) {break;}
+-
+-        Terminal_p->Grid.Cursor.on = NH_TRUE;
+-        Terminal_p->Grid.Cursor.LastBlink = nh_getSystemTime();
+-
+-        *update_p = NH_TRUE;
+-
+-    } while (Event_p);
+-
+ NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
+ }
+ 
+@@ -196,6 +196,25 @@ NH_TERMINAL_END(update == NH_TRUE ? NH_SIGNAL_OK : NH_SIGNAL_IDLE)
+ 
+ // API =============================================================================================
+ 
++NH_TERMINAL_RESULT nh_terminal_sendInput(
++    nh_terminal_Terminal *Terminal_p, nh_wsi_Event Event)
++{
++NH_TERMINAL_BEGIN()
++
++    switch (Event.type)
++    {
++        case NH_WSI_EVENT_KEYBOARD :
++            Terminal_p->Grid.Cursor.on = NH_FALSE;
++            memset(&Terminal_p->Grid.Cursor.LastBlink, 0, sizeof(nh_SystemTime));
++            break;
++        case NH_WSI_EVENT_CONFIGURE :
++            break;
++        default : break;
++    }
++
++NH_TERMINAL_DIAGNOSTIC_END(NH_TERMINAL_SUCCESS)
++}
++
+ nh_terminal_Terminal *nh_terminal_openTerminal(
+     nh_tty_TTY *TTY_p)
+ {
+diff --git a/src/lib/nhterminal/Terminal/Terminal.h b/src/lib/nhterminal/Terminal/Terminal.h
+index ede8a82..1041226 100644
+--- a/src/lib/nhterminal/Terminal/Terminal.h
++++ b/src/lib/nhterminal/Terminal/Terminal.h
+@@ -46,6 +46,10 @@
+         nh_terminal_Terminal *Terminal_p, nh_Color Color, NH_BOOL foreground
+     ); 
+ 
++    typedef NH_TERMINAL_RESULT (*nh_terminal_sendInput_f)(
++        nh_terminal_Terminal *Terminal_p, nh_wsi_Event Event
++    );
++
+ /** @} */
+ 
+ #endif 
+diff --git a/src/lib/nhtty/TTY/Console.c b/src/lib/nhtty/TTY/Console.c
+index 748ace6..39cd8d0 100644
+--- a/src/lib/nhtty/TTY/Console.c
++++ b/src/lib/nhtty/TTY/Console.c
+@@ -48,6 +48,8 @@ NH_TTY_BEGIN()
+         nh_tty_Program *Program_p = nh_tty_getCurrentProgram(Console_p);
+         if (Program_p) {offset = Program_p->Prototype_p->Name.length + 2;}
+     }
++    else 
++    if (Console_p->state == 1) {offset = 1;}
+ 
+ NH_TTY_END(offset)
+ }
+@@ -486,7 +488,8 @@ NH_TTY_BEGIN()
+ 
+     nh_encoding_UTF8String Name = nh_encoding_encodeUTF8(Program_p->Prototype_p->Name.p, Program_p->Prototype_p->Name.length);
+ 
+-    cols -= Name.length;
++    cols -= Name.length+1;
++    nh_appendByteToString(Row_p, '@');
+     nh_appendToString(Row_p, Name.p, Name.length);
+     for (int i = 0; i < cols; ++i) {
+         nh_appendToString(Row_p, " ", 1);
+diff --git a/src/lib/nhtty/TTY/Draw.c b/src/lib/nhtty/TTY/Draw.c
+index 86e5f51..73798b9 100644
+--- a/src/lib/nhtty/TTY/Draw.c
++++ b/src/lib/nhtty/TTY/Draw.c
+@@ -113,7 +113,6 @@ NH_TTY_BEGIN()
+     }
+ 
+     NH_TTY_CHECK(nh_tty_resetProgramViews(TTY_p))
+-    TTY_p->Tab_p->refreshCursor = NH_FALSE;
+ 
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+@@ -174,7 +173,6 @@ NH_TTY_BEGIN()
+     }
+ 
+     NH_TTY_CHECK(nh_tty_resetProgramViews(TTY_p))
+-    TTY_p->Tab_p->refreshScreen = NH_FALSE;
+ 
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+diff --git a/src/lib/nhtty/TTY/TTY.c b/src/lib/nhtty/TTY/TTY.c
+index 6419a14..758037b 100644
+--- a/src/lib/nhtty/TTY/TTY.c
++++ b/src/lib/nhtty/TTY/TTY.c
+@@ -92,10 +92,9 @@ NH_TTY_BEGIN()
+     nh_tty_Config Config;
+ 
+     Config.topbars = NH_TRUE;
+-    Config.preview = NH_TTY_COLOR_RED;
+-    Config.foreground = NH_TTY_COLOR_YELLOW;
++    Config.foreground = NH_TTY_COLOR_NONE;
+     Config.verticalBorders = NH_TRUE;
+-    Config.horizontalBorders = NH_FALSE;
++    Config.horizontalBorders = NH_TRUE;
+ 
+ NH_TTY_END(Config)
+ }
+@@ -125,6 +124,11 @@ NH_TTY_BEGIN()
+ 
+     TTY_p->Borders.on = NH_TRUE;
+     TTY_p->TopBars.on = NH_TRUE;
++    TTY_p->TopBars.color = NH_TTY_COLOR_INVERSE;
++
++    TTY_p->Preview.blink = NH_TRUE;
++    TTY_p->Preview.blinkFrequency = 0.5;
++    TTY_p->Preview.LastBlink = nh_getSystemTime();
+ 
+     NH_TTY_CHECK(NULL, nh_initRingBuffer(
+         &TTY_p->Buffer.Keyboard, 64, sizeof(nh_wsi_KeyboardEvent), NULL 
+@@ -170,7 +174,7 @@ static NH_TTY_RESULT nh_tty_handleWindowResize(
+ {
+ NH_TTY_BEGIN()
+ 
+-    NH_TTY_CHECK(nh_tty_getWindowSize(View_p))
++    NH_TTY_CHECK(nh_tty_getViewSize(View_p))
+ 
+     if (View_p->cols != View_p->previousCols || View_p->rows != View_p->previousRows) 
+     {
+@@ -182,6 +186,25 @@ NH_TTY_BEGIN()
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+ 
++static NH_BOOL nh_tty_updatePreview(
++    nh_tty_TTY *TTY_p)
++{
++NH_TTY_BEGIN()
++
++    if (TTY_p->Tab_p->tilingEditorState != NH_TTY_TILING_EDITOR_STATE_INSERT) {
++        NH_TTY_END(NH_FALSE)
++    } 
++
++    if (nh_getSystemTimeDiffInSeconds(TTY_p->Preview.LastBlink, nh_getSystemTime()) > 
++        TTY_p->Preview.blinkFrequency) {
++        TTY_p->Preview.blink = !TTY_p->Preview.blink;
++        TTY_p->Preview.LastBlink = nh_getSystemTime();
++        NH_TTY_END(NH_TRUE)
++    }
++    
++NH_TTY_END(NH_FALSE)
++}
++
+ static NH_SIGNAL nh_tty_runTTY(
+     void *args_p) 
+ {
+@@ -201,13 +224,18 @@ NH_TTY_BEGIN()
+     NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_handleInput(TTY_p))
+     NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_updateTab(TTY_p->Tab_p))
+ 
++    if (nh_tty_updatePreview(TTY_p)) {
++        TTY_p->Tab_p->refreshScreen = NH_TRUE;
++        TTY_p->Tab_p->refreshCursor = NH_TRUE;
++    }
++
+     if (TTY_p->Tab_p->refreshScreen) {
+-        idle = NH_FALSE; 
+         NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_refreshScreens(TTY_p))
++        TTY_p->Tab_p->refreshScreen = idle = NH_FALSE;
+     }
+     if (TTY_p->Tab_p->refreshCursor) {
+-        idle = NH_FALSE;
+         NH_TTY_CHECK(NH_SIGNAL_ERROR, nh_tty_refreshCursors(TTY_p))
++        TTY_p->Tab_p->refreshCursor = idle = NH_FALSE;
+     }
+      
+     if (TTY_p->Tab_p->close) {
+diff --git a/src/lib/nhtty/TTY/TTY.h b/src/lib/nhtty/TTY/TTY.h
+index 726dd73..6b7ea19 100644
+--- a/src/lib/nhtty/TTY/TTY.h
++++ b/src/lib/nhtty/TTY/TTY.h
+@@ -22,6 +22,7 @@
+ 
+     typedef enum NH_TTY_COLOR_E {
+         NH_TTY_COLOR_NONE,
++        NH_TTY_COLOR_INVERSE,
+         NH_TTY_COLOR_RED,
+         NH_TTY_COLOR_GREEN,
+         NH_TTY_COLOR_YELLOW,
+@@ -47,16 +48,22 @@
+ 
+     typedef struct nh_tty_Topbars {
+         NH_BOOL on;
++        NH_TTY_COLOR_E color;
+     } nh_tty_TopBars;
+ 
+     typedef struct nh_tty_Config {
+         NH_BOOL topbars;
+         NH_TTY_COLOR_E foreground; /**<Borders and topbars color.*/
+-        NH_TTY_COLOR_E preview;    /**<Preview color.*/ 
+         NH_BOOL verticalBorders;
+         NH_BOOL horizontalBorders;
+     } nh_tty_Config;
+ 
++    typedef struct nh_tty_Preview {
++        NH_BOOL blink;
++        double blinkFrequency;
++        nh_SystemTime LastBlink;
++    } nh_tty_Preview;
++
+     typedef struct nh_tty_Buffer {
+         nh_RingBuffer Keyboard;
+     } nh_tty_Buffer;
+@@ -65,12 +72,13 @@
+         nh_tty_Config Config;
+         nh_tty_Clipboard Clipboard;
+         nh_tty_Borders Borders;
+-	nh_tty_TopBars TopBars;
++        nh_tty_TopBars TopBars;
+         nh_tty_Buffer Buffer;
++        nh_tty_Preview Preview;
++        nh_tty_Tab *Tab_p;
+         nh_List Views;
+         nh_List Prototypes;
+         nh_LinkedList Tabs;
+-        nh_tty_Tab *Tab_p;
+         NH_BOOL close;
+     } nh_tty_TTY;
+ 
+diff --git a/src/lib/nhtty/TTY/Tile.c b/src/lib/nhtty/TTY/Tile.c
+index a3bd56d..197e3ea 100644
+--- a/src/lib/nhtty/TTY/Tile.c
++++ b/src/lib/nhtty/TTY/Tile.c
+@@ -169,14 +169,15 @@ NH_BYTE *NH_TTY_TEXT_COLORS_PP[] = {
+ };
+ 
+ NH_BYTE *NH_TTY_INVERSE_COLORS_PP[] = {
+-    "",
++    "\x1b[m",     // NONE
++    "\x1b[7m",    // INVERSE
+     "\x1b[7;31m", // RED
+-    "\x1b[7;32m", // GRN
+-    "\x1b[7;33m", // YEL
+-    "\x1b[7;34m", // BLU
+-    "\x1b[7;35m", // MAG
+-    "\x1b[7;36m", // CYN
+-    "\x1b[7;37m"  // WHT
++    "\x1b[7;32m", // GREEN
++    "\x1b[7;33m", // YELLOW
++    "\x1b[7;34m", // BLUE
++    "\x1b[7;35m", // MAGENTA
++    "\x1b[7;36m", // CYAN
++    "\x1b[7;37m"  // WHITE
+ };
+ 
+ // DRAW ============================================================================================
+@@ -186,16 +187,18 @@ static NH_TTY_RESULT nh_tty_drawPreviewRow(
+ {
+ NH_TTY_BEGIN()
+ 
+-    NH_TTY_COLOR_E color = nh_tty_getTTY()->Config.preview;
++    NH_TTY_COLOR_E color = nh_tty_getTTY()->Config.foreground;
+  
+-    nh_appendToString(Data_p, NH_TTY_INVERSE_COLORS_PP[color], strlen(NH_TTY_INVERSE_COLORS_PP[color]));
++    if (nh_tty_getTTY()->Preview.blink) {
++        nh_appendToString(Data_p, NH_TTY_INVERSE_COLORS_PP[color], strlen(NH_TTY_INVERSE_COLORS_PP[color]));
++    }
+     nh_appendToString(Data_p, " ", 1);
+ 
+     if (row >= 0 && row < rows - 1) {
+         nh_appendToString(Data_p, "\x1b[0m", 4);
+     }
+     for (int i = 0; i < width - 2; ++i) {nh_appendToString(Data_p, " ", 1);}
+-    if (row >= 0 && row < rows - 1) {
++    if (row >= 0 && row < rows - 1 && nh_tty_getTTY()->Preview.blink) {
+         nh_appendToString(Data_p, NH_TTY_INVERSE_COLORS_PP[color], strlen(NH_TTY_INVERSE_COLORS_PP[color]));
+     }
+ 
+@@ -228,10 +231,14 @@ static NH_TTY_RESULT nh_tty_drawTileBorderHorizontal(
+ {
+ NH_TTY_BEGIN()
+ 
+-    for (int i = 0; i < cols; ++i) {
+-        NH_CHECK(NH_TTY_ERROR_BAD_STATE, nh_appendToString(Row_p, " ", 1))
++    NH_TTY_COLOR_E color = nh_tty_getTTY()->Config.foreground;
++    if (color) {
++        nh_appendToString(Row_p, NH_TTY_INVERSE_COLORS_PP[color], strlen(NH_TTY_INVERSE_COLORS_PP[color]));
+     }
+-    if (!nh_tty_shouldDrawTopBar(Tile_p)) {
++ 
++    NH_CHECK(NH_TTY_ERROR_BAD_STATE, nh_appendByteToStringRepeatedly(Row_p, ' ', cols))
++
++    if (!nh_tty_shouldDrawTopBar(Tile_p) || color) {
+         nh_appendToString(Row_p, "\x1b[0m", 4);
+     }
+ 
+diff --git a/src/lib/nhtty/TTY/Tiling.c b/src/lib/nhtty/TTY/Tiling.c
+index 5f43c33..6b4677b 100644
+--- a/src/lib/nhtty/TTY/Tiling.c
++++ b/src/lib/nhtty/TTY/Tiling.c
+@@ -578,8 +578,10 @@ NH_TTY_RESULT nh_tty_drawTilingMessageRow(
+ {
+ NH_TTY_BEGIN()
+ 
+-    NH_TTY_COLOR_E color = Tile_p->preview ? nh_tty_getTTY()->Config.preview : nh_tty_getTTY()->Config.foreground;
+-    nh_appendToString(Row_p, NH_TTY_INVERSE_COLORS_PP[color], strlen(NH_TTY_INVERSE_COLORS_PP[color]));
++    NH_TTY_COLOR_E color = nh_tty_getTTY()->TopBars.color;
++    if (nh_tty_getTTY()->Tab_p->tilingEditorState != NH_TTY_TILING_EDITOR_STATE_INSERT || Tile_p->Console.Programs_p || nh_tty_getTTY()->Preview.blink) {
++        nh_appendToString(Row_p, NH_TTY_INVERSE_COLORS_PP[color], strlen(NH_TTY_INVERSE_COLORS_PP[color]));
++    }
+ 
+     if (Tile_p->Tiling.Message.length > 0) {
+         NH_TTY_CHECK(nh_tty_drawTilingMessageRowMessage(Tile_p, Row_p, cols, &Tile_p->Tiling.Message))
+diff --git a/src/lib/nhtty/TTY/View.c b/src/lib/nhtty/TTY/View.c
+index f650d6b..6b5c3d5 100644
+--- a/src/lib/nhtty/TTY/View.c
++++ b/src/lib/nhtty/TTY/View.c
+@@ -35,7 +35,7 @@
+ 
+ // SIZE ============================================================================================
+ 
+-NH_TTY_RESULT nh_tty_getWindowSize(
++NH_TTY_RESULT nh_tty_getViewSize(
+     nh_tty_View *View_p) 
+ {
+ NH_TTY_BEGIN()
+diff --git a/src/lib/nhtty/TTY/View.h b/src/lib/nhtty/TTY/View.h
+index af15646..4ed9e15 100644
+--- a/src/lib/nhtty/TTY/View.h
++++ b/src/lib/nhtty/TTY/View.h
+@@ -42,7 +42,7 @@
+  *  @{
+  */
+ 
+-    NH_TTY_RESULT nh_tty_getWindowSize(
++    NH_TTY_RESULT nh_tty_getViewSize(
+         nh_tty_View *View_p
+     ); 
+     
+diff --git a/src/lib/nhwsi/Common/Initialize.c b/src/lib/nhwsi/Common/Initialize.c
+index 6354470..86598bb 100644
+--- a/src/lib/nhwsi/Common/Initialize.c
++++ b/src/lib/nhwsi/Common/Initialize.c
+@@ -10,11 +10,10 @@
+ 
+ #include "Initialize.h"
+ #include "Config.h"
+-
+-#include "Macros/FLOW.h"
+-#include "Macros/DEFAULT_CHECK.h"
++#include "Macros.h"
+ 
+ #include "../Main/Listener.h"
++#include "../Platforms/X11/Init.h"
+ 
+ #include "../../nhcore/Util/LinkedList.h"
+ 
+@@ -27,7 +26,9 @@
+ NH_WSI_RESULT nh_wsi_initialize()
+ {
+     _nh_wsi_initConfig();
++
+     NH_WSI_LISTENER.running = NH_FALSE;
+     NH_WSI_LISTENER.Windows = nh_initLinkedList();
+-}
+ 
++    NH_WSI_CHECK(nh_wsi_initX11())
++}
+diff --git a/src/lib/nhwsi/Common/Log.c b/src/lib/nhwsi/Common/Log.c
+index 4b9a66d..8d90d07 100644
+--- a/src/lib/nhwsi/Common/Log.c
++++ b/src/lib/nhwsi/Common/Log.c
+@@ -9,7 +9,7 @@
+ // INCLUDE =========================================================================================
+ 
+ #include "Log.h"
+-#include "Macros/FLOW.h"
++#include "Macros.h"
+ 
+ #include "../../nhcore/System/Memory.h"
+ #include "../../nhcore/System/Logger.h"
+diff --git a/src/lib/nhwsi/Common/Macros.h b/src/lib/nhwsi/Common/Macros.h
+new file mode 100644
+index 0000000..e16e6b0
+--- /dev/null
++++ b/src/lib/nhwsi/Common/Macros.h
+@@ -0,0 +1,84 @@
++#ifndef NH_WSI_COMMON_MACROS_H
++#define NH_WSI_COMMON_MACROS_H
++
++#ifndef DOXYGEN_SHOULD_SKIP_THIS
++
++/**
++ * netzhaut - Web Browser Engine
++ * Copyright (C) 2020 The netzhaut Authors
++ * Published under MIT
++ */
++
++#include "Result.h"
++
++#ifdef NH_LOG_FLOW
++    #include "Log.h"
++#endif
++
++#endif
++
++// FLOW LOGGING ====================================================================================
++
++#ifdef NH_LOG_FLOW
++    #define NH_WSI_BEGIN() {_nh_wsi_logBegin(__FILE__, __func__);}
++#else
++    #define NH_WSI_BEGIN() 
++#endif
++
++#ifdef NH_LOG_FLOW
++    #define NH_WSI_END(result) {_nh_wsi_logEnd(__FILE__, __func__); return result;}
++#else
++    #define NH_WSI_END(result) {return result;} 
++#endif
++
++#ifdef NH_LOG_FLOW
++    #define NH_WSI_SILENT_END() {_nh_wsi_logEnd(__FILE__, __func__); return;}
++#else
++    #define NH_WSI_SILENT_END() {return;} 
++#endif
++
++#ifdef NH_LOG_FLOW
++    #define NH_WSI_DIAGNOSTIC_END(result) {return _nh_wsi_logDiagnosticEnd(__FILE__, __func__, result, __LINE__);}
++#else
++    #define NH_WSI_DIAGNOSTIC_END(result) {return result;} 
++#endif
++
++// ERROR LOGGING ===================================================================================
++
++#define NH_WSI_CHECK(checkable)                                             \
++{                                                                           \
++    NH_WSI_RESULT checkResult = checkable;                                  \
++    if (checkResult != NH_WSI_SUCCESS) {NH_WSI_DIAGNOSTIC_END(checkResult)} \
++}
++
++#define NH_WSI_CHECK_2(checkReturn, checkable)                   \
++{                                                                \
++    NH_WSI_RESULT checkResult = checkable;                       \
++    if (checkResult != NH_WSI_SUCCESS) {NH_WSI_END(checkReturn)} \
++}
++
++#define NH_WSI_CHECK_NULL(checkable)                                              \
++{                                                                                 \
++    void *checkResult_p = checkable;                                              \
++    if (checkResult_p == NULL) {NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_NULL_POINTER)} \
++}
++
++#define NH_WSI_CHECK_NULL_2(checkReturn, checkable)      \
++{                                                        \
++    void *checkResult_p = checkable;                     \
++    if (checkResult_p == NULL) {NH_WSI_END(checkReturn)} \
++}
++
++#define NH_WSI_CHECK_MEM(checkable)                                                    \
++{                                                                                      \
++    void *checkResult_p = checkable;                                                   \
++    if (checkResult_p == NULL) {NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_MEMORY_ALLOCATION)} \
++}
++
++#define NH_WSI_CHECK_MEM_2(checkReturn, checkable)       \
++{                                                        \
++    void *checkResult_p = checkable;                     \
++    if (checkResult_p == NULL) {NH_WSI_END(checkReturn)} \
++}
++
++#endif
+diff --git a/src/lib/nhwsi/Common/Macros/CUSTOM_CHECK.h b/src/lib/nhwsi/Common/Macros/CUSTOM_CHECK.h
+deleted file mode 100644
+index 6a0dd0f..0000000
+--- a/src/lib/nhwsi/Common/Macros/CUSTOM_CHECK.h
++++ /dev/null
+@@ -1,29 +0,0 @@
+-/**
+- * netzhaut - Web Browser Engine
+- * Copyright (C) 2020 The netzhaut Authors
+- * Published under MIT
+- */
+-
+-#include "../Result.h"
+-
+-#undef  NH_WSI_CHECK
+-#define NH_WSI_CHECK(checkReturn, checkable)                    \
+-{                                                              \
+-    NH_WSI_RESULT checkResult = checkable;                      \
+-    if (checkResult != NH_WSI_SUCCESS) {NH_WSI_END(checkReturn)} \
+-}
+-
+-#undef  NH_WSI_CHECK_NULL
+-#define NH_WSI_CHECK_NULL(checkReturn, checkable)        \
+-{                                                       \
+-    void *checkResult_p = checkable;                    \
+-    if (checkResult_p == NULL) {NH_WSI_END(checkReturn)} \
+-}
+-
+-#undef  NH_WSI_CHECK_MEM
+-#define NH_WSI_CHECK_MEM(checkReturn, checkable)         \
+-{                                                       \
+-    void *checkResult_p = checkable;                    \
+-    if (checkResult_p == NULL) {NH_WSI_END(checkReturn)} \
+-}
+-
+diff --git a/src/lib/nhwsi/Common/Macros/DEFAULT_CHECK.h b/src/lib/nhwsi/Common/Macros/DEFAULT_CHECK.h
+deleted file mode 100644
+index c10ca0f..0000000
+--- a/src/lib/nhwsi/Common/Macros/DEFAULT_CHECK.h
++++ /dev/null
+@@ -1,29 +0,0 @@
+-/**
+- * netzhaut - Web Browser Engine
+- * Copyright (C) 2020 The netzhaut Authors
+- * Published under MIT
+- */
+-
+-#include "../Result.h"
+-
+-#undef  NH_WSI_CHECK
+-#define NH_WSI_CHECK(checkable)                                            \
+-{                                                                         \
+-    NH_WSI_RESULT checkResult = checkable;                                 \
+-    if (checkResult != NH_WSI_SUCCESS) {NH_WSI_DIAGNOSTIC_END(checkResult)} \
+-}
+-
+-#undef  NH_WSI_CHECK_NULL
+-#define NH_WSI_CHECK_NULL(checkable)                                             \
+-{                                                                               \
+-    void *checkResult_p = checkable;                                            \
+-    if (checkResult_p == NULL) {NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_NULL_POINTER)} \
+-}
+-
+-#undef  NH_WSI_CHECK_MEM
+-#define NH_WSI_CHECK_MEM(checkable)                                                      \
+-{                                                                                    \
+-    void *checkResult_p = checkable;                                                 \
+-    if (checkResult_p == NULL) {NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_MEMORY_ALLOCATION)} \
+-}
+-
+diff --git a/src/lib/nhwsi/Common/Macros/FLOW.h b/src/lib/nhwsi/Common/Macros/FLOW.h
+deleted file mode 100644
+index fdebf63..0000000
+--- a/src/lib/nhwsi/Common/Macros/FLOW.h
++++ /dev/null
+@@ -1,35 +0,0 @@
+-/**
+- * netzhaut - Web Browser Engine
+- * Copyright (C) 2020 The netzhaut Authors
+- * Published under MIT
+- */
+-
+-#undef NH_WSI_BEGIN
+-#undef NH_WSI_END
+-#undef NH_WSI_SILENT_END
+-#undef NH_WSI_DIAGNOSTIC_END
+-
+-#ifdef NH_LOG_FLOW
+-    #define NH_WSI_BEGIN() {_nh_wsi_logBegin(__FILE__, __func__);}
+-#else
+-    #define NH_WSI_BEGIN() 
+-#endif
+-
+-#ifdef NH_LOG_FLOW
+-    #define NH_WSI_END(result) {_nh_wsi_logEnd(__FILE__, __func__); return result;}
+-#else
+-    #define NH_WSI_END(result) {return result;} 
+-#endif
+-
+-#ifdef NH_LOG_FLOW
+-    #define NH_WSI_SILENT_END() {_nh_wsi_logEnd(__FILE__, __func__); return;}
+-#else
+-    #define NH_WSI_SILENT_END() {return;} 
+-#endif
+-
+-#ifdef NH_LOG_FLOW
+-    #define NH_WSI_DIAGNOSTIC_END(result) {return _nh_wsi_logDiagnosticEnd(__FILE__, __func__, result, __LINE__);}
+-#else
+-    #define NH_WSI_DIAGNOSTIC_END(result) {return result;} 
+-#endif
+-
+diff --git a/src/lib/nhwsi/Common/Macros/Macros.h b/src/lib/nhwsi/Common/Macros/Macros.h
+deleted file mode 100644
+index d1e4596..0000000
+--- a/src/lib/nhwsi/Common/Macros/Macros.h
++++ /dev/null
+@@ -1,22 +0,0 @@
+-#ifndef NH_WSI_MACROS_H
+-#define NH_WSI_MACROS_H
+-
+-#ifndef DOXYGEN_SHOULD_SKIP_THIS
+-
+-/**
+- * netzhaut - Web Browser Engine
+- * Copyright (C) 2020 The netzhaut Authors
+- * Published under MIT
+- */
+-
+-#ifdef NH_LOG_FLOW
+-    #include "Log.h"
+-#endif
+-
+-#define NH_WSI_DEFAULT_CHECK "../../nhwsi/Common/Macros/DEFAULT_CHECK.h"
+-#define NH_WSI_CUSTOM_CHECK "../../nhwsi/Common/Macros/CUSTOM_CHECK.h"
+-#define NH_WSI_FLOW "../../nhwsi/Common/Macros/FLOW.h"
+-
+-#endif
+-
+-#endif 
+diff --git a/src/lib/nhwsi/Common/Types/Public.h b/src/lib/nhwsi/Common/Types/Public.h
+index 9935e37..a00d310 100644
+--- a/src/lib/nhwsi/Common/Types/Public.h
++++ b/src/lib/nhwsi/Common/Types/Public.h
+@@ -111,6 +111,9 @@
+         NH_BYTE *title_p; 
+         nh_PixelSize Size;
+         nh_PixelPosition Position;
++        NH_BOOL floating;
++        NH_BOOL maximized;
++        double delay;
+     } nh_wsi_WindowConfiguration;
+ 
+ /** @} */
+diff --git a/src/lib/nhwsi/Main/Event.c b/src/lib/nhwsi/Main/Event.c
+index 154cfe8..cb4fccd 100644
+--- a/src/lib/nhwsi/Main/Event.c
++++ b/src/lib/nhwsi/Main/Event.c
+@@ -11,9 +11,8 @@
+ #include "Event.h"
+ #include "Window.h"
+ 
+-#include "../Common/Macros/Macros.h"
+-#include NH_WSI_FLOW
+-#include NH_WSI_DEFAULT_CHECK
++#include "../Common/Macros.h"
++#include "../../nhcore/Util/RingBuffer.h"
+ 
+ #include <string.h>
+ 
+@@ -25,9 +24,9 @@ void nh_wsi_sendConfigureEvent(
+ NH_WSI_BEGIN()
+ 
+     nh_wsi_ConfigureEvent Configure;
+-    Configure.Position.x = x;
+-    Configure.Position.y = y;
+-    Configure.Size.width = width;
++    Configure.Position.x  = x;
++    Configure.Position.y  = y;
++    Configure.Size.width  = width;
+     Configure.Size.height = height;
+ 
+     nh_wsi_Event Event;
+@@ -37,7 +36,19 @@ NH_WSI_BEGIN()
+     if (Window_p && Window_p->callback_f) {
+         Window_p->callback_f(Window_p, Event);
+     }
++
++    if (Window_p->Configuration.Size.width != width || Window_p->Configuration.Size.height != height) {
++        Window_p->Configuration.delay = 1.0f;
++    }
+     
++    Window_p->Configuration.Position.x  = x;
++    Window_p->Configuration.Position.y  = y;
++    Window_p->Configuration.Size.width  = width;
++    Window_p->Configuration.Size.height = height;
++
++    nh_wsi_Event *Event_p = nh_advanceRingBuffer(&Window_p->Events);
++    *Event_p = Event;
++
+ NH_WSI_SILENT_END()
+ }
+ 
+@@ -60,6 +71,9 @@ NH_WSI_BEGIN()
+         Window_p->callback_f(Window_p, Event);
+     }
+ 
++    nh_wsi_Event *Event_p = nh_advanceRingBuffer(&Window_p->Events);
++    *Event_p = Event;
++
+ NH_WSI_SILENT_END()
+ }
+ 
+@@ -81,6 +95,9 @@ NH_WSI_BEGIN()
+         Window_p->callback_f(Window_p, Event);
+     }
+ 
++    nh_wsi_Event *Event_p = nh_advanceRingBuffer(&Window_p->Events);
++    *Event_p = Event;
++
+ NH_WSI_SILENT_END()
+ }
+ 
+diff --git a/src/lib/nhwsi/Main/Listener.c b/src/lib/nhwsi/Main/Listener.c
+index cd247a2..0507510 100644
+--- a/src/lib/nhwsi/Main/Listener.c
++++ b/src/lib/nhwsi/Main/Listener.c
+@@ -11,20 +11,13 @@
+ #include "Listener.h"
+ #include "Window.h"
+ 
+-#include "../Platforms/X11.h"
+-#include "../Platforms/Win32.h"
+-
+-#include "../Common/Macros/Macros.h"
+-#include NH_WSI_FLOW
+-#include NH_WSI_DEFAULT_CHECK
++#include "../Common/Macros.h"
++#include "../Platforms/X11/Window.h"
+ 
+ #include "../../nhcore/System/Thread.h"
+ #include "../../nhcore/System/Memory.h"
+ #include "../../nhcore/Util/String.h"
+ #include "../../nhcore/Util/LinkedList.h"
+-#include "../../nhcore/Common/Macros/Macros.h"
+-#include NH_FLOW
+-#include NH_CUSTOM_CHECK
+ 
+ #include <stdio.h>
+ #include <string.h>
+@@ -44,8 +37,7 @@ NH_WSI_BEGIN()
+ 
+     switch (Window_p->type)
+     {
+-        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_X11_getInput(Window_p, idle_p)) break;
+-//        case NH_WSI_TYPE_WIN32 : NH_WSI_CHECK(nh_Win32_getInput(&Window_p->Win32)) break;
++        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_wsi_getInputX11(Window_p, idle_p)) break;
+         default                : NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+     }
+ 
+@@ -57,7 +49,7 @@ void *nh_wsi_initListener(
+ {
+ NH_WSI_BEGIN()
+ 
+-    static NH_BYTE *name_p = "Window Listener";
++    static NH_BYTE *name_p = "WSI Listener";
+     static NH_BYTE *path_p = "nhwsi/Main/Listener.c";
+     Workload_p->name_p = name_p;
+     Workload_p->path_p = path_p;
+@@ -70,6 +62,8 @@ NH_SIGNAL nh_wsi_runListener(
+ {
+ NH_WSI_BEGIN()
+ 
++    // As soon as there are no windows anymore, we close the window listener.
++    // The listener will be started automatically when a new window is created and no listener exists.
+     if (NH_WSI_LISTENER.Windows.count == 0) {
+         NH_WSI_LISTENER.running = NH_FALSE;
+         NH_WSI_END(NH_SIGNAL_DONE)
+diff --git a/src/lib/nhwsi/Main/Window.c b/src/lib/nhwsi/Main/Window.c
+index 0728cf0..5131796 100644
+--- a/src/lib/nhwsi/Main/Window.c
++++ b/src/lib/nhwsi/Main/Window.c
+@@ -11,18 +11,13 @@
+ #include "Window.h"
+ #include "Listener.h"
+ 
+-#include "../Common/Macros/Macros.h"
+-#include NH_WSI_FLOW
+-#include NH_WSI_DEFAULT_CHECK
++#include "../Common/Macros.h"
+ 
+ #include "../../nhcore/System/Thread.h"
+ #include "../../nhcore/System/Memory.h"
+ #include "../../nhcore/Util/String.h"
+ #include "../../nhcore/Util/LinkedList.h"
+ #include "../../nhcore/Util/RingBuffer.h"
+-#include "../../nhcore/Common/Macros/Macros.h"
+-#include NH_FLOW
+-#include NH_CUSTOM_CHECK
+ 
+ #include <stdio.h>
+ #include <string.h>
+@@ -37,11 +32,14 @@ NH_WSI_RESULT nh_wsi_initWindowConfiguration(
+ {
+ NH_WSI_BEGIN()
+ 
+-    WindowConfiguration_p->title_p = NULL;
+-    WindowConfiguration_p->Size.width = 1000;
++    WindowConfiguration_p->title_p     = NULL;
++    WindowConfiguration_p->Size.width  = 1000;
+     WindowConfiguration_p->Size.height = 1000;
+-    WindowConfiguration_p->Position.x = 0;
+-    WindowConfiguration_p->Position.y = 0;
++    WindowConfiguration_p->Position.x  = 0;
++    WindowConfiguration_p->Position.y  = 0;
++    WindowConfiguration_p->floating    = NH_FALSE;
++    WindowConfiguration_p->maximized   = NH_FALSE;
++    WindowConfiguration_p->delay       = 1.0;
+ 
+ NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
+ }
+@@ -71,23 +69,26 @@ nh_wsi_Window *nh_wsi_createWindow(
+ {
+ NH_WSI_BEGIN();
+ 
+-#include NH_WSI_CUSTOM_CHECK
+-
+-    nh_wsi_Window Window;
+-
+-    Window.surface_p = NULL;
+-    Window.callback_f = NULL;
+-    Window.type = nh_wsi_getType();
+-
+-    if (Window.type < 0) {NH_WSI_END(NULL)}
++    nh_wsi_Window *Window_p = nh_allocate(sizeof(nh_wsi_Window));
++    NH_WSI_CHECK_MEM_2(NULL, Window_p)
++
++    Window_p->surface_p     = NULL;
++    Window_p->callback_f    = NULL;
++    Window_p->type          = nh_wsi_getType();
++    Window_p->Configuration = Configuration;
++    
++    nh_initRingBuffer(&Window_p->Events, 1024, sizeof(nh_wsi_Event), NULL);
++
++    if (Window_p->type < 0) {
++        nh_free(Window_p);
++        NH_WSI_END(NULL)
++    }
+ 
+-    switch (Window.type)
++    switch (Window_p->type)
+     {
+         case NH_WSI_TYPE_X11 : 
+-            NH_WSI_CHECK(NULL, nh_X11_createWindow(&Window.X11, &Configuration, Requirements_p))
+-            break;
+-        case NH_WSI_TYPE_WIN32 : 
+-            NH_WSI_CHECK(NULL, nh_Win32_createWindow(&Window.Win32, &Configuration, Requirements_p)) 
++            Window_p->X11.Common_p = &NH_WSI_X11;
++            NH_WSI_CHECK_2(NULL, nh_wsi_createWindowX11(&Window_p->X11, &Configuration, Requirements_p))
+             break;
+         default : NH_WSI_END(NULL)
+     }
+@@ -97,13 +98,10 @@ NH_WSI_BEGIN();
+         NH_WSI_LISTENER.running = NH_TRUE;
+     }
+ 
+-    nh_wsi_Window *Window_p = nh_allocate(sizeof(nh_wsi_Window));
+-    NH_WSI_CHECK_MEM(NULL, Window_p)
+-
+-    *Window_p = Window;
+-    NH_CHECK(NULL, nh_appendToLinkedList(&NH_WSI_LISTENER.Windows, Window_p))
+-
+-#include NH_WSI_DEFAULT_CHECK
++    if (nh_appendToLinkedList(&NH_WSI_LISTENER.Windows, Window_p)) {
++        nh_free(Window_p);
++        NH_WSI_END(NULL)
++    }
+ 
+ NH_WSI_END(Window_p);
+ }
+@@ -119,8 +117,7 @@ NH_WSI_BEGIN()
+ 
+     switch (Window_p->type)
+     {
+-        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_X11_destroyWindow(&Window_p->X11)) break;
+-        case NH_WSI_TYPE_WIN32 : NH_WSI_CHECK(nh_Win32_destroyWindow(&Window_p->Win32)) break;
++        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_wsi_destroyWindowX11(&Window_p->X11)) break;
+         default                : NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+     }
+ 
+@@ -148,8 +145,7 @@ NH_WSI_BEGIN()
+ 
+     switch (Window_p->type)
+     {
+-        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_X11_setWindowBackgroundColor(&Window_p->X11, Color)) break;
+-        case NH_WSI_TYPE_WIN32 : NH_WSI_CHECK(nh_Win32_setWindowBackgroundColor(&Window_p->Win32, Color)) break;
++        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_wsi_setWindowBackgroundColorX11(&Window_p->X11, Color)) break;
+         default                : NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+     }
+ 
+@@ -163,8 +159,7 @@ NH_WSI_BEGIN()
+ 
+     switch (Window_p->type)
+     {
+-        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_X11_setWindowTitle(&Window_p->X11, title_p)) break;
+-        case NH_WSI_TYPE_WIN32 : NH_WSI_CHECK(nh_Win32_setWindowTitle(&Window_p->Win32, title_p)) break;
++        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_wsi_setWindowTitleX11(&Window_p->X11, title_p)) break;
+         default                : NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+     }
+ 
+@@ -178,8 +173,7 @@ NH_WSI_BEGIN()
+ 
+     switch (Window_p->type)
+     {
+-        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_X11_setMouseCursor(&Window_p->X11, type)) break;
+-        case NH_WSI_TYPE_WIN32 : NH_WSI_CHECK(nh_Win32_setMouseCursor(&Window_p->Win32, type)) break;
++        case NH_WSI_TYPE_X11   : NH_WSI_CHECK(nh_wsi_setMouseCursorX11(&Window_p->X11, type)) break;
+         default                : NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+     }
+ 
+diff --git a/src/lib/nhwsi/Main/Window.h b/src/lib/nhwsi/Main/Window.h
+index 9efcc99..bcd236e 100644
+--- a/src/lib/nhwsi/Main/Window.h
++++ b/src/lib/nhwsi/Main/Window.h
+@@ -9,8 +9,7 @@
+  * Published under MIT
+  */
+ 
+-#include "../Platforms/X11.h"
+-#include "../Platforms/Win32.h"
++#include "../Platforms/X11/Window.h"
+ 
+ #include "../Common/Types/Private.h"
+ 
+@@ -21,11 +20,12 @@
+  */
+ 
+     typedef struct nh_wsi_Window {
++        nh_wsi_WindowConfiguration Configuration;
+         NH_WSI_TYPE type;
+         void *surface_p;
+         nh_wsi_callback_f callback_f;
+-        nh_X11_Window X11;
+-        nh_Win32_Window Win32;
++        nh_wsi_WindowX11 X11;
++        nh_RingBuffer Events;
+     } nh_wsi_Window;
+ 
+ /** @} */
+diff --git a/src/lib/nhwsi/Platforms/Win32.c b/src/lib/nhwsi/Platforms/Win32/Win32.c
+similarity index 100%
+rename from src/lib/nhwsi/Platforms/Win32.c
+rename to src/lib/nhwsi/Platforms/Win32/Win32.c
+diff --git a/src/lib/nhwsi/Platforms/Win32.h b/src/lib/nhwsi/Platforms/Win32/Win32.h
+similarity index 100%
+rename from src/lib/nhwsi/Platforms/Win32.h
+rename to src/lib/nhwsi/Platforms/Win32/Win32.h
+diff --git a/src/lib/nhwsi/Platforms/X11.c b/src/lib/nhwsi/Platforms/X11.c
+deleted file mode 100644
+index 0c304d6..0000000
+--- a/src/lib/nhwsi/Platforms/X11.c
++++ /dev/null
+@@ -1,589 +0,0 @@
+-// LICENSE NOTICE ==================================================================================
+-
+-/**
+- * netzhaut - Web Browser Engine
+- * Copyright (C) 2020 The netzhaut Authors
+- * Published under MIT
+- */
+-
+-// INCLUDE =========================================================================================
+-
+-#include "X11.h"
+-
+-#include "../Main/Window.h"
+-#include "../Main/Event.h"
+-
+-#include "../Common/Log.h"
+-#include "../Common/Macros/Macros.h"
+-#include NH_WSI_DEFAULT_CHECK
+-#include NH_WSI_FLOW
+-
+-#include "../../nhgfx/Base/Surface.h"
+-
+-#include <fcntl.h>
+-#include <time.h>
+-#include <stdio.h>
+-#include <string.h>
+-#include <stdlib.h>
+-#include <limits.h>
+-
+-#ifdef __unix__
+-    #include <X11/Xcursor/Xcursor.h>
+-    #include <X11/Xutil.h>
+-#endif
+-
+-// DECLARE =========================================================================================
+-
+-#ifdef __unix__
+-
+-    typedef struct Property {
+-        NH_UNSIGNED_BYTE *data;
+-        int format, nitems;
+-        Atom type;
+-    } Property;
+-    
+-#endif
+-
+-// HELPER ==========================================================================================
+-
+-#ifdef __unix__
+-
+-    static Property nh_X11_readProperty(
+-        Display* Display_p, Window Window, Atom property)
+-    {
+-        Atom actual_type;
+-        int actual_format;
+-        int read_bytes = 1024;	
+-        unsigned long nitems;
+-        unsigned long bytes_after;
+-        NH_UNSIGNED_BYTE *ret = 0;	
+-    
+-        do {
+-            if(ret != 0) {
+-                XFree(ret);
+-            }
+-            XGetWindowProperty(
+-                Display_p, Window, property, 0, read_bytes, False, AnyPropertyType,
+-    	    &actual_type, &actual_format, &nitems, &bytes_after, &ret
+-            );
+-    	read_bytes *= 2;
+-        }
+-        while(bytes_after != 0);
+-        
+-        Property p = {ret, actual_format, nitems, actual_type};
+-        
+-        return p;
+-    }
+-
+-    // https://stackoverflow.com/questions/3909713/xlib-xgetwindowattributes-always-returns-1x1
+-    static Window nh_X11_getTopLevelParent(
+-        Display * display, Window window)
+-    {
+-         Window parent;
+-         Window root;
+-         Window * children;
+-         unsigned int num_children;
+-    
+-         while (1) {
+-             if (0 == XQueryTree(display, window, &root,
+-                       &parent, &children, &num_children)) {
+-                 fprintf(stderr, "XQueryTree error\n");
+-                 abort(); //change to whatever error handling you prefer
+-             }
+-             if (children) { //must test for null
+-                 XFree(children);
+-             }
+-             if (window == root || parent == root) {
+-                 return window;
+-             }
+-             else {
+-                 window = parent;
+-             }
+-         }
+-    }
+-
+-#endif
+-
+-// GET INPUT =======================================================================================
+-
+-NH_WSI_RESULT nh_X11_getInput(
+-    nh_wsi_Window *Window_p, NH_BOOL *idle_p) 
+-{
+-NH_WSI_BEGIN()
+-
+-#ifdef __unix__
+-    
+-    XEvent Event;
+-    Display* Display_p = Window_p->X11.Display_p;
+-
+-    Atom XdndEnter      = XInternAtom(Display_p, "XdndEnter", False);
+-    Atom XdndPosition   = XInternAtom(Display_p, "XdndPosition", False);
+-    Atom XdndStatus     = XInternAtom(Display_p, "XdndStatus", False);
+-    Atom XdndTypeList   = XInternAtom(Display_p, "XdndTypeList", False);
+-    Atom XdndActionCopy = XInternAtom(Display_p, "XdndActionCopy", False);
+-    Atom XdndDrop       = XInternAtom(Display_p, "XdndDrop", False);
+-    Atom XdndLeave      = XInternAtom(Display_p, "XdndLeave", False);
+-    Atom XdndFinished   = XInternAtom(Display_p, "XdndFinished", False);
+-    Atom XdndSelection  = XInternAtom(Display_p, "XdndSelection", False);
+-    Atom XdndProxy      = XInternAtom(Display_p, "XdndProxy", False);
+-    Atom sel            = XInternAtom(Display_p, "PRIMARY", 0);
+-
+-    int xdnd = 0;
+-
+-    while (XPending(Display_p) > 0) 
+-    {
+-        *idle_p = NH_FALSE;
+-        XNextEvent(Display_p, &Event);
+-        
+-        if (Event.type == ClientMessage)
+-        {   
+-                 if (Event.xclient.data.l[0] == Window_p->X11.DeleteAtom) {exit(0);} // TODO event
+-            else if (Event.type == Expose) {}
+-            else if (Event.xclient.message_type == XdndEnter) 
+-            {
+-                xdnd = (Event.xclient.data.l[1] >> 24);
+-            }
+-            else if (Event.xclient.message_type == XdndDrop)
+-            {
+-                Atom string = XInternAtom(Display_p, "STRING", 0);
+-		
+-                if (xdnd >= 1) {
+-		    XConvertSelection(Display_p, XdndSelection, string, sel, Window_p->X11.XWindow, Event.xclient.data.l[2]);
+-                } else {
+-                    XConvertSelection(Display_p, XdndSelection, string, sel, Window_p->X11.XWindow, CurrentTime);
+-                }
+-            }
+-            else if (Event.xclient.message_type == XdndPosition)
+-            {
+-		Atom action = XdndActionCopy;
+-		if(xdnd >= 2) {action = Event.xclient.data.l[4];}
+-		
+-		XClientMessageEvent m;
+-		memset(&m, sizeof(m), 0);
+-		m.type         = ClientMessage;
+-		m.display      = Event.xclient.display;
+-		m.window       = Event.xclient.data.l[0];
+-		m.message_type = XdndStatus;
+-		m.format       = 32;
+-		
+-                m.data.l[0] = Window_p->X11.XWindow;
+-		m.data.l[1] = 1;
+-		m.data.l[2] = 0; //Specify an empty rectangle
+-		m.data.l[3] = 0;
+-		m.data.l[4] = XdndActionCopy; //We only accept copying anyway.
+-
+-		XSendEvent(Display_p, Event.xclient.data.l[0], False, NoEventMask, (XEvent*)&m);
+-                XFlush(Display_p);
+-            }
+-            else if (Event.xclient.message_type == XdndLeave) {}
+-        }
+-        else if (Event.type == ConfigureNotify) 
+-        {
+-            XConfigureEvent Configure = Event.xconfigure;
+-
+-            XWindowAttributes XWA;
+-            XGetWindowAttributes(Display_p, nh_X11_getTopLevelParent(Display_p, Window_p->X11.XWindow), &XWA);
+-
+-            nh_wsi_sendConfigureEvent(Window_p, XWA.x, XWA.y, Configure.width, Configure.height);
+-        }
+-        else if (Event.type == MotionNotify)
+-        {
+-            nh_wsi_sendMouseEvent(Window_p, Event.xbutton.x, Event.xbutton.y, NH_WSI_TRIGGER_MOVE, NH_WSI_MOUSE_MOVE);
+-        }
+-        else if (Event.type == ButtonPress || Event.type == ButtonRelease)
+-        {
+-            NH_WSI_TRIGGER trigger = Event.type == ButtonPress ? NH_WSI_TRIGGER_PRESS : NH_WSI_TRIGGER_RELEASE;
+-            NH_WSI_MOUSE button = 0;
+-
+-            switch (Event.xbutton.button)
+-            {
+-                case Button1 : button = NH_WSI_MOUSE_LEFT; break;
+-                case Button2 : button = NH_WSI_MOUSE_MIDDLE; break;
+-                case Button3 : button = NH_WSI_MOUSE_RIGHT; break;
+-                case Button4 : button = NH_WSI_MOUSE_SCROLL; trigger = NH_WSI_TRIGGER_UP; break;
+-                case Button5 : button = NH_WSI_MOUSE_SCROLL; trigger = NH_WSI_TRIGGER_DOWN; break;
+-            }
+-
+-            nh_wsi_sendMouseEvent(Window_p, Event.xbutton.x, Event.xbutton.y, trigger, button);
+-        }
+-        else if (Event.type == KeyPress || Event.type == KeyRelease)
+-        {
+-            NH_WSI_TRIGGER event = Event.type == KeyPress ? NH_WSI_TRIGGER_PRESS : NH_WSI_TRIGGER_RELEASE;
+-            NH_WSI_KEY special = 0;
+-
+-            KeySym keysym = XLookupKeysym(&Event.xkey, 0);
+-            KeyCode keycode = XKeysymToKeycode(Window_p->X11.Display_p, keysym); 
+-            NH_ENCODING_UTF32 codepoint = xkb_state_key_get_utf32(Window_p->X11.State_p, keycode);
+-
+-            if (!codepoint)
+-            {
+-                switch (keysym)
+-                {
+-                    // Modifiers
+-                    case XKB_KEY_Shift_L    : special = NH_WSI_KEY_SHIFT_L; break; 
+-                    case XKB_KEY_Shift_R    : special = NH_WSI_KEY_SHIFT_R; break;   
+-                    case XKB_KEY_Control_L  : special = NH_WSI_KEY_CONTROL_L; break; 
+-                    case XKB_KEY_Control_R  : special = NH_WSI_KEY_CONTROL_R; break;
+-                    case XKB_KEY_Caps_Lock  : special = NH_WSI_KEY_CAPS_LOCK; break; 
+-                    case XKB_KEY_Shift_Lock : special = NH_WSI_KEY_SHIFT_LOCK; break;
+-                    case XKB_KEY_Meta_L     : special = NH_WSI_KEY_META_L; break;    
+-                    case XKB_KEY_Meta_R     : special = NH_WSI_KEY_META_R; break;    
+-                    case XKB_KEY_Alt_L      : special = NH_WSI_KEY_ALT_L; break;     
+-                    case XKB_KEY_Alt_R      : special = NH_WSI_KEY_ALT_R; break;     
+-                    case XKB_KEY_Super_L    : special = NH_WSI_KEY_SUPER_L; break;   
+-                    case XKB_KEY_Super_R    : special = NH_WSI_KEY_SUPER_R; break;   
+-                    case XKB_KEY_Hyper_L    : special = NH_WSI_KEY_HYPER_L; break;   
+-                    case XKB_KEY_Hyper_R    : special = NH_WSI_KEY_HYPER_R; break;  
+-                }
+-            }
+-
+-            nh_wsi_sendKeyboardEvent(Window_p, codepoint, special, event);
+-        }
+-        else if (Event.type == FocusIn || Event.type == FocusOut)
+-        {
+-        }
+-        else if (Event.type == SelectionNotify)
+-        {
+-            Atom target = Event.xselection.target;
+-	    
+-            if(Event.xselection.property == None) {continue;}
+-            Property prop = nh_X11_readProperty(Display_p, Window_p->X11.XWindow, sel); 
+-            
+-//            NH_drop(prop.data, Window_p);
+-
+-            XClientMessageEvent m;
+-	    memset(&m, sizeof(m), 0);
+-	    m.type         = ClientMessage;
+-	    m.display      = Display_p;
+-	    m.window       = Event.xclient.data.l[0];
+-	    m.message_type = XdndFinished;
+-	    m.format    = 32;
+-	    m.data.l[0] = Window_p->X11.XWindow;
+-	    m.data.l[1] = 1;
+-	    m.data.l[2] = XdndActionCopy;
+-
+-	    XSendEvent(Display_p, Event.xclient.data.l[0], False, NoEventMask, (XEvent*)&m);
+-            XSync(Display_p, False);
+-        }
+-    }
+-
+-    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
+-
+-#endif
+-
+-NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+-}
+-
+-// WINDOW ==========================================================================================
+-
+-NH_WSI_RESULT nh_X11_createWindow(
+-    nh_X11_Window *Window_p, nh_wsi_WindowConfiguration *Configuration_p,
+-    nh_gfx_SurfaceRequirements *Requirements_p)
+-{
+-NH_WSI_BEGIN()
+-
+-#ifdef __unix__
+-
+-    Window_p->Display_p = XOpenDisplay(NULL);
+-    Display *Display_p = Window_p->Display_p;
+-    NH_WSI_CHECK_NULL(Display_p)
+-
+-// keyboard
+-    Window_p->Connection_p = XGetXCBConnection(Display_p);
+-    Window_p->Context_p    = xkb_context_new(XKB_CONTEXT_NO_FLAGS);
+-    xkb_x11_setup_xkb_extension(
+-        Window_p->Connection_p, XKB_X11_MIN_MAJOR_XKB_VERSION, XKB_X11_MIN_MINOR_XKB_VERSION, 
+-        0, NULL, NULL, NULL, NULL
+-    ); 
+-    Window_p->keyboardDeviceID = xkb_x11_get_core_keyboard_device_id(Window_p->Connection_p);
+-    Window_p->Keymap_p = xkb_x11_keymap_new_from_device(
+-        Window_p->Context_p, 
+-        Window_p->Connection_p, 
+-        Window_p->keyboardDeviceID, 
+-        XKB_KEYMAP_COMPILE_NO_FLAGS
+-    );
+-    Window_p->State_p = xkb_x11_state_new_from_device(
+-        Window_p->Keymap_p, Window_p->Connection_p, Window_p->keyboardDeviceID
+-    );
+-
+-// window 
+-
+-    XVisualInfo Template = {0};
+-    Template.screen = 0;
+-    Template.depth = 32;
+-    Template.class = TrueColor;
+-    Template.red_mask = 0xff0000;
+-    Template.green_mask = 0xff00;
+-    Template.blue_mask = 0xff;
+-    Template.colormap_size = 256;
+-    Template.bits_per_rgb = 8;
+-
+-    long mask = 
+-      VisualScreenMask
+-    | VisualDepthMask
+-    | VisualClassMask
+-    | VisualRedMaskMask
+-    | VisualGreenMaskMask
+-    | VisualBlueMaskMask
+-    | VisualColormapSizeMask
+-    | VisualBitsPerRGBMask;
+-
+-    int infos = 0;
+-    XVisualInfo *Infos_p = XGetVisualInfo(Display_p, mask, &Template, &infos);
+-    XVisualInfo *Info_p = NULL;
+-
+-    for (int i = 0; i < infos; ++i) {
+-        if (!Requirements_p) {
+-            Info_p = Infos_p;
+-            Window_p->Info = *Info_p;
+-            break;
+-        }
+-        for (int j = 0; j < Requirements_p->OpenGL.Ids.length; ++j) {
+-            if (Infos_p[i].visualid == ((VisualID*)Requirements_p->OpenGL.Ids.p)[j]) {
+-                Info_p = Infos_p+i;
+-                Window_p->Info = *Info_p;
+-                break;
+-            }
+-        }
+-    }
+-
+-    if (!Info_p) {
+-        NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+-    }
+-
+-    XSetWindowAttributes Attributes = {0,};
+-
+-    Attributes.colormap = 
+-        XCreateColormap(Display_p, DefaultRootWindow(Display_p), Info_p->visual, AllocNone);
+-    Attributes.background_pixmap = None;
+-    Attributes.border_pixmap = None;
+-    Attributes.border_pixel = 0;
+-    Attributes.event_mask =
+-        StructureNotifyMask
+-      | EnterWindowMask
+-      | LeaveWindowMask
+-      | ExposureMask
+-      | ButtonPressMask
+-      | ButtonReleaseMask
+-      | OwnerGrabButtonMask
+-      | PointerMotionMask
+-      | KeyPressMask
+-      | FocusChangeMask
+-      | KeyReleaseMask;
+-
+-    int attributesMask = 
+-        CWBackPixmap|
+-        CWColormap|
+-        CWBorderPixel|
+-        CWEventMask;
+-
+-    Window_p->XWindow = XCreateWindow(Display_p, DefaultRootWindow(Display_p), Configuration_p->Position.x,
+-        Configuration_p->Position.y, Configuration_p->Size.width, Configuration_p->Size.height, 0, Info_p->depth,
+-        InputOutput, Info_p->visual, attributesMask, &Attributes);
+-
+-    XMapWindow(Display_p, Window_p->XWindow);
+-    XFree(Infos_p);
+-
+-// window delete protocol
+-    Window_p->DeleteAtom = XInternAtom(Display_p, "WM_DELETE_WINDOW", 0);
+-    XSetWMProtocols(Display_p, Window_p->XWindow, &Window_p->DeleteAtom, 1);
+-
+-// xdnd (file-)drop
+-    Atom xdndAware = XInternAtom(Display_p, "XdndAware", 0); 
+-    Atom xdnd = 5;
+-    XChangeProperty(
+-        Display_p, Window_p->XWindow, xdndAware, XA_ATOM, 32,
+-        PropModeReplace, (NH_UNSIGNED_BYTE*)&xdnd, 1
+-    );
+-
+-// window name   
+-    XStoreName(Display_p, Window_p->XWindow, 
+-        Configuration_p->title_p ? Configuration_p->title_p : "[Placeholder Window Title]");
+-
+-// center window
+-//    Screen *Screen_p = ScreenOfDisplay(Display_p, DefaultScreen(Display_p));
+-//    XMoveWindow(Display_p, Window_p->XWindow, (int)(Screen_p->width/2) - (int)(width/2), (int)(Screen_p->height/2) - (int)(height/2));
+-//    XSync(Display_p, false);
+-
+-    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
+-
+-#endif
+-
+-NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+-}
+-
+-NH_WSI_RESULT nh_X11_destroyWindow(
+-    nh_X11_Window *Window_p)
+-{
+-NH_WSI_BEGIN()
+-
+-#ifdef __unix__
+-
+-    XDestroyWindow(Window_p->Display_p, Window_p->XWindow);
+-    XCloseDisplay(Window_p->Display_p);
+-    xkb_state_unref(Window_p->State_p);
+-    xkb_keymap_unref(Window_p->Keymap_p);
+-    xkb_context_unref(Window_p->Context_p);
+-
+-    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
+-
+-#endif
+-
+-NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+-}
+-
+-// BACKGROUND COLOR ================================================================================
+-
+-NH_WSI_RESULT nh_X11_setWindowBackgroundColor(
+-    nh_X11_Window *Window_p, nh_Color Color)
+-{
+-NH_WSI_BEGIN()
+-
+-#ifdef __unix__
+-
+-    uint16_t rgba_p[4] = {
+-        (uint16_t)Color.r*255,
+-        (uint16_t)Color.g*255,
+-        (uint16_t)Color.b*255,
+-        (uint16_t)Color.a*255,
+-    };
+-
+-    long double color = 0x00000000; // == black
+-    color = rgba_p[0] << 16 | rgba_p[1] << 8 | rgba_p[2] << 0 | rgba_p[3] << 24; 
+-
+-    XSetWindowAttributes Attributes;
+-    Attributes.background_pixel = color;
+-    XChangeWindowAttributes(Window_p->Display_p, Window_p->XWindow, CWBackPixel, &Attributes);
+-
+-    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
+-
+-#endif
+-
+-NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+-}
+-
+-// TITLE ===========================================================================================
+-
+-NH_WSI_RESULT nh_X11_setWindowTitle(
+-    nh_X11_Window *Window_p, NH_BYTE *title_p)
+-{
+-NH_WSI_BEGIN()
+-
+-#ifdef __unix__
+-
+-    XStoreName(Window_p->Display_p, Window_p->XWindow, title_p);
+-
+-    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
+-
+-#endif
+-
+-NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+-}
+-// CURSOR ==========================================================================================
+-
+-// #ifndef _X11_CURSORFONT_H_
+-// #define _X11_CURSORFONT_H_
+-// #define XC_num_glyphs 154
+-// #define XC_X_cursor 0
+-// #define XC_arrow 2
+-// #define XC_based_arrow_down 4
+-// #define XC_based_arrow_up 6
+-// #define XC_boat 8
+-// #define XC_bogosity 10
+-// #define XC_bottom_left_corner 12
+-// #define XC_bottom_right_corner 14
+-// #define XC_bottom_side 16
+-// #define XC_bottom_tee 18
+-// #define XC_box_spiral 20
+-// #define XC_center_ptr 22
+-// #define XC_circle 24
+-// #define XC_clock 26
+-// #define XC_coffee_mug 28
+-// #define XC_cross 30
+-// #define XC_cross_reverse 32
+-// #define XC_crosshair 34
+-// #define XC_diamond_cross 36
+-// #define XC_dot 38
+-// #define XC_dotbox 40
+-// #define XC_double_arrow 42
+-// #define XC_draft_large 44
+-// #define XC_draft_small 46
+-// #define XC_draped_box 48
+-// #define XC_exchange 50
+-// #define XC_fleur 52
+-// #define XC_gobbler 54
+-// #define XC_gumby 56
+-// #define XC_hand1 58
+-// #define XC_hand2 60
+-// #define XC_heart 62
+-// #define XC_icon 64
+-// #define XC_iron_cross 66
+-// #define XC_left_ptr 68
+-// #define XC_left_side 70
+-// #define XC_left_tee 72
+-// #define XC_leftbutton 74
+-// #define XC_ll_angle 76
+-// #define XC_lr_angle 78
+-// #define XC_man 80
+-// #define XC_middlebutton 82
+-// #define XC_mouse 84
+-// #define XC_pencil 86
+-// #define XC_pirate 88
+-// #define XC_plus 90
+-// #define XC_question_arrow 92
+-// #define XC_right_ptr 94
+-// #define XC_right_side 96
+-// #define XC_right_tee 98
+-// #define XC_rightbutton 100
+-// #define XC_rtl_logo 102
+-// #define XC_sailboat 104
+-// #define XC_sb_down_arrow 106
+-// #define XC_sb_h_double_arrow 108
+-// #define XC_sb_left_arrow 110
+-// #define XC_sb_right_arrow 112
+-// #define XC_sb_up_arrow 114
+-// #define XC_sb_v_double_arrow 116
+-// #define XC_shuttle 118
+-// #define XC_sizing 120
+-// #define XC_spider 122
+-// #define XC_spraycan 124
+-// #define XC_star 126
+-// #define XC_target 128
+-// #define XC_tcross 130
+-// #define XC_top_left_arrow 132
+-// #define XC_top_left_corner 134
+-// #define XC_top_right_corner 136
+-// #define XC_top_side 138
+-// #define XC_top_tee 140
+-// #define XC_trek 142
+-// #define XC_ul_angle 144
+-// #define XC_umbrella 146
+-// #define XC_ur_angle 148
+-// #define XC_watch 150
+-// #define XC_xterm 152
+-// #endif /* _X11_CURSORFONT_H_ */
+-
+-NH_WSI_RESULT nh_X11_setMouseCursor(
+-    nh_X11_Window *Window_p, int type)
+-{
+-NH_WSI_BEGIN()
+-
+-#ifdef __unix__
+-
+-    Cursor C;
+-
+-    switch (type)
+-    {
+-        case NH_WSI_MOUSE_CURSOR_DEFAULT : C = XcursorLibraryLoadCursor(Window_p->Display_p, "arrow"); break;
+-        case NH_WSI_MOUSE_CURSOR_TEXT    : C = XcursorLibraryLoadCursor(Window_p->Display_p, "xterm"); break;
+-    }
+-
+-    XDefineCursor(Window_p->Display_p, Window_p->XWindow, C);
+-
+-    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
+-
+-#endif
+-
+-NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
+-}
+-
+diff --git a/src/lib/nhwsi/Platforms/X11.h b/src/lib/nhwsi/Platforms/X11.h
+deleted file mode 100644
+index eb3031a..0000000
+--- a/src/lib/nhwsi/Platforms/X11.h
++++ /dev/null
+@@ -1,83 +0,0 @@
+-#ifndef NH_X11_H
+-#define NH_X11_H
+-
+-#ifndef DOXYGEN_SHOULD_SKIP_THIS
+-
+-/**
+- * netzhaut - Web Browser Engine
+- * Copyright (C) 2020 The netzhaut Authors
+- * Published under MIT
+- */
+-
+-#include "../Common/Types/Private.h"
+-
+-#ifdef __unix__
+-    #include <wayland-server.h>
+-    #include <X11/Xlib.h>
+-    #include <X11/Xatom.h>
+-    #include <X11/extensions/Xrender.h>
+-    #include <linux/input.h>
+-    #include <X11/Xlib-xcb.h>
+-    #include <xkbcommon/xkbcommon-x11.h>
+-    #include <sys/mman.h>
+-#endif
+-
+-typedef struct nh_wsi_WindowConfiguration nh_wsi_WindowConfiguration;
+-
+-#endif
+-
+-/** @addtogroup IOStructs Structs
+- *  \ingroup IO
+- *  @{
+- */
+-
+-    typedef struct nh_X11_Window {
+-        int ignore;
+-    #ifdef __unix__
+-        Display *Display_p;             
+-        Window XWindow;                 
+-        Atom DeleteAtom;                
+-        xcb_connection_t *Connection_p;
+-        int32_t keyboardDeviceID;      
+-        struct xkb_keymap *Keymap_p;    
+-        struct xkb_state *State_p;      
+-        struct xkb_context *Context_p;  
+-        XVisualInfo Info;
+-    #endif
+-    } nh_X11_Window;
+-
+-/** @} */
+-
+-/** @addtogroup IOFunctions Function
+- *  \ingroup IO
+- *  @{
+- */
+-
+-    NH_WSI_RESULT nh_X11_getInput(
+-        nh_wsi_Window *Window_p, NH_BOOL *idle_p
+-    ); 
+-
+-    NH_WSI_RESULT nh_X11_createWindow(
+-        nh_X11_Window *Window_p, nh_wsi_WindowConfiguration *Configuration_p,
+-        nh_gfx_SurfaceRequirements *Requirements_p
+-    );
+-
+-    NH_WSI_RESULT nh_X11_destroyWindow(
+-        nh_X11_Window *Window_p
+-    );
+-    
+-    NH_WSI_RESULT nh_X11_setWindowBackgroundColor(
+-        nh_X11_Window *Window_p, nh_Color Color 
+-    );
+-    
+-    NH_WSI_RESULT nh_X11_setWindowTitle(
+-        nh_X11_Window *Window_p, NH_BYTE *title_p
+-    );
+-    
+-    NH_WSI_RESULT nh_X11_setMouseCursor(
+-        nh_X11_Window *Window_p, int type
+-    );
+-
+-/** @} */
+-
+-#endif 
+diff --git a/src/lib/nhwsi/Platforms/X11/Init.c b/src/lib/nhwsi/Platforms/X11/Init.c
+new file mode 100644
+index 0000000..947b5d2
+--- /dev/null
++++ b/src/lib/nhwsi/Platforms/X11/Init.c
+@@ -0,0 +1,260 @@
++// LICENSE NOTICE ==================================================================================
++
++/**
++ * netzhaut - Web Browser Engine
++ * Copyright (C) 2020 The netzhaut Authors
++ * Published under MIT
++ */
++
++// INCLUDE =========================================================================================
++
++#include "Init.h"
++
++#include "../../Common/Log.h"
++#include "../../Common/Macros.h"
++
++#include "../../../nhgfx/Base/Surface.h"
++
++#include <fcntl.h>
++#include <time.h>
++#include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
++#include <limits.h>
++
++#ifdef __unix__
++    #include <X11/Xcursor/Xcursor.h>
++    #include <X11/Xutil.h>
++#endif
++
++// DECLARE =========================================================================================
++
++nh_wsi_X11 NH_WSI_X11;
++
++// EWMH ============================================================================================
++
++// Retrieve a single window property of the specified type
++// Inspired by fghGetWindowProperty from freeglut
++//
++static unsigned long nh_wsi_getWindowPropertyX11(
++    Window window, Atom property, Atom type, unsigned char** value)
++{
++    Atom actualType;
++    int actualFormat;
++    unsigned long itemCount, bytesAfter;
++
++    XGetWindowProperty(NH_WSI_X11.Display_p, window, property, 0, LONG_MAX, False, type, &actualType, 
++        &actualFormat, &itemCount, &bytesAfter, value);
++
++    return itemCount;
++}
++
++// Return the atom ID only if it is listed in the specified array
++//
++static Atom nh_wsi_getAtomIfSupported(
++    Atom* supportedAtoms, unsigned long atomCount, const char *atomName_p)
++{
++    const Atom atom = XInternAtom(NH_WSI_X11.Display_p, atomName_p, False);
++
++    for (unsigned long i = 0;  i < atomCount;  i++) {
++        if (supportedAtoms[i] == atom)
++            return atom;
++    }
++
++    return None;
++}
++
++// Check whether the running window manager is EWMH-compliant
++//
++static void nh_wsi_detectEWMH()
++{
++NH_WSI_BEGIN()
++
++    // First we read the _NET_SUPPORTING_WM_CHECK property on the root window
++
++    Window* windowFromRoot = NULL;
++    if (!nh_wsi_getWindowPropertyX11(NH_WSI_X11.root, NH_WSI_X11.Atoms.NET_SUPPORTING_WM_CHECK,
++        XA_WINDOW, (unsigned char**) &windowFromRoot)) {
++        NH_WSI_SILENT_END()
++    }
++
++    // If it exists, it should be the XID of a top-level window
++    // Then we look for the same property on that window
++
++    Window* windowFromChild = NULL;
++    if (!nh_wsi_getWindowPropertyX11(*windowFromRoot, NH_WSI_X11.Atoms.NET_SUPPORTING_WM_CHECK,
++        XA_WINDOW, (unsigned char**) &windowFromChild))
++    {
++        XFree(windowFromRoot);
++        NH_WSI_SILENT_END() 
++    }
++
++    // If the property exists, it should contain the XID of the window
++
++    if (*windowFromRoot != *windowFromChild)
++    {
++        XFree(windowFromRoot);
++        XFree(windowFromChild);
++        NH_WSI_SILENT_END() 
++    }
++
++    XFree(windowFromRoot);
++    XFree(windowFromChild);
++
++    // We are now fairly sure that an EWMH-compliant WM is currently running
++    // We can now start querying the WM about what features it supports by
++    // looking in the _NET_SUPPORTED property on the root window
++    // It should contain a list of supported EWMH protocol and state atoms
++
++    Atom* supportedAtoms = NULL;
++    const unsigned long atomCount = nh_wsi_getWindowPropertyX11(NH_WSI_X11.root,
++        NH_WSI_X11.Atoms.NET_SUPPORTED, XA_ATOM, (unsigned char**) &supportedAtoms);
++
++    // See which of the atoms we support that are supported by the WM
++
++    NH_WSI_X11.Atoms.NET_WM_STATE                   = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_STATE");
++    NH_WSI_X11.Atoms.NET_WM_STATE_ABOVE             = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_STATE_ABOVE");
++    NH_WSI_X11.Atoms.NET_WM_STATE_FULLSCREEN        = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_STATE_FULLSCREEN");
++    NH_WSI_X11.Atoms.NET_WM_STATE_MAXIMIZED_VERT    = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_STATE_MAXIMIZED_VERT");
++    NH_WSI_X11.Atoms.NET_WM_STATE_MAXIMIZED_HORZ    = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_STATE_MAXIMIZED_HORZ");
++    NH_WSI_X11.Atoms.NET_WM_STATE_DEMANDS_ATTENTION = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_STATE_DEMANDS_ATTENTION");
++    NH_WSI_X11.Atoms.NET_WM_FULLSCREEN_MONITORS     = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_FULLSCREEN_MONITORS");
++    NH_WSI_X11.Atoms.NET_WM_WINDOW_TYPE             = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_WINDOW_TYPE");
++    NH_WSI_X11.Atoms.NET_WM_WINDOW_TYPE_NORMAL      = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WM_WINDOW_TYPE_NORMAL");
++    NH_WSI_X11.Atoms.NET_WORKAREA                   = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_WORKAREA");
++    NH_WSI_X11.Atoms.NET_CURRENT_DESKTOP            = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_CURRENT_DESKTOP");
++    NH_WSI_X11.Atoms.NET_ACTIVE_WINDOW              = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_ACTIVE_WINDOW");
++    NH_WSI_X11.Atoms.NET_FRAME_EXTENTS              = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_FRAME_EXTENTS");
++    NH_WSI_X11.Atoms.NET_REQUEST_FRAME_EXTENTS      = nh_wsi_getAtomIfSupported(supportedAtoms, atomCount, "_NET_REQUEST_FRAME_EXTENTS");
++
++    if (supportedAtoms)
++        XFree(supportedAtoms);
++
++NH_WSI_SILENT_END()
++}
++
++// Look for and initialize supported X11 extensions
++//
++static NH_WSI_RESULT nh_wsi_initAtoms()
++{
++NH_WSI_BEGIN()
++
++    // String format atoms
++    NH_WSI_X11.Atoms.NULL_       = XInternAtom(NH_WSI_X11.Display_p, "NULL", False);
++    NH_WSI_X11.Atoms.UTF8_STRING = XInternAtom(NH_WSI_X11.Display_p, "UTF8_STRING", False);
++    NH_WSI_X11.Atoms.ATOM_PAIR   = XInternAtom(NH_WSI_X11.Display_p, "ATOM_PAIR", False);
++
++    // Custom selection property atom
++    NH_WSI_X11.Atoms.GLFW_SELECTION = XInternAtom(NH_WSI_X11.Display_p, "GLFW_SELECTION", False);
++
++    // ICCCM standard clipboard atoms
++    NH_WSI_X11.Atoms.TARGETS   = XInternAtom(NH_WSI_X11.Display_p, "TARGETS", False);
++    NH_WSI_X11.Atoms.MULTIPLE  = XInternAtom(NH_WSI_X11.Display_p, "MULTIPLE", False);
++    NH_WSI_X11.Atoms.PRIMARY   = XInternAtom(NH_WSI_X11.Display_p, "PRIMARY", False);
++    NH_WSI_X11.Atoms.INCR      = XInternAtom(NH_WSI_X11.Display_p, "INCR", False);
++    NH_WSI_X11.Atoms.CLIPBOARD = XInternAtom(NH_WSI_X11.Display_p, "CLIPBOARD", False);
++
++    // Clipboard manager atoms
++    NH_WSI_X11.Atoms.CLIPBOARD_MANAGER = XInternAtom(NH_WSI_X11.Display_p, "CLIPBOARD_MANAGER", False);
++    NH_WSI_X11.Atoms.SAVE_TARGETS      = XInternAtom(NH_WSI_X11.Display_p, "SAVE_TARGETS", False);
++
++    // Xdnd (drag and drop) atoms
++    NH_WSI_X11.Atoms.XdndAware      = XInternAtom(NH_WSI_X11.Display_p, "XdndAware", False);
++    NH_WSI_X11.Atoms.XdndEnter      = XInternAtom(NH_WSI_X11.Display_p, "XdndEnter", False);
++    NH_WSI_X11.Atoms.XdndLeave      = XInternAtom(NH_WSI_X11.Display_p, "XdndLeave", False);
++    NH_WSI_X11.Atoms.XdndPosition   = XInternAtom(NH_WSI_X11.Display_p, "XdndPosition", False);
++    NH_WSI_X11.Atoms.XdndStatus     = XInternAtom(NH_WSI_X11.Display_p, "XdndStatus", False);
++    NH_WSI_X11.Atoms.XdndActionCopy = XInternAtom(NH_WSI_X11.Display_p, "XdndActionCopy", False);
++    NH_WSI_X11.Atoms.XdndDrop       = XInternAtom(NH_WSI_X11.Display_p, "XdndDrop", False);
++    NH_WSI_X11.Atoms.XdndFinished   = XInternAtom(NH_WSI_X11.Display_p, "XdndFinished", False);
++    NH_WSI_X11.Atoms.XdndSelection  = XInternAtom(NH_WSI_X11.Display_p, "XdndSelection", False);
++    NH_WSI_X11.Atoms.XdndTypeList   = XInternAtom(NH_WSI_X11.Display_p, "XdndTypeList", False);
++    NH_WSI_X11.Atoms.text_uri_list  = XInternAtom(NH_WSI_X11.Display_p, "text/uri-list", False);
++
++    // ICCCM, EWMH and Motif window property atoms
++    // These can be set safely even without WM support
++    // The EWMH atoms that require WM support are handled in detectEWMH
++    NH_WSI_X11.Atoms.WM_PROTOCOLS             = XInternAtom(NH_WSI_X11.Display_p, "WM_PROTOCOLS", False);
++    NH_WSI_X11.Atoms.WM_STATE                 = XInternAtom(NH_WSI_X11.Display_p, "WM_STATE", False);
++    NH_WSI_X11.Atoms.WM_DELETE_WINDOW         = XInternAtom(NH_WSI_X11.Display_p, "WM_DELETE_WINDOW", False);
++    NH_WSI_X11.Atoms.NET_SUPPORTED            = XInternAtom(NH_WSI_X11.Display_p, "_NET_SUPPORTED", False);
++    NH_WSI_X11.Atoms.NET_SUPPORTING_WM_CHECK  = XInternAtom(NH_WSI_X11.Display_p, "_NET_SUPPORTING_WM_CHECK", False);
++    NH_WSI_X11.Atoms.NET_WM_ICON              = XInternAtom(NH_WSI_X11.Display_p, "_NET_WM_ICON", False);
++    NH_WSI_X11.Atoms.NET_WM_PING              = XInternAtom(NH_WSI_X11.Display_p, "_NET_WM_PING", False);
++    NH_WSI_X11.Atoms.NET_WM_PID               = XInternAtom(NH_WSI_X11.Display_p, "_NET_WM_PID", False);
++    NH_WSI_X11.Atoms.NET_WM_NAME              = XInternAtom(NH_WSI_X11.Display_p, "_NET_WM_NAME", False);
++    NH_WSI_X11.Atoms.NET_WM_ICON_NAME         = XInternAtom(NH_WSI_X11.Display_p, "_NET_WM_ICON_NAME", False);
++    NH_WSI_X11.Atoms.NET_WM_BYPASS_COMPOSITOR = XInternAtom(NH_WSI_X11.Display_p, "_NET_WM_BYPASS_COMPOSITOR", False);
++    NH_WSI_X11.Atoms.NET_WM_WINDOW_OPACITY    = XInternAtom(NH_WSI_X11.Display_p, "_NET_WM_WINDOW_OPACITY", False);
++    NH_WSI_X11.Atoms.MOTIF_WM_HINTS           = XInternAtom(NH_WSI_X11.Display_p, "_MOTIF_WM_HINTS", False);
++
++    // The compositing manager selection name contains the screen number
++    {
++        char name_p[32];
++        snprintf(name_p, sizeof(name_p), "_NET_WM_CM_S%u", NH_WSI_X11.screen);
++        NH_WSI_X11.Atoms.NET_WM_CM_Sx = XInternAtom(NH_WSI_X11.Display_p, name_p, False);
++    }
++
++    // Detect whether an EWMH-conformant window manager is running
++    nh_wsi_detectEWMH();
++
++NH_WSI_END(NH_WSI_SUCCESS)
++}
++
++static NH_WSI_RESULT nh_wsi_initExtensions()
++{
++NH_WSI_BEGIN()
++
++// XKB (X keyboard extension)
++
++    NH_WSI_X11.XKB.Connection_p = XGetXCBConnection(NH_WSI_X11.Display_p);
++    NH_WSI_X11.XKB.Context_p    = xkb_context_new(XKB_CONTEXT_NO_FLAGS);
++    xkb_x11_setup_xkb_extension(
++        NH_WSI_X11.XKB.Connection_p, XKB_X11_MIN_MAJOR_XKB_VERSION, XKB_X11_MIN_MINOR_XKB_VERSION, 
++        0, NULL, NULL, NULL, NULL
++    ); 
++
++    NH_WSI_X11.XKB.keyboardDeviceID = xkb_x11_get_core_keyboard_device_id(NH_WSI_X11.XKB.Connection_p);
++    NH_WSI_X11.XKB.Keymap_p = xkb_x11_keymap_new_from_device(
++        NH_WSI_X11.XKB.Context_p, 
++        NH_WSI_X11.XKB.Connection_p, 
++        NH_WSI_X11.XKB.keyboardDeviceID, 
++        XKB_KEYMAP_COMPILE_NO_FLAGS
++    );
++
++    NH_WSI_X11.XKB.State_p = xkb_x11_state_new_from_device(
++        NH_WSI_X11.XKB.Keymap_p, NH_WSI_X11.XKB.Connection_p, NH_WSI_X11.XKB.keyboardDeviceID
++    );
++
++NH_WSI_END(NH_WSI_SUCCESS)
++}
++
++NH_WSI_RESULT nh_wsi_initX11()
++{
++NH_WSI_BEGIN()
++
++    NH_WSI_X11.Display_p = XOpenDisplay(NULL);
++    if (!NH_WSI_X11.Display_p) {NH_WSI_END(NH_WSI_ERROR_BAD_STATE)}
++
++    NH_WSI_X11.screen = DefaultScreen(NH_WSI_X11.Display_p);
++    NH_WSI_X11.root   = RootWindow(NH_WSI_X11.Display_p, NH_WSI_X11.screen);
++
++    NH_WSI_CHECK(nh_wsi_initExtensions())
++    NH_WSI_CHECK(nh_wsi_initAtoms())
++
++NH_WSI_END(NH_WSI_SUCCESS)
++}
++
++NH_WSI_RESULT nh_wsi_closeX11()
++{
++NH_WSI_BEGIN()
++
++    XCloseDisplay(NH_WSI_X11.Display_p);
++    xkb_state_unref(NH_WSI_X11.XKB.State_p);
++    xkb_keymap_unref(NH_WSI_X11.XKB.Keymap_p);
++    xkb_context_unref(NH_WSI_X11.XKB.Context_p);
++
++NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
++}
++
++
+diff --git a/src/lib/nhwsi/Platforms/X11/Init.h b/src/lib/nhwsi/Platforms/X11/Init.h
+new file mode 100644
+index 0000000..189c4f5
+--- /dev/null
++++ b/src/lib/nhwsi/Platforms/X11/Init.h
+@@ -0,0 +1,131 @@
++#ifndef NH_WSI_PLATFORMS_X11_INIT_H
++#define NH_WSI_PLATFORMS_X11_INIT_H
++
++#ifndef DOXYGEN_SHOULD_SKIP_THIS
++
++/**
++ * netzhaut - Web Browser Engine
++ * Copyright (C) 2020 The netzhaut Authors
++ * Published under MIT
++ */
++
++#include "../../Common/Types/Private.h"
++
++#ifdef __unix__
++    #include <wayland-server.h>
++    #include <X11/Xlib.h>
++    #include <X11/Xatom.h>
++    #include <X11/extensions/Xrender.h>
++    #include <linux/input.h>
++    #include <X11/Xlib-xcb.h>
++    #include <xkbcommon/xkbcommon-x11.h>
++    #include <sys/mman.h>
++#endif
++
++#endif
++
++/** @addtogroup IOStructs Structs
++ *  \ingroup IO
++ *  @{
++ */
++
++    typedef struct nh_wsi_X11Atoms {
++        // String format atoms
++        Atom NULL_;
++        Atom UTF8_STRING;
++        Atom ATOM_PAIR;
++        // Custom selection property atom
++        Atom GLFW_SELECTION;
++        // ICCCM standard clipboard atoms
++        Atom TARGETS;
++        Atom MULTIPLE;
++        Atom PRIMARY;
++        Atom INCR;
++        Atom CLIPBOARD;
++        // Clipboard manager atoms
++        Atom CLIPBOARD_MANAGER;
++        Atom SAVE_TARGETS;
++        // Xdnd (drag and drop) atoms
++        Atom XdndAware;
++        Atom XdndEnter;
++        Atom XdndLeave;
++        Atom XdndPosition;
++        Atom XdndStatus;
++        Atom XdndActionCopy;
++        Atom XdndDrop;
++        Atom XdndFinished;
++        Atom XdndSelection;
++        Atom XdndTypeList;
++        Atom text_uri_list;
++        // 
++        Atom WM_PROTOCOLS;
++        Atom WM_STATE;
++        Atom WM_DELETE_WINDOW;
++        Atom NET_SUPPORTED;
++        Atom NET_SUPPORTING_WM_CHECK;
++        Atom NET_WM_ICON;
++        Atom NET_WM_PING;
++        Atom NET_WM_PID;
++        Atom NET_WM_NAME;
++        Atom NET_WM_ICON_NAME;
++        Atom NET_WM_BYPASS_COMPOSITOR;
++        Atom NET_WM_WINDOW_OPACITY;
++        Atom MOTIF_WM_HINTS;
++        Atom NET_WM_CM_Sx;
++        // Following atoms need WM support check.
++        Atom NET_WM_STATE;
++        Atom NET_WM_STATE_ABOVE;
++        Atom NET_WM_STATE_FULLSCREEN;
++        Atom NET_WM_STATE_MAXIMIZED_VERT;
++        Atom NET_WM_STATE_MAXIMIZED_HORZ;
++        Atom NET_WM_STATE_DEMANDS_ATTENTION;
++        Atom NET_WM_FULLSCREEN_MONITORS;
++        Atom NET_WM_WINDOW_TYPE;
++        Atom NET_WM_WINDOW_TYPE_NORMAL;
++        Atom NET_WORKAREA;
++        Atom NET_CURRENT_DESKTOP;
++        Atom NET_ACTIVE_WINDOW;
++        Atom NET_FRAME_EXTENTS;
++        Atom NET_REQUEST_FRAME_EXTENTS;
++    } nh_wsi_X11Atoms;
++
++    typedef struct nh_wsi_XKB {
++        xcb_connection_t *Connection_p;
++        int32_t keyboardDeviceID;      
++        struct xkb_keymap *Keymap_p;    
++        struct xkb_state *State_p;      
++        struct xkb_context *Context_p;  
++    } nh_wsi_XKB;
++
++    typedef struct nh_wsi_X11 {
++        nh_wsi_X11Atoms Atoms; /**<Property identifiers.*/
++        nh_wsi_XKB XKB;        /**<XKB.*/
++        Display *Display_p;    /**<X server connection.*/
++        int screen;            /**<Screen.*/
++        Window root;           /**<Root.*/
++    } nh_wsi_X11;
++
++/** @} */
++
++/** @addtogroup lib_nhwsi_vars
++ *  @{
++ */
++
++    extern nh_wsi_X11 NH_WSI_X11;
++
++/** @} */
++
++/** @addtogroup IOFunctions Function
++ *  \ingroup IO
++ *  @{
++ */
++
++    NH_WSI_RESULT nh_wsi_initX11(
++    );
++
++    NH_WSI_RESULT nh_wsi_closeX11(
++    );
++
++/** @} */
++
++#endif 
+diff --git a/src/lib/nhwsi/Platforms/X11/Window.c b/src/lib/nhwsi/Platforms/X11/Window.c
+new file mode 100644
+index 0000000..0964d52
+--- /dev/null
++++ b/src/lib/nhwsi/Platforms/X11/Window.c
+@@ -0,0 +1,830 @@
++// LICENSE NOTICE ==================================================================================
++
++/**
++ * netzhaut - Web Browser Engine
++ * Copyright (C) 2020 The netzhaut Authors
++ * Published under MIT
++ */
++
++// INCLUDE =========================================================================================
++
++#include "Window.h"
++#include "Init.h"
++
++#include "../../Main/Window.h"
++#include "../../Main/Event.h"
++
++#include "../../Common/Log.h"
++#include "../../Common/Macros.h"
++
++#include "../../../nhgfx/Base/Surface.h"
++
++#include <fcntl.h>
++#include <time.h>
++#include <stdio.h>
++#include <string.h>
++#include <stdlib.h>
++#include <limits.h>
++#include <unistd.h>
++
++#ifdef __unix__
++    #include <X11/Xcursor/Xcursor.h>
++    #include <X11/Xutil.h>
++#endif
++
++// DECLARE =========================================================================================
++
++typedef struct nh_wsi_PropertyX11 {
++    NH_UNSIGNED_BYTE *data;
++    int format, nitems;
++    Atom type;
++} nh_wsi_PropertyX11;
++
++// HELPER ==========================================================================================
++
++static nh_wsi_PropertyX11 nh_wsi_readPropertyX11(
++    Display* Display_p, Window Window, Atom property)
++{
++    Atom actual_type;
++    int actual_format;
++    int read_bytes = 1024;	
++    unsigned long nitems;
++    unsigned long bytes_after;
++    NH_UNSIGNED_BYTE *ret = 0;	
++
++    do {
++        if(ret != 0) {
++            XFree(ret);
++        }
++        XGetWindowProperty(
++            Display_p, Window, property, 0, read_bytes, False, AnyPropertyType,
++	    &actual_type, &actual_format, &nitems, &bytes_after, &ret
++        );
++	read_bytes *= 2;
++    }
++    while(bytes_after != 0);
++    
++    nh_wsi_PropertyX11 p = {ret, actual_format, nitems, actual_type};
++    
++    return p;
++}
++
++// https://stackoverflow.com/questions/3909713/xlib-xgetwindowattributes-always-returns-1x1
++static Window nh_wsi_getTopLevelParentX11(
++    Display * display, Window window)
++{
++     Window parent;
++     Window root;
++     Window * children;
++     unsigned int num_children;
++
++     while (1) {
++         if (0 == XQueryTree(display, window, &root,
++                   &parent, &children, &num_children)) {
++             fprintf(stderr, "XQueryTree error\n");
++             abort(); //change to whatever error handling you prefer
++         }
++         if (children) { //must test for null
++             XFree(children);
++         }
++         if (window == root || parent == root) {
++             return window;
++         }
++         else {
++             window = parent;
++         }
++     }
++}
++
++// GET INPUT =======================================================================================
++
++NH_WSI_RESULT nh_wsi_getInputX11(
++    nh_wsi_Window *Window_p, NH_BOOL *idle_p) 
++{
++NH_WSI_BEGIN()
++    
++    XEvent Event;
++    int xdnd = 0;
++
++    while (XPending(NH_WSI_X11.Display_p) > 0) 
++    {
++        *idle_p = NH_FALSE;
++        XNextEvent(NH_WSI_X11.Display_p, &Event);
++        
++        if (Event.type == ClientMessage)
++        {   
++                 if (Event.xclient.data.l[0] == NH_WSI_X11.Atoms.WM_DELETE_WINDOW) {exit(0);} // TODO event
++            else if (Event.xclient.data.l[0] == NH_WSI_X11.Atoms.NET_WM_PING)
++            {
++                // The window manager is pinging the application to ensure
++                // it's still responding to events
++
++                XEvent Reply = Event;
++                Reply.xclient.window = NH_WSI_X11.root;
++
++                XSendEvent(NH_WSI_X11.Display_p, NH_WSI_X11.root,
++                           False,
++                           SubstructureNotifyMask | SubstructureRedirectMask,
++                           &Reply);
++            }
++
++            else if (Event.type == Expose) {}
++            else if (Event.xclient.message_type == NH_WSI_X11.Atoms.XdndEnter) 
++            {
++                xdnd = (Event.xclient.data.l[1] >> 24);
++            }
++            else if (Event.xclient.message_type == NH_WSI_X11.Atoms.XdndDrop)
++            {
++                Atom string = XInternAtom(NH_WSI_X11.Display_p, "STRING", 0);
++		
++                if (xdnd >= 1) {
++		    XConvertSelection(NH_WSI_X11.Display_p, NH_WSI_X11.Atoms.XdndSelection, string, NH_WSI_X11.Atoms.PRIMARY, Window_p->X11.Handle, Event.xclient.data.l[2]);
++                } else {
++                    XConvertSelection(NH_WSI_X11.Display_p, NH_WSI_X11.Atoms.XdndSelection, string, NH_WSI_X11.Atoms.PRIMARY, Window_p->X11.Handle, CurrentTime);
++                }
++            }
++            else if (Event.xclient.message_type == NH_WSI_X11.Atoms.XdndPosition)
++            {
++                Atom action = NH_WSI_X11.Atoms.XdndActionCopy;
++                if(xdnd >= 2) {action = Event.xclient.data.l[4];}
++                
++                XClientMessageEvent m;
++                memset(&m, sizeof(m), 0);
++                m.type         = ClientMessage;
++                m.display      = Event.xclient.display;
++                m.window       = Event.xclient.data.l[0];
++                m.message_type = NH_WSI_X11.Atoms.XdndStatus;
++                m.format       = 32;
++                
++                m.data.l[0] = Window_p->X11.Handle;
++                m.data.l[1] = 1;
++                m.data.l[2] = 0; //Specify an empty rectangle
++                m.data.l[3] = 0;
++                m.data.l[4] = NH_WSI_X11.Atoms.XdndActionCopy; //We only accept copying anyway.
++
++                XSendEvent(NH_WSI_X11.Display_p, Event.xclient.data.l[0], False, NoEventMask, (XEvent*)&m);
++                XFlush(NH_WSI_X11.Display_p);
++            }
++            else if (Event.xclient.message_type == NH_WSI_X11.Atoms.XdndLeave) {}
++        }
++        else if (Event.type == ConfigureNotify) 
++        {
++            XConfigureEvent Configure = Event.xconfigure;
++
++            XWindowAttributes XWA;
++ 
++            XGetWindowAttributes(NH_WSI_X11.Display_p, nh_wsi_getTopLevelParentX11(NH_WSI_X11.Display_p, Window_p->X11.Handle), &XWA);
++            nh_wsi_sendConfigureEvent(Window_p, XWA.x, XWA.y, Configure.width, Configure.height);
++printf("%d %d %d %d", XWA.x, XWA.y, Configure.width, Configure.height);
++        }
++        else if (Event.type == MotionNotify)
++        {
++            nh_wsi_sendMouseEvent(Window_p, Event.xbutton.x, Event.xbutton.y, NH_WSI_TRIGGER_MOVE, NH_WSI_MOUSE_MOVE);
++        }
++        else if (Event.type == ButtonPress || Event.type == ButtonRelease)
++        {
++            NH_WSI_TRIGGER trigger = Event.type == ButtonPress ? NH_WSI_TRIGGER_PRESS : NH_WSI_TRIGGER_RELEASE;
++            NH_WSI_MOUSE button = 0;
++
++            switch (Event.xbutton.button)
++            {
++                case Button1 : button = NH_WSI_MOUSE_LEFT; break;
++                case Button2 : button = NH_WSI_MOUSE_MIDDLE; break;
++                case Button3 : button = NH_WSI_MOUSE_RIGHT; break;
++                case Button4 : button = NH_WSI_MOUSE_SCROLL; trigger = NH_WSI_TRIGGER_UP; break;
++                case Button5 : button = NH_WSI_MOUSE_SCROLL; trigger = NH_WSI_TRIGGER_DOWN; break;
++            }
++
++            nh_wsi_sendMouseEvent(Window_p, Event.xbutton.x, Event.xbutton.y, trigger, button);
++        }
++        else if (Event.type == KeyPress || Event.type == KeyRelease)
++        {
++            NH_WSI_TRIGGER event = Event.type == KeyPress ? NH_WSI_TRIGGER_PRESS : NH_WSI_TRIGGER_RELEASE;
++            NH_WSI_KEY special = 0;
++
++            KeySym keysym = XLookupKeysym(&Event.xkey, 0);
++            KeyCode keycode = XKeysymToKeycode(NH_WSI_X11.Display_p, keysym); 
++            NH_ENCODING_UTF32 codepoint = xkb_state_key_get_utf32(NH_WSI_X11.XKB.State_p, keycode);
++
++            if (!codepoint)
++            {
++                switch (keysym)
++                {
++                    // Modifiers
++                    case XKB_KEY_Shift_L    : special = NH_WSI_KEY_SHIFT_L; break; 
++                    case XKB_KEY_Shift_R    : special = NH_WSI_KEY_SHIFT_R; break;   
++                    case XKB_KEY_Control_L  : special = NH_WSI_KEY_CONTROL_L; break; 
++                    case XKB_KEY_Control_R  : special = NH_WSI_KEY_CONTROL_R; break;
++                    case XKB_KEY_Caps_Lock  : special = NH_WSI_KEY_CAPS_LOCK; break; 
++                    case XKB_KEY_Shift_Lock : special = NH_WSI_KEY_SHIFT_LOCK; break;
++                    case XKB_KEY_Meta_L     : special = NH_WSI_KEY_META_L; break;    
++                    case XKB_KEY_Meta_R     : special = NH_WSI_KEY_META_R; break;    
++                    case XKB_KEY_Alt_L      : special = NH_WSI_KEY_ALT_L; break;     
++                    case XKB_KEY_Alt_R      : special = NH_WSI_KEY_ALT_R; break;     
++                    case XKB_KEY_Super_L    : special = NH_WSI_KEY_SUPER_L; break;   
++                    case XKB_KEY_Super_R    : special = NH_WSI_KEY_SUPER_R; break;   
++                    case XKB_KEY_Hyper_L    : special = NH_WSI_KEY_HYPER_L; break;   
++                    case XKB_KEY_Hyper_R    : special = NH_WSI_KEY_HYPER_R; break;  
++                }
++            }
++
++puts("send keyboard event");
++            nh_wsi_sendKeyboardEvent(Window_p, codepoint, special, event);
++        }
++        else if (Event.type == FocusIn || Event.type == FocusOut)
++        {
++        }
++        else if (Event.type == SelectionNotify)
++        {
++            Atom target = Event.xselection.target;
++	    
++            if(Event.xselection.property == None) {continue;}
++            nh_wsi_PropertyX11 Prop = nh_wsi_readPropertyX11(NH_WSI_X11.Display_p, Window_p->X11.Handle, NH_WSI_X11.Atoms.PRIMARY); 
++            
++//            NH_drop(Prop.data, Window_p);
++
++            XClientMessageEvent m;
++	    memset(&m, sizeof(m), 0);
++
++	    m.type         = ClientMessage;
++	    m.display      = NH_WSI_X11.Display_p;
++	    m.window       = Event.xclient.data.l[0];
++	    m.message_type = NH_WSI_X11.Atoms.XdndFinished;
++	    m.format       = 32;
++	    m.data.l[0]    = Window_p->X11.Handle;
++	    m.data.l[1]    = 1;
++	    m.data.l[2]    = NH_WSI_X11.Atoms.XdndActionCopy;
++
++	    XSendEvent(NH_WSI_X11.Display_p, Event.xclient.data.l[0], False, NoEventMask, (XEvent*)&m);
++            XSync(NH_WSI_X11.Display_p, False);
++        }
++        else if (Event.type == PropertyNotify)
++        {
++        }
++        else if (Event.type == SelectionRequest)
++        {
++        }
++        else if (Event.type == ReparentNotify)
++        {
++        }
++    }
++
++NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
++}
++
++// WINDOW ==========================================================================================
++
++// Updates the full screen status of the window
++//
++static void nh_wsi_updateWindowModeX11(
++    nh_wsi_WindowX11 *Window_p)
++{
++NH_WSI_BEGIN()
++
++//    if (window->monitor)
++//    {
++//        if (_glfw.x11.xinerama.available &&
++//            _glfw.x11.NET_WM_FULLSCREEN_MONITORS)
++//        {
++//            sendEventToWM(window,
++//                          _glfw.x11.NET_WM_FULLSCREEN_MONITORS,
++//                          window->monitor->x11.index,
++//                          window->monitor->x11.index,
++//                          window->monitor->x11.index,
++//                          window->monitor->x11.index,
++//                          0);
++//        }
++//
++//        if (_glfw.x11.NET_WM_STATE && _glfw.x11.NET_WM_STATE_FULLSCREEN)
++//        {
++//            sendEventToWM(window,
++//                          _glfw.x11.NET_WM_STATE,
++//                          _NET_WM_STATE_ADD,
++//                          _glfw.x11.NET_WM_STATE_FULLSCREEN,
++//                          0, 1, 0);
++//        }
++//        else
++//        {
++//            // This is the butcher's way of removing window decorations
++//            // Setting the override-redirect attribute on a window makes the
++//            // window manager ignore the window completely (ICCCM, section 4)
++//            // The good thing is that this makes undecorated full screen windows
++//            // easy to do; the bad thing is that we have to do everything
++//            // manually and some things (like iconify/restore) won't work at
++//            // all, as those are tasks usually performed by the window manager
++//
++//            XSetWindowAttributes attributes;
++//            attributes.override_redirect = True;
++//            XChangeWindowAttributes(_glfw.x11.display,
++//                                    window->x11.handle,
++//                                    CWOverrideRedirect,
++//                                    &attributes);
++//
++//            window->x11.overrideRedirect = GLFW_TRUE;
++//        }
++//
++//        // Enable compositor bypass
++//        if (!window->x11.transparent)
++//        {
++//            const unsigned long value = 1;
++//
++//            XChangeProperty(_glfw.x11.display,  window->x11.handle,
++//                            _glfw.x11.NET_WM_BYPASS_COMPOSITOR, XA_CARDINAL, 32,
++//                            PropModeReplace, (unsigned char*) &value, 1);
++//        }
++//    }
++//    else
++//    {
++//        if (_glfw.x11.xinerama.available &&
++//            _glfw.x11.NET_WM_FULLSCREEN_MONITORS)
++//        {
++//            XDeleteProperty(_glfw.x11.display, window->x11.handle,
++//                            _glfw.x11.NET_WM_FULLSCREEN_MONITORS);
++//        }
++//
++//        if (_glfw.x11.NET_WM_STATE && _glfw.x11.NET_WM_STATE_FULLSCREEN)
++//        {
++//            sendEventToWM(window,
++//                          _glfw.x11.NET_WM_STATE,
++//                          _NET_WM_STATE_REMOVE,
++//                          _glfw.x11.NET_WM_STATE_FULLSCREEN,
++//                          0, 1, 0);
++//        }
++//        else
++//        {
++//            XSetWindowAttributes attributes;
++//            attributes.override_redirect = False;
++//            XChangeWindowAttributes(_glfw.x11.display,
++//                                    window->x11.handle,
++//                                    CWOverrideRedirect,
++//                                    &attributes);
++//
++//            window->x11.overrideRedirect = GLFW_FALSE;
++//        }
++//
++//        // Disable compositor bypass
++//        if (!window->x11.transparent)
++//        {
++//            XDeleteProperty(_glfw.x11.display, window->x11.handle,
++//                            _glfw.x11.NET_WM_BYPASS_COMPOSITOR);
++//        }
++//    }
++
++NH_WSI_SILENT_END()
++}
++
++// Make the specified window and its video mode active on its monitor
++//
++static void nh_wsi_acquireMonitorX11(
++    nh_wsi_WindowX11 *Window_p)
++{
++NH_WSI_BEGIN()
++
++//    if (_glfw.x11.saver.count == 0)
++//    {
++//        // Remember old screen saver settings
++//        XGetScreenSaver(_glfw.x11.display,
++//                        &_glfw.x11.saver.timeout,
++//                        &_glfw.x11.saver.interval,
++//                        &_glfw.x11.saver.blanking,
++//                        &_glfw.x11.saver.exposure);
++//
++//        // Disable screen saver
++//        XSetScreenSaver(_glfw.x11.display, 0, 0, DontPreferBlanking,
++//                        DefaultExposures);
++//    }
++//
++//    if (!window->monitor->window)
++//        _glfw.x11.saver.count++;
++//
++//    _glfwSetVideoModeX11(window->monitor, &window->videoMode);
++//
++//    if (window->x11.overrideRedirect)
++//    {
++//        int xpos, ypos;
++//        GLFWvidmode mode;
++//
++//        // Manually position the window over its monitor
++//        _glfwGetMonitorPosX11(window->monitor, &xpos, &ypos);
++//        _glfwGetVideoModeX11(window->monitor, &mode);
++//
++//        XMoveResizeWindow(_glfw.x11.display, window->x11.handle,
++//                          xpos, ypos, mode.width, mode.height);
++//    }
++//
++//    _glfwInputMonitorWindow(window->monitor, window);
++
++NH_WSI_SILENT_END()
++}
++
++// Updates the normal hints according to the window settings
++//
++static void nh_wsi_updateNormalHintsX11(
++    nh_wsi_WindowX11 *Window_p, nh_wsi_WindowConfiguration *Configuration_p)
++{
++NH_WSI_BEGIN()
++
++    XSizeHints* hints = XAllocSizeHints();
++
++//    if (!window->monitor)
++//    {
++//        if (window->resizable)
++//        {
++//            if (window->minwidth != GLFW_DONT_CARE &&
++//                window->minheight != GLFW_DONT_CARE)
++//            {
++//                hints->flags |= PMinSize;
++//                hints->min_width = window->minwidth;
++//                hints->min_height = window->minheight;
++//            }
++//
++//            if (window->maxwidth != GLFW_DONT_CARE &&
++//                window->maxheight != GLFW_DONT_CARE)
++//            {
++//                hints->flags |= PMaxSize;
++//                hints->max_width = window->maxwidth;
++//                hints->max_height = window->maxheight;
++//            }
++//
++//            if (window->numer != GLFW_DONT_CARE &&
++//                window->denom != GLFW_DONT_CARE)
++//            {
++//                hints->flags |= PAspect;
++//                hints->min_aspect.x = hints->max_aspect.x = window->numer;
++//                hints->min_aspect.y = hints->max_aspect.y = window->denom;
++//            }
++//        }
++//        else
++//        {
++//            hints->flags |= (PMinSize | PMaxSize);
++//            hints->min_width  = hints->max_width  = width;
++//            hints->min_height = hints->max_height = height;
++//        }
++//    }
++
++    hints->flags |= PWinGravity;
++    hints->win_gravity = StaticGravity;
++
++    XSetWMNormalHints(NH_WSI_X11.Display_p, Window_p->Handle, hints);
++    XFree(hints);
++
++NH_WSI_SILENT_END()
++}
++
++NH_WSI_RESULT nh_wsi_createWindowX11(
++    nh_wsi_WindowX11 *Window_p, nh_wsi_WindowConfiguration *Configuration_p,
++    nh_gfx_SurfaceRequirements *Requirements_p)
++{
++NH_WSI_BEGIN()
++
++    XVisualInfo Template = {0};
++
++    Template.screen        = 0;
++    Template.depth         = 32;
++    Template.class         = TrueColor;
++    Template.red_mask      = 0xff0000;
++    Template.green_mask    = 0xff00;
++    Template.blue_mask     = 0xff;
++    Template.colormap_size = 256;
++    Template.bits_per_rgb  = 8;
++
++    long mask = 
++      VisualScreenMask
++    | VisualClassMask
++    | VisualRedMaskMask
++    | VisualGreenMaskMask
++    | VisualBlueMaskMask
++    | VisualColormapSizeMask
++    | VisualBitsPerRGBMask;
++
++    int infos = 0;
++    XVisualInfo *Infos_p = XGetVisualInfo(NH_WSI_X11.Display_p, mask, &Template, &infos);
++    XVisualInfo *Info_p = NULL;
++
++    for (int i = 0; i < infos; ++i) {
++        if (!Requirements_p) {
++            Info_p = Infos_p;
++            Window_p->Info = *Info_p;
++            break;
++        }
++        for (int j = 0; j < Requirements_p->OpenGL.Ids.length; ++j) {
++            if (Infos_p[i].visualid == ((VisualID*)Requirements_p->OpenGL.Ids.p)[j]) {
++                Info_p = Infos_p+i;
++                Window_p->Info = *Info_p;
++                break;
++            }
++        }
++        if (Info_p) {break;}
++    }
++    if (!Info_p) {
++        NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
++    }
++
++    XSetWindowAttributes Attributes = {0,};
++
++    Attributes.colormap = 
++        XCreateColormap(NH_WSI_X11.Display_p, NH_WSI_X11.root, Info_p->visual, AllocNone);
++    Attributes.background_pixmap = None;
++    Attributes.border_pixmap = None;
++    Attributes.border_pixel = 0;
++    Attributes.event_mask =
++        StructureNotifyMask
++      | EnterWindowMask
++      | LeaveWindowMask
++      | ExposureMask
++      | ButtonPressMask
++      | ButtonReleaseMask
++      | OwnerGrabButtonMask
++      | PointerMotionMask
++      | KeyPressMask
++      | FocusChangeMask
++      | KeyReleaseMask;
++
++    int attributesMask = 
++        CWBackPixmap
++      | CWColormap
++      | CWBorderPixel
++      | CWEventMask;
++
++    Window_p->Handle = 
++        XCreateWindow(NH_WSI_X11.Display_p, NH_WSI_X11.root, Configuration_p->Position.x,
++                      Configuration_p->Position.y, Configuration_p->Size.width, Configuration_p->Size.height,
++                      0, Info_p->depth, InputOutput, Info_p->visual, attributesMask, &Attributes);
++
++//    if (!wndconfig->decorated)
++//        _glfwSetWindowDecoratedX11(window, GLFW_FALSE);
++//
++//    if (NH_WSI_X11.Atoms.NET_WM_STATE)
++//    {
++//        Atom states[3];
++//        int count = 0;
++//
++//        if (Configuration_p->floating) {
++//            if (NH_WSI_X11.Atoms.NET_WM_STATE_ABOVE)
++//                states[count++] = NH_WSI_X11.Atoms.NET_WM_STATE_ABOVE;
++//        }
++//
++//        if (Configuration_p->maximized) {
++//            if (NH_WSI_X11.Atoms.NET_WM_STATE_MAXIMIZED_VERT &&
++//                NH_WSI_X11.Atoms.NET_WM_STATE_MAXIMIZED_HORZ) {
++//                states[count++] = NH_WSI_X11.Atoms.NET_WM_STATE_MAXIMIZED_VERT;
++//                states[count++] = NH_WSI_X11.Atoms.NET_WM_STATE_MAXIMIZED_HORZ;
++//            }
++//        }
++//
++//        if (count) {
++//            XChangeProperty(NH_WSI_X11.Display_p, Window_p->Handle, NH_WSI_X11.Atoms.NET_WM_STATE, XA_ATOM, 32,
++//                            PropModeReplace, (unsigned char*) states, count);
++//        }
++//    }
++//
++//    // Declare the WM protocols supported by GLFW
++//    Atom protocols[] =
++//    {
++//        NH_WSI_X11.Atoms.WM_DELETE_WINDOW,
++//        NH_WSI_X11.Atoms.NET_WM_PING
++//    };
++//
++//    XSetWMProtocols(NH_WSI_X11.Display_p, Window_p->Handle,
++//                    protocols, sizeof(protocols) / sizeof(Atom));
++//
++//    // Declare our PID
++//    const long pid = getpid();
++//    XChangeProperty(NH_WSI_X11.Display_p, Window_p->Handle, NH_WSI_X11.Atoms.NET_WM_PID, 
++//                    XA_CARDINAL, 32, PropModeReplace, (unsigned char*) &pid, 1);
++//
++//    if (NH_WSI_X11.Atoms.NET_WM_WINDOW_TYPE && NH_WSI_X11.Atoms.NET_WM_WINDOW_TYPE_NORMAL) {
++//        Atom type = NH_WSI_X11.Atoms.NET_WM_WINDOW_TYPE_NORMAL;
++//        XChangeProperty(NH_WSI_X11.Display_p, Window_p->Handle, NH_WSI_X11.Atoms.NET_WM_WINDOW_TYPE, 
++//                        XA_ATOM, 32, PropModeReplace, (unsigned char*) &type, 1);
++//    }
++//
++//    // Set ICCCM WM_HINTS property
++//    XWMHints* Hints_p = XAllocWMHints();
++//    NH_WSI_CHECK_MEM(Hints_p)
++//
++//    Hints_p->flags = StateHint;
++//    Hints_p->initial_state = NormalState;
++//
++//    XSetWMHints(NH_WSI_X11.Display_p, Window_p->Handle, Hints_p);
++//    XFree(Hints_p);
++//
++//    nh_wsi_updateNormalHintsX11(Window_p, Configuration_p);
++
++    // Set ICCCM WM_CLASS property, WM's seem to need this. 
++    XClassHint* Hint_p = XAllocClassHint();
++
++//    if (strlen(wndconfig->x11.instanceName) &&
++//        strlen(wndconfig->x11.className))
++//    {
++//        Hint_p->res_name = (char*) wndconfig->x11.instanceName;
++//        Hint_p->res_class = (char*) wndconfig->x11.className;
++//    }
++//    else
++//    {
++//        const char* resourceName = getenv("RESOURCE_NAME");
++//        if (resourceName && strlen(resourceName))
++//            hint->res_name = (char*) resourceName;
++//        else if (strlen(wndconfig->title))
++//            hint->res_name = (char*) wndconfig->title;
++//        else
++//            hint->res_name = (char*) "glfw-application";
++//
++//        if (strlen(wndconfig->title))
++//            hint->res_class = (char*) wndconfig->title;
++//        else
++//            hint->res_class = (char*) "GLFW-Application";
++//    }
++
++    XSetClassHint(NH_WSI_X11.Display_p, Window_p->Handle, Hint_p);
++    XFree(Hint_p);
++
++    // Announce support for Xdnd (drag and drop)
++    const Atom version = 5;
++    XChangeProperty(NH_WSI_X11.Display_p, Window_p->Handle,
++                    NH_WSI_X11.Atoms.XdndAware, XA_ATOM, 32,
++                    PropModeReplace, (unsigned char*) &version, 1);
++
++//    if (_glfw.x11.im)
++//        _glfwCreateInputContextX11(window);
++//
++//    _glfwSetWindowTitleX11(window, wndconfig->title);
++//    _glfwGetWindowPosX11(window, &window->x11.xpos, &window->x11.ypos);
++//    _glfwGetWindowSizeX11(window, &window->x11.width, &window->x11.height);
++
++    XMapWindow(NH_WSI_X11.Display_p, Window_p->Handle);
++////
++////    nh_wsi_updateWindowModeX11(Window_p);
++////    nh_wsi_acquireMonitorX11(Window_p);
++////
++////    XFlush(NH_WSI_X11.Display_p);
++
++NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
++}
++
++NH_WSI_RESULT nh_wsi_destroyWindowX11(
++    nh_wsi_WindowX11 *Window_p)
++{
++NH_WSI_BEGIN()
++
++    XDestroyWindow(NH_WSI_X11.Display_p, Window_p->Handle);
++
++NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
++}
++
++// BACKGROUND COLOR ================================================================================
++
++NH_WSI_RESULT nh_wsi_setWindowBackgroundColorX11(
++    nh_wsi_WindowX11 *Window_p, nh_Color Color)
++{
++NH_WSI_BEGIN()
++
++#ifdef __unix__
++
++    uint16_t rgba_p[4] = {
++        (uint16_t)Color.r*255,
++        (uint16_t)Color.g*255,
++        (uint16_t)Color.b*255,
++        (uint16_t)Color.a*255,
++    };
++
++    long double color = 0x00000000; // == black
++    color = rgba_p[0] << 16 | rgba_p[1] << 8 | rgba_p[2] << 0 | rgba_p[3] << 24; 
++
++    XSetWindowAttributes Attributes;
++    Attributes.background_pixel = color;
++    XChangeWindowAttributes(NH_WSI_X11.Display_p, Window_p->Handle, CWBackPixel, &Attributes);
++
++    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
++
++#endif
++
++NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
++}
++
++// TITLE ===========================================================================================
++
++NH_WSI_RESULT nh_wsi_setWindowTitleX11(
++    nh_wsi_WindowX11 *Window_p, NH_BYTE *title_p)
++{
++NH_WSI_BEGIN()
++
++#ifdef __unix__
++
++    XStoreName(NH_WSI_X11.Display_p, Window_p->Handle, title_p);
++
++    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
++
++#endif
++
++NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
++}
++
++// CURSOR ==========================================================================================
++
++// #ifndef _X11_CURSORFONT_H_
++// #define _X11_CURSORFONT_H_
++// #define XC_num_glyphs 154
++// #define XC_X_cursor 0
++// #define XC_arrow 2
++// #define XC_based_arrow_down 4
++// #define XC_based_arrow_up 6
++// #define XC_boat 8
++// #define XC_bogosity 10
++// #define XC_bottom_left_corner 12
++// #define XC_bottom_right_corner 14
++// #define XC_bottom_side 16
++// #define XC_bottom_tee 18
++// #define XC_box_spiral 20
++// #define XC_center_ptr 22
++// #define XC_circle 24
++// #define XC_clock 26
++// #define XC_coffee_mug 28
++// #define XC_cross 30
++// #define XC_cross_reverse 32
++// #define XC_crosshair 34
++// #define XC_diamond_cross 36
++// #define XC_dot 38
++// #define XC_dotbox 40
++// #define XC_double_arrow 42
++// #define XC_draft_large 44
++// #define XC_draft_small 46
++// #define XC_draped_box 48
++// #define XC_exchange 50
++// #define XC_fleur 52
++// #define XC_gobbler 54
++// #define XC_gumby 56
++// #define XC_hand1 58
++// #define XC_hand2 60
++// #define XC_heart 62
++// #define XC_icon 64
++// #define XC_iron_cross 66
++// #define XC_left_ptr 68
++// #define XC_left_side 70
++// #define XC_left_tee 72
++// #define XC_leftbutton 74
++// #define XC_ll_angle 76
++// #define XC_lr_angle 78
++// #define XC_man 80
++// #define XC_middlebutton 82
++// #define XC_mouse 84
++// #define XC_pencil 86
++// #define XC_pirate 88
++// #define XC_plus 90
++// #define XC_question_arrow 92
++// #define XC_right_ptr 94
++// #define XC_right_side 96
++// #define XC_right_tee 98
++// #define XC_rightbutton 100
++// #define XC_rtl_logo 102
++// #define XC_sailboat 104
++// #define XC_sb_down_arrow 106
++// #define XC_sb_h_double_arrow 108
++// #define XC_sb_left_arrow 110
++// #define XC_sb_right_arrow 112
++// #define XC_sb_up_arrow 114
++// #define XC_sb_v_double_arrow 116
++// #define XC_shuttle 118
++// #define XC_sizing 120
++// #define XC_spider 122
++// #define XC_spraycan 124
++// #define XC_star 126
++// #define XC_target 128
++// #define XC_tcross 130
++// #define XC_top_left_arrow 132
++// #define XC_top_left_corner 134
++// #define XC_top_right_corner 136
++// #define XC_top_side 138
++// #define XC_top_tee 140
++// #define XC_trek 142
++// #define XC_ul_angle 144
++// #define XC_umbrella 146
++// #define XC_ur_angle 148
++// #define XC_watch 150
++// #define XC_xterm 152
++// #endif /* _X11_CURSORFONT_H_ */
++
++NH_WSI_RESULT nh_wsi_setMouseCursorX11(
++    nh_wsi_WindowX11 *Window_p, int type)
++{
++NH_WSI_BEGIN()
++
++#ifdef __unix__
++
++    Cursor C;
++
++    switch (type)
++    {
++        case NH_WSI_MOUSE_CURSOR_DEFAULT : C = XcursorLibraryLoadCursor(NH_WSI_X11.Display_p, "arrow"); break;
++        case NH_WSI_MOUSE_CURSOR_TEXT    : C = XcursorLibraryLoadCursor(NH_WSI_X11.Display_p, "xterm"); break;
++    }
++
++    XDefineCursor(NH_WSI_X11.Display_p, Window_p->Handle, C);
++
++    NH_WSI_DIAGNOSTIC_END(NH_WSI_SUCCESS)
++
++#endif
++
++NH_WSI_DIAGNOSTIC_END(NH_WSI_ERROR_BAD_STATE)
++}
++
+diff --git a/src/lib/nhwsi/Platforms/X11/Window.h b/src/lib/nhwsi/Platforms/X11/Window.h
+new file mode 100644
+index 0000000..ac1e74c
+--- /dev/null
++++ b/src/lib/nhwsi/Platforms/X11/Window.h
+@@ -0,0 +1,76 @@
++#ifndef NH_WSI_PLATFORMS_X11_WINDOW_H
++#define NH_WSI_PLATFORMS_X11_WINDOW_H
++
++#ifndef DOXYGEN_SHOULD_SKIP_THIS
++
++/**
++ * netzhaut - Web Browser Engine
++ * Copyright (C) 2020 The netzhaut Authors
++ * Published under MIT
++ */
++
++#include "Init.h"
++#include "../../Common/Types/Private.h"
++
++#ifdef __unix__
++    #include <wayland-server.h>
++    #include <X11/Xlib.h>
++    #include <X11/Xatom.h>
++    #include <X11/extensions/Xrender.h>
++    #include <linux/input.h>
++    #include <X11/Xlib-xcb.h>
++    #include <xkbcommon/xkbcommon-x11.h>
++    #include <sys/mman.h>
++#endif
++
++typedef struct nh_wsi_Window nh_wsi_Window;
++typedef struct nh_wsi_WindowConfiguration nh_wsi_WindowConfiguration;
++
++#endif
++
++/** @addtogroup IOStructs Structs
++ *  \ingroup IO
++ *  @{
++ */
++
++    typedef struct nh_wsi_WindowX11 {
++        nh_wsi_X11 *Common_p;
++        Window Handle;
++        XVisualInfo Info;
++    } nh_wsi_WindowX11;
++
++/** @} */
++
++/** @addtogroup IOFunctions Function
++ *  \ingroup IO
++ *  @{
++ */
++
++    NH_WSI_RESULT nh_wsi_getInputX11(
++        nh_wsi_Window *Window_p, NH_BOOL *idle_p
++    ); 
++
++    NH_WSI_RESULT nh_wsi_createWindowX11(
++        nh_wsi_WindowX11 *Window_p, nh_wsi_WindowConfiguration *Configuration_p,
++        nh_gfx_SurfaceRequirements *Requirements_p
++    );
++
++    NH_WSI_RESULT nh_wsi_destroyWindowX11(
++        nh_wsi_WindowX11 *Window_p
++    );
++    
++    NH_WSI_RESULT nh_wsi_setWindowBackgroundColorX11(
++        nh_wsi_WindowX11 *Window_p, nh_Color Color 
++    );
++    
++    NH_WSI_RESULT nh_wsi_setWindowTitleX11(
++        nh_wsi_WindowX11 *Window_p, NH_BYTE *title_p
++    );
++    
++    NH_WSI_RESULT nh_wsi_setMouseCursorX11(
++        nh_wsi_WindowX11 *Window_p, int type
++    );
++
++/** @} */
++
++#endif 
+-- 
+2.35.1
+
