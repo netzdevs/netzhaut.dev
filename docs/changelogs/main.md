@@ -1,6 +1,11 @@
 <div style="max-width:700px;">
 
-<h1>rev.0.10.63.6</h1>
+<h1>rev.0.10.65.5</h1>
+
+2022-07-12 | 21:13:13  | [open patch](../../patches/html/md_pages_498b574fad1336aa60b70a56af891b5def879083.html)
+
+ ---
+[nhtty](md_pages_nhtty_lib.html#nhtty0161), [netzhaut](md_pages_netzhaut_lib.html#netzhaut0270), [nhcore](md_pages_nhcore_lib.html#nhcore0160)<br>Improve tiling and terminal handling. Add opaque workload querying.<br><br><h1>rev.0.10.63.6</h1>
 
 2022-07-11 | 19:36:24  | [open patch](../../patches/html/md_pages_b70d2f7003b4ab08a55d81d9bcfce1e5f251cd1f.html)
 

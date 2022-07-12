@@ -39,11 +39,11 @@
           <div style="height:56px;text-align:right;right:10px;top:4px;position:absolute;">
 <b>
 <!-- NH_MAKE_INSERT_API_VERSION_BEGIN -->
-ver.0.2.6.0
+ver.0.2.7.0
 <!-- NH_MAKE_INSERT_API_VERSION_END -->
 <br>
 <!-- NH_MAKE_INSERT_REVISION_BEGIN -->
-rev.0.10.63.6
+rev.0.10.65.5
 <!-- NH_MAKE_INSERT_REVISION_END -->
 </b>
           </div>
@@ -133,19 +133,25 @@ $(document).ready(function(){initNavTree('nhcore_8h_source.html',''); initResiza
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <a class="code hl_typedef" href="nhcore_2Common_2Types_2Public_8h.html#ac8d4e4119ec53223f8d2db42b7fa079a">nh_logCallback_f</a> logCallback_f</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    );</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">// NH_CORE_H</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group__api__nhcore.html#ga8cfa7c5469d6d3fe112c2233a5ff59ae">   73</a></span>    <a class="code hl_typedef" href="nhcore_2Common_2Types_2Public_8h.html#aa07b7bcb71a519fa33c1f144a748b8ed">nh_Workload</a> *<a class="code hl_function" href="group__api__nhcore.html#ga8cfa7c5469d6d3fe112c2233a5ff59ae">nh_getWorkload</a>(</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordtype">void</span> *args_p</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    );</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">// NH_CORE_H</span></div>
 <div class="ttc" id="agroup__api__nhcore_html_ga0190f368741b44e4f703a9fe31571c23"><div class="ttname"><a href="group__api__nhcore.html#ga0190f368741b44e4f703a9fe31571c23">nh_run</a></div><div class="ttdeci">unsigned int nh_run()</div></div>
 <div class="ttc" id="agroup__api__nhcore_html_ga15b2ed5fe9c5926db2b3c75180f6eecc"><div class="ttname"><a href="group__api__nhcore.html#ga15b2ed5fe9c5926db2b3c75180f6eecc">nh_addLogCallback</a></div><div class="ttdeci">NH_RESULT nh_addLogCallback(nh_logCallback_f logCallback_f)</div></div>
 <div class="ttc" id="agroup__api__nhcore_html_ga2bcd06216570b8148f2aaa63b998dd23"><div class="ttname"><a href="group__api__nhcore.html#ga2bcd06216570b8148f2aaa63b998dd23">nh_initializeUsingDefaultArguments</a></div><div class="ttdeci">NH_RESULT nh_initializeUsingDefaultArguments()</div></div>
 <div class="ttc" id="agroup__api__nhcore_html_ga6d5e0ab7c19f983f7fb17689ab351507"><div class="ttname"><a href="group__api__nhcore.html#ga6d5e0ab7c19f983f7fb17689ab351507">nh_terminate</a></div><div class="ttdeci">NH_RESULT nh_terminate()</div></div>
+<div class="ttc" id="agroup__api__nhcore_html_ga8cfa7c5469d6d3fe112c2233a5ff59ae"><div class="ttname"><a href="group__api__nhcore.html#ga8cfa7c5469d6d3fe112c2233a5ff59ae">nh_getWorkload</a></div><div class="ttdeci">nh_Workload * nh_getWorkload(void *args_p)</div></div>
 <div class="ttc" id="agroup__api__nhcore_html_gae34aaf14dc2db5afd40f5c2ae4015061"><div class="ttname"><a href="group__api__nhcore.html#gae34aaf14dc2db5afd40f5c2ae4015061">nh_keepRunning</a></div><div class="ttdeci">NH_BOOL nh_keepRunning()</div></div>
 <div class="ttc" id="agroup__api__nhcore_html_gae5dc0521ef50af787d3d477c1f2c5efd"><div class="ttname"><a href="group__api__nhcore.html#gae5dc0521ef50af787d3d477c1f2c5efd">nh_initialize</a></div><div class="ttdeci">NH_RESULT nh_initialize(NH_LOADER_SCOPE loaderScope, NH_BYTE *loaderPath_p, NH_BOOL install)</div></div>
 <div class="ttc" id="anhcore_2Common_2Result_8h_html_a69553903dccbc47bc4a7b65724517c61"><div class="ttname"><a href="nhcore_2Common_2Result_8h.html#a69553903dccbc47bc4a7b65724517c61">NH_RESULT</a></div><div class="ttdeci">NH_RESULT</div><div class="ttdef"><b>Definition:</b> Result.h:20</div></div>
-<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_a23e3ff4fac1a51efe9ba0cd3c7553785"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#a23e3ff4fac1a51efe9ba0cd3c7553785">NH_LOADER_SCOPE</a></div><div class="ttdeci">NH_LOADER_SCOPE</div><div class="ttdef"><b>Definition:</b> Public.h:59</div></div>
+<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_a23e3ff4fac1a51efe9ba0cd3c7553785"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#a23e3ff4fac1a51efe9ba0cd3c7553785">NH_LOADER_SCOPE</a></div><div class="ttdeci">NH_LOADER_SCOPE</div><div class="ttdef"><b>Definition:</b> Public.h:60</div></div>
 <div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_a97632e3881e20cd1dba088664403244b"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#a97632e3881e20cd1dba088664403244b">NH_BYTE</a></div><div class="ttdeci">char NH_BYTE</div><div class="ttdef"><b>Definition:</b> Public.h:19</div></div>
-<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_aa5bc4d468ba7fc657a127fa6ffca469c"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#aa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a></div><div class="ttdeci">NH_BOOL</div><div class="ttdef"><b>Definition:</b> Public.h:46</div></div>
-<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_abc6afc5d9e1446a9ca605066389772e5"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#abc6afc5d9e1446a9ca605066389772e5">nh_Loader</a></div><div class="ttdeci">struct nh_Loader nh_Loader</div><div class="ttdef"><b>Definition:</b> Public.h:166</div></div>
-<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_ac8d4e4119ec53223f8d2db42b7fa079a"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#ac8d4e4119ec53223f8d2db42b7fa079a">nh_logCallback_f</a></div><div class="ttdeci">void(* nh_logCallback_f)(NH_BYTE *node_p, NH_BYTE *options_p, NH_BYTE *message_p)</div><div class="ttdef"><b>Definition:</b> Public.h:32</div></div>
+<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_aa07b7bcb71a519fa33c1f144a748b8ed"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#aa07b7bcb71a519fa33c1f144a748b8ed">nh_Workload</a></div><div class="ttdeci">struct nh_Workload nh_Workload</div><div class="ttdef"><b>Definition:</b> Public.h:28</div></div>
+<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_aa5bc4d468ba7fc657a127fa6ffca469c"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#aa5bc4d468ba7fc657a127fa6ffca469c">NH_BOOL</a></div><div class="ttdeci">NH_BOOL</div><div class="ttdef"><b>Definition:</b> Public.h:47</div></div>
+<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_abc6afc5d9e1446a9ca605066389772e5"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#abc6afc5d9e1446a9ca605066389772e5">nh_Loader</a></div><div class="ttdeci">struct nh_Loader nh_Loader</div><div class="ttdef"><b>Definition:</b> Public.h:167</div></div>
+<div class="ttc" id="anhcore_2Common_2Types_2Public_8h_html_ac8d4e4119ec53223f8d2db42b7fa079a"><div class="ttname"><a href="nhcore_2Common_2Types_2Public_8h.html#ac8d4e4119ec53223f8d2db42b7fa079a">nh_logCallback_f</a></div><div class="ttdeci">void(* nh_logCallback_f)(NH_BYTE *node_p, NH_BYTE *options_p, NH_BYTE *message_p)</div><div class="ttdef"><b>Definition:</b> Public.h:33</div></div>
 <div class="ttc" id="anhcore_8h_html_a4171ef8041db1120cf2270e8a6b6904e"><div class="ttname"><a href="nhcore_8h.html#a4171ef8041db1120cf2270e8a6b6904e">NH_LOADER_P</a></div><div class="ttdeci">nh_Loader * NH_LOADER_P</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

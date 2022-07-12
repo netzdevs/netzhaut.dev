@@ -73,6 +73,7 @@ var searchData=
   ['nh_5fwebidl_5funsigned_5flong_5flong_70',['NH_WEBIDL_UNSIGNED_LONG_LONG',['../nhwebidl_2Common_2Types_2Public_8h.html#aa3d3fb15edea44145c58ee8ec4362aaa',1,'Public.h']]],
   ['nh_5fwebidl_5funsigned_5fshort_71',['NH_WEBIDL_UNSIGNED_SHORT',['../nhwebidl_2Common_2Types_2Public_8h.html#a334c613b891aa29808f70aa12bb0d693',1,'Public.h']]],
   ['nh_5fwebidl_5fusvstring_72',['nh_webidl_USVString',['../nhwebidl_2Common_2Types_2Public_8h.html#a125069738b8779c09f145da229cfecaf',1,'Public.h']]],
-  ['nh_5fwsi_5fcallback_5ff_73',['nh_wsi_callback_f',['../nhwsi_2Common_2Types_2Public_8h.html#ae0d1228160602f9cf94539ad9ce1ece0',1,'Public.h']]],
-  ['nh_5fwsi_5fwindow_74',['nh_wsi_Window',['../nhwsi_2Common_2Types_2Public_8h.html#aa51d32c78e5f2a95ef417e63d1568b7d',1,'Public.h']]]
+  ['nh_5fworkload_73',['nh_Workload',['../nhcore_2Common_2Types_2Public_8h.html#aa07b7bcb71a519fa33c1f144a748b8ed',1,'Public.h']]],
+  ['nh_5fwsi_5fcallback_5ff_74',['nh_wsi_callback_f',['../nhwsi_2Common_2Types_2Public_8h.html#ae0d1228160602f9cf94539ad9ce1ece0',1,'Public.h']]],
+  ['nh_5fwsi_5fwindow_75',['nh_wsi_Window',['../nhwsi_2Common_2Types_2Public_8h.html#aa51d32c78e5f2a95ef417e63d1568b7d',1,'Public.h']]]
 ];

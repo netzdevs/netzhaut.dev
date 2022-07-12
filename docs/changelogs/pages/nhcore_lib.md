@@ -2,7 +2,17 @@
 
 <div style="max-width:700px;">
 
-\section nhcore0152 ver.0.1.5.2
+\section nhcore0160 ver.0.1.6.0
+
+2022-07-12 | 21:13:13 | rev.0.10.65.5 | [open patch](../../patches/html/md_pages_498b574fad1336aa60b70a56af891b5def879083.html)
+
+ ---
+
+ Improve tiling and terminal handling. Add opaque workload querying.
+
+
+
+<br>\section nhcore0152 ver.0.1.5.2
 
 2022-06-22 | 22:33:10 | rev.0.10.55.16
 

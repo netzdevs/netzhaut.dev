@@ -2,7 +2,17 @@
 
 <div style="max-width:700px;">
 
-\section netzhaut0260 ver.0.2.6.0
+\section netzhaut0270 ver.0.2.7.0
+
+2022-07-12 | 21:13:13 | rev.0.10.65.5 | [open patch](../../patches/html/md_pages_498b574fad1336aa60b70a56af891b5def879083.html)
+
+ ---
+
+ Improve tiling and terminal handling. Add opaque workload querying.
+
+
+
+<br>\section netzhaut0260 ver.0.2.6.0
 
 2022-05-02 | 22:01:31 | rev.0.10.52.4
 

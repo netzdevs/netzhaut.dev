@@ -1,0 +1,377 @@
+From 498b574fad1336aa60b70a56af891b5def879083 Mon Sep 17 00:00:00 2001
+From: Dajo Frey <dajo.frey@gmail.com>
+Date: Tue, 12 Jul 2022 21:12:58 +0200
+Subject: [PATCH] Improve tiling and terminal handling. Add opaque workload
+ querying.
+
+---
+ CHANGES.txt                          |  2 ++
+ external/netzhaut.dev                |  2 +-
+ src/bin/nhtty/Main.c                 |  2 +-
+ src/lib/netzhaut/nhcore.c            | 14 +++++-----
+ src/lib/netzhaut/nhcore.h            |  7 +++++
+ src/lib/nhcore/Common/Types/Public.h |  1 +
+ src/lib/nhcore/System/Thread.c       |  2 +-
+ src/lib/nhcore/System/Thread.h       |  8 +++---
+ src/lib/nhtty/TTY/StandardIO.c       | 20 ++++++++------
+ src/lib/nhtty/TTY/TTY.c              |  1 -
+ src/lib/nhtty/TTY/Tab.c              | 31 +++++++++------------
+ src/lib/nhtty/TTY/Tile.c             | 41 ++++++++++++++++++++++++++++
+ src/lib/nhtty/TTY/Tile.h             |  4 +++
+ src/lib/nhtty/TTY/Tiling.c           |  2 ++
+ 14 files changed, 96 insertions(+), 41 deletions(-)
+ create mode 100644 CHANGES.txt
+
+diff --git a/CHANGES.txt b/CHANGES.txt
+new file mode 100644
+index 0000000..f498211
+--- /dev/null
++++ b/CHANGES.txt
+@@ -0,0 +1,2 @@
++changes{summary:"Improve tiling and terminal handling. Add opaque workload querying."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"patch"lib:"nhtty"}workload{scope:"minor"lib:"netzhaut","nhcore"}}
++
+diff --git a/external/netzhaut.dev b/external/netzhaut.dev
+index e6403ac..4dc61fd 160000
+--- a/external/netzhaut.dev
++++ b/external/netzhaut.dev
+@@ -1 +1 @@
+-Subproject commit e6403accdbaf8f8f7ddbc5b744d90d0d1a8eab30
++Subproject commit 4dc61fd7491413c695f6fc3171e9d1fc41fda8f3
+diff --git a/src/bin/nhtty/Main.c b/src/bin/nhtty/Main.c
+index a464cd9..b95e7a3 100644
+--- a/src/bin/nhtty/Main.c
++++ b/src/bin/nhtty/Main.c
+@@ -148,7 +148,7 @@ WindowConfiguration.Size.height=2000;
+         return 1;
+     }
+ 
+-    while (1) {
++    while (nh_getWorkload(TTY_p)) {
+         if (!nh_run()) {usleep(10000);}
+         if (!nh_keepRunning()) {break;}
+     }
+diff --git a/src/lib/netzhaut/nhcore.c b/src/lib/netzhaut/nhcore.c
+index 06120d4..399b229 100644
+--- a/src/lib/netzhaut/nhcore.c
++++ b/src/lib/netzhaut/nhcore.c
+@@ -146,7 +146,7 @@ NH_RESULT nh_initializeUsingDefaultArguments()
+     return nh_initialize(NH_LOADER_SCOPE_SYSTEM, NULL, NH_FALSE);
+ }
+ 
+-// RUN =============================================================================================
++// OTHER ===========================================================================================
+ 
+ unsigned int nh_run()
+ {
+@@ -154,16 +154,12 @@ unsigned int nh_run()
+     return runWorkloads_f ? runWorkloads_f() : 0;
+ }
+ 
+-// IS RUNNING ======================================================================================
+-
+ NH_BOOL nh_keepRunning()
+ {
+     nh_keepRunning_f keepRunning_f = !NH_LOADER_P ? NULL : NH_LOADER_P->loadSymbol_f(NH_MODULE_CORE, 0, "nh_keepRunning");
+     return keepRunning_f ? keepRunning_f() : NH_FALSE;
+ }
+ 
+-// TERMINATE =======================================================================================
+-
+ NH_RESULT nh_terminate()
+ {
+     if (!NH_LOADER_P) {return NH_ERROR_BAD_STATE;}
+@@ -174,8 +170,6 @@ NH_RESULT nh_terminate()
+     return NH_SUCCESS;
+ }
+ 
+-// LOG CALLBACK ====================================================================================
+-
+ NH_RESULT nh_addLogCallback(
+     nh_logCallback_f logCallback_f)
+ {
+@@ -183,3 +177,9 @@ NH_RESULT nh_addLogCallback(
+     return addLogCallback_f ? addLogCallback_f(logCallback_f) : NH_ERROR_BAD_STATE;
+ }
+ 
++nh_Workload *nh_getWorkload(
++    void *args_p)
++{
++    nh_getWorkload_f getWorkload_f = !NH_LOADER_P ? NULL : NH_LOADER_P->loadSymbol_f(NH_MODULE_CORE, 0, "nh_getWorkload");
++    return getWorkload_f ? getWorkload_f(args_p) : NULL;
++}
+diff --git a/src/lib/netzhaut/nhcore.h b/src/lib/netzhaut/nhcore.h
+index 2b68cd6..48335c4 100644
+--- a/src/lib/netzhaut/nhcore.h
++++ b/src/lib/netzhaut/nhcore.h
+@@ -67,6 +67,13 @@
+         nh_logCallback_f logCallback_f
+     );
+ 
++    /**
++     * Todo.
++     */
++    nh_Workload *nh_getWorkload(
++        void *args_p
++    );
++
+ /** @} */
+ 
+ #endif // NH_CORE_H
+diff --git a/src/lib/nhcore/Common/Types/Public.h b/src/lib/nhcore/Common/Types/Public.h
+index 94a8e14..7926136 100644
+--- a/src/lib/nhcore/Common/Types/Public.h
++++ b/src/lib/nhcore/Common/Types/Public.h
+@@ -25,6 +25,7 @@
+      * Opaque structure holding the actual data of @ref nh_LinkedList.
+      */
+     typedef struct nh_LinkedListItem nh_LinkedListItem;
++    typedef struct nh_Workload nh_Workload;
+ 
+ /** @} */
+ /** @{ */
+diff --git a/src/lib/nhcore/System/Thread.c b/src/lib/nhcore/System/Thread.c
+index 3b55020..b866f43 100644
+--- a/src/lib/nhcore/System/Thread.c
++++ b/src/lib/nhcore/System/Thread.c
+@@ -353,7 +353,7 @@ NH_BEGIN()
+ NH_END(_nh_getThread())
+ }
+ 
+-nh_Workload *nh_getWorkloadFromArgs(
++nh_Workload *nh_getWorkload(
+     void *args_p)
+ {
+ NH_BEGIN()
+diff --git a/src/lib/nhcore/System/Thread.h b/src/lib/nhcore/System/Thread.h
+index 8232fc1..0d36e2c 100644
+--- a/src/lib/nhcore/System/Thread.h
++++ b/src/lib/nhcore/System/Thread.h
+@@ -98,6 +98,10 @@
+     typedef NH_BOOL (*nh_keepRunning_f)(
+     );
+ 
++    typedef nh_Workload *(*nh_getWorkload_f)(
++        void *args_p
++    );
++ 
+ /** @} */
+ 
+ /** @addtogroup lib_nhcore_functions
+@@ -136,10 +140,6 @@
+     nh_Thread *nh_getThread(
+     );
+     
+-    nh_Workload *nh_getWorkloadFromArgs(
+-        void *args_p
+-    );
+-    
+     nh_Thread *nh_getThreadFromArgs(
+         void *args_p
+     );
+diff --git a/src/lib/nhtty/TTY/StandardIO.c b/src/lib/nhtty/TTY/StandardIO.c
+index d43062d..59a761b 100644
+--- a/src/lib/nhtty/TTY/StandardIO.c
++++ b/src/lib/nhtty/TTY/StandardIO.c
+@@ -178,13 +178,16 @@ NH_TTY_END(NH_TTY_SUCCESS)
+ 
+ // RAW MODE ========================================================================================
+  
+-static NH_TTY_RESULT nh_tty_enableRawMode(
++static NH_TTY_RESULT nh_tty_enterRawMode(
+     nh_tty_View *View_p) 
+ {
+ NH_TTY_BEGIN()
+ 
+ #ifdef __unix__
+ 
++    // https://stackoverflow.com/questions/43202800/when-exiting-terminal-rawmode-my-contents-stays-on-the-screen
++    write(STDOUT_FILENO, "\033[?1049h\033[2J\033[H", 15);
++
+     if (tcgetattr(STDIN_FILENO, &View_p->Termios) == -1) {
+         NH_TTY_DIAGNOSTIC_END(NH_TTY_ERROR_BAD_STATE)
+     }
+@@ -207,19 +210,20 @@ NH_TTY_BEGIN()
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+ 
+-static NH_TTY_RESULT nh_tty_atExit(
++static NH_TTY_RESULT nh_tty_exitRawMode(
+     nh_tty_View *View_p) 
+ {
+ NH_TTY_BEGIN()
+ 
+-    write(STDOUT_FILENO, "\x1b[2J", 4);
+-    write(STDOUT_FILENO, "\x1b[H", 3);
+-    write(STDOUT_FILENO, "\x1b[?25h", 6);
+-
+ #ifdef __unix__
++
+     if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &View_p->Termios) == -1) {
+          NH_TTY_DIAGNOSTIC_END(NH_TTY_ERROR_BAD_STATE)
+     }
++
++    // https://stackoverflow.com/questions/43202800/when-exiting-terminal-rawmode-my-contents-stays-on-the-screen
++    write(STDOUT_FILENO, "\033[2J\033[H\033[?1049l", 15);
++
+ #endif
+ 
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+@@ -239,7 +243,7 @@ NH_TTY_BEGIN()
+     nh_tty_View *View_p = nh_tty_createView(TTY_p, NH_TRUE);
+     NH_TTY_CHECK_NULL(View_p)
+ 
+-    NH_TTY_RESULT error = nh_tty_enableRawMode(View_p);
++    NH_TTY_RESULT error = nh_tty_enterRawMode(View_p);
+     if (error) {
+         nh_tty_destroyView(TTY_p, View_p);
+         NH_TTY_END(error)
+@@ -266,7 +270,7 @@ NH_TTY_BEGIN()
+ 
+     NH_TTY_CHECK_NULL(View_p)
+ 
+-    NH_TTY_CHECK(nh_tty_atExit(View_p))
++    NH_TTY_CHECK(nh_tty_exitRawMode(View_p))
+     nh_tty_destroyView(TTY_p, View_p);
+ 
+     claimed = NH_FALSE;
+diff --git a/src/lib/nhtty/TTY/TTY.c b/src/lib/nhtty/TTY/TTY.c
+index 758037b..b55d1f0 100644
+--- a/src/lib/nhtty/TTY/TTY.c
++++ b/src/lib/nhtty/TTY/TTY.c
+@@ -239,7 +239,6 @@ NH_TTY_BEGIN()
+     }
+      
+     if (TTY_p->Tab_p->close) {
+-        exit(0); // TODO
+         NH_TTY_END(NH_SIGNAL_DONE)
+     }
+ 
+diff --git a/src/lib/nhtty/TTY/Tab.c b/src/lib/nhtty/TTY/Tab.c
+index 4cd87f0..c8be802 100644
+--- a/src/lib/nhtty/TTY/Tab.c
++++ b/src/lib/nhtty/TTY/Tab.c
+@@ -82,24 +82,19 @@ NH_TTY_BEGIN()
+             Tab_p->refreshScreen = NH_TRUE;
+             Tab_p->refreshCursor = NH_TRUE;
+         }
+-        if (Tile_p->close) 
+-        {
+-            if (Tile_p->Parent_p == NULL) {Tab_p->close = NH_TRUE;}
+-            else {
+-                int index = nh_getLinkedListIndex(&Tile_p->Parent_p->Children, Tile_p);
+-                if (Tile_p->Parent_p->Children.count == 2) {
+-		    Tile_p->Parent_p->Console = 
+-                        ((nh_tty_Tile*)nh_getFromLinkedList(&Tile_p->Parent_p->Children, index == 0 ? 1 : 0))->Console;
+-                    Tab_p->Tile_p = Tile_p->Parent_p;
+-                    nh_destroyLinkedList(&Tab_p->Tile_p->Children, NH_TRUE);
+-                    break;
+-                }
+-                else {
+-                    index = index == 0 ? 1 : index - 1;
+-                    Tab_p->Tile_p = nh_getFromLinkedList(&Tile_p->Parent_p->Children, index);
+-                    nh_removeFromLinkedList2(&Tile_p->Parent_p->Children, Tile_p, NH_TRUE);
+-                    break;
+-                }
++
++        if (Tile_p->close) {
++            if (Tile_p->Parent_p == NULL) {
++                Tab_p->close = NH_TRUE;
++                break;
++            }
++            Tab_p->Tile_p = nh_tty_closeTile(Tile_p);
++            NH_TTY_CHECK_NULL(Tab_p->Tile_p)
++
++            // Update root tile.
++            if (Tab_p->Tile_p->Parent_p && !Tab_p->Tile_p->Parent_p->Parent_p) {
++                Tab_p->RootTile_p = Tab_p->Tile_p->Parent_p;
++                break;
+             }
+         }
+     }
+diff --git a/src/lib/nhtty/TTY/Tile.c b/src/lib/nhtty/TTY/Tile.c
+index 197e3ea..bbfcb7a 100644
+--- a/src/lib/nhtty/TTY/Tile.c
++++ b/src/lib/nhtty/TTY/Tile.c
+@@ -357,3 +357,44 @@ NH_TTY_BEGIN()
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+ 
++// CLOSE ===========================================================================================
++
++// TODO Fix memory leaks.
++nh_tty_Tile *nh_tty_closeTile(
++    nh_tty_Tile *Tile_p)
++{
++NH_TTY_BEGIN()
++
++    int index = nh_getLinkedListIndex(&Tile_p->Parent_p->Children, Tile_p);
++    if (Tile_p->Parent_p->Children.count == 2) {
++        nh_tty_Tile *Other_p = nh_getFromLinkedList(&Tile_p->Parent_p->Children, index == 0 ? 1 : 0);
++        if (Other_p->Children.count) {
++            if (Other_p->Parent_p->Parent_p) {
++                for (int i = 0; i < Other_p->Parent_p->Parent_p->Children.count; ++i) {
++                    if (nh_getFromLinkedList(&Other_p->Parent_p->Parent_p->Children, i) == Other_p->Parent_p) {
++                        nh_setInLinkedList(&Other_p->Parent_p->Parent_p->Children, i, Other_p);
++                        Other_p->Parent_p = Other_p->Parent_p->Parent_p;
++                        NH_TTY_END(nh_getFromLinkedList(&Other_p->Children, 0))
++                    }
++                }
++            }
++            else {
++                Other_p->Parent_p = NULL;
++                NH_TTY_END(nh_getFromLinkedList(&Other_p->Children, 0))
++            }
++        } else {
++            Tile_p->Parent_p->Console = 
++                ((nh_tty_Tile*)nh_getFromLinkedList(&Tile_p->Parent_p->Children, index == 0 ? 1 : 0))->Console;
++            nh_destroyLinkedList(&Tile_p->Parent_p->Children, NH_TRUE);
++            NH_TTY_END(Tile_p->Parent_p)
++        }
++    }
++    else {
++        index = index == 0 ? 1 : index - 1;
++        nh_removeFromLinkedList2(&Tile_p->Parent_p->Children, Tile_p, NH_TRUE);
++        NH_TTY_END(nh_getFromLinkedList(&Tile_p->Parent_p->Children, index))
++    }
++
++NH_TTY_END(NULL)
++}
++
+diff --git a/src/lib/nhtty/TTY/Tile.h b/src/lib/nhtty/TTY/Tile.h
+index a68a840..a05ec41 100644
+--- a/src/lib/nhtty/TTY/Tile.h
++++ b/src/lib/nhtty/TTY/Tile.h
+@@ -119,6 +119,10 @@
+         nh_tty_Tile *Tile_p, nh_wsi_KeyboardEvent Event
+     );
+ 
++    nh_tty_Tile *nh_tty_closeTile(
++        nh_tty_Tile *Tile_p
++    );
++
+ /** @} */
+ 
+ #endif 
+diff --git a/src/lib/nhtty/TTY/Tiling.c b/src/lib/nhtty/TTY/Tiling.c
+index 6b4677b..92ef7f9 100644
+--- a/src/lib/nhtty/TTY/Tiling.c
++++ b/src/lib/nhtty/TTY/Tiling.c
+@@ -243,6 +243,7 @@ static nh_tty_Tile *nh_tty_insertTile(
+ {
+ NH_TTY_BEGIN()
+ 
++    // Configure orientation.
+     switch (c) 
+     {
+         case NH_TTY_INSERT_TILE_TOP_KEY    :
+@@ -257,6 +258,7 @@ NH_TTY_BEGIN()
+             break;
+     }
+ 
++    // Insert tile.
+     switch (c)
+     {
+         case NH_TTY_INSERT_TILE_TOP_KEY  :
+-- 
+2.35.1
+

@@ -1,12 +1,13 @@
 var NAVTREEINDEX0 =
 {
 "group__api__nhcore.html":[0,0],
-"group__api__nhcore.html#ga0190f368741b44e4f703a9fe31571c23":[0,0,4],
+"group__api__nhcore.html#ga0190f368741b44e4f703a9fe31571c23":[0,0,5],
 "group__api__nhcore.html#ga15b2ed5fe9c5926db2b3c75180f6eecc":[0,0,0],
-"group__api__nhcore.html#ga2bcd06216570b8148f2aaa63b998dd23":[0,0,2],
-"group__api__nhcore.html#ga6d5e0ab7c19f983f7fb17689ab351507":[0,0,5],
-"group__api__nhcore.html#gae34aaf14dc2db5afd40f5c2ae4015061":[0,0,3],
-"group__api__nhcore.html#gae5dc0521ef50af787d3d477c1f2c5efd":[0,0,1],
+"group__api__nhcore.html#ga2bcd06216570b8148f2aaa63b998dd23":[0,0,3],
+"group__api__nhcore.html#ga6d5e0ab7c19f983f7fb17689ab351507":[0,0,6],
+"group__api__nhcore.html#ga8cfa7c5469d6d3fe112c2233a5ff59ae":[0,0,1],
+"group__api__nhcore.html#gae34aaf14dc2db5afd40f5c2ae4015061":[0,0,4],
+"group__api__nhcore.html#gae5dc0521ef50af787d3d477c1f2c5efd":[0,0,2],
 "group__api__nhcss.html":[0,1],
 "group__api__nhcss.html#ga9e62ff9c3d76aa3fc92834c87647b75c":[0,1,0],
 "group__api__nhcss.html#gaa5a3e795816ac2b7036abb9f34444d13":[0,1,1],

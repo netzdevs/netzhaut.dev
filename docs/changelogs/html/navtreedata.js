@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "Netzhaut Changelogs", "index.html", [
     [ "netzhaut", "md_pages_netzhaut_lib.html", [
+      [ "ver.0.2.7.0", "md_pages_netzhaut_lib.html#netzhaut0270", null ],
       [ "ver.0.2.6.0", "md_pages_netzhaut_lib.html#netzhaut0260", null ],
       [ "ver.0.2.5.0", "md_pages_netzhaut_lib.html#netzhaut0250", null ],
       [ "ver.0.2.4.0", "md_pages_netzhaut_lib.html#netzhaut0240", null ],
@@ -39,6 +40,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_netzhaut_lib.html#netzhaut0000", null ]
     ] ],
     [ "nhcore", "md_pages_nhcore_lib.html", [
+      [ "ver.0.1.6.0", "md_pages_nhcore_lib.html#nhcore0160", null ],
       [ "ver.0.1.5.2", "md_pages_nhcore_lib.html#nhcore0152", null ],
       [ "ver.0.1.5.1", "md_pages_nhcore_lib.html#nhcore0151", null ],
       [ "ver.0.1.5.0", "md_pages_nhcore_lib.html#nhcore0150", null ],
@@ -177,6 +179,7 @@ var NAVTREE =
       [ "ver.0.0.0.0", "md_pages_nhterminal_lib.html#nhterminal0000", null ]
     ] ],
     [ "nhtty", "md_pages_nhtty_lib.html", [
+      [ "ver.0.1.6.1", "md_pages_nhtty_lib.html#nhtty0161", null ],
       [ "ver.0.1.6.0", "md_pages_nhtty_lib.html#nhtty0160", null ],
       [ "ver.0.1.5.0", "md_pages_nhtty_lib.html#nhtty0150", null ],
       [ "ver.0.1.4.1", "md_pages_nhtty_lib.html#nhtty0141", null ],
