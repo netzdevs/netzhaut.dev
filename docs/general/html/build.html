@@ -8,10 +8,12 @@
     <meta name="generator" content="Doxygen 1.9.2"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Netzhaut | Web Browser Engine</title>
+    <script type="text/javascript" src="../../theme/jquery.js"></script>
     <script type="text/javascript" src="../../theme/resize.js"></script>
     <link rel="icon" href="../../logo/favicon.png"/>
     <link href="../../theme/doxygen.css" rel="stylesheet" type="text/css"/>
     <link href="../../theme/custom.css" rel="stylesheet" type="text/css"/>
+    <link href="../../theme/navtree.css" rel="stylesheet" type="text/css"/>
   </head>
 
   <body>  
@@ -26,22 +28,22 @@
           <div style="height:56px;text-align:right;right:10px;top:4px;position:absolute;">
 <b>
 <!-- NH_MAKE_INSERT_API_VERSION_BEGIN -->
-ver.0.2.6.0
+ver.0.2.7.0
 <!-- NH_MAKE_INSERT_API_VERSION_END -->
 <br/>
 <!-- NH_MAKE_INSERT_REVISION_BEGIN -->
-rev.0.10.55.9
+rev.0.10.65.5
 <!-- NH_MAKE_INSERT_REVISION_END -->
 </b>
           </div>
           <div id="projectlogo"><img alt="netzhaut logo" src="../../logo/netzhaut.png"/></div>
         </div>
       </div>
-      <div id="titlearea">
+      <div id="titlearea" style="border:none;">
         <div class="topnav">
-          <a class="active" href="../../index.html">Home</a>
-          <a href="../../architecture/html/index.html">Architecture</a>
-          <a href="../../design/html/index.html">Design</a>
+          <a class="active" href="../../index.html">General</a>
+          <a href="../../architecture/html/projectlayout.html">Architecture</a>
+          <a href="../../design/html/codestyle.html">Design</a>
           <a href="../../internals/html/index.html">Internals</a>
           <a href="../../api/html/modules.html">API</a>
           <a href="../../changelogs/html/index.html">Changelogs</a>
@@ -51,7 +53,7 @@ rev.0.10.55.9
       <div id="titlearea">
         <div class="topnav">
           <a href="../../index.html">Introduction</a>
-          <a class="active" href="build.html">Building</a>
+          <a class="active" href="build.html">Build</a>
           <a href="authors.html">Authors</a>
           <a href="license.html">License</a>
         </div>
@@ -59,7 +61,7 @@ rev.0.10.55.9
     </div>
 
     <script type="text/javascript">
-      $(document).ready(function(){handleContentOverflow(); });
+      $(document).ready(function(){handleOverflow();});
     </script>
 
     <div id="doc-content" onscroll="scrollfunc()" style="margin:0;">
@@ -74,31 +76,28 @@ rev.0.10.55.9
         <div class="textblock" style="display:inline-block;text-align:left;max-width:700px;">
           <div style="max-width:700px;"></div><h1><a class="anchor" id="Setup"></a>
           Setup</h1>
-          <div style="max-width:700px;">Building Netzhaut requires a few setup procedures to be executed beforehand. First, the source code must be downloaded.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupLinux"></a>
+          <div style="max-width:700px;">Building Netzhaut requires a few setup procedures to be executed beforehand. First, the source code must be downloaded. Then, the nhmake tool must be build and used to initialize the project. </div><div style="max-width:700px;"></div><h2><a class="anchor" id="SetupLinux"></a>
           Linux</h2>
           <div style="max-width:700px;"><pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
           git clone <a href="https://github.com/netzdevs/netzhaut.git">https://github.com/netzdevs/netzhaut.git</a>
           cd netzhaut &amp;&amp; ./build/nhmake.sh &amp;&amp; ./build/nhmake --init
           </pre></div><div style="max-width:700px;"></div><h1><a class="anchor" id="Building"></a>
-          Building</h1>
-          <div style="max-width:700px;">Before building, please make sure that relevant dependencies are installed. Building is done exclusively using the nhmake tool, which was build during setup.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="Dependencies"></a>
-          Dependencies</h2>
-          <div style="max-width:700px;">For rendering, Netzhaut requires <a href="https://www.khronos.org/vulkan/">Vulkan</a> drivers to be present at runtime.</div><div style="max-width:700px;"></div><div style="max-width:700px;"></div><h3><a class="anchor" id="DepsLinux"></a>
-          Linux</h3>
-          <div style="max-width:700px;"><ul>
-          <li>GCC</li>
-          <li>X11</li>
-          <li>OpenSSL</li>
-          <li>FreeType</li>
-          <li>HarfBuzz</li>
-          </ul>
-          </div><div style="max-width:700px;"></div><h2><a class="anchor" id="Build1"></a>
-          Simple Building</h2>
+          Build</h1>
+          <div style="max-width:700px;">Before building, please make sure that relevant dependencies are installed. Building is done exclusively using the nhmake tool, which was build during setup. The examples below show how to use nhmake for building, for more info on nhmake usage, go here.</div><div style="max-width:700px;"></div><h2><a class="anchor" id="Dependencies"></a>
+          <div style="max-width:700px;">
+          </div><div style="max-width:700px;"></div>
+Linux</h2>
           <div style="max-width:700px;"><pre style="white-space: pre-wrap; word-wrap: break-word;text-align: justify;">
           ./build/nhmake -b ALL  # build Netzhaut + examples
           ./build/nhmake -b LIBS # build Netzhaut
           ./build/nhmake -b BINS # build examples
-          </pre></div><div style="max-width:700px;"></div> </div></div><!-- contents -->
+          </pre></div><div style="max-width:700px;"></div> 
+          <h1>Install</h1>
+          <div style="max-width:700px;">Libraries are by default installed to netzhaut/lib,
+          binaries to netzhaut/bin and
+          include files to netzhaut/include.</div>
+
+</div></div><!-- contents -->
         </div>
       </div>
     </div><!-- doc-/<content -->
