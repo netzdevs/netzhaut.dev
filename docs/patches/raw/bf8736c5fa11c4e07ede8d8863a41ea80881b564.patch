@@ -1,0 +1,721 @@
+From bf8736c5fa11c4e07ede8d8863a41ea80881b564 Mon Sep 17 00:00:00 2001
+From: Dajo Frey <dajo.frey@gmail.com>
+Date: Sat, 16 Jul 2022 17:34:24 +0200
+Subject: [PATCH] Improve shell handling.
+
+---
+ CHANGES.txt                         |   1 +
+ external/netzhaut.dev               |   2 +-
+ src/lib/netzhaut/nhtty.h            |   8 +-
+ src/lib/nhtty/Common/Types/Public.h |   1 +
+ src/lib/nhtty/Shell/Output.c        |  84 +++++++------
+ src/lib/nhtty/Shell/Shell.c         | 185 ++++++++++++++++------------
+ src/lib/nhtty/Shell/Shell.h         |  18 ++-
+ src/lib/nhtty/TTY/Program.c         |   1 +
+ src/lib/nhtty/TTY/TTY.c             |   4 +-
+ src/lib/nhtty/TTY/Tile.c            |  14 ++-
+ 10 files changed, 191 insertions(+), 127 deletions(-)
+ create mode 100644 CHANGES.txt
+
+diff --git a/CHANGES.txt b/CHANGES.txt
+new file mode 100644
+index 0000000..34b7613
+--- /dev/null
++++ b/CHANGES.txt
+@@ -0,0 +1 @@
++changes{summary:"Improve shell handling."author{name:"Dajo Frey"contact:"https://github.com/dajofrey"}workload{scope:"patch"lib:"nhtty"}}
+diff --git a/external/netzhaut.dev b/external/netzhaut.dev
+index 4dc61fd..d0e463c 160000
+--- a/external/netzhaut.dev
++++ b/external/netzhaut.dev
+@@ -1 +1 @@
+-Subproject commit 4dc61fd7491413c695f6fc3171e9d1fc41fda8f3
++Subproject commit d0e463c2400c17ea28c9bbc2e9a042435454b00d
+diff --git a/src/lib/netzhaut/nhtty.h b/src/lib/netzhaut/nhtty.h
+index 31e8daf..b70196b 100644
+--- a/src/lib/netzhaut/nhtty.h
++++ b/src/lib/netzhaut/nhtty.h
+@@ -14,7 +14,13 @@
+ #endif
+ 
+ /** @defgroup api_nhtty nhtty
+- *  @brief Open logical TTY interfaces.
++ *  @brief Environment for running text based programs.
++ *
++ *  In this API, TTY stands for TeleType and provides an interface for
++ *  writing text based programs. Using these programs, it processes input streams from either
++ *  standard input or \ref nh_tty_sendInput and sends the result to either standard
++ *  output or a \ref nh_terminal_Terminal. Text based programs can be either added
++ *  by using \ref nh_tty_addDefaultProgram or \ref nh_tty_addCustomProgram.
+  */
+ 
+ /** @addtogroup api_nhtty
+diff --git a/src/lib/nhtty/Common/Types/Public.h b/src/lib/nhtty/Common/Types/Public.h
+index 0199f32..0f103bc 100644
+--- a/src/lib/nhtty/Common/Types/Public.h
++++ b/src/lib/nhtty/Common/Types/Public.h
+@@ -58,6 +58,7 @@
+         void *view_p; /**< The current view. */
+         nh_List Views; /**< Custom data per view. For example scroll data. */ 
+         NH_BOOL refresh;
++        NH_BOOL close;
+         int command;
+         nh_Array *Programs_p;
+     } nh_tty_Program;
+diff --git a/src/lib/nhtty/Shell/Output.c b/src/lib/nhtty/Shell/Output.c
+index bba3444..8dbc439 100644
+--- a/src/lib/nhtty/Shell/Output.c
++++ b/src/lib/nhtty/Shell/Output.c
+@@ -513,23 +513,19 @@ NH_TTY_BEGIN()
+ //                    xsetmode(set, MODE_8BIT);
+                     break;
+                 case 1049: /* swap screen & set/restore cursor as xterm */
+-//                    if (!allowaltscreen)
+-//                    	break;
+ //                    tcursor((set) ? CURSOR_SAVE : CURSOR_LOAD);
+                     /* FALLTHROUGH */
+                 case 47: /* swap screen */
+                 case 1047:
+-//                    if (!allowaltscreen)
+-//                    	break;
+-//                    alt = IS_SET(MODE_ALTSCREEN);
+-//                    if (alt) {
+-//                    	tclearregion(0, 0, term.col-1,
+-//                    			term.row-1);
+-//                    }
+-//                    if (set ^ alt) /* set is always 1 or 0 */
+-//                    	tswapscreen();
+-//                    if (*args != 1049)
+-//                    	break;
++                    if (Shell_p->Screen_p == &Shell_p->Screen2) {
++                        nh_tty_resetShellScreen(&Shell_p->Screen2);
++                        Shell_p->Screen_p = &Shell_p->Screen1;
++                    }
++                    else {
++                        Shell_p->Screen_p = &Shell_p->Screen2;
++                    }
++                    if (*args != 1049)
++                    	break;
+                     /* FALLTHROUGH */
+                 case 1048:
+ //                    tcursor((set) ? CURSOR_SAVE : CURSOR_LOAD);
+@@ -713,7 +709,7 @@ NH_TTY_BEGIN()
+ 
+     nh_encoding_UTF32String String = nh_encoding_decodeUTF8(tmp_p, strlen(tmp_p), NULL);
+ 
+-    nh_tty_ShellLine *Line_p = Shell_p->Lines.pp[Shell_p->Lines.size - 1];
++    nh_tty_ShellLine *Line_p = Shell_p->Screen_p->Lines.pp[Shell_p->Screen_p->Lines.size - 1];
+     nh_encoding_appendUTF32(&Line_p->Codepoints, String.p, String.length);
+ 
+     nh_encoding_freeUTF32(&String);
+@@ -784,15 +780,15 @@ static void nh_tty_handleCSI(
+ //                    goto unknown;
+ //            }
+ //            break;
+-//        case 'G': /* CHA -- Move to <col> */
+-//        case '`': /* HPA */
+-//            DEFAULT(CSIEscSeq.arg[0], 1);
+-//            break;
+-//        case 'H': /* CUP -- Move to <row> <col> */
+-//        case 'f': /* HVP */
+-//            DEFAULT(CSIEscSeq.arg[0], 1);
+-//            DEFAULT(CSIEscSeq.arg[1], 1);
+-//            break;
++        case 'G': /* CHA -- Move to <col> */
++        case '`': /* HPA */
++            Shell_p->Screen_p->cursorX = Shell_p->CSIEscape.arg[0] == 0 ? 0 : Shell_p->CSIEscape.arg[0]-1;
++            break;
++        case 'H': /* CUP -- Move to <row> <col> */
++        case 'f': /* HVP */
++            Shell_p->Screen_p->cursorX = Shell_p->CSIEscape.arg[1] == 0 ? 0 : Shell_p->CSIEscape.arg[1]-1;
++            Shell_p->Screen_p->cursorY = Shell_p->CSIEscape.arg[0] == 0 ? 0 : Shell_p->CSIEscape.arg[0]-1;
++            break;
+ //        case 'I': /* CHT -- Cursor Forward Tabulation <n> tab stops */
+ //            DEFAULT(CSIEscSeq.arg[0], 1);
+ //            break;
+@@ -808,16 +804,22 @@ static void nh_tty_handleCSI(
+ //                    goto unknown;
+ //            }
+ //            break;
+-//        case 'K': /* EL -- Clear line */
+-//            switch (CSIEscSeq.arg[0]) {
+-//                case 0: /* right */
+-//                    break;
+-//                case 1: /* left */
+-//                    break;
+-//                case 2: /* all */
+-//                    break;
+-//            }
+-//            break;
++        case 'K': /* EL -- Clear line */
++            switch (Shell_p->CSIEscape.arg[0]) {
++                case 0: /* right */
++                    nh_encoding_removeUTF32(
++                        Shell_p->Screen_p->Lines.pp[Shell_p->Screen_p->cursorY-1], Shell_p->Screen_p->cursorX,  
++                        ((nh_encoding_UTF32String*)Shell_p->Screen_p->Lines.pp[Shell_p->Screen_p->cursorY-1])->length);
++                    break;
++                case 1: /* left */
++                    nh_encoding_removeUTF32(
++                        Shell_p->Screen_p->Lines.pp[Shell_p->Screen_p->cursorY-1], 0, Shell_p->Screen_p->cursorX);
++                    break;
++                case 2: /* all */
++                    nh_encoding_freeUTF32(Shell_p->Screen_p->Lines.pp[Shell_p->Screen_p->cursorY-1]);
++                    break;
++            }
++            break;
+ //        case 'S': /* SU -- Scroll <n> line up */
+ //            DEFAULT(CSIEscSeq.arg[0], 1);
+ ////            tscrollup(term.top, csiescseq.arg[0], 0);
+@@ -831,7 +833,8 @@ static void nh_tty_handleCSI(
+ ////            tinsertblankline(csiescseq.arg[0]);
+ //            break;
+         case 'l': /* RM -- Reset Mode */
+-            nh_tty_setTerminalMode(Shell_p, Shell_p->CSIEscape.priv, 0, Shell_p->CSIEscape.arg, Shell_p->CSIEscape.narg);
++            nh_tty_setTerminalMode(Shell_p, Shell_p->CSIEscape.priv, 0, Shell_p->CSIEscape.arg, 
++                Shell_p->CSIEscape.narg);
+             break;
+ //        case 'M': /* DL -- Delete <n> lines */
+ //            DEFAULT(CSIEscSeq.arg[0], 1);
+@@ -854,7 +857,8 @@ static void nh_tty_handleCSI(
+ ////            tmoveato(term.c.x, csiescseq.arg[0]-1);
+ //            break;
+         case 'h': /* SM -- Set terminal mode */
+-            nh_tty_setTerminalMode(Shell_p, Shell_p->CSIEscape.priv, 1, Shell_p->CSIEscape.arg, Shell_p->CSIEscape.narg);
++            nh_tty_setTerminalMode(Shell_p, Shell_p->CSIEscape.priv, 1, Shell_p->CSIEscape.arg, 
++                Shell_p->CSIEscape.narg);
+             break;
+         case 'm': /* SGR -- Terminal attribute (color) */
+             nh_tty_appendCSI(Shell_p);
+@@ -892,15 +896,15 @@ NH_TTY_BEGIN()
+         case '\t':   /* HT */
+             return;
+         case '\b':   /* BS */
+-            nh_encoding_removeUTF32Tail(Shell_p->Lines.pp[Shell_p->Lines.size - 1], 1);
+-	    if (Shell_p->cursorX) {Shell_p->cursorX--;}
++            nh_encoding_removeUTF32Tail(Shell_p->Screen_p->Lines.pp[Shell_p->Screen_p->Lines.size - 1], 1);
++	    if (Shell_p->Screen_p->cursorX) {Shell_p->Screen_p->cursorX--;}
+             return;
+         case '\r':   /* CR */
+             return;
+         case '\f':   /* LF */
+         case '\v':   /* VT */
+         case '\n':   /* LF */
+-            nh_tty_newShellLine(Shell_p);
++            nh_tty_newShellScreenLine(Shell_p->Screen_p);
+             return;
+         case '\a':   /* BEL */
+             break;
+@@ -1065,8 +1069,8 @@ check_control_code:
+         Shell_p->esc = 0;
+     }
+     else {
+-        nh_encoding_appendUTF32Codepoint(Shell_p->Lines.pp[Shell_p->Lines.size - 1], u);
+-        Shell_p->cursorX++;
++        nh_encoding_appendUTF32Codepoint(Shell_p->Screen_p->Lines.pp[Shell_p->Screen_p->Lines.size - 1], u);
++        Shell_p->Screen_p->cursorX++;
+     }
+ 
+ NH_TTY_END(NH_TTY_SUCCESS)
+diff --git a/src/lib/nhtty/Shell/Shell.c b/src/lib/nhtty/Shell/Shell.c
+index 639cd37..5c752af 100644
+--- a/src/lib/nhtty/Shell/Shell.c
++++ b/src/lib/nhtty/Shell/Shell.c
+@@ -63,7 +63,6 @@
+ 
+ // VARS ============================================================================================
+ 
+-static pid_t pid;
+ NH_BYTE *utmp = NULL;
+ NH_BYTE *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
+ NH_BYTE *termname = "st-256color";
+@@ -162,28 +161,6 @@ NH_TTY_BEGIN()
+ NH_TTY_SILENT_END()
+ }
+ 
+-static void nh_tty_sigchld(
+-    int a)
+-{
+-    int stat;
+-    pid_t p;
+-    
+-    if ((p = waitpid(pid, &stat, WNOHANG)) < 0) {
+-        die("waiting for pid %hd failed: %s\n", pid, strerror(errno));
+-    }
+-    if (pid != p) {
+-        return;
+-    }
+-    if (WIFEXITED(stat) && WEXITSTATUS(stat)) {
+-        die("child exited with status %d\n", WEXITSTATUS(stat));
+-    }
+-    else if (WIFSIGNALED(stat)) {
+-        die("child terminated due to signal %d\n", WTERMSIG(stat));
+-    }
+-
+-    exit(0);
+-}
+-
+ static NH_TTY_RESULT nh_tty_newShell(
+     nh_tty_Shell *Shell_p, NH_BYTE *line_p, NH_BYTE *cmd, NH_BYTE *out, NH_BYTE **args)
+ {
+@@ -245,7 +222,7 @@ NH_TTY_BEGIN()
+ #endif
+             close(s);
+             Shell_p->fd = m;
+-            signal(SIGCHLD, nh_tty_sigchld);
++
+             break;
+     }
+ 
+@@ -255,7 +232,7 @@ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ // READ ============================================================================================
+ 
+ static nh_encoding_UTF32String nh_tty_readFromShell(
+-    int shellfd)
++    nh_tty_Program *Program_p, int fd)
+ {
+ NH_TTY_BEGIN()
+ 
+@@ -265,8 +242,9 @@ NH_TTY_BEGIN()
+     int ret;
+     
+     /* append read bytes to unprocessed bytes */
+-    if ((ret = read(shellfd, buf+buflen, LEN(buf)-buflen)) < 0) {
+-        die("couldn't read from shell: %s\n", strerror(errno));
++    if ((ret = read(fd, buf+buflen, LEN(buf)-buflen)) < 0) {
++        Program_p->close = NH_TRUE;
++        NH_TTY_END(nh_encoding_initUTF32(16))
+     }
+     buflen += ret;
+     
+@@ -283,17 +261,15 @@ NH_TTY_END(String)
+ }
+ 
+ static nh_encoding_UTF32String nh_tty_tryToReadFromShell(
+-    nh_tty_Shell Shell)
++    nh_tty_Program *Program_p, int fd)
+ {
+ NH_TTY_BEGIN()
+ 
+-    pid = Shell.pid;
+-
+     fd_set readfd;
+     FD_ZERO(&readfd);
+-    FD_SET(Shell.fd, &readfd);
++    FD_SET(fd, &readfd);
+     
+-    if (FD_ISSET(Shell.fd, &readfd)) 
++    if (FD_ISSET(fd, &readfd)) 
+     {
+         // Set timeout to 10 milliseconds
+         struct timeval timeout;
+@@ -301,8 +277,8 @@ NH_TTY_BEGIN()
+         timeout.tv_usec = 0;
+ 
+         // wait until timeout or read from shell
+-        if (select(Shell.fd + 1, &readfd, NULL, NULL, &timeout) == 1) {
+-            NH_TTY_END(nh_tty_readFromShell(Shell.fd))
++        if (select(fd + 1, &readfd, NULL, NULL, &timeout) == 1) {
++            NH_TTY_END(nh_tty_readFromShell(Program_p, fd))
+         }
+     }
+ 
+@@ -312,7 +288,7 @@ NH_TTY_END(nh_encoding_initUTF32(0))
+ // WRITE ===========================================================================================
+ 
+ static void nh_tty_writeToShellRaw(
+-    int shellfd, const NH_BYTE *s, size_t n)
++    nh_tty_Program *Program_p, int fd, const NH_BYTE *s, size_t n)
+ {
+ NH_TTY_BEGIN()
+ 
+@@ -330,23 +306,23 @@ NH_TTY_BEGIN()
+     {
+         FD_ZERO(&wfd);
+         FD_ZERO(&rfd);
+-        FD_SET(shellfd, &wfd);
+-        FD_SET(shellfd, &rfd);
++        FD_SET(fd, &wfd);
++        FD_SET(fd, &rfd);
+         
+         /* Check if we can write. */
+-        if (pselect(shellfd+1, &rfd, &wfd, NULL, NULL, NULL) < 0) {
++        if (pselect(fd+1, &rfd, &wfd, NULL, NULL, NULL) < 0) {
+             if (errno == EINTR)
+             	continue;
+             die("select failed: %s\n", strerror(errno));
+         }
+     
+-        if (FD_ISSET(shellfd, &wfd)) {
++        if (FD_ISSET(fd, &wfd)) {
+             /*
+              * Only write the bytes written by nh_tty_writeToShell() or the
+              * default of 256. This seems to be a reasonable value
+              * for a serial line. Bigger values might clog the I/O.
+              */
+-            if ((r = write(shellfd, s, (n < lim)? n : lim)) < 0)
++            if ((r = write(fd, s, (n < lim)? n : lim)) < 0)
+             	goto write_error;
+             if (r < n) {
+                 /*
+@@ -355,7 +331,7 @@ NH_TTY_BEGIN()
+                  * again. Empty it.
+                  */
+                 if (n < lim) {
+-                    nh_encoding_UTF32String Output = nh_tty_readFromShell(shellfd);
++                    nh_encoding_UTF32String Output = nh_tty_readFromShell(Program_p, fd);
+                     lim = Output.length;
+                     nh_encoding_freeUTF32(&Output);
+                 }
+@@ -366,8 +342,8 @@ NH_TTY_BEGIN()
+             	break;
+             }
+         }
+-        if (FD_ISSET(shellfd, &rfd)) {
+-            nh_encoding_UTF32String Output = nh_tty_readFromShell(shellfd);
++        if (FD_ISSET(fd, &rfd)) {
++            nh_encoding_UTF32String Output = nh_tty_readFromShell(Program_p, fd);
+             lim = Output.length;
+             nh_encoding_freeUTF32(&Output);
+         }
+@@ -379,11 +355,13 @@ write_error:
+ 	die("write error on tty: %s\n", strerror(errno));
+ }
+ 
+-void nh_tty_writeToShell(
+-    nh_tty_Shell *Shell_p, const NH_BYTE *s, size_t n, int may_echo)
++static void nh_tty_writeToShell(
++    nh_tty_Program *Program_p, const NH_BYTE *s, size_t n, int may_echo)
+ {
+ NH_TTY_BEGIN()
+ 
++    nh_tty_Shell *Shell_p = Program_p->handle_p;
++
+     const NH_BYTE *next;
+ //	Arg arg = (Arg) { .i = term.scr };
+ //
+@@ -393,18 +371,18 @@ NH_TTY_BEGIN()
+ //		twrite(s, n, 1);
+ //
+     if (!Shell_p->crlf) {
+-    	nh_tty_writeToShellRaw(Shell_p->fd, s, n);
++    	nh_tty_writeToShellRaw(Program_p, Shell_p->fd, s, n);
+     }
+     else {
+ //    /* This is similar to how the kernel handles ONLCR for ttys */
+ //    while (n > 0) {
+ //        if (*s == '\r') {
+ //            next = s + 1;
+-//            nh_tty_writeToShellRaw(Shell_p->fd, "\r\n", 2);
++//            nh_tty_writeToShellRaw(Program_p, Shell_p->fd, "\r\n", 2);
+ //        } else {
+ //            next = memchr(s, '\r', n);
+ //            DEFAULT(next, s + n);
+-//            nh_tty_writeToShellRaw(Shell_p->fd, s, next - s);
++//            nh_tty_writeToShellRaw(Program_p, Shell_p->fd, s, next - s);
+ //        }
+ //        n -= next - s;
+ //        s = next;
+@@ -436,50 +414,81 @@ NH_TTY_SILENT_END()
+ //
+ //NH_TTY_SILENT_END()
+ //}
+-//
++
+ // INIT ============================================================================================
+ 
+-void *nh_tty_initShell()
++static nh_tty_ShellScreen nh_tty_initShellScreen()
+ {
+ NH_TTY_BEGIN()
+ 
+-#include NH_TTY_CUSTOM_CHECK
++    nh_tty_ShellScreen Screen;
++    Screen.cursorX = 0;
++    Screen.cursorY = 0;
++    Screen.Lines   = nh_initList(1024);
+ 
+-    nh_tty_Shell *Shell_p = nh_allocate(sizeof(nh_tty_Shell)); 
+-    NH_TTY_CHECK_MEM(NULL, Shell_p)
++    nh_tty_newShellScreenLine(&Screen);
+ 
+-    NH_TTY_CHECK(NULL, nh_tty_newShell(Shell_p, NULL, "/bin/sh", NULL, NULL))
++NH_TTY_END(Screen)
++}
+ 
+-    Shell_p->esc = 0;
+-    Shell_p->crlf = NH_FALSE;
+-    Shell_p->Lines = nh_initList(1024);
+-    Shell_p->cursorX = 0;
+-    Shell_p->cursorY = 0;
++nh_tty_ShellScreen *nh_tty_resetShellScreen(
++    nh_tty_ShellScreen *Screen_p)
++{
++NH_TTY_BEGIN()
+ 
+-    NH_TTY_CHECK_NULL(NULL, nh_tty_newShellLine(Shell_p))
++    for (int i = 0; i < Screen_p->Lines.size; ++i) {
++        nh_encoding_freeUTF32(&((nh_tty_ShellLine*)Screen_p->Lines.pp[i])->Codepoints);
++    }
++    nh_freeList(&Screen_p->Lines, NH_TRUE);
++    *Screen_p = nh_tty_initShellScreen();
+ 
+-NH_TTY_END(Shell_p)
++NH_TTY_END(Screen_p)
+ }
+ 
+-nh_tty_ShellLine *nh_tty_newShellLine(
+-    nh_tty_Shell *Shell_p)
++nh_tty_ShellLine *nh_tty_newShellScreenLine(
++    nh_tty_ShellScreen *Screen_p)
+ {
+ NH_TTY_BEGIN()
+ 
++#include NH_TTY_CUSTOM_CHECK
++
+     nh_tty_ShellLine *Line_p = nh_allocate(sizeof(nh_tty_ShellLine));
+     NH_TTY_CHECK_MEM(NULL, Line_p)
+ 
+     Line_p->Codepoints = nh_encoding_initUTF32(128);
+-    nh_appendToList(&Shell_p->Lines, Line_p);
++    nh_appendToList(&Screen_p->Lines, Line_p);
+ 
+-    Shell_p->cursorY++;
+-    Shell_p->cursorX = 0;
++    Screen_p->cursorY++;
++    Screen_p->cursorX = 0;
+ 
+ #include NH_TTY_DEFAULT_CHECK
+ 
+ NH_TTY_END(Line_p)
+ }
+ 
++void *nh_tty_initShell()
++{
++NH_TTY_BEGIN()
++
++#include NH_TTY_CUSTOM_CHECK
++
++    nh_tty_Shell *Shell_p = nh_allocate(sizeof(nh_tty_Shell)); 
++    NH_TTY_CHECK_MEM(NULL, Shell_p)
++
++    NH_TTY_CHECK(NULL, nh_tty_newShell(Shell_p, NULL, "/bin/sh", NULL, NULL))
++
++    Shell_p->esc = 0;
++    Shell_p->crlf = NH_FALSE;
++
++    Shell_p->Screen1 = nh_tty_initShellScreen();
++    Shell_p->Screen2 = nh_tty_initShellScreen();
++    Shell_p->Screen_p = &Shell_p->Screen1;
++
++#include NH_TTY_DEFAULT_CHECK
++
++NH_TTY_END(Shell_p)
++}
++
+ // VIEW ============================================================================================
+ 
+ void *nh_tty_createShellView()
+@@ -512,12 +521,12 @@ NH_TTY_BEGIN()
+ 
+     nh_tty_Shell *Shell_p = Program_p->handle_p;
+ 
+-    nh_encoding_UTF32String Read = nh_tty_tryToReadFromShell(*Shell_p);
++    nh_encoding_UTF32String Read = nh_tty_tryToReadFromShell(Program_p, Shell_p->fd);
+ 
+     while (Read.length > 0) {
+         nh_tty_handleShellOutput(Shell_p, &Read);
+         Program_p->refresh = NH_TRUE;
+-        Read = nh_tty_tryToReadFromShell(*Shell_p);
++        Read = nh_tty_tryToReadFromShell(Program_p, Shell_p->fd);
+     }
+ 
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+@@ -536,7 +545,7 @@ NH_TTY_BEGIN()
+ 
+     NH_BYTE p[4] = {0};
+     int length = nh_encoding_encodeUTF8Single(c, p);
+-    nh_tty_writeToShell(Program_p->handle_p, p, length, 0);
++    nh_tty_writeToShell(Program_p, p, length, 0);
+ 
+     Program_p->refresh = NH_TRUE;
+ 
+@@ -573,6 +582,30 @@ NH_TTY_BEGIN()
+ NH_TTY_SILENT_END()
+ }
+ 
++static NH_TTY_RESULT nh_tty_handleShellResize(
++    nh_tty_Shell *Shell_p, nh_tty_ShellView *View_p, int width, int height)
++{
++NH_TTY_BEGIN()
++
++    if (View_p->width == width && View_p->height == height) {
++        NH_TTY_END(NH_TTY_SUCCESS)
++    }
++
++    View_p->height = height;
++    View_p->width = width;
++
++    struct winsize w = {0};
++
++    w.ws_row = View_p->height;
++    w.ws_col = View_p->width;
++
++    if (ioctl(Shell_p->fd, TIOCSWINSZ, &w) < 0) {
++        NH_TTY_DIAGNOSTIC_END(NH_TTY_ERROR_BAD_STATE)
++    }
++
++NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
++}
++
+ NH_TTY_RESULT nh_tty_drawShellRow(
+     nh_tty_Program *Program_p, nh_encoding_UTF8String *Row_p, int width, int height, int row)
+ {
+@@ -581,11 +614,11 @@ NH_TTY_BEGIN()
+     nh_tty_Shell *Shell_p = Program_p->handle_p;
+     nh_tty_ShellView *View_p = Program_p->view_p;
+ 
+-    View_p->height = height;
+-    View_p->width = width;
++    NH_TTY_CHECK(nh_tty_handleShellResize(Shell_p, View_p, width, height))
+ 
+-    int rowOffset = Shell_p->Lines.size > height ? Shell_p->Lines.size - height : 0;
+-    nh_tty_ShellLine *Line_p = nh_getFromList(&Shell_p->Lines, row + rowOffset);
++    int rowOffset = Shell_p->Screen_p->Lines.size > View_p->height ? 
++        Shell_p->Screen_p->Lines.size - View_p->height : 0;
++    nh_tty_ShellLine *Line_p = nh_getFromList(&Shell_p->Screen_p->Lines, row + rowOffset);
+ 
+     if (Line_p) {
+         int renderLength = 0;
+@@ -626,13 +659,13 @@ NH_TTY_BEGIN()
+     nh_tty_Shell *Shell_p = Program_p->handle_p;
+     nh_tty_ShellView *View_p = Program_p->view_p;
+ 
+-    if (View_p->height < Shell_p->cursorY) {
++    if (View_p->height < Shell_p->Screen_p->cursorY) {
+ 	*y_p = View_p->height;
+     } else {
+-        *y_p = ((nh_tty_Shell*)Program_p->handle_p)->cursorY;
++        *y_p = ((nh_tty_Shell*)Program_p->handle_p)->Screen_p->cursorY;
+     }
+ 
+-    *x_p = ((nh_tty_Shell*)Program_p->handle_p)->cursorX;
++    *x_p = ((nh_tty_Shell*)Program_p->handle_p)->Screen_p->cursorX;
+ 
+ NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)
+ }
+diff --git a/src/lib/nhtty/Shell/Shell.h b/src/lib/nhtty/Shell/Shell.h
+index 5495dfc..117247a 100644
+--- a/src/lib/nhtty/Shell/Shell.h
++++ b/src/lib/nhtty/Shell/Shell.h
+@@ -68,19 +68,25 @@
+         nh_encoding_UTF32String Codepoints;
+     } nh_tty_ShellLine;
+ 
++    typedef struct nh_tty_ShellScreen {
++	int cursorX, cursorY;
++        nh_List Lines;
++    } nh_tty_ShellScreen;
++
+     typedef struct nh_tty_ShellView {
+         int height;
+ 	int width;
+     } nh_tty_ShellView;
+ 
+     typedef struct nh_tty_Shell {
++        nh_tty_ShellScreen *Screen_p;
++        nh_tty_ShellScreen Screen1;
++        nh_tty_ShellScreen Screen2;
+         NH_TTY_ESC esc;
+         nh_tty_CSIEscape CSIEscape;
+         NH_BOOL crlf; /**<Transform each carriage-return to carriage-return/line-feed.*/
+-	int cursorX, cursorY;
+         int fd;
+         pid_t pid;
+-        nh_List Lines;
+     } nh_tty_Shell;
+ 
+ /** @} */
+@@ -100,8 +106,12 @@
+     void *nh_tty_initShell(
+     );
+     
+-    nh_tty_ShellLine *nh_tty_newShellLine(
+-        nh_tty_Shell *Shell_p
++    nh_tty_ShellScreen *nh_tty_resetShellScreen(
++        nh_tty_ShellScreen *Screen_p
++    );
++
++    nh_tty_ShellLine *nh_tty_newShellScreenLine(
++        nh_tty_ShellScreen *Screen_p
+     );
+ 
+     NH_TTY_RESULT nh_tty_updateShell(
+diff --git a/src/lib/nhtty/TTY/Program.c b/src/lib/nhtty/TTY/Program.c
+index 2fbc8e3..5188aa5 100644
+--- a/src/lib/nhtty/TTY/Program.c
++++ b/src/lib/nhtty/TTY/Program.c
+@@ -62,6 +62,7 @@ NH_TTY_BEGIN()
+     Program_p->view_p      = NULL;
+     Program_p->Views       = nh_initList(8);
+     Program_p->refresh     = NH_FALSE;
++    Program_p->close       = NH_FALSE;
+     Program_p->command     = -1;
+     Program_p->handle_p    = Prototype_p->Callbacks.init_f ? Prototype_p->Callbacks.init_f() : NULL; 
+     Program_p->Programs_p  = Programs_p;
+diff --git a/src/lib/nhtty/TTY/TTY.c b/src/lib/nhtty/TTY/TTY.c
+index b55d1f0..8433dff 100644
+--- a/src/lib/nhtty/TTY/TTY.c
++++ b/src/lib/nhtty/TTY/TTY.c
+@@ -92,9 +92,9 @@ NH_TTY_BEGIN()
+     nh_tty_Config Config;
+ 
+     Config.topbars = NH_TRUE;
+-    Config.foreground = NH_TTY_COLOR_NONE;
++    Config.foreground = NH_TTY_COLOR_INVERSE;
+     Config.verticalBorders = NH_TRUE;
+-    Config.horizontalBorders = NH_TRUE;
++    Config.horizontalBorders = NH_FALSE;
+ 
+ NH_TTY_END(Config)
+ }
+diff --git a/src/lib/nhtty/TTY/Tile.c b/src/lib/nhtty/TTY/Tile.c
+index bbfcb7a..ad886d3 100644
+--- a/src/lib/nhtty/TTY/Tile.c
++++ b/src/lib/nhtty/TTY/Tile.c
+@@ -73,15 +73,19 @@ NH_TTY_BEGIN()
+     nh_tty_Program *Program_p = nh_tty_getCurrentProgram(&Tile_p->Console);
+     if (Program_p == NULL) {NH_TTY_DIAGNOSTIC_END(NH_TTY_SUCCESS)}
+ 
+-    if (Program_p->Prototype_p->Callbacks.update_f != NULL) {
++    if (Program_p->Prototype_p->Callbacks.update_f) {
+         NH_TTY_CHECK(Program_p->Prototype_p->Callbacks.update_f(Program_p))
+     }
+  
+-    if (Program_p->refresh == NH_TRUE) {
++    if (Program_p->close) {
++        Tile_p->refresh = NH_TRUE;
++        Tile_p->close = NH_TRUE;
++    }
++    if (Program_p->refresh) {
+         Tile_p->refresh = NH_TRUE;
+         Program_p->refresh = NH_FALSE;
+     }
+-    if (Tile_p->Console.refresh == NH_TRUE) {
++    if (Tile_p->Console.refresh) {
+         Tile_p->refresh = NH_TRUE;
+         Tile_p->Console.refresh = NH_FALSE;
+     }
+@@ -347,6 +351,10 @@ NH_TTY_BEGIN()
+             Tile_p->refresh = NH_TRUE;
+             nh_tty_getCurrentProgram(&Tile_p->Console)->refresh = NH_FALSE;
+         }
++        if (nh_tty_getCurrentProgram(&Tile_p->Console)->close) {
++            Tile_p->refresh = NH_TRUE;
++            Tile_p->close = NH_TRUE;
++        }
+     }
+     else {
+         NH_TTY_CHECK(nh_tty_setDefaultMessage(
+-- 
+2.35.1
+

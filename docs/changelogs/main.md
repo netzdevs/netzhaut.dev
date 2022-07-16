@@ -1,6 +1,11 @@
 <div style="max-width:700px;">
 
-<h1>rev.0.10.65.5</h1>
+<h1>rev.0.10.65.6</h1>
+
+2022-07-16 | 17:34:35  | [open patch](../../patches/html/md_pages_bf8736c5fa11c4e07ede8d8863a41ea80881b564.html)
+
+ ---
+[nhtty](md_pages_nhtty_lib.html#nhtty0162)<br>Improve shell handling.<br><br><h1>rev.0.10.65.5</h1>
 
 2022-07-12 | 21:13:13  | [open patch](../../patches/html/md_pages_498b574fad1336aa60b70a56af891b5def879083.html)
 

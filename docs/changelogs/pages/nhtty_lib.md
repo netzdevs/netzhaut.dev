@@ -2,7 +2,15 @@
 
 <div style="max-width:700px;">
 
-\section nhtty0161 ver.0.1.6.1
+\section nhtty0162 ver.0.1.6.2
+
+2022-07-16 | 17:34:35 | rev.0.10.65.6 | [open patch](../../patches/html/md_pages_bf8736c5fa11c4e07ede8d8863a41ea80881b564.html)
+
+ ---
+
+ Improve shell handling.
+
+<br>\section nhtty0161 ver.0.1.6.1
 
 2022-07-12 | 21:13:13 | rev.0.10.65.5 | [open patch](../../patches/html/md_pages_498b574fad1336aa60b70a56af891b5def879083.html)
 

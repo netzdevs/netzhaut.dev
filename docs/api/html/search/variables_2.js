@@ -8,12 +8,13 @@ var searchData=
   ['child_5fp_5',['Child_p',['../structnh__webidl__Object.html#ab5a7972bc511a9d9fa75c04a51909b7f',1,'nh_webidl_Object']]],
   ['chunkcount_6',['chunkCount',['../structnh__List.html#ad4fb750170946e4f1f12ae55ca992dcd',1,'nh_List']]],
   ['chunksize_7',['chunkSize',['../structnh__List.html#ac8ee21f3addcf15db96c883fcfe2813d',1,'nh_List']]],
-  ['codepoint_8',['codepoint',['../structnh__wsi__KeyboardEvent.html#a8a17b2fd4f2ea792ce01e0f8084ce048',1,'nh_wsi_KeyboardEvent']]],
-  ['command_9',['command',['../structnh__tty__Program.html#a441a241730c6e6225adc66d0a0552179',1,'nh_tty_Program']]],
-  ['commands_10',['commands',['../structnh__tty__ProgramPrototype.html#a7c276afc4f2adfd7f5b56e9fe273593d',1,'nh_tty_ProgramPrototype']]],
-  ['commands_5fpp_11',['commands_pp',['../structnh__tty__ProgramPrototype.html#a94538ff658abc0d34e35873f6194d234',1,'nh_tty_ProgramPrototype']]],
-  ['compileargs_5fp_12',['compileArgs_p',['../structnh__make__SourceContext.html#ada3c11f29a6c49a5f2dcd0b8010a1c05',1,'nh_make_SourceContext']]],
-  ['contact_5fp_13',['contact_p',['../structnh__make__Author.html#a152bd68729bfe8892014b03f0e540d5d',1,'nh_make_Author']]],
-  ['count_14',['count',['../structnh__LinkedList.html#ab15c1647db125254c825216d19cc24d6',1,'nh_LinkedList']]],
-  ['createview_5ff_15',['createView_f',['../structnh__tty__ProgramCallbacks.html#ae35ccdf1dc68d0c3fbb758b507afed27',1,'nh_tty_ProgramCallbacks']]]
+  ['close_8',['close',['../structnh__tty__Program.html#acc70098dfa25e7e6c94abecb9b05a759',1,'nh_tty_Program']]],
+  ['codepoint_9',['codepoint',['../structnh__wsi__KeyboardEvent.html#a8a17b2fd4f2ea792ce01e0f8084ce048',1,'nh_wsi_KeyboardEvent']]],
+  ['command_10',['command',['../structnh__tty__Program.html#a441a241730c6e6225adc66d0a0552179',1,'nh_tty_Program']]],
+  ['commands_11',['commands',['../structnh__tty__ProgramPrototype.html#a7c276afc4f2adfd7f5b56e9fe273593d',1,'nh_tty_ProgramPrototype']]],
+  ['commands_5fpp_12',['commands_pp',['../structnh__tty__ProgramPrototype.html#a94538ff658abc0d34e35873f6194d234',1,'nh_tty_ProgramPrototype']]],
+  ['compileargs_5fp_13',['compileArgs_p',['../structnh__make__SourceContext.html#ada3c11f29a6c49a5f2dcd0b8010a1c05',1,'nh_make_SourceContext']]],
+  ['contact_5fp_14',['contact_p',['../structnh__make__Author.html#a152bd68729bfe8892014b03f0e540d5d',1,'nh_make_Author']]],
+  ['count_15',['count',['../structnh__LinkedList.html#ab15c1647db125254c825216d19cc24d6',1,'nh_LinkedList']]],
+  ['createview_5ff_16',['createView_f',['../structnh__tty__ProgramCallbacks.html#ae35ccdf1dc68d0c3fbb758b507afed27',1,'nh_tty_ProgramCallbacks']]]
 ];
